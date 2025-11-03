@@ -27,7 +27,7 @@
 ---
 
 ## 🗂 Структура проекта
-'text . 
+'.txt
 ├── index.html # Главная страница 
 ├── contacts.html # Контакты 
 ├── methodology.html # Методология работы 
