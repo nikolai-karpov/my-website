@@ -27,19 +27,20 @@
 ---
 
 ## 🗂 Структура проекта
-'.txt
-├── index.html # Главная страница 
-├── contacts.html # Контакты 
-├── methodology.html # Методология работы 
-├── results.html # Результаты и достижения 
-├── cases.html # Обзор кейсов 
-│ ├── case-construction.html # Кейс: Строительство 
-│ └── case-procurement.html # Кейс: Закупки 
-│ ├── header.html # Шапка (динамически подключается) 
-├── footer.html # Подвал (динамически подключается) 
-└── css/ 
-  └── styles.css # Основные стили
-'
+.
+├── index.html              # Главная страница
+├── contacts.html           # Контакты
+├── methodology.html        # Методология работы
+├── results.html            # Результаты и достижения
+├── cases.html              # Обзор кейсов
+│   ├── case-construction.html  # Кейс: Строительство
+│   └── case-procurement.html   # Кейс: Закупки
+├── components/
+│   ├── header.html         # Шапка (динамически подключается)
+│   └── footer.html         # Подвал (динамически подключается)
+└── css/
+    └── styles.css          # Основные стили
+.
 ---
 
 ## 🔧 Как работает подгрузка header/footer?
