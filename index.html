@@ -22,6 +22,9 @@
     <!-- Иконки -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- AOS Animation -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
@@ -39,73 +42,89 @@
     </div>
 </div>
 
-<header id="main-header" class="main-header"></header>
+<header id="main-header" class="main-header">
+    <!-- Fallback навигация -->
+    <div class="container">
+        <div class="header-container">
+            <a href="/" class="logo">Карпов Николай</a>
+            <nav>
+                <ul>
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="methodology.html">Методология</a></li>
+                    <li><a href="cases.html">Кейсы</a></li>
+                    <li><a href="results.html">Результаты</a></li>
+                    <li><a href="contacts.html" class="cta-button primary">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
 
 <main>
     <!-- ===== ГЕРОЙ-БЛОК С АНИМАЦИЕЙ ===== -->
     <section class="hero-section">
         <div class="hero-background">
-            <div class="neural-network-bg">
-                <canvas id="neuralCanvas"></canvas>
-            </div>
+            <canvas id="neuralCanvas"></canvas>
         </div>
-        <div class="container hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span>🚀 ROI от 1.5 млн руб./год на проект</span>
-                </div>
-                <h1 class="hero-title">
-                    <span class="title-line">Внедряю <span class="gradient-text">искусственный интеллект</span></span>
-                    <span class="title-line">в бизнес-процессы предприятий</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Превращаю операционные "боли" в измеримые KPI через системное внедрение LLM и обучение команд
-                </p>
-
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">85%</span>
-                        <span class="stat-label">сокращение рутины</span>
+        <div class="container">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span>🚀 ROI от 1.5 млн руб./год на проект</span>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">95%</span>
-                        <span class="stat-label">adoption rate</span>
+                    <h1 class="hero-title">
+                        <span class="title-line">Внедряю <span class="gradient-text">искусственный интеллект</span></span>
+                        <span class="title-line">в бизнес-процессы предприятий</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Превращаю операционные "боли" в измеримые KPI через системное внедрение LLM и обучение команд
+                    </p>
+
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">85%</span>
+                            <span class="stat-label">сокращение рутины</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">adoption rate</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">2-4</span>
+                            <span class="stat-label">недели до результата</span>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">2-4</span>
-                        <span class="stat-label">недели до результата</span>
+
+                    <div class="hero-actions">
+                        <a href="contacts.html" class="cta-button primary">
+                            <i class="fas fa-brain"></i>
+                            Начать бесплатную диагностику
+                        </a>
+                        <a href="#cases" class="cta-button secondary">
+                            <i class="fas fa-chart-line"></i>
+                            Смотреть кейсы
+                        </a>
                     </div>
                 </div>
 
-                <div class="hero-actions">
-                    <a href="contacts.html" class="cta-button primary">
-                        <i class="fas fa-brain"></i>
-                        Начать бесплатную диагностику
-                    </a>
-                    <a href="#cases" class="cta-button secondary">
-                        <i class="fas fa-chart-line"></i>
-                        Смотреть кейсы
-                    </a>
-                </div>
-            </div>
-
-            <div class="hero-visual">
-                <div class="floating-card card-1">
-                    <i class="fab fa-google"></i>
-                    <span>Gemini Pro</span>
-                </div>
-                <div class="floating-card card-2">
-                    <i class="fas fa-robot"></i>
-                    <span>YandexGPT</span>
-                </div>
-                <div class="floating-card card-3">
-                    <i class="fas fa-code"></i>
-                    <span>DeepSeek</span>
-                </div>
-                <!-- Ваше фото в современном стиле -->
-                <div class="profile-image">
-                    <img src="assets/images/profile-professional.jpg" alt="Карпов Николай">
-                    <div class="image-glow"></div>
+                <div class="hero-visual">
+                    <div class="floating-card card-1">
+                        <i class="fab fa-google"></i>
+                        <span>Gemini Pro</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-robot"></i>
+                        <span>YandexGPT</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i class="fas fa-code"></i>
+                        <span>DeepSeek</span>
+                    </div>
+                    <!-- Ваше фото в современном стиле -->
+                    <div class="profile-image">
+                        <img src="assets/images/profile-placeholder.jpg" alt="Карпов Николай" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPua1i+ivleWbvuWDjzwvdGV4dD48L3N2Zz4='">
+                        <div class="image-glow"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -236,7 +255,7 @@
             <div class="cases-grid">
                 <article class="case-card featured">
                     <div class="case-image">
-                        <img src="assets/images/case-construction.jpg" alt="AI в строительстве">
+                        <img src="assets/images/case-construction.jpg" alt="AI в строительстве" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhGOUZBIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPuWbvuWDj+W8uuWItuW6pjwvdGV4dD48L3N2Zz4='">
                         <div class="case-badge">ROI 1.2M руб./год</div>
                     </div>
                     <div class="case-content">
@@ -255,7 +274,7 @@
                             </div>
                         </div>
 
-                        <a href="case-1.html" class="case-link">
+                        <a href="cases/case-construction.html" class="case-link">
                             Изучить кейс
                             <i class="fas fa-arrow-right"></i>
                         </a>
@@ -264,7 +283,7 @@
 
                 <article class="case-card">
                     <div class="case-image">
-                        <img src="assets/images/case-tender.jpg" alt="AI для тендеров">
+                        <img src="assets/images/case-tender.jpg" alt="AI для тендеров" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhGOUZBIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPuWbvuWDj+WIneS4reWkhOeQhjwvdGV4dD48L3N2Zz4='">
                         <div class="case-badge">ROI 2.8M руб./год</div>
                     </div>
                     <div class="case-content">
@@ -283,7 +302,7 @@
                             </div>
                         </div>
 
-                        <a href="case-2.html" class="case-link">
+                        <a href="cases/case-procurement.html" class="case-link">
                             Изучить кейс
                             <i class="fas fa-arrow-right"></i>
                         </a>
@@ -345,7 +364,45 @@
     </section>
 </main>
 
-<footer id="main-footer" class="main-footer"></footer>
+<footer id="main-footer" class="main-footer">
+    <!-- Fallback футер -->
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Карпов Николай</h3>
+                <p>Инструктор по внедрению ИИ в бизнес-процессы</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="methodology.html">Методология</a></li>
+                    <li><a href="cases.html">Кейсы</a></li>
+                    <li><a href="results.html">Результаты</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Контакты</h4>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:nikolai@pir-s.ru">nikolai@pir-s.ru</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-telegram"></i>
+                    <a href="https://t.me/@Nikolai_999">@Nikolai_999</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">© 2024 Карпов Николай. Все права защищены.</div>
+        </div>
+    </div>
+</footer>
 
 <!-- Скрипты для профессиональных анимаций -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
@@ -367,17 +424,49 @@
             offset: 100
         });
 
-        // Загрузка компонентов
-        const loadComponent = (url, elementId) => {
-            fetch(url)
-                .then(response => response.ok ? response.text() : Promise.reject(`Error loading ${url}`))
-                .then(data => { document.getElementById(elementId).innerHTML = data; })
-                .catch(error => console.error(`Could not load component:`, error));
+        // Улучшенная загрузка компонентов с fallback
+        const loadComponent = async (url, elementId, fallbackHTML = '') => {
+            try {
+                const response = await fetch(url);
+                if (response.ok) {
+                    const data = await response.text();
+                    document.getElementById(elementId).innerHTML = data;
+                } else {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+            } catch (error) {
+                console.warn(`Could not load ${url}, using fallback`);
+                // Fallback уже встроен в HTML
+            }
         };
 
-        loadComponent('header.html', 'main-header');
-        loadComponent('footer.html', 'main-footer');
+        // Загружаем компоненты только если они не были встроены как fallback
+        if (!document.querySelector('.header-container').innerHTML.includes('Карпов Николай')) {
+            loadComponent('components/header.html', 'main-header');
+        }
+        if (!document.querySelector('.footer-content')) {
+            loadComponent('components/footer.html', 'main-footer');
+        }
+
+        // Обработка формы лид-магнита
+        const checklistForm = document.getElementById('checklist-form');
+        if (checklistForm) {
+            checklistForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                // Здесь должна быть интеграция с email-сервисом
+                alert(`Спасибо! Чек-лист отправлен на ${email}`);
+                this.reset();
+            });
+        }
     });
+
+    // Обработка ошибок изображений
+    document.addEventListener('error', function(e) {
+        if (e.target.tagName === 'IMG') {
+            console.warn('Image failed to load:', e.target.src);
+        }
+    }, true);
 </script>
 </body>
 </html>

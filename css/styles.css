@@ -91,6 +91,11 @@ body:not(.loading) .preloader {
     margin-bottom: 20px;
 }
 
+.neural-network-bg {
+    width: 100%;
+    height: 100%;
+}
+
 .neuron {
     width: 12px;
     height: 12px;
@@ -673,6 +678,7 @@ nav a:hover { text-decoration: none; }
     align-items: center;
     gap: 40px;
     position: relative;
+    overflow: hidden;
 }
 
 .hero-section::before {
@@ -703,6 +709,15 @@ nav a:hover { text-decoration: none; }
     grid-template-columns: 1fr auto;
     gap: 60px;
     align-items: center;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 .hero-badge {
@@ -845,6 +860,7 @@ nav a:hover { text-decoration: none; }
 /* НОВЫЕ СТИЛИ ЛИД-МАГНИТА */
 .lead-magnet-card {
     background: var(--white-color);
+    color: var(--dark-color);
     border-radius: var(--border-radius-lg);
     box-shadow: var(--card-shadow-hover);
     display: grid;
@@ -854,6 +870,14 @@ nav a:hover { text-decoration: none; }
 
 .lead-content {
     padding: 50px;
+    color: var(--dark-color);
+}
+
+.lead-content h2,
+.lead-content .lead-description,
+.lead-content .benefits-list,
+.lead-content .form-note {
+    color: var(--dark-color);
 }
 
 .lead-badge {
@@ -1477,6 +1501,30 @@ nav a:hover { text-decoration: none; }
     opacity: 0.8;
 }
 
+.image-glow {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    opacity: 0.3;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+/* Стили для прелоадера */
+.preloader-content {
+    text-align: center;
+}
+
+.preloader-content p {
+    margin-top: 15px;
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
 /* --- АДАПТИВНОСТЬ --- */
 @media (max-width: 1200px) {
     .hero-container {
@@ -1486,6 +1534,16 @@ nav a:hover { text-decoration: none; }
 
     .hero-visual {
         margin: 0 auto;
+    }
+
+    .preloader-content {
+        text-align: center;
+    }
+
+    .preloader-content p {
+        margin-top: 15px;
+        font-size: 1.1rem;
+        opacity: 0.8;
     }
 
     .competencies-grid {
@@ -1547,8 +1605,26 @@ nav a:hover { text-decoration: none; }
     h2 { font-size: 1.8rem; margin-bottom: 30px; }
     .hero-section { flex-direction: column-reverse; text-align: center; }
 
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero-visual {
+        order: -1;
+        margin: 0 auto;
+    }
+
     .hero-title {
         font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.3rem;
+        margin-bottom: 30px;
+        opacity: 0.9;
+        line-height: 1.6;
     }
 
     .hero-stats {
@@ -1569,9 +1645,21 @@ nav a:hover { text-decoration: none; }
         gap: 15px;
     }
 
+    .floating-card {
+        display: none; /* Скрываем на мобильных */
+    }
+
     .footer-content {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+
+    .lead-magnet-card {
+        grid-template-columns: 1fr;
+    }
+
+    .lead-content {
+        padding: 30px 20px;
     }
 
     .footer-bottom {
@@ -1612,6 +1700,22 @@ nav a:hover { text-decoration: none; }
 }
 
 @media (max-width: 480px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .conversion-card {
+        padding: 30px 15px;
+    }
+
+    .conversion-benefits {
+        gap: 20px;
+    }
+
     .footer-content {
         gap: 25px;
     }
