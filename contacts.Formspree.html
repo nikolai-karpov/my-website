@@ -140,6 +140,11 @@
         .form-group {
             margin-bottom: 25px;
         }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
         .contact-form label {
             display: block;
             margin-bottom: 8px;
@@ -148,7 +153,6 @@
         }
         .contact-form input[type="text"],
         .contact-form input[type="email"],
-        .contact-form input[type="tel"],
         .contact-form select,
         .contact-form textarea {
             width: 100%;
@@ -194,17 +198,6 @@
             font-size: 0.9rem;
             color: var(--text-color);
         }
-        .contact-field {
-            display: none;
-            animation: fadeIn 0.3s ease;
-        }
-        .contact-field.active {
-            display: block;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
         .faq-section {
             background: var(--light-bg-color);
             padding: 60px 0;
@@ -240,6 +233,9 @@
             .contact-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
             }
         }
         @media (max-width: 768px) {
@@ -290,6 +286,7 @@
                             <div class="contact-icon">📧</div>
                             <div class="contact-details">
                                 <strong>Email</strong>
+                                <!-- ЗАМЕНИТЕ НА ВАШ EMAIL -->
                                 <a href="mailto:your-email@example.com">your-email@example.com</a>
                                 <p>Отправьте детали проекта, и я свяжусь с вами в течение 4 часов</p>
                             </div>
@@ -298,6 +295,7 @@
                             <div class="contact-icon">✈️</div>
                             <div class="contact-details">
                                 <strong>Telegram</strong>
+                                <!-- ЗАМЕНИТЕ НА ВАШ TELEGRAM -->
                                 <a href="https://t.me/your_username" target="_blank" rel="noopener noreferrer">@your_username</a>
                                 <p>Идеально для быстрых вопросов и оперативной связи</p>
                             </div>
@@ -306,6 +304,7 @@
                             <div class="contact-icon">💼</div>
                             <div class="contact-details">
                                 <strong>LinkedIn</strong>
+                                <!-- ЗАМЕНИТЕ НА ССЫЛКУ НА ВАШ ПРОФИЛЬ -->
                                 <a href="#" target="_blank" rel="noopener noreferrer">Профиль в LinkedIn</a>
                                 <p>Для профессиональных запросов и долгосрочного сотрудничества</p>
                             </div>
@@ -323,45 +322,26 @@
                 <!-- Правая колонка: Контактная форма -->
                 <div class="contact-form">
                     <h2>Оставить заявку на диагностику</h2>
-                    <!-- FormSubmit - простой и бесплатный вариант для GitHub Pages -->
-                    <form action="https://formsubmit.co/your-email@example.com" method="POST" id="contactForm">
-                        <!-- Скрытые поля для настройки FormSubmit -->
-                        <input type="hidden" name="_subject" value="Новая заявка с сайта - Контакты">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_next" value="https://yourusername.github.io/thank-you.html">
-
-                        <!-- Имя - самостоятельный блок на всю ширину -->
-                        <div class="form-group">
-                            <label for="name">Ваше имя *</label>
-                            <input type="text" id="name" name="name" required>
+                    <!-- Для работы формы на GitHub Pages потребуется сторонний сервис, например, Formspree или Netlify Forms -->
+                    <form action="https://formspree.io/f/your_form_id" method="POST"> <!-- ЗАМЕНИТЕ НА ВАШУ ССЫЛКУ FORM SPREE -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Ваше имя *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
                         </div>
 
-                        <!-- Выбор способа связи -->
                         <div class="form-group">
-                            <label for="contact-preference">Предпочтительный способ связи *</label>
-                            <select id="contact-preference" name="contact-preference" required>
-                                <option value="">Выберите способ связи</option>
+                            <label for="contact-preference">Предпочтительный способ связи</label>
+                            <select id="contact-preference" name="contact-preference">
                                 <option value="email">Email</option>
                                 <option value="telegram">Telegram</option>
                                 <option value="phone">Телефон</option>
                             </select>
-                        </div>
-
-                        <!-- Динамические поля для контактов -->
-                        <div class="form-group contact-field" id="email-field">
-                            <label for="email">Email для связи *</label>
-                            <input type="email" id="email" name="email">
-                        </div>
-
-                        <div class="form-group contact-field" id="telegram-field">
-                            <label for="telegram">Ваш Telegram *</label>
-                            <input type="text" id="telegram" name="telegram" placeholder="@username">
-                        </div>
-
-                        <div class="form-group contact-field" id="phone-field">
-                            <label for="phone">Ваш телефон *</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX">
                         </div>
 
                         <div class="form-group">
@@ -431,88 +411,7 @@
             .catch(error => console.error(`Could not load component:`, error));
     };
 
-    // Скрипт для динамического отображения полей контактов
-    document.addEventListener('DOMContentLoaded', function() {
-        const contactPreference = document.getElementById('contact-preference');
-        const emailField = document.getElementById('email-field');
-        const telegramField = document.getElementById('telegram-field');
-        const phoneField = document.getElementById('phone-field');
-
-        // Функция для скрытия всех полей контактов
-        function hideAllContactFields() {
-            emailField.classList.remove('active');
-            telegramField.classList.remove('active');
-            phoneField.classList.remove('active');
-
-            // Сбрасываем обязательность полей
-            document.getElementById('email').removeAttribute('required');
-            document.getElementById('telegram').removeAttribute('required');
-            document.getElementById('phone').removeAttribute('required');
-        }
-
-        // Функция для показа выбранного поля
-        function showContactField(field) {
-            hideAllContactFields();
-            field.classList.add('active');
-
-            // Устанавливаем обязательность для активного поля
-            if (field === emailField) {
-                document.getElementById('email').setAttribute('required', 'required');
-            } else if (field === telegramField) {
-                document.getElementById('telegram').setAttribute('required', 'required');
-            } else if (field === phoneField) {
-                document.getElementById('phone').setAttribute('required', 'required');
-            }
-        }
-
-        // Обработчик изменения выбора способа связи
-        contactPreference.addEventListener('change', function() {
-            const selectedValue = this.value;
-
-            switch(selectedValue) {
-                case 'email':
-                    showContactField(emailField);
-                    break;
-                case 'telegram':
-                    showContactField(telegramField);
-                    break;
-                case 'phone':
-                    showContactField(phoneField);
-                    break;
-                default:
-                    hideAllContactFields();
-                    break;
-            }
-        });
-
-        // Валидация формы перед отправкой
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            const selectedContact = contactPreference.value;
-            let isValid = true;
-
-            // Проверяем, что выбран способ связи
-            if (!selectedContact) {
-                alert('Пожалуйста, выберите предпочтительный способ связи');
-                isValid = false;
-            }
-
-            // Проверяем, что заполнено соответствующее поле контакта
-            if (selectedContact === 'email' && !document.getElementById('email').value) {
-                alert('Пожалуйста, укажите ваш email');
-                isValid = false;
-            } else if (selectedContact === 'telegram' && !document.getElementById('telegram').value) {
-                alert('Пожалуйста, укажите ваш Telegram');
-                isValid = false;
-            } else if (selectedContact === 'phone' && !document.getElementById('phone').value) {
-                alert('Пожалуйста, укажите ваш телефон');
-                isValid = false;
-            }
-
-            if (!isValid) {
-                e.preventDefault();
-            }
-        });
-
+    document.addEventListener('DOMContentLoaded', () => {
         loadComponent('header.html', 'main-header');
         loadComponent('footer.html', 'main-footer');
     });

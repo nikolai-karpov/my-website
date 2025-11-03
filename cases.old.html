@@ -25,46 +25,10 @@
         .proof-item:hover { border-color: var(--primary-color); transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
         .proof-item .file-type { font-weight: bold; color: var(--primary-color); }
         .proof-item .file-description { font-size: 0.9rem; color: var(--text-color); }
-
-        /* Стили для визуализации процесса */
-        .process-flow {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .process-step {
-            background: var(--white-color);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            padding: 20px;
-            text-align: center;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        .process-step:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin: 0 auto 15px;
-            font-size: 1.2rem;
-        }
-
         @media (max-width: 768px) {
             .case-section { grid-template-columns: 1fr; gap: 20px; }
             .case-section h3 { justify-content: center; }
             .proof-list { grid-template-columns: 1fr; }
-            .process-flow { grid-template-columns: 1fr; }
         }
     </style>
 
@@ -103,14 +67,14 @@
 
             <!-- Детальное описание -->
             <div class="case-section">
-                <aside><h3><span aria-label="Цель" role="img">🎯</span>Проблема</h3></aside>
+                <aside><h3><span>🎯</span>Проблема</h3></aside>
                 <div>
                     <p>Инженеры технадзора строительного холдинга тратили до 25% своего рабочего времени (около 10 часов в неделю) на ручную подготовку отчетов. Информация с объектов (фото, заметки) поступала в офис с задержкой в 1-2 дня, что создавало риск несвоевременного принятия управленческих решений и срыва сроков проекта.</p>
                 </div>
             </div>
 
             <div class="case-section">
-                <aside><h3><span aria-label="Инструменты" role="img">🛠️</span>Моя роль и задачи</h3></aside>
+                <aside><h3><span>🛠️</span>Моя роль и задачи</h3></aside>
                 <div>
                     <ul>
                         <li><strong>Бизнес-аналитик:</strong> Провел интервью с инженерами, картировал процесс и выявил ключевой барьер — ручную компиляцию разнородных данных. Сформулировал гипотезу о 80% сокращении времени за счет AI-ассистента.</li>
@@ -121,42 +85,18 @@
             </div>
 
             <div class="case-section">
-                <aside><h3><span aria-label="Решение" role="img">💡</span>Решение</h3></aside>
+                <aside><h3><span>💡</span>Решение</h3></aside>
                 <div>
                     <p>Был внедрен Telegram-бот, ставший "цифровым подсобным рабочим" для инженеров. Сотрудник на объекте отправляет боту голосовое сообщение с фото, описывая проделанную работу и выявленные дефекты. ИИ-ассистент транскрибирует аудио, анализирует текст и фото, извлекает ключевые сущности (объем, ресурсы, проблема) и автоматически генерирует структурированный отчет, который мгновенно поступает менеджеру проекта в офис.</p>
                 </div>
             </div>
 
-            <!-- Визуализация процесса -->
-            <div class="case-section">
-                <aside><h3><span aria-label="Процесс" role="img">📊</span>Как это работает</h3></aside>
-                <div>
-                    <div class="process-flow">
-                        <div class="process-step">
-                            <div class="step-number">1</div>
-                            <p><strong>Инженер в поле</strong><br>Отправляет в бот голосовое сообщение и фото</p>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">2</div>
-                            <p><strong>AI-обработка</strong><br>YandexGPT транскрибирует аудио и анализирует текст</p>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">3</div>
-                            <p><strong>Генерация отчета</strong><br>GigaChat структурирует данные по ГОСТ</p>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">4</div>
-                            <p><strong>Мгновенная доставка</strong><br>Отчет автоматически отправляется менеджеру</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Секция с Пруфами -->
+            <!-- Секция с Пруфами (идентична для всех кейсов) -->
             <div class="proofs-section">
                 <h2>Проектная документация и артефакты</h2>
                 <p>Ознакомьтесь с реальными документами, которые показывают мой системный подход к решению задач: от диагностики до оценки финального ROI.</p>
                 <div class="proof-list">
+                    <!-- ЗАМЕНИТЕ # НА ПУТИ К ВАШИМ PDF ФАЙЛАМ -->
                     <a href="Strategic_Brief_AI_Implementation.pdf" class="proof-item" download>
                         <span class="file-type">[PDF] Стратегический бриф</span>
                         <p class="file-description">Пример документа, показывающего, как анализ интервью со стейкхолдерами превращается в четкий план действий.</p>
@@ -175,15 +115,6 @@
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Новая CTA-секция -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Заинтересованы во внедрении AI в ваши бизнес-процессы?</h2>
-            <p>Давайте обсудим, как я могу помочь решить ваши задачи.</p>
-            <a href="/contacts.html" class="btn btn-primary">Связаться со мной</a>
         </div>
     </section>
 </main>
