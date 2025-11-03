@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Ваше Имя] | Инструктор по внедрению ИИ</title>
+
+    <!-- ПОДКЛЮЧАЕМ ЕДИНЫЙ ФАЙЛ СТИЛЕЙ -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Иконка для вкладки браузера (favicon) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<!-- Пустой контейнер для шапки. JavaScript загрузит сюда header.html -->
+<header id="main-header" class="main-header"></header>
+
+<main>
+    <!-- ===== ЭКРАН 1: ГЕРОЙ-БЛОК ===== -->
+    <section>
+        <div class="container hero-section">
+            <div class="hero-text">
+                <h1>Решаю операционные проблемы бизнеса через точечное внедрение ИИ</h1>
+                <p class="subtitle">[Ваше Имя] | Инструктор по внедрению ИИ | Бизнес-аналитик | Педагогический дизайнер</p>
+                <a href="contacts.html" class="cta-button">Начать бесплатную диагностику</a>
+            </div>
+            <div class="hero-image">
+                <!-- ЗАМЕНИТЕ НА ПУТЬ К ВАШЕМУ ФОТО -->
+                <img src="https://via.placeholder.com/250" alt="Ваше фото">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ЭКРАН 2: КОМПЕТЕНЦИИ ===== -->
+    <section>
+        <div class="container">
+            <h2>Моя экспертиза в цифрах и фактах</h2>
+            <div class="competencies-grid">
+                <div class="card competency-card">
+                    <div class="icon">📈</div><h3>Бизнес-аналитик</h3><p>Выявляю 'боли' бизнеса с потенциальным эффектом от 500+ тыс. руб./мес.</p>
+                </div>
+                <div class="card competency-card">
+                    <div class="icon">🎓</div><h3>Педагогический дизайнер</h3><p>Проектирую системы обучения, обеспечивающие 85%+ adoption rate.</p>
+                </div>
+                <div class="card competency-card">
+                    <div class="icon">🚀</div><h3>Аналитик данных (с LLM)</h3><p>Создаю рабочие прототипы для анализа 1000+ страниц за 15-20 минут.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ЭКРАН 3: ЛИД-МАГНИТ (ЧЕК-ЛИСТ) ===== -->
+    <section>
+        <div class="container">
+            <div class="lead-magnet-section">
+                <div class="lead-magnet-cover">
+                    <!-- ЗАМЕНИТЕ НА ПУТЬ К ОБЛОЖКЕ ЧЕК-ЛИСТА -->
+                    <img src="https://via.placeholder.com/200x280" alt="Обложка чек-листа">
+                </div>
+                <div class="lead-magnet-text">
+                    <h2>Ваш бизнес готов к ИИ?</h2>
+                    <p>Наш чек-лист, основанный на анализе 40+ проектов, поможет определить, пора ли вам выходить на новый уровень эффективности.</p>
+                    <a href="checklist.pdf" class="cta-button" download>Скачать чек-лист бесплатно</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ЭКРАН 4: ПРЕВЬЮ КЕЙСОВ ===== -->
+    <section>
+        <div class="container">
+            <h2>Реализованные проекты</h2>
+            <div class="cases-grid">
+                <!-- Кейс 1 -->
+                <div class="case-card">
+                    <a href="case-1.html">
+                        <img src="https://via.placeholder.com/600x400" alt="Автоматизация закупок">
+                        <div class="case-content">
+                            <h3>AI-автоматизация закупочного процесса</h3>
+                            <p class="case-result">Экономия ~2 млн руб./год на ФОТ</p>
+                            <p>Сократили время на обработку одной заявки на 80% и повысили точность до 95%...</p>
+                        </div>
+                    </a>
+                </div>
+                <!-- Кейс 2 -->
+                <div class="case-card">
+                    <a href="case-2.html">
+                        <img src="https://via.placeholder.com/600x400" alt="Строительный технадзор">
+                        <div class="case-content">
+                            <h3>AI-ассистент для строительного технадзора</h3>
+                            <p class="case-result">Ускорение информирования с 48 до 2 часов</p>
+                            <p>Внедрили Telegram-бота, который сократил время на подготовку полевых отчетов на 85%...</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ЭКРАН 5: ФИНАЛЬНЫЙ CTA ===== -->
+    <section>
+        <div class="container final-cta-section">
+            <h2>Готовы решить вашу самую болезненную проблему?</h2>
+            <p>Закажите бесплатную диагностику 1-2 ключевых процессов, и уже через 5 дней вы получите рабочий прототип ИИ-решения под вашу задачу.</p>
+            <a href="contacts.html" class="cta-button">Получить бесплатную диагностику</a>
+        </div>
+    </section>
+</main>
+
+<!-- Пустой контейнер для подвала. JavaScript загрузит сюда footer.html -->
+<footer id="main-footer" class="main-footer"></footer>
+
+<!-- Скрипт для подгрузки шапки и подвала. Должен быть в конце body. -->
+<script>
+    const loadComponent = (url, elementId) => {
+        fetch(url)
+            .then(response => response.ok ? response.text() : Promise.reject(`Error loading ${url}`))
+            .then(data => { document.getElementById(elementId).innerHTML = data; })
+            .catch(error => console.error(`Could not load component:`, error));
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadComponent('header.html', 'main-header');
+        loadComponent('footer.html', 'main-footer');
+    });
+</script>
+</body>
+</html>
