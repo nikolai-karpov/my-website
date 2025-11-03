@@ -27,17 +27,18 @@
 ---
 
 ## 🗂 Структура проекта
-. ├── index.html # Главная страница 
-  ├── contacts.html # Контакты 
-  ├── methodology.html # Методология работы 
-  ├── results.html # Результаты и достижения 
-  ├── cases.html # Обзор кейсов 
-  │ ├── case-construction.html # Кейс: Строительство 
-  │ └── case-procurement.html # Кейс: Закупки 
-  │ ├── header.html # Шапка (динамически подключается) 
-  ├── footer.html # Подвал (динамически подключается) 
-  └── css/ 
-    └── styles.css # Основные стили
+. 
+├── index.html # Главная страница 
+├── contacts.html # Контакты 
+├── methodology.html # Методология работы 
+├── results.html # Результаты и достижения 
+├── cases.html # Обзор кейсов 
+│ ├── case-construction.html # Кейс: Строительство 
+│ └── case-procurement.html # Кейс: Закупки 
+│ ├── header.html # Шапка (динамически подключается) 
+├── footer.html # Подвал (динамически подключается) 
+└── css/ 
+  └── styles.css # Основные стили
 
 ---
 
