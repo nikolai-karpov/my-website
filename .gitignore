@@ -16,3 +16,13 @@ node_modules/
 
 # Логи
 *.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+node_modules/
+dist/
+build/
