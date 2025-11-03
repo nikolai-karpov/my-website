@@ -1,1 +1,217 @@
 
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты в цифрах | [Ваше Имя] - Инструктор по внедрению ИИ</title>
+
+    <!-- Подключаем единый файл стилей -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Дополнительные стили для страницы результатов -->
+    <style>
+        .results-header {
+            text-align: center;
+            padding-bottom: 50px;
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto;
+            gap: 30px;
+        }
+        .dashboard-item {
+            background-color: var(--white-color);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+        }
+        .dashboard-item.full-width {
+            grid-column: 1 / -1; /* Растягиваем на всю ширину */
+            text-align: center;
+        }
+        .dashboard-item h3 {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+        .dashboard-value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        .dashboard-label {
+            font-size: 1rem;
+        }
+        .calculator-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            background-color: var(--light-bg-color);
+            padding: 50px;
+            border-radius: var(--border-radius);
+        }
+        .calculator-form .form-group {
+            margin-bottom: 15px;
+        }
+        .calculator-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .calculator-form input {
+            width: 100%;
+            padding: 10px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+        }
+        .calculator-result {
+            text-align: center;
+        }
+        .calculator-result-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .download-report-section {
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        @media (max-width: 992px) {
+            .dashboard-grid { grid-template-columns: 1fr 1fr; }
+            .calculator-section { grid-template-columns: 1fr; }
+            .calculator-result { margin-top: 30px; }
+        }
+        @media (max-width: 768px) {
+            .dashboard-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+
+    <!-- Иконка для вкладки браузера -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<header id="main-header" class="main-header"></header>
+
+<main>
+    <section>
+        <div class="container">
+            <div class="results-header">
+                <h2>Измеримые Результаты Внедрений</h2>
+                <p style="max-width: 700px; margin: 0 auto;">Данные синтезированы из 42 пилотных проектов в 12 различных отделах. Они наглядно демонстрируют системный, а не случайный эффект от внедрения LLM в рабочие процессы.</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-item">
+                    <h3>Средняя экономия времени</h3>
+                    <span class="dashboard-value">52%</span>
+                    <span class="dashboard-label">На рутинных задачах</span>
+                </div>
+                <div class="dashboard-item">
+                    <h3>Ускорение обработки</h3>
+                    <span class="dashboard-value">x3</span>
+                    <span class="dashboard-label">С 41 мин до 14 мин в среднем</span>
+                </div>
+                <div class="dashboard-item">
+                    <h3>Принятие сотрудниками</h3>
+                    <span class="dashboard-value">90%</span>
+                    <span class="dashboard-label">Переходят от "скепсиса" к "принятию"</span>
+                </div>
+                <div class="dashboard-item full-width">
+                    <h3>Высвобожденные ресурсы (ROI)</h3>
+                    <span class="dashboard-value">2.6 FTE</span>
+                    <span class="dashboard-label">Эквивалент полной занятости в отделе из 10 человек, который можно направить на решение более сложных задач</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Калькулятор ROI -->
+    <section>
+        <div class="container">
+            <h2>Примерьте результат на себя</h2>
+            <div class="calculator-section">
+                <div class="calculator-form">
+                    <h3>Рассчитайте вашу потенциальную экономию</h3>
+                    <div class="form-group">
+                        <label for="employees">Количество сотрудников в процессе:</label>
+                        <input type="number" id="employees" value="5">
+                    </div>
+                    <div class="form-group">
+                        <label for="hours">Часов в неделю на рутинную задачу (на 1 чел):</label>
+                        <input type="number" id="hours" value="10">
+                    </div>
+                    <div class="form-group">
+                        <label for="rate">Средняя часовая ставка (руб.):</label>
+                        <input type="number" id="rate" value="1000">
+                    </div>
+                    <button class="cta-button" onclick="calculateROI()">Рассчитать</button>
+                </div>
+                <div class="calculator-result">
+                    <h3>Потенциальная экономия в год:</h3>
+                    <span class="calculator-result-value" id="result-value">~ 1 352 000 ₽</span>
+                    <p>Или <strong><span id="result-fte">~ 1.3</span> FTE</strong> высвобожденного времени для развития вашего бизнеса.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция скачивания отчета -->
+    <section style="padding-top: 0;">
+        <div class="container download-report-section">
+            <h2>Хотите увидеть полную картину?</h2>
+            <p>Все цифры, представленные на этой странице, взяты из сводного аналитического отчета. Изучите его, чтобы понять методологию, увидеть успешные практики и ключевые барьеры на пути внедрения.</p>
+            <a href="Final_Business_Impact_Report.pdf" class="cta-button" download>Скачать полный аналитический отчет</a>
+        </div>
+    </section>
+</main>
+
+<footer id="main-footer" class="main-footer"></footer>
+
+<!-- Скрипт для подгрузки шапки, подвала и работы калькулятора -->
+<script>
+    // Загрузка компонентов
+    const loadComponent = (url, elementId) => {
+        fetch(url)
+            .then(response => response.ok ? response.text() : Promise.reject(`Error loading ${url}`))
+            .then(data => { document.getElementById(elementId).innerHTML = data; })
+            .catch(error => console.error(`Could not load component:`, error));
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadComponent('header.html', 'main-header');
+        loadComponent('footer.html', 'main-footer');
+    });
+
+    // Логика калькулятора
+    function calculateROI() {
+        const employees = parseFloat(document.getElementById('employees').value) || 0;
+        const hours = parseFloat(document.getElementById('hours').value) || 0;
+        const rate = parseFloat(document.getElementById('rate').value) || 0;
+
+        // Предполагаем 52 рабочих недели в году и среднюю экономию времени в 52%
+        const economy_percentage = 0.52;
+        const weeks_in_year = 52;
+
+        const total_hours_per_week = employees * hours;
+        const saved_hours_per_week = total_hours_per_week * economy_percentage;
+
+        const yearly_savings_rub = saved_hours_per_week * rate * weeks_in_year;
+
+        // Расчет FTE (1 FTE = 40 часов в неделю)
+        const saved_fte = saved_hours_per_week / 40;
+
+        // Форматирование и вывод результата
+        const formatter = new Intl.NumberFormat('ru-RU', { style: 'currency', currency: 'RUB', maximumFractionDigits: 0 });
+        document.getElementById('result-value').textContent = formatter.format(yearly_savings_rub);
+        document.getElementById('result-fte').textContent = saved_fte.toFixed(1);
+    }
+</script>
+</body>
+</html>
