@@ -1,0 +1,18 @@
+# Системные файлы
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Кэш и временные файлы
+Thumbs.db
+.DS_Store?
+ehthumbs_vista.db
+
+# Локальные настройки IDE
+.idea/
+.vscode/
+node_modules/
+
+# Логи
+*.log
