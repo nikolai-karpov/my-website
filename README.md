@@ -44,8 +44,21 @@
 
 ## 🔧 Как работает подгрузка header/footer?
 
-Чтобы избежать дублирования кода, шапка и подвал подгружаются динамически через JavaScript с использованием **Fetch API**:
-javascript fetch('header.html') .then(response => response.text()) .then(data => { document.getElementById('header').innerHTML = data; });
+```javascript
+// Загрузка шапки
+fetch('components/header.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('header').innerHTML = data;
+  });
+
+// Загрузка подвала
+fetch('components/footer.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('footer').innerHTML = data;
+  });
+'''
 
 
 > Это позволяет легко поддерживать единый дизайн по всему сайту без использования серверных технологий.
