@@ -264,16 +264,6 @@
             transform: scale(1.1);
         }
 
-        /* === СКРЫТЫЕ СЛАЙДЫ ДЛЯ НАВИГАЦИИ === */
-        #solution,
-        #case-1-data-analysis,
-        #case-2-pipeline,
-        #tech-stack,
-        #business-results,
-        #final-screen,
-        #creation-process {
-            display: none;
-        }
     </style>
 </head>
 <body class="presentation-page">
@@ -400,11 +390,56 @@
             dot.className = `progress-dot ${index === 0 ? 'active' : ''}`;
             dot.setAttribute('data-slide', index);
             dot.addEventListener('click', () => {
-                // Навигация будет в navigation.js
-                console.log('Navigate to slide:', index);
+                // РАБОЧАЯ НАВИГАЦИЯ
+                goToSlide(index);
             });
             progressContainer.appendChild(dot);
         });
+
+        // Базовая функция навигации
+        function goToSlide(index) {
+            // Скрыть все слайды
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+                slide.style.display = 'none';
+            });
+
+            // Показать целевой слайд
+            if (slides[index]) {
+                slides[index].classList.add('active');
+                slides[index].style.display = 'flex';
+            }
+
+            // Обновить прогресс-индикатор
+            document.querySelectorAll('.progress-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+
+            // Обновить URL hash
+            window.location.hash = slides[index].id;
+        }
+
+        // Обработчики клавиатуры
+        document.addEventListener('keydown', (e) => {
+            const currentIndex = Array.from(slides).findIndex(slide =>
+            slide.classList.contains('active')
+            );
+
+            if (e.key === 'ArrowRight' && currentIndex < slides.length - 1) {
+                goToSlide(currentIndex + 1);
+            } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                goToSlide(currentIndex - 1);
+            }
+        });
+
+        // Инициализация по hash
+        if (window.location.hash) {
+            const targetSlide = document.querySelector(window.location.hash);
+            if (targetSlide) {
+                const index = Array.from(slides).indexOf(targetSlide);
+                goToSlide(index);
+            }
+        }
     });
 </script>
 <!-- Additional interactive elements -->
