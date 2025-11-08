@@ -1,0 +1,423 @@
+/* === БАЗОВЫЕ КОМПОНЕНТЫ === */
+
+/* Карточка */
+.base-card {
+    background: var(--color-background-card);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius-lg);
+    padding: var(--card-padding);
+    box-shadow: var(--card-shadow);
+    transition: var(--motion-default);
+    position: relative;
+    overflow: hidden;
+}
+
+.base-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.base-card:hover::before {
+    transform: scaleX(1);
+}
+
+.base-card--elevated {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
+
+.base-card--outline {
+    border: 2px solid var(--color-border);
+    box-shadow: none;
+    background: transparent;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--button-padding);
+    border-radius: var(--button-border-radius);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: var(--motion-bounce);
+    position: relative;
+    overflow: hidden;
+    font-size: var(--font-size-sm);
+    letter-spacing: var(--letter-spacing-wide);
+    text-transform: uppercase;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left var(--duration-slow) var(--ease-out);
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn--primary {
+    background: var(--gradient-primary);
+    color: var(--color-text-invert);
+    box-shadow: var(--shadow-base);
+}
+
+.btn--primary:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-glow);
+}
+
+.btn--secondary {
+    background: transparent;
+    border: 2px solid var(--color-primary-500);
+    color: var(--color-primary-500);
+}
+
+.btn--secondary:hover {
+    background: var(--color-primary-500);
+    color: var(--color-text-invert);
+    transform: translateY(-2px);
+}
+
+/* Иконки */
+.icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--motion-default);
+}
+
+.icon--sm {
+    width: var(--icon-size-sm);
+    height: var(--icon-size-sm);
+}
+
+.icon--md {
+    width: var(--icon-size-md);
+    height: var(--icon-size-md);
+}
+
+.icon--lg {
+    width: var(--icon-size-lg);
+    height: var(--icon-size-lg);
+    background: var(--neural-glow);
+    border-radius: var(--border-radius-full);
+}
+
+.icon--xl {
+    width: var(--icon-size-xl);
+    height: var(--icon-size-xl);
+    background: var(--neural-glow-intense);
+    border-radius: var(--border-radius-full);
+}
+
+.icon--gradient {
+    background: var(--gradient-primary);
+    color: var(--color-text-invert);
+}
+
+/* Диаграмма методологии */
+.methodology-diagram {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--methodology-block-spacing);
+    position: relative;
+    padding: var(--spacing-xl) 0;
+}
+
+.methodology-block {
+    width: var(--methodology-block-width);
+    min-height: var(--methodology-block-height);
+    background: var(--color-background-card);
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-card);
+    transition: var(--motion-bounce);
+    position: relative;
+    z-index: 2;
+}
+
+.methodology-block::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-primary);
+    border-radius: var(--border-radius-xl);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.methodology-block:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-glow);
+}
+
+.methodology-block:hover::before {
+    opacity: 1;
+}
+
+.methodology-connector {
+    position: absolute;
+    top: 50%;
+    width: var(--methodology-block-spacing);
+    height: 2px;
+    background: var(--gradient-primary);
+    z-index: 1;
+}
+
+.methodology-connector::after {
+    content: '→';
+    position: absolute;
+    right: -10px;
+    top: -8px;
+    color: var(--color-primary-500);
+    font-size: var(--font-size-lg);
+}
+
+/* Панель инструментов */
+.tooltip {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: var(--color-background-dark);
+    color: var(--color-text-invert);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-sm);
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--duration-normal) var(--ease-out);
+    z-index: var(--z-tooltip);
+}
+
+.tooltip::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid var(--color-background-dark);
+}
+
+.methodology-block:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Анимированный пайплайн */
+.pipeline-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--pipeline-step-spacing);
+    position: relative;
+    padding: var(--spacing-xl) 0;
+}
+
+.pipeline-step {
+    width: var(--pipeline-step-width);
+    padding: var(--spacing-md);
+    background: var(--color-background-card);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-card);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    transition: var(--motion-default);
+}
+
+.pipeline-step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: var(--border-radius-lg);
+    opacity: 0;
+    transition: opacity var(--duration-normal) var(--ease-out);
+    z-index: -1;
+}
+
+.pipeline-step.active {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-glow);
+}
+
+.pipeline-step.active::before {
+    opacity: 0.1;
+}
+
+.pipeline-arrow {
+    width: var(--pipeline-step-spacing);
+    height: 2px;
+    background: var(--color-primary-500);
+    position: relative;
+    opacity: 0.6;
+    transition: var(--motion-default);
+}
+
+.pipeline-arrow::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left: 6px solid var(--color-primary-500);
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+
+.pipeline-diagram.animating .pipeline-arrow {
+    background: var(--gradient-primary);
+    opacity: 1;
+}
+
+.pipeline-diagram.animating .pipeline-arrow::after {
+    border-left-color: var(--color-primary-500);
+    animation: arrowPulse 1s var(--ease-out) infinite;
+}
+
+@keyframes arrowPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+/* Модальное окно */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: var(--z-modal);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--duration-slow) var(--ease-out);
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--color-background-card);
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-xl);
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.8) translateY(20px);
+    transition: all var(--duration-slow) var(--ease-bounce);
+    box-shadow: var(--shadow-glow);
+}
+
+.modal.active .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: none;
+    border: none;
+    font-size: var(--font-size-xl);
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: var(--motion-default);
+    width: 32px;
+    height: 32px;
+    border-radius: var(--border-radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    background: var(--color-background-grey);
+    color: var(--color-text-main);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .methodology-diagram {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-xl);
+    }
+
+    .methodology-connector {
+        width: 2px;
+        height: var(--spacing-xl);
+        top: auto;
+    bottom: -var(--spacing-xl);
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .methodology-connector::after {
+        content: '↓';
+        right: auto;
+        left: 50%;
+        top: auto;
+        bottom: -15px;
+        transform: translateX(-50%);
+    }
+
+    .pipeline-diagram {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+
+    .pipeline-arrow {
+        width: 2px;
+        height: var(--spacing-lg);
+    }
+
+    .pipeline-arrow::after {
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 6px solid var(--color-primary-500);
+    }
+}

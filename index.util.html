@@ -42,13 +42,13 @@
     </div>
 </div>
 
-<header id="main-header" class="main-header" data-component="components/header.html">
+<header id="main-header" class="main-header">
     <!-- Fallback навигация -->
     <div class="container">
         <div class="header-container">
             <a href="/" class="logo">Карпов Николай</a>
             <nav>
-                <ul>
+                <ul class="flex gap-3 items-center">
                     <li><a href="/">Главная</a></li>
                     <li><a href="methodology.html">Методология</a></li>
                     <li><a href="cases.html">Кейсы</a></li>
@@ -68,34 +68,34 @@
         </div>
         <div class="container">
             <div class="hero-container">
-                <div class="hero-content">
-                    <div class="hero-badge">
+                <div class="hero-content text-center">
+                    <div class="hero-badge d-inline-block mb-4">
                         <span>🚀 ROI от 1.5 млн руб./год на проект</span>
                     </div>
-                    <h1 class="hero-title">
-                        <span class="title-line">Внедряю <span class="gradient-text">искусственный интеллект</span></span>
-                        <span class="title-line">в бизнес-процессы предприятий</span>
+                    <h1 class="hero-title mb-3">
+                        <span class="title-line d-block">Внедряю <span class="gradient-text">искусственный интеллект</span></span>
+                        <span class="title-line d-block">в бизнес-процессы предприятий</span>
                     </h1>
-                    <p class="hero-subtitle">
+                    <p class="hero-subtitle mb-4">
                         Превращаю операционные "боли" в измеримые KPI через системное внедрение LLM и обучение команд
                     </p>
 
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <span class="stat-number">85%</span>
-                            <span class="stat-label">сокращение рутины</span>
+                    <div class="hero-stats flex justify-center gap-4 mb-4">
+                        <div class="stat text-center">
+                            <span class="stat-number d-block">85%</span>
+                            <span class="stat-label d-block">сокращение рутины</span>
                         </div>
-                        <div class="stat">
-                            <span class="stat-number">95%</span>
-                            <span class="stat-label">adoption rate</span>
+                        <div class="stat text-center">
+                            <span class="stat-number d-block">95%</span>
+                            <span class="stat-label d-block">adoption rate</span>
                         </div>
-                        <div class="stat">
-                            <span class="stat-number">2-4</span>
-                            <span class="stat-label">недели до результата</span>
+                        <div class="stat text-center">
+                            <span class="stat-number d-block">2-4</span>
+                            <span class="stat-label d-block">недели до результата</span>
                         </div>
                     </div>
 
-                    <div class="hero-actions">
+                    <div class="hero-actions flex justify-center gap-2">
                         <a href="contacts.html" class="cta-button primary">
                             <i class="fas fa-brain"></i>
                             Начать бесплатную диагностику
@@ -133,7 +133,7 @@
     <!-- ===== КОМПЕТЕНЦИИ С ИНТЕРАКТИВОМ ===== -->
     <section class="competencies-section">
         <div class="container">
-            <div class="text-center mb-5">
+            <div class="section-header text-center mb-5">
                 <h2>Три ключевые компетенции для успешного внедрения ИИ</h2>
                 <p class="mb-0">Комбинация бизнес-аналитики, технологий и обучения, которая обеспечивает реальные результаты</p>
             </div>
@@ -153,8 +153,8 @@
                             <li><i class="fas fa-check"></i> Картирование процессов</li>
                         </ul>
                         <div class="card__metric">
-                            <span class="card__metric-value">1.5M+</span>
-                            <span class="card__metric-label">руб. средний годовой эффект</span>
+                            <span class="card__metric-value d-block">1.5M+</span>
+                            <span class="card__metric-label d-block">руб. средний годовой эффект</span>
                         </div>
                     </div>
                 </div>
@@ -173,8 +173,8 @@
                             <li><i class="fas fa-check"></i> API-интеграции</li>
                         </ul>
                         <div class="card__metric">
-                            <span class="card__metric-value">1000+</span>
-                            <span class="card__metric-label">стр. за 15 мин. анализа</span>
+                            <span class="card__metric-value d-block">1000+</span>
+                            <span class="card__metric-label d-block">стр. за 15 мин. анализа</span>
                         </div>
                     </div>
                 </div>
@@ -193,8 +193,8 @@
                             <li><i class="fas fa-check"></i> Геймификация</li>
                         </ul>
                         <div class="card__metric">
-                            <span class="card__metric-value">95%</span>
-                            <span class="card__metric-label">adoption rate в пилотах</span>
+                            <span class="card__metric-value d-block">95%</span>
+                            <span class="card__metric-label d-block">adoption rate в пилотах</span>
                         </div>
                     </div>
                 </div>
@@ -207,24 +207,24 @@
         <div class="container">
             <div class="lead-magnet-card">
                 <div class="lead-content">
-                    <div class="lead-badge">
+                    <div class="lead-badge d-inline-flex items-center gap-2 mb-4">
                         <i class="fas fa-gem"></i>
                         Эксклюзивный материал
                     </div>
-                    <h2>Чек-лист готовности бизнеса к внедрению ИИ</h2>
-                    <p class="lead-description">На основе анализа 40+ успешных внедрений в промышленности, строительстве и IT</p>
+                    <h2 class="mb-3">Чек-лист готовности бизнеса к внедрению ИИ</h2>
+                    <p class="lead-description mb-4">На основе анализа 40+ успешных внедрений в промышленности, строительстве и IT</p>
 
-                    <ul class="benefits-list">
-                        <li><i class="fas fa-check-circle"></i> 5 критериев технологической готовности</li>
-                        <li><i class="fas fa-check-circle"></i> Методика расчета потенциального ROI</li>
-                        <li><i class="fas fa-check-circle"></i> Чек-лист организационных изменений</li>
-                        <li><i class="fas fa-check-circle"></i> Шаблон дорожной карты внедрения</li>
+                    <ul class="benefits-list mb-4">
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-primary"></i> 5 критериев технологической готовности</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-primary"></i> Методика расчета потенциального ROI</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-primary"></i> Чек-лист организационных изменений</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-primary"></i> Шаблон дорожной карты внедрения</li>
                     </ul>
 
                     <form class="lead-form" id="checklist-form">
-                        <div class="form-group">
+                        <div class="form-group flex gap-2 mb-3">
                             <input type="email" placeholder="Ваш корпоративный email" required>
-                            <button type="submit" class="form-button">
+                            <button type="submit" class="form-button flex items-center gap-2">
                                 <i class="fas fa-download"></i>
                                 Получить чек-лист
                             </button>
@@ -233,7 +233,7 @@
                     </form>
                 </div>
 
-                <div class="lead-visual">
+                <div class="lead-visual flex items-center justify-center">
                     <div class="document-preview">
                         <div class="page page-1"></div>
                         <div class="page page-2"></div>
@@ -247,9 +247,9 @@
     <!-- ===== ПРЕВЬЮ КЕЙСОВ ===== -->
     <section id="cases" class="cases-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header text-center mb-5">
                 <h2>Реализованные проекты</h2>
-                <p>Кейсы системного внедрения ИИ в операционные процессы предприятий</p>
+                <p class="mb-0">Кейсы системного внедрения ИИ в операционные процессы предприятий</p>
             </div>
 
             <div class="cases-grid">
@@ -259,22 +259,22 @@
                         <div class="case-badge">ROI 1.2M руб./год</div>
                     </div>
                     <div class="case-content">
-                        <h3>AI-ассистент строительного технадзора</h3>
-                        <p class="case-client">Крупный девелопер • 5 инженеров</p>
-                        <p class="case-description">Telegram-бот с YandexGPT для автоматизации полевой отчетности</p>
+                        <h3 class="mb-2">AI-ассистент строительного технадзора</h3>
+                        <p class="case-client text-primary mb-2">Крупный девелопер • 5 инженеров</p>
+                        <p class="case-description mb-4">Telegram-бот с YandexGPT для автоматизации полевой отчетности</p>
 
-                        <div class="case-results">
-                            <div class="result">
-                                <span class="result-number">85%</span>
-                                <span class="result-label">сокращение времени отчетов</span>
+                        <div class="case-results flex gap-4 mb-4">
+                            <div class="result text-center">
+                                <span class="result-number d-block">85%</span>
+                                <span class="result-label d-block">сокращение времени отчетов</span>
                             </div>
-                            <div class="result">
-                                <span class="result-number">48ч → 2ч</span>
-                                <span class="result-label">информирование о проблемах</span>
+                            <div class="result text-center">
+                                <span class="result-number d-block">48ч → 2ч</span>
+                                <span class="result-label d-block">информирование о проблемах</span>
                             </div>
                         </div>
 
-                        <a href="cases/case-construction.html" class="case-link">
+                        <a href="cases/case-construction.html" class="case-link flex items-center gap-2">
                             Изучить кейс
                             <i class="fas fa-arrow-right"></i>
                         </a>
@@ -287,22 +287,22 @@
                         <div class="case-badge">ROI 2.8M руб./год</div>
                     </div>
                     <div class="case-content">
-                        <h3>Автоматизация анализа тендерной документации</h3>
-                        <p class="case-client">Проектный институт • 3 аналитика</p>
-                        <p class="case-description">DeepSeek-система для обработки 500+ стр. технических заданий</p>
+                        <h3 class="mb-2">Автоматизация анализа тендерной документации</h3>
+                        <p class="case-client text-primary mb-2">Проектный институт • 3 аналитика</p>
+                        <p class="case-description mb-4">DeepSeek-система для обработки 500+ стр. технических заданий</p>
 
-                        <div class="case-results">
-                            <div class="result">
-                                <span class="result-number">90%</span>
-                                <span class="result-label">ускорение анализа</span>
+                        <div class="case-results flex gap-4 mb-4">
+                            <div class="result text-center">
+                                <span class="result-number d-block">90%</span>
+                                <span class="result-label d-block">ускорение анализа</span>
                             </div>
-                            <div class="result">
-                                <span class="result-number">45%</span>
-                                <span class="result-label">рост обрабатываемых тендеров</span>
+                            <div class="result text-center">
+                                <span class="result-number d-block">45%</span>
+                                <span class="result-label d-block">рост обрабатываемых тендеров</span>
                             </div>
                         </div>
 
-                        <a href="cases/case-procurement.html" class="case-link">
+                        <a href="cases/case-procurement.html" class="case-link flex items-center gap-2">
                             Изучить кейс
                             <i class="fas fa-arrow-right"></i>
                         </a>
@@ -310,8 +310,8 @@
                 </article>
             </div>
 
-            <div class="cases-cta">
-                <a href="cases.html" class="view-all-button">
+            <div class="cases-cta text-center mt-5">
+                <a href="cases.html" class="view-all-button flex items-center gap-2 justify-center">
                     <i class="fas fa-briefcase"></i>
                     Смотреть все кейсы
                 </a>
@@ -323,36 +323,36 @@
     <section class="conversion-section">
         <div class="container">
             <div class="conversion-card">
-                <div class="conversion-content">
-                    <h2>Начните с бесплатной диагностики ваших процессов</h2>
-                    <p class="conversion-subtitle">За 60 минут видеозвонка вы получите:</p>
+                <div class="conversion-content text-center">
+                    <h2 class="text-white mb-3">Начните с бесплатной диагностики ваших процессов</h2>
+                    <p class="conversion-subtitle mb-4">За 60 минут видеозвонка вы получите:</p>
 
-                    <div class="conversion-benefits">
-                        <div class="benefit">
+                    <div class="conversion-benefits mb-4">
+                        <div class="benefit flex items-center gap-3 text-left">
                             <i class="fas fa-bullseye"></i>
                             <span>Выявление 1-2 ключевых точек для внедрения ИИ</span>
                         </div>
-                        <div class="benefit">
+                        <div class="benefit flex items-center gap-3 text-left">
                             <i class="fas fa-calculator"></i>
                             <span>Расчет потенциального экономического эффекта</span>
                         </div>
-                        <div class="benefit">
+                        <div class="benefit flex items-center gap-3 text-left">
                             <i class="fas fa-road"></i>
                             <span>План-прототип дорожной карты внедрения</span>
                         </div>
                     </div>
 
                     <div class="conversion-actions">
-                        <a href="contacts.html" class="cta-button primary large">
+                        <a href="contacts.html" class="cta-button primary large flex items-center gap-2 justify-center">
                             <i class="fas fa-calendar-check"></i>
                             Забронировать диагностику
                         </a>
-                        <div class="conversion-meta">
-                            <div class="meta-item">
+                        <div class="conversion-meta flex justify-center gap-4 mt-3">
+                            <div class="meta-item flex items-center gap-2">
                                 <i class="fas fa-clock"></i>
                                 <span>60 минут • Бесплатно</span>
                             </div>
-                            <div class="meta-item">
+                            <div class="meta-item flex items-center gap-2">
                                 <i class="fas fa-user-tie"></i>
                                 <span>Для руководителей отделов</span>
                             </div>
@@ -364,21 +364,21 @@
     </section>
 </main>
 
-<footer id="main-footer" class="main-footer" data-component="components/footer.html">
+<footer id="main-footer" class="main-footer">
     <!-- Fallback футер -->
     <div class="container">
         <div class="footer-content">
             <div class="footer-brand">
-                <h3>Карпов Николай</h3>
-                <p>Инструктор по внедрению ИИ в бизнес-процессы</p>
-                <div class="social-links">
+                <h3 class="mb-2">Карпов Николай</h3>
+                <p class="mb-3">Инструктор по внедрению ИИ в бизнес-процессы</p>
+                <div class="social-links flex gap-2">
                     <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
                     <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
                     <a href="#" class="social-link"><i class="fab fa-github"></i></a>
                 </div>
             </div>
             <div class="footer-links">
-                <h4>Навигация</h4>
+                <h4 class="footer-heading">Навигация</h4>
                 <ul>
                     <li><a href="/">Главная</a></li>
                     <li><a href="methodology.html">Методология</a></li>
@@ -387,18 +387,18 @@
                 </ul>
             </div>
             <div class="footer-contact">
-                <h4>Контакты</h4>
-                <div class="contact-item">
+                <h4 class="footer-heading">Контакты</h4>
+                <div class="contact-item flex items-start gap-2">
                     <i class="fas fa-envelope"></i>
                     <a href="mailto:nikolai@pir-s.ru">nikolai@pir-s.ru</a>
                 </div>
-                <div class="contact-item">
+                <div class="contact-item flex items-start gap-2">
                     <i class="fab fa-telegram"></i>
                     <a href="https://t.me/@Nikolai_999">@Nikolai_999</a>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
+        <div class="footer-bottom flex justify-between items-center">
             <div class="copyright">© 2024 Карпов Николай. Все права защищены.</div>
         </div>
     </div>

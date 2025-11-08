@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Implementation Playbook - Николай Карпов</title>
+
+    <!-- Инлайновые критические стили -->
+    <style>
+        /* === DESIGN TOKENS === */
+        :root {
+        /* Цветовая схема */
+            --color-primary-100: #e3f2fd;
+            --color-primary-500: #4A90E2;
+            --color-primary-700: #357ABD;
+            --color-primary-900: #0d47a1;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --color-background-light: #ffffff;
+            --color-background-grey: #f8f9fa;
+            --color-background-dark: #0f172a;
+            --color-text-main: #34495e;
+            --color-text-muted: #64748b;
+            --color-text-invert: #ffffff;
+            --color-border: #e0e0e0;
+            --shadow-base: 0 10px 40px rgba(0,0,0,.08);
+            --shadow-hover: 0 20px 60px rgba(0,0,0,.12);
+            --neural-glow: rgba(74,144,226,.10);
+
+            /* Типографика */
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 2rem;
+            --font-size-4xl: 3rem;
+            --font-weight-normal: 400;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            --line-height: 1.6;
+
+            /* Отступы и сетка */
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+            --container-width: 1140px;
+            --border-radius: 8px;
+            --border-radius-lg: 16px;
+
+            /* Анимации */
+            --ease-default: cubic-bezier(.25,.46,.45,.94);
+            --duration-default: .4s;
+            --motion-default: all .3s var(--ease-default);
+        }
+
+        /* === БАЗОВЫЕ СТИЛИ === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-family);
+            font-size: var(--font-size-base);
+            line-height: var(--line-height);
+            color: var(--color-text-main);
+            background: var(--color-background-light);
+            overflow-x: hidden;
+        }
+
+        .presentation-page {
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        /* === СТИЛИ СЛАЙДОВ === */
+        #presentation-container {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.8s var(--ease-default);
+            padding: var(--spacing-xl);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .slide-content {
+            max-width: var(--container-width);
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* === ТИТУЛЬНЫЙ СЛАЙД === */
+        #title-screen {
+            background: var(--gradient-primary);
+            color: var(--color-text-invert);
+            text-align: center;
+        }
+
+        .title-header {
+            font-size: var(--font-size-4xl);
+            font-weight: var(--font-weight-bold);
+            line-height: 1.2;
+            margin-bottom: var(--spacing-lg);
+            text-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .title-subheader {
+            font-size: var(--font-size-xl);
+            font-weight: var(--font-weight-normal);
+            opacity: 0.9;
+            margin-bottom: var(--spacing-xl);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .title-concept {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: var(--spacing-md);
+            opacity: 0.8;
+        }
+
+        .author-info {
+            position: absolute;
+            bottom: var(--spacing-xl);
+            right: var(--spacing-xl);
+            font-size: var(--font-size-sm);
+            opacity: 0.8;
+        }
+
+        /* === СЛАЙД ПРОБЛЕМЫ === */
+        #problem {
+            background: var(--color-background-grey);
+        }
+
+        .problem-header {
+            font-size: var(--font-size-3xl);
+            font-weight: var(--font-weight-bold);
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            color: var(--color-text-main);
+        }
+
+        .problem-subheader {
+            font-size: var(--font-size-xl);
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            color: var(--color-text-muted);
+        }
+
+        .problem-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+        }
+
+        .problem-column {
+            background: var(--color-background-light);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-base);
+            text-align: center;
+            transition: var(--motion-default);
+        }
+
+        .problem-column:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .column-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--neural-glow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-md);
+            font-size: var(--font-size-xl);
+        }
+
+        .column-title {
+            font-size: var(--font-size-lg);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-primary-700);
+        }
+
+        .problem-takeaway {
+            text-align: center;
+            margin-top: var(--spacing-xl);
+            padding: var(--spacing-lg);
+            background: var(--color-background-light);
+            border-radius: var(--border-radius-lg);
+            border-left: 4px solid var(--color-primary-500);
+            font-weight: var(--font-weight-semibold);
+        }
+
+        /* === ИНДИКАТОР ПРОГРЕССА === */
+        .progress-indicator {
+            position: fixed;
+            top: 50%;
+            right: var(--spacing-md);
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+
+        .progress-dot {
+            display: block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--color-text-muted);
+            margin: var(--spacing-sm) 0;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-default);
+            opacity: 0.5;
+        }
+
+        .progress-dot.active {
+            opacity: 1;
+            background: var(--color-primary-500);
+            transform: scale(1.2);
+        }
+
+        .progress-dot:hover {
+            opacity: 0.8;
+            transform: scale(1.1);
+        }
+
+        /* === СКРЫТЫЕ СЛАЙДЫ ДЛЯ НАВИГАЦИИ === */
+        #solution,
+        #case-1-data-analysis,
+        #case-2-pipeline,
+        #tech-stack,
+        #business-results,
+        #final-screen,
+        #creation-process {
+            display: none;
+        }
+    </style>
+</head>
+<body class="presentation-page">
+<!-- Индикатор прогресса -->
+<nav class="progress-indicator" id="progress-indicator">
+    <!-- Заполнится JavaScript -->
+</nav>
+
+<main id="presentation-container">
+    <!-- Слайд 1: Титульный экран -->
+    <section id="title-screen" class="slide active">
+        <div class="slide-content">
+            <div class="title-concept">Стратегия, а не просто технология</div>
+            <h1 class="title-header">Руководство по внедрению искусственного интеллекта: От стратегии до измеримого результата</h1>
+            <p class="title-subheader">Готовая методология внедрения ИИ в сложные бизнес-процессы на примере проектной организации.</p>
+            <!-- Визуальный элемент будет добавлен позже -->
+            <div class="visual-placeholder" style="height: 200px; background: rgba(255,255,255,0.1); border-radius: var(--border-radius-lg); margin: var(--spacing-xl) 0;"></div>
+        </div>
+        <div class="author-info">Николай Карпов | Руководитель по внедрению AI</div>
+    </section>
+
+    <!-- Слайд 2: Проблема -->
+    <section id="problem" class="slide">
+        <div class="slide-content">
+            <div class="title-concept">От хаоса к системе</div>
+            <h2 class="problem-header">Проблема: AI — это не волшебная кнопка</h2>
+            <p class="problem-subheader">Почему 9 из 10 инициатив по внедрению ИИ не приносят результата?</p>
+
+            <div class="problem-columns">
+                <div class="problem-column">
+                    <div class="column-icon">📊</div>
+                    <h3 class="column-title">Неясные цели</h3>
+                    <p>Внедряем «потому что модно», а не для решения конкретной бизнес-боли.</p>
+                </div>
+                <div class="problem-column">
+                    <div class="column-icon">🗑️</div>
+                    <h3 class="column-title">Плохие данные</h3>
+                    <p>Подаем на вход ИИ «мусор» — получаем «мусор» на выходе.</p>
+                </div>
+                <div class="problem-column">
+                    <div class="column-icon">🔗</div>
+                    <h3 class="column-title">Отсутствие интеграции</h3>
+                    <p>Новый инструмент не встраивается в реальные рабочие процессы сотрудников.</p>
+                </div>
+            </div>
+
+            <div class="problem-takeaway">
+                Мой подход превращает этот хаос в управляемый и предсказуемый процесс.
+            </div>
+        </div>
+    </section>
+
+    <!-- Остальные слайды (пока скрыты) -->
+    <section id="solution" class="slide">
+        <div class="slide-content">
+            <h2>Решение: Масштабируемая система внедрения</h2>
+            <!-- Диаграмма методологии будет здесь -->
+        </div>
+    </section>
+
+    <section id="case-1-data-analysis" class="slide">
+        <div class="slide-content">
+            <h2>Кейс №1: От данных к решениям</h2>
+            <!-- Интерактивная схема будет здесь -->
+        </div>
+    </section>
+
+    <section id="case-2-pipeline" class="slide">
+        <div class="slide-content">
+            <h2>Кейс №2: От идеи к системе</h2>
+            <!-- Анимированный пайплайн будет здесь -->
+        </div>
+    </section>
+
+    <section id="tech-stack" class="slide">
+        <div class="slide-content">
+            <h2>Инструментарий</h2>
+            <!-- Логотипы инструментов будут здесь -->
+        </div>
+    </section>
+
+    <section id="business-results" class="slide">
+        <div class="slide-content">
+            <h2>Результат для бизнеса</h2>
+            <!-- Ключевые результаты будут здесь -->
+        </div>
+    </section>
+
+    <section id="final-screen" class="slide">
+        <div class="slide-content">
+            <h2>Готов к внедрению</h2>
+            <!-- Контакты и призыв к действию -->
+        </div>
+    </section>
+
+    <section id="creation-process" class="slide">
+        <div class="slide-content">
+            <h2>Мета-доказательство</h2>
+            <!-- Процесс создания презентации -->
+        </div>
+    </section>
+</main>
+
+<!-- Отложенная загрузка стилей -->
+<link rel="stylesheet" href="assets/css/variables.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="assets/css/components.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="assets/css/presentation.css" media="print" onload="this.media='all'">
+
+<!-- Скрипты -->
+<script src="assets/js/navigation.js"></script>
+<script src="assets/js/interactions.js"></script>
+<script src="assets/js/animations.js"></script>
+
+<!-- Инлайновый скрипт для базовой функциональности -->
+<script>
+    // Базовая инициализация прогресс-индикатора
+    document.addEventListener('DOMContentLoaded', function() {
+        const slides = document.querySelectorAll('.slide');
+        const progressContainer = document.getElementById('progress-indicator');
+
+        // Создаем точки навигации
+        slides.forEach((slide, index) => {
+            const dot = document.createElement('div');
+            dot.className = `progress-dot ${index === 0 ? 'active' : ''}`;
+            dot.setAttribute('data-slide', index);
+            dot.addEventListener('click', () => {
+                // Навигация будет в navigation.js
+                console.log('Navigate to slide:', index);
+            });
+            progressContainer.appendChild(dot);
+        });
+    });
+</script>
+<!-- Additional interactive elements -->
+<script>
+    // Enhanced initialization
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add loading state management
+        document.body.classList.add('loaded');
+
+        // Add performance monitoring
+        if ('performance' in window) {
+            const navStart = performance.getEntriesByType('navigation')[0];
+            if (navStart) {
+                console.log('Page loaded in:', navStart.loadEventEnd - navStart.navigationStart, 'ms');
+            }
+        }
+
+        // Service Worker registration for offline support (optional)
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/present_course/sw.js')
+                .then(registration => console.log('SW registered'))
+                .catch(error => console.log('SW registration failed'));
+        }
+    });
+
+    // Error boundary for presentation
+    window.addEventListener('error', function(e) {
+        console.error('Presentation error:', e.error);
+        // Graceful degradation - ensure navigation still works
+        if (window.presentationNavigation) {
+            window.presentationNavigation.initKeyboardNavigation();
+        }
+    });
+
+    // Handle page visibility changes
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            // Pause intensive animations
+            document.body.classList.add('page-hidden');
+        } else {
+            // Resume animations
+            document.body.classList.remove('page-hidden');
+        }
+    });
+</script>
+
+<!-- Progressive Web App meta tags -->
+<link rel="manifest" href="assets/manifest.json">
+<meta name="theme-color" content="#4A90E2">
+<meta name="description" content="AI Implementation Playbook - Practical methodology for implementing AI in business processes">
+
+<!-- Preload critical resources -->
+<link rel="preload" href="assets/css/variables.css" as="style">
+<link rel="preload" href="assets/css/components.css" as="style">
+<link rel="preload" href="assets/js/navigation.js" as="script">
+</body>
+</html>
+</body>
+</html>

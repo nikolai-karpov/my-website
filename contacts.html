@@ -3,272 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты | [Ваше Имя] - Инструктор по внедрению ИИ</title>
+    <title>Контакты | Карпов Николай - Инструктор по внедрению ИИ</title>
 
     <!-- Подключаем единый файл стилей -->
-    <link rel="stylesheet" href="css/styles.css">
-
-    <!-- Дополнительные стили для страницы контактов -->
-    <style>
-        .contact-hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #2c5aa0 100%);
-            color: white;
-            text-align: center;
-            padding: 80px 0 60px;
-        }
-        .contact-hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-        }
-        .contact-hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto;
-            opacity: 0.9;
-        }
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 60px;
-            align-items: start;
-            margin: 60px 0;
-        }
-        .contact-info h2 {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        .contact-info h2:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--primary-color);
-        }
-        .contact-methods {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 30px;
-        }
-        .contact-methods li {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 25px;
-            padding: 20px;
-            background: var(--white-color);
-            border-radius: var(--border-radius);
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-        .contact-methods li:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--light-bg-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-        .contact-details {
-            flex: 1;
-        }
-        .contact-details strong {
-            display: block;
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            color: var(--dark-color);
-        }
-        .contact-details a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-        .contact-details a:hover {
-            color: #2c5aa0;
-        }
-        .contact-details p {
-            margin: 5px 0 0;
-            color: var(--text-color);
-            font-size: 0.95rem;
-        }
-        .availability {
-            background: var(--light-bg-color);
-            padding: 25px;
-            border-radius: var(--border-radius);
-            margin-top: 30px;
-        }
-        .availability h3 {
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-        .availability p {
-            margin: 0;
-            color: var(--text-color);
-        }
-        .contact-form {
-            background: var(--white-color);
-            padding: 40px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-        .contact-form h2 {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        .contact-form h2:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--primary-color);
-        }
-        .form-group {
-            margin-bottom: 25px;
-        }
-        .contact-form label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--dark-color);
-        }
-        .contact-form input[type="text"],
-        .contact-form input[type="email"],
-        .contact-form input[type="tel"],
-        .contact-form select,
-        .contact-form textarea {
-            width: 100%;
-            padding: 14px;
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            font-size: 1rem;
-            font-family: var(--font-family);
-            transition: all 0.3s ease;
-            box-sizing: border-box;
-        }
-        .contact-form input:focus,
-        .contact-form select:focus,
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(44, 90, 160, 0.1);
-        }
-        .contact-form textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        .submit-btn {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-        .submit-btn:hover {
-            background: #2c5aa0;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(44, 90, 160, 0.2);
-        }
-        .form-note {
-            text-align: center;
-            margin-top: 15px;
-            font-size: 0.9rem;
-            color: var(--text-color);
-        }
-        .contact-field {
-            display: none;
-            animation: fadeIn 0.3s ease;
-        }
-        .contact-field.active {
-            display: block;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .faq-section {
-            background: var(--light-bg-color);
-            padding: 60px 0;
-            margin-top: 60px;
-        }
-        .faq-section h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2rem;
-        }
-        .faq-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-        .faq-item {
-            background: var(--white-color);
-            padding: 25px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-        }
-        .faq-item h3 {
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-            color: var(--dark-color);
-        }
-        .faq-item p {
-            margin: 0;
-            color: var(--text-color);
-        }
-        @media (max-width: 992px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-        }
-        @media (max-width: 768px) {
-            .contact-hero {
-                padding: 60px 0 40px;
-            }
-            .contact-hero h1 {
-                font-size: 2.2rem;
-            }
-            .contact-form {
-                padding: 25px;
-            }
-            .contact-methods li {
-                flex-direction: column;
-                text-align: center;
-            }
-            .contact-icon {
-                margin-right: 0;
-                margin-bottom: 15px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Иконка для вкладки браузера -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
 
-<header id="main-header" class="main-header"></header>
+<header id="main-header" data-component="components/header.html">
+    <div class="container header-container">
+        <a href="/" class="logo">Карпов Николай</a>
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="methodology.html">Методология</a></li>
+                <li><a href="cases.html">Кейсы</a></li>
+                <li><a href="results.html">Результаты</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <button class="hamburger" aria-label="Меню" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <div class="mobile-overlay"></div>
+    </div>
+</header>
 
 <main>
     <!-- Герой-секция -->
@@ -420,17 +185,87 @@
     </section>
 </main>
 
-<footer id="main-footer" class="main-footer"></footer>
+<footer id="main-footer" data-component="components/footer.html">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Карпов Николай</h3>
+                <p>Специалист по внедрению AI-решений в бизнес-процессы. Помогаю компаниям автоматизировать рутину и повышать эффективность с помощью искусственного интеллекта.</p>
+                <div class="social-links">
+                    <a href="https://t.me/karpov_ai" class="social-link" aria-label="Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="mailto:karpov@example.com" class="social-link" aria-label="Email">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">Обо мне</a></li>
+                    <li><a href="cases.html">Кейсы</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Услуги</h4>
+                <ul>
+                    <li><a href="ai-consulting.html">AI-консалтинг</a></li>
+                    <li><a href="process-automation.html">Автоматизация процессов</a></li>
+                    <li><a href="team-training.html">Обучение команд</a></li>
+                    <li><a href="custom-solutions.html">Кастомные решения</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Контакты</h4>
+                <div class="contact-item">
+                    <i class="far fa-envelope"></i>
+                    <a href="mailto:karpov@example.com">karpov@example.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-telegram"></i>
+                    <a href="https://t.me/karpov_ai">@karpov_ai</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="#">LinkedIn профиль</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">&copy; 2025, Карпов Николай. Все права защищены.</div>
+            <div class="footer-nav">
+                <a href="privacy.html">Политика конфиденциальности</a>
+                <a href="terms.html">Условия использования</a>
+            </div>
+            <a href="#" class="back-to-top" aria-label="Наверх">
+                <i class="fas fa-chevron-up"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="mobile-footer-menu">
+        <nav class="mobile-nav">
+            <a href="index.html" class="mobile-nav-item"><i class="fas fa-home"></i><span>Главная</span></a>
+            <a href="cases.html" class="mobile-nav-item"><i class="fas fa-briefcase"></i><span>Кейсы</span></a>
+            <a href="services.html" class="mobile-nav-item"><i class="fas fa-cogs"></i><span>Услуги</span></a>
+            <a href="contacts.html" class="mobile-nav-item"><i class="fas fa-phone-alt"></i><span>Контакты</span></a>
+        </nav>
+    </div>
+</footer>
 
 <!-- Скрипт для подгрузки шапки и подвала -->
 <script>
-    const loadComponent = (url, elementId) => {
-        fetch(url)
-            .then(response => response.ok ? response.text() : Promise.reject(`Error loading ${url}`))
-            .then(data => { document.getElementById(elementId).innerHTML = data; })
-            .catch(error => console.error(`Could not load component:`, error));
-    };
-
     // Скрипт для динамического отображения полей контактов
     document.addEventListener('DOMContentLoaded', function() {
         const contactPreference = document.getElementById('contact-preference');
@@ -512,10 +347,9 @@
                 e.preventDefault();
             }
         });
-
-        loadComponent('header.html', 'main-header');
-        loadComponent('footer.html', 'main-footer');
     });
 </script>
+<!-- Единый скрипт для шапки/подвала -->
+<script src="/js/components.js" defer></script>
 </body>
 </html>

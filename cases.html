@@ -3,77 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кейс: AI-ассистент для технадзора | [Ваше Имя]</title>
+    <title>Кейс: AI-ассистент для технадзора | Карпов Николай</title>
 
     <!-- Подключаем единый файл стилей -->
     <link rel="stylesheet" href="css/styles.css">
-
-    <!-- Дополнительные стили для страницы кейса (идентичны для всех кейсов) -->
-    <style>
-        .case-header { background-color: var(--light-bg-color); text-align: center; padding: 60px 0; }
-        .case-header h1 { font-size: 2.8rem; margin-bottom: 10px; }
-        .case-header .subtitle { font-size: 1.2rem; color: var(--text-color); max-width: 700px; margin: 0 auto; }
-        .key-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin: 60px 0; text-align: center; }
-        .metric-item { background-color: var(--white-color); padding: 25px; border-radius: var(--border-radius); border: 1px solid var(--border-color); }
-        .metric-value { font-size: 2.5rem; font-weight: 700; color: var(--primary-color); display: block; }
-        .metric-label { font-size: 1rem; color: var(--text-color); }
-        .case-section { display: grid; grid-template-columns: 300px 1fr; gap: 50px; align-items: start; margin-bottom: 50px; }
-        .case-section h3 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
-        .proofs-section { background-color: var(--light-bg-color); border-radius: var(--border-radius); padding: 40px; }
-        .proof-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .proof-item { display: block; background-color: var(--white-color); padding: 20px; border: 1px solid var(--border-color); border-radius: var(--border-radius); text-decoration: none; color: var(--dark-color); transition: all 0.3s ease; }
-        .proof-item:hover { border-color: var(--primary-color); transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .proof-item .file-type { font-weight: bold; color: var(--primary-color); }
-        .proof-item .file-description { font-size: 0.9rem; color: var(--text-color); }
-
-        /* Стили для визуализации процесса */
-        .process-flow {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .process-step {
-            background: var(--white-color);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            padding: 20px;
-            text-align: center;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        .process-step:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin: 0 auto 15px;
-            font-size: 1.2rem;
-        }
-
-        @media (max-width: 768px) {
-            .case-section { grid-template-columns: 1fr; gap: 20px; }
-            .case-section h3 { justify-content: center; }
-            .proof-list { grid-template-columns: 1fr; }
-            .process-flow { grid-template-columns: 1fr; }
-        }
-    </style>
-
     <!-- Иконка для вкладки браузера -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
 
-<header id="main-header" class="main-header"></header>
+<header id="main-header" data-component="components/header.html">
+    <div class="container header-container">
+        <a href="/" class="logo">Карпов Николай</a>
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="methodology.html">Методология</a></li>
+                <li><a href="cases.html">Кейсы</a></li>
+                <li><a href="results.html">Результаты</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <button class="hamburger" aria-label="Меню" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <div class="mobile-overlay"></div>
+    </div>
+</header>
 
 <main>
     <section class="case-header">
@@ -188,20 +146,80 @@
     </section>
 </main>
 
-<footer id="main-footer" class="main-footer"></footer>
+<footer id="main-footer" data-component="components/footer.html">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Карпов Николай</h3>
+                <p>Специалист по внедрению AI-решений в бизнес-процессы. Помогаю компаниям автоматизировать рутину и повышать эффективность с помощью искусственного интеллекта.</p>
+                <div class="social-links">
+                    <a href="https://t.me/karpov_ai" class="social-link" aria-label="Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="mailto:karpov@example.com" class="social-link" aria-label="Email">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">Обо мне</a></li>
+                    <li><a href="cases.html">Кейсы</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Услуги</h4>
+                <ul>
+                    <li><a href="ai-consulting.html">AI-консалтинг</a></li>
+                    <li><a href="process-automation.html">Автоматизация процессов</a></li>
+                    <li><a href="team-training.html">Обучение команд</a></li>
+                    <li><a href="custom-solutions.html">Кастомные решения</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Контакты</h4>
+                <div class="contact-item">
+                    <i class="far fa-envelope"></i>
+                    <a href="mailto:karpov@example.com">karpov@example.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-telegram"></i>
+                    <a href="https://t.me/karpov_ai">@karpov_ai</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="#">LinkedIn профиль</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">&copy; 2025, Карпов Николай. Все права защищены.</div>
+            <div class="footer-nav">
+                <a href="privacy.html">Политика конфиденциальности</a>
+                <a href="terms.html">Условия использования</a>
+            </div>
+            <a href="#" class="back-to-top" aria-label="Наверх">
+                <i class="fas fa-chevron-up"></i>
+            </a>
+        </div>
+    </div>
+    <div class="mobile-footer-menu">
+        <nav class="mobile-nav">
+            <a href="index.html" class="mobile-nav-item"><i class="fas fa-home"></i><span>Главная</span></a>
+            <a href="cases.html" class="mobile-nav-item"><i class="fas fa-briefcase"></i><span>Кейсы</span></a>
+            <a href="services.html" class="mobile-nav-item"><i class="fas fa-cogs"></i><span>Услуги</span></a>
+            <a href="contacts.html" class="mobile-nav-item"><i class="fas fa-phone-alt"></i><span>Контакты</span></a>
+        </nav>
+    </div>
+</footer>
 
-<script>
-    const loadComponent = (url, elementId) => {
-        fetch(url)
-            .then(response => response.ok ? response.text() : Promise.reject(`Error loading ${url}`))
-            .then(data => { document.getElementById(elementId).innerHTML = data; })
-            .catch(error => console.error(`Could not load component:`, error));
-    };
-
-    document.addEventListener('DOMContentLoaded', () => {
-        loadComponent('header.html', 'main-header');
-        loadComponent('footer.html', 'main-footer');
-    });
-</script>
+<script src="js/components.js" defer></script>
 </body>
 </html>

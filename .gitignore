@@ -1,3 +1,5 @@
+.stylelintrc.json
+
 # Системные файлы
 .DS_Store
 ._*
@@ -13,17 +15,12 @@ ehthumbs_vista.db
 .idea/
 .vscode/
 node_modules/
+*.swp
+*.swo
 
 # Логи
 *.log
 
-# IDE
-.idea/
-.vscode/
-*.swp
-*.swo
-.DS_Store
-node_modules/
 dist/
 build/
 
@@ -33,4 +30,6 @@ build/
 # Резервные копии
 *~
 *.bak
-*.backup
+*.backup!
+
+!/css/устаревшие/

@@ -108,7 +108,7 @@
 </head>
 <body>
 
-<header id="main-header" class="main-header"></header>
+<header id="main-header" data-component="components/header.html"></header>
 
 <main>
     <section class="case-header">
@@ -190,20 +190,8 @@
     </section>
 </main>
 
-<footer id="main-footer" class="main-footer"></footer>
+<footer id="main-footer" data-component="components/footer.html"></footer>
 
-<script>
-    const loadComponent = (url, elementId) => {
-        fetch(url)
-            .then(response => response.ok ? response.text() : Promise.reject(`Error loading ${url}`))
-            .then(data => { document.getElementById(elementId).innerHTML = data; })
-            .catch(error => console.error(`Could not load component:`, error));
-    };
-
-    document.addEventListener('DOMContentLoaded', () => {
-        loadComponent('header.html', 'main-header');
-        loadComponent('footer.html', 'main-footer');
-    });
-</script>
+<script src="/js/components.js" defer></script>
 </body>
 </html>
