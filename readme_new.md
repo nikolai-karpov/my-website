@@ -9,7 +9,8 @@
 
 ## 🗂 Структура проекта
 
-```
+
+```text
 .
 ├── index.html
 ├── site-pages/
