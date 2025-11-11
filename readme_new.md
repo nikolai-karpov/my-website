@@ -77,7 +77,13 @@
     ├── screenshots/                # 📸 Скриншоты проектов
     └── backgrounds/                # 🎨 Фоновые изображения
 ```
+## 📍 Правила именования:
 
+- `_имя.css` - файлы с `_` в начале это ЧАСТИЧНЫЕ файлы (подключаются только через импорт в main.css)
+- `site-pages/` - ТОЛЬКО HTML-страницы (кроме главной index.html)
+- `site-components/` - ТОЛЬКО HTML-компоненты (header, footer)
+- `assets/` - ТОЛЬКО ресурсы (стили, скрипты)
+- `images/` - ТОЛЬКО изображения
 ---
 
 ## 🛠 Технологии
@@ -114,6 +120,16 @@
 ```
 
 ---
+
+## 🔗 Подключение в HTML:
+
+```html
+<!-- В index.html (корень) -->
+<link rel="stylesheet" href="assets/css/main.css">
+
+<!-- В site-pages/*.html -->
+<link rel="stylesheet" href="../assets/css/main.css">
+```
 
 ## 🔄 Загрузка компонентов
 
