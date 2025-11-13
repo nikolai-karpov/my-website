@@ -1,0 +1,22 @@
+@import url('base/_reset.css');
+@import url('base/_variables.css');
+@import url('base/_typography.css');
+@import url('base/_global.css');
+
+@import url('components/_header.css');
+@import url('components/_footer.css');
+@import url('components/_buttons.css');
+@import url('components/_cards.css');
+@import url('components/_navigation.css');
+
+@import url('layouts/_grid.css');
+@import url('layouts/_sections.css');
+@import url('layouts/_containers.css');
+
+@import url('pages/_home.css');
+@import url('pages/_cases.css');
+@import url('pages/_methodology.css');
+@import url('pages/_contacts.css');
+
+@import url('utils/_helpers.css');
+@import url('utils/_animations.css');

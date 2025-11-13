@@ -1,0 +1,58 @@
+/* Сброс стилей по методике modern-normalize + minimal reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, figure, figcaption, blockquote, dl, dd {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    line-height: 1.6;
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background: var(--white-color);
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+button, input, textarea {
+    font: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Убираем стандартные отступы у main */
+main, header, footer, section, article, nav {
+    display: block;
+}

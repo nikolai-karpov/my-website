@@ -1,0 +1,12 @@
+:root {
+    --primary-color: #4a6cf7;
+    --dark-color: #1e293b;
+    --text-color: #334155;
+    --light-bg-color: #f8fafc;
+    --white-color: #ffffff;
+    --border-color: #e2e8f0;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --transition-smooth: all 0.3s ease;
+}

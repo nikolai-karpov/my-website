@@ -1,0 +1,37 @@
+{
+  "name": "my-website",
+  "version": "1.0.0",
+  "description": "Corporate website with clean, maintainable structure and optimized CSS.",
+  "homepage": "https://nikolai-karpov.github.io/my-website",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikolai-karpov/my-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nikolai-karpov/my-website/issues"
+  },
+  "keywords": [
+    "website",
+    "corporate",
+    "static",
+    "css",
+    "purgecss",
+    "github-pages"
+  ],
+  "author": "Nikolai Karpov",
+  "license": "MIT",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "purge:css": "node purge.js",
+    "build": "npm run purge:css",
+    "prepare": "echo \"Project ready. Run 'npm run build' to purge unused CSS.\""
+  },
+  "devDependencies": {
+    "purgecss": "^7.0.2"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "private": true
+}
