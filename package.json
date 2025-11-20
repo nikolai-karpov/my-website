@@ -22,16 +22,34 @@
   "license": "MIT",
   "type": "commonjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass:build": "sass assets/scss/main.scss:assets/css/main.css --style=compressed",
+    "sass:watch": "sass assets/scss/main.scss:assets/css/main.css --watch --style=expanded",
     "purge:css": "node purge.js",
-    "build": "npm run purge:css",
-    "prepare": "echo \"Project ready. Run 'npm run build' to purge unused CSS.\""
+    "build": "npm run sass:build && npm run purge:css",
+    "prebuild": "echo '🚀 Запуск сборки...' && mkdir -p assets/css",
+    "postbuild": "echo '✅ Сборка завершена. Проверьте assets/css/main.css'",
+    "lint:css": "stylelint assets/scss/**/*.scss",
+    "lint:css:fix": "stylelint assets/scss/**/*.scss --fix",
+    "prepare": "husky install",
+    "dev": "concurrently \"npm run sass:watch\" \"live-server\""
   },
   "devDependencies": {
-    "purgecss": "^7.0.2"
+    "concurrently": "^8.2.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
+    "live-server": "^1.2.2",
+    "postcss-scss": "^4.0.9",
+    "purgecss": "^7.0.2",
+    "sass": "^1.94.1",
+    "stylelint": "^16.25.0",
+    "stylelint-config-standard": "^39.0.1",
+    "stylelint-scss": "^6.12.1"
   },
   "engines": {
     "node": ">=18"
   },
-  "private": true
+  "private": true,
+  "lint-staged": {
+    "assets/scss/**/*.scss": "stylelint --fix"
+  }
 }
