@@ -1,22 +1,18 @@
-@import url('base/_reset.css');
-@import url('base/_variables.css');
-@import url('base/_typography.css');
-@import url('base/_global.css');
+/* Error: expected "}".
+ *    ,
+ * 98 | }
+ *    |  ^
+ *    '
+ *   assets/scss/components/_buttons.scss 98:2  @use
+ *   assets/scss/main.scss 11:1                 root stylesheet */
 
-@import url('components/_header.css');
-@import url('components/_footer.css');
-@import url('components/_buttons.css');
-@import url('components/_cards.css');
-@import url('components/_navigation.css');
-
-@import url('layouts/_grid.css');
-@import url('layouts/_sections.css');
-@import url('layouts/_containers.css');
-
-@import url('pages/_home.css');
-@import url('pages/_cases.css');
-@import url('pages/_methodology.css');
-@import url('pages/_contacts.css');
-
-@import url('utils/_helpers.css');
-@import url('utils/_animations.css');
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: expected "}".\a    \2577 \a 98 \2502  }\a    \2502   ^\a    \2575 \a   assets/scss/components/_buttons.scss 98:2  @use\a   assets/scss/main.scss 11:1                 root stylesheet';
+}

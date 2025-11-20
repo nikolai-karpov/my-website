@@ -18,7 +18,7 @@ async function purgeCSS() {
     ],
 
     // 📦 Куда сохранить очищенные стили
-    output: 'assets/css/purged',              // Результат: assets/css/purged/main.css
+    output: 'assets/css/',              // Результат: assets/css/purged/main.css
 
     // 🛡️ Классы, которые НЕЛЬЗЯ удалять (даже если не нашли в HTML)
     safelist: {

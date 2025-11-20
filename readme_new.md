@@ -18,8 +18,11 @@
 ## 🛠 Технологии
 
 - **HTML5** — семантическая разметка
-- **CSS3** — кастомные стили, адаптивная верстка
-- **Fetch API** — динамическая подгрузка шапки и подвала (`header.html`, `footer.html`)
+- **SCSS** — модульная архитектура, переменные, вложенность
+- **Sass (Dart Sass)** — компиляция SCSS → CSS
+- **PurgeCSS** — удаление неиспользуемых стилей
+- **Stylelint** — проверка качества CSS/SCSS
+- **Live Server + Concurrently** — автообновление при разработке
 - **GitHub Pages** — хостинг
 
 > Нет внешних библиотек и фреймворков — только чистый код для максимальной производительности и контроля.
@@ -44,7 +47,7 @@
 │   ├── header.html                 # 🔝 Шапка сайта (навигация, логотип)
 │   └── footer.html                 # 🔚 Подвал сайта (контакты, ссылки)
 ├── assets/                         # 💎 Все ресурсы сайта (стили, скрипты)
-│   ├── css/                        # 🎨 ВСЕ стили проекта
+│   ├── scss/                        # 🎨 ВСЕ стили проекта
 │   │   ├── main.css                # 🧭 Главный сборный файл (ТОЛЬКО импорты)
 │   │   ├── base/                   # 🏗️ Базовые/фундаментальные стили
 │   │   │   ├── _reset.css          # 🧹 Сброс стилей браузера (обнуление отступов и т.д.)
@@ -79,46 +82,37 @@
 ```
 ## 📍 Правила именования:
 
-- `_имя.css` - файлы с `_` в начале это ЧАСТИЧНЫЕ файлы (подключаются только через импорт в main.css)
-- `site-pages/` - ТОЛЬКО HTML-страницы (кроме главной index.html)
-- `site-components/` - ТОЛЬКО HTML-компоненты (header, footer)
-- `assets/` - ТОЛЬКО ресурсы (стили, скрипты)
-- `images/` - ТОЛЬКО изображения
----
-
-## 🛠 Технологии
-
-- **HTML5** — семантическая разметка
-- **CSS3** — модульная архитектура, CSS Custom Properties
-- **JavaScript** — динамическая подгрузка компонентов
-- **GitHub Pages** — хостинг
+- `_имя.scss` — частичные файлы (подключаются через `@use`)
+- `site-pages/` — только HTML-страницы (кроме `index.html`)
+- `site-components/` — только компоненты (`header.html`, `footer.html`)
+- `assets/` — ресурсы: стили, скрипты, изображения
+- Все пути — относительные, кроссплатформенные
 
 ---
+## 🔧 Модульная система SCSS
 
-## 🔧 Модульная система CSS
+### Главный файл `assets/scss/main.scss`:
 
-### Главный файл `assets/css/main.css`:
-```css
-@import url('base/_reset.css');
-@import url('base/_variables.css');
-@import url('base/_typography.css');
-@import url('base/_global.css');
-@import url('components/_header.css');
-@import url('components/_footer.css');
-@import url('components/_buttons.css');
-@import url('components/_cards.css');
-@import url('components/_navigation.css');
-@import url('layouts/_grid.css');
-@import url('layouts/_sections.css');
-@import url('layouts/_containers.css');
-@import url('pages/_home.css');
-@import url('pages/_cases.css');
-@import url('pages/_methodology.css');
-@import url('pages/_contacts.css');
-@import url('utils/_helpers.css');
-@import url('utils/_animations.css');
+```scss assets/scss/main.scss 
+@use "base/variables" as v; 
+@use "base/reset"; 
+@use "base/typography"; 
+@use "base/global"; 
+@use "components/header"; 
+@use "components/footer"; 
+@use "components/buttons"; 
+@use "components/cards"; 
+@use "components/navigation"; 
+@use "layouts/grid"; 
+@use "layouts/sections"; 
+@use "layouts/containers"; 
+@use "pages/home"; 
+@use "pages/cases"; 
+@use "pages/methodology"; 
+@use "pages/contacts"; 
+@use "utils/helpers"; 
+@use "utils/animations";
 ```
-
 ---
 
 ## 🔗 Подключение в HTML:
@@ -133,7 +127,24 @@
 
 ## 🔄 Загрузка компонентов
 
-Система автоматически определяет пути для загрузки компонентов:
+assets/js/components-loader.js
+
+```javascript
+document.addEventListener('DOMContentLoaded', async () => { 
+    const components = document.querySelectorAll('[data-component]'); 
+    for (const el of components) { const path = el.getAttribute('data-component'); 
+        try { const response = await fetch(path); 
+            if (response.ok) { el.innerHTML = await response.text(); 
+            } 
+            else { console.error('Component not found:', path); 
+            } 
+        } 
+        catch (err) { 
+            console.error('Failed to load component:', err); 
+        } 
+    } 
+});
+```
 
 ```javascript
 function getBasePath() {
@@ -151,6 +162,26 @@ fetch(`${basePath}site-components/header.html`)
 
 ---
 
+## 🧰 Сборка и разработка
+
+### Скрипты в `package.json`:
+```json
+"scripts": {
+    "sass:build": "sass assets/scss/main.scss:assets/css/main.css --style=compressed",
+    "sass:watch": "sass assets/scss/main.scss:assets/css/main.css --watch --style=expanded",
+    "purge:css": "node purge.js",
+    "build": "npm run sass:build && npm run purge:css",
+    "prebuild": "echo '🚀 Запуск сборки...' && mkdir -p assets/css",
+    "postbuild": "echo '✅ Сборка завершена. Проверьте assets/css/main.css'",
+    "lint:css": "stylelint assets/scss/**/*.scss",
+    "lint:css:fix": "stylelint assets/scss/**/*.scss --fix",
+    "prepare": "husky install",
+    "dev": "concurrently \"npm run sass:watch\" \"live-server\""
+}
+```
+
+---
+
 ## 🌐 Деплой
 
 Сайт доступен по адресу:  
@@ -161,9 +192,13 @@ fetch(`${basePath}site-components/header.html`)
 ## 📝 Преимущества структуры
 
 - Уникальные имена папок — нет конфликтов
-- Модульность CSS — файлы до 200 строк
+- **Модульность** — стили до 200 строк, легко поддерживать
+- **Автоматизация** — сборка, очистка, проверка стилей
+- **Разработка с автообновлением** — `npm run dev`
+- **Чистый CSS** — PurgeCSS удаляет неиспользуемое
+- **Качество кода** — Stylelint следит за стилями
 - Чистая организация — страницы, компоненты, ресурсы разделены
-- Масштабируемость — легко добавлять новые разделы
+- **Масштабируемость** — легко добавлять страницы и компоненты
 - Профессиональный стандарт — соответствует best practices
 
 ---

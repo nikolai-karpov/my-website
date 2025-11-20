@@ -1,7 +1,21 @@
 {
+  "customSyntax": "postcss-scss",
+  "plugins": ["stylelint-scss"],
   "extends": ["stylelint-config-standard"],
   "rules": {
+    "selector-class-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*(--[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(\\\\/[a-z0-9]+)?$",
+
+    "color-function-notation": null,
+    "alpha-value-notation": null,
+    "media-feature-range-notation": null,
+    "number-max-precision": null,
+
     "no-duplicate-selectors": true,
-    "declaration-block-no-duplicate-properties": true
+    "declaration-block-no-duplicate-properties": [
+      true,
+      {
+        "ignore": ["consecutive-duplicates"]
+      }
+    ]
   }
 }
