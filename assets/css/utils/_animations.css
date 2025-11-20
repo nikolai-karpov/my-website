@@ -1,5 +1,11 @@
 /* Анимации и переходы */
 
+/* Появление снизу с задержкой (для контактов) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* Плавные переходы */
 .transition {
     transition: all 0.3s ease;
