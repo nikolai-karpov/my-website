@@ -49,3 +49,9 @@ build/
 # Временные файлы редакторов
 *.tmp
 *.temp
+
+# Папка с изображениями
+/images/
+
+# Папка site-components
+/site-components/
