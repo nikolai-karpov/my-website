@@ -135,7 +135,7 @@
         function toggleMenu() {
             const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
             hamburger.setAttribute('aria-expanded', !isExpanded);
-            mobileNav.setAttribute('aria-hidden', isExpanded);
+            mobileNav.setAttribute('aria-hidden', !isExpanded);
             mobileOverlay.classList.toggle('active');
             document.body.style.overflow = !isExpanded ? 'hidden' : '';
         }

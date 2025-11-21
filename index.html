@@ -42,20 +42,26 @@
     </div>
 </div>
 
-<header id="main-header" class="main-header" data-component="../site-components/header.html">
+<header id="main-header" data-component="components/header.html">
     <!-- Fallback навигация -->
     <div class="container">
         <div class="header-container">
             <a href="/" class="logo">Карпов Николай</a>
-            <nav>
+            <nav class="desktop-nav">
                 <ul>
                     <li><a href="/">Главная</a></li>
                     <li><a href="methodology.html">Методология</a></li>
                     <li><a href="cases.html">Кейсы</a></li>
                     <li><a href="results.html">Результаты</a></li>
-                    <li><a href="contacts.html" class="cta-button primary">Контакты</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
                 </ul>
             </nav>
+            <button class="hamburger" aria-label="Меню" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <div class="mobile-overlay"></div>
         </div>
     </div>
 </header>
