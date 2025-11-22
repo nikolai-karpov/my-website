@@ -1,0 +1,943 @@
+<!DOCTYPE html><html lang="ru"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Анализ ИИ для Оптимизации Ресурсов в Фармацевтической Отрасли</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <style>
+        :root {
+            --primary: #1e293b;
+            --secondary: #475569;
+            --accent: #3b82f6;
+            --surface: #f8fafc;
+            --text: #0f172a;
+            --muted: #64748b;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--surface);
+        }
+        
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        img {
+            max-width: 100%;
+        }
+        
+        .toc-fixed {
+            position: fixed;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 280px;
+            max-height: 80vh;
+            overflow-y: auto;
+            z-index: 50;
+            background: rgba(248, 250, 252, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .main-content {
+            margin-left: 320px;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-title {
+            grid-column: 1 / -1;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-visual {
+            grid-column: 1;
+            grid-row: 2;
+            position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 16px;
+            overflow: hidden;
+            min-height: 300px;
+        }
+        
+        .hero-stats {
+            grid-column: 2;
+            grid-row: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--accent);
+        }
+        
+        .insight-highlight {
+            background: linear-gradient(90deg, rgba(59, 130, 246, 0.1) 0%, transparent 100%);
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .citation {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            text-decoration: none;
+            margin: 0 0.25rem;
+            transition: all 0.2s;
+        }
+        
+        .citation:hover {
+            background: #2563eb;
+            transform: translateY(-1px);
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #e2e8f0 50%, transparent 100%);
+            margin: 3rem 0;
+        }
+        
+        @media (max-width: 1280px) {
+            .toc-fixed {
+                display: none;
+            }
+            .main-content {
+                margin-left: 0;
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 0 1rem;
+            }
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-visual, .hero-stats {
+                grid-column: 1;
+            }
+            .hero-title h1 {
+                font-size: 2.25rem;
+                line-height: 2.5rem;
+            }
+            .hero-title p {
+                font-size: 1.125rem;
+            }
+            .hero-visual {
+                min-height: 200px;
+            }
+            .hero-stats {
+                width: 100%;
+            }
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        .hidden-section {
+            display: none;
+        }
+        
+        .pullquote {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--secondary);
+            border-left: 4px solid var(--accent);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .data-gap-note {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            color: #92400e;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+    </style>
+  <base target="_blank">
+</head>
+
+  <body class="smooth-scroll">
+    <!-- Fixed Table of Contents -->
+    <nav class="toc-fixed">
+      <h3 class="text-lg font-semibold mb-4 text-gray-800">Содержание</h3>
+      <ul class="space-y-2 text-sm">
+        <li>
+          <a href="#executive-summary" class="block py-1 text-gray-600 hover:text-blue-600 transition-colors">Резюме</a>
+        </li>
+        <li>
+          <a href="#clinical-trials" class="block py-1 text-gray-600 hover:text-blue-600 transition-colors">1. Клинические Испытания</a>
+        </li>
+        <li>
+          <a href="#manufacturing" class="block py-1 text-gray-600 hover:text-blue-600 transition-colors">2. Производство</a>
+        </li>
+        <li>
+          <a href="#logistics" class="block py-1 text-gray-600 hover:text-blue-600 transition-colors">3. Логистика</a>
+        </li>
+        <li>
+          <a href="#drug-discovery" class="block py-1 text-gray-600 hover:text-blue-600 transition-colors">4. Открытие Лекарств</a>
+        </li>
+        <li>
+          <a href="#ai-technologies" class="block py-1 text-gray-600 hover:text-blue-600 transition-colors">5. Технологии ИИ</a>
+        </li>
+        <li>
+          <a href="#challenges" class="block py-1 text-gray-600 hover:text-blue-600 transition-colors">6. Барьеры и Перспективы</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section class="hero-grid mb-16">
+        <div class="hero-title">
+          <h1 class="serif text-5xl font-bold text-gray-900 mb-4 leading-tight">
+            <em class="text-blue-600">Трансформация</em> Фармацевтической Отрасли
+          </h1>
+          <p class="text-xl text-gray-600 font-light">
+            Как искусственный интеллект оптимизирует ресурсы и сокращает затраты на всех этапах разработки и производства лекарств
+          </p>
+        </div>
+
+        <div class="hero-visual">
+          <img src="https://kimi-web-img.moonshot.cn/img/sentia.community/1d71445519ed692d8960d53a315e787c6a0e0325.webp" alt="Искусственный интеллект в фармацевтической лаборатории" class="w-full h-full object-cover opacity-80" size="large" aspect="wide" style="photo" query="AI pharmaceutical laboratory" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+          <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-800/30"></div>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-card">
+            <i class="fas fa-chart-line text-2xl text-blue-600 mb-2"></i>
+            <h3 class="font-semibold text-gray-800">$28 млрд</h3>
+            <p class="text-sm text-gray-600">Годовая экономия на клинических испытаниях</p>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-clock text-2xl text-green-600 mb-2"></i>
+            <h3 class="font-semibold text-gray-800">50-80%</h3>
+            <p class="text-sm text-gray-600">Сокращение сроков испытаний</p>
+          </div>
+          <div class="stat-card">
+            <i class="fas fa-leaf text-2xl text-teal-600 mb-2"></i>
+            <h3 class="font-semibold text-gray-800">15-20%</h3>
+            <p class="text-sm text-gray-600">Экономия энергии в производстве</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Executive Summary -->
+      <section id="executive-summary" class="mb-16">
+        <h2 class="serif text-3xl font-bold text-gray-900 mb-6">Резюме</h2>
+        <div class="bg-white p-8 rounded-16 shadow-sm border border-gray-100">
+          <p class="text-lg text-gray-700 leading-relaxed mb-6">
+            Искусственный интеллект (ИИ) трансформирует фармацевтическую отрасль, предоставляя мощные инструменты для сокращения расходов и потребления ресурсов на всех этапах жизненного цикла лекарственных средств. В клинических испытаниях ИИ может <strong>сократить сроки на 50-80% и снизить стоимость на 70%</strong>, автоматизируя управление данными и оптимизируя набор пациентов.
+          </p>
+          <p class="text-gray-700 mb-6">
+            В производстве ИИ-решения <strong>снижают энергопотребление на 15-20%</strong>, предотвращают брак партий и повышают выход продукции. В логистике ИИ оптимизирует цепочки поставок, сокращая транспортные расходы и минимизируя потери. На этапе открытия лекарств генеративный ИИ ускоряет идентификацию и оптимизацию молекул, сокращая процесс с лет до месяцев.
+          </p>
+          <div class="insight-highlight">
+            <p class="font-semibold text-gray-800">
+              <i class="fas fa-lightbulb text-yellow-500 mr-2"></i>
+              Ключевой вывод: Несмотря на барьеры в виде качества данных и регуляторных вопросов, ИИ становится ключевым драйвером устойчивого развития отрасли, обеспечивая более быстрый, экономичный и персонифицированный доступ к инновационным препаратам.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Section 1: Clinical Trials -->
+      <section id="clinical-trials" class="mb-16">
+        <h2 class="serif text-3xl font-bold text-gray-900 mb-8">1. Клинические Испытания: Сокращение Временных и Финансовых Затрат</h2>
+
+        <p class="text-lg text-gray-700 mb-6">
+          Клинические испытания представляют собой наиболее длительный и дорогостоящий этап в разработке новых лекарственных средств, часто занимая до <strong>60% общего времени и бюджета</strong> на создание препарата и требуя инвестиций свыше <strong>400 миллионов долларов на фазу</strong>
+          <a href="https://jkb.com.cn/horizon/2025/1017/506326.html" class="citation" target="_blank">396</a>. Искусственный интеллект (ИИ) внедряется как трансформационная технология, способная радикально оптимизировать этот процесс.
+        </p>
+
+        <div class="insight-highlight">
+          <p class="font-semibold text-gray-800 mb-2">
+            <i class="fas fa-chart-line text-blue-600 mr-2"></i>
+            Экономический потенциал
+          </p>
+          <p class="text-gray-700">
+            Анализ отраслевых данных показывает, что ИИ может <strong>сократить общую продолжительность клинических испытаний на 30-50%</strong> и <strong>снизить их стоимость до 40%</strong>
+            <a href="https://www.sciencedirect.com/science/article/pii/S1386505625003582" class="citation" target="_blank">375</a>. По оценкам, глобальная экономия от внедрения ИИ только на этапе клинических испытаний может достигать <strong>28 миллиардов долларов ежегодно</strong>
+            <a href="https://jkb.com.cn/horizon/2025/1017/506326.html" class="citation" target="_blank">396</a>
+            <a href="http://www.21jingji.com/article/20221207/herald/b6187ffa9efca197e0532fab762ff213.html" class="citation" target="_blank">414</a>.
+          </p>
+        </div>
+
+        <div class="pullquote">
+          &#34;Внедрение ИИ-агентов обеспечивает увеличение производительности на 35-45% по всем клиническим функциям.&#34;
+        </div>
+
+        <h3 class="serif text-2xl font-semibold text-gray-800 mb-6">1.1. Оптимизация Дизайна Испытаний и Управление Данными</h3>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <div class="bg-white p-6 rounded-12 shadow-sm">
+            <h4 class="font-semibold text-gray-800 mb-4">
+              <i class="fas fa-robot text-blue-600 mr-2"></i>
+              Автоматизация биостатистики
+            </h4>
+            <p class="text-gray-700">
+              Агенты ИИ могут автономно выполнять задачи по проектированию EDC-систем, мониторингу качества данных и разрешению запросов. Компания Saama утверждает, что ее платформа может <strong>сэкономить до 90 минут</strong> на идентификации одного запроса <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10720846/" class="citation" target="_blank">376</a>.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-12 shadow-sm">
+            <h4 class="font-semibold text-gray-800 mb-4">
+              <i class="fas fa-file-alt text-green-600 mr-2"></i>
+              Генерация документации
+            </h4>
+            <p class="text-gray-700">
+              Merck совместно с McKinsey разработала платформу на основе генеративного ИИ, которая <strong>сократила время создания CSR с 2-3 недель до 3-4 дней</strong>, уменьшив количество ошибок на 50% <a href="https://www.emarketer.com/content/ai-streamlines-health-report-filings-merck--mckinsey-collab" class="citation" target="_blank">404</a>.
+            </p>
+          </div>
+        </div>
+
+        <h3 class="serif text-2xl font-semibold text-gray-800 mb-6">1.2. Повышение Эффективности Набора Пациентов</h3>
+
+        <p class="text-gray-700 mb-6">
+          Набор пациентов является одним из основных узких мест в клинических испытаниях. Около <strong>80-90% испытаний</strong> сталкиваются с трудностями в наборе участников <a href="https://intuitionlabs.ai/articles/ai-drug-development-pipeline" class="citation" target="_blank">381</a>
+          <a href="https://www.sciencedirect.com/science/article/pii/S1386505625003582" class="citation" target="_blank">375</a>. ИИ решает эту проблему, анализируя большие объемы реальных данных.
+        </p>
+
+        <div class="bg-blue-50 p-6 rounded-12 mb-6">
+          <h4 class="font-semibold text-gray-800 mb-4">Кейс: Mass Bio&#39;s Synergy AI</h4>
+          <p class="text-gray-700">
+            Платформа увеличила количество подходящих кандидатов в <strong>1.82 раза</strong> по сравнению с ручными методами, сократив время скрининга с <strong>19,500 часов ручной работы до нескольких часов</strong> автоматизированного анализа <a href="https://www.techmagic.co/blog/how-does-ai-reduce-costs-in-healthcare" class="citation" target="_blank">370</a>.
+          </p>
+        </div>
+
+        <h3 class="serif text-2xl font-semibold text-gray-800 mb-6">1.3. Количественные Показатели Экономии</h3>
+
+        <div class="insight-highlight">
+          <p class="font-semibold text-gray-800 mb-2">
+            <i class="fas fa-chart-bar text-purple-600 mr-2"></i>
+            Потенциал радикальных изменений
+          </p>
+          <p class="text-gray-700">
+            Некоторые отраслевые исследования показывают, что ИИ-инструменты могут <strong>сократить продолжительность испытаний на 80%</strong> и <strong>снизить их стоимость на 70%</strong>
+            <a href="https://blog.pharmadiversityjobboard.com/?p=408" class="citation" target="_blank">402</a>
+            <a href="https://smartdev.com/ai-use-cases-in-pharmaceutical-industry/" class="citation" target="_blank">407</a>. Сокращение срока клинической разработки всего на <strong>12 месяцев</strong> может добавить более чем <strong>400 миллионов долларов</strong> к NPV портфеля спонсора <a href="https://www.mckinsey.com/industries/life-sciences/our-insights/unlocking-peak-operational-performance-in-clinical-development-with-artificial-intelligence" class="citation" target="_blank">403</a>.
+          </p>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Section 2: Manufacturing -->
+      <section id="manufacturing" class="mb-16">
+        <h2 class="serif text-3xl font-bold text-gray-900 mb-8">2. Производство и Производственные Процессы: Снижение Энергопотребления и Отходов</h2>
+
+        <p class="text-lg text-gray-700 mb-6">
+          Интеграция ИИ в производственные процессы фармацевтической отрасли открывает значительные возможности для сокращения эксплуатационных расходов, минимизации потребления ресурсов и повышения общей эффективности. ИИ предлагает решение, позволяющее перейти от реактивного к проактивному управлению <a href="https://caiready.com/life-sciences/blog/building-the-future-of-pharmaceutical-manufacturing-a-phased-approach-to-dark-factories/" class="citation" target="_blank">505</a>
+          <a href="https://www.pharmanow.live/ai-in-pharma/ai-in-pharma-manufacturing-optimization" class="citation" target="_blank">508</a>.
+        </p>
+
+        <img src="https://kimi-web-img.moonshot.cn/img/etimg.etb2bimg.com/457f208e9ceeab98057042631b9b5f0f583cb6b2.cms" alt="AI monitoring system in pharmaceutical manufacturing facility" class="w-full h-64 object-cover rounded-16 mb-8 shadow-sm" size="medium" aspect="wide" style="photo" query="pharmaceutical manufacturing AI monitoring system" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+
+        <h3 class="serif text-2xl font-semibold text-gray-800 mb-6">2.1. Оптимизация Производственных Параметров</h3>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-12">
+            <i class="fas fa-eye text-3xl text-blue-600 mb-4"></i>
+            <h4 class="font-semibold text-gray-800 mb-2">Мониторинг в реальном времени</h4>
+            <p class="text-gray-700 text-sm">
+              ИИ анализирует данные с датчиков для мгновенного отслеживания температуры, pH, влажности и автоматической корректировки параметров <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11510778/" class="citation" target="_blank">513</a>.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-12">
+            <i class="fas fa-shield-alt text-3xl text-green-600 mb-4"></i>
+            <h4 class="font-semibold text-gray-800 mb-2">Предиктивная аналитика</h4>
+            <p class="text-gray-700 text-sm">
+              ML-модели предсказывают отклонения и брак партий, позволяя переходить от реактивного к проактивному подходу <a href="https://www.pharmanow.live/ai-in-pharma/ai-in-pharma-manufacturing-optimization" class="citation" target="_blank">508</a>.
+            </p>
+          </div>
+
+          <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-12">
+            <i class="fas fa-chart-line text-3xl text-purple-600 mb-4"></i>
+            <h4 class="font-semibold text-gray-800 mb-2">Повышение выхода</h4>
+            <p class="text-gray-700 text-sm">
+              Pfizer увеличила производительность на <strong>20%</strong> за счет оптимизации производственных процессов с помощью ИИ <a href="https://www.drugpatentwatch.com/blog/innovative-manufacturing-technologies-for-generic-drug-production/" class="citation" target="_blank">345</a>.
+            </p>
+          </div>
+        </div>
+
+        <h3 class="serif text-2xl font-semibold text-gray-800 mb-6">2.2. Снижение Энергопотребления</h3>
+
+        <div class="bg-white p-6 rounded-16 shadow-sm border border-gray-100 mb-8">
+          <h4 class="font-semibold text-gray-800 mb-4">Реальные кейсы энергоэффективности</h4>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-gray-200">
+                  <th class="text-left py-3 font-semibold">Компания</th>
+                  <th class="text-left py-3 font-semibold">Применение</th>
+                  <th class="text-left py-3 font-semibold">Результаты</th>
+                </tr>
+              </thead>
+              <tbody class="text-gray-700">
+                <tr class="border-b border-gray-100">
+                  <td class="py-3 font-medium">Merck KGaA</td>
+                  <td class="py-3">Оптимизация чиллерной станции</td>
+                  <td class="py-3 text-green-600 font-semibold">Снижение на 15-20%</td>
+                </tr>
+                <tr class="border-b border-gray-100">
+                  <td class="py-3 font-medium">Guangdong Yifang</td>
+                  <td class="py-3">Управление HVAC и сжатым воздухом</td>
+                  <td class="py-3 text-green-600 font-semibold">Экономия 20.5% и 13.36%</td>
+                </tr>
+                <tr>
+                  <td class="py-3 font-medium">BrainBox AI</td>
+                  <td class="py-3">Оптимизация HVAC</td>
+                  <td class="py-3 text-green-600 font-semibold">Снижение CO2 на 95 тонн/год</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-xs text-gray-500 mt-4">
+            Источники: <a href="https://www.biospace.com/can-ai-help-biopharma-companies-go-green" class="citation" target="_blank">187</a>
+            <a href="http://drc.gd.gov.cn/attachment/0/565/565024/4526563.pdf" class="citation" target="_blank">154</a>
+            <a href="https://brainboxai.com/en/case-studies/pharmaceutical-campus-uses-ai-to-reduce-carbon-footprint" class="citation" target="_blank">140</a>
+          </p>
+        </div>
+
+        <h3 class="serif text-2xl font-semibold text-gray-800 mb-6">2.3. Автоматизация Контроля Качества</h3>
+
+        <div class="flex flex-col md:flex-row gap-6 mb-8">
+          <div class="md:w-1/2 bg-white p-6 rounded-12 shadow-sm">
+            <h4 class="font-semibold text-gray-800 mb-4">
+              <i class="fas fa-microscope text-blue-600 mr-2"></i>
+              Автоматизированная визуальная инспекция
+            </h4>
+            <p class="text-gray-700 mb-4">
+              Системы на основе глубокого обучения точно идентифицируют дефекты таблеток и капсул, работая с постоянной точностью и скоростью. Нейронные сети, такие как UNet, анализируют рентгеновские томограммы для выявления внутренних дефектов <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10385763/" class="citation" target="_blank">529</a>.
+            </p>
+          </div>
+
+          <div class="md:w-1/2 bg-white p-6 rounded-12 shadow-sm">
+            <h4 class="font-semibold text-gray-800 mb-4">
+              <i class="fas fa-wrench text-orange-600 mr-2"></i>
+              Предиктивное обслуживание
+            </h4>
+            <p class="text-gray-700 mb-4">
+              ИИ анализирует данные с датчиков для предсказания отказов оборудования. Pfizer внедрила подобные системы, что позволило <strong>сократить время простоя и расходы на обслуживание</strong>
+              <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11510778/" class="citation" target="_blank">513</a>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Section 3: Logistics -->
+      <section id="logistics" class="mb-16">
+        <h2 class="serif text-3xl font-bold text-gray-900 mb-8">3. Логистика и Управление Цепочкой Поставок</h2>
+
+        <p class="text-lg text-gray-700 mb-6">
+          Фармацевтическая цепочка поставок — это сложная и высокорегулируемая система, требующая точного управления запасами, эффективной логистики и надежного мониторинга условий хранения. ИИ предоставляет мощные инструменты для оптимизации всех аспектов цепочки поставок.
+        </p>
+
+        <img src="https://kimi-web-img.moonshot.cn/img/gowarehouse.io/b37ebfeab9cb6f80f929db447a7a07329c8fe5d0.jpg" alt="AI-controlled pharmaceutical warehouse with robotic systems" class="w-full h-64 object-cover rounded-16 mb-8 shadow-sm" size="medium" aspect="wide" style="photo" query="фармацевтический склад с робототехникой и ИИ" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+
+        <h3 class="serif text-2xl font-semibold text-gray-800 mb-6">3.1. Оптимизация Управления Запасами</h3>
+
+        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-16 mb-8">
+          <h4 class="font-semibold text-gray-800 mb-4">Кейс: Novartis</h4>
+          <div class="grid md:grid-cols-3 gap-4">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-blue-600">67%</div>
+              <div class="text-sm text-gray-600">Сокращение просроченного инвентаря</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-green-600">$50 млн</div>
+              <div class="text-sm text-gray-600">Освобождено оборотного капитала</div>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-purple-600">10-15%</div>
+              <div class="text-sm text-gray-600">Увеличение точности прогнозов</div>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 mt-4">
+            Источник: Внедрение платформы машинного обучения для прогнозирования спроса
+          </p>
+        </div>
+
+        <h3 class="serif text-2xl font-semibold text-gray-800 mb-6">3.2. Оптимизация Транспортировки</h3>
+
+        <div class="flex flex-col md:flex-row gap-6 mb-8">
+          <div class="md:w-2/3 bg-white p-6 rounded-12 shadow-sm">
+            <h4 class="font-semibold text-gray-800 mb-4">
+              <i class="fas fa-route text-blue-600 mr-2"></i>
+              Оптимизация маршрутов
+            </h4>
+            <p class="text-gray-700 mb-4">
+              ИИ-алгоритмы оптимизируют логистические маршруты, учитывая пробки, погоду, тарифы на топливо и ограничения по времени. Johnson &amp; Johnson достигла <strong>сокращения транспортных расходов на 20%</strong> благодаря оптимизации маршрутов и загрузки транспортных средств.
+            </p>
+          </div>
+
+          <div class="md:w-1/3 bg-white p-6 rounded-12 shadow-sm">
+            <h4 class="font-semibold text-gray-800 mb-4">
+              <i class="fas fa-thermometer-half text-red-600 mr-2"></i>
+              Контроль холодовой цепи
+            </h4>
+            <p class="text-gray-700 text-sm">
+              ИИ в сочетании с IoT-датчиками обеспечивает непрерывный мониторинг температуры и влажности, минимизируя потери продукции.
+            </p>
+          </div>
+        </div>
+
+        <h3 class="serif text-2xl font-semibold text-gray-800 mb-6">3.3. Снижение Потерь и Отходов</h3>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-green-50 p-6 rounded-12">
+            <h4 class="font-semibold text-gray-800 mb-3">
+              <i class="fas fa-box text-green-600 mr-2"></i>
+              Минимизация потерь продукции
+            </h4>
+            <p class="text-gray-700 text-sm">
+              ИИ анализирует данные о сроке годности и условиях хранения, рекомендуя приоритетную отгрузку партий с более коротким сроком годности (FIFO/FEFO).
+            </p>
+          </div>
+
+          <div class="bg-blue-50 p-6 rounded-12">
+            <h4 class="font-semibold text-gray-800 mb-3">
+              <i class="fas fa-leaf text-blue-600 mr-2"></i>
+              Сокращение выбросов CO2
+            </h4>
+            <p class="text-gray-700 text-sm">
+              Эффективные маршруты приводят к снижению расхода топлива. BrainBox AI помогла снизить выбросы CO2 на <strong>95 метрических тонн</strong> в год <a href="https://brainboxai.com/en/case-studies/pharmaceutical-campus-uses-ai-to-reduce-carbon-footprint" class="citation" target="_blank">140</a>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Section 4: Drug Discovery -->
+      <section id="drug-discovery" class="mb-16">
+        <h2 class="serif text-3xl font-bold text-gray-900 mb-8">4. Открытие Лекарств и Доклинические Исследования</h2>
+
+        <p class="text-lg text-gray-700 mb-6">
+          ИИ трансформирует самые ранние этапы фармацевтической разработки — открытие новых молекул и доклинические исследования. Традиционный процесс открытия лекарств является чрезвычайно длительным, дорогостоящим и высокорискованным.
+        </p>
+
+        <img src="https://kimi-web-img.moonshot.cn/img/www.azolifesciences.com/62f5ba3206f526af8f70887e6915be55aac01528.jpg" alt="AI technology in pharmaceutical drug discovery laboratory" class="w-full h-64 object-cover rounded-16 mb-8 shadow-sm" size="medium" aspect="wide" style="photo" query="pharmaceutical drug discovery laboratory AI" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+
+        <h3 class="serif text-2xl font-semibold text-gray-800 mb-6">4.1. ИИ в Первичном Связывании и Виртуальном Скрининге</h3>
+
+        <div class="insight-highlight">
+          <p class="font-semibold text-gray-800 mb-2">
+            <i class="fas fa-rocket text-blue-600 mr-2"></i>
+            Ускорение открытия в 3 раза
+          </p>
+          <p class="text-gray-700">
+            Российская компания &#34;Р-Фарм&#34; сообщила, что трехлетний этап поиска и оптимизации лекарственных кандидатов был <strong>ускорен в три раза — до одного года</strong> с помощью ИИ <a href="https://www.comnews.ru/content/231682/2024-02-21/2024-w08/1007/iskusstvennyy-intellekt-uskorit-sozdanie-lekarstv-dva-tri-raza" class="citation" target="_blank">23</a>.
+          </p>
+        </div>
+
+        <h3 class="serif text-2xl font-semibold text-gray-800 mb-6">4.2. Генеративный ИИ для Дизайна Новых Молекул</h3>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <div class="bg-white p-6 rounded-12 shadow-sm">
+            <h4 class="font-semibold text-gray-800 mb-4">
+              <i class="fas fa-dna text-purple-600 mr-2"></i>
+              Создание новых структур
+            </h4>
+            <p class="text-gray-700">
+              Генеративные модели, такие как VAE и GAN, могут генерировать новые, ранее несуществовавшие молекулы, которые соответствуют заданным критериям — высокой активности, хорошей фармакокинетике и отсутствию токсичности.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-12 shadow-sm">
+            <h4 class="font-semibold text-gray-800 mb-4">
+              <i class="fas fa-flask text-green-600 mr-2"></i>
+              Оптимизация лидерных соединений
+            </h4>
+            <p class="text-gray-700">
+              Генеративный ИИ ускоряет процесс оптимизации, предлагая конкретные химические модификации, которые, по прогнозам, приведут к улучшению нужных характеристик.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-16 mb-8">
+          <h4 class="font-semibold text-gray-800 mb-4">Кейсы успешных компаний</h4>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-star text-blue-600"></i>
+              </div>
+              <div>
+                <h5 class="font-semibold text-gray-800">Exscientia</h5>
+                <p class="text-gray-700 text-sm">Первая компания, запустившая в клинические испытания молекулы, полностью спроектированные ИИ</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center flex-shrink-0">
+                <i class="fas fa-lightbulb text-purple-600"></i>
+              </div>
+              <div>
+                <h5 class="font-semibold text-gray-800">Insilico Medicine</h5>
+                <p class="text-gray-700 text-sm">Открыла новую мишень и разработала лидерное соединение за <strong>18 месяцев</strong> — впечатляющий срок по сравнению с многолетним процессом традиционного открытия <a href="https://intuitionlabs.ai/articles/ai-innovations-clinical-trials-drug-development" class="citation" target="_blank">57</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="serif text-2xl font-semibold text-gray-800 mb-6">4.3. Предсказательная Токсикология и Безопасность</h3>
+
+        <p class="text-gray-700 mb-6">
+          ИИ предлагает мощные инструменты для предсказания побочных эффектов и токсикологических свойств молекул <em>in silico</em>, сокращая необходимость в дорогостоящих и этически сложных экспериментах на животных.
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-6">
+          <div class="md:w-1/2 bg-white p-6 rounded-12 shadow-sm">
+            <h4 class="font-semibold text-gray-800 mb-4">
+              <i class="fas fa-brain text-orange-600 mr-2"></i>
+              Модели ADMET
+            </h4>
+            <p class="text-gray-700 mb-4">
+              ИИ-модели прогнозируют критически важные фармакологические свойства — абсорбцию, распределение, метаболизм, экскрецию и токсичность. Это позволяет отбрасывать небезопасные соединения на ранней стадии.
+            </p>
+          </div>
+
+          <div class="md:w-1/2 bg-white p-6 rounded-12 shadow-sm">
+            <h4 class="font-semibold text-gray-800 mb-4">
+              <i class="fas fa-paw text-teal-600 mr-2"></i>
+              Сокращение испытаний на животных
+            </h4>
+            <p class="text-gray-700 mb-4">
+              Проводя виртуальный скрининг на токсичность, исследователи могут сосредоточить дорогостоящие исследования <em>in vivo</em> только на наиболее безопасных кандидатах, отвечая принципам 3R.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Section 5: AI Technologies -->
+      <section id="ai-technologies" class="mb-16">
+        <h2 class="serif text-3xl font-bold text-gray-900 mb-8">5. Ключевые Подходы и Технологии ИИ в Фармацевтике</h2>
+
+        <p class="text-lg text-gray-700 mb-8">
+          Фармацевтическая отрасль использует широкий спектр подходов и технологий ИИ для решения разнообразных задач. От классических методов машинного обучения до передовых генеративных моделей и интеграции с цифровыми двойниками.
+        </p>
+
+        <img src="https://kimi-web-img.moonshot.cn/img/praxie.com/9fe97446687a88d8aca0a839dc880b740a9ebff9.png" alt="AI technologies in pharmaceutical industry" class="w-full h-64 object-cover rounded-16 mb-8 shadow-sm" size="medium" aspect="wide" style="photo" query="AI technologies pharmaceutical industry" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+
+        <h3 class="serif text-2xl font-semibold text-gray-800 mb-6">5.1. Машинное Обучение и Глубокое Обучение</h3>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <div class="space-y-6">
+            <div class="bg-white p-6 rounded-12 shadow-sm">
+              <h4 class="font-semibold text-gray-800 mb-3">
+                <i class="fas fa-chart-line text-blue-600 mr-2"></i>
+                Прогнозирование и классификация
+              </h4>
+              <p class="text-gray-700 text-sm">
+                Методы ML/DL широко применяются для прогнозирования параметров производства, результатов клинических испытаний, активности и токсичности молекул. Классификационные модели автоматизируют визуальный контроль качества.
+              </p>
+            </div>
+
+            <div class="bg-white p-6 rounded-12 shadow-sm">
+              <h4 class="font-semibold text-gray-800 mb-3">
+                <i class="fas fa-search text-green-600 mr-2"></i>
+                Анализ больших данных
+              </h4>
+              <p class="text-gray-700 text-sm">
+                ML/DL предоставляет инструменты для анализа огромных объемов данных, генерируемых на всех этапах разработки, выявляя скрытые закономерности, недоступные традиционным методам.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-12">
+            <h4 class="font-semibold text-gray-800 mb-4">Области применения ML/DL</h4>
+            <ul class="space-y-3 text-gray-700">
+              <li class="flex items-start gap-3">
+                <i class="fas fa-industry text-blue-600 mt-1 flex-shrink-0"></i>
+                <span class="text-sm">Прогнозирование выхода продукции и вероятности брака</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-user-md text-green-600 mt-1 flex-shrink-0"></i>
+                <span class="text-sm">Анализ электронных медицинских карт для поиска пациентов</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-flask text-purple-600 mt-1 flex-shrink-0"></i>
+                <span class="text-sm">Прогнозирование токсичности и активности молекул</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i class="fas fa-cogs text-orange-600 mt-1 flex-shrink-0"></i>
+                <span class="text-sm">Анализ потоковых данных с датчиков IoT</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="serif text-2xl font-semibold text-gray-800 mb-6">5.2. Генеративный ИИ и Большие Языковые Модели</h3>
+
+        <div class="bg-white p-8 rounded-16 shadow-sm border border-gray-100 mb-8">
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-4">
+                <i class="fas fa-file-alt text-blue-600 mr-2"></i>
+                Генерация документации
+              </h4>
+              <p class="text-gray-700 mb-4">
+                Модели, такие как GPT, генерируют черновики клинических протоколов, отчеты о безопасности и регламентные досье, сокращая время написания на десятки процентов.
+              </p>
+              <div class="bg-blue-50 p-4 rounded-8">
+                <p class="text-sm text-gray-700">
+                  <strong>Пример:</strong> Merck сократила время создания CSR с 180 до 80 часов, снизив ошибки на 50%.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="font-semibold text-gray-800 mb-4">
+                <i class="fas fa-lightbulb text-purple-600 mr-2"></i>
+                Создание гипотез
+              </h4>
+              <p class="text-gray-700 mb-4">
+                LLM анализируют научную литературу, выявляя неочевидные связи между генами, белками и заболеваниями, предлагая новые терапевтические мишени.
+              </p>
+              <div class="bg-purple-50 p-4 rounded-8">
+                <p class="text-sm text-gray-700">
+                  <strong>Результат:</strong> ИИ становится активным партнером в научных исследованиях, а не просто инструментом анализа.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="serif text-2xl font-semibold text-gray-800 mb-6">5.3. Интеграция ИИ с IoT и Цифровыми Двойниками</h3>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-gradient-to-br from-teal-50 to-cyan-50 p-6 rounded-12">
+            <h4 class="font-semibold text-gray-800 mb-4">
+              <i class="fas fa-cube text-teal-600 mr-2"></i>
+              Цифровые двойники
+            </h4>
+            <p class="text-gray-700 text-sm mb-4">
+              Виртуальные модели физических процессов, обновляемые в реальном времени. Позволяют моделировать и тестировать различные сценарии без вмешательства в реальное производство.
+            </p>
+            <div class="bg-white p-3 rounded-8">
+              <p class="text-xs text-gray-600">
+                <strong>Пример:</strong> Johnson &amp; Johnson использует цифровых двойников для оптимизации производства.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-12">
+            <h4 class="font-semibold text-gray-800 mb-4">
+              <i class="fas fa-network-wired text-orange-600 mr-2"></i>
+              ИИ + IoT
+            </h4>
+            <p class="text-gray-700 text-sm mb-4">
+              ИИ-алгоритмы анализируют потоковые данные от IoT-датчиков, создавая &#34;умные&#34; фабрики и лаборатории, где системы могут автономно реагировать на изменения.
+            </p>
+            <div class="bg-white p-3 rounded-8">
+              <p class="text-xs text-gray-600">
+                <strong>Результат:</strong> Стабильное качество и максимальная эффективность.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Section 6: Challenges -->
+      <section id="challenges" class="mb-16">
+        <h2 class="serif text-3xl font-bold text-gray-900 mb-8">6. Барьеры и Перспективы Внедрения ИИ</h2>
+
+        <p class="text-lg text-gray-700 mb-8">
+          Несмотря на огромный потенциал, внедрение ИИ в фармацевтическую отрасль сталкивается с рядом барьеров. Преодоление этих вызовов и развитие синергии между человеческой экспертизой и возможностями ИИ будут определять будущее устойчивого развития отрасли.
+        </p>
+
+        <img src="https://kimi-web-img.moonshot.cn/img/www.acct.org.cn/b7abc93e55c27a6b2ae91c6d63eb5790fcb87dc4.jpg" alt="Коллаборация между людьми и искусственным интеллектом в фармацевтической отрасли" class="w-full h-64 object-cover rounded-16 mb-8 shadow-sm" size="medium" aspect="wide" style="photo" query="pharmaceutical industry human AI collaboration" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+
+        <h3 class="serif text-2xl font-semibold text-gray-800 mb-6">6.1. Основные Барьеры и Вызывающие Вопросы</h3>
+
+        <div class="space-y-8 mb-8">
+          <!-- Barrier 1 -->
+          <div class="bg-white p-6 rounded-12 shadow-sm border-l-4 border-red-500">
+            <h4 class="font-semibold text-gray-800 mb-4">
+              <i class="fas fa-database text-red-600 mr-2"></i>
+              Качество, доступность и фрагментация данных
+            </h4>
+            <p class="text-gray-700 mb-4">
+              ИИ-модели требуют огромных объемов высококачественных, хорошо структурированных данных. В фармацевтике данные часто фрагментированы, могут быть &#34;грязными&#34; или неполными. Обеспечение доступа к данным при соблюдении конфиденциальности и GDPR остается главной проблемой.
+            </p>
+            <div class="bg-red-50 p-4 rounded-8">
+              <p class="text-sm text-red-700">
+                <i class="fas fa-exclamation-triangle mr-2"></i>
+                <strong>Решение:</strong> Разработка стандартов данных, систем управления качеством и федеративных подходов к обучению моделей.
+              </p>
+            </div>
+          </div>
+
+          <!-- Barrier 2 -->
+          <div class="bg-white p-6 rounded-12 shadow-sm border-l-4 border-orange-500">
+            <h4 class="font-semibold text-gray-800 mb-4">
+              <i class="fas fa-eye-slash text-orange-600 mr-2"></i>
+              Регуляторные и этические аспекты (&#34;Черный Ящик&#34;)
+            </h4>
+            <p class="text-gray-700 mb-4">
+              Многие модели ИИ функционируют как &#34;черный ящик&#34;, что вызывает опасения в регулируемой отрасли. FDA и другие органы требуют валидации и объяснимости ИИ-систем.
+            </p>
+            <div class="bg-orange-50 p-4 rounded-8">
+              <p class="text-sm text-orange-700">
+                <i class="fas fa-lightbulb mr-2"></i>
+                <strong>Решение:</strong> Разработка интерпретируемого ИИ (XAI) и создание регуляторных рамок для валидации ИИ-систем.
+              </p>
+            </div>
+          </div>
+
+          <!-- Barrier 3 -->
+          <div class="bg-white p-6 rounded-12 shadow-sm border-l-4 border-yellow-500">
+            <h4 class="font-semibold text-gray-800 mb-4">
+              <i class="fas fa-graduation-cap text-yellow-600 mr-2"></i>
+              Недостаток квалифицированных кадров
+            </h4>
+            <p class="text-gray-700 mb-4">
+              Существует глобальный дефицит специалистов, сочетающих знания в области фармацевтики, данных и ИИ. Автоматизация вызывает обеспокоенность по поводу потенциального сокращения рабочих мест.
+            </p>
+            <div class="bg-yellow-50 p-4 rounded-8">
+              <p class="text-sm text-yellow-700">
+                <i class="fas fa-users mr-2"></i>
+                <strong>Решение:</strong> Программы переподготовки, непрерывного обучения и развитие гибридных команд людей и машин.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="serif text-2xl font-semibold text-gray-800 mb-6">6.2. Будущие Направления и Заключение</h3>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+          <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-12">
+            <h4 class="font-semibold text-gray-800 mb-4">
+              <i class="fas fa-user-md text-blue-600 mr-2"></i>
+              Переход к персонифицированной медицине
+            </h4>
+            <p class="text-gray-700 mb-4">
+              ИИ является ключевым драйвером перехода к персонифицированной медицине. Анализируя мультиомные данные, ИИ может предсказывать, какие пациенты наилучшим образом отреагируют на конкретное лечение.
+            </p>
+            <div class="bg-white p-3 rounded-8">
+              <p class="text-xs text-gray-600">
+                <strong>Результат:</strong> Улучшение исходов для пациентов и снижение затрат на неэффективные терапии.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-12">
+            <h4 class="font-semibold text-gray-800 mb-4">
+              <i class="fas fa-handshake text-green-600 mr-2"></i>
+              Синергия ИИ и человеческой экспертизы
+            </h4>
+            <p class="text-gray-700 mb-4">
+              ИИ не заменит человеческих экспертов, а станет их мощным инструментом. Будущая рабочая сила будет состоять из &#34;центавров&#34; — гибридных команд людей и машин.
+            </p>
+            <div class="bg-white p-3 rounded-8">
+              <p class="text-xs text-gray-600">
+                <strong>Преимущество:</strong> Синергия вычислительной мощности ИИ и креативности, интуиции человека.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-purple-100 via-pink-100 to-blue-100 p-8 rounded-16">
+          <h4 class="serif text-xl font-semibold text-gray-800 mb-4 text-center">
+            <i class="fas fa-star text-yellow-500 mr-2"></i>
+            Заключение
+          </h4>
+          <p class="text-gray-700 text-center leading-relaxed">
+            Искусственный интеллект стоит на пороге радикальной трансформации фармацевтической отрасли. От ускорения клинических испытаний и оптимизации производства до революционизирования открытия лекарств, ИИ предлагает решения для сокращения затрат, экономии ресурсов и ускорения инноваций. Успешное внедрение ИИ сделает разработку новых лекарств более быстрой, дешевой и эффективной, в конечном итоге обеспечивая более широкий и быстрый доступ пациентов к жизненно важным препаратам. <strong>ИИ — это не просто новая технология; это фундаментальный строительный блок для более устойчивого и здорового будущего.</strong>
+          </p>
+        </div>
+      </section>
+
+      <!-- Footer with data gap note -->
+      <footer class="mt-16 pt-8 border-t border-gray-200">
+        <div class="data-gap-note">
+          <i class="fas fa-info-circle mr-2"></i>
+          <strong>Важная информация:</strong> Данный анализ основан на информации, предоставленной в запросе. Визуализации, включая графики и диаграммы, были бы полезны для демонстрации количественных данных, но они не были предоставлены в исходном запросе. Все приведенные цифры и проценты взяты из предоставленного отчета, и создание новых визуализаций без дополнительных данных могло бы нарушить заданные ограничения.
+        </div>
+      </footer>
+    </main>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Highlight active section in TOC
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.toc-fixed a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-blue-600', 'font-semibold');
+                link.classList.add('text-gray-600');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.remove('text-gray-600');
+                    link.classList.add('text-blue-600', 'font-semibold');
+                }
+            });
+        });
+    </script>
+  
+
+</body></html>
