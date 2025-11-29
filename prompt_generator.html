@@ -744,13 +744,13 @@
     Адрес: company.Адрес || 'не указан',
     Выручка: company.Выручка || 'не указана',
     Баланс: company.Баланс || 'не указан',
-    Чистая_прибыль: company['Чистая прибыль/убыток'] || company.Чистая_прибыль || 'не указана',
+    Чистая_прибыль: company['Чистая прибыль/ убыток'] || 'не указана',
     Количество_сотрудников: company.Количество_сотрудников || 'не указано',
-    Основной_вид_деятельности: company.Основной_вид_деятельности || company['Основной вид деятельности (ОКВЭД)'] || 'не указан',
+    Основной_вид_деятельности: company['Основной вид деятельности'] || 'не указан',
     Руководство: this.formatLeadership(company),
     Контакты: this.formatContacts(company),
     Email: this.formatEmails(company),
-    Сайт: company.Сайт || company['Корпоративный сайт'] || 'не указан'
+    Сайт: company['Корпоративный сайт'] || 'не указан'
     };
     }
 
@@ -812,8 +812,24 @@
     }
 
     formatNumber(num) {
-    if (!num || num === '' || isNaN(num)) return 'не указано';
-    return new Intl.NumberFormat('ru-RU').format(parseFloat(num));
+    if (!num || num === '' || num === 'не указана' || num === 'не указан') return 'не указано';
+
+    try {
+    // Очищаем русский формат чисел: "р.4 971 041 000" -> 4971041000
+    let cleanNum = num.toString()
+        .replace(/р\./g, '')          // Убираем "р."
+        .replace(/\s/g, '')           // Убираем пробелы
+        .replace(/,/g, '.')           // Заменяем запятые на точки
+        .replace(/[^\d.-]/g, '');     // Убираем все не-цифры кроме точки и минуса
+
+    const numberValue = parseFloat(cleanNum);
+
+    if (isNaN(numberValue)) return 'не указано';
+
+    return new Intl.NumberFormat('ru-RU').format(numberValue);
+    } catch {
+    return 'не указано';
+    }
     }
     }
 
