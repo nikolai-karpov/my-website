@@ -54,4 +54,4 @@ build/
 /images/
 
 # Папка site-components
-/site-components/
+/site-components/!/contacts_backup.html

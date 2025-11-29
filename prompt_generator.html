@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор промптов для анализа компаний</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Дополнительные стили только для этого приложения */
+        .prompt-app {
+            min-height: 100vh;
+            background: var(--light-bg-color);
+        }
+
+        .app-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-lg);
+        }
+
+        .app-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-xl) 0;
+        }
+
+        .app-card {
+            background: var(--white-color);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--card-shadow);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .company-selector {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: var(--spacing-md);
+            align-items: end;
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: var(--font-size-base);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px var(--neural-glow);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .info-item {
+            background: var(--light-bg-color);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .prompt-output {
+            background: #1a1a1a;
+            color: #f0f0f0;
+            padding: var(--spacing-xl);
+            border-radius: var(--border-radius);
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            line-height: 1.5;
+            max-height: 500px;
+            overflow-y: auto;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .actions {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .status-indicator {
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--border-radius);
+            font-size: var(--font-size-sm);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .status-success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .status-loading {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        @media (max-width: 768px) {
+            .company-selector {
+                grid-template-columns: 1fr;
+            }
+
+            .actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="prompt-app">
+    <div class="app-container">
+        <header class="app-header">
+            <h1 class="gradient-text">🎯 Генератор промптов для B2B-анализа</h1>
+            <p>Автоматическая генерация персонализированных промптов на основе данных из Google Sheets</p>
+        </header>
+
+        <main>
+            <!-- Блок управления данными -->
+            <section class="app-card">
+                <h3>📊 Источник данных</h3>
+                <div class="company-selector">
+                    <div class="form-group">
+                        <label for="sheetUrl">URL Google Sheets (CSV экспорт):</label>
+                        <input type="url" id="sheetUrl" class="form-control"
+                               placeholder="https://docs.google.com/spreadsheets/d/XXX/export?format=csv">
+                        <small>Опубликуйте таблицу через Файл → Опубликовать в интернете → CSV</small>
+                    </div>
+                    <button id="loadDataBtn" class="cta-button primary">
+                        📥 Загрузить данные
+                    </button>
+                </div>
+
+                <div id="dataStatus" class="status-indicator status-loading" style="display: none;">
+                    <span>Загрузка данных...</span>
+                </div>
+            </section>
+
+            <!-- Блок выбора компании -->
+            <section class="app-card" id="companySection" style="display: none;">
+                <h3>🏢 Выбор компании</h3>
+                <div class="company-selector">
+                    <div class="form-group">
+                        <label for="companySelect">Компания для анализа:</label>
+                        <select id="companySelect" class="form-control">
+                            <option value="">-- Выберите компанию --</option>
+                        </select>
+                    </div>
+                    <button id="refreshBtn" class="cta-button secondary">
+                        🔄 Обновить
+                    </button>
+                </div>
+
+                <!-- Информация о компании -->
+                <div id="companyInfo" style="display: none;">
+                    <h4>📋 Базовая информация</h4>
+                    <div class="info-grid" id="companyDetails"></div>
+                </div>
+            </section>
+
+            <!-- Блок промпта -->
+            <section class="app-card" id="promptSection" style="display: none;">
+                <h3>🚀 Сгенерированный промпт</h3>
+                <div class="prompt-output" id="promptOutput">
+                    Выберите компанию для генерации промпта...
+                </div>
+                <div class="actions">
+                    <button id="copyBtn" class="cta-button primary" disabled>
+                        📋 Скопировать промпт
+                    </button>
+                    <button id="downloadBtn" class="cta-button secondary" disabled>
+                        💾 Скачать как .md
+                    </button>
+                    <button id="newPromptBtn" class="cta-button secondary" disabled>
+                        🔄 Новый вариант
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <footer class="text-center mt-5">
+            <p>Данные загружаются из Google Sheets • Обновлено: <span id="lastUpdate">-</span></p>
+        </footer>
+    </div>
+</div>
+
+<script>
+    // JavaScript код приложения
+    class CompanyDataManager {
+        constructor() {
+            this.SHEET_URL = '';
+            this.CACHE_KEY = 'companies_cache';
+            this.CACHE_TIMEOUT = 30 * 60 * 1000; // 30 минут
+            this.companies = [];
+        }
+
+        setSheetUrl(url) {
+            this.SHEET_URL = url;
+        }
+
+        async loadCompanies() {
+            if (!this.SHEET_URL) {
+                throw new Error('URL таблицы не указан');
+            }
+
+            // Проверка кэша
+            const cached = this.getCachedData();
+            if (cached) {
+                this.companies = cached;
+                return cached;
+            }
+
+            // Загрузка из Google Sheets
+            try {
+                this.showStatus('Загрузка данных из Google Sheets...', 'loading');
+                const response = await fetch(this.SHEET_URL);
+
+                if (!response.ok) {
+                    throw new Error(`Ошибка загрузки: ${response.status}`);
+                }
+
+                const csvData = await response.text();
+                this.companies = this.parseCSV(csvData);
+                this.cacheData(this.companies);
+                this.showStatus('Данные успешно загружены', 'success');
+                return this.companies;
+            } catch (error) {
+                this.showStatus(`Ошибка: ${error.message}`, 'error');
+                throw error;
+            }
+        }
+
+        parseCSV(csvText) {
+            const lines = csvText.split('\n').filter(line => line.trim());
+            if (lines.length < 2) {
+                throw new Error('CSV файл пуст или содержит только заголовки');
+            }
+
+            const headers = this.parseCSVLine(lines[0]);
+
+            return lines.slice(1).map((line, index) => {
+                const values = this.parseCSVLine(line);
+                let company = { _index: index };
+
+                headers.forEach((header, idx) => {
+                    company[header] = values[idx] || '';
+                });
+
+                return company;
+            }).filter(company => company.Наименование && company.Наименование.trim());
+        }
+
+        parseCSVLine(line) {
+            const result = [];
+            let current = '';
+            let inQuotes = false;
+
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+
+                if (char === '"') {
+                    inQuotes = !inQuotes;
+                } else if (char === ',' && !inQuotes) {
+                    result.push(current.trim());
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+
+            result.push(current.trim());
+            return result.map(field => field.replace(/^"|"$/g, ''));
+        }
+
+        getCachedData() {
+            try {
+                const cached = localStorage.getItem(this.CACHE_KEY);
+                if (!cached) return null;
+
+                const { data, timestamp } = JSON.parse(cached);
+
+                if (Date.now() - timestamp > this.CACHE_TIMEOUT) {
+                    localStorage.removeItem(this.CACHE_KEY);
+                    return null;
+                }
+
+                return data;
+            } catch {
+                return null;
+            }
+        }
+
+        cacheData(data) {
+            const cache = {
+                data: data,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(this.CACHE_KEY, JSON.stringify(cache));
+        }
+
+        clearCache() {
+            localStorage.removeItem(this.CACHE_KEY);
+        }
+
+        showStatus(message, type) {
+            const statusEl = document.getElementById('dataStatus');
+            if (statusEl) {
+                statusEl.textContent = message;
+                statusEl.className = `status-indicator status-${type}`;
+                statusEl.style.display = 'inline-flex';
+
+                if (type === 'success') {
+                    setTimeout(() => {
+                        statusEl.style.display = 'none';
+                    }, 3000);
+                }
+            }
+        }
+    }
+
+    class PromptGenerator {
+        generateAnalysisPrompt(company) {
+            return `# Анализ компании: ${company.Наименование}
+
+## 📊 ФАКТИЧЕСКАЯ ИНФОРМАЦИЯ
+- **Юридические данные:** ИНН ${company.ИНН}, ОГРН ${company.ОГРН}
+- **Дата регистрации:** ${company.Дата_регистрации || 'не указана'}
+- **Юридический адрес:** ${company.Адрес || 'не указан'}
+- **Масштаб бизнеса:** ${company.Количество_сотрудников || 'не указано'} сотрудников
+- **Финансовые показатели:**
+  - Выручка: ${this.formatNumber(company.Выручка)} руб.
+  - Чистая прибыль/убыток: ${this.formatNumber(company.Чистая_прибыль_убыток)} руб.
+  - Баланс: ${this.formatNumber(company.Баланс)} руб.
+- **Основной вид деятельности:** ${company.Основной_вид_деятельности || 'не указан'}
+- **Руководство:** ${company.Руководство || 'не указано'}
+- **Контактная информация:**
+  - Телефоны: ${company.Контакты || 'не указаны'}
+  - Email: ${company.Email || 'не указан'}
+  - Сайт: ${company.Сайт || 'не указан'}
+
+## 🎯 ЗАДАЧИ ДЛЯ ИССЛЕДОВАНИЯ
+
+### 1. ПОИСК ДОПОЛНИТЕЛЬНЫХ ЛПР
+- Финансовый директор / Руководитель финансового отдела
+- Директор по проектам / Руководитель проектного офиса
+- Начальник отдела закупок
+- Директор по IT / Цифровизации
+- Технический директор / Главный инженер
+
+### 2. СТРАТЕГИЧЕСКИЕ ИНСАЙТЫ
+- Текущие проекты и партнеры
+- Проблемы в управлении подрядчиками
+- Уровень цифровизации процессов
+- Планы развития и расширения
+
+### 3. ТЕХНОЛОГИЧЕСКИЙ КОНТЕКСТ
+- Используемое ПО (1С, ERP, CRM системы)
+- Признаки цифровизации в вакансиях
+- Участие в проектах по оптимизации
+- Технологический стек и компетенции
+
+## 🔍 КОНКРЕТНЫЕ ЗАПРОСЫ ДЛЯ ПОИСКА:
+"${company.Наименование} CEO интервью"
+"${company.Наименование} цифровизация проекты"
+"${company.Наименование} подрядчики тендеры"
+"${company.Наименование} IT система внедрение"
+"${this.extractLastName(company.Руководство)} LinkedIn"
+"${company.Наименование} вакансии IT"
+"${company.Наименование} отзывы сотрудников"
+"${company.Наименование} годовой отчет"
+
+## 📈 АНАЛИЗ ВОЗМОЖНОСТЕЙ
+- **Потенциал роста:** ${this.assessGrowthPotential(company)}
+- **Уровень цифровизации:** ${this.assessDigitalization(company)}
+- **Финансовая стабильность:** ${this.assessFinancialStability(company)}
+
+**КОМАНДА ЗАПУСКА АНАЛИЗА:**
+"Начинаю строгий фактологический анализ компании ${company.Наименование} на основе предоставленных данных. Использую только конкретные цифры и показатели без теоретических предположений. Сфокусируйся на поиске дополнительных контактов ЛПР, текущих проектах и технологических потребностях компании."
+
+---
+*Промпт сгенерирован автоматически на основе данных из Google Sheets*
+*Обновлено: ${new Date().toLocaleString('ru-RU')}*`;
+        }
+
+        formatNumber(num) {
+            if (!num || isNaN(num)) return 'не указано';
+            return new Intl.NumberFormat('ru-RU').format(parseFloat(num));
+        }
+
+        extractLastName(fullName) {
+            if (!fullName) return '';
+            return fullName.split(' ')[0] || '';
+        }
+
+        assessGrowthPotential(company) {
+            const revenue = parseFloat(company.Выручка) || 0;
+            const profit = parseFloat(company.Чистая_прибыль_убыток) || 0;
+            const employees = parseInt(company.Количество_сотрудников) || 0;
+
+            if (revenue > 1000000000) return 'Высокий (крупная компания)';
+            if (revenue > 100000000) return 'Средний (растущий бизнес)';
+            return 'Требует дополнительного анализа';
+        }
+
+        assessDigitalization(company) {
+            const activities = company.Основной_вид_деятельности || '';
+            if (activities.includes('IT') || activities.includes('информацион')) {
+                return 'Высокий (IT-компания)';
+            }
+            return 'Требует анализа технологических потребностей';
+        }
+
+        assessFinancialStability(company) {
+            const profit = parseFloat(company.Чистая_прибыль_убыток) || 0;
+            if (profit > 0) return 'Стабильная (прибыльная)';
+            if (profit < 0) return 'Требует осторожного подхода (убыточная)';
+            return 'Недостаточно данных для оценки';
+        }
+    }
+
+    class UIManager {
+        constructor() {
+            this.dataManager = new CompanyDataManager();
+            this.promptGenerator = new PromptGenerator();
+            this.init();
+        }
+
+        init() {
+            this.setupEventListeners();
+            this.updateLastUpdateTime();
+            this.checkForCachedData();
+        }
+
+        setupEventListeners() {
+            document.getElementById('loadDataBtn').addEventListener('click', () => {
+                this.loadData();
+            });
+
+            document.getElementById('companySelect').addEventListener('change', (e) => {
+                this.handleCompanySelect(e.target.value);
+            });
+
+            document.getElementById('refreshBtn').addEventListener('click', () => {
+                this.refreshData();
+            });
+
+            document.getElementById('copyBtn').addEventListener('click', () => {
+                this.copyPromptToClipboard();
+            });
+
+            document.getElementById('downloadBtn').addEventListener('click', () => {
+                this.downloadPromptAsMD();
+            });
+
+            document.getElementById('newPromptBtn').addEventListener('click', () => {
+                this.generateNewPromptVariant();
+            });
+
+            // Автосохранение URL
+            document.getElementById('sheetUrl').addEventListener('change', (e) => {
+                localStorage.setItem('last_sheet_url', e.target.value);
+            });
+        }
+
+        async loadData() {
+            const sheetUrl = document.getElementById('sheetUrl').value.trim();
+            if (!sheetUrl) {
+                alert('Пожалуйста, укажите URL Google Sheets');
+                return;
+            }
+
+            this.dataManager.setSheetUrl(sheetUrl);
+
+            try {
+                const companies = await this.dataManager.loadCompanies();
+                this.loadCompaniesToSelect(companies);
+                this.showSection('companySection');
+                this.updateLastUpdateTime();
+            } catch (error) {
+                console.error('Ошибка загрузки данных:', error);
+            }
+        }
+
+        loadCompaniesToSelect(companies) {
+            const select = document.getElementById('companySelect');
+            select.innerHTML = '<option value="">-- Выберите компанию --</option>';
+
+            companies.forEach(company => {
+                if (company.Наименование) {
+                    const option = document.createElement('option');
+                    option.value = company._index;
+                    option.textContent = company.Наименование;
+                    select.appendChild(option);
+                }
+            });
+        }
+
+        handleCompanySelect(companyIndex) {
+            if (!companyIndex) {
+                this.hideCompanyInfo();
+                this.hidePromptSection();
+                return;
+            }
+
+            const company = this.dataManager.companies[companyIndex];
+            if (company) {
+                this.showCompanyInfo(company);
+                this.generateAndDisplayPrompt(company);
+                this.showSection('promptSection');
+            }
+        }
+
+        showCompanyInfo(company) {
+            const detailsDiv = document.getElementById('companyDetails');
+            detailsDiv.innerHTML = `
+                    <div class="info-item">
+                        <strong>ИНН:</strong> ${company.ИНН || 'не указан'}
+                    </div>
+                    <div class="info-item">
+                        <strong>ОГРН:</strong> ${company.ОГРН || 'не указан'}
+                    </div>
+                    <div class="info-item">
+                        <strong>Адрес:</strong> ${company.Адрес || 'не указан'}
+                    </div>
+                    <div class="info-item">
+                        <strong>Сотрудников:</strong> ${company.Количество_сотрудников || 'не указано'}
+                    </div>
+                    <div class="info-item">
+                        <strong>Выручка:</strong> ${this.formatCurrency(company.Выручка)}
+                    </div>
+                    <div class="info-item">
+                        <strong>Прибыль:</strong> ${this.formatCurrency(company.Чистая_прибыль_убыток)}
+                    </div>
+                    <div class="info-item">
+                        <strong>Вид деятельности:</strong> ${company.Основной_вид_деятельности || 'не указан'}
+                    </div>
+                    <div class="info-item">
+                        <strong>Руководство:</strong> ${company.Руководство || 'не указано'}
+                    </div>
+                `;
+
+            document.getElementById('companyInfo').style.display = 'block';
+        }
+
+        generateAndDisplayPrompt(company) {
+            const prompt = this.promptGenerator.generateAnalysisPrompt(company);
+            document.getElementById('promptOutput').textContent = prompt;
+
+            // Активируем кнопки
+            document.getElementById('copyBtn').disabled = false;
+            document.getElementById('downloadBtn').disabled = false;
+            document.getElementById('newPromptBtn').disabled = false;
+        }
+
+        async copyPromptToClipboard() {
+            const promptText = document.getElementById('promptOutput').textContent;
+            try {
+                await navigator.clipboard.writeText(promptText);
+                this.showTemporaryMessage('📋 Промпт скопирован в буфер обмена!', 'success');
+            } catch (err) {
+                console.error('Ошибка копирования:', err);
+                this.showTemporaryMessage('❌ Ошибка копирования', 'error');
+            }
+        }
+
+        downloadPromptAsMD() {
+            const promptText = document.getElementById('promptOutput').textContent;
+            const companyName = document.getElementById('companySelect').selectedOptions[0]?.text || 'company';
+            const filename = `prompt_${companyName.replace(/[^a-z0-9]/gi, '_')}.md`;
+
+            const blob = new Blob([promptText], { type: 'text/markdown' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            this.showTemporaryMessage('💾 Файл скачан!', 'success');
+        }
+
+        generateNewPromptVariant() {
+            const companyIndex = document.getElementById('companySelect').value;
+            if (companyIndex) {
+                const company = this.dataManager.companies[companyIndex];
+                this.generateAndDisplayPrompt(company);
+                this.showTemporaryMessage('🔄 Сгенерирован новый вариант промпта', 'success');
+            }
+        }
+
+        refreshData() {
+            this.dataManager.clearCache();
+            this.loadData();
+        }
+
+        showSection(sectionId) {
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        hideCompanyInfo() {
+            document.getElementById('companyInfo').style.display = 'none';
+        }
+
+        hidePromptSection() {
+            document.getElementById('promptSection').style.display = 'none';
+        }
+
+        formatCurrency(value) {
+            if (!value || isNaN(value)) return 'не указано';
+            return new Intl.NumberFormat('ru-RU', {
+                style: 'currency',
+                currency: 'RUB'
+            }).format(parseFloat(value));
+        }
+
+        updateLastUpdateTime() {
+            document.getElementById('lastUpdate').textContent = new Date().toLocaleString('ru-RU');
+        }
+
+        showTemporaryMessage(message, type) {
+            const statusEl = document.getElementById('dataStatus');
+            if (statusEl) {
+                statusEl.textContent = message;
+                statusEl.className = `status-indicator status-${type}`;
+                statusEl.style.display = 'inline-flex';
+
+                setTimeout(() => {
+                    statusEl.style.display = 'none';
+                }, 3000);
+            }
+        }
+
+        checkForCachedData() {
+            // Восстанавливаем последний использованный URL
+            const lastUrl = localStorage.getItem('last_sheet_url');
+            if (lastUrl) {
+                document.getElementById('sheetUrl').value = lastUrl;
+            }
+
+            // Проверяем кэшированные данные
+            const cached = this.dataManager.getCachedData();
+            if (cached && cached.length > 0) {
+                this.dataManager.companies = cached;
+                this.loadCompaniesToSelect(cached);
+                this.showSection('companySection');
+                this.dataManager.showStatus('Загружены кэшированные данные', 'success');
+            }
+        }
+    }
+
+    // Инициализация приложения
+    document.addEventListener('DOMContentLoaded', () => {
+        new UIManager();
+    });
+</script>
+</body>
+</html>
