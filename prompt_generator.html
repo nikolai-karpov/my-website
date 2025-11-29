@@ -742,10 +742,10 @@
     ОГРН: company.ОГРН || 'не указан',
     Дата_регистрации: company.Дата_регистрации || 'не указана',
     Адрес: company.Адрес || 'не указан',
-    Выручка: company.Выручка || 'не указана',
-    Баланс: company.Баланс || 'не указан',
-    Чистая_прибыль: company['Чистая прибыль/ убыток'] || 'не указана',
-    Количество_сотрудников: company.Количество_сотрудников || 'не указано',
+    Выручка: this.formatNumber(company.Выручка) || 'не указана',
+    Баланс: this.formatNumber(company.Баланс) || 'не указан',
+    Чистая_прибыль: this.formatNumber(company['Чистая прибыль/ убыток']) || 'не указана',
+    Количество_сотрудников: company['Количество сотрудников'] || company.Количество_сотрудников || 'не указано',
     Основной_вид_деятельности: company['Основной вид деятельности'] || 'не указан',
     Руководство: this.formatLeadership(company),
     Контакты: this.formatContacts(company),
@@ -942,31 +942,31 @@
     const transformedData = this.promptGenerator.transformTableData(company);
     const detailsDiv = document.getElementById('companyDetails');
     detailsDiv.innerHTML = `
-                    <div class="info-item">
-                        <strong>ИНН:</strong> ${transformedData.ИНН}
-                    </div>
-                    <div class="info-item">
-                        <strong>ОГРН:</strong> ${transformedData.ОГРН}
-                    </div>
-                    <div class="info-item">
-                        <strong>Адрес:</strong> ${transformedData.Адрес}
-                    </div>
-                    <div class="info-item">
-                        <strong>Сотрудников:</strong> ${transformedData.Количество_сотрудников}
-                    </div>
-                    <div class="info-item">
-                        <strong>Выручка:</strong> ${this.formatCurrency(transformedData.Выручка)}
-                    </div>
-                    <div class="info-item">
-                        <strong>Прибыль:</strong> ${this.formatCurrency(transformedData.Чистая_прибыль)}
-                    </div>
-                    <div class="info-item">
-                        <strong>Вид деятельности:</strong> ${transformedData.Основной_вид_деятельности}
-                    </div>
-                    <div class="info-item">
-                        <strong>Руководство:</strong> ${transformedData.Руководство}
-                    </div>
-                `;
+        <div class="info-item">
+            <strong>ИНН:</strong> ${transformedData.ИНН}
+        </div>
+        <div class="info-item">
+            <strong>ОГРН:</strong> ${transformedData.ОГРН}
+        </div>
+        <div class="info-item">
+            <strong>Адрес:</strong> ${transformedData.Адрес}
+        </div>
+        <div class="info-item">
+            <strong>Сотрудников:</strong> ${transformedData.Количество_сотрудников}
+        </div>
+        <div class="info-item">
+            <strong>Выручка:</strong> ${transformedData.Выручка}
+        </div>
+        <div class="info-item">
+            <strong>Прибыль:</strong> ${transformedData.Чистая_прибыль}
+        </div>
+        <div class="info-item">
+            <strong>Вид деятельности:</strong> ${transformedData.Основной_вид_деятельности}
+        </div>
+        <div class="info-item">
+            <strong>Руководство:</strong> ${transformedData.Руководство}
+        </div>
+    `;
 
     document.getElementById('companyInfo').classList.remove('hidden');
     }
