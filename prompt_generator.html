@@ -4,48 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Генератор промптов для анализа компаний</title>
-    <link rel="stylesheet" href="css/styles.css">
     <style>
-        /* Дополнительные стили только для этого приложения */
-        .prompt-app {
-            min-height: 100vh;
-            background: var(--light-bg-color);
+        /* CSS переменные */
+        :root {
+            --primary-color: #4A90E2;
+            --primary-hover: #357ABD;
+            --dark-color: #2c3e50;
+            --text-color: #34495e;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+            --border-radius: 8px;
+            --border-radius-lg: 16px;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.12);
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
         }
 
-        .app-container {
+        /* Базовые стили */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--light-bg);
+            min-height: 100vh;
+        }
+
+        .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: var(--spacing-lg);
         }
 
-        .app-header {
-            text-align: center;
-            margin-bottom: var(--spacing-xl);
-            padding: var(--spacing-xl) 0;
-        }
-
-        .app-card {
-            background: var(--white-color);
+        /* Карточки */
+        .card {
+            background: var(--white);
             border-radius: var(--border-radius-lg);
-            box-shadow: var(--card-shadow);
+            box-shadow: var(--shadow);
             padding: var(--spacing-xl);
             margin-bottom: var(--spacing-lg);
+            transition: all 0.3s ease;
         }
 
-        .company-selector {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: var(--spacing-md);
-            align-items: end;
+        .card:hover {
+            box-shadow: var(--shadow-hover);
         }
 
+        /* Кнопки */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        /* Формы */
         .form-group {
             margin-bottom: var(--spacing-md);
         }
 
         .form-group label {
             display: block;
-            margin-bottom: var(--spacing-xs);
+            margin-bottom: 8px;
             font-weight: 600;
             color: var(--dark-color);
         }
@@ -55,56 +118,59 @@
             padding: 12px 16px;
             border: 2px solid var(--border-color);
             border-radius: var(--border-radius);
-            font-size: var(--font-size-base);
-            transition: var(--transition);
+            font-size: 14px;
+            transition: all 0.3s ease;
         }
 
         .form-control:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px var(--neural-glow);
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
         }
 
-        .info-grid {
+        /* Заголовки */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--dark-color);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--dark-color);
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--dark-color);
+        }
+
+        /* Сетки */
+        .grid {
             display: grid;
+            gap: var(--spacing-md);
+        }
+
+        .grid-2 {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .grid-auto {
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-md);
-            margin-top: var(--spacing-md);
         }
 
-        .info-item {
-            background: var(--light-bg-color);
-            padding: var(--spacing-md);
+        /* Статусы */
+        .status {
+            padding: 8px 16px;
             border-radius: var(--border-radius);
-            border-left: 4px solid var(--primary-color);
-        }
-
-        .prompt-output {
-            background: #1a1a1a;
-            color: #f0f0f0;
-            padding: var(--spacing-xl);
-            border-radius: var(--border-radius);
-            font-family: 'Courier New', monospace;
-            white-space: pre-wrap;
-            line-height: 1.5;
-            max-height: 500px;
-            overflow-y: auto;
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .actions {
-            display: flex;
-            gap: var(--spacing-md);
-            flex-wrap: wrap;
-        }
-
-        .status-indicator {
-            padding: var(--spacing-sm) var(--spacing-md);
-            border-radius: var(--border-radius);
-            font-size: var(--font-size-sm);
+            font-size: 14px;
             display: inline-flex;
             align-items: center;
-            gap: var(--spacing-xs);
+            gap: 8px;
+            margin-top: var(--spacing-sm);
         }
 
         .status-success {
@@ -122,101 +188,165 @@
             color: #1e40af;
         }
 
+        /* Промпт */
+        .prompt-output {
+            background: #1a1a1a;
+            color: #f0f0f0;
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            line-height: 1.5;
+            max-height: 500px;
+            overflow-y: auto;
+            margin-bottom: var(--spacing-md);
+            font-size: 14px;
+        }
+
+        /* Адаптивность */
         @media (max-width: 768px) {
-            .company-selector {
+            .grid-2 {
                 grid-template-columns: 1fr;
             }
 
-            .actions {
-                flex-direction: column;
+            .container {
+                padding: var(--spacing-md);
             }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: var(--spacing-lg);
+            }
+        }
+
+        /* Специфические стили приложения */
+        .app-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-xl) 0;
+        }
+
+        .company-selector {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: var(--spacing-md);
+            align-items: end;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .info-item {
+            background: var(--light-bg);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .actions {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        small {
+            color: #666;
+            font-size: 12px;
         }
     </style>
 </head>
 <body>
-<div class="prompt-app">
-    <div class="app-container">
-        <header class="app-header">
-            <h1 class="gradient-text">🎯 Генератор промптов для B2B-анализа</h1>
-            <p>Автоматическая генерация персонализированных промптов на основе данных из Google Sheets</p>
-        </header>
+<div class="container">
+    <header class="app-header">
+        <h1>🎯 Генератор промптов для B2B-анализа</h1>
+        <p>Автоматическая генерация персонализированных промптов на основе данных из Google Sheets</p>
+    </header>
 
-        <main>
-            <!-- Блок управления данными -->
-            <section class="app-card">
-                <h3>📊 Источник данных</h3>
-                <div class="company-selector">
-                    <div class="form-group">
-                        <label for="sheetUrl">URL Google Sheets (CSV экспорт):</label>
-                        <input type="url" id="sheetUrl" class="form-control"
-                               placeholder="https://docs.google.com/spreadsheets/d/XXX/export?format=csv">
-                        <small>Опубликуйте таблицу через Файл → Опубликовать в интернете → CSV</small>
-                    </div>
-                    <button id="loadDataBtn" class="cta-button primary">
-                        📥 Загрузить данные
-                    </button>
-                </div>
+    <main>
+        <!-- Блок управления данными -->
+        <section class="card">
+            <h3>📊 Источник данных</h3>
+            <div class="form-group">
+                <label for="sheetUrl">URL Google Sheets (CSV экспорт):</label>
+                <input type="url" id="sheetUrl" class="form-control"
+                       placeholder="https://docs.google.com/spreadsheets/d/XXX/export?format=csv"
+                       value="https://docs.google.com/spreadsheets/d/1STiFKYvyHD6_zA_qWpHnrg02-bX4MaAg7TMe_mYKWOM/export?format=csv">
+                <small>Используется твоя таблица. Если нужно изменить - вставь новый URL</small>
+            </div>
+            <button id="loadDataBtn" class="btn btn-primary">
+                📥 Загрузить данные
+            </button>
 
-                <div id="dataStatus" class="status-indicator status-loading" style="display: none;">
-                    <span>Загрузка данных...</span>
-                </div>
-            </section>
+            <div id="dataStatus" class="status status-loading hidden">
+                <span>Загрузка данных...</span>
+            </div>
+        </section>
 
-            <!-- Блок выбора компании -->
-            <section class="app-card" id="companySection" style="display: none;">
-                <h3>🏢 Выбор компании</h3>
-                <div class="company-selector">
-                    <div class="form-group">
-                        <label for="companySelect">Компания для анализа:</label>
-                        <select id="companySelect" class="form-control">
-                            <option value="">-- Выберите компанию --</option>
-                        </select>
-                    </div>
-                    <button id="refreshBtn" class="cta-button secondary">
-                        🔄 Обновить
-                    </button>
+        <!-- Блок выбора компании -->
+        <section class="card hidden" id="companySection">
+            <h3>🏢 Выбор компании</h3>
+            <div class="company-selector">
+                <div class="form-group">
+                    <label for="companySelect">Компания для анализа:</label>
+                    <select id="companySelect" class="form-control">
+                        <option value="">-- Выберите компанию --</option>
+                    </select>
                 </div>
+                <button id="refreshBtn" class="btn btn-secondary">
+                    🔄 Обновить
+                </button>
+            </div>
 
-                <!-- Информация о компании -->
-                <div id="companyInfo" style="display: none;">
-                    <h4>📋 Базовая информация</h4>
-                    <div class="info-grid" id="companyDetails"></div>
-                </div>
-            </section>
+            <!-- Информация о компании -->
+            <div id="companyInfo" class="hidden">
+                <h4>📋 Базовая информация</h4>
+                <div class="info-grid" id="companyDetails"></div>
+            </div>
+        </section>
 
-            <!-- Блок промпта -->
-            <section class="app-card" id="promptSection" style="display: none;">
-                <h3>🚀 Сгенерированный промпт</h3>
-                <div class="prompt-output" id="promptOutput">
-                    Выберите компанию для генерации промпта...
-                </div>
-                <div class="actions">
-                    <button id="copyBtn" class="cta-button primary" disabled>
-                        📋 Скопировать промпт
-                    </button>
-                    <button id="downloadBtn" class="cta-button secondary" disabled>
-                        💾 Скачать как .md
-                    </button>
-                    <button id="newPromptBtn" class="cta-button secondary" disabled>
-                        🔄 Новый вариант
-                    </button>
-                </div>
-            </section>
-        </main>
+        <!-- Блок промпта -->
+        <section class="card hidden" id="promptSection">
+            <h3>🚀 Сгенерированный промпт</h3>
+            <div class="prompt-output" id="promptOutput">
+                Выберите компанию для генерации промпта...
+            </div>
+            <div class="actions">
+                <button id="copyBtn" class="btn btn-primary" disabled>
+                    📋 Скопировать промпт
+                </button>
+                <button id="downloadBtn" class="btn btn-secondary" disabled>
+                    💾 Скачать как .md
+                </button>
+                <button id="newPromptBtn" class="btn btn-secondary" disabled>
+                    🔄 Новый вариант
+                </button>
+            </div>
+        </section>
+    </main>
 
-        <footer class="text-center mt-5">
-            <p>Данные загружаются из Google Sheets • Обновлено: <span id="lastUpdate">-</span></p>
-        </footer>
-    </div>
+    <footer style="text-align: center; margin-top: var(--spacing-xl);">
+        <p>Данные загружаются из Google Sheets • Обновлено: <span id="lastUpdate">-</span></p>
+    </footer>
 </div>
 
 <script>
-    // JavaScript код приложения
+    // 📁 КЛАСС ДЛЯ РАБОТЫ С ДАННЫМИ
     class CompanyDataManager {
         constructor() {
             this.SHEET_URL = '';
             this.CACHE_KEY = 'companies_cache';
-            this.CACHE_TIMEOUT = 30 * 60 * 1000; // 30 минут
+            this.CACHE_TIMEOUT = 30 * 60 * 1000;
             this.companies = [];
         }
 
@@ -229,27 +359,39 @@
                 throw new Error('URL таблицы не указан');
             }
 
-            // Проверка кэша
+            // Проверяем кэш
             const cached = this.getCachedData();
             if (cached) {
                 this.companies = cached;
                 return cached;
             }
 
-            // Загрузка из Google Sheets
+            // Загружаем из Google Sheets
             try {
                 this.showStatus('Загрузка данных из Google Sheets...', 'loading');
+
                 const response = await fetch(this.SHEET_URL);
 
                 if (!response.ok) {
-                    throw new Error(`Ошибка загрузки: ${response.status}`);
+                    throw new Error(`Ошибка HTTP: ${response.status}`);
                 }
 
                 const csvData = await response.text();
+
+                if (!csvData || csvData.trim().length === 0) {
+                    throw new Error('CSV файл пуст');
+                }
+
                 this.companies = this.parseCSV(csvData);
+
+                if (this.companies.length === 0) {
+                    throw new Error('Не найдено компаний в данных');
+                }
+
                 this.cacheData(this.companies);
-                this.showStatus('Данные успешно загружены', 'success');
+                this.showStatus(`Загружено ${this.companies.length} компаний`, 'success');
                 return this.companies;
+
             } catch (error) {
                 this.showStatus(`Ошибка: ${error.message}`, 'error');
                 throw error;
@@ -258,13 +400,15 @@
 
         parseCSV(csvText) {
             const lines = csvText.split('\n').filter(line => line.trim());
+
             if (lines.length < 2) {
-                throw new Error('CSV файл пуст или содержит только заголовки');
+                throw new Error('CSV файл должен содержать заголовки и данные');
             }
 
             const headers = this.parseCSVLine(lines[0]);
 
-            return lines.slice(1).map((line, index) => {
+            const companies = lines.slice(1)
+                .map((line, index) => {
                 const values = this.parseCSVLine(line);
                 let company = { _index: index };
 
@@ -273,7 +417,10 @@
                 });
 
                 return company;
-            }).filter(company => company.Наименование && company.Наименование.trim());
+            })
+                .filter(company => company.Наименование && company.Наименование.trim());
+
+            return companies;
         }
 
         parseCSVLine(line) {
@@ -332,24 +479,25 @@
             const statusEl = document.getElementById('dataStatus');
             if (statusEl) {
                 statusEl.textContent = message;
-                statusEl.className = `status-indicator status-${type}`;
-                statusEl.style.display = 'inline-flex';
+                statusEl.className = `status status-${type}`;
+                statusEl.classList.remove('hidden');
 
                 if (type === 'success') {
                     setTimeout(() => {
-                        statusEl.style.display = 'none';
+                        statusEl.classList.add('hidden');
                     }, 3000);
                 }
             }
         }
     }
 
+    // 🎯 КЛАСС ДЛЯ ГЕНЕРАЦИИ ПРОМПТОВ
     class PromptGenerator {
         generateAnalysisPrompt(company) {
             return `# Анализ компании: ${company.Наименование}
 
 ## 📊 ФАКТИЧЕСКАЯ ИНФОРМАЦИЯ
-- **Юридические данные:** ИНН ${company.ИНН}, ОГРН ${company.ОГРН}
+- **Юридические данные:** ИНН ${company.ИНН || 'не указан'}, ОГРН ${company.ОГРН || 'не указан'}
 - **Дата регистрации:** ${company.Дата_регистрации || 'не указана'}
 - **Юридический адрес:** ${company.Адрес || 'не указан'}
 - **Масштаб бизнеса:** ${company.Количество_сотрудников || 'не указано'} сотрудников
@@ -409,7 +557,7 @@
         }
 
         formatNumber(num) {
-            if (!num || isNaN(num)) return 'не указано';
+            if (!num || num === '' || isNaN(num)) return 'не указано';
             return new Intl.NumberFormat('ru-RU').format(parseFloat(num));
         }
 
@@ -420,9 +568,6 @@
 
         assessGrowthPotential(company) {
             const revenue = parseFloat(company.Выручка) || 0;
-            const profit = parseFloat(company.Чистая_прибыль_убыток) || 0;
-            const employees = parseInt(company.Количество_сотрудников) || 0;
-
             if (revenue > 1000000000) return 'Высокий (крупная компания)';
             if (revenue > 100000000) return 'Средний (растущий бизнес)';
             return 'Требует дополнительного анализа';
@@ -444,6 +589,7 @@
         }
     }
 
+    // 🎮 КЛАСС ДЛЯ УПРАВЛЕНИЯ ИНТЕРФЕЙСОМ
     class UIManager {
         constructor() {
             this.dataManager = new CompanyDataManager();
@@ -455,6 +601,11 @@
             this.setupEventListeners();
             this.updateLastUpdateTime();
             this.checkForCachedData();
+
+            // Автоматически загружаем данные при загрузке страницы
+            setTimeout(() => {
+                this.loadData();
+            }, 1000);
         }
 
         setupEventListeners() {
@@ -491,7 +642,7 @@
         async loadData() {
             const sheetUrl = document.getElementById('sheetUrl').value.trim();
             if (!sheetUrl) {
-                alert('Пожалуйста, укажите URL Google Sheets');
+                this.showTemporaryMessage('Пожалуйста, укажите URL Google Sheets', 'error');
                 return;
             }
 
@@ -502,6 +653,13 @@
                 this.loadCompaniesToSelect(companies);
                 this.showSection('companySection');
                 this.updateLastUpdateTime();
+
+                // Если компания одна - автоматически выбираем её
+                if (companies.length === 1) {
+                    document.getElementById('companySelect').value = '0';
+                    this.handleCompanySelect('0');
+                }
+
             } catch (error) {
                 console.error('Ошибка загрузки данных:', error);
             }
@@ -565,7 +723,7 @@
                     </div>
                 `;
 
-            document.getElementById('companyInfo').style.display = 'block';
+            document.getElementById('companyInfo').classList.remove('hidden');
         }
 
         generateAndDisplayPrompt(company) {
@@ -622,23 +780,23 @@
         }
 
         showSection(sectionId) {
-            document.getElementById(sectionId).style.display = 'block';
+            document.getElementById(sectionId).classList.remove('hidden');
         }
 
         hideCompanyInfo() {
-            document.getElementById('companyInfo').style.display = 'none';
+            document.getElementById('companyInfo').classList.add('hidden');
         }
 
         hidePromptSection() {
-            document.getElementById('promptSection').style.display = 'none';
+            document.getElementById('promptSection').classList.add('hidden');
         }
 
         formatCurrency(value) {
-            if (!value || isNaN(value)) return 'не указано';
+            if (!value || value === '' || isNaN(value)) return 'не указано';
             return new Intl.NumberFormat('ru-RU', {
-                style: 'currency',
-                currency: 'RUB'
-            }).format(parseFloat(value));
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            }).format(parseFloat(value)) + ' руб.';
         }
 
         updateLastUpdateTime() {
@@ -649,11 +807,11 @@
             const statusEl = document.getElementById('dataStatus');
             if (statusEl) {
                 statusEl.textContent = message;
-                statusEl.className = `status-indicator status-${type}`;
-                statusEl.style.display = 'inline-flex';
+                statusEl.className = `status status-${type}`;
+                statusEl.classList.remove('hidden');
 
                 setTimeout(() => {
-                    statusEl.style.display = 'none';
+                    statusEl.classList.add('hidden');
                 }, 3000);
             }
         }
@@ -676,7 +834,7 @@
         }
     }
 
-    // Инициализация приложения
+    // 🚀 ЗАПУСК ПРИЛОЖЕНИЯ
     document.addEventListener('DOMContentLoaded', () => {
         new UIManager();
     });
