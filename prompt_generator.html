@@ -264,6 +264,31 @@
             color: #666;
             font-size: 12px;
         }
+
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            color: #856404;
+        }
+
+        .warning-box h4 {
+            margin-top: 0;
+            color: #856404;
+        }
+
+        .column-list {
+            background: var(--light-bg);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+            margin-top: var(--spacing-sm);
+        }
     </style>
 </head>
 <body>
@@ -274,15 +299,41 @@
     </header>
 
     <main>
+        <!-- Информация о формате данных -->
+        <section class="card">
+            <h3>📋 Требования к данным</h3>
+            <div class="warning-box">
+                <h4>⚠️ ВАЖНО: Структура таблицы должна соответствовать формату</h4>
+                <p>Таблица должна содержать следующие столбцы (порядок не важен, но названия должны совпадать):</p>
+                <div class="column-list">
+                    • Название (компания)<br>
+                    • Выручка<br>
+                    • Баланс<br>
+                    • Чистая прибыль/ убыток<br>
+                    • ИНН<br>
+                    • ОГРН<br>
+                    • Дата регистрации<br>
+                    • Адрес<br>
+                    • Кол-во сотрудников<br>
+                    • Основной ОКВЭД<br>
+                    • Имя, Отчество, Фамилия, Должность (для данных о руководстве)<br>
+                    • Рабочий телефон, Доп. телефон 1-9<br>
+                    • Рабочий email, Доп.email 1-9<br>
+                    • web (сайт компании)
+                </div>
+                <p><strong>Пример таблицы:</strong> <a href="https://docs.google.com/spreadsheets/d/1IMCD7BhyhPE3UgM5qi0pHSbv6sAzIv5pIBvFY9rTsyk/edit?usp=sharing" target="_blank">открыть шаблон</a></p>
+            </div>
+        </section>
+
         <!-- Блок управления данными -->
         <section class="card">
             <h3>📊 Источник данных</h3>
             <div class="form-group">
-                <label for="sheetUrl">URL Google Sheets (CSV экспорт):</label>
+                <label for="sheetUrl">URL Google Sheets:</label>
                 <input type="url" id="sheetUrl" class="form-control"
-                       placeholder="https://docs.google.com/spreadsheets/d/XXX/export?format=csv"
-                       value="https://docs.google.com/spreadsheets/d/1STiFKYvyHD6_zA_qWpHnrg02-bX4MaAg7TMe_mYKWOM/export?format=csv">
-                <small>Используется твоя таблица. Если нужно изменить - вставь новый URL</small>
+                       placeholder="https://docs.google.com/spreadsheets/d/XXX/edit?usp=sharing"
+                       value="https://docs.google.com/spreadsheets/d/1IMCD7BhyhPE3UgM5qi0pHSbv6sAzIv5pIBvFY9rTsyk/edit?usp=sharing">
+                <small>Вставьте ссылку на Google Sheets (ссылка для просмотра). Программа автоматически преобразует её в CSV-экспорт.</small>
             </div>
             <button id="loadDataBtn" class="btn btn-primary">
                 📥 Загрузить данные
@@ -350,8 +401,59 @@
             this.companies = [];
         }
 
+        // Преобразование URL для просмотра в URL для CSV экспорта
+        convertToExportUrl(viewUrl) {
+            if (!viewUrl || viewUrl.trim() === '') {
+                throw new Error('URL не указан');
+            }
+
+            const url = viewUrl.trim();
+
+            // Если уже ссылка на экспорт - возвращаем как есть
+            if (url.includes('/export?format=csv')) {
+                return url;
+            }
+
+            // Если есть /edit, удаляем все после него
+            const editIndex = url.indexOf('/edit');
+            if (editIndex !== -1) {
+                const baseUrl = url.substring(0, editIndex);
+                return `${baseUrl}/export?format=csv`;
+            }
+
+            // Если ссылка без /edit, но с ID
+            const idMatch = url.match(/\/d\/([a-zA-Z0-9-_]+)/);
+            if (idMatch && idMatch[1]) {
+                const sheetId = idMatch[1];
+
+                // Проверяем, есть ли другие параметры после ID
+                const afterId = url.substring(url.indexOf(idMatch[1]) + idMatch[1].length);
+                if (afterId && afterId.length > 0) {
+                    // Убираем всё после ID
+                    const baseUrl = url.substring(0, url.indexOf(idMatch[1]) + idMatch[1].length);
+                    return `${baseUrl}/export?format=csv`;
+                }
+
+                return `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv`;
+            }
+
+            // Если не удалось распарсить, пытаемся добавить /export
+            if (!url.endsWith('/export?format=csv')) {
+                if (url.endsWith('/')) {
+                    return `${url}export?format=csv`;
+                } else {
+                    return `${url}/export?format=csv`;
+                }
+            }
+
+            return url;
+        }
+
         setSheetUrl(url) {
-            this.SHEET_URL = url;
+            // Автоматически преобразуем URL
+            this.SHEET_URL = this.convertToExportUrl(url);
+            console.log('Исходный URL:', url);
+            console.log('Экспорт URL:', this.SHEET_URL);
         }
 
         async loadCompanies() {
@@ -418,7 +520,11 @@
 
                 return company;
             })
-                .filter(company => company.Наименование && company.Наименование.trim());
+            // ИСПРАВЛЕННЫЙ ФИЛЬТР - используем правильное имя столбца
+                .filter(company => {
+                const companyName = company['Название (компания)'];
+                return companyName && companyName.toString().trim();
+            });
 
             return companies;
         }
@@ -485,7 +591,7 @@
                 if (type === 'success') {
                     setTimeout(() => {
                         statusEl.classList.add('hidden');
-                    }, 3000);
+                    }, 5000);
                 }
             }
         }
@@ -575,7 +681,7 @@
     - Директоре по проектам / Руководителе проектного офиса
     - Начальнике отдела закупок
     - Директоре по IT / Цифровизации
-    - Техническом директоре / Главном инженере
+    - Техническом директорe / Главном инженере
     - Директор по развитию
     - Руководителе московского филиала
 
@@ -737,20 +843,20 @@
     transformTableData(company) {
     // Автоматическое преобразование данных из таблицы в структурированный формат
     return {
-    Наименование: company.Наименование || 'не указано',
-    ИНН: company.ИНН || 'не указан',
-    ОГРН: company.ОГРН || 'не указан',
-    Дата_регистрации: company.Дата_регистрации || 'не указана',
-    Адрес: company.Адрес || 'не указан',
-    Выручка: this.formatNumber(company.Выручка) || 'не указана',
-    Баланс: this.formatNumber(company.Баланс) || 'не указан',
+    Наименование: company['Название (компания)'] || 'не указано',
+    ИНН: company['ИНН'] || 'не указан',
+    ОГРН: company['ОГРН'] || 'не указан',
+    Дата_регистрации: company['Дата регистрации'] || 'не указана',
+    Адрес: company['Адрес'] || 'не указан',
+    Выручка: this.formatNumber(company['Выручка']) || 'не указана',
+    Баланс: this.formatNumber(company['Баланс']) || 'не указан',
     Чистая_прибыль: this.formatNumber(company['Чистая прибыль/ убыток']) || 'не указана',
-    Количество_сотрудников: company['Количество сотрудников'] || company.Количество_сотрудников || 'не указано',
-    Основной_вид_деятельности: company['Основной вид деятельности'] || 'не указан',
+    Количество_сотрудников: company['Кол-во сотрудников'] || 'не указано',
+    Основной_вид_деятельности: company['Основной ОКВЭД'] || 'не указан',
     Руководство: this.formatLeadership(company),
     Контакты: this.formatContacts(company),
     Email: this.formatEmails(company),
-    Сайт: company['Корпоративный сайт'] || 'не указан'
+    Сайт: company['web'] || 'не указан'
     };
     }
 
@@ -758,16 +864,21 @@
     // Форматирование данных о руководстве из различных полей таблицы
     if (company.Руководство) return company.Руководство;
 
-    const parts = [];
-    if (company.Имя || company.Фамилия || company.Отчество) {
-    const name = [company.Фамилия, company.Имя, company.Отчество]
-        .filter(Boolean).join(' ');
-    if (name && company.Должность) {
-    return `${name} (${company.Должность})`;
-    }
-    return name || 'не указано';
-    }
+    const firstName = company['Имя'] || '';
+    const middleName = company['Отчество'] || '';
+    const lastName = company['Фамилия'] || '';
+    const position = company['Должность'] || '';
+
+    const nameParts = [lastName, firstName, middleName].filter(Boolean);
+    const fullName = nameParts.join(' ');
+
+    if (fullName && position) {
+    return `${fullName} (${position})`;
+    } else if (fullName) {
+    return fullName;
+    } else {
     return 'не указано';
+    }
     }
 
     formatContacts(company) {
@@ -776,7 +887,7 @@
 
     // Основные поля телефонов
     const phoneFields = [
-    'Контакты', 'Телефоны', 'Рабочий телефон', 'Телефон',
+    'Рабочий телефон',
     'Доп. телефон 1', 'Доп. телефон 2', 'Доп. телефон 3',
     'Доп. телефон 4', 'Доп. телефон 5', 'Доп. телефон 6',
     'Доп. телефон 7', 'Доп. телефон 8', 'Доп. телефон 9'
@@ -796,10 +907,10 @@
     const emails = [];
 
     const emailFields = [
-    'Email', 'Рабочий e-mail', 'E-mail',
-    'Доп. электронный адрес 1', 'Доп. электронный адрес 2',
-    'Доп. электронный адрес 3', 'Доп. электронный адрес 4',
-    'Доп. электронный адрес 5', 'Доп. электронный адрес 6'
+    'Рабочий email',
+    'Доп.email 1', 'Доп.email 2', 'Доп.email 3',
+    'Доп.email 4', 'Доп.email 5', 'Доп.email 6',
+    'Доп.email 7', 'Доп.email 8', 'Доп.email 9'
     ];
 
     emailFields.forEach(field => {
@@ -815,19 +926,18 @@
     if (!num || num === '' || num === 'не указана' || num === 'не указан') return 'не указано';
 
     try {
-    // Очищаем русский формат чисел: "р.4 971 041 000" -> 4971041000
+    // Очищаем формат чисел с пробелами и символами: "4 971 041 000 р." -> 4971041000
     let cleanNum = num.toString()
-        .replace(/р\./g, '')          // Убираем "р."
-        .replace(/\s/g, '')           // Убираем пробелы
-        .replace(/,/g, '.')           // Заменяем запятые на точки
-        .replace(/[^\d.-]/g, '');     // Убираем все не-цифры кроме точки и минуса
+        .replace(/\s/g, '')                    // Убираем все пробелы
+        .replace(/[^\d.-]/g, '');            // Убираем все не-цифры кроме точки и минуса
 
     const numberValue = parseFloat(cleanNum);
 
     if (isNaN(numberValue)) return 'не указано';
 
     return new Intl.NumberFormat('ru-RU').format(numberValue);
-    } catch {
+    } catch (error) {
+    console.error('Ошибка форматирования числа:', num, error);
     return 'не указано';
     }
     }
@@ -845,11 +955,6 @@
     this.setupEventListeners();
     this.updateLastUpdateTime();
     this.checkForCachedData();
-
-    // Автоматически загружаем данные при загрузке страницы
-    setTimeout(() => {
-    this.loadData();
-    }, 1000);
     }
 
     setupEventListeners() {
@@ -890,6 +995,9 @@
     return;
     }
 
+    // Сохраняем исходный URL для отображения
+    localStorage.setItem('last_sheet_url', sheetUrl);
+
     this.dataManager.setSheetUrl(sheetUrl);
 
     try {
@@ -906,6 +1014,7 @@
 
     } catch (error) {
     console.error('Ошибка загрузки данных:', error);
+    this.showTemporaryMessage(`Ошибка: ${error.message}`, 'error');
     }
     }
 
@@ -914,13 +1023,17 @@
     select.innerHTML = '<option value="">-- Выберите компанию --</option>';
 
     companies.forEach(company => {
-    if (company.Наименование) {
+    // ИСПРАВЛЕНО: используем правильное имя столбца
+    const companyName = company['Название (компания)'];
+    if (companyName && companyName.toString().trim()) {
     const option = document.createElement('option');
     option.value = company._index;
-    option.textContent = company.Наименование;
+    option.textContent = companyName;
     select.appendChild(option);
     }
     });
+
+    console.log('Загружено компаний для выбора:', companies.length);
     }
 
     handleCompanySelect(companyIndex) {
@@ -942,31 +1055,49 @@
     const transformedData = this.promptGenerator.transformTableData(company);
     const detailsDiv = document.getElementById('companyDetails');
     detailsDiv.innerHTML = `
-        <div class="info-item">
-            <strong>ИНН:</strong> ${transformedData.ИНН}
-        </div>
-        <div class="info-item">
-            <strong>ОГРН:</strong> ${transformedData.ОГРН}
-        </div>
-        <div class="info-item">
-            <strong>Адрес:</strong> ${transformedData.Адрес}
-        </div>
-        <div class="info-item">
-            <strong>Сотрудников:</strong> ${transformedData.Количество_сотрудников}
-        </div>
-        <div class="info-item">
-            <strong>Выручка:</strong> ${transformedData.Выручка}
-        </div>
-        <div class="info-item">
-            <strong>Прибыль:</strong> ${transformedData.Чистая_прибыль}
-        </div>
-        <div class="info-item">
-            <strong>Вид деятельности:</strong> ${transformedData.Основной_вид_деятельности}
-        </div>
-        <div class="info-item">
-            <strong>Руководство:</strong> ${transformedData.Руководство}
-        </div>
-    `;
+                <div class="info-item">
+                    <strong>Наименование:</strong> ${transformedData.Наименование}
+                </div>
+                <div class="info-item">
+                    <strong>ИНН:</strong> ${transformedData.ИНН}
+                </div>
+                <div class="info-item">
+                    <strong>ОГРН:</strong> ${transformedData.ОГРН}
+                </div>
+                <div class="info-item">
+                    <strong>Дата регистрации:</strong> ${transformedData.Дата_регистрации}
+                </div>
+                <div class="info-item">
+                    <strong>Адрес:</strong> ${transformedData.Адрес}
+                </div>
+                <div class="info-item">
+                    <strong>Сотрудников:</strong> ${transformedData.Количество_сотрудников}
+                </div>
+                <div class="info-item">
+                    <strong>Выручка:</strong> ${transformedData.Выручка} ${transformedData.Выручка !== 'не указано' ? 'руб.' : ''}
+                </div>
+                <div class="info-item">
+                    <strong>Баланс:</strong> ${transformedData.Баланс} ${transformedData.Баланс !== 'не указано' ? 'руб.' : ''}
+                </div>
+                <div class="info-item">
+                    <strong>Чистая прибыль:</strong> ${transformedData.Чистая_прибыль} ${transformedData.Чистая_прибыль !== 'не указано' ? 'руб.' : ''}
+                </div>
+                <div class="info-item">
+                    <strong>Вид деятельности:</strong> ${transformedData.Основной_вид_деятельности}
+                </div>
+                <div class="info-item">
+                    <strong>Руководство:</strong> ${transformedData.Руководство}
+                </div>
+                <div class="info-item">
+                    <strong>Контакты:</strong> ${transformedData.Контакты}
+                </div>
+                <div class="info-item">
+                    <strong>Email:</strong> ${transformedData.Email}
+                </div>
+                <div class="info-item">
+                    <strong>Сайт:</strong> ${transformedData.Сайт}
+                </div>
+            `;
 
     document.getElementById('companyInfo').classList.remove('hidden');
     }
@@ -1036,14 +1167,6 @@
     document.getElementById('promptSection').classList.add('hidden');
     }
 
-    formatCurrency(value) {
-    if (!value || value === '' || isNaN(value)) return 'не указано';
-    return new Intl.NumberFormat('ru-RU', {
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0
-    }).format(parseFloat(value)) + ' руб.';
-    }
-
     updateLastUpdateTime() {
     document.getElementById('lastUpdate').textContent = new Date().toLocaleString('ru-RU');
     }
@@ -1055,9 +1178,11 @@
     statusEl.className = `status status-${type}`;
     statusEl.classList.remove('hidden');
 
+    if (type === 'success' || type === 'error') {
     setTimeout(() => {
     statusEl.classList.add('hidden');
-    }, 3000);
+    }, 5000);
+    }
     }
     }
 
@@ -1074,7 +1199,7 @@
     this.dataManager.companies = cached;
     this.loadCompaniesToSelect(cached);
     this.showSection('companySection');
-    this.dataManager.showStatus('Загружены кэшированные данные', 'success');
+    this.showTemporaryMessage(`Загружены кэшированные данные (${cached.length} компаний)`, 'success');
     }
     }
     }
