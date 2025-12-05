@@ -56,3 +56,4 @@ build/
 # Папка site-components
 /site-components/!/contacts_backup.html
 /Устаревшие версии страниц/
+/.gigaide/
