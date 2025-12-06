@@ -262,62 +262,64 @@
             </div>
 
             <!-- Доказательства и артефакты -->
-            <div class="proofs-section">
-                <div class="proofs-header">
-                    <h2>Проектная документация и артефакты</h2>
-                    <p>Реальные рабочие документы, демонстрирующие системный подход от диагностики до оценки ROI</p>
+            <section class="proofs-section enhanced">
+                <div class="container">
+                    <div class="proofs-header">
+                        <h2>Проектная документация и артефакты</h2>
+                        <p>Реальные рабочие документы, демонстрирующие системный подход от диагностики до оценки ROI</p>
+                    </div>
+
+                    <div class="proofs-grid">
+                        <a href="../downloads/Strategic_Brief_AI_Implementation.pdf" class="proof-card" download>
+                            <div class="file-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <span class="file-type">Стратегический бриф внедрения</span>
+                            <p class="file-description">Документ, показывающий как интервью со стейкхолдерами превращается в четкий план действий с измеримыми KPI</p>
+                            <div class="file-meta">
+                                <span>PDF • 18 стр.</span>
+                                <span>📊 Бизнес-анализ</span>
+                            </div>
+                        </a>
+
+                        <a href="../downloads/LLM_Feasibility_Study.pdf" class="proof-card" download>
+                            <div class="file-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <span class="file-type">Техническое исследование</span>
+                            <p class="file-description">Отчет с методологией проверки гипотезы и доказательством реализуемости решения на реальных данных</p>
+                            <div class="file-meta">
+                                <span>PDF • 24 стр.</span>
+                                <span>🔧 Технический аудит</span>
+                            </div>
+                        </a>
+
+                        <a href="../downloads/Learning_Experience_Design_Kit.pdf" class="proof-card" download>
+                            <div class="file-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <span class="file-type">Пакет обучения сотрудников</span>
+                            <p class="file-description">Примеры материалов, демонстрирующие научный подход к созданию эффективных программ обучения</p>
+                            <div class="file-meta">
+                                <span>PDF • 32 стр.</span>
+                                <span>🎓 Педагогический дизайн</span>
+                            </div>
+                        </a>
+
+                        <a href="../downloads/Final_Business_Impact_Report.pdf" class="proof-card" download>
+                            <div class="file-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <span class="file-type">Итоговый отчет с ROI</span>
+                            <p class="file-description">Финальный отчет, агрегирующий данные и доказывающий измеримый бизнес-эффект от внедрения ИИ</p>
+                            <div class="file-meta">
+                                <span>PDF • 28 стр.</span>
+                                <span>📈 Результаты и аналитика</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-
-                <div class="proofs-grid">
-                    <a href="../downloads/Strategic_Brief_AI_Implementation.pdf" class="proof-card" download>
-                        <div class="file-icon">
-                            <i class="fas fa-file-alt"></i>
-                        </div>
-                        <span class="file-type">Стратегический бриф внедрения</span>
-                        <p class="file-description">Документ, показывающий как интервью со стейкхолдерами превращается в четкий план действий с измеримыми KPI</p>
-                        <div class="file-meta">
-                            <span>PDF • 18 стр.</span>
-                            <span>📊 Бизнес-анализ</span>
-                        </div>
-                    </a>
-
-                    <a href="../downloads/LLM_Feasibility_Study.pdf" class="proof-card" download>
-                        <div class="file-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <span class="file-type">Техническое исследование</span>
-                        <p class="file-description">Отчет с методологией проверки гипотезы и доказательством реализуемости решения на реальных данных</p>
-                        <div class="file-meta">
-                            <span>PDF • 24 стр.</span>
-                            <span>🔧 Технический аудит</span>
-                        </div>
-                    </a>
-
-                    <a href="../downloads/Learning_Experience_Design_Kit.pdf" class="proof-card" download>
-                        <div class="file-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <span class="file-type">Пакет обучения сотрудников</span>
-                        <p class="file-description">Примеры материалов, демонстрирующие научный подход к созданию эффективных программ обучения</p>
-                        <div class="file-meta">
-                            <span>PDF • 32 стр.</span>
-                            <span>🎓 Педагогический дизайн</span>
-                        </div>
-                    </a>
-
-                    <a href="../downloads/Final_Business_Impact_Report.pdf" class="proof-card" download>
-                        <div class="file-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <span class="file-type">Итоговый отчет с ROI</span>
-                        <p class="file-description">Финальный отчет, агрегирующий данные и доказывающий измеримый бизнес-эффект от внедрения ИИ</p>
-                        <div class="file-meta">
-                            <span>PDF • 28 стр.</span>
-                            <span>📈 Результаты и аналитика</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            </section>
         </div>
     </section>
 </main>
@@ -337,11 +339,11 @@
                 fetch(url)
                     .then(r => r.ok ? r.text() : Promise.reject())
                     .then(html => {
-                        document.getElementById(elementId).innerHTML = html;
-                    })
+                    document.getElementById(elementId).innerHTML = html;
+                })
                     .catch(() => {
-                        document.getElementById(elementId).innerHTML = `<div class="error">Компонент ${url} не загружен</div>`;
-                    });
+                    document.getElementById(elementId).innerHTML = `<div class="error">Компонент ${url} не загружен</div>`;
+                });
             };
             load('site-components/header.html', 'main-header');
             load('site-components/footer.html', 'main-footer');

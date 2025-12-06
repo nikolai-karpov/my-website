@@ -38,7 +38,7 @@
     </section>
 
     <!-- Ключевые метрики -->
-    <section class="key-metrics-section">
+    <section class="key-metrics">
         <div class="container">
             <div class="key-metrics">
                 <div class="metric-item">
@@ -127,11 +127,11 @@
                 fetch(url)
                     .then(r => r.ok ? r.text() : Promise.reject())
                     .then(html => {
-                        document.getElementById(elementId).innerHTML = html;
-                    })
+                    document.getElementById(elementId).innerHTML = html;
+                })
                     .catch(() => {
-                        document.getElementById(elementId).innerHTML = `<div class="error">Компонент ${url} не загружен</div>`;
-                    });
+                    document.getElementById(elementId).innerHTML = `<div class="error">Компонент ${url} не загружен</div>`;
+                });
             };
             load('site-components/header.html', 'main-header');
             load('site-components/footer.html', 'main-footer');
