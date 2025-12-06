@@ -201,33 +201,24 @@
   }
 }
 
-/* --- Контейнер шапки --- */
-
-
+/* --- Логотип --- */
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--dark-color);
-}
-.logo:hover { text-decoration: none; }
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--dark-color);
 
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/* Навигация (должна быть в _navigation.scss) */
 nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    gap: 25px;
-}
-
-/* --- Контейнер шапки --- */
-.header-container {
+  margin: 0;
+  padding: 0;
+  list-style: none;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  @media (max-width: 992px) {
-    /* На планшетах может потребоваться перенос или гамбургер (логика в components/_header) */
-    gap: 15px;
+  gap: 25px;
 }
 
 /* --- Контейнер шапки --- */
@@ -240,5 +231,4 @@ nav ul {
     /* На планшетах может потребоваться перенос или гамбургер (логика в components/_header) */
     gap: 15px;
   }
-}
 }

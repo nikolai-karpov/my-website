@@ -1,0 +1,141 @@
+/* CTA buttons */
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 15px 30px;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: var(--transition-smooth);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+
+  &.primary {
+    background: var(--gradient-primary);
+  }
+
+  &.secondary {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+
+    &:hover {
+      background: var(--primary-color);
+      color: var(--white-color);
+    }
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-hover);
+    text-decoration: none;
+    background-color: var(--primary-hover-color);
+  }
+
+  &.large {
+    padding: 18px 40px;
+    font-size: 1.2rem;
+  }
+}
+
+/* Legacy helpers */
+.btn-primary,
+.submit-btn,
+.form-button {
+  background: var(--gradient-primary);
+  color: var(--white-color);
+}
+
+.btn-secondary,
+.view-all-button {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* Стили по умолчанию для .btn */
+.btn {
+  background: var(--white-color);
+  color: var(--primary-color);
+}
+
+/* Общие стили кнопок */
+.btn,
+.submit-btn,
+.form-button,
+.view-all-button {
+  display: inline-block;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgb(0, 0, 0, 0.1);
+  }
+}
+
+/* Ховер для вторичных кнопок */
+.btn-secondary:hover,
+.view-all-button:hover {
+  background: var(--primary-color);
+  color: var(--white-color);
+}
+
+/* Кнопка "Наверх" */
+.back-to-top {
+  background: var(--primary-color);
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgb(37, 99, 235, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 990;
+  cursor: pointer;
+  border: none;
+
+  &:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+  }
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Стили для Call-to-Action секций (должны быть в другом файле, но пока оставим) */
+.cta-section {
+  text-align: center;
+  padding: 60px 0;
+  background: linear-gradient(135deg, var(--primary-color) 0%, #2c5aa0 100%);
+  color: var(--white-color);
+
+  h2 {
+    margin-bottom: 15px;
+  }
+
+  p {
+    margin-bottom: 25px;
+    opacity: 0.9;
+  }
+}
