@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты | Карпов Николай - Инструктор по внедрению ИИ</title>
 
-    <!-- Подключаем единый файл стилей -->
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-    <!-- Иконка для вкладки браузера -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Подключаем основной CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <!-- Фавикон -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
 
@@ -19,11 +17,11 @@
         <a href="/" class="logo">Карпов Николай</a>
         <nav class="desktop-nav">
             <ul>
-                <li><a href="index.html">Главная</a></li>
-                <li><a href="methodology.html">Методология</a></li>
-                <li><a href="cases.html">Кейсы</a></li>
-                <li><a href="results.html">Результаты</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
+                <li><a href="/">Главная</a></li>
+                <li><a href="site-pages/methodology.html">Методология</a></li>
+                <li><a href="site-pages/case-studies/index.html">Кейсы</a></li>
+                <li><a href="site-pages/results.html">Результаты</a></li>
+                <li><a href="site-pages/contacts.html" class="cta-button primary">Контакты</a></li>
             </ul>
         </nav>
         <button class="hamburger" aria-label="Меню" aria-expanded="false">
@@ -207,11 +205,11 @@
             <div class="footer-links">
                 <h4>Навигация</h4>
                 <ul>
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="about.html">Обо мне</a></li>
-                    <li><a href="cases.html">Кейсы</a></li>
-                    <li><a href="services.html">Услуги</a></li>
-                    <li><a href="contacts.html">Контакты</a></li>
+                    <li><a href="/">Главная</a></li>
+                    <li><a href="site-pages/methodology.html">Методология</a></li>
+                    <li><a href="site-pages/case-studies/index.html">Кейсы</a></li>
+                    <li><a href="site-pages/results.html">Результаты</a></li>
+                    <li><a href="site-pages/contacts.html">Контакты</a></li>
                 </ul>
             </div>
 
@@ -256,10 +254,10 @@
 
     <div class="mobile-footer-menu">
         <nav class="mobile-nav">
-            <a href="index.html" class="mobile-nav-item"><i class="fas fa-home"></i><span>Главная</span></a>
-            <a href="cases.html" class="mobile-nav-item"><i class="fas fa-briefcase"></i><span>Кейсы</span></a>
-            <a href="services.html" class="mobile-nav-item"><i class="fas fa-cogs"></i><span>Услуги</span></a>
-            <a href="contacts.html" class="mobile-nav-item"><i class="fas fa-phone-alt"></i><span>Контакты</span></a>
+            <a href="/" class="mobile-nav-item"><i class="fas fa-home"></i><span>Главная</span></a>
+            <a href="site-pages/case-studies/index.html" class="mobile-nav-item"><i class="fas fa-briefcase"></i><span>Кейсы</span></a>
+            <a href="site-pages/results.html" class="mobile-nav-item"><i class="fas fa-cogs"></i><span>Услуги</span></a>
+            <a href="site-pages/contacts.html" class="mobile-nav-item"><i class="fas fa-phone-alt"></i><span>Контакты</span></a>
         </nav>
     </div>
 </footer>
@@ -349,7 +347,8 @@
         });
     });
 </script>
-<!-- Единый скрипт для шапки/подвала -->
-<script src="/js/components.js" defer></script>
+<!-- Основные скрипты сайта -->
+<script src="../assets/js/components-loader.js" defer></script>
+<script src="../assets/js/main.js" defer></script>
 </body>
 </html>

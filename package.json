@@ -32,7 +32,8 @@
     "lint:css:fix": "stylelint assets/scss/**/*.scss --fix",
     "prepare": "husky",
     "dev": "concurrently \"npm run sass:watch\" \"live-server\"",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "test": "echo 'Tests are not configured for this project'"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
@@ -58,5 +59,8 @@
     "*.css": [
       "stylelint --fix"
     ]
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
   }
 }
