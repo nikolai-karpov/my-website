@@ -1,337 +1,75 @@
-/* =========================================
-   Компоненты: Карточки (Cards) - ОБЩИЕ
-   ========================================= */
-
-/* --- Базовая карточка --- */
+/* Modern Card Style */
 .card,
 .dashboard-card,
-.result-card {
-  background: var(--white-color);
-  padding: 30px;
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--card-shadow);
-  margin-bottom: 20px;
-  position: relative;
-  transition: var(--transition-smooth);
-}
-
-/* --- Полоска слева для дашборда --- */
-.dashboard-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--gradient-primary);
-}
-
-/* --- Базовая карточка с иконкой (Base Card) --- */
-.base-card {
-  background: var(--white-color);
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--card-shadow);
-  transition: var(--transition-smooth);
-  position: relative;
-  overflow: hidden;
-
-  &:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--card-shadow-hover);
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--gradient-primary);
-  }
-}
-
-.base-icon {
-  width: 80px;
-  height: 80px;
-  background: var(--neural-glow);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 25px;
-  font-size: 2rem;
-  color: var(--primary-color);
-  transition: transform 0.3s ease;
-}
-
-/* === АНИМАЦИИ ДЛЯ КАРТОЧЕК КОМПЕТЕНЦИЙ === */
+.result-card,
+.base-card,
 .card--competency {
   background: var(--white-color);
-  padding: 40px 30px;
+  padding: 40px; /* Больше воздуха */
   border-radius: var(--border-radius-lg);
   box-shadow: var(--card-shadow);
-  transition: var(--transition-smooth);
+  border: 1px solid rgb(0,0,0, 0.03); /* Тонкая рамка для четкости */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
   height: 100%;
+  display: flex;       /* Flexbox для растягивания контента */
+  flex-direction: column;
 
+  /* Убираем старую полоску сверху, она дешевит вид */
   &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--gradient-primary);
+    display: none; 
   }
 
   &:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px);
     box-shadow: var(--card-shadow-hover);
+    border-color: rgb(74, 144, 226, 0.2);
   }
 }
 
-.card__icon {
-  width: 80px;
-  height: 80px;
-  background: var(--neural-glow);
-  border-radius: 50%;
+/* Выравнивание иконок */
+.card__icon, 
+.base-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 20px; /* Squircle вместо круга - тренд 2024 */
+  background: linear-gradient(135deg, rgb(74, 144, 226, 0.1) 0%, rgb(74, 144, 226, 0.05) 100%);
+  color: var(--primary-color);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 25px;
-  font-size: 2rem;
-  color: var(--primary-color);
-  transition: transform 0.3s ease;
+  font-size: 1.75rem;
+  margin-bottom: 24px; /* Фиксированный отступ */
+  transition: transform 0.4s ease;
 }
 
 .card--competency:hover .card__icon {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 8px var(--neural-glow));
+  transform: scale(1.1) rotate(5deg); /* Живая анимация */
+  background: var(--primary-color);
+  color: #fff;
+  box-shadow: var(--glow-effect);
 }
 
+/* Типографика внутри карточек */
 .card__description {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-  line-height: 1.6;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  opacity: 0.85;
+  margin-bottom: auto; /* Прижимает всё, что ниже, к низу карточки */
 }
 
-.card__details {
-  margin-top: 20px;
-}
-
-.card__features {
-  list-style: none;
-  padding: 0;
-  margin: 25px 0;
-  text-align: left;
-}
-
-.card__features li {
-  padding: 8px 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 0.95rem;
-}
-
-.card__features i {
-  color: var(--primary-color);
-  font-size: 0.9rem;
-  flex-shrink: 0;
-}
-
-.card__metric {
-  background: var(--light-bg-color);
-  padding: 15px;
-  border-radius: var(--border-radius);
-  text-align: center;
-  margin-top: 20px;
-}
-
-.card__metricValue {
-  display: block;
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--primary-color);
-  line-height: 1;
-}
-
-.card__metricLabel {
-  font-size: 0.9rem;
-  opacity: 0.8;
-  margin-top: 5px;
-}
-
-/* === ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ ДЛЯ КАРТОЧЕК === */
-.card-shadow {
-  box-shadow: var(--card-shadow);
-}
-
-.card-shadow-hover {
-  box-shadow: var(--card-shadow-hover);
-}
-
-.card-no-shadow {
-  box-shadow: none;
-}
-
-.card-border {
-  border: 1px solid var(--border-color);
-}
-
-.card-border-primary {
-  border: 2px solid var(--primary-color);
-}
-
-.card-rounded {
-  border-radius: var(--border-radius-lg);
-}
-
-.card-rounded-sm {
-  border-radius: var(--border-radius);
-}
-
-
-/* === Модификатор для featured кейсов === */
-.case-card.featured {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 400px 1fr;
-
-  .case-image img {
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
-.case-card .case-content {
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-}
-
-.case-card .case-description {
-  margin-bottom: 25px;
-  opacity: 0.8;
-  line-height: 1.5;
-  flex-grow: 1;
-}
-
-.case-card .case-results {
-  display: flex;
-  gap: 30px;
-  margin: 25px 0;
-}
-
-.case-card .result {
-  text-align: center;
-  flex: 1;
-}
-
-.case-card .result-number {
-  display: block;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: var(--primary-color);
-  line-height: 1;
-}
-
-.case-card .result-label {
-  font-size: 0.9rem;
-  opacity: 0.7;
-  margin-top: 5px;
-}
-
-.case-card .case-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--primary-color);
-  font-weight: 600;
-  transition: var(--transition-smooth);
-  text-decoration: none;
-  margin-top: auto;
-}
-
-.case-card .case-link:hover {
-  gap: 12px;
-  text-decoration: none;
-  color: var(--primary-hover-color);
-}
-
-/* === ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ АДАПТИВНОСТИ === */
+/* Мобильная адаптация */
 @media (max-width: 768px) {
-  .card,
-  .dashboard-card,
-  .result-card,
-  .base-card,
+  .card, 
   .card--competency {
-    padding: 25px 20px;
+    padding: 24px; /* Сбалансированный отступ для мобильных */
   }
-
-  .card__icon,
-  .base-icon {
+  
+  .card__icon {
     width: 60px;
     height: 60px;
     font-size: 1.5rem;
-    margin-bottom: 20px;
-  }
-
-  .card__metricValue {
-    font-size: 1.8rem;
-  }
-
-  .case-card.featured {
-    grid-template-columns: 1fr;
-  }
-
-  .case-card .case-content {
-    padding: 20px;
-  }
-
-  .case-card .result-number {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .card,
-  .dashboard-card,
-  .result-card,
-  .base-card,
-  .card--competency {
-    padding: 20px 15px;
-  }
-
-  .case-card.featured .case-content {
-    padding: 15px;
-  }
-}
-
-/* === СТИЛИ ДЛЯ ТЕМНОЙ ТЕМЫ === */
-@media (prefers-color-scheme: dark) {
-  .card,
-  .dashboard-card,
-  .result-card,
-  .base-card,
-  .card--competency {
-    background: var(--white-color);
-    color: var(--text-color);
-    border-color: var(--border-color);
-  }
-
-  .card__metric {
-    background: var(--light-bg-color);
-    color: var(--dark-color);
-  }
-
-  .card__features i {
-    color: var(--primary-color);
-  }
-
-  .card__metricValue {
-    color: var(--primary-color);
   }
 }
