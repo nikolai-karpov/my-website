@@ -29,18 +29,8 @@ build/
 *.bak
 *.backup!
 
-# Исходники SCSS — не попадают в репозиторий
-/assets/scss/
-
-# Но! Оставляем собранный CSS (важно для GitHub Pages)
-!/assets/css/
-!/assets/css/main.css
-
 # Исключения для других файлов в css/, если нужно
 # (если будут другие CSS-файлы — можно уточнить)
-
-# Файл с настройками стилей
-.stylelintrc.json
 
 # Переменные окружения
 .env
@@ -50,10 +40,5 @@ build/
 *.tmp
 *.temp
 
-# Папка с изображениями
-/images/
-
 # Папка site-components
-/site-components/!/contacts_backup.html
 /Устаревшие версии страниц/
-/.gigaide/

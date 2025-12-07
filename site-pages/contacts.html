@@ -9,19 +9,24 @@
     <link rel="stylesheet" href="../assets/css/main.css" />
     <!-- Фавикон -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Предзагрузка шрифтов и критичных ресурсов -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="../assets/css/main.css" as="style">
 </head>
 <body>
 
-<header id="main-header" data-component="../site-components/header.html">
+<!-- FALLBACK HEADER - показывается если JS не загрузил компонент -->
+<header id="main-header" class="fallback-header">
     <div class="container header-container">
-        <a href="/" class="logo">Карпов Николай</a>
+        <a href="../" class="logo">Карпов Николай</a>
         <nav class="desktop-nav">
             <ul>
-                <li><a href="/">Главная</a></li>
-                <li><a href="site-pages/methodology.html">Методология</a></li>
-                <li><a href="site-pages/case-studies/index.html">Кейсы</a></li>
-                <li><a href="site-pages/results.html">Результаты</a></li>
-                <li><a href="site-pages/contacts.html" class="cta-button primary">Контакты</a></li>
+                <li><a href="../">Главная</a></li>
+                <li><a href="methodology.html">Методология</a></li>
+                <li><a href="case-studies/index.html">Кейсы</a></li>
+                <li><a href="results.html">Результаты</a></li>
+                <li><a href="contacts.html" class="cta-button primary">Контакты</a></li>
             </ul>
         </nav>
         <button class="hamburger" aria-label="Меню" aria-expanded="false">
@@ -70,7 +75,7 @@
                             <div class="contact-details">
                                 <strong>LinkedIn</strong>
                                 <a href="#" target="_blank" rel="noopener noreferrer">Профиль в LinkedIn</a>
-                                <p>Для профессиональных запросов и долгосрочного сотрудничества</p>
+                                <p>Для профессиональных запросы и долгосрочного сотрудничества</p>
                             </div>
                         </li>
                     </ul>
@@ -183,7 +188,8 @@
     </section>
 </main>
 
-<footer id="main-footer" data-component="../site-components/footer.html">
+<!-- FALLBACK FOOTER - показывается если JS не загрузил компонент -->
+<footer id="main-footer" class="fallback-footer">
     <div class="container">
         <div class="footer-content">
             <div class="footer-brand">
@@ -205,21 +211,21 @@
             <div class="footer-links">
                 <h4>Навигация</h4>
                 <ul>
-                    <li><a href="/">Главная</a></li>
-                    <li><a href="site-pages/methodology.html">Методология</a></li>
-                    <li><a href="site-pages/case-studies/index.html">Кейсы</a></li>
-                    <li><a href="site-pages/results.html">Результаты</a></li>
-                    <li><a href="site-pages/contacts.html">Контакты</a></li>
+                    <li><a href="../">Главная</a></li>
+                    <li><a href="methodology.html">Методология</a></li>
+                    <li><a href="case-studies/index.html">Кейсы</a></li>
+                    <li><a href="results.html">Результаты</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
                 </ul>
             </div>
 
             <div class="footer-links">
                 <h4>Услуги</h4>
                 <ul>
-                    <li><a href="ai-consulting.html">AI-консалтинг</a></li>
-                    <li><a href="process-automation.html">Автоматизация процессов</a></li>
-                    <li><a href="team-training.html">Обучение команд</a></li>
-                    <li><a href="custom-solutions.html">Кастомные решения</a></li>
+                    <li><a href="../site-pages/ai-consulting.html">AI-консалтинг</a></li>
+                    <li><a href="../site-pages/process-automation.html">Автоматизация процессов</a></li>
+                    <li><a href="../site-pages/team-training.html">Обучение команд</a></li>
+                    <li><a href="../site-pages/custom-solutions.html">Кастомные решения</a></li>
                 </ul>
             </div>
 
@@ -243,8 +249,8 @@
         <div class="footer-bottom">
             <div class="copyright">&copy; 2025, Карпов Николай. Все права защищены.</div>
             <div class="footer-nav">
-                <a href="privacy.html">Политика конфиденциальности</a>
-                <a href="terms.html">Условия использования</a>
+                <a href="../site-pages/privacy.html">Политика конфиденциальности</a>
+                <a href="../site-pages/terms.html">Условия использования</a>
             </div>
             <a href="#" class="back-to-top" aria-label="Наверх">
                 <i class="fas fa-chevron-up"></i>
@@ -254,10 +260,10 @@
 
     <div class="mobile-footer-menu">
         <nav class="mobile-nav">
-            <a href="/" class="mobile-nav-item"><i class="fas fa-home"></i><span>Главная</span></a>
-            <a href="site-pages/case-studies/index.html" class="mobile-nav-item"><i class="fas fa-briefcase"></i><span>Кейсы</span></a>
-            <a href="site-pages/results.html" class="mobile-nav-item"><i class="fas fa-cogs"></i><span>Услуги</span></a>
-            <a href="site-pages/contacts.html" class="mobile-nav-item"><i class="fas fa-phone-alt"></i><span>Контакты</span></a>
+            <a href="../" class="mobile-nav-item"><i class="fas fa-home"></i><span>Главная</span></a>
+            <a href="case-studies/index.html" class="mobile-nav-item"><i class="fas fa-briefcase"></i><span>Кейсы</span></a>
+            <a href="results.html" class="mobile-nav-item"><i class="fas fa-cogs"></i><span>Услуги</span></a>
+            <a href="contacts.html" class="mobile-nav-item"><i class="fas fa-phone-alt"></i><span>Контакты</span></a>
         </nav>
     </div>
 </footer>
@@ -347,8 +353,46 @@
         });
     });
 </script>
+
 <!-- Основные скрипты сайта -->
 <script src="../assets/js/components-loader.js" defer></script>
 <script src="../assets/js/main.js" defer></script>
+
+<!-- Fallback проверка: если компоненты не загрузились за 3 секунды, показываем fallback -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Проверяем через 3 секунды, загрузились ли компоненты
+        setTimeout(function() {
+            const header = document.getElementById('main-header');
+            const footer = document.getElementById('main-footer');
+
+            // Если header пустой (не загрузился компонент), показываем fallback
+            if (header && header.children.length === 0) {
+                console.warn('Header component failed to load, showing fallback');
+                header.classList.remove('fallback-header');
+            }
+
+            // Если footer пустой (не загрузился компонент), показываем fallback
+            if (footer && footer.children.length === 0) {
+                console.warn('Footer component failed to load, showing fallback');
+                footer.classList.remove('fallback-footer');
+            }
+        }, 3000);
+    });
+</script>
+
+<!-- CSS для fallback (скрываем fallback по умолчанию, показываем только если JS не загрузил) -->
+<style>
+    .fallback-header,
+    .fallback-footer {
+        display: none; /* Скрываем fallback по умолчанию */
+    }
+
+    /* Показываем fallback только если JS обнаружит, что компоненты не загрузились */
+    #main-header.fallback-header,
+    #main-footer.fallback-footer {
+        display: block;
+    }
+</style>
 </body>
 </html>

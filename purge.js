@@ -1,5 +1,6 @@
 // purge.js — Очистка неиспользуемых CSS-стилей
 const { PurgeCSS } = require('purgecss')
+const fs = require('fs')
 
 async function purgeCSS() {
   const result = await new PurgeCSS().purge({
@@ -16,9 +17,6 @@ async function purgeCSS() {
       'assets/css/main.css',                  // Главный файл (или можно указать все .css)
       'assets/css/**/*.css'                   // Все стили (на всякий случай)
     ],
-
-    // 📦 Куда сохранить очищенные стили
-    output: 'assets/css/',              // Результат: assets/css/purged/main.css
 
     // 🛡️ Классы, которые НЕЛЬЗЯ удалять (даже если не нашли в HTML)
     safelist: {
@@ -45,12 +43,15 @@ async function purgeCSS() {
     }
   })
 
-  // ✅ Логируем результат
-  result.forEach(file => {
-    console.log(`✅ Очищенный CSS сохранён: ${file.file}`)
-  })
-
-  console.log('✨ Очистка CSS завершена. Подключи новый файл: assets/css/purged/main.css')
+  // ✅ Перезаписываем основной файл
+  if (result.length > 0) {
+    const mainCssPath = 'assets/css/main.css'
+    fs.writeFileSync(mainCssPath, result[0].css, 'utf8')
+    console.log(`✅ Очищенный CSS сохранён: ${mainCssPath}`)
+    console.log(`✨ Очистка CSS завершена. Файл: ${mainCssPath}`)
+  } else {
+    console.log('⚠️ Не удалось очистить CSS. Проверьте конфигурацию.')
+  }
 }
 
 purgeCSS()
