@@ -5,20 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Методология внедрения ИИ | Карпов Николай - Инструктор по внедрению ИИ</title>
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <!-- Подключаем основной CSS -->
-    <link rel="stylesheet" href="../assets/css/main.css" /><!-- Подключаем очищенные стили (PurgeCSS) -->
-    <!-- <link rel="stylesheet" href="../assets/scss/main.css" /> -->
+    <link rel="stylesheet" href="/assets/css/main.css" />
 
     <!-- Фавикон — из корня -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
 <!-- Загружаем шапку через data-component -->
-<header id="main-header" data-component="site-components/header.html"></header>
+<header id="main-header" data-component="../site-components/header.html"></header>
 
 <main>
     <!-- Герой-секция -->
@@ -44,17 +43,16 @@
                             <span>1-2 дня</span>
                         </div>
                         <p class="mb-3">Первый шаг — найти в бизнес-процессе конкретную, измеримую "боль", которую ИИ может эффективно "вылечить". Провожу интервью, картирую процессы и формулирую проверяемую гипотезу в формате "Если..., то...".</p>
-                        <a href="../downloads/Strategic_Brief_AI_Implementation.pdf" class="proof-link flex items-center gap-2" download>
+                        <a href="../downloads/Strategic_Brief_AI_Implementation.pdf" class="proof-link" download>
                             <i class="far fa-file-pdf"></i>
                             Посмотреть пример Стратегического брифа
-                            <i class="fas fa-arrow-right"></i>
                         </a>
 
                         <!-- Лид-магнит -->
                         <div class="prompt-magnet-box mt-3">
-                            <h4 class="flex items-center justify-center gap-2 mb-2"><i class="fas fa-magic"></i> Попробуйте сами: Сделайте первый шаг</h4>
+                            <h4 class="mb-2"><i class="fas fa-magic"></i> Попробуйте сами: Сделайте первый шаг</h4>
                             <p class="mb-3">Мы подготовили универсальный шаблон промпта для ChatGPT/GigaChat, который поможет вам самостоятельно проанализировать любой бизнес-процесс.</p>
-                            <a href="../downloads/prompt-template.txt" class="btn btn-primary flex items-center justify-center gap-2" download>
+                            <a href="../downloads/prompt-template.txt" class="btn btn-primary" download>
                                 <i class="fas fa-download"></i>
                                 Получить готовый промпт
                             </a>
@@ -73,10 +71,9 @@
                             <span>3-5 дней</span>
                         </div>
                         <p class="mb-3">За 3-5 дней я создаю рабочий прототип (Proof-of-Concept) на реальных данных клиента. Это позволяет быстро и с минимальными затратами проверить гипотезу и наглядно продемонстрировать ценность решения руководству и будущим пользователям.</p>
-                        <a href="../downloads/LLM_Feasibility_Study.pdf" class="proof-link flex items-center gap-2" download>
+                        <a href="../downloads/LLM_Feasibility_Study.pdf" class="proof-link" download>
                             <i class="far fa-file-pdf"></i>
                             Изучить Техническое исследование
-                            <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -92,10 +89,9 @@
                             <span>2-3 дня</span>
                         </div>
                         <p class="mb-3">Технология бесполезна, если ей не пользуются. Я проектирую человеко-центричные обучающие программы (микро-уроки, памятки, воркшопы), основанные на научных методиках (Таксономия Блума), чтобы обеспечить высокий уровень принятия (adoption rate 85%+).</p>
-                        <a href="../downloads/Learning_Experience_Design_Kit.pdf" class="proof-link flex items-center gap-2" download>
+                        <a href="../downloads/Learning_Experience_Design_Kit.pdf" class="proof-link" download>
                             <i class="far fa-file-pdf"></i>
                             Ознакомиться с Пакетом обучения
-                            <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -125,10 +121,9 @@
                             <span>1 неделя</span>
                         </div>
                         <p class="mb-3">На основе данных, полученных в ходе пилота, я готовлю итоговый аналитический отчет. Он наглядно демонстрирует возврат инвестиций (ROI) и служит основанием для принятия решения о тиражировании успешного кейса на другие отделы или задачи.</p>
-                        <a href="../downloads/Final_Business_Impact_Report.pdf" class="proof-link flex items-center gap-2" download>
+                        <a href="../downloads/Final_Business_Impact_Report.pdf" class="proof-link" download>
                             <i class="far fa-file-pdf"></i>
                             Посмотреть Итоговый отчет с ROI
-                            <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -186,7 +181,7 @@
 </main>
 
 <!-- Подвал -->
-<footer id="main-footer" data-component="site-components/footer.html"></footer>
+<footer id="main-footer" data-component="../site-components/footer.html"></footer>
 
 <!-- Основной загрузчик компонентов -->
 <script src="../assets/js/components-loader.js" defer></script>
@@ -200,14 +195,14 @@
                 fetch(url)
                     .then(r => r.ok ? r.text() : Promise.reject())
                     .then(html => {
-                        document.getElementById(elementId).innerHTML = html;
-                    })
+                    document.getElementById(elementId).innerHTML = html;
+                })
                     .catch(() => {
-                        document.getElementById(elementId).innerHTML = `<div class="error">Компонент ${url} не загружен</div>`;
-                    });
+                    document.getElementById(elementId).innerHTML = `<div class="error">Компонент ${url} не загружен</div>`;
+                });
             };
-            load('site-components/header.html', 'main-header');
-            load('site-components/footer.html', 'main-footer');
+            load('../site-components/header.html', 'main-header');
+            load('../site-components/footer.html', 'main-footer');
         }
     });
 </script>

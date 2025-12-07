@@ -29,6 +29,11 @@
 .timeline-section {
   padding: 80px 0;
   background: var(--light-bg-color);
+
+  .container {
+    position: relative;
+    overflow: visible;
+  }
 }
 
 .timeline {
@@ -50,7 +55,7 @@
     border-radius: 2px;
 
     @media (max-width: 992px) {
-      left: 30px; /* Сдвиг линии влево на мобильных */
+      left: 50px;
     }
   }
 }
@@ -59,23 +64,13 @@
   position: relative;
   margin-bottom: 60px;
   width: 100%;
-  opacity: 0; /* Для анимации появления */
+  opacity: 0;
   transform: translateY(30px);
   transition: all 0.6s ease;
 
   &.visible {
     opacity: 1;
     transform: translateY(0);
-  }
-
-  /* Адаптивность зиг-зага */
-  @media (max-width: 992px) {
-    &:nth-child(odd) .timeline-content,
-    &:nth-child(even) .timeline-content {
-      width: calc(100% - 80px);
-      margin-left: 80px;
-      margin-right: 0;
-    }
   }
 }
 
@@ -100,8 +95,8 @@
   box-shadow: var(--card-shadow);
 
   @media (max-width: 992px) {
-    left: 30px;
-    margin-left: 0;
+    left: 50px;
+    margin-left: -30px;
   }
 }
 
@@ -111,7 +106,8 @@
   border-radius: var(--border-radius-lg);
   box-shadow: var(--card-shadow);
   position: relative;
-  width: calc(50% - 70px);
+  width: calc(50% - 50px);
+  max-width: 400px;
   transition: var(--transition-smooth);
 
   /* Стрелочка к линии */
@@ -138,39 +134,72 @@
   box-shadow: var(--card-shadow-hover);
 }
 
-/* Расстановка элементов (Зиг-заг) - после базового .timeline-content */
+/* Расстановка элементов (Зиг-заг) */
 .timeline-item:nth-child(odd) .timeline-content {
   margin-left: auto;
-  margin-right: calc(50% + 40px);
+  margin-right: calc(50% + 30px);
+
+  &::before {
+    right: -10px;
+    border-right: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+  }
 }
 
 .timeline-item:nth-child(even) .timeline-content {
-  margin-left: calc(50% + 40px);
+  margin-left: calc(50% + 30px);
   margin-right: auto;
-}
 
-/* Базовые стили для стрелочек зиг-зага */
-.timeline-item:nth-child(odd) .timeline-content::before {
-  right: -10px;
-  border-right: 1px solid var(--border-color);
-  border-top: 1px solid var(--border-color);
-}
-
-.timeline-item:nth-child(even) .timeline-content::before {
-  left: -10px;
-  border-left: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-}
-
-/* Медиа-запросы для стрелочек */
-@media (max-width: 992px) {
-  .timeline-item:nth-child(odd) .timeline-content::before {
-    right: auto;
+  &::before {
     left: -10px;
-    border-right: none;
-    border-top: none;
     border-left: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
+  }
+}
+
+/* Мобильная адаптация */
+@media (max-width: 992px) {
+  .timeline-item {
+    .timeline-content {
+      width: calc(100% - 80px);
+      margin-left: 80px !important;
+      margin-right: 0 !important;
+      max-width: none;
+
+      &::before {
+        left: -10px !important;
+        right: auto !important;
+        border-left: 1px solid var(--border-color) !important;
+        border-bottom: 1px solid var(--border-color) !important;
+        border-right: none !important;
+        border-top: none !important;
+      }
+    }
+  }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 576px) {
+  .timeline-marker {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    left: 50px;
+    margin-left: -20px;
+  }
+
+  .timeline-content {
+    width: calc(100% - 60px) !important;
+    margin-left: 60px !important;
+    padding: 20px;
+
+    h3 {
+      font-size: 1.3rem;
+    }
+  }
+
+  .timeline::before {
+    left: 60px;
   }
 }
 
@@ -288,4 +317,9 @@
     margin-bottom: 20px;
     color: var(--text-color);
   }
+}
+
+/* Исправление футера на странице методологии */
+.methodology-hero + .timeline-section + .results-section + .cta-section + .main-footer {
+  background: linear-gradient(135deg, var(--dark-color) 0%, #0f172a 100%) !important;
 }

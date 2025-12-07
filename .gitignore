@@ -42,3 +42,6 @@ build/
 
 # Папка site-components
 /Устаревшие версии страниц/
+
+# тестовые стили
+!/assets/css/test.css
