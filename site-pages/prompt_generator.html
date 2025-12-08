@@ -952,7 +952,6 @@
     // Автоматическое преобразование данных из таблицы в структурированный формат
     // Сохраняем данные как есть, без форматирования
     return {
-<<<<<<< HEAD
     Наименование: company['Название (компания)'] || 'не указано',
     ИНН: company['ИНН'] || 'не указан',
     ОГРН: company['ОГРН'] || 'не указан',
@@ -963,18 +962,6 @@
     Чистая_прибыль: company['Чистая прибыль/ убыток'] || 'не указана',
     Количество_сотрудников: company['Кол-во сотрудников'] || 'не указано',
     Основной_вид_деятельности: company['Основной ОКВЭД'] || 'не указан',
-=======
-    Наименование: company.Наименование || 'не указано',
-    ИНН: company.ИНН || 'не указан',
-    ОГРН: company.ОГРН || 'не указан',
-    Дата_регистрации: company.Дата_регистрации || 'не указана',
-    Адрес: company.Адрес || 'не указан',
-    Выручка: this.formatNumber(company.Выручка) || 'не указана',
-    Баланс: this.formatNumber(company.Баланс) || 'не указан',
-    Чистая_прибыль: this.formatNumber(company['Чистая прибыль/ убыток']) || 'не указана',
-    Количество_сотрудников: company['Количество сотрудников'] || company.Количество_сотрудников || 'не указано',
-    Основной_вид_деятельности: company['Основной вид деятельности'] || 'не указан',
->>>>>>> 097e5d1 (fix: remove SCSS files from git index according to .gitignore)
     Руководство: this.formatLeadership(company),
     Контакты: this.formatContacts(company),
     Email: this.formatEmails(company),
@@ -1157,7 +1144,6 @@
     const transformedData = this.promptGenerator.transformTableData(company);
     const detailsDiv = document.getElementById('companyDetails');
     detailsDiv.innerHTML = `
-<<<<<<< HEAD
                 <div class="info-item">
                     <strong>Наименование:</strong> ${transformedData.Наименование}
                 </div>
@@ -1201,33 +1187,6 @@
                     <strong>Сайт:</strong> ${transformedData.Сайт}
                 </div>
             `;
-=======
-        <div class="info-item">
-            <strong>ИНН:</strong> ${transformedData.ИНН}
-        </div>
-        <div class="info-item">
-            <strong>ОГРН:</strong> ${transformedData.ОГРН}
-        </div>
-        <div class="info-item">
-            <strong>Адрес:</strong> ${transformedData.Адрес}
-        </div>
-        <div class="info-item">
-            <strong>Сотрудников:</strong> ${transformedData.Количество_сотрудников}
-        </div>
-        <div class="info-item">
-            <strong>Выручка:</strong> ${transformedData.Выручка}
-        </div>
-        <div class="info-item">
-            <strong>Прибыль:</strong> ${transformedData.Чистая_прибыль}
-        </div>
-        <div class="info-item">
-            <strong>Вид деятельности:</strong> ${transformedData.Основной_вид_деятельности}
-        </div>
-        <div class="info-item">
-            <strong>Руководство:</strong> ${transformedData.Руководство}
-        </div>
-    `;
->>>>>>> 097e5d1 (fix: remove SCSS files from git index according to .gitignore)
 
     document.getElementById('companyInfo').classList.remove('hidden');
     }
