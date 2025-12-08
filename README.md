@@ -462,7 +462,7 @@ fetch('components/footer.html')
 ## 🌐 Деплой
 
 Сайт доступен по адресу:  
-👉 [https://nikolai-karpov.github.io](https://nikolai-karpov.github.io)
+👉 [https://nikolai-karpov.github.io/my-website/](https://nikolai-karpov.github.io/my-website/)
 
 Развернут через **GitHub Pages** — автоматическая публикация с ветки `main`.
 

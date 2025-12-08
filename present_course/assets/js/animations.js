@@ -1,6 +1,7 @@
 /**
  * Advanced Animation System for AI Implementation Playbook
  * Professional animations with performance optimization
+ * UPDATED: Синхронизирован с текущими CSS-классами и ID
  */
 
 class PresentationAnimations {
@@ -8,13 +9,14 @@ class PresentationAnimations {
         this.observer = null;
         this.animatedElements = new Set();
         this.scrollEffects = new Map();
+        this.currentSlideIndex = 0;
 
         this.init();
     }
 
     init() {
         this.setupIntersectionObserver();
-        this.initScrollAnimations();
+        this.initSlideAnimations();
         this.initParallaxEffects();
         this.initStaggerAnimations();
         this.initMagneticEffects();
@@ -24,6 +26,20 @@ class PresentationAnimations {
         document.addEventListener('slideChange', (e) => {
             this.handleSlideChange(e.detail);
         });
+
+        // Инициализация при загрузке
+        this.initializeCurrentSlide();
+    }
+
+    initializeCurrentSlide() {
+        // Находим активный слайд при загрузке
+        const activeSlide = document.querySelector('.slide.active');
+        if (activeSlide) {
+            const slideId = activeSlide.id;
+            const slideIndex = parseInt(slideId.replace('slide-', '').split('-')[0]) - 1;
+            this.currentSlideIndex = slideIndex;
+            this.triggerSlideAnimations(activeSlide, slideIndex);
+        }
     }
 
     setupIntersectionObserver() {
@@ -78,11 +94,43 @@ class PresentationAnimations {
         }, duration + parseInt(delay));
     }
 
-    initScrollAnimations() {
-        // Advanced scroll-triggered animations
-        this.scrollEffects.set('neuralNetwork', this.createNeuralNetworkAnimation());
-        this.scrollEffects.set('gradientShift', this.createGradientShiftAnimation());
-        this.scrollEffects.set('particleSystem', this.createParticleSystem());
+    initSlideAnimations() {
+        // Добавляем data-атрибуты для анимации существующих элементов
+
+        // Методология блоки
+        const methodologyBlocks = document.querySelectorAll('.methodology-block');
+        methodologyBlocks.forEach((block, index) => {
+            block.setAttribute('data-animate', 'blockEntrance');
+            block.setAttribute('data-delay', index * 200);
+        });
+
+        // Шаги пайплайна
+        const pipelineSteps = document.querySelectorAll('.pipeline-step');
+        pipelineSteps.forEach((step, index) => {
+            step.setAttribute('data-animate', 'slideInUp');
+            step.setAttribute('data-delay', index * 150);
+        });
+
+        // Карточки результатов
+        const resultItems = document.querySelectorAll('.result-item');
+        resultItems.forEach((item, index) => {
+            item.setAttribute('data-animate', 'fadeIn');
+            item.setAttribute('data-delay', index * 100);
+        });
+
+        // Процесс-степы
+        const processSteps = document.querySelectorAll('.process-step');
+        processSteps.forEach((step, index) => {
+            step.setAttribute('data-animate', 'processStepEntrance');
+            step.setAttribute('data-delay', index * 200);
+        });
+
+        // Колонки проблем
+        const problemColumns = document.querySelectorAll('.problem-column');
+        problemColumns.forEach((column, index) => {
+            column.setAttribute('data-animate', 'slideInUp');
+            column.setAttribute('data-delay', index * 150);
+        });
     }
 
     createNeuralNetworkAnimation() {
@@ -106,8 +154,9 @@ class PresentationAnimations {
         let animationId = null;
 
         const resizeCanvas = () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            canvas.width = window.innerWidth * window.devicePixelRatio;
+            canvas.height = window.innerHeight * window.devicePixelRatio;
+            ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
             this.initNeuralNodes();
         };
 
@@ -115,22 +164,22 @@ class PresentationAnimations {
             nodes = [];
             connections = [];
 
-            const nodeCount = Math.floor((canvas.width * canvas.height) / 20000);
+            const nodeCount = Math.floor((canvas.width * canvas.height) / 200000);
 
             for (let i = 0; i < nodeCount; i++) {
                 nodes.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height,
-                    vx: (Math.random() - 0.5) * 0.5,
-                    vy: (Math.random() - 0.5) * 0.5,
-                    radius: Math.random() * 2 + 1,
-                    opacity: Math.random() * 0.5 + 0.1
+                    x: Math.random() * canvas.width / window.devicePixelRatio,
+                    y: Math.random() * canvas.height / window.devicePixelRatio,
+                    vx: (Math.random() - 0.5) * 0.3,
+                    vy: (Math.random() - 0.5) * 0.3,
+                    radius: Math.random() * 1.5 + 0.5,
+                    opacity: Math.random() * 0.4 + 0.1
                 });
             }
         };
 
         const animate = () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.clearRect(0, 0, canvas.width / window.devicePixelRatio, canvas.height / window.devicePixelRatio);
 
             // Update and draw nodes
             nodes.forEach(node => {
@@ -138,8 +187,8 @@ class PresentationAnimations {
                 node.y += node.vy;
 
                 // Bounce off edges
-                if (node.x < 0 || node.x > canvas.width) node.vx *= -1;
-                if (node.y < 0 || node.y > canvas.height) node.vy *= -1;
+                if (node.x < 0 || node.x > canvas.width / window.devicePixelRatio) node.vx *= -1;
+                if (node.y < 0 || node.y > canvas.height / window.devicePixelRatio) node.vy *= -1;
 
                 // Draw node
                 ctx.beginPath();
@@ -157,13 +206,13 @@ class PresentationAnimations {
                     const dy = nodeA.y - nodeB.y;
                     const distance = Math.sqrt(dx * dx + dy * dy);
 
-                    if (distance < 150) {
-                        const opacity = 1 - (distance / 150);
+                    if (distance < 100) {
+                        const opacity = (1 - (distance / 100)) * 0.1;
                         ctx.beginPath();
                         ctx.moveTo(nodeA.x, nodeA.y);
                         ctx.lineTo(nodeB.x, nodeB.y);
-                        ctx.strokeStyle = `rgba(74, 144, 226, ${opacity * 0.2})`;
-                        ctx.lineWidth = 0.5;
+                        ctx.strokeStyle = `rgba(74, 144, 226, ${opacity})`;
+                        ctx.lineWidth = 0.3;
                         ctx.stroke();
                     }
                 });
@@ -174,25 +223,55 @@ class PresentationAnimations {
 
         // Handle scroll to show/hide neural network
         let lastScrollY = window.scrollY;
+        let timeoutId = null;
 
         const handleScroll = () => {
+            if (timeoutId) clearTimeout(timeoutId);
+
             const scrollY = window.scrollY;
             const scrollDelta = Math.abs(scrollY - lastScrollY);
 
-            if (scrollDelta > 5) {
-                canvas.style.opacity = '0.3';
-            } else {
-                canvas.style.opacity = '0';
+            if (scrollDelta > 2) {
+                canvas.style.opacity = '0.2';
+                timeoutId = setTimeout(() => {
+                    canvas.style.opacity = '0';
+                }, 1000);
             }
 
             lastScrollY = scrollY;
         };
 
+        // Only activate on specific slides
+        const shouldActivate = () => {
+            const currentSlide = document.querySelector('.slide.active');
+            return currentSlide && (
+            currentSlide.id === 'slide-01-title' ||
+            currentSlide.id === 'slide-03-solution' ||
+            currentSlide.id === 'slide-09-meta'
+            );
+        };
+
+        const updateActivation = () => {
+            if (shouldActivate()) {
+                canvas.style.display = 'block';
+                if (!animationId) {
+                    resizeCanvas();
+                    animate();
+                }
+            } else {
+                canvas.style.display = 'none';
+                if (animationId) {
+                    cancelAnimationFrame(animationId);
+                    animationId = null;
+                }
+            }
+        };
+
         window.addEventListener('scroll', handleScroll, { passive: true });
         window.addEventListener('resize', resizeCanvas);
+        document.addEventListener('slideChange', updateActivation);
 
-        resizeCanvas();
-        animate();
+        updateActivation();
 
         return {
             destroy: () => {
@@ -210,10 +289,10 @@ class PresentationAnimations {
         const updateGradient = (slideIndex) => {
             const gradients = [
                 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
                 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
                 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
-                'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
+                'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+                'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
             ];
 
             document.documentElement.style.setProperty(
@@ -228,63 +307,6 @@ class PresentationAnimations {
         });
 
         updateGradient(0);
-    }
-
-    createParticleSystem() {
-        // Simplified particle system for background effects
-        return {
-            activate: (element) => {
-                const particles = [];
-                const particleCount = 30;
-
-                for (let i = 0; i < particleCount; i++) {
-                    const particle = document.createElement('div');
-                    particle.className = 'particle';
-                    particle.style.cssText = `
-                        position: absolute;
-                        width: 4px;
-                        height: 4px;
-                        background: var(--color-primary-500);
-                        border-radius: 50%;
-                        pointer-events: none;
-                        opacity: 0;
-                    `;
-
-                    element.appendChild(particle);
-                    particles.push({
-                        element: particle,
-                        x: Math.random() * 100,
-                        y: Math.random() * 100,
-                        vx: (Math.random() - 0.5) * 2,
-                        vy: (Math.random() - 0.5) * 2,
-                        life: 1
-                    });
-                }
-
-                const animateParticles = () => {
-                    particles.forEach(particle => {
-                        particle.x += particle.vx;
-                        particle.y += particle.vy;
-                        particle.life -= 0.01;
-
-                        if (particle.life <= 0) {
-                            particle.x = Math.random() * 100;
-                            particle.y = Math.random() * 100;
-                            particle.life = 1;
-                        }
-
-                        particle.element.style.left = `${particle.x}%`;
-                        particle.element.style.top = `${particle.y}%`;
-                        particle.element.style.opacity = particle.life;
-                        particle.element.style.transform = `scale(${particle.life})`;
-                    });
-
-                    requestAnimationFrame(animateParticles);
-                };
-
-                animateParticles();
-            }
-        };
     }
 
     initParallaxEffects() {
@@ -352,7 +374,7 @@ class PresentationAnimations {
                 const deltaX = (x - centerX) / centerX;
                 const deltaY = (y - centerY) / centerY;
 
-                const strength = 10;
+                const strength = 15;
 
                 element.style.transform = `translate(${deltaX * strength}px, ${deltaY * strength}px)`;
             });
@@ -361,30 +383,48 @@ class PresentationAnimations {
                 element.style.transform = 'translate(0, 0)';
             });
         });
+
+        // Добавляем магнитный эффект к CTA кнопкам
+        const ctaButtons = document.querySelectorAll('.btn--primary');
+        ctaButtons.forEach(button => {
+            button.setAttribute('data-magnetic', 'true');
+        });
     }
 
     initGradientAnimations() {
-        // Animated gradient backgrounds
-        const animateGradient = () => {
-            const hueRotation = (Date.now() / 20000) % 360;
-            document.documentElement.style.setProperty(
-                '--gradient-rotation',
-                `${hueRotation}deg`
-            );
-            requestAnimationFrame(animateGradient);
+        // Animated gradient backgrounds for specific slides
+        const animateGradient = (element) => {
+            let hueRotation = 0;
+
+            const animate = () => {
+                hueRotation = (hueRotation + 0.1) % 360;
+                element.style.background = `linear-gradient(${hueRotation}deg, #667eea, #764ba2, #4facfe, #00f2fe)`;
+                element.style.backgroundSize = '400% 400%';
+
+                if (element.isConnected) {
+                    requestAnimationFrame(animate);
+                }
+            };
+
+            animate();
         };
 
-        // Only animate on specific slides
+        // Apply to specific slides
         document.addEventListener('slideChange', (e) => {
-            const shouldAnimate = e.detail.slideElement.classList.contains('animate-gradient');
-            if (shouldAnimate) {
-                animateGradient();
+            const slide = e.detail.slideElement;
+
+            if (slide.id === 'slide-01-title') {
+                const titleSlide = document.getElementById('slide-01-title');
+                if (titleSlide) {
+                    animateGradient(titleSlide);
+                }
             }
         });
     }
 
     handleSlideChange(detail) {
         const { slideElement, slideIndex } = detail;
+        this.currentSlideIndex = slideIndex;
 
         // Reset animations for new slide
         this.animatedElements.clear();
@@ -405,16 +445,16 @@ class PresentationAnimations {
     triggerSlideAnimations(slide, index) {
         // Slide-specific animation triggers
         switch(slide.id) {
-            case 'title-screen':
+            case 'slide-01-title':
                 this.animateTitleScreen(slide);
                 break;
-            case 'solution':
+            case 'slide-03-solution':
                 this.animateMethodologyDiagram(slide);
                 break;
-            case 'case-2-pipeline':
+            case 'slide-05-case-2':
                 this.animatePipelineSequence(slide);
                 break;
-            case 'creation-process':
+            case 'slide-09-meta':
                 this.animateProcessSteps(slide);
                 break;
         }
@@ -423,17 +463,21 @@ class PresentationAnimations {
     animateTitleScreen(slide) {
         // Title screen entrance animation
         const title = slide.querySelector('.title-header');
-        const subtitle = slide.querySelector('.title-subheader');
+        const description = slide.querySelector('.hero-description');
         const concept = slide.querySelector('.title-concept');
+        const statsGrid = slide.querySelector('.stats-grid');
 
         if (title) {
             title.style.animation = 'titleEntrance 1.2s var(--ease-bounce) both';
         }
-        if (subtitle) {
-            subtitle.style.animation = 'subtitleEntrance 1s var(--ease-out) 0.3s both';
+        if (description) {
+            description.style.animation = 'fadeIn 1s var(--ease-out) 0.3s both';
         }
         if (concept) {
-            concept.style.animation = 'conceptEntrance 0.8s var(--ease-out) 0.6s both';
+            concept.style.animation = 'fadeIn 0.8s var(--ease-out) 0.6s both';
+        }
+        if (statsGrid) {
+            statsGrid.style.animation = 'slideInUp 0.8s var(--ease-out) 0.8s both';
         }
     }
 
@@ -459,12 +503,43 @@ class PresentationAnimations {
     }
 
     animatePipelineSequence(slide) {
+        const pipeline = slide.querySelector('.pipeline-diagram');
+        if (!pipeline) return;
+
         // Auto-animate pipeline on slide entry
         setTimeout(() => {
-            if (window.presentationInteractions) {
-                window.presentationInteractions.animatePipeline();
-            }
+            this.animatePipelineStepByStep(pipeline);
         }, 1000);
+    }
+
+    animatePipelineStepByStep(pipeline) {
+        const steps = pipeline.querySelectorAll('.pipeline-step');
+        const arrows = pipeline.querySelectorAll('.pipeline-arrow');
+
+        pipeline.classList.add('animating');
+
+        // Animate steps sequentially
+        steps.forEach((step, index) => {
+            setTimeout(() => {
+                step.classList.add('active');
+
+                // Animate corresponding arrow
+                if (arrows[index]) {
+                    arrows[index].style.opacity = '1';
+                    arrows[index].style.background = 'var(--gradient-primary)';
+                }
+            }, index * 600);
+        });
+
+        // Reset animation after completion
+        setTimeout(() => {
+            steps.forEach(step => step.classList.remove('active'));
+            arrows.forEach(arrow => {
+                arrow.style.opacity = '';
+                arrow.style.background = '';
+            });
+            pipeline.classList.remove('animating');
+        }, steps.length * 600 + 1000);
     }
 
     animateProcessSteps(slide) {
@@ -501,9 +576,20 @@ class PresentationAnimations {
             }
         };
     }
+
+    // Public method to trigger pipeline animation manually
+    triggerPipelineAnimation() {
+        const currentSlide = document.querySelector('.slide.active');
+        if (currentSlide && currentSlide.id === 'slide-05-case-2') {
+            const pipeline = currentSlide.querySelector('.pipeline-diagram');
+            if (pipeline) {
+                this.animatePipelineStepByStep(pipeline);
+            }
+        }
+    }
 }
 
-// Additional CSS animations
+// Additional CSS animations for injection
 const animationStyles = `
 @keyframes titleEntrance {
     0% {
@@ -516,28 +602,6 @@ const animationStyles = `
     100% {
         opacity: 1;
         transform: translateY(0) scale(1);
-    }
-}
-
-@keyframes subtitleEntrance {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes conceptEntrance {
-    0% {
-        opacity: 0;
-        transform: translateY(20px) rotateX(90deg);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0) rotateX(0);
     }
 }
 
@@ -587,7 +651,7 @@ const animationStyles = `
 }
 
 .animate-gradient {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #667eea, #764ba2, #4facfe, #00f2fe);
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
 }
@@ -610,6 +674,20 @@ const animationStyles = `
 /* Magnetic effect base */
 [data-magnetic] {
     transition: transform 0.3s var(--ease-smooth);
+    will-change: transform;
+}
+
+/* Animation classes for data-animate attribute */
+.slideInUp {
+    animation: slideInUp 0.6s var(--ease-out) both;
+}
+
+.fadeIn {
+    animation: fadeIn 0.8s var(--ease-out) both;
+}
+
+.blockEntrance {
+    animation: blockEntrance 0.8s var(--ease-bounce) both;
 }
 
 /* Performance optimizations */
@@ -621,6 +699,39 @@ const animationStyles = `
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+
+    [data-animate] {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Neural network canvas */
+.neural-network-canvas {
+    pointer-events: none;
+    position: fixed;
+    z-index: -1;
+}
+
+/* Existing keyframes that должны быть в CSS */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 `;
 
@@ -631,5 +742,19 @@ document.head.appendChild(animationStyleSheet);
 
 // Initialize animations when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    window.presentationAnimations = new PresentationAnimations();
+    // Wait a bit for slides to load
+    setTimeout(() => {
+        window.presentationAnimations = new PresentationAnimations();
+
+        // Start neural network animation if on title slide
+        const activeSlide = document.querySelector('.slide.active');
+        if (activeSlide && activeSlide.id === 'slide-01-title') {
+            window.presentationAnimations.createNeuralNetworkAnimation();
+        }
+    }, 500);
 });
+
+// Export for module usage if needed
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = PresentationAnimations;
+}

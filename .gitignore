@@ -45,3 +45,4 @@ build/
 
 # тестовые стили
 !/assets/css/test.css
+!/images/
