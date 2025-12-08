@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор промптов для анализа компаний</title>
+    <style>
+        /* CSS переменные */
+        :root {
+            --primary-color: #4A90E2;
+            --primary-hover: #357ABD;
+            --dark-color: #2c3e50;
+            --text-color: #34495e;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+            --border-radius: 8px;
+            --border-radius-lg: 16px;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.12);
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+        }
+
+        /* Базовые стили */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--light-bg);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-lg);
+        }
+
+        /* Карточки */
+        .card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-lg);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Кнопки */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        /* Формы */
+        .form-group {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+
+        /* Заголовки */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--dark-color);
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--dark-color);
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--dark-color);
+        }
+
+        /* Сетки */
+        .grid {
+            display: grid;
+            gap: var(--spacing-md);
+        }
+
+        .grid-2 {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .grid-auto {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        /* Статусы */
+        .status {
+            padding: 8px 16px;
+            border-radius: var(--border-radius);
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: var(--spacing-sm);
+        }
+
+        .status-success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .status-loading {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        /* Промпт */
+        .prompt-output {
+            background: #1a1a1a;
+            color: #f0f0f0;
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            line-height: 1.5;
+            max-height: 500px;
+            overflow-y: auto;
+            margin-bottom: var(--spacing-md);
+            font-size: 14px;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: var(--spacing-md);
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: var(--spacing-lg);
+            }
+        }
+
+        /* Специфические стили приложения */
+        .app-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            padding: var(--spacing-xl) 0;
+        }
+
+        .company-selector {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: var(--spacing-md);
+            align-items: end;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+
+        .info-item {
+            background: var(--light-bg);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .actions {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        small {
+            color: #666;
+            font-size: 12px;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            color: #856404;
+        }
+
+        .warning-box h4 {
+            margin-top: 0;
+            color: #856404;
+        }
+
+        .column-list {
+            background: var(--light-bg);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius);
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            max-height: 200px;
+            overflow-y: auto;
+            margin-top: var(--spacing-sm);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="app-header">
+        <h1>🎯 Генератор промптов для B2B-анализа</h1>
+        <p>Автоматическая генерация персонализированных промптов на основе данных из Google Sheets</p>
+    </header>
+
+    <main>
+        <!-- Информация о формате данных -->
+        <section class="card">
+            <h3>📋 Требования к данным</h3>
+            <div class="warning-box">
+                <h4>⚠️ ВАЖНО: Структура таблицы должна соответствовать формату</h4>
+                <p>Таблица должна содержать следующие столбцы (порядок не важен, но названия должны совпадать):</p>
+                <div class="column-list">
+                    • Название (компания)<br>
+                    • Выручка<br>
+                    • Баланс<br>
+                    • Чистая прибыль/ убыток<br>
+                    • ИНН<br>
+                    • ОГРН<br>
+                    • Дата регистрации<br>
+                    • Адрес<br>
+                    • Кол-во сотрудников<br>
+                    • Основной ОКВЭД<br>
+                    • Имя, Отчество, Фамилия, Должность (для данных о руководстве)<br>
+                    • Рабочий телефон, Доп. телефон 1-9<br>
+                    • Рабочий email, Доп.email 1-9<br>
+                    • web (сайт компании)
+                </div>
+                <p><strong>Пример таблицы:</strong> <a href="https://docs.google.com/spreadsheets/d/1IMCD7BhyhPE3UgM5qi0pHSbv6sAzIv5pIBvFY9rTsyk/edit?usp=sharing" target="_blank">открыть шаблон</a></p>
+            </div>
+        </section>
+
+        <!-- Блок управления данными -->
+        <section class="card">
+            <h3>📊 Источник данных</h3>
+            <div class="form-group">
+                <label for="sheetUrl">URL Google Sheets:</label>
+                <input type="url" id="sheetUrl" class="form-control"
+                       placeholder="https://docs.google.com/spreadsheets/d/XXX/edit?usp=sharing"
+                       value="https://docs.google.com/spreadsheets/d/1IMCD7BhyhPE3UgM5qi0pHSbv6sAzIv5pIBvFY9rTsyk/edit?usp=sharing">
+                <small>Вставьте ссылку на Google Sheets (ссылка для просмотра). Программа автоматически преобразует её в CSV-экспорт.</small>
+            </div>
+            <button id="loadDataBtn" class="btn btn-primary">
+                📥 Загрузить данные
+            </button>
+
+            <div id="dataStatus" class="status status-loading hidden">
+                <span>Загрузка данных...</span>
+            </div>
+        </section>
+
+        <!-- Блок выбора компании -->
+        <section class="card hidden" id="companySection">
+            <h3>🏢 Выбор компании</h3>
+            <div class="company-selector">
+                <div class="form-group">
+                    <label for="companySelect">Компания для анализа:</label>
+                    <select id="companySelect" class="form-control">
+                        <option value="">-- Выберите компанию --</option>
+                    </select>
+                </div>
+                <button id="refreshBtn" class="btn btn-secondary">
+                    🔄 Обновить
+                </button>
+            </div>
+
+            <!-- Информация о компании -->
+            <div id="companyInfo" class="hidden">
+                <h4>📋 Базовая информация</h4>
+                <div class="info-grid" id="companyDetails"></div>
+            </div>
+        </section>
+
+        <!-- Блок промпта -->
+        <section class="card hidden" id="promptSection">
+            <h3>🚀 Сгенерированный промпт</h3>
+            <div class="prompt-output" id="promptOutput">
+                Выберите компанию для генерации промпта...
+            </div>
+            <div class="actions">
+                <button id="copyBtn" class="btn btn-primary" disabled>
+                    📋 Скопировать промпт
+                </button>
+                <button id="downloadBtn" class="btn btn-secondary" disabled>
+                    💾 Скачать как .md
+                </button>
+                <button id="newPromptBtn" class="btn btn-secondary" disabled>
+                    🔄 Новый вариант
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <footer style="text-align: center; margin-top: var(--spacing-xl);">
+        <p>Данные загружаются из Google Sheets • Обновлено: <span id="lastUpdate">-</span></p>
+    </footer>
+</div>
+
+<script>
+    // 📁 КЛАСС ДЛЯ РАБОТЫ С ДАННЫМИ
+    class CompanyDataManager {
+        constructor() {
+            this.SHEET_URL = '';
+            this.CACHE_KEY = 'companies_cache';
+            this.CACHE_TIMEOUT = 30 * 60 * 1000;
+            this.companies = [];
+        }
+
+        // Преобразование URL для просмотра в URL для CSV экспорта
+        convertToExportUrl(viewUrl) {
+            if (!viewUrl || viewUrl.trim() === '') {
+                throw new Error('URL не указан');
+            }
+
+            const url = viewUrl.trim();
+
+            // Если уже ссылка на экспорт - возвращаем как есть
+            if (url.includes('/export?format=csv')) {
+                return url;
+            }
+
+            // Если есть /edit, удаляем все после него
+            const editIndex = url.indexOf('/edit');
+            if (editIndex !== -1) {
+                const baseUrl = url.substring(0, editIndex);
+                return `${baseUrl}/export?format=csv`;
+            }
+
+            // Если ссылка без /edit, но с ID
+            const idMatch = url.match(/\/d\/([a-zA-Z0-9-_]+)/);
+            if (idMatch && idMatch[1]) {
+                const sheetId = idMatch[1];
+
+                // Проверяем, есть ли другие параметры после ID
+                const afterId = url.substring(url.indexOf(idMatch[1]) + idMatch[1].length);
+                if (afterId && afterId.length > 0) {
+                    // Убираем всё после ID
+                    const baseUrl = url.substring(0, url.indexOf(idMatch[1]) + idMatch[1].length);
+                    return `${baseUrl}/export?format=csv`;
+                }
+
+                return `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv`;
+            }
+
+            // Если не удалось распарсить, пытаемся добавить /export
+            if (!url.endsWith('/export?format=csv')) {
+                if (url.endsWith('/')) {
+                    return `${url}export?format=csv`;
+                } else {
+                    return `${url}/export?format=csv`;
+                }
+            }
+
+            return url;
+        }
+
+        setSheetUrl(url) {
+            // Автоматически преобразуем URL
+            this.SHEET_URL = this.convertToExportUrl(url);
+            console.log('Исходный URL:', url);
+            console.log('Экспорт URL:', this.SHEET_URL);
+        }
+
+        async loadCompanies() {
+            if (!this.SHEET_URL) {
+                throw new Error('URL таблицы не указан');
+            }
+
+            // Проверяем кэш
+            const cached = this.getCachedData();
+            if (cached) {
+                this.companies = cached;
+                return cached;
+            }
+
+            // Загружаем из Google Sheets
+            try {
+                this.showStatus('Загрузка данных из Google Sheets...', 'loading');
+
+                const response = await fetch(this.SHEET_URL);
+
+                if (!response.ok) {
+                    throw new Error(`Ошибка HTTP: ${response.status}`);
+                }
+
+                const csvData = await response.text();
+
+                if (!csvData || csvData.trim().length === 0) {
+                    throw new Error('CSV файл пуст');
+                }
+
+                this.companies = this.parseCSV(csvData);
+
+                if (this.companies.length === 0) {
+                    throw new Error('Не найдено компаний в данных');
+                }
+
+                this.cacheData(this.companies);
+                this.showStatus(`Загружено ${this.companies.length} компаний`, 'success');
+                return this.companies;
+
+            } catch (error) {
+                this.showStatus(`Ошибка: ${error.message}`, 'error');
+                throw error;
+            }
+        }
+
+        parseCSV(csvText) {
+            const lines = csvText.split('\n').filter(line => line.trim());
+
+            if (lines.length < 2) {
+                throw new Error('CSV файл должен содержать заголовки и данные');
+            }
+
+            const headers = this.parseCSVLine(lines[0]);
+
+            const companies = lines.slice(1)
+                .map((line, index) => {
+                const values = this.parseCSVLine(line);
+                let company = { _index: index };
+
+                headers.forEach((header, idx) => {
+                    company[header] = values[idx] || '';
+                });
+
+                return company;
+            })
+                .filter(company => {
+                const companyName = company['Название (компания)'];
+                return companyName && companyName.toString().trim();
+            });
+
+            return companies;
+        }
+
+        parseCSVLine(line) {
+            const result = [];
+            let current = '';
+            let inQuotes = false;
+
+            for (let i = 0; i < line.length; i++) {
+                const char = line[i];
+
+                if (char === '"') {
+                    inQuotes = !inQuotes;
+                } else if (char === ',' && !inQuotes) {
+                    result.push(current.trim());
+                    current = '';
+                } else {
+                    current += char;
+                }
+            }
+
+            result.push(current.trim());
+            return result.map(field => field.replace(/^"|"$/g, ''));
+        }
+
+        getCachedData() {
+            try {
+                const cached = localStorage.getItem(this.CACHE_KEY);
+                if (!cached) return null;
+
+                const { data, timestamp } = JSON.parse(cached);
+
+                if (Date.now() - timestamp > this.CACHE_TIMEOUT) {
+                    localStorage.removeItem(this.CACHE_KEY);
+                    return null;
+                }
+
+                return data;
+            } catch {
+                return null;
+            }
+        }
+
+        cacheData(data) {
+            const cache = {
+                data: data,
+                timestamp: Date.now()
+            };
+            localStorage.setItem(this.CACHE_KEY, JSON.stringify(cache));
+        }
+
+        clearCache() {
+            localStorage.removeItem(this.CACHE_KEY);
+        }
+
+        showStatus(message, type) {
+            const statusEl = document.getElementById('dataStatus');
+            if (statusEl) {
+                statusEl.textContent = message;
+                statusEl.className = `status status-${type}`;
+                statusEl.classList.remove('hidden');
+
+                if (type === 'success') {
+                    setTimeout(() => {
+                        statusEl.classList.add('hidden');
+                    }, 5000);
+                }
+            }
+        }
+    }
+
+    // 🎯 КЛАСС ДЛЯ ГЕНЕРАЦИИ ПРОМПТОВ
+    class PromptGenerator {
+    generateAnalysisPrompt(company) {
+        // Автоматическое преобразование данных из таблицы
+        const companyData = this.transformTableData(company);
+
+        return `# **РОЛЬ И КОНТЕКСТ**
+\`\`\`xml
+        <role>
+        Ты — senior business intelligence analyst с экспертизой в строительной отрасли и управлении подрядчиками. Специализируешься на глубоком анализе компаний для выявления уникальных инсайтов для B2B-продаж. При анализе руководствуешься строго фактическими данными компании без теоретических предположений и тенденций.
+        </role>
+        <mission>
+        Провести глубокую разведку для поиска ЛПР (лиц, принимающих решений), стратегических инсайтов и анализ данных по компании ${companyData.Наименование} (${companyData.ИНН}) для продаж корпоративной IT-платформы управления подрядчиками. **Сформулировать обоснованные гипотезы, основанные исключительно на соединении проверенных фактов о потребностях компании** для персонализации подхода в продажах.
+    </mission>
+
+    <government_company_filter>
+    Ты ДОЛЖЕН ПЕРВЫМ ДЕЛОМ проверять, является ли компания государственной или квазигосударственной. Наш продукт НЕ ПРИМЕНИМ для компаний, которые обязаны нанимать подрядчиков по 44-ФЗ и 223-ФЗ. Если компания государственная — это автоматический стоп-флаг "НЕ ТРАТИТЬ ВРЕМЯ!"
+
+    **Критерии государственной компании:**
+    - Доля государства/муниципалитета в уставном капитале > 50%
+    - Компания входит в реестр госкомпаний (ГК "Ростех", "Росатом", "Роскосмос" и т.д.)
+    - Компания подведомственна государственным органам
+    - Является БУ (бюджетным учреждением) или КУ (казенным учреждением)
+    - Участвует в госзакупках как заказчик по 44-ФЗ
+
+    **Проверять в приоритетных источниках:**
+    1. Spark-Interfax/Контур.Фокус — раздел "Учредители", "Собственники"
+    2. Единый реестр юридических лиц (ЕГРЮЛ)
+    3. Реестр госкомпаний на сайте Минфина
+    4. Публичные закупки компании (если работают по 44-ФЗ)
+    </government_company_filter>
+
+    <critical_rule>
+    - ПЕРВЫМ ШАГОМ проверять государственный статус компании
+    - Если компания государственная/квазигосударственная — СРАЗУ ВЫДАВАТЬ КРАСНЫЙ ФЛАГ
+    - Формулировать инсайты только как гипотезы, напрямую вытекающие из комбинации нескольких проверенных фактов. Пример: "Факт A (участие в 10 тендерах за год) + Факт B (публичная жалоба CEO на сроки подбора подрядчиков) = Гипотеза о высокой нагрузке на отдел закупок и потенциальной потребности в автоматизации".
+    ЗАПРЕЩЕНО:
+    - Делать теоретические выводы без фактического обоснования
+    - Использовать общие тенденции рынка как основание для инсайтов
+    - Предполагать информацию, не имеющую отношение к компании
+    - Создавать вымышленные сценарии или гипотетические ситуации
+    </critical_rule>
+
+    <target_product>
+    Корпоративная платформа управления подрядчиками ПИР:
+    - Автоматизация полного цикла работы с подрядчиками
+    - Внедрение алгоритмической объективности в выбор исполнителей
+    - Создание институциональной памяти компании
+    - Снижение операционных издержек до 50% за счет автоматизации
+    - Рост рентабельности проектирования до 30% через прозрачные анонимные аукционы
+    </target_product>
+    \`\`\`
+
+## 📋 **КОНТЕКСТ ПРОДУКТА**
+**Продукт:** Корпоративная платформа управления подрядчиками
+**Цена:** 80+ млн рублей (лицензия) + внедрение и поддержка
+**Ценность:** Сокращение издержек на 40%, ускорение найма в 3 раза
+
+## СТРАТЕГИЯ ПРОДАЖ:
+- **Подход:** Снайперский (Account-Based Marketing)
+- **Фокус:** Крупные строительные/инжиниринговые компании с бюджетом на подрядчиков ПИР >100 млн руб.
+- **Каналы:** Холодные контакты по емайл, Прямые контакты, отраслевые мероприятия, партнерства
+
+## ⚠️ **ТОЧНЫЕ ИСХОДНЫЕ ДАННЫЕ (ПРОВЕРЕННЫЕ)**
+**БАЗОВАЯ ИНФОРМАЦИЯ:**
+- **Наименование:** ${companyData.Наименование}
+- **ИНН:** ${companyData.ИНН}
+- **ОГРН:** ${companyData.ОГРН}
+- **Дата регистрации:** ${companyData.Дата_регистрации}
+- **Адрес:** ${companyData.Адрес}
+- **Выручка:** ${companyData.Выручка}
+- **Баланс:** ${companyData.Баланс}
+- **Чистая прибыль:** ${companyData.Чистая_прибыль}
+- **Количество сотрудников:** ${companyData.Количество_сотрудников}
+- **Основной вид деятельности (ОКВЭД):** ${companyData.Основной_вид_деятельности}
+
+### **ИЗВЕСТНЫЕ КОНТАКТЫ (ТРЕБУЕТСЯ УГЛУБЛЕНИЕ):**
+- **Руководство:** ${companyData.Руководство}
+- **Контакты:** ${companyData.Контакты}
+- **Email:** ${companyData.Email}
+- **Сайт:** ${companyData.Сайт}
+
+### **КОНКРЕТНЫЕ ЗАПРОСЫ ДЛЯ ПРОВЕРКИ ГОСУДАРСТВЕННОГО СТАТУСА:**
+- "${companyData.Наименование} учредители государство"
+- "${companyData.Наименование} 44-ФЗ заказчик"
+- "${companyData.Наименование} госзакупки"
+- "${companyData.Наименование} собственники"
+- "Spark ${companyData.ИНН} учредители"
+- "Контур.Фокус ${companyData.ИНН} собственники"
+
+**Используй ЭТИ данные как основу. Автоматически сопоставляй столбцы с шаблоном ниже.
+**ЗАДАЧА:** НЕ перепроверять данные, а НАЙТИ ДОПОЛНИТЕЛЬНУЮ ИНФОРМАЦИЮ для углубленного понимания компании.
+
+# 🔍 **ЗАДАЧИ ДЛЯ ИССЛЕДОВАНИЯ**
+На основе ИЗВЕСТНЫХ ДАННЫХ найти ДОПОЛНИТЕЛЬНУЮ информацию:
+1.  **ПЕРВИЧНАЯ ВАЛИДАЦИЯ:** Проверить государственный статус компании (ВЫПОЛНИТЬ В ПЕРВУЮ ОЧЕРЕДЬ)
+2.  **ДРУГИХ КЛЮЧЕВЫХ ЛПР:** Финансовый директор, Директор по проектам, Начальник отдела закупок, Директор по развитию/IT
+3.  **КОНТАКТЫ ДЛЯ НОВЫХ ЛПР:** email, телефоны, профили в LinkedIn/TenChat
+4.  **СТРАТЕГИЧЕСКИЕ ИНСАЙТЫ:** текущие проекты, партнеры, проблемы в управлении для персонализированного подхода
+5.  **ТЕХНОЛОГИЧЕСКИЙ КОНТЕКСТ:** используемое ПО, уровень цифровизации
+6.  **БОЛЕВЫЕ ТОЧКИ:** в управлении подрядчиками, сложности с подрядчиками, репутационные риски
+
+## 🎪 **МЕТОДИКА ИССЛЕДОВАНИЯ**
+
+## 🚨 **АЛГОРИТМ ПРОВЕРКИ ГОСУДАРСТВЕННОГО СТАТУСА**
+
+### **ШАГ 0: ПЕРВИЧНАЯ ВАЛИДАЦИЯ (ВЫПОЛНИТЬ СРАЗУ ПОСЛЕ СТАРТА)**
+\`\`\`bash
+    КОМАНДА: CHECK_GOVERNMENT_STATUS
+    1. Проверить наличие государства в учредителях через Spark/Контур.Фокус
+    2. Проверить участие в госзакупках как заказчика по 44-ФЗ
+    3. Проверить подведомственность государственным органам
+    4. Проверить наличие в реестрах госкомпаний
+
+    ✅ КРИТЕРИИ ПРОХОЖДЕНИЯ:
+    - Частная компания (доля государства < 50%)
+    - Не работает по 44-ФЗ как обязанный заказчик
+    - Не входит в перечень стратегических предприятий с госучастием
+
+    ❌ КРИТЕРИИ ОТКЛОНЕНИЯ:
+    - Доля государства/муниципалитета > 50%
+    - Является БУ/КУ (бюджетное/казенное учреждение)
+    - Участвует в госзакупках по 44-ФЗ как заказчик
+    - Подведомственна Минтрансу, Минстрою и т.д.
+    \`\`\`
+
+### **ШАГ 1: ЕСЛИ ГОСУДАРСТВЕННАЯ →**
+\`\`\`bash
+    ВЫВОДИ СРАЗУ:
+    🚨 КРАСНЫЙ ФЛАГ: ГОСУДАРСТВЕННАЯ КОМПАНИЯ
+
+    **Обоснование:**
+    - Факт 1: [Например, "100% акций принадлежит РФ через Росимущество"]
+    - Факт 2: [Например, "Участвует в закупках по 44-ФЗ как заказчик"]
+    - Факт 3: [Например, "Входит в перечень стратегических предприятий"]
+
+    **Заключение:**
+    Компания обязана работать по 44-ФЗ/223-ФЗ. Наш продукт не применим в текущем состоянии.
+    Рекомендация: НЕ ТРАТИТЬ ВРЕМЯ на дальнейший анализ.
+
+    **Стоп-сигнал:**
+    🚫 ГОСУДАРСТВЕННАЯ КОМПАНИЯ - НЕ ЦЕЛЕВОЙ КЛИЕНТ
+    \`\`\`
+
+### **ШАГ 2: ЕСЛИ ЧАСТНАЯ →**
+\`\`\`bash
+    ПРОДОЛЖИТЬ ПОЛНЫЙ АНАЛИЗ по стандартной методике...
+    \`\`\`
+
+### **ШАГ 3: ЕСЛИ СТАТУС НЕЯСЕН →**
+\`\`\`bash
+    СОБРАТЬ ДОПОЛНИТЕЛЬНУЮ ИНФОРМАЦИЮ:
+    1. Запросить полные данные об учредителях
+    2. Проверить все источники на госучастие
+    3. Уточнить статус через открытые данные
+
+    Вывод: "ТРЕБУЕТСЯ ДОПОЛНИТЕЛЬНАЯ ПРОВЕРКА - приоритет поиска: собственники"
+    \`\`\`
+
+### **БЛОК 1: УГЛУБЛЕННЫЙ ПОИСК ЛПР**
+\`\`\`markdown
+    **Основной фокус — найти контакты и информацию о:**
+    - COO / Операционный директор
+    - Финансовом директоре / Руководителе финансового отдела
+    - Директоре по проектам / Руководителе проектного офиса
+    - Начальнике отдела закупок
+    - Директоре по IT / Цифровизации
+    - Техническом директорe / Главном инженере
+    - Директор по развитию
+    - Руководителе московского филиала
+
+    **Где искать:**
+    - LinkedIn (поиск по названию компании и должностям)
+    - TenChat / HeadHunter профили
+    - Сайт компании (раздел "Команда", "Руководство")
+    - Отраслевые конференции и мероприятия (спикеры)
+    - Пресс-релизы и интервью
+    - Базы данных (Spark-Interfax, Контур.Фокус)
+    \`\`\`
+
+### **БЛОК 2: АНАЛИЗ ОПЕРАЦИОННЫХ ПРОБЛЕМ И ПОТЕНЦИАЛЬНЫХ "БОЛЕЙ"**
+\`\`\`markdown
+    **Что ищем (конкретные индикаторы):**
+    1.  **Прямые жалобы руководства:**
+    - Цитаты CEO, COO, Директора по проектам в СМИ, интервью, выступлениях, где они упоминают проблемы с подрядчиками ПИР (сроки, качество, стоимость), рутину, бюрократию.
+
+    2.  **Признаки в вакансиях:**
+    - В обязанностях менеджеров проектов, закупщиков: "ведение реестра подрядчиков в Excel", "согласование КП и договоров по эл. почте", "ежедневный ручной работы, сбор отчетности".
+    - Поиск вакансий типа "Менеджер по оптимизации процессов", "Аналитик бизнес-процессов".
+
+    3.  **Признаки проектов по оптимизации:**
+    - Новости о запуске программ цифровизации, внедрении ERP/CRM-систем, проектах "бережливого производства".
+    - Упоминания о сотрудничестве с консалтинговыми компаниями по оптимизации закупок или проектного управления.
+
+    4.  **Репутационные риски:**
+    - Публичные скандалы, суды, претензии со стороны заказчиков, связанные с невыполнением обязательств подрядчиками.
+    \`\`\`
+
+### **БЛОК 3: АНАЛИЗ ТЕХНОЛОГИЧЕСКОГО УРОВНЯ**
+\`\`\`markdown
+    **Признаки для анализа:**
+    - Упоминания используемого ПО (1С, AutoCAD, Revit и др.)
+    - Какие технологии используют (BIM, ERP, специализированные системы)?
+    - Упоминания в корпоративных блогах или соцсетях о запуске проектов по оптимизации процессов, цифровизации закупок или внедрению ERP-систем
+    - Вакансии IT-специалистов
+    Комментарий: При анализе вакансий IT-специалистов рассматривать их как КОСВЕННЫЙ признак. Делать вывод о цифровизации только в том случае, если в обязанностях прямо указано внедрение новых систем (например, 'внедрение CRM/ERP/BIM') или разработка систем управления закупками/проектами. Вакансии на должности 'системный администратор' или 'техподдержка 1С' не являются strong signal.
+    - Участие в мероприятиях по цифровизации
+    - Внедрение новых технологий
+    \`\`\`
+
+### **БЛОК 4: СТРУКТУРА И МОДЕЛЬ БИЗНЕСА**
+\`\`\`markdown
+    1. Как работает модель бизнеса?
+    2. Это холдинг/управляющая компания? Кто дочерние структуры?
+    3. Какие проекты реализуют (жилье, коммерция, инфраструктура)?
+    4. Есть ли своя тендерная площадка или система управления подрядчиками?
+    \`\`\`
+
+### **БЛОК 5: ФИНАНСОВЫЕ ПОКАЗАТЕЛИ И ОЦЕНКА ИНВЕСТИЦИОННОЙ СПОСОБНОСТИ**
+\`\`\`markdown
+    1. Динамика выручки и прибыли за последние 3 года
+    2. Основные источники доходов (девелопмент, управление активами?)
+    3. Планы расширения/развития
+    4. Участие в государственных/крупных коммерческих проекты
+    5. Искать информацию о предыдущих крупных IT-закупках (внедрение CRM, ERP, СЭД) через анализ тендеров или новостей. Это косвенно подтвердит наличие бюджета и опыт совершения подобных сделок.
+    \`\`\`
+
+## 📊 **ИСТОЧНИКИ ДЛЯ ПРОВЕРКИ**
+
+### **ПРИОРИТЕТНЫЕ ИСТОЧНИКИ:**
+\`\`\`markdown
+    1. **Сайт компании:** разделы "Команда", "Новости", "Проекты", "Структура",
+    2. **Spark/Contour.Focus:** Финансовая отчетность, связанные лица
+    Уточнение: Spark/Contour.Focus разрешено и приветствуется для поиска дополнительной информации, не указанной в исходных данных (например, связанные лица, дочерние компании, полная финансовая история, данные о тендерах), но не для перепроверки базовых реквизитов, уже предоставленных выше.
+    3. **LinkedIn/TenChat:** поиск сотрудников по названию компании, Профили сотрудников, особенно C-level
+    4. **Отраслевые СМИ:** интервью руководителей
+    5. **Новостные порталы:** РБК, Коммерсант, отраслевые СМИ
+    6. **Госзакупки:** Участие в тендерах как заказчик/подрядчик
+    7. **Соцсети компании:** VK, Telegram-каналы
+    8. **Карьерные сайты:** Вакансии (если есть) - какие потребности?
+    9. **Базы данных** (Spark-Interfax для дополнительной проверки)
+    10. **Отраслевые форумы:** списки спикеров, участников
+    \`\`\`
+
+### **КРИТИЧЕСКИЕ ВОПРОСЫ ДЛЯ ОТВЕТА:**
+\`\`\`markdown
+    - Является ли компания государственной/квазигосударственной? (ПРОВЕРИТЬ В ПЕРВУЮ ОЧЕРЕДЬ!)
+    - Кто реально управляет проектами?
+    - Есть ли технический долг в управлении подрядчиками?
+    - Какие ручные процессы можно автоматизировать?
+    - Готовы ли инвестировать в IT при такой рентабельности?
+    \`\`\`
+
+# 🎪 **ФОРМАТ ВЫВОДА ДАННЫХ**
+
+### **СТАНДАРТНАЯ СТРУКТУРА ОТЧЕТА:**
+\`\`\`markdown
+    ### ${companyData.Наименование} - СТРАТЕГИЧЕСКИЙ ОБЗОР
+
+    ## 🚨 ПЕРВИЧНАЯ ВАЛИДАЦИЯ ГОСУДАРСТВЕННОГО СТАТУСА
+    - **Государственный статус:** [ДА/НЕТ/ТРЕБУЕТСЯ ДОПОЛНИТЕЛЬНАЯ ПРОВЕРКА]
+    - **Причины:** [Конкретные факты: доля государства, подведомственность, участие в 44-ФЗ]
+    - **Рекомендация:** [ПРОДОЛЖИТЬ АНАЛИЗ / НЕ ТРАТИТЬ ВРЕМЯ]
+
+    ## 📊 ФАКТИЧЕСКАЯ ИНФОРМАЦИЯ
+    - **Статус:** указать Действующее/Недействущее (регистрация ${companyData.Дата_регистрации})
+    - **Масштаб:** ${companyData.Количество_сотрудников} сотрудников, выручка ${companyData.Выручка} руб.
+    - **Финансы:** Чистая прибыль ${companyData.Чистая_прибыль} руб., баланс ${companyData.Баланс} руб.
+    - **Специализация:** ${companyData.Основной_вид_деятельности}
+    - **Руководство:** ${companyData.Руководство}
+
+    ## 💡 ФАКТО-ОБОСНОВАННЫЕ ИНСАЙТЫ
+
+    ### **1. КЛЮЧЕВОЙ ИНСАЙТ:**
+
+    ### **2. СТРУКТУРА БИЗНЕСА:**
+    - Модель работы: [холдинг/управляющая компания/другое]
+    - Ключевые проекты: [список]
+    - Дочерние структуры: [если есть]
+
+    ### **3. КАРТА ЛПР:**
+    - [Имя Фамилия] - [Должность] - [Найденные контакты] - [Источник] - [триггер для контакта]
+    - [Имя Фамилия] - [Должность] - [Найденные контакты] - [Источник] - [триггер для контакта]
+
+    ### **4. ОПЕРАЦИОННЫЕ "БОЛИ" И СТРАТЕГИЧЕСКИЕ ИНСАЙТЫ:**
+    - [Проблема (Инсайт 1)] - [подтверждение из источников]
+    - [Проблема (Инсайт 2)] - [подтверждение из источников]
+
+    ### **5. ТЕХНОЛОГИЧЕСКИЙ КОНТЕКСТ:**
+    - [Используемые системы] - [Признаки цифровизации]
+    - [Потребности в автоматизации] - [Подтверждение]
+
+    ### **6. ГОТОВЫЕ ТРИГГЕРЫ ДЛЯ КОНТАКТА:**
+    - **Тема письма:** [Формулировка на основе инсайтов]
+    - **Ключевой посыл:** [Персонализированное обращение]
+    - **Лучший канал:** [Email/телефон/LinkedIn]
+    \`\`\`
+
+### **ПРИМЕР ОТВЕТА ДЛЯ ГОСУДАРСТВЕННОЙ КОМПАНИИ:**
+\`\`\`markdown
+    ### АО Мосгипротранс - СТРАТЕГИЧЕСКИЙ ОБЗОР
+
+    ## 🚨 ПЕРВИЧНАЯ ВАЛИДАЦИЯ ГОСУДАРСТВЕННОГО СТАТУСА
+    - **Государственный статус:** ДА
+    - **Причины:**
+    1. Факт 1: 100% акций принадлежит ОАО "РЖД" (государственная компания) [Источник: Контур.Фокус]
+    2. Факт 2: Участвует в закупках по 44-ФЗ как заказчик на сумму >1 млрд руб. [Источник: zakupki.gov.ru]
+    3. Факт 3: Входит в перечень дочерних обществ ОАО "РЖД" [Источник: официальный сайт РЖД]
+    - **Рекомендация:** 🚫 НЕ ТРАТИТЬ ВРЕМЯ - ГОСУДАРСТВЕННАЯ КОМПАНИЯ
+
+    **ЗАКЛЮЧЕНИЕ:**
+    Компания является 100% дочерним обществом ОАО "РЖД", обязана проводить закупки по 44-ФЗ. Наша IT-платформа управления подрядчиками не применима для компаний, работающих по государственным процедурам закупок.
+
+    🚫 СТОП-АНАЛИЗ: ГОСУДАРСТВЕННАЯ КОМПАНИЯ
+    \`\`\`
+
+# 🚀 **ИНСТРУКЦИЯ ДЛЯ ИСПОЛНЕНИЯ**
+
+### **ШАГ 1: СТАРТ ИССЛЕДОВАНИЯ**
+\`\`\`markdown
+    Проведи глубокое исследование ${companyData.Наименование} по указанной методике.
+    НАЧНИ С ПРОВЕРКИ ГОСУДАРСТВЕННОГО СТАТУСА!
+    \`\`\`
+
+## **СТРОГИЕ ОГРАНИЧЕНИЯ**
+\`\`\`bash
+    # COMMAND: STRICT_VALIDATION
+    **Ограничения анализа:**
+    ❌ ЗАПРЕЩЕНО: Делать предположения без данных
+    ✅ РАЗРЕШЕНО: Анализировать только предоставленные факты
+    ✅ РАЗРЕШЕНО: Делать выводы только из конкретных цифр
+    ✅ РАЗРЕШЕНО: Использовать логические связи между фактическими данными
+    \`\`\`
+
+## **ВАЛИДАЦИЯ КАЧЕСТВА**
+\`\`\`bash
+    ✅ ПЕРВИЧНАЯ ПРОВЕРКА ГОСУДАРСТВЕННОГО СТАТУСА ВЫПОЛНЕНА
+    ✅ Все выводы основаны ТОЛЬКО на найденных или предоставленных данных
+    ✅ Отсутствуют теоретические предположения
+    ✅ Исключены рыночные тенденции и обобщения
+    ✅ Используются только фактические цифры и показатели
+    ✅ Готово для точных и достоверных продаж
+    \`\`\`
+
+---
+
+**КОМАНДА ЗАПУСКА:**
+\`\`\`bash
+    "Начинаю строгий фактологический анализ ${companyData.Наименование} на основе предоставленных данных. Начинаю с проверки государственного статуса компании. Использую только конкретные цифры и показатели без теоретических предположений и рыночных тенденций."
+    \`\`\``;
+    }
+
+    transformTableData(company) {
+    // Автоматическое преобразование данных из таблицы в структурированный формат
+    // Сохраняем данные как есть, без форматирования
+    return {
+<<<<<<< HEAD
+    Наименование: company['Название (компания)'] || 'не указано',
+    ИНН: company['ИНН'] || 'не указан',
+    ОГРН: company['ОГРН'] || 'не указан',
+    Дата_регистрации: company['Дата регистрации'] || 'не указана',
+    Адрес: company['Адрес'] || 'не указан',
+    Выручка: company['Выручка'] || 'не указана',
+    Баланс: company['Баланс'] || 'не указан',
+    Чистая_прибыль: company['Чистая прибыль/ убыток'] || 'не указана',
+    Количество_сотрудников: company['Кол-во сотрудников'] || 'не указано',
+    Основной_вид_деятельности: company['Основной ОКВЭД'] || 'не указан',
+=======
+    Наименование: company.Наименование || 'не указано',
+    ИНН: company.ИНН || 'не указан',
+    ОГРН: company.ОГРН || 'не указан',
+    Дата_регистрации: company.Дата_регистрации || 'не указана',
+    Адрес: company.Адрес || 'не указан',
+    Выручка: this.formatNumber(company.Выручка) || 'не указана',
+    Баланс: this.formatNumber(company.Баланс) || 'не указан',
+    Чистая_прибыль: this.formatNumber(company['Чистая прибыль/ убыток']) || 'не указана',
+    Количество_сотрудников: company['Количество сотрудников'] || company.Количество_сотрудников || 'не указано',
+    Основной_вид_деятельности: company['Основной вид деятельности'] || 'не указан',
+>>>>>>> 097e5d1 (fix: remove SCSS files from git index according to .gitignore)
+    Руководство: this.formatLeadership(company),
+    Контакты: this.formatContacts(company),
+    Email: this.formatEmails(company),
+    Сайт: company['web'] || 'не указан'
+    };
+    }
+
+    formatLeadership(company) {
+    // Форматирование данных о руководстве из различных полей таблицы
+    if (company.Руководство) return company.Руководство;
+
+    const firstName = company['Имя'] || '';
+    const middleName = company['Отчество'] || '';
+    const lastName = company['Фамилия'] || '';
+    const position = company['Должность'] || '';
+
+    const nameParts = [lastName, firstName, middleName].filter(Boolean);
+    const fullName = nameParts.join(' ');
+
+    if (fullName && position) {
+    return `${fullName} (${position})`;
+    } else if (fullName) {
+    return fullName;
+    } else {
+    return 'не указано';
+    }
+    }
+
+    formatContacts(company) {
+    // Сбор контактов из различных телефонных полей
+    const contacts = [];
+
+    // Основные поля телефонов
+    const phoneFields = [
+    'Рабочий телефон',
+    'Доп. телефон 1', 'Доп. телефон 2', 'Доп. телефон 3',
+    'Доп. телефон 4', 'Доп. телефон 5', 'Доп. телефон 6',
+    'Доп. телефон 7', 'Доп. телефон 8', 'Доп. телефон 9'
+    ];
+
+    phoneFields.forEach(field => {
+    if (company[field] && company[field].trim()) {
+    contacts.push(company[field].trim());
+    }
+    });
+
+    return contacts.length > 0 ? contacts.join(', ') : 'не указаны';
+    }
+
+    formatEmails(company) {
+    // Сбор email из различных email полей
+    const emails = [];
+
+    const emailFields = [
+    'Рабочий email',
+    'Доп.email 1', 'Доп.email 2', 'Доп.email 3',
+    'Доп.email 4', 'Доп.email 5', 'Доп.email 6',
+    'Доп.email 7', 'Доп.email 8', 'Доп.email 9'
+    ];
+
+    emailFields.forEach(field => {
+    if (company[field] && company[field].trim()) {
+    emails.push(company[field].trim());
+    }
+    });
+
+    return emails.length > 0 ? emails.join(', ') : 'не указан';
+    }
+    }
+
+    // 🎮 КЛАСС ДЛЯ УПРАВЛЕНИЯ ИНТЕРФЕЙСОМ
+    class UIManager {
+    constructor() {
+    this.dataManager = new CompanyDataManager();
+    this.promptGenerator = new PromptGenerator();
+    this.init();
+    }
+
+    init() {
+    this.setupEventListeners();
+    this.updateLastUpdateTime();
+    this.checkForCachedData();
+    }
+
+    setupEventListeners() {
+    document.getElementById('loadDataBtn').addEventListener('click', () => {
+    this.loadData();
+    });
+
+    document.getElementById('companySelect').addEventListener('change', (e) => {
+    this.handleCompanySelect(e.target.value);
+    });
+
+    document.getElementById('refreshBtn').addEventListener('click', () => {
+    this.refreshData();
+    });
+
+    document.getElementById('copyBtn').addEventListener('click', () => {
+    this.copyPromptToClipboard();
+    });
+
+    document.getElementById('downloadBtn').addEventListener('click', () => {
+    this.downloadPromptAsMD();
+    });
+
+    document.getElementById('newPromptBtn').addEventListener('click', () => {
+    this.generateNewPromptVariant();
+    });
+
+    // Автосохранение URL
+    document.getElementById('sheetUrl').addEventListener('change', (e) => {
+    localStorage.setItem('last_sheet_url', e.target.value);
+    });
+    }
+
+    async loadData() {
+    const sheetUrl = document.getElementById('sheetUrl').value.trim();
+    if (!sheetUrl) {
+    this.showTemporaryMessage('Пожалуйста, укажите URL Google Sheets', 'error');
+    return;
+    }
+
+    // Сохраняем исходный URL для отображения
+    localStorage.setItem('last_sheet_url', sheetUrl);
+
+    this.dataManager.setSheetUrl(sheetUrl);
+
+    try {
+    const companies = await this.dataManager.loadCompanies();
+    this.loadCompaniesToSelect(companies);
+    this.showSection('companySection');
+    this.updateLastUpdateTime();
+
+    // Если компания одна - автоматически выбираем её
+    if (companies.length === 1) {
+    document.getElementById('companySelect').value = '0';
+    this.handleCompanySelect('0');
+    }
+
+    } catch (error) {
+    console.error('Ошибка загрузки данных:', error);
+    this.showTemporaryMessage(`Ошибка: ${error.message}`, 'error');
+    }
+    }
+
+    loadCompaniesToSelect(companies) {
+    const select = document.getElementById('companySelect');
+    select.innerHTML = '<option value="">-- Выберите компанию --</option>';
+
+    companies.forEach(company => {
+    // ИСПРАВЛЕНО: используем правильное имя столбца
+    const companyName = company['Название (компания)'];
+    if (companyName && companyName.toString().trim()) {
+    const option = document.createElement('option');
+    option.value = company._index;
+    option.textContent = companyName;
+    select.appendChild(option);
+    }
+    });
+
+    console.log('Загружено компаний для выбора:', companies.length);
+    }
+
+    handleCompanySelect(companyIndex) {
+    if (!companyIndex) {
+    this.hideCompanyInfo();
+    this.hidePromptSection();
+    return;
+    }
+
+    const company = this.dataManager.companies[companyIndex];
+    if (company) {
+    this.showCompanyInfo(company);
+    this.generateAndDisplayPrompt(company);
+    this.showSection('promptSection');
+    }
+    }
+
+    showCompanyInfo(company) {
+    const transformedData = this.promptGenerator.transformTableData(company);
+    const detailsDiv = document.getElementById('companyDetails');
+    detailsDiv.innerHTML = `
+<<<<<<< HEAD
+                <div class="info-item">
+                    <strong>Наименование:</strong> ${transformedData.Наименование}
+                </div>
+                <div class="info-item">
+                    <strong>ИНН:</strong> ${transformedData.ИНН}
+                </div>
+                <div class="info-item">
+                    <strong>ОГРН:</strong> ${transformedData.ОГРН}
+                </div>
+                <div class="info-item">
+                    <strong>Дата регистрации:</strong> ${transformedData.Дата_регистрации}
+                </div>
+                <div class="info-item">
+                    <strong>Адрес:</strong> ${transformedData.Адрес}
+                </div>
+                <div class="info-item">
+                    <strong>Сотрудников:</strong> ${transformedData.Количество_сотрудников}
+                </div>
+                <div class="info-item">
+                    <strong>Выручка:</strong> ${transformedData.Выручка}
+                </div>
+                <div class="info-item">
+                    <strong>Баланс:</strong> ${transformedData.Баланс}
+                </div>
+                <div class="info-item">
+                    <strong>Чистая прибыль:</strong> ${transformedData.Чистая_прибыль}
+                </div>
+                <div class="info-item">
+                    <strong>Вид деятельности:</strong> ${transformedData.Основной_вид_деятельности}
+                </div>
+                <div class="info-item">
+                    <strong>Руководство:</strong> ${transformedData.Руководство}
+                </div>
+                <div class="info-item">
+                    <strong>Контакты:</strong> ${transformedData.Контакты}
+                </div>
+                <div class="info-item">
+                    <strong>Email:</strong> ${transformedData.Email}
+                </div>
+                <div class="info-item">
+                    <strong>Сайт:</strong> ${transformedData.Сайт}
+                </div>
+            `;
+=======
+        <div class="info-item">
+            <strong>ИНН:</strong> ${transformedData.ИНН}
+        </div>
+        <div class="info-item">
+            <strong>ОГРН:</strong> ${transformedData.ОГРН}
+        </div>
+        <div class="info-item">
+            <strong>Адрес:</strong> ${transformedData.Адрес}
+        </div>
+        <div class="info-item">
+            <strong>Сотрудников:</strong> ${transformedData.Количество_сотрудников}
+        </div>
+        <div class="info-item">
+            <strong>Выручка:</strong> ${transformedData.Выручка}
+        </div>
+        <div class="info-item">
+            <strong>Прибыль:</strong> ${transformedData.Чистая_прибыль}
+        </div>
+        <div class="info-item">
+            <strong>Вид деятельности:</strong> ${transformedData.Основной_вид_деятельности}
+        </div>
+        <div class="info-item">
+            <strong>Руководство:</strong> ${transformedData.Руководство}
+        </div>
+    `;
+>>>>>>> 097e5d1 (fix: remove SCSS files from git index according to .gitignore)
+
+    document.getElementById('companyInfo').classList.remove('hidden');
+    }
+
+    generateAndDisplayPrompt(company) {
+    const prompt = this.promptGenerator.generateAnalysisPrompt(company);
+    document.getElementById('promptOutput').textContent = prompt;
+
+    // Активируем кнопки
+    document.getElementById('copyBtn').disabled = false;
+    document.getElementById('downloadBtn').disabled = false;
+    document.getElementById('newPromptBtn').disabled = false;
+    }
+
+    async copyPromptToClipboard() {
+    const promptText = document.getElementById('promptOutput').textContent;
+    try {
+    await navigator.clipboard.writeText(promptText);
+    this.showTemporaryMessage('📋 Промпт скопирован в буфер обмена!', 'success');
+    } catch (err) {
+    console.error('Ошибка копирования:', err);
+    this.showTemporaryMessage('❌ Ошибка копирования', 'error');
+    }
+    }
+
+    downloadPromptAsMD() {
+    const promptText = document.getElementById('promptOutput').textContent;
+    const companyName = document.getElementById('companySelect').selectedOptions[0]?.text || 'company';
+    const filename = `prompt_${companyName.replace(/[^a-z0-9]/gi, '_')}.md`;
+
+    const blob = new Blob([promptText], { type: 'text/markdown' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+
+    this.showTemporaryMessage('💾 Файл скачан!', 'success');
+    }
+
+    generateNewPromptVariant() {
+    const companyIndex = document.getElementById('companySelect').value;
+    if (companyIndex) {
+    const company = this.dataManager.companies[companyIndex];
+    this.generateAndDisplayPrompt(company);
+    this.showTemporaryMessage('🔄 Сгенерирован новый вариант промпта', 'success');
+    }
+    }
+
+    refreshData() {
+    this.dataManager.clearCache();
+    this.loadData();
+    }
+
+    showSection(sectionId) {
+    document.getElementById(sectionId).classList.remove('hidden');
+    }
+
+    hideCompanyInfo() {
+    document.getElementById('companyInfo').classList.add('hidden');
+    }
+
+    hidePromptSection() {
+    document.getElementById('promptSection').classList.add('hidden');
+    }
+
+    updateLastUpdateTime() {
+    document.getElementById('lastUpdate').textContent = new Date().toLocaleString('ru-RU');
+    }
+
+    showTemporaryMessage(message, type) {
+    const statusEl = document.getElementById('dataStatus');
+    if (statusEl) {
+    statusEl.textContent = message;
+    statusEl.className = `status status-${type}`;
+    statusEl.classList.remove('hidden');
+
+    if (type === 'success' || type === 'error') {
+    setTimeout(() => {
+    statusEl.classList.add('hidden');
+    }, 5000);
+    }
+    }
+    }
+
+    checkForCachedData() {
+    // Восстанавливаем последний использованный URL
+    const lastUrl = localStorage.getItem('last_sheet_url');
+    if (lastUrl) {
+    document.getElementById('sheetUrl').value = lastUrl;
+    }
+
+    // Проверяем кэшированные данные
+    const cached = this.dataManager.getCachedData();
+    if (cached && cached.length > 0) {
+    this.dataManager.companies = cached;
+    this.loadCompaniesToSelect(cached);
+    this.showSection('companySection');
+    this.showTemporaryMessage(`Загружены кэшированные данные (${cached.length} компаний)`, 'success');
+    }
+    }
+    }
+
+    // 🚀 ЗАПУСК ПРИЛОЖЕНИЯ
+    document.addEventListener('DOMContentLoaded', () => {
+    new UIManager();
+    });
+</script>
+</body>
+</html>

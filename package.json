@@ -30,8 +30,10 @@
     "postbuild": "echo '✅ Сборка завершена. Проверьте assets/css/main.css'",
     "lint:css": "stylelint assets/scss/**/*.scss",
     "lint:css:fix": "stylelint assets/scss/**/*.scss --fix",
-    "prepare": "husky install",
-    "dev": "concurrently \"npm run sass:watch\" \"live-server\""
+    "prepare": "husky",
+    "dev": "concurrently \"npm run sass:watch\" \"live-server\"",
+    "precommit": "lint-staged",
+    "test": "echo 'Tests are not configured for this project'"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
@@ -43,6 +45,7 @@
     "sass": "^1.94.1",
     "stylelint": "^16.25.0",
     "stylelint-config-standard": "^39.0.1",
+    "stylelint-config-standard-scss": "^16.0.0",
     "stylelint-scss": "^6.12.1"
   },
   "engines": {
@@ -50,6 +53,14 @@
   },
   "private": true,
   "lint-staged": {
-    "assets/scss/**/*.scss": "stylelint --fix"
+    "*.scss": [
+      "stylelint --fix"
+    ],
+    "*.css": [
+      "stylelint --fix"
+    ]
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2"
   }
 }

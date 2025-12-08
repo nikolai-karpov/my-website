@@ -5,25 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Контакты | Карпов Николай - Инструктор по внедрению ИИ</title>
 
-    <!-- Подключаем единый файл стилей -->
-    <link rel="stylesheet" href="../assets/scss/purged/main.css" />
+    <!-- Предзагрузка шрифтов и критичных ресурсов -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="/assets/css/main.css" as="style">
 
-    <!-- Фавикон — должен быть в корне проекта -->
+    <!-- Фавикон -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Подключаем основной CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css" />
 </head>
 <body>
 
-<!-- Указываем правильный путь к компонентам -->
-<header id="main-header" data-component="site-components/header.html">
+<!-- FALLBACK HEADER - показывается если JS не загрузил компонент -->
+<header id="main-header" class="fallback-header">
     <div class="container header-container">
-        <a href="/" class="logo">Карпов Николай</a>
+        <a href="../" class="logo">Карпов Николай</a>
         <nav class="desktop-nav">
             <ul>
-                <li><a href="/">Главная</a></li>
+                <li><a href="../">Главная</a></li>
                 <li><a href="methodology.html">Методология</a></li>
-                <li><a href="case-studies/">Кейсы</a></li>
+                <li><a href="case-studies/index.html">Кейсы</a></li>
                 <li><a href="results.html">Результаты</a></li>
-                <li><a href="contacts.html">Контакты</a></li>
+                <li><a href="contacts.html" class="cta-button primary">Контакты</a></li>
             </ul>
         </nav>
         <button class="hamburger" aria-label="Меню" aria-expanded="false">
@@ -72,7 +79,7 @@
                             <div class="contact-details">
                                 <strong>LinkedIn</strong>
                                 <a href="#" target="_blank" rel="noopener noreferrer">Профиль в LinkedIn</a>
-                                <p>Для профессиональных запросов и долгосрочного сотрудничества</p>
+                                <p>Для профессиональных запросы и долгосрочного сотрудничества</p>
                             </div>
                         </li>
                     </ul>
@@ -88,17 +95,21 @@
                 <!-- Правая колонка: Контактная форма -->
                 <div class="contact-form">
                     <h2>Оставить заявку на диагностику</h2>
+                    <!-- FormSubmit - простой и бесплатный вариант для GitHub Pages -->
                     <form action="https://formsubmit.co/your-email@example.com" method="POST" id="contactForm">
+                        <!-- Скрытые поля для настройки FormSubmit -->
                         <input type="hidden" name="_subject" value="Новая заявка с сайта - Контакты">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_template" value="table">
-                        <input type="hidden" name="_next" value="https://nikolai-karpov.github.io/my-website/site-pages/thank-you.html">
+                        <input type="hidden" name="_next" value="https://yourusername.github.io/thank-you.html">
 
+                        <!-- Имя - самостоятельный блок на всю ширину -->
                         <div class="form-group">
                             <label for="name">Ваше имя *</label>
                             <input type="text" id="name" name="name" required>
                         </div>
 
+                        <!-- Выбор способа связи -->
                         <div class="form-group">
                             <label for="contact-preference">Предпочтительный способ связи *</label>
                             <select id="contact-preference" name="contact-preference" required>
@@ -109,6 +120,7 @@
                             </select>
                         </div>
 
+                        <!-- Динамические поля для контактов -->
                         <div class="form-group contact-field" id="email-field">
                             <label for="email">Email для связи *</label>
                             <input type="email" id="email" name="email">
@@ -180,8 +192,8 @@
     </section>
 </main>
 
-<!-- Правильный путь к footer -->
-<footer id="main-footer" data-component="site-components/footer.html">
+<!-- FALLBACK FOOTER - показывается если JS не загрузил компонент -->
+<footer id="main-footer" class="fallback-footer">
     <div class="container">
         <div class="footer-content">
             <div class="footer-brand">
@@ -203,19 +215,21 @@
             <div class="footer-links">
                 <h4>Навигация</h4>
                 <ul>
-                    <li><a href="/">Главная</a></li>
+                    <li><a href="../">Главная</a></li>
                     <li><a href="methodology.html">Методология</a></li>
-                    <li><a href="case-studies/">Кейсы</a></li>
+                    <li><a href="case-studies/index.html">Кейсы</a></li>
                     <li><a href="results.html">Результаты</a></li>
                     <li><a href="contacts.html">Контакты</a></li>
                 </ul>
             </div>
 
             <div class="footer-links">
-                <h4>Проекты</h4>
+                <h4>Услуги</h4>
                 <ul>
-                    <li><a href="case-studies/construction.html">Строительство</a></li>
-                    <li><a href="case-studies/procurement.html">Закупки</a></li>
+                    <li><a href="../site-pages/ai-consulting.html">AI-консалтинг</a></li>
+                    <li><a href="../site-pages/process-automation.html">Автоматизация процессов</a></li>
+                    <li><a href="../site-pages/team-training.html">Обучение команд</a></li>
+                    <li><a href="../site-pages/custom-solutions.html">Кастомные решения</a></li>
                 </ul>
             </div>
 
@@ -239,8 +253,8 @@
         <div class="footer-bottom">
             <div class="copyright">&copy; 2025, Карпов Николай. Все права защищены.</div>
             <div class="footer-nav">
-                <a href="privacy.html">Политика конфиденциальности</a>
-                <a href="terms.html">Условия использования</a>
+                <a href="../site-pages/privacy.html">Политика конфиденциальности</a>
+                <a href="../site-pages/terms.html">Условия использования</a>
             </div>
             <a href="#" class="back-to-top" aria-label="Наверх">
                 <i class="fas fa-chevron-up"></i>
@@ -250,72 +264,139 @@
 
     <div class="mobile-footer-menu">
         <nav class="mobile-nav">
-            <a href="/" class="mobile-nav-item"><i class="fas fa-home"></i><span>Главная</span></a>
-            <a href="case-studies/" class="mobile-nav-item"><i class="fas fa-briefcase"></i><span>Кейсы</span></a>
-            <a href="results.html" class="mobile-nav-item"><i class="fas fa-chart-line"></i><span>Результаты</span></a>
+            <a href="../" class="mobile-nav-item"><i class="fas fa-home"></i><span>Главная</span></a>
+            <a href="case-studies/index.html" class="mobile-nav-item"><i class="fas fa-briefcase"></i><span>Кейсы</span></a>
+            <a href="results.html" class="mobile-nav-item"><i class="fas fa-cogs"></i><span>Услуги</span></a>
             <a href="contacts.html" class="mobile-nav-item"><i class="fas fa-phone-alt"></i><span>Контакты</span></a>
         </nav>
     </div>
 </footer>
 
-<!-- Исправленный путь к скрипту -->
-<script src="../assets/js/components-loader.js" defer></script>
-
-<!-- Скрипт для динамических полей формы -->
+<!-- Скрипт для подгрузки шапки и подвала -->
 <script>
+    // Скрипт для динамического отображения полей контактов
     document.addEventListener('DOMContentLoaded', function() {
         const contactPreference = document.getElementById('contact-preference');
         const emailField = document.getElementById('email-field');
         const telegramField = document.getElementById('telegram-field');
         const phoneField = document.getElementById('phone-field');
 
+        // Функция для скрытия всех полей контактов
         function hideAllContactFields() {
-            [emailField, telegramField, phoneField].forEach(field => {
-                field.classList.remove('active');
-            });
-            ['email', 'telegram', 'phone'].forEach(id => {
-                document.getElementById(id).removeAttribute('required');
-            });
+            emailField.classList.remove('active');
+            telegramField.classList.remove('active');
+            phoneField.classList.remove('active');
+
+            // Сбрасываем обязательность полей
+            document.getElementById('email').removeAttribute('required');
+            document.getElementById('telegram').removeAttribute('required');
+            document.getElementById('phone').removeAttribute('required');
         }
 
+        // Функция для показа выбранного поля
         function showContactField(field) {
             hideAllContactFields();
             field.classList.add('active');
-            document.getElementById(field.id.replace('-field', '')).setAttribute('required', 'required');
+
+            // Устанавливаем обязательность для активного поля
+            if (field === emailField) {
+                document.getElementById('email').setAttribute('required', 'required');
+            } else if (field === telegramField) {
+                document.getElementById('telegram').setAttribute('required', 'required');
+            } else if (field === phoneField) {
+                document.getElementById('phone').setAttribute('required', 'required');
+            }
         }
 
+        // Обработчик изменения выбора способа связи
         contactPreference.addEventListener('change', function() {
-            switch(this.value) {
-                case 'email': showContactField(emailField); break;
-                case 'telegram': showContactField(telegramField); break;
-                case 'phone': showContactField(phoneField); break;
-                default: hideAllContactFields(); break;
+            const selectedValue = this.value;
+
+            switch(selectedValue) {
+                case 'email':
+                    showContactField(emailField);
+                    break;
+                case 'telegram':
+                    showContactField(telegramField);
+                    break;
+                case 'phone':
+                    showContactField(phoneField);
+                    break;
+                default:
+                    hideAllContactFields();
+                    break;
             }
         });
 
+        // Валидация формы перед отправкой
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            const selected = contactPreference.value;
-            let valid = true;
+            const selectedContact = contactPreference.value;
+            let isValid = true;
 
-            if (!selected) {
-                alert('Выберите способ связи');
-                valid = false;
+            // Проверяем, что выбран способ связи
+            if (!selectedContact) {
+                alert('Пожалуйста, выберите предпочтительный способ связи');
+                isValid = false;
             }
 
-            if (selected === 'email' && !document.getElementById('email').value) {
-                alert('Укажите email');
-                valid = false;
-            } else if (selected === 'telegram' && !document.getElementById('telegram').value) {
-                alert('Укажите Telegram');
-                valid = false;
-            } else if (selected === 'phone' && !document.getElementById('phone').value) {
-                alert('Укажите телефон');
-                valid = false;
+            // Проверяем, что заполнено соответствующее поле контакта
+            if (selectedContact === 'email' && !document.getElementById('email').value) {
+                alert('Пожалуйста, укажите ваш email');
+                isValid = false;
+            } else if (selectedContact === 'telegram' && !document.getElementById('telegram').value) {
+                alert('Пожалуйста, укажите ваш Telegram');
+                isValid = false;
+            } else if (selectedContact === 'phone' && !document.getElementById('phone').value) {
+                alert('Пожалуйста, укажите ваш телефон');
+                isValid = false;
             }
 
-            if (!valid) e.preventDefault();
+            if (!isValid) {
+                e.preventDefault();
+            }
         });
     });
 </script>
+
+<!-- Основные скрипты сайта -->
+<script src="../assets/js/components-loader.js" defer></script>
+<script src="../assets/js/main.js" defer></script>
+
+<!-- Fallback проверка: если компоненты не загрузились за 3 секунды, показываем fallback -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Проверяем через 3 секунды, загрузились ли компоненты
+        setTimeout(function() {
+            const header = document.getElementById('main-header');
+            const footer = document.getElementById('main-footer');
+
+            // Если header пустой (не загрузился компонент), показываем fallback
+            if (header && header.children.length === 0) {
+                console.warn('Header component failed to load, showing fallback');
+                header.classList.remove('fallback-header');
+            }
+
+            // Если footer пустой (не загрузился компонент), показываем fallback
+            if (footer && footer.children.length === 0) {
+                console.warn('Footer component failed to load, showing fallback');
+                footer.classList.remove('fallback-footer');
+            }
+        }, 3000);
+    });
+</script>
+
+<!-- CSS для fallback (скрываем fallback по умолчанию, показываем только если JS не загрузил) -->
+<style>
+    .fallback-header,
+    .fallback-footer {
+        display: none; /* Скрываем fallback по умолчанию */
+    }
+
+    /* Показываем fallback только если JS обнаружит, что компоненты не загрузились */
+    #main-header.fallback-header,
+    #main-footer.fallback-footer {
+        display: block;
+    }
+</style>
 </body>
 </html>

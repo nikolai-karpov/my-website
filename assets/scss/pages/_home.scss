@@ -1,0 +1,572 @@
+/* =========================================
+   Главная страница (Home) - Fixed & Polished
+   ========================================= */
+
+/* --- 1. Hero Section --- */
+.hero-section {
+  position: relative;
+  background: var(--light-bg-color);
+  padding: 120px 0 100px;
+  overflow: hidden;
+
+  @media (max-width: 992px) {
+    padding: 100px 0 60px;
+  }
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 60px;
+  }
+}
+
+/* Текстовая часть героя */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgb(74, 144, 226, 0.1);
+  color: var(--primary-color);
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  border: 1px solid rgb(74, 144, 226, 0.2);
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: var(--dark-color);
+  letter-spacing: -0.02em;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  opacity: 0.85;
+  margin-bottom: 40px;
+  max-width: 650px;
+
+  @media (max-width: 992px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  @media (max-width: 992px) {
+    justify-content: center;
+  }
+}
+
+/* --- Hero Visual (Фото + Карточки) --- */
+.hero-visual {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    height: 400px;
+  }
+}
+
+.profile-image {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  padding: 10px;
+  background: var(--white-color);
+  box-shadow: 0 20px 40px rgb(0,0,0,0.1);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid rgb(0,0,0,0.05);
+    background-color: #f0f0f0;
+  }
+
+  @media (max-width: 768px) {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+.image-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 130%;
+  height: 130%;
+  background: radial-gradient(circle, rgb(74,144,226,0.15) 0%, rgb(255,255,255,0) 70%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* --- Плавающие карточки (Floating Cards) --- */
+.floating-card {
+  position: absolute;
+  background: var(--white-color);
+  padding: 10px 18px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgb(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 3;
+  animation: float 6s ease-in-out infinite;
+  border: 1px solid rgb(0,0,0,0.05);
+  white-space: nowrap;
+
+  i { font-size: 1.1rem; }
+
+  /* ПОЗИЦИИ ДЛЯ ВСЕХ 7 КАРТОЧЕК */
+
+  /* 1. Верхний правый угол */
+  &.card-1 {
+    top: 5%;
+    right: 10%;
+    animation-delay: 0s;
+  }
+
+  /* 2. Середина справа */
+  &.card-2 {
+    top: 40%;
+    right: -5%;
+    animation-delay: 1.5s;
+  }
+
+  /* 3. Низ справа */
+  &.card-3 {
+    bottom: 15%;
+    right: 5%;
+    animation-delay: 3s;
+  }
+
+  /* 4. Низ слева */
+  &.card-4 {
+    bottom: 10%;
+    left: 10%;
+    animation-delay: 4.5s;
+  }
+
+  /* 5. Середина слева */
+  &.card-5 {
+    top: 45%;
+    left: -8%;
+    animation-delay: 2s;
+  }
+
+  /* 6. Верх слева */
+  &.card-6 {
+    top: 15%;
+    left: 5%;
+    animation-delay: 3.5s;
+  }
+
+  /* 7. Центр сверху */
+  &.card-7 {
+    top: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 1s;
+  }
+
+  @media (max-width: 768px) {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+
+    /* На мобильных скрываем боковые, чтобы не перекрывать лицо */
+    &.card-4, &.card-5, &.card-6 { 
+      display: none; 
+    }
+
+    &.card-1 { 
+      top: 0; 
+      right: 0; 
+    }
+
+    &.card-2 { 
+      top: auto; 
+      bottom: 0; 
+      right: 0; 
+    }
+
+    &.card-3 { 
+      top: auto; 
+      bottom: 0; 
+      left: 0; 
+    }
+
+    &.card-7 { 
+      top: 0; 
+      left: 0; 
+      transform: none; 
+    }
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-12px) translateX(3px); }
+}
+
+/* --- Заголовки секций --- */
+.section-header {
+  text-align: center;
+  margin-bottom: 70px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.2;
+    color: var(--dark-color);
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    opacity: 0.85;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    margin-bottom: 50px;
+    h2 { font-size: 2rem; margin-bottom: 16px; }
+    p { font-size: 1.1rem; }
+  }
+}
+
+/* --- 2. Competencies Section --- */
+.competencies-section {
+  padding: 100px 0;
+  background: var(--white-color);
+}
+
+.competencies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+/* --- 3. Portfolio (Cases) Grid --- */
+.cases-section {
+  padding: 100px 0;
+  background: var(--light-bg-color);
+}
+
+.cases-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.case-card-interactive {
+  background: var(--white-color);
+  border-radius: var(--border-radius-lg);
+  padding: 32px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--card-shadow-hover);
+    border-color: rgb(74, 144, 226, 0.2);
+
+    .link-arrow i {
+      transform: translateX(5px);
+    }
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 1rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    flex-grow: 1;
+  }
+}
+
+.case-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.case-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+
+  &.bg-blue-100 { background: #e0f2fe; color: #0284c7; }
+  &.bg-purple-100 { background: #f3e8ff; color: #9333ea; }
+  &.bg-green-100 { background: #dcfce7; color: #16a34a; }
+}
+
+.case-tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-color);
+  opacity: 0.5;
+  padding-top: 4px;
+}
+
+.case-footer {
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  i { transition: transform 0.2s; }
+  &:hover { color: var(--primary-hover-color); }
+}
+
+/* --- 4. Tech Stack Section (Cards Grid) --- */
+.tech-stack-section {
+  padding: 100px 0;
+  background: var(--light-bg-color);
+  border-top: 1px solid rgb(0,0,0,0.05);
+}
+
+.tech-grid-cards {
+  display: grid;
+
+  /* Десктоп: 3 колонки (3x3) */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+
+  /* Планшет: 2 колонки */
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Мобильный: 1 колонка */
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tech-card {
+  background: var(--white-color);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgb(0, 0, 0, 0.05);
+  border: 1px solid rgb(0,0,0,0.03);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgb(0, 0, 0, 0.1), 0 10px 10px -5px rgb(0, 0, 0, 0.04);
+    border-color: rgb(74, 144, 226, 0.3);
+
+    .tech-card__icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+  }
+}
+
+.tech-card__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  transition: transform 0.3s ease;
+
+  /* Брендовые цвета для иконок */
+  &.python { background: #e0f2fe; color: #0284c7; }
+  &.powerbi { background: #fff7ed; color: #f59e0b; }
+  &.bpmn { background: #f0fdf4; color: #16a34a; }
+  &.jira { background: #eff6ff; color: #2563eb; }
+  &.figma { background: #faf5ff; color: #a855f7; }
+  &.prompt { background: #fdf4ff; color: #db2777; }
+  &.api { background: #f1f5f9; color: #475569; }
+  &.cloud { background: #fee2e2; color: #dc2626; }
+  &.nocode { background: #fff1f2; color: #e11d48; }
+}
+
+.tech-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--dark-color);
+}
+
+.tech-card p {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.7;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.tech-category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  color: var(--primary-color);
+  background: rgb(74, 144, 226, 0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-top: auto;
+}
+
+/* --- 5. Lead Magnet / CTA --- */
+.lead-magnet-section {
+  padding: 80px 0;
+  background: var(--dark-color);
+}
+
+.lead-magnet-card {
+  background: var(--white-color);
+  border-radius: 24px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  box-shadow: 0 25px 50px -12px rgb(0, 0, 0, 0.25);
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lead-content {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+  }
+
+  @media (max-width: 768px) {
+    padding: 40px 24px;
+  }
+}
+
+.lead-description {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+.lead-visual {
+  background: var(--light-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border-left: 1px solid var(--border-color);
+
+  @media (max-width: 992px) {
+    display: none;
+  }
+}
+
+.cta-group {
+  margin-top: 30px;
+}

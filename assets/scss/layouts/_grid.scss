@@ -1,0 +1,337 @@
+/* =========================================
+   Сетки с фиксированным количеством колонок
+   ========================================= */
+
+/* --- 3 Колонки (Компетенции) --- */
+.competencies-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- 2 Колонки (Кейсы, Калькулятор) --- */
+.cases-grid,
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Асимметричная сетка (Контакты) --- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  align-items: start;
+  margin: 60px 0;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+
+/* --- Асимметричная сетка (Подвал) --- */
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 40px;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 30px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+
+/* =========================================
+   Сетки Auto-Fit (Автоматическое заполнение)
+   ========================================= */
+
+/* Используются для дашбордов, FAQ, списка выгод и пруфов */
+.dashboard-grid,
+.faq-grid,
+.results-grid,
+.proof-list,
+.conversion-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin: 50px 0;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; /* На мобильных одна колонка */
+    gap: 25px;
+    margin: 30px 0;
+  }
+}
+
+/* Для мелких элементов (Process Flow) */
+.process-flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Для метрик (Кейсы) */
+.key-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 60px 0;
+  text-align: center;
+}
+
+/* Сеточные системы и раскладки */
+
+/* Основная сетка */
+.grid {
+  display: grid;
+  gap: var(--spacing);
+}
+
+/* Раскладки по количеству колонок */
+.grid-1 {
+  grid-template-columns: 1fr;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-5 {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid-6 {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* Асимметричные раскладки */
+.grid-2-1 {
+  grid-template-columns: 2fr 1fr;
+}
+
+.grid-1-2 {
+  grid-template-columns: 1fr 2fr;
+}
+
+.grid-3-1 {
+  grid-template-columns: 3fr 1fr;
+}
+
+.grid-1-3 {
+  grid-template-columns: 1fr 3fr;
+}
+
+/* Раскладки с фиксированной шириной */
+.grid-fixed-300 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-fixed-400 {
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.grid-fixed-500 {
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+/* Авто-раскладки */
+.grid-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.grid-auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+/* Сетки с разными gap */
+.grid-gap-sm {
+  gap: var(--spacing-sm);
+}
+
+.grid-gap-lg {
+  gap: var(--spacing-lg);
+}
+
+.grid-gap-xl {
+  gap: var(--spacing-xl);
+}
+
+/* Выравнивание элементов */
+.grid-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-start {
+  justify-content: start;
+  align-items: start;
+}
+
+.grid-end {
+  justify-content: end;
+  align-items: end;
+}
+
+.grid-between {
+  justify-content: space-between;
+}
+
+.grid-around {
+  justify-content: space-around;
+}
+
+/* Адаптивные сетки */
+@media (max-width: 992px) {
+  .grid-4,
+  .grid-5,
+  .grid-6 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-2-1,
+  .grid-1-2,
+  .grid-3,
+  .grid-3-1,
+  .grid-1-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid,
+  .grid-1 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-auto-fit,
+  .grid-auto-fill {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Сетки для специфических компонентов */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .timeline {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Гибридные раскладки */
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing);
+}
+
+.flex-grid > * {
+  flex: 1 1 300px;
+  min-width: 250px;
+}
+
+/* Сетка для галерей */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--spacing);
+  margin: var(--spacing-lg) 0;
+}
+
+/* Адаптивность для галерей */
+@media (max-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+/* Сетка для карточек */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Дополнительные классы для позиционирования */
+.grid-item-1-2 {
+  grid-column: span 2;
+}
+
+.grid-item-1-3 {
+  grid-column: span 3;
+}
+
+.grid-item-center {
+  place-self: center center;
+}
+
+.grid-item-start {
+  place-self: start start;
+}
+
+.grid-item-end {
+  place-self: end end;
+}
+
+/* Адаптивность для позиционирования */
+@media (max-width: 768px) {
+  .grid-item-1-2,
+  .grid-item-1-3 {
+    grid-column: span 1;
+  }
+}

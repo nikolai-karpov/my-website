@@ -1,103 +1,144 @@
-/* === DESIGN TOKENS === */
-/* Основные переменные, наследуемые из инлайновых стилей и расширяемые */
+/* === DESIGN TOKENS - СТАНДАРТИЗИРОВАННАЯ СИСТЕМА === */
+/* Единая цветовая схема без конфликтов и дублей */
 
 :root {
-/* === ЦВЕТОВАЯ СХЕМА === */
-    --color-primary-100: #e3f2fd;
-    --color-primary-500: #4A90E2;
-    --color-primary-700: #357ABD;
-    --color-primary-900: #0d47a1;
+/* === ЦВЕТОВАЯ СХЕМА - СВЕТЛАЯ ТЕМА (по умолчанию) === */
+    --color-primary-100: #f0f7ff;      /* Светлый фон */
+    --color-primary-300: #a8d0ff;      /* Яркий акцент */
+    --color-primary-500: #4A90E2;      /* Основной синий */
+    --color-primary-700: #2a6fc7;      /* Темный акцент */
+    --color-primary-900: #1a4a8a;      /* Глубокий синий */
 
-    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* Градиенты - стандартизированные */
+    --gradient-primary: linear-gradient(135deg, #4A90E2 0%, #2a6fc7 100%);
     --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     --gradient-neural: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --gradient-success: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    --gradient-dark: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
 
+    /* Фоны - светлая палитра */
     --color-background-light: #ffffff;
-    --color-background-grey: #f8f9fa;
-    --color-background-dark: #0f172a;
-    --color-background-card: rgba(255, 255, 255, 0.95);
+    --color-background-grey: #f8fafc;
+    --color-background-card: #ffffff;
+    --color-background-overlay: rgba(15, 23, 42, 0.85);
 
-    --color-text-main: #34495e;
-    --color-text-muted: #64748b;
-    --color-text-invert: #ffffff;
-    --color-text-accent: #4A90E2;
+    /* Текст - высокий контраст для светлой темы */
+    --color-text-main: #1e293b;          /* Темно-синий - основной текст */
+    --color-text-muted: #475569;         /* Серо-синий - вторичный текст */
+    --color-text-invert: #ffffff;        /* Белый для темных фонов */
+    --color-text-accent: #4A90E2;        /* Основной синий - акценты */
+    --color-text-success: #10b981;       /* Зеленый - успех */
+    --color-text-warning: #f59e0b;       /* Оранжевый - предупреждение */
+    --color-text-error: #ef4444;         /* Красный - ошибка */
 
-    --color-border: #e0e0e0;
+    /* Границы - мягкие тени */
+    --color-border: #e2e8f0;
     --color-border-light: #f1f5f9;
+    --color-border-dark: #cbd5e1;
 
-    --shadow-base: 0 10px 40px rgba(0, 0, 0, 0.08);
-    --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.12);
-    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.06);
-    --shadow-glow: 0 0 40px rgba(74, 144, 226, 0.15);
+    /* Тени - современные */
+    --shadow-base: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+    --shadow-card: 0 2px 15px rgba(0, 0, 0, 0.06);
+    --shadow-glow: 0 0 25px rgba(74, 144, 226, 0.2);
+    --shadow-elevated: 0 15px 35px rgba(0, 0, 0, 0.15);
 
-    --neural-glow: rgba(74, 144, 226, 0.10);
-    --neural-glow-intense: rgba(74, 144, 226, 0.20);
+    /* Свечения - для интерактивных элементов */
+    --neural-glow: rgba(74, 144, 226, 0.15);
+    --neural-glow-intense: rgba(74, 144, 226, 0.25);
+    --neural-glow-light: rgba(74, 144, 226, 0.08);
 
-    /* === ТИПОГРАФИКА === */
+    /* === ТИПОГРАФИКА - УВЕЛИЧЕННАЯ === */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     --font-family-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', monospace;
+    --font-family-heading: 'Inter', var(--font-family);
 
-    --font-size-xs: 0.75rem;
-    --font-size-sm: 0.875rem;
-    --font-size-base: 1rem;
-    --font-size-lg: 1.125rem;
-    --font-size-xl: 1.25rem;
-    --font-size-2xl: 1.5rem;
-    --font-size-3xl: 2rem;
-    --font-size-4xl: 3rem;
-    --font-size-hero: 4rem;
+    /* Размеры шрифтов - увеличены для читаемости */
+    --font-size-xxs: 0.75rem;      /* 12px */
+    --font-size-xs: 0.875rem;      /* 14px */
+    --font-size-sm: 1rem;          /* 16px */
+    --font-size-base: 1.125rem;    /* 18px - основной текст */
+    --font-size-lg: 1.25rem;       /* 20px */
+    --font-size-xl: 1.375rem;      /* 22px */
+    --font-size-2xl: 1.625rem;     /* 26px */
+    --font-size-3xl: 2.125rem;     /* 34px */
+    --font-size-4xl: 2.625rem;     /* 42px */
+    --font-size-hero: 3rem;        /* 48px - для титулов */
+    --font-size-jumbo: 3.5rem;     /* 56px */
 
+    /* Насыщенность - полный спектр */
     --font-weight-light: 300;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
+    --font-weight-black: 900;
 
-    --line-height-tight: 1.2;
+    /* Межстрочный интервал - оптимизирован */
+    --line-height-tight: 1.3;
     --line-height-normal: 1.6;
     --line-height-relaxed: 1.8;
+    --line-height-loose: 2.0;
 
-    --letter-spacing-tight: -0.02em;
+    /* Межбуквенный интервал - сбалансирован */
+    --letter-spacing-tight: -0.01em;
     --letter-spacing-normal: 0;
     --letter-spacing-wide: 0.02em;
+    --letter-spacing-wider: 0.04em;
 
-    /* === ОТСТУПЫ И СЕТКА === */
-    --spacing-xxs: 4px;
-    --spacing-xs: 8px;
-    --spacing-sm: 16px;
-    --spacing-md: 24px;
-    --spacing-lg: 32px;
-    --spacing-xl: 48px;
-    --spacing-2xl: 64px;
-    --spacing-3xl: 96px;
+    /* === ОТСТУПЫ - СБАЛАНСИРОВАННЫЕ === */
+    --spacing-xxs: 6px;             /* 6px */
+    --spacing-xs: 12px;             /* 12px */
+    --spacing-sm: 20px;             /* 20px */
+    --spacing-md: 28px;             /* 28px */
+    --spacing-lg: 36px;             /* 36px */
+    --spacing-xl: 54px;             /* 54px */
+    --spacing-2xl: 72px;            /* 72px */
+    --spacing-3xl: 108px;           /* 108px */
+    --spacing-4xl: 144px;           /* 144px */
 
-    --container-width: 1140px;
-    --container-padding: var(--spacing-lg);
+    /* Контейнеры - оптимальные */
+    --container-width: 1200px;
+    --container-padding: var(--spacing-xl);
+    --container-narrow: 900px;
+    --container-wide: 1440px;
 
-    --border-radius: 8px;
-    --border-radius-sm: 4px;
-    --border-radius-md: 12px;
-    --border-radius-lg: 16px;
-    --border-radius-xl: 24px;
-    --border-radius-2xl: 32px;
+    /* Скругления - современные */
+    --border-radius-sm: 6px;
+    --border-radius: 10px;
+    --border-radius-md: 14px;
+    --border-radius-lg: 18px;
+    --border-radius-xl: 26px;
+    --border-radius-2xl: 34px;
     --border-radius-full: 50%;
+    --border-radius-pill: 9999px;
 
-    /* === АНИМАЦИИ И ТРАНЗИЦИИ === */
-    --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    --ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+    /* === АНИМАЦИИ - ОПТИМИЗИРОВАННЫЕ === */
+    /* Функции плавности - профессиональные */
+    --ease-linear: linear;
+    --ease-in: cubic-bezier(0.4, 0, 1, 1);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
     --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-elastic: cubic-bezier(0.68, -0.6, 0.32, 1.6);
 
-    --duration-fast: 0.2s;
-    --duration-normal: 0.3s;
-    --duration-slow: 0.5s;
-    --duration-deliberate: 0.8s;
+    /* Длительности - отзывные */
+    --duration-fast: 150ms;
+    --duration-normal: 250ms;
+    --duration-slow: 400ms;
+    --duration-deliberate: 600ms;
+    --duration-stagger: 800ms;
 
-    --motion-default: all var(--duration-normal) var(--ease-smooth);
-    --motion-bounce: all var(--duration-normal) var(--ease-bounce);
-
-    /* === Z-INDEX СЛОИ === */
+    /* === Z-INDEX СЛОИ - ОРГАНИЗОВАННЫЕ === */
+    --z-auto: auto;
+    --z-0: 0;
+    --z-10: 10;
+    --z-20: 20;
+    --z-30: 30;
+    --z-40: 40;
+    --z-50: 50;
     --z-dropdown: 1000;
     --z-sticky: 1020;
     --z-fixed: 1030;
@@ -105,48 +146,146 @@
     --z-popover: 1050;
     --z-tooltip: 1060;
     --z-toast: 1070;
+    --z-max: 9999;
 
-    /* === КОМПОНЕНТНЫЕ ТОКЕНЫ === */
-    --card-padding: var(--spacing-xl) var(--spacing-lg);
+    /* === КОМПОНЕНТНЫЕ ТОКЕНЫ - ПРОДУМАННЫЕ === */
+    /* Карточки */
+    --card-padding: var(--spacing-xl);
+    --card-spacing: var(--spacing-lg);
     --card-shadow: var(--shadow-card);
     --card-shadow-hover: var(--shadow-hover);
+    --card-border-radius: var(--border-radius-lg);
 
-    --button-padding: var(--spacing-sm) var(--spacing-lg);
+    /* Кнопки */
+    --button-padding: 14px 28px;
     --button-border-radius: var(--border-radius-lg);
+    --button-height: 48px;
+    --button-min-width: 140px;
 
-    --icon-size-sm: 24px;
-    --icon-size-md: 40px;
-    --icon-size-lg: 60px;
-    --icon-size-xl: 80px;
+    /* Иконки - крупные */
+    --icon-size-xs: 20px;
+    --icon-size-sm: 28px;
+    --icon-size-md: 44px;
+    --icon-size-lg: 68px;
+    --icon-size-xl: 88px;
+    --icon-size-2xl: 108px;
 
-    --methodology-block-width: 300px;
-    --methodology-block-height: 220px;
-    --methodology-block-spacing: 60px;
+    /* Диаграмма методологии */
+    --methodology-block-width: 320px;
+    --methodology-block-height: 260px;
+    --methodology-block-spacing: 70px;
+    --methodology-connector-width: 45px;
 
-    --pipeline-step-width: 150px;
-    --pipeline-step-spacing: 40px;
+    /* Пайплайн */
+    --pipeline-step-width: 180px;
+    --pipeline-step-height: 160px;
+    --pipeline-step-spacing: 50px;
+    --pipeline-arrow-length: 35px;
+
+    /* Прогресс-индикатор */
+    --progress-dot-size: 14px;
+    --progress-dot-spacing: 18px;
+    --progress-dot-active-scale: 1.4;
+
+    /* Навигация */
+    --nav-button-spacing: var(--spacing-lg);
+    --nav-button-padding: var(--spacing-sm) var(--spacing-xl);
+
+    /* Таблицы */
+    --table-cell-padding: var(--spacing-md);
+    --table-header-bg: var(--color-primary-100);
+    --table-border-width: 1px;
+
+    /* Тултипы */
+    --tooltip-padding: var(--spacing-sm) var(--spacing-md);
+    --tooltip-border-radius: var(--border-radius-sm);
+    --tooltip-arrow-size: 6px;
+
+    /* Модальные окна */
+    --modal-padding: var(--spacing-2xl);
+    --modal-backdrop-opacity: 0.9;
+    --modal-max-width: 600px;
+    --modal-border-radius: var(--border-radius-xl);
+
+    /* Слайды */
+    --slide-padding: var(--spacing-2xl);
+    --slide-transition-duration: 600ms;
+    --slide-transition-timing: var(--ease-smooth);
+
+    /* Ширины для адаптивности */
+    --breakpoint-mobile: 768px;
+    --breakpoint-tablet: 1024px;
+    --breakpoint-desktop: 1280px;
 }
 
-/* === ТЕМНАЯ ТЕМА === */
+/* === ТЕМНАЯ ТЕМА - КОРРЕКТНАЯ === */
 @media (prefers-color-scheme: dark) {
     :root {
-        --color-background-light: #1e293b;
-        --color-background-grey: #0f172a;
-        --color-background-card: rgba(30, 41, 59, 0.95);
+    /* Фон - темная гамма */
+        --color-background-light: #0f172a;      /* Глубокий синий */
+        --color-background-grey: #1e293b;       /* Темнее */
+        --color-background-card: rgba(30, 41, 59, 0.98);
+        --color-background-overlay: rgba(0, 0, 0, 0.9);
 
-        --color-text-main: #e2e8f0;
-        --color-text-muted: #94a3b8;
+        /* Текст - СВЕТЛЫЙ на темном фоне (НЕ ЧЕРНЫЙ!) */
+        --color-text-main: #f1f5f9;             /* Светло-серый */
+        --color-text-muted: #cbd5e1;            /* Светлее */
+        --color-text-invert: #0f172a;           /* Темный для светлых фонов */
+        --color-text-accent: #60a5fa;           /* Светло-синий */
+        --color-text-success: #34d399;          /* Светло-зеленый */
+        --color-text-warning: #fbbf24;          /* Светло-желтый */
+        --color-text-error: #f87171;            /* Светло-красный */
 
+        /* Границы - светлее */
         --color-border: #334155;
-        --color-border-light: #1e293b;
+        --color-border-light: #475569;
+        --color-border-dark: #1e293b;
 
-        --shadow-base: 0 10px 40px rgba(0, 0, 0, 0.3);
-        --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.4);
-        --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.2);
+        /* Тени - глубже */
+        --shadow-base: 0 10px 40px rgba(0, 0, 0, 0.4);
+        --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.5);
+        --shadow-card: 0 4px 25px rgba(0, 0, 0, 0.3);
+        --shadow-glow: 0 0 40px rgba(96, 165, 250, 0.3);
+
+        /* Свечения - для темной темы */
+        --neural-glow: rgba(96, 165, 250, 0.2);
+        --neural-glow-intense: rgba(96, 165, 250, 0.3);
+        --neural-glow-light: rgba(96, 165, 250, 0.1);
+
+        /* Таблицы - темная тема */
+        --table-header-bg: var(--color-primary-900);
     }
 }
 
-/* === АДАПТИВНЫЕ ТОЧКИ ОСТАНОВА === */
+/* === КАСТОМНЫЕ МЕДИА-ЗАПРОСЫ === */
 @custom-media --mobile (max-width: 768px);
 @custom-media --tablet (min-width: 769px) and (max-width: 1024px);
 @custom-media --desktop (min-width: 1025px);
+@custom-media --retina (min-resolution: 2dppx);
+
+/* === АНИМАЦИОННЫЕ ПЕРЕМЕННЫЕ === */
+@property --gradient-position {
+    syntax: '<percentage>';
+    inherits: false;
+    initial-value: 0%;
+}
+
+/* === ПРЕЗЕНТАЦИОННЫЕ ПЕРЕМЕННЫЕ === */
+:root {
+/* Анимация смены слайдов */
+    --slide-transition: transform var(--slide-transition-duration) var(--slide-transition-timing),
+    opacity var(--slide-transition-duration) var(--slide-transition-timing);
+
+    /* Эффекты свечения для интерактивных элементов */
+    --focus-ring: 0 0 0 3px rgba(74, 144, 226, 0.5);
+    --focus-ring-inset: inset 0 0 0 3px rgba(74, 144, 226, 0.5);
+
+    /* Градиенты для текста */
+    --text-gradient-primary: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-700));
+    --text-gradient-accent: linear-gradient(135deg, #f093fb, #f5576c);
+
+    /* Максимальные ширины для контента */
+    --content-max-width-narrow: 650px;
+    --content-max-width-normal: 850px;
+    --content-max-width-wide: 1050px;
+}

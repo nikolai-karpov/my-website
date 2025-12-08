@@ -1,34 +1,41 @@
-/**
- * components-loader.js
- * Динамическая загрузка header и footer
- * Автоопределение пути: корень или site-pages/
- */
+document.addEventListener("DOMContentLoaded", function () {
+    // Определяем, запущены ли мы на GitHub Pages или локально
+    const isGitHub = window.location.hostname.includes('github.io');
+    // Если GitHub - добавляем префикс репозитория, иначе (локально) - пустая строка
+    // ВАЖНО: Если локально ты запускаешь не из корня, скорректируй логику
+    const basePath = isGitHub ? '/my-website' : ''; 
 
-function getBasePath() {
-    return window.location.pathname.includes('/site-pages/') ? '../' : './';
-}
+    const components = [
+        { id: "header", url: `${basePath}/site-components/header.html` },
+        { id: "footer", url: `${basePath}/site-components/footer.html` }
+    ];
 
-function loadComponent(element) {
-    const basePath = getBasePath();
-    const url = basePath + element.getAttribute('data-component');
-    const id = element.id;
-
-    fetch(url)
-        .then(response => {
-            if (!response.ok) throw new Error(`HTTP ${response.status}`);
-            return response.text();
-        })
-        .then(html => {
-            element.innerHTML = html;
-            console.debug(`[components-loader] Загружено: ${url}`);
-        })
-        .catch(err => {
-            console.error(`[components-loader] Ошибка загрузки: ${url}`, err);
-            element.innerHTML = `<div class="component-error">Компонент не загружен</div>`;
-        });
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    const components = document.querySelectorAll('[data-component]');
-    components.forEach(loadComponent);
+    components.forEach(component => {
+        const element = document.getElementById(component.id);
+        if (element) {
+            fetch(component.url)
+                .then(response => {
+                    if (!response.ok) throw new Error(`Failed to load ${component.url}`);
+                    return response.text();
+                })
+                .then(data => {
+                    // ВАЖНО: Внутри загруженного HTML (например, в меню) ссылки тоже могут быть без префикса.
+                    // Нужно заменить href="/" на href="/my-website/" если мы на GitHub
+                    let processedData = data;
+                    if (isGitHub) {
+                         // Простая замена путей от корня на пути с префиксом
+                         // Ищем href="/... и заменяем, исключая уже правильные пути
+                         processedData = data.replace(/href="\/([^\"]*)"/g, 'href="/my-website/$1"');
+                    }
+                    
+                    element.innerHTML = processedData;
+                    
+                    // Перезапуск логики для хедера (мобильное меню)
+                    if (component.id === 'header') {
+                        document.dispatchEvent(new Event('headerLoaded'));
+                    }
+                })
+                .catch(error => console.error('Error loading component:', error));
+        }
+    });
 });

@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стратегия продвижения | Корпоративная платформа ПИР</title>
+    <style>
+        /* ==========================================================================
+           ОПТИМИЗИРОВАННЫЕ СТИЛИ ДЛЯ СТРАНИЦЫ СТРАТЕГИИ ПРОДВИЖЕНИЯ
+           ========================================================================== */
+
+        /* --- CSS ПЕРЕМЕННЫЕ --- */
+        :root {
+        /* Цветовая палитра */
+            --primary-color: #4A90E2;
+            --primary-hover-color: #357ABD;
+            --primary-dark: #1d4ed8;
+            --dark-color: #2c3e50;
+            --text-color: #34495e;
+            --light-bg-color: #f8f9fa;
+            --white-color: #ffffff;
+            --border-color: #e0e0e0;
+
+            /* Градиенты и эффекты */
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --neural-glow: rgba(74, 144, 226, 0.1);
+            --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            --card-shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.12);
+
+            /* Шрифты */
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            --font-family-heading: 'Inter', var(--font-family);
+
+            /* Размеры шрифтов */
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 2rem;
+            --font-size-4xl: 3rem;
+
+            /* Отступы */
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+
+            /* Радиус скругления */
+            --border-radius: 8px;
+            --border-radius-lg: 16px;
+
+            /* Анимации */
+            --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --transition: all 0.3s ease;
+        }
+
+        /* --- БАЗОВЫЙ СБРОС И ОБЩИЕ СТИЛИ --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-family);
+            color: var(--text-color);
+            background-color: var(--white-color);
+            line-height: 1.6;
+            font-size: 16px;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        /* Сброс отступов */
+        body, h1, h2, h3, h4, h5, h6, p, ol, ul, li, dl, dt, dd, blockquote, figure, hr, table, fieldset, legend, menu, details, summary {
+            margin: 0;
+            padding: 0;
+        }
+
+        img, svg, video, audio, canvas {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        input, button, select, textarea {
+            font: inherit;
+        }
+
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        /* --- КОНТЕЙНЕРЫ И СЕТКИ --- */
+        .container {
+            max-width: 1140px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        /* Базовые секции */
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        section:nth-of-type(even) {
+            background-color: var(--light-bg-color);
+        }
+
+        /* --- ТИПОГРАФИЯ --- */
+        h1, h2, h3, h4 {
+            color: var(--dark-color);
+            font-weight: 700;
+            line-height: 1.3;
+            margin: 0;
+            font-family: var(--font-family-heading);
+        }
+
+        h1 {
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        h2 {
+            font-size: var(--font-size-3xl);
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        h3 {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--spacing-md);
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 0 0 15px 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        a:hover {
+            color: var(--primary-hover-color);
+            text-decoration: underline;
+        }
+
+        /* Специальные текстовые стили */
+        .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- БАЗОВЫЕ КОМПОНЕНТЫ --- */
+        .base-card {
+            background: var(--white-color);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--card-shadow);
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .base-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .base-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        /* --- ШАПКА --- */
+        .main-header {
+            background-color: var(--white-color);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+
+        .logo:hover {
+            text-decoration: none;
+        }
+
+        /* Десктопная навигация */
+        .desktop-nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .desktop-nav a {
+            position: relative;
+            color: var(--dark-color);
+            font-weight: 500;
+            padding: 8px 0;
+            transition: var(--transition-smooth);
+        }
+
+        .desktop-nav a:hover {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .desktop-nav a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition-smooth);
+            transform: translateX(-50%);
+        }
+
+        .desktop-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* --- ПОДВАЛ --- */
+        .main-footer {
+            background: linear-gradient(135deg, var(--dark-color) 0%, #0f172a 100%);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 0 30px;
+            position: relative;
+            overflow: hidden;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #60a5fa, #93c5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        .footer-brand p {
+            color: #cbd5e1;
+            margin-bottom: 25px;
+            max-width: 400px;
+            line-height: 1.6;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-heading {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #f1f5f9;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--primary-color);
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+            text-decoration: none;
+        }
+
+        .footer-links a::before {
+            content: '▸';
+            margin-right: 8px;
+            color: var(--primary-color);
+            font-size: 0.8rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            color: #cbd5e1;
+        }
+
+        .contact-item i {
+            margin-right: 10px;
+            color: var(--primary-color);
+            min-width: 20px;
+        }
+
+        .contact-item a {
+            color: #cbd5e1;
+            transition: var(--transition);
+        }
+
+        .contact-item a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .copyright {
+            color: #94a3b8;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-nav a {
+            color: #94a3b8;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .footer-nav a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* --- КНОПКИ --- */
+        .cta-button, .btn, .submit-btn, .form-button, .view-all-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 15px 30px;
+            border-radius: var(--border-radius);
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: var(--transition-smooth);
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .cta-button.primary, .primary.btn, .primary.submit-btn, .primary.form-button, .primary.view-all-button {
+            background: var(--gradient-primary);
+        }
+
+        .cta-button.secondary, .secondary.btn, .secondary.submit-btn, .secondary.form-button, .secondary.view-all-button {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .cta-button.secondary:hover, .secondary.btn:hover, .secondary.submit-btn:hover, .secondary.form-button:hover, .secondary.view-all-button:hover {
+            background: var(--primary-color);
+            color: var(--white-color);
+        }
+
+        .cta-button:hover, .btn:hover, .submit-btn:hover, .form-button:hover, .view-all-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--card-shadow-hover);
+            text-decoration: none;
+        }
+
+        .cta-button.large, .large.btn, .large.submit-btn, .large.form-button, .large.view-all-button {
+            padding: 18px 40px;
+            font-size: 1.2rem;
+        }
+
+        /* Кнопка "Наверх" */
+        .back-to-top {
+            background: var(--primary-color);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 990;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            color: white;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ===== СТИЛИ ДЛЯ СТРАНИЦЫ СТРАТЕГИИ ===== */
+
+        /* Герой-секция */
+        .strategy-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .strategy-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon points="0,1000 1000,0 1000,1000" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+
+        .strategy-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .strategy-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .strategy-hero .subtitle {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        /* Ключевые метрики */
+        .key-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 40px 30px;
+            border-radius: var(--border-radius-lg);
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition-smooth);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .metric-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: white;
+            display: block;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            color: white;
+        }
+
+        /* Секции стратегии */
+        .strategy-section {
+            margin-bottom: 80px;
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .strategy-section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-content {
+            line-height: 1.8;
+        }
+
+        .section-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: var(--dark-color);
+        }
+
+        .section-content p {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: var(--text-color);
+        }
+
+        /* Списки особенностей */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+        }
+
+        .feature-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .feature-icon i {
+            color: white;
+            font-size: 0.8rem;
+        }
+
+        /* Таблицы */
+        .strategy-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: var(--card-shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .strategy-table th {
+            background: var(--gradient-primary);
+            color: white;
+            text-align: left;
+            padding: 15px;
+            font-weight: 600;
+        }
+
+        .strategy-table td {
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .strategy-table tr:nth-child(even) {
+            background-color: var(--light-bg-color);
+        }
+
+        .strategy-table tr:hover {
+            background-color: rgba(74, 144, 226, 0.05);
+        }
+
+        /* Выделение ключевых цифр */
+        .highlight-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: inline-block;
+            margin: 10px 0;
+        }
+
+        .highlight-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* Блоки с финансовыми показателями */
+        .financial-block {
+            background: var(--white-color);
+            padding: 30px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--card-shadow);
+            margin: 30px 0;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .financial-block h4 {
+            margin-top: 0;
+            color: var(--dark-color);
+        }
+
+        /* KPI блоки */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .kpi-card {
+            background: var(--white-color);
+            padding: 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: var(--transition-smooth);
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .kpi-value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .kpi-label {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        /* ===== АДАПТИВНЫЕ СТИЛИ ===== */
+
+        /* Планшеты (768px - 1024px) */
+        @media (max-width: 1024px) {
+            .container {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+
+            .strategy-table {
+                font-size: 0.9rem;
+            }
+
+            .strategy-table th,
+            .strategy-table td {
+                padding: 12px 10px;
+            }
+        }
+
+        /* Мобильные устройства (до 768px) */
+        @media (max-width: 768px) {
+            :root {
+                --font-size-4xl: 2.5rem;
+                --font-size-3xl: 2rem;
+                --font-size-2xl: 1.5rem;
+            }
+
+            .container {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .desktop-nav {
+                display: none;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-nav {
+                justify-content: center;
+            }
+
+            .strategy-hero {
+                padding: 80px 0 60px;
+            }
+
+            .strategy-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .key-metrics {
+                grid-template-columns: 1fr;
+            }
+
+            .kpi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .strategy-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        /* Маленькие мобильные устройства (до 480px) */
+        @media (max-width: 480px) {
+            .container {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .strategy-hero h1 {
+                font-size: 2rem;
+            }
+
+            .financial-block {
+                padding: 20px;
+            }
+
+            .kpi-card {
+                padding: 20px;
+            }
+
+            .highlight-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Шапка -->
+<header class="main-header">
+    <div class="container header-container">
+        <a href="#" class="logo">ПИР Платформа</a>
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="#" class="active">Стратегия</a></li>
+                <li><a href="#">Кейсы</a></li>
+                <li><a href="#">Методология</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Герой-секция -->
+    <section class="strategy-hero">
+        <div class="container strategy-hero-content">
+            <h1>СТРАТЕГИЯ ПРОДВИЖЕНИЯ: КОРПОРАТИВНАЯ ПЛАТФОРМА ПИР</h1>
+            <p class="subtitle">Enterprise On-premise решение для автоматизации управления подрядчиками в строительной отрасли</p>
+
+            <div class="key-metrics">
+                <div class="metric-card">
+                    <span class="metric-value">320-330</span>
+                    <span class="metric-label">млн руб. выручка (год 1)</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">4</span>
+                    <span class="metric-label">твердых контракта</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">6.56</span>
+                    <span class="metric-label">млрд руб. рыночный потенциал</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Основной контент -->
+    <section class="strategy-content">
+        <div class="container">
+            <!-- Резюме для руководства -->
+            <div class="strategy-section">
+                <div class="section-header">
+                    <h2>Резюме для Руководства</h2>
+                </div>
+                <div class="section-content">
+                    <p><strong>Стратегическая цель:</strong> Занять позицию технологического лидера (категория "Цифровой ОКС") и заключить <strong>4 твердых контракта</strong> с компаниями уровня Tier-1/Tier-2.</p>
+
+                    <div class="financial-block">
+                        <h4>Финансовая цель (Year 1):</h4>
+                        <ul class="feature-list">
+                            <li>
+                                <div class="feature-icon"></div>
+                                <div><span class="highlight-text">Выручка:</span> <span class="highlight-number">320–330 млн руб.</span> (Продажа лицензий + Платные пилоты)</div>
+                            </li>
+                            <li>
+                                <div class="feature-icon"></div>
+                                <div><span class="highlight-text">Pipeline:</span> Формирование задела на <span class="highlight-number">1.5 млрд руб.</span></div>
+                            </li>
+                            <li>
+                                <div class="feature-icon"></div>
+                                <div><span class="highlight-text">Эффективность:</span> CAC (Стоимость привлечения клиента) ≤ <span class="highlight-number">8 млн руб.</span>, окупаемость маркетинга ≤ <span class="highlight-number">9 месяцев</span></div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <p><strong>Позиционирование:</strong> Переход от модели «Восточного базара» (хаос, откаты, субъективность) к <strong>«Цифровой бирже»</strong> (прозрачные котировки, смарт-контракты, репутация как актив).</p>
+                    <p><em>Слоган:</em> «Превращаем хаос субподряда в управляемый конвейер компетенций».</p>
+                </div>
+            </div>
+
+            <!-- Модель монетизации -->
+            <div class="strategy-section">
+                <div class="section-header">
+                    <h2>Модель Монетизации и Финансовая Цель</h2>
+                </div>
+                <div class="section-content">
+                    <p>Наша финансовая модель построена на трехкомпонентной структуре, типичной для коробочного enterprise-решения, что обеспечивает стабильный cash flow и предсказуемость.</p>
+
+                    <table class="strategy-table">
+                        <thead>
+                        <tr>
+                            <th>Компонент</th>
+                            <th>Стоимость</th>
+                            <th>Пояснение</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><strong>1. Лицензия (Perpetual License)</strong></td>
+                            <td><span class="highlight-number">80 млн руб.</span> (единовременно)</td>
+                            <td>Основной продукт. Передача неисключительных прав и исходного кода/дистрибутива в контур заказчика. <strong>Основная доля выручки 1-го года.</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>2. Внедрение и кастомизация</strong></td>
+                            <td><span class="highlight-number">30-40 млн руб.</span> (оценивается по ТЗ)</td>
+                            <td>Услуги по интеграции с ERP/BIM, миграции данных и доработке под процессы заказчика. <strong>Маржинальное дополнение к лицензии.</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>3. Техническая поддержка (SLA)</strong></td>
+                            <td><span class="highlight-number">12-16 млн руб./год</span> (15-20% от лицензии)</td>
+                            <td>Ежегодный платеж со 2-го года. Гарантирует обновления, исправления и техподдержку. <strong>Основа рекуррентного дохода (ARR).</strong></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="financial-block">
+                        <h4>Итоговая финансовая цель на 12 месяцев:</h4>
+                        <ul class="feature-list">
+                            <li>
+                                <div class="feature-icon"></div>
+                                <div><span class="highlight-text">Выручка (Year 1):</span> <span class="highlight-number">320–330 млн руб.</span></div>
+                            </li>
+                            <li>
+                                <div class="feature-icon"></div>
+                                <div><span class="highlight-text">Портфель услуг:</span> Формирование pipeline на <span class="highlight-number">120-160 млн руб.</span> за счет услуг внедрения</div>
+                            </li>
+                            <li>
+                                <div class="feature-icon"></div>
+                                <div><span class="highlight-text">Будущий ARR:</span> Закладка основы для гарантированного рекуррентного дохода со 2-го года в размере <span class="highlight-number">48-64 млн руб.</span> (от 4 клиентов)</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Рыночное обоснование -->
+            <div class="strategy-section">
+                <div class="section-header">
+                    <h2>Рыночное Обоснование</h2>
+                </div>
+                <div class="section-content">
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <div class="kpi-value">1 094</div>
+                            <div class="kpi-label">млрд руб. TAM (Общий рынок)</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-value">328</div>
+                            <div class="kpi-label">млрд руб. SAM (Аутсорсинг)</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-value">6.56</div>
+                            <div class="kpi-label">млрд руб. SOM (Наша цель)</div>
+                        </div>
+                    </div>
+                    <p><strong>Вывод:</strong> План первого года (0,3 млрд руб.) — это <strong>менее 5% от реально достижимого потолка</strong>. Рынок огромен, и он пуст (конкуренты — Excel и самописные системы).</p>
+                </div>
+            </div>
+
+            <!-- Снайперская работа с ЦА -->
+            <div class="strategy-section">
+                <div class="section-header">
+                    <h2>Снайперская работа с ЦА (ABM & Targeting)</h2>
+                </div>
+                <div class="section-content">
+                    <p>Мы делим рынок на 3 эшелона и используем разные тактики входа.</p>
+
+                    <table class="strategy-table">
+                        <thead>
+                        <tr>
+                            <th>Эшелон</th>
+                            <th>Критерии отбора</th>
+                            <th>Примеры компаний</th>
+                            <th>Ключевые ЛПР и Блокировщики</th>
+                            <th>Подход и тактика</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><strong>Tier-1 (Стратегические цели)</strong></td>
+                            <td>Годовой бюджет на подрядчиков > 500 млн руб. Выручка > 5 млрд руб.</td>
+                            <td>АО "Мосинжпроект", АО "Росатом Возобновляемая Энергия"</td>
+                            <td>
+                                <strong>ЛПР:</strong> CEO, COO<br>
+                                <strong>Блокировщик:</strong> CIO, ГИПы
+                            </td>
+                            <td>
+                                <strong>Тактика:</strong> Индивидуальные личные продажи<br>
+                                <strong>Действия:</strong> Investment Memo, закрытые ужины
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tier-2 (Потенциальные Пилоты)</strong></td>
+                            <td>Бюджет на подрядчиков ~100-500 млн руб.</td>
+                            <td>ООО "Газпром Линде Инжиниринг", АО "Ленгипротранс"</td>
+                            <td>
+                                <strong>ЛПР:</strong> Руководитель проектного офиса<br>
+                                <strong>Блокировщик:</strong> ГИПы, IT-директор
+                            </td>
+                            <td>
+                                <strong>Тактика:</strong> Предложение Платного Пилота<br>
+                                <strong>Действия:</strong> Пилот за 1,5 млн руб./мес.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tier-3 (Региональные лидеры)</strong></td>
+                            <td>Бюджет на подрядчиков от 50 млн руб.</td>
+                            <td>ТСД Транснефть (Самара), ООО "Волгограднефтепроект"</td>
+                            <td>
+                                <strong>ЛПР:</strong> Генеральный директор<br>
+                                <strong>Блокировщик:</strong> Сопротивление изменениям
+                            </td>
+                            <td>
+                                <strong>Тактика:</strong> Экспертно-образовательные мероприятия<br>
+                                <strong>Действия:</strong> Закрытые вебинары, demo-дни
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Аргументация и скрипты -->
+            <div class="strategy-section">
+                <div class="section-header">
+                    <h2>Аргументация и "Убойные" Скрипты</h2>
+                </div>
+                <div class="section-content">
+                    <p><strong>Главный оффер:</strong> «Лицензия 80 млн руб. (Asset) + Платный Пилот 1.5 млн/мес (Proof)».</p>
+
+                    <h3>Battle Cards (Работа с возражениями)</h3>
+
+                    <table class="strategy-table">
+                        <thead>
+                        <tr>
+                            <th>ЛПР</th>
+                            <th>Страх / Возражение</th>
+                            <th>Контраргумент (Скрипт)</th>
+                            <th>Proof Point (Кейс)</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td><strong>CEO</strong></td>
+                            <td>«80 млн — дорого. Не сейчас».</td>
+                            <td>«Иван Иванович, вы строите компанию, которая переживет смену поколений. Сейчас ваши знания — в головах менеджеров. Уйдет менеджер — уйдет база. Мы предлагаем создать <strong>Институциональную Память</strong>. Плюс, потери на хаосе у вас — 500 млн в год. Система стоит как 2 месяца ваших потерь».</td>
+                            <td>Кейс «Потеря памяти»: Убыток 15 млн из-за ухода одного менеджера.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>IT-Директор</strong></td>
+                            <td>«У нас штат программистов, напишем сами».</td>
+                            <td>«Честно? Это долгострой. Команда из 10 сеньоров на 2 года = 100+ млн ФОТ. И это без гарантий. Купите готовое ядро за 80 млн, интегрируйте за 3 месяца и запишите себе "Быструю цифровую победу" в годовой отчет».</td>
+                            <td>TCO самописа > 100 млн руб.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ГИП</strong></td>
+                            <td>«Потеряю контроль / Откаты».</td>
+                            <td>«Алексей, когда придет аудит или прокуратура проверять сметы, кто будет крайним? Наша система — твоя страховка. Весь трек записан, выбор подрядчика обоснован алгоритмом (8 метрик), а не "я так решил". Ты защищен».</td>
+                            <td>Снижение ошибок выбора на 65%.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CFO</strong></td>
+                            <td>«Не верю в экономию 40%».</td>
+                            <td>«Давайте посчитаем консервативно. 15% — это только снижение цен на аукционах (Hard). Еще 10% — это отсутствие штрафов за просрочки (Soft). Даже 25% экономии на вашем объеме — это 250 млн в год. Окупаемость 4 месяца».</td>
+                            <td>Снижение цен на торгах на 10-30%.</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Методология внедрения -->
+            <div class="strategy-section">
+                <div class="section-header">
+                    <h2>Методология Внедрения (Платный Пилот)</h2>
+                </div>
+                <div class="section-content">
+                    <p>Мы не делаем бесплатных тестов. Если клиент не готов платить 1.5 млн за пилот, он не купит лицензию за 80 млн.</p>
+
+                    <div class="financial-block">
+                        <h4>Условия Пилота:</h4>
+                        <ul class="feature-list">
+                            <li>
+                                <div class="feature-icon"></div>
+                                <div><span class="highlight-text">Стоимость:</span> <span class="highlight-number">1.5 млн руб./мес</span> (3-4 месяца)</div>
+                            </li>
+                            <li>
+                                <div class="feature-icon"></div>
+                                <div><span class="highlight-text">Бонус:</span> Стоимость пилота вычитается из цены лицензии при покупке</div>
+                            </li>
+                            <li>
+                                <div class="feature-icon"></div>
+                                <div><span class="highlight-text">Объем:</span> 1 департамент / 3-5 проектов</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h3>Дорожная карта Пилота:</h3>
+                    <ol class="feature-list">
+                        <li>
+                            <div class="feature-icon"></div>
+                            <div><strong>Неделя 1-2 (Setup):</strong> Развертывание в закрытом контуре (Astra/Postgres). Загрузка шаблонов договоров.</div>
+                        </li>
+                        <li>
+                            <div class="feature-icon"></div>
+                            <div><strong>Неделя 3-4 (Onboarding):</strong> Обучение пилотной группы. Загрузка базы подрядчиков.</div>
+                        </li>
+                        <li>
+                            <div class="feature-icon"></div>
+                            <div><strong>Неделя 5-12 (Active):</strong> Проведение реальных аукционов. Работает техподдержка 24/7.</div>
+                        </li>
+                        <li>
+                            <div class="feature-icon"></div>
+                            <div><strong>Неделя 13 (Review):</strong> Финальный отчет. Сравнение метрик "До/После". Расчет ROI для защиты бюджета на Лицензию.</div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- План продвижения -->
+            <div class="strategy-section">
+                <div class="section-header">
+                    <h2>План Продвижения и Каналы</h2>
+                </div>
+                <div class="section-content">
+                    <p><strong>Распределение бюджета (условно 100%):</strong></p>
+
+                    <div class="financial-block">
+                        <h4>1. ABM & Direct Sales (50%):</h4>
+                        <ul class="feature-list">
+                            <li>
+                                <div class="feature-icon"></div>
+                                <div>Подготовка Investment Memo для ТОП-20 компаний</div>
+                            </li>
+                            <li>
+                                <div class="feature-icon"></div>
+                                <div>Организация закрытых бизнес-ужинов (Networking)</div>
+                            </li>
+                            <li>
+                                <div class="feature-icon"></div>
+                                <div>Командировки к Tier-1 клиентам</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="financial-block">
+                        <h4>2. Content & PR (30% бюджета):</h4>
+                        <p>Формирование статуса отраслевого эксперта и целевой генерация лидов через качественный контент и медиа-активности.</p>
+                        <ul class="feature-list">
+                            <li>
+                                <div class="feature-icon"></div>
+                                <div><strong>Создание "упакованных" активов</strong> на основе кейса «ГК ПИРС»</div>
+                            </li>
+                            <li>
+                                <div class="feature-icon"></div>
+                                <div><strong>Публикации в целевых отраслевых СМИ:</strong> «Строительная газета», «Тендеры и закупки», RBK Pro</div>
+                            </li>
+                            <li>
+                                <div class="feature-icon"></div>
+                                <div><strong>Программа целевых вебинаров</strong> для разных аудиторий (CEO, операционные директора, IT)</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="financial-block">
+                        <h4>3. Digital & Webinars (20%):</h4>
+                        <ul class="feature-list">
+                            <li>
+                                <div class="feature-icon"></div>
+                                <div>Вебинары для Tier-3 и "прогрева" Tier-2</div>
+                            </li>
+                            <li>
+                                <div class="feature-icon"></div>
+                                <div>Таргетинг в LinkedIn (если доступен) или контекст по узким запросам ("автоматизация ПИР")</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Воронка продаж и метрики -->
+            <div class="strategy-section">
+                <div class="section-header">
+                    <h2>Воронка Продаж и Метрики (KPIs)</h2>
+                </div>
+                <div class="section-content">
+                    <h3>Воронка ("Обратный отсчет" для 4 сделок):</h3>
+                    <div class="kpi-grid">
+                        <div class="kpi-card">
+                            <div class="kpi-value">4</div>
+                            <div class="kpi-label">Лицензии (Wins)</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-value">6</div>
+                            <div class="kpi-label">Платные Пилоты</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-value">20</div>
+                            <div class="kpi-label">Финальные КП (Proposals)</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-value">50</div>
+                            <div class="kpi-label">Квалифицированные встречи (SQL)</div>
+                        </div>
+                        <div class="kpi-card">
+                            <div class="kpi-value">150</div>
+                            <div class="kpi-label">Потенциальные клиенты (Pipeline)</div>
+                        </div>
+                    </div>
+
+                    <h3>Ключевые метрики здоровья:</h3>
+                    <ul class="feature-list">
+                        <li>
+                            <div class="feature-icon"></div>
+                            <div><strong>CAC (Cost of Acquisition):</strong> <span class="highlight-number">< 8 млн руб.</span> на сделку</div>
+                        </li>
+                        <li>
+                            <div class="feature-icon"></div>
+                            <div><strong>Pilot NPS:</strong> <span class="highlight-number">> 50</span> (показатель, что пользователи не саботируют систему)</div>
+                        </li>
+                        <li>
+                            <div class="feature-icon"></div>
+                            <div><strong>Pipeline Value:</strong> <span class="highlight-number">> 1.5 млрд руб.</span> в работе</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Итоговое заключение -->
+            <div class="strategy-section">
+                <div class="section-header">
+                    <h2>Итоговое заключение</h2>
+                </div>
+                <div class="section-content">
+                    <p>Эта стратегия — готовый план действий.</p>
+                    <ul class="feature-list">
+                        <li>
+                            <div class="feature-icon"></div>
+                            <div><strong>CEO</strong> понимает, <em>почему</em> это стоит 80 млн (рынок, актив, капитализация)</div>
+                        </li>
+                        <li>
+                            <div class="feature-icon"></div>
+                            <div><strong>Коммерческий директор</strong> понимает, <em>кого</em> атаковать (список Tier-1) и <em>как</em> (Investment Memo)</div>
+                        </li>
+                        <li>
+                            <div class="feature-icon"></div>
+                            <div><strong>Продуктовая команда</strong> понимает, <em>что</em> внедрять (Пилотный план, импортозамещение)</div>
+                        </li>
+                    </ul>
+
+                    <div class="financial-block">
+                        <h4>Следующий шаг:</h4>
+                        <p>Взять список ТОП-10 компании (например Мосинжпроект, Росатом, МР Групп) и написать для них первые Investment Memo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Подвал -->
+<footer class="main-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>ПИР Платформа</h3>
+                <p>Корпоративное решение для автоматизации управления подрядчиками в строительной отрасли.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">in</a>
+                    <a href="#" class="social-link">fb</a>
+                    <a href="#" class="social-link">tg</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4 class="footer-heading">Навигация</h4>
+                <ul>
+                    <li><a href="#">Стратегия</a></li>
+                    <li><a href="#">Кейсы</a></li>
+                    <li><a href="#">Методология</a></li>
+                    <li><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4 class="footer-heading">Ресурсы</h4>
+                <ul>
+                    <li><a href="#">Документация</a></li>
+                    <li><a href="#">Блог</a></li>
+                    <li><a href="#">Вебинары</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4 class="footer-heading">Контакты</h4>
+                <div class="contact-item">
+                    <i>✉</i>
+                    <div>
+                        <a href="mailto:info@pir-platform.ru">info@pir-platform.ru</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i>📞</i>
+                    <div>
+                        <a href="tel:+78001234567">8 (800) 123-45-67</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i>📍</i>
+                    <div>Москва, ул. Строителей, 15</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="copyright">© 2023 ПИР Платформа. Все права защищены.</div>
+            <nav class="footer-nav">
+                <a href="#">Политика конфиденциальности</a>
+                <a href="#">Условия использования</a>
+            </nav>
+        </div>
+    </div>
+</footer>
+
+<!-- Кнопка "Наверх" -->
+<a href="#" class="back-to-top visible">↑</a>
+
+<script>
+    // Простой скрипт для кнопки "Наверх"
+    document.querySelector('.back-to-top').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+</script>
+</body>
+</html>

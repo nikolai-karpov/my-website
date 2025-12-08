@@ -3,165 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кейс: AI-ассистент для технадзора | Карпов Николай</title>
+    <title>Инженерные решения и Кейсы | Карпов Николай</title>
 
-    <!-- Подключаем основной CSS -->
-    <link rel="stylesheet" href="../assets/css/main.css" />
+    <!-- SEO -->
+    <meta name="description" content="Библиотека разработанных инструментов и аналитических отчетов. Автоматизация B2B продаж, финансовое моделирование внедрения ИИ, образовательные методики.">
+
+    <!-- Стили -->
+    <!-- Абсолютный путь к главному CSS (работает везде) -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Фавикон -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="loading">
 
-<!-- Загружаем шапку -->
-<header id="main-header" data-component="site-components/header.html"></header>
+<!-- Шапка (загружается динамически) -->
+<header id="main-header"></header>
 
 <main>
     <!-- Герой-секция -->
-    <section class="case-header">
+    <section class="case-hero">
         <div class="container">
-            <h1>Кейс: AI-ассистент для строительного технадзора</h1>
-            <p class="subtitle">Как Telegram-бот помог сократить время на полевые отчеты на 85% и ускорить реакцию на критические проблемы с 2 дней до 2 часов.</p>
-        </div>
-    </section>
+            <div class="case-hero-content">
+                <div class="client-info">
+                    <i class="fas fa-code-branch"></i>
+                    <span>Портфолио разработок</span>
+                </div>
 
-    <!-- Ключевые метрики -->
-    <section class="key-metrics-section">
-        <div class="container">
-            <div class="key-metrics">
-                <div class="metric-item">
-                    <span class="metric-value">-85%</span>
-                    <span class="metric-label">Время на подготовку отчетов</span>
-                </div>
-                <div class="metric-item">
-                    <span class="metric-value">48ч → 2ч</span>
-                    <span class="metric-label">Скорость информирования офиса</span>
-                </div>
-                <div class="metric-item">
-                    <span class="metric-value">1.2 млн ₽/год</span>
-                    <span class="metric-label">Экономический эффект на отдел</span>
+                <h1>Инженерные артефакты и инструменты</h1>
+                <p class="subtitle">Действующие прототипы, рабочие инструменты и аналитические отчеты, демонстрирующие подход к автоматизации и работе с данными.</p>
+
+                <!-- Метрики подхода -->
+                <div class="key-metrics">
+                    <div class="metric-card">
+                        <span class="metric-value">Zero Trust</span>
+                        <span class="metric-label">Методология внедрения</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">No-Code / Code</span>
+                        <span class="metric-label">Гибридная разработка</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">ROI Focused</span>
+                        <span class="metric-label">Бизнес-ориентированность</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Детальное описание -->
+    <!-- Сетка Кейсов -->
     <section class="case-details">
         <div class="container">
-            <div class="case-section">
-                <aside><h3><span aria-label="Цель" role="img">🎯</span> Проблема</h3></aside>
-                <div>
-                    <p>Инженеры технадзора в строительной компании тратили значительную часть рабочего времени — до 25% — на ручное оформление отчётов. Информация с объектов, включая фото и текстовые заметки, поступала в офис с задержкой до двух дней. Это замедляло принятие решений и увеличивало риски срыва сроков проектов.</p>
-                </div>
+            <div class="section-header">
+                <h2>Реализованные решения</h2>
+                <p>Не просто "картинки", а реальные инструменты, которыми можно воспользоваться</p>
             </div>
 
-            <div class="case-section">
-                <aside><h3><span aria-label="Инструменты" role="img">🛠️</span> Моя роль и задачи</h3></aside>
-                <div>
-                    <ul>
-                        <li><strong>Бизнес-аналитик:</strong> Провёл интервью с инженерами, картировал процесс и выявил ключевой барьер — ручную компиляцию данных. Сформулировал гипотезу о 80% сокращении времени за счёт AI-ассистента.</li>
-                        <li><strong>Аналитик данных:</strong> Разработал промпт-систему на связке YandexGPT (анализ) и GigaChat (генерация), способную извлекать структурированные данные из голосовых сообщений и фото.</li>
-                        <li><strong>Педагогический дизайнер:</strong> Создал «микро-онбординг»: 3 коротких видео и памятку. Обучение было сфокусировано на простоте — «получи результат за 2 минуты вместо 2 часов».</li>
-                    </ul>
+            <!-- КЕЙС 1: ГЕНЕРАТОР ПРОМПТОВ (АВТОМАТИЗАЦИЯ) -->
+            <article class="case-card featured">
+                <div class="case-image">
+                    <!-- Путь исправлен на абсолютный от корня -->
+                    <img src="/assets/images/case-automation.jpeg" alt="Автоматизация рутинных процессов с документами" loading="lazy">
+                    <div class="case-badge">B2B Automation</div>
                 </div>
-            </div>
+                <div class="case-content">
+                    <span class="case-client">Инструмент продаж</span>
+                    <h3>Генератор стратегий для Account-Based Marketing</h3>
+                    <p class="case-description">
+                        Веб-приложение для автоматизации пресейла. Парсит данные из CSV, анализирует профиль компании (выручка, штат, гос. статус) и генерирует персонализированные системные промпты для холодных писем. Реализовано на чистом JS с кэшированием в LocalStorage.
+                    </p>
 
-            <div class="case-section">
-                <aside><h3><span aria-label="Решение" role="img">💡</span> Решение</h3></aside>
-                <div>
-                    <p>Был внедрён Telegram-бот, ставший «цифровым помощником» для инженеров. Сотрудник на объекте отправляет боту голосовое сообщение и фото. ИИ-ассистент транскрибирует аудио, анализирует текст и изображения, извлекает ключевые данные (объём, ресурсы, дефекты) и формирует структурированный отчёт по ГОСТ, который мгновенно поступает менеджеру в офис.</p>
+                    <div class="tech-stack">
+                        <span class="tech-item">Vanilla JS</span>
+                        <span class="tech-item">CSV Parsing</span>
+                        <span class="tech-item">Prompt Engineering</span>
+                        <span class="tech-item">DOM API</span>
+                    </div>
+
+                    <!-- Ссылка на уровень выше -->
+                    <a href="../prompt_generator.html" class="case-link">
+                        <span>Открыть инструмент</span>
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
                 </div>
-            </div>
+            </article>
 
-            <!-- Визуализация процесса -->
+            <!-- КЕЙС 2: АНАЛИТИЧЕСКИЙ ОТЧЕТ -->
+            <article class="case-card featured">
+                <div class="case-image">
+                    <img src="/assets/images/case-report.jpeg" alt="Аналитический дашборд и расчеты" loading="lazy">
+                    <div class="case-badge">Analytics</div>
+                </div>
+                <div class="case-content">
+                    <span class="case-client">Фин. Моделирование</span>
+                    <h3>Расчет стоимости внедрения AI (Native vs Custom)</h3>
+                    <p class="case-description">
+                        Пример глубокого аналитического артефакта. Верстка сложного отчета с Gap-анализом, расчетом сметы и сравнением подходов внедрения (Bitrix24 CoPilot против кастомной разработки). Демонстрация точности в цифрах и понимания рынка.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span class="tech-item">HTML5/Tailwind</span>
+                        <span class="tech-item">Financial Modeling</span>
+                        <span class="tech-item">Gap Analysis</span>
+                    </div>
+
+                    <!-- Ссылка в той же папке -->
+                    <a href="report.html" class="case-link">
+                        <span>Изучить отчет</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- КЕЙС 3: ПРЕЗЕНТАЦИЯ КУРСА (SPA) -->
+            <article class="case-card featured">
+                <div class="case-image">
+                    <img src="/assets/images/case-course.jpeg" alt="Интеллектуальный подход в строительстве" loading="lazy">
+                    <div class="case-badge">Interactive SPA</div>
+                </div>
+                <div class="case-content">
+                    <span class="case-client">Образование / EdTech</span>
+                    <h3>Интерактивная презентация "AI Implementation Playbook"</h3>
+                    <p class="case-description">
+                        Single Page Application (SPA), демонстрирующее методологию внедрения ИИ. Вместо скучных слайдов — интерактивный веб-интерфейс с навигацией и анимациями. Демонстрирует подход к обучению инженеров и созданию пайплайнов.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span class="tech-item">SPA Architecture</span>
+                        <span class="tech-item">CSS Variables</span>
+                        <span class="tech-item">Methodology Design</span>
+                    </div>
+
+                    <!-- Ссылка от корня -->
+                    <a href="/present_course/main.html" class="case-link">
+                        <span>Запустить презентацию</span>
+                        <i class="fas fa-play"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Блок про Телеграм Бот -->
             <div class="case-section">
-                <aside><h3><span aria-label="Процесс" role="img">📊</span> Как это работает</h3></aside>
-                <div>
-                    <div class="process-flow">
-                        <div class="process-step">
-                            <div class="step-number">1</div>
-                            <p><strong>Инженер в поле</strong><br>Отправляет в бот голосовое сообщение и фото</p>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">2</div>
-                            <p><strong>AI-обработка</strong><br>YandexGPT транскрибирует аудио и анализирует текст</p>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">3</div>
-                            <p><strong>Генерация отчета</strong><br>GigaChat структурирует данные по ГОСТ</p>
-                        </div>
-                        <div class="process-step">
-                            <div class="step-number">4</div>
-                            <p><strong>Мгновенная доставка</strong><br>Отчет автоматически отправляется менеджеру</p>
-                        </div>
+                <div class="section-sidebar">
+                    <div class="section-badge">
+                        <i class="fab fa-telegram"></i>
+                        <span>Backend Experience</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <h3>Также в портфолио: Telegram-бот техподдержки</h3>
+                    <p>
+                        Разработал и внедрил бота для автоматизации ответов в рабочих группах.
+                        Бот снизил нагрузку на администраторов, отвечая на типовые вопросы по регламентам
+                        и сохраняя базу знаний диалогов.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-item">Telegram API</span>
+                        <span class="tech-item">Python / Google Scripts</span>
+                        <span class="tech-item">Webhook Architecture</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Секция с Пруфами -->
-            <div class="proofs-section">
-                <h2>Проектная документация и артефакты</h2>
-                <p>Ознакомьтесь с реальными документами, которые показывают мой системный подход к решению задач: от диагностики до оценки финального ROI.</p>
-                <div class="proof-list">
-                    <a href="../downloads/Strategic_Brief_AI_Implementation.pdf" class="proof-item" download>
-                        <span class="file-type">[PDF] Стратегический бриф</span>
-                        <p class="file-description">Пример документа, показывающего, как анализ интервью со стейкхолдерами превращается в четкий план действий.</p>
-                    </a>
-                    <a href="../downloads/LLM_Feasibility_Study.pdf" class="proof-item" download>
-                        <span class="file-type">[PDF] Техническое исследование</span>
-                        <p class="file-description">Отчет, демонстрирующий методику проверки гипотезы и техническую реализуемость решения на реальных данных.</p>
-                    </a>
-                    <a href="../downloads/Learning_Experience_Design_Kit.pdf" class="proof-item" download>
-                        <span class="file-type">[PDF] Пакет обучения</span>
-                        <p class="file-description">Примеры материалов, показывающие наш научный подход к созданию эффективных и простых программ обучения для сотрудников.</p>
-                    </a>
-                    <a href="../downloads/Final_Business_Impact_Report.pdf" class="proof-item" download>
-                        <span class="file-type">[PDF] Итоговый отчет с ROI</span>
-                        <p class="file-description">Финальный отчет, агрегирующий данные по 42 пилотным проектам и доказывающий измеримый бизнес-эффект от внедрения.</p>
-                    </a>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- CTA-секция -->
+    <!-- CTA Секция -->
     <section class="cta-section">
         <div class="container">
-            <h2>Заинтересованы во внедрении AI в ваши бизнес-процессы?</h2>
-            <p>Давайте обсудим, как я могу помочь решить ваши задачи.</p>
-            <a href="../contacts.html" class="btn btn-primary">Связаться со мной</a>
+            <h2>Нужен системный подход к ИИ?</h2>
+            <p>Я не продаю "волшебные таблетки". Я строю инженерные системы для решения бизнес-задач.</p>
+            <a href="../contacts.html" class="btn btn-primary">Обсудить проект</a>
         </div>
     </section>
 </main>
 
-<!-- Подвал -->
-<footer id="main-footer" data-component="site-components/footer.html"></footer>
+<!-- Подвал (загружается динамически) -->
+<footer id="main-footer"></footer>
 
-<!-- Основной загрузчик компонентов -->
-<script src="../assets/js/components-loader.js" defer></script>
-
-<!-- Fallback: если components-loader.js не загрузился -->
+<!-- Скрипты -->
+<!-- Абсолютный путь к загрузчику -->
+<script src="/assets/js/components-loader.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        if (typeof loadComponent === 'undefined') {
-            console.warn('[Fallback] components-loader.js не загружен — используем fetch');
-            const load = (url, elementId) => {
-                fetch(url)
-                    .then(r => r.ok ? r.text() : Promise.reject())
-                    .then(html => {
-                        document.getElementById(elementId).innerHTML = html;
-                    })
-                    .catch(() => {
-                        document.getElementById(elementId).innerHTML = `<div class="error">Компонент ${url} не загружен</div>`;
-                    });
-            };
-            load('site-components/header.html', 'main-header');
-            load('site-components/footer.html', 'main-footer');
-        }
+        // Убираем прелоадер
+        document.body.classList.remove('loading');
     });
 </script>
+
 </body>
 </html>

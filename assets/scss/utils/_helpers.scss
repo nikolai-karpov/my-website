@@ -1,0 +1,158 @@
+/* =========================================
+   Вспомогательные классы (Helpers)
+   ========================================= */
+
+/* --- Текстовые утилиты --- */
+.text-center {
+  text-align: center !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.font-weight-normal {
+  font-weight: 400 !important;
+}
+
+.font-weight-medium {
+  font-weight: 500 !important;
+}
+
+.font-weight-bold {
+  font-weight: 700 !important;
+}
+
+/* --- Цветовые утилиты --- */
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.text-dark {
+  color: var(--dark-color) !important;
+}
+
+.text-white {
+  color: var(--white-color) !important;
+}
+
+.bg-light {
+  background-color: var(--light-bg-color) !important;
+}
+
+/* --- Отступы (Spacing) --- */
+
+/* Margins */
+.m-0 {
+  margin: 0 !important;
+}
+
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.mb-1 {
+  margin-bottom: var(--spacing-xs) !important;
+}
+
+/* 8px */
+.mb-2 {
+  margin-bottom: var(--spacing-sm) !important;
+}
+
+/* 16px */
+.mb-3 {
+  margin-bottom: var(--spacing-md) !important;
+}
+
+/* 24px */
+.mb-4 {
+  margin-bottom: var(--spacing-lg) !important;
+}
+
+/* 32px */
+.mb-5 {
+  margin-bottom: var(--spacing-xl) !important;
+}
+
+/* 48px */
+
+/* Paddings */
+.p-0 {
+  padding: 0 !important;
+}
+
+.p-2 {
+  padding: var(--spacing-sm) !important;
+}
+
+.p-3 {
+  padding: var(--spacing-md) !important;
+}
+
+.p-4 {
+  padding: var(--spacing-lg) !important;
+}
+
+/* --- Flexbox утилиты --- */
+.flex {
+  display: flex !important;
+}
+
+.flex-column {
+  flex-direction: column !important;
+}
+
+.items-center {
+  align-items: center !important;
+}
+
+.justify-center {
+  justify-content: center !important;
+}
+
+.justify-between {
+  justify-content: space-between !important;
+}
+
+.gap-2 {
+  gap: var(--spacing-sm) !important;
+}
+
+.gap-3 {
+  gap: var(--spacing-md) !important;
+}
+
+/* --- Отображение (Display) --- */
+.d-block {
+  display: block !important;
+}
+
+.d-inline-block {
+  display: inline-block !important;
+}
+
+.d-none {
+  display: none !important;
+}
+
+/* Для скрытия элементов доступным способом (Screen Readers) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}

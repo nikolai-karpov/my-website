@@ -1,0 +1,711 @@
+/* =========================================
+   Страницы Кейсов (List & Details)
+   ========================================= */
+
+/* --- Case Hero Variants --- */
+
+/* Вариант 1: Для общих кейсов (светлый фон) */
+.case-header {
+  background: linear-gradient(135deg, var(--light-bg-color) 0%, #e2e8f0 100%);
+  text-align: center;
+  padding: 60px 0;
+
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+
+    @media (max-width: 768px) {
+      font-size: 2.2rem;
+    }
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+}
+
+/* Вариант 2: Для детальных кейсов (красивый градиентный фон) - ОБНОВЛЕНО */
+.case-hero {
+  /* Более глубокий синий градиент для контраста */
+  background: linear-gradient(135deg, #2c3e50 0%, #4A90E2 100%);
+  color: white;
+  padding: 100px 0 80px;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    /* Декоративная сетка */
+    background-image:
+      linear-gradient(rgb(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.6;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 800;
+    text-shadow: 0 4px 10px rgb(0,0,0,0.2);
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .subtitle {
+    font-size: 1.4rem;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+    color: rgb(255, 255, 255, 0.9);
+
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.case-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Client Info - две версии в зависимости от родителя */
+.case-hero .client-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  background: rgb(255, 255, 255, 0.15);
+  padding: 12px 25px;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  margin-bottom: 40px;
+  color: white;
+  border: 1px solid rgb(255, 255, 255, 0.2);
+}
+
+.case-header .client-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* --- Metrics (KPIs) --- */
+
+/* Контейнер для метрик */
+.key-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin: 60px 0;
+  text-align: center;
+}
+
+/* Вариант 1: Для светлого фона (case-header) */
+.key-metrics .metric-item {
+  background-color: var(--white-color);
+  padding: 25px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+/* Вариант 2: Для темного героя (case-hero) - ИСПРАВЛЕНО (ЯРКОСТЬ) */
+.key-metrics .metric-card {
+  /* Эффект матового стекла */
+  background: rgb(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  padding: 35px 25px;
+  border-radius: var(--border-radius-lg);
+  text-align: center;
+
+  /* Белая граница для контраста */
+  border: 1px solid rgb(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgb(0, 0, 0, 0.1);
+  transition: var(--transition-smooth);
+
+  &:hover {
+    transform: translateY(-5px);
+    background: rgb(255, 255, 255, 0.25);
+    border-color: rgb(255, 255, 255, 0.8);
+    box-shadow: 0 15px 40px 0 rgb(0, 0, 0, 0.2);
+  }
+}
+
+/* Общие стили для значений метрик */
+.metric-value {
+  display: block;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* Специфичные стили в зависимости от контекста */
+.case-hero .metric-value {
+  font-size: 2.5rem; /* Чуть уменьшил, чтобы влезало */
+  font-weight: 800;
+  color: #fff; /* Чистый белый */
+  text-shadow: 0 2px 5px rgb(0,0,0,0.2);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.case-header .metric-value,
+.case-hero-content .metric-value {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+.metric-label {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.case-hero .metric-label {
+  font-size: 1rem;
+  color: rgb(255, 255, 255, 0.95); /* Почти белый */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* --- Case Content Sections (Layout) --- */
+.case-details {
+  padding: 80px 0; /* Больше отступа */
+}
+
+/* ИСПРАВЛЕНО: Отступы в заголовках разделов */
+.section-header {
+  text-align: center;
+  margin-bottom: 70px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+
+  h2 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    position: relative;
+    display: inline-block;
+
+    /* Декоративная полоска */
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--primary-color);
+      margin: 15px auto 0;
+      border-radius: 2px;
+    }
+  }
+
+  p {
+    font-size: 1.25rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    line-height: 1.6;
+  }
+}
+
+.case-section {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 50px;
+  align-items: start;
+  margin-bottom: 50px;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Заголовки разделов (справа или слева) */
+  h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @media (max-width: 992px) {
+      justify-content: center;
+    }
+  }
+
+  aside h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @media (max-width: 992px) {
+      justify-content: center;
+    }
+  }
+
+  .section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background: var(--light-bg-color);
+    border-radius: 30px;
+    font-weight: 600;
+    color: var(--primary-color);
+  }
+}
+
+.section-sidebar {
+  position: sticky;
+  top: 120px;
+}
+
+/* --- Tech Stack & Features --- */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+
+  .tech-item {
+    background: var(--light-bg-color);
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+}
+
+/* --- Process Flow (Шапы) --- */
+.process-flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Flow Steps - более стильная версия для кейсов */
+.flow-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+/* ИСПРАВЛЕНО: .flow-step должен идти до .flow-step:hover */
+.flow-step {
+  padding: 30px 20px;
+  background: var(--white-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgb(0, 0, 0, 0.1);
+  }
+}
+
+.process-step {
+  background: var(--white-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgb(0, 0, 0, 0.1);
+  }
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin: 0 auto 15px;
+  font-size: 1.2rem;
+}
+
+.step-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--dark-color);
+}
+
+.step-description {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+/* --- Features List --- */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 30px 0;
+
+  li {
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.feature-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+
+  i {
+    color: white;
+    font-size: 0.8rem;
+  }
+}
+
+/* --- Proofs / Downloads Section --- */
+
+/* Вариант 1: Для списка (proof-list) */
+.proofs-section {
+  background-color: var(--light-bg-color);
+  border-radius: var(--border-radius);
+  padding: 40px;
+  margin-top: 60px;
+
+  h2 {
+    margin-bottom: 15px;
+    color: var(--dark-color);
+  }
+
+  p {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    color: var(--text-color);
+    opacity: 0.8;
+  }
+}
+
+/* Вариант 2: Для сетки (proofs-grid) - более продвинутый */
+.proofs-section.enhanced {
+  background: var(--light-bg-color);
+  border-radius: var(--border-radius-lg);
+  padding: 60px;
+  margin: 80px 0;
+}
+
+.proofs-header {
+  text-align: center;
+  margin-bottom: 50px;
+
+  h2 {
+    margin-bottom: 15px;
+  }
+}
+
+.proof-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.proofs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.proof-item {
+  display: block;
+  background-color: var(--white-color);
+  padding: 25px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  color: var(--dark-color);
+  transition: all 0.3s ease;
+  text-align: left;
+
+  &:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgb(0, 0, 0, 0.05);
+  }
+}
+
+.proof-card {
+  background: var(--white-color);
+  padding: 30px;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition-smooth);
+  border: 1px solid var(--border-color);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--card-shadow-hover);
+    text-decoration: none;
+    color: inherit;
+    border-color: var(--primary-color);
+  }
+}
+
+.file-icon {
+  width: 60px;
+  height: 60px;
+  background: var(--neural-glow);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.file-type {
+  font-weight: 700;
+  color: var(--primary-color);
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.file-description {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+.file-meta {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+/* =========================================
+   Карточки кейсов для хаба
+   ========================================= */
+
+.case-card {
+  background: var(--white-color);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &:hover {
+    box-shadow: 0 10px 30px rgb(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+  }
+
+  &.featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+  }
+}
+
+.case-image {
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
+.case-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--gradient-accent);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.case-content {
+  padding: 25px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.case-client {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.case-description {
+  margin-bottom: 25px;
+  opacity: 0.8;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.case-results {
+  display: flex;
+  gap: 30px;
+  margin: 25px 0;
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.result {
+  text-align: center;
+  flex: 1;
+}
+
+.result-number {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  line-height: 1;
+}
+
+.result-label {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-top: 5px;
+}
+
+.case-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary-color);
+  font-weight: 600;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  margin-top: auto;
+
+  &:hover {
+    gap: 12px;
+    text-decoration: none;
+    color: var(--primary-hover-color);
+  }
+}
+
+/* Кнопка "Смотреть все кейсы" */
+.cases-cta {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.view-all-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 12px 30px;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+
+  &:hover {
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow);
+  }
+}
+
+/* =========================================
+   АДАПТИВНОСТЬ (ВСЕ МЕДИА-ЗАПРОСЫ В КОНЦЕ)
+   ========================================= */
+
+/* Адаптивность для case-card.featured */
+@media (max-width: 768px) {
+  .case-card.featured {
+    grid-template-columns: 1fr;
+  }
+
+  .case-content {
+    padding: 20px;
+  }
+
+  .result-number {
+    font-size: 1.5rem;
+  }
+}
+
+/* Адаптивность для остальных элементов */
+@media (max-width: 480px) {
+  .case-card.featured .case-content {
+    padding: 15px;
+  }
+}
