@@ -45,14 +45,14 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(74, 144, 226, 0.1);
+  background: rgb(74, 144, 226, 0.1);
   color: var(--primary-color);
   padding: 8px 16px;
   border-radius: 30px;
   font-size: 0.9rem;
   font-weight: 600;
   margin-bottom: 24px;
-  border: 1px solid rgba(74, 144, 226, 0.2);
+  border: 1px solid rgb(74, 144, 226, 0.2);
 }
 
 .hero-title {
@@ -113,7 +113,7 @@
   border-radius: 50%;
   padding: 10px;
   background: var(--white-color);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 40px rgb(0,0,0,0.1);
   z-index: 2;
   display: flex;
   justify-content: center;
@@ -124,7 +124,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
-    border: 1px solid rgba(0,0,0,0.05);
+    border: 1px solid rgb(0,0,0,0.05);
     background-color: #f0f0f0;
   }
 
@@ -141,7 +141,7 @@
   transform: translate(-50%, -50%);
   width: 130%;
   height: 130%;
-  background: radial-gradient(circle, rgba(74,144,226,0.15) 0%, rgba(255,255,255,0) 70%);
+  background: radial-gradient(circle, rgb(74,144,226,0.15) 0%, rgb(255,255,255,0) 70%);
   z-index: -1;
   pointer-events: none;
 }
@@ -152,7 +152,7 @@
   background: var(--white-color);
   padding: 10px 18px;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 20px rgb(0,0,0,0.08);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -160,7 +160,7 @@
   font-size: 0.9rem;
   z-index: 3;
   animation: float 6s ease-in-out infinite;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid rgb(0,0,0,0.05);
   white-space: nowrap;
 
   i { font-size: 1.1rem; }
@@ -220,6 +220,7 @@
   @media (max-width: 768px) {
     padding: 8px 12px;
     font-size: 0.8rem;
+
     /* На мобильных скрываем боковые, чтобы не перекрывать лицо */
     &.card-4, &.card-5, &.card-6 { display: none; }
     &.card-1 { top: 0; right: 0; }
@@ -316,7 +317,7 @@
   &:hover {
     transform: translateY(-8px);
     box-shadow: var(--card-shadow-hover);
-    border-color: rgba(74, 144, 226, 0.2);
+    border-color: rgb(74, 144, 226, 0.2);
 
     .link-arrow i {
       transform: translateX(5px);
@@ -392,11 +393,12 @@
 .tech-stack-section {
   padding: 100px 0;
   background: var(--light-bg-color);
-  border-top: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgb(0,0,0,0.05);
 }
 
 .tech-grid-cards {
   display: grid;
+
   /* Десктоп: 3 колонки (3x3) */
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
@@ -417,8 +419,8 @@
   background: var(--white-color);
   border-radius: 20px;
   padding: 24px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0,0,0,0.03);
+  box-shadow: 0 4px 6px -1px rgb(0, 0, 0, 0.05);
+  border: 1px solid rgb(0,0,0,0.03);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
@@ -429,8 +431,8 @@
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    border-color: rgba(74, 144, 226, 0.3);
+    box-shadow: 0 20px 25px -5px rgb(0, 0, 0, 0.1), 0 10px 10px -5px rgb(0, 0, 0, 0.04);
+    border-color: rgb(74, 144, 226, 0.3);
 
     .tech-card__icon {
       transform: scale(1.1) rotate(5deg);
@@ -482,7 +484,7 @@
   letter-spacing: 0.5px;
   font-weight: 600;
   color: var(--primary-color);
-  background: rgba(74, 144, 226, 0.08);
+  background: rgb(74, 144, 226, 0.08);
   padding: 4px 10px;
   border-radius: 6px;
   margin-top: auto;
@@ -500,7 +502,7 @@
   overflow: hidden;
   display: grid;
   grid-template-columns: 1fr 350px;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 25px 50px -12px rgb(0, 0, 0, 0.25);
 
   @media (max-width: 992px) {
     grid-template-columns: 1fr;

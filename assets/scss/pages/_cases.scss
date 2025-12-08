@@ -41,10 +41,11 @@
     content: '';
     position: absolute;
     inset: 0;
+
     /* Декоративная сетка */
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      linear-gradient(rgb(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 50px 50px;
     opacity: 0.6;
   }
@@ -54,7 +55,7 @@
     margin-bottom: 20px;
     color: white;
     font-weight: 800;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    text-shadow: 0 4px 10px rgb(0,0,0,0.2);
 
     @media (max-width: 768px) {
       font-size: 2.5rem;
@@ -67,7 +68,7 @@
     max-width: 800px;
     margin: 0 auto 40px;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgb(255, 255, 255, 0.9);
 
     @media (max-width: 768px) {
       font-size: 1.2rem;
@@ -88,13 +89,13 @@
   display: inline-flex;
   align-items: center;
   gap: 15px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgb(255, 255, 255, 0.15);
   padding: 12px 25px;
   border-radius: 50px;
   backdrop-filter: blur(10px);
   margin-bottom: 40px;
   color: white;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgb(255, 255, 255, 0.2);
 }
 
 .case-header .client-info {
@@ -129,22 +130,22 @@
 /* Вариант 2: Для темного героя (case-hero) - ИСПРАВЛЕНО (ЯРКОСТЬ) */
 .key-metrics .metric-card {
   /* Эффект матового стекла */
-  background: rgba(255, 255, 255, 0.15);
+  background: rgb(255, 255, 255, 0.15);
   backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
   padding: 35px 25px;
   border-radius: var(--border-radius-lg);
   text-align: center;
+
   /* Белая граница для контраста */
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid rgb(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgb(0, 0, 0, 0.1);
   transition: var(--transition-smooth);
 
   &:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.2);
+    background: rgb(255, 255, 255, 0.25);
+    border-color: rgb(255, 255, 255, 0.8);
+    box-shadow: 0 15px 40px 0 rgb(0, 0, 0, 0.2);
   }
 }
 
@@ -159,8 +160,8 @@
 .case-hero .metric-value {
   font-size: 2.5rem; /* Чуть уменьшил, чтобы влезало */
   font-weight: 800;
-  color: #ffffff; /* Чистый белый */
-  text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  color: #fff; /* Чистый белый */
+  text-shadow: 0 2px 5px rgb(0,0,0,0.2);
   line-height: 1.1;
   margin-bottom: 10px;
 }
@@ -178,7 +179,7 @@
 
 .case-hero .metric-label {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.95); /* Почти белый */
+  color: rgb(255, 255, 255, 0.95); /* Почти белый */
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 600;
