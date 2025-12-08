@@ -637,6 +637,46 @@ img {
   display: block;
 }
 
+/* --- Статистика --- */
+.stats-section {
+  padding: 80px 0;
+  background-color: var(--light-bg-color);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  text-align: center;
+}
+
+.stat-item {
+  padding: 30px;
+  background: var(--white-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition-smooth);
+}
+
+.stat-item:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  display: block;
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: var(--font-size-base);
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
 /* --- Утилиты отступов (Global Spacing) --- */
 .m-0 {
   margin: 0;
