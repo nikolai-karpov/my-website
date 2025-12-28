@@ -73,3 +73,43 @@
     font-size: 1.5rem;
   }
 }
+
+/* Стили для карточек диагностики */
+.card-diagnostic {
+  background: #f9fafb;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgb(0, 0, 0, 0.1), 0 2px 4px -1px rgb(0, 0, 0, 0.06);
+  border: 1px solid rgb(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgb(0, 0, 0, 0.1), 0 10px 10px -5px rgb(0, 0, 0, 0.04);
+  }
+
+  &--feature {
+    background: white;
+    border: 1px solid rgb(0, 0, 0, 0.05);
+  }
+}
+
+/* Стили для карточек прототипирования */
+.card-prototyping {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgb(0, 0, 0, 0.1), 0 2px 4px -1px rgb(0, 0, 0, 0.06);
+  border: 1px solid rgb(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgb(0, 0, 0, 0.1), 0 10px 10px -5px rgb(0, 0, 0, 0.04);
+  }
+
+  &--process {
+    background: #f8fafc;
+    border: 1px solid rgb(0, 0, 0, 0.05);
+  }
+}

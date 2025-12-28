@@ -326,3 +326,33 @@ section {
   background: var(--dark-color);
   color: var(--white-color);
 }
+
+/* Стили для секции диагностики */
+.section-diagnostic {
+  padding: 4rem 0;
+  background: #f9fafb;
+
+  @media (min-width: 768px) {
+    padding: 6rem 0;
+  }
+}
+
+/* Стили для секции прототипирования */
+.section-prototyping {
+  padding: 4rem 0;
+  background: #f8fafc;
+
+  @media (min-width: 768px) {
+    padding: 6rem 0;
+  }
+}
+
+/* Альтернативная секция прототипирования */
+.section-prototyping-alt {
+  padding: 4rem 0;
+  background: white;
+
+  @media (min-width: 768px) {
+    padding: 6rem 0;
+  }
+}

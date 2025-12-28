@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя методология | [Ваше Имя] - Инструктор по внедрению ИИ</title>
+
+    <!-- Подключаем единый файл стилей -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Дополнительные стили для страницы методологии (Timeline) -->
+    <style>
+        .methodology-header {
+            text-align: center;
+            padding-bottom: 50px;
+        }
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        /* Вертикальная линия */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--light-bg-color);
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            margin-left: -2px;
+        }
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 100%;
+            padding-left: 70px;
+            padding-bottom: 50px;
+        }
+        /* Иконка-кружок на линии */
+        .timeline-item::after {
+            content: ' ';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--white-color);
+            border: 4px solid var(--primary-color);
+            top: 15px;
+            left: 20px;
+            margin-left: -12px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--white-color);
+            position: relative;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+        }
+        .timeline-content h3 {
+            margin-top: 0;
+            font-size: 1.6rem;
+        }
+        .proof-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        /* Блок для лид-магнита */
+        .prompt-magnet-box {
+            background-color: var(--light-bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-top: 25px;
+        }
+        .prompt-magnet-box h4 {
+            margin: 0 0 10px 0;
+            color: var(--dark-color);
+        }
+        @media (max-width: 768px) {
+            .timeline::after { left: 15px; }
+            .timeline-item { width: 100%; padding-left: 50px; padding-right: 15px; }
+            .timeline-item::after { left: 15px; }
+        }
+    </style>
+
+    <!-- Иконка для вкладки браузера -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<header id="main-header" class="main-header"></header>
+
+<main>
+    <section>
+        <div class="container">
+            <div class="methodology-header">
+                <h2>От Хаоса к Системе: Мой 5-этапный Подход к Внедрению ИИ</h2>
+                <p style="max-width: 700px; margin: 0 auto;">Цель — не просто внедрить технологию, а обеспечить ее реальное использование и измеримый рост производительности. Это не разовые эксперименты, а четкий, воспроизводимый процесс.</p>
+            </div>
+
+            <div class="timeline">
+                <!-- Этап 1: Диагностика -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Этап 1: Глубокая диагностика</h3>
+                        <p>Первый шаг — найти в бизнес-процессе конкретную, измеримую "боль", которую ИИ может эффективно "вылечить". Провожу интервью, картирую процессы и формулирую проверяемую гипотезу в формате "Если..., то...".</p>
+                        <a href="Strategic_Brief_AI_Implementation.pdf" class="proof-link" download>🔗 Посмотреть пример Стратегического брифа &rarr;</a>
+
+                        <!-- Интеграция Лид-магнита -->
+                        <div class="prompt-magnet-box">
+                            <h4>Попробуйте сами: Сделайте первый шаг</h4>
+                            <p style="margin-bottom:15px;">Мы подготовили универсальный шаблон промпта для ChatGPT/GigaChat, который поможет вам самостоятельно проанализировать любой бизнес-процесс.</p>
+                            <a href="prompt-template.txt" class="cta-button" download>Получить готовый промпт</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Этап 2: Прототипирование -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Этап 2: Быстрое прототипирование</h3>
+                        <p>За 3-5 дней я создаю рабочий прототип (Proof-of-Concept) на реальных данных клиента. Это позволяет быстро и с минимальными затратами проверить гипотезу и наглядно продемонстрировать ценность решения руководству и будущим пользователям.</p>
+                        <a href="LLM_Feasibility_Study.pdf" class="proof-link" download>🔗 Изучить Техническое исследование &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Этап 3: Проектирование обучения -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Этап 3: Проектирование обучения</h3>
+                        <p>Технология бесполезна, если ей не пользуются. Я проектирую человеко-центричные обучающие программы (микро-уроки, памятки, воркшопы), основанные на научных методиках (Таксономия Блума), чтобы обеспечить высокий уровень принятия (adoption rate 85%+).</p>
+                        <a href="Learning_Experience_Design_Kit.pdf" class="proof-link" download>🔗 Ознакомиться с Пакетом обучения &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Этап 4: Пилотное внедрение -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Этап 4: Пилотное внедрение</h3>
+                        <p>Внедряем решение в работу небольшой контрольной группы (1-3 сотрудника) на 2-4 недели. В этот период мы проводим обучение, собираем обратную связь и, самое главное, замеряем измеримые KPI (сэкономленное время, количество ошибок и т.д.).</p>
+                    </div>
+                </div>
+
+                <!-- Этап 5: Масштабирование -->
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Этап 5: Масштабирование и оценка ROI</h3>
+                        <p>На основе данных, полученных в ходе пилота, я готовлю итоговый аналитический отчет. Он наглядно демонстрирует возврат инвестиций (ROI) и служит основанием для принятия решения о тиражировании успешного кейса на другие отделы или задачи.</p>
+                        <a href="Final_Business_Impact_Report.pdf" class="proof-link" download>🔗 Посмотреть Итоговый отчет с ROI &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer id="main-footer" class="main-footer"></footer>
+
+<!-- Скрипт для подгрузки шапки и подвала -->
+<script>
+    const loadComponent = (url, elementId) => {
+        fetch(url)
+            .then(response => response.ok ? response.text() : Promise.reject(`Error loading ${url}`))
+            .then(data => { document.getElementById(elementId).innerHTML = data; })
+            .catch(error => console.error(`Could not load component:`, error));
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadComponent('header.html', 'main-header');
+        loadComponent('footer.html', 'main-footer');
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Методология внедрения ИИ | [Ваше Имя] - Инструктор по внедрению ИИ</title>
+
+    <!-- Подключаем единый файл стилей -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+
+    <!-- Дополнительные стили для страницы методологии -->
+    <style>
+        .methodology-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2c5aa0 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0 60px;
+        }
+        .methodology-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        .methodology-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        .timeline-section {
+            padding: 80px 0;
+            background: var(--light-bg-color);
+        }
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        /* Вертикальная линия */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary-color), #764ba2);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+            margin-right: calc(50% + 40px);
+        }
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: calc(50% + 40px);
+            margin-right: auto;
+        }
+        /* Иконка-кружок на линии */
+        .timeline-marker {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: var(--white-color);
+            border: 4px solid var(--primary-color);
+            top: 20px;
+            left: 50%;
+            margin-left: -30px;
+            border-radius: 50%;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            box-shadow: var(--card-shadow);
+        }
+        .timeline-content {
+            background: var(--white-color);
+            padding: 30px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--card-shadow);
+            position: relative;
+            width: calc(50% - 70px);
+            transition: var(--transition-smooth);
+        }
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--white-color);
+            top: 30px;
+            transform: rotate(45deg);
+        }
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -10px;
+            border-right: 1px solid var(--border-color);
+            border-top: 1px solid var(--border-color);
+        }
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -10px;
+            border-left: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .stage-number {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .timeline-content h3 {
+            margin: 0 0 15px 0;
+            font-size: 1.6rem;
+            color: var(--dark-color);
+        }
+        .timeline-duration {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .timeline-duration i {
+            font-size: 1rem;
+        }
+        .proof-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            font-weight: 600;
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+        .proof-link:hover {
+            gap: 12px;
+            text-decoration: none;
+        }
+        /* Блок для лид-магнита */
+        .prompt-magnet-box {
+            background: var(--light-bg-color);
+            border: 2px dashed var(--primary-color);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-top: 25px;
+            text-align: center;
+        }
+        .prompt-magnet-box h4 {
+            margin: 0 0 10px 0;
+            color: var(--dark-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .prompt-magnet-box p {
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+        .results-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        .result-card {
+            background: var(--white-color);
+            padding: 30px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--card-shadow);
+            transition: var(--transition-smooth);
+        }
+        .result-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+        .result-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--neural-glow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        .result-value {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .result-label {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px;
+                margin-right: 0;
+            }
+            .timeline-marker {
+                left: 30px;
+                margin-left: 0;
+            }
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: -10px;
+                border-left: 1px solid var(--border-color);
+                border-bottom: 1px solid var(--border-color);
+                border-right: none;
+                border-top: none;
+            }
+            .methodology-hero h1 {
+                font-size: 2.2rem;
+            }
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <!-- Иконка для вкладки браузера -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header id="main-header" data-component="../site-components/header.html"></header>
+
+<main>
+    <!-- Герой-секция -->
+    <section class="methodology-hero">
+        <div class="container">
+            <h1>От Хаоса к Системе: Мой 5-этапный Подход к Внедрению ИИ</h1>
+            <p>Цель — не просто внедрить технологию, а обеспечить ее реальное использование и измеримый рост производительности. Это не разовые эксперименты, а четкий, воспроизводимый процесс.</p>
+        </div>
+    </section>
+
+    <!-- Таймлайн методологии -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="timeline">
+                <!-- Этап 1: Диагностика -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <span class="stage-number">Фундамент</span>
+                        <h3>Глубокая диагностика</h3>
+                        <div class="timeline-duration">
+                            <i class="far fa-clock"></i>
+                            <span>1-2 дня</span>
+                        </div>
+                        <p>Первый шаг — найти в бизнес-процессе конкретную, измеримую "боль", которую ИИ может эффективно "вылечить". Провожу интервью, картирую процессы и формулирую проверяемую гипотезу в формате "Если..., то...".</p>
+                        <a href="Strategic_Brief_AI_Implementation.pdf" class="proof-link" download>
+                            <i class="far fa-file-pdf"></i>
+                            Посмотреть пример Стратегического брифа
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+
+                        <!-- Интеграция Лид-магнита -->
+                        <div class="prompt-magnet-box">
+                            <h4><i class="fas fa-magic"></i> Попробуйте сами: Сделайте первый шаг</h4>
+                            <p>Мы подготовили универсальный шаблон промпта для ChatGPT/GigaChat, который поможет вам самостоятельно проанализировать любой бизнес-процесс.</p>
+                            <a href="prompt-template.txt" class="btn btn-primary" download>
+                                <i class="fas fa-download"></i>
+                                Получить готовый промпт
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Этап 2: Прототипирование -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <span class="stage-number">Валидация</span>
+                        <h3>Быстрое прототипирование</h3>
+                        <div class="timeline-duration">
+                            <i class="far fa-clock"></i>
+                            <span>3-5 дней</span>
+                        </div>
+                        <p>За 3-5 дней я создаю рабочий прототип (Proof-of-Concept) на реальных данных клиента. Это позволяет быстро и с минимальными затратами проверить гипотезу и наглядно продемонстрировать ценность решения руководству и будущим пользователям.</p>
+                        <a href="LLM_Feasibility_Study.pdf" class="proof-link" download>
+                            <i class="far fa-file-pdf"></i>
+                            Изучить Техническое исследование
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Этап 3: Проектирование обучения -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <span class="stage-number">Адаптация</span>
+                        <h3>Проектирование обучения</h3>
+                        <div class="timeline-duration">
+                            <i class="far fa-clock"></i>
+                            <span>2-3 дня</span>
+                        </div>
+                        <p>Технология бесполезна, если ей не пользуются. Я проектирую человеко-центричные обучающие программы (микро-уроки, памятки, воркшопы), основанные на научных методиках (Таксономия Блума), чтобы обеспечить высокий уровень принятия (adoption rate 85%+).</p>
+                        <a href="Learning_Experience_Design_Kit.pdf" class="proof-link" download>
+                            <i class="far fa-file-pdf"></i>
+                            Ознакомиться с Пакетом обучения
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Этап 4: Пилотное внедрение -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <span class="stage-number">Тестирование</span>
+                        <h3>Пилотное внедрение</h3>
+                        <div class="timeline-duration">
+                            <i class="far fa-clock"></i>
+                            <span>2-4 недели</span>
+                        </div>
+                        <p>Внедряем решение в работу небольшой контрольной группы (1-3 сотрудника) на 2-4 недели. В этот период мы проводим обучение, собираем обратную связь и, самое главное, замеряем измеримые KPI (сэкономленное время, количество ошибок и т.д.).</p>
+                    </div>
+                </div>
+
+                <!-- Этап 5: Масштабирование -->
+                <div class="timeline-item">
+                    <div class="timeline-marker">5</div>
+                    <div class="timeline-content">
+                        <span class="stage-number">Результат</span>
+                        <h3>Масштабирование и оценка ROI</h3>
+                        <div class="timeline-duration">
+                            <i class="far fa-clock"></i>
+                            <span>1 неделя</span>
+                        </div>
+                        <p>На основе данных, полученных в ходе пилота, я готовлю итоговый аналитический отчет. Он наглядно демонстрирует возврат инвестиций (ROI) и служит основанием для принятия решения о тиражировании успешного кейса на другие отделы или задачи.</p>
+                        <a href="Final_Business_Impact_Report.pdf" class="proof-link" download>
+                            <i class="far fa-file-pdf"></i>
+                            Посмотреть Итоговый отчет с ROI
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция с результатами -->
+    <section class="results-section">
+        <div class="container">
+            <h2>Измеримые результаты методологии</h2>
+            <p class="section-subtitle">Статистика успешных внедрений по 42 проектам за 2024 год</p>
+
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <span class="result-value">85%</span>
+                    <span class="result-label">Успешных внедрений</span>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <span class="result-value">94%</span>
+                    <span class="result-label">Adoption Rate</span>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <span class="result-value">-65%</span>
+                    <span class="result-label">Времени на рутину</span>
+                </div>
+                <div class="result-card">
+                    <div class="result-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <span class="result-value">3.2x</span>
+                    <span class="result-label">ROI в первый год</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA секция -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Готовы системно внедрить ИИ в ваш бизнес?</h2>
+            <p>Давайте обсудим, как моя методология поможет решить ваши конкретные задачи</p>
+            <a href="contacts.html" class="btn btn-primary btn-large">Обсудить проект</a>
+        </div>
+    </section>
+</main>
+
+<footer id="main-footer" data-component="../site-components/footer.html"></footer>
+
+<!-- Скрипт для подгрузки шапки и подвала -->
+<script>
+    const loadComponent = (url, elementId) => {
+        fetch(url)
+            .then(response => response.ok ? response.text() : Promise.reject(`Error loading ${url}`))
+            .then(data => { document.getElementById(elementId).innerHTML = data; })
+            .catch(error => console.error(`Could not load component:`, error));
+    };
+
+    // Анимация появления элементов таймлайна
+    const animateTimeline = () => {
+        const timelineItems = document.querySelectorAll('.timeline-item');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.3 });
+
+        timelineItems.forEach(item => {
+            observer.observe(item);
+        });
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadComponent('header.html', 'main-header');
+        loadComponent('footer.html', 'main-footer');
+        setTimeout(animateTimeline, 500); // Задержка для загрузки контента
+    });
+</script>
+</body>
+</html>

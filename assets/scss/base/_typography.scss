@@ -43,7 +43,7 @@ h4 {
   letter-spacing: -0.02em;
 }
 
-/* Адаптивная типографика */
+/* Адаптивная типографка */
 @media (max-width: 768px) {
   h1 {
     font-size: 2.5rem;
@@ -287,5 +287,63 @@ hr {
 
   blockquote {
     padding: var(--spacing) var(--spacing-lg);
+  }
+}
+
+/* Специальные классы типографики для улучшенной читаемости */
+.text-display {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
+}
+
+.text-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+
+  @media (min-width: 768px) {
+    font-size: 2.25rem;
+  }
+}
+
+.text-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+}
+
+.text-body {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.text-cta-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+
+  @media (min-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+.text-section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+
+  @media (min-width: 768px) {
+    font-size: 2.25rem;
   }
 }
