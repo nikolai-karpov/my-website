@@ -1,13 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Определяем, запущены ли мы на GitHub Pages или локально
-    const isGitHub = window.location.hostname.includes('github.io');
-    // Если GitHub - добавляем префикс репозитория, иначе (локально) - пустая строка
-    // ВАЖНО: Если локально ты запускаешь не из корня, скорректируй логику
-    const basePath = isGitHub ? '/my-website' : ''; 
+    // Определяем базовый путь на основе текущего location
+    function getBasePath() {
+        const path = window.location.pathname;
+        let pathWithoutBase = path;
+        
+        // Если на GitHub Pages, убираем /my-website из пути
+        if (window.location.hostname.includes('github.io')) {
+            pathWithoutBase = path.replace(/^\/my-website/, '');
+        }
+        
+        // Определяем глубину: считаем количество папок в пути (исключая имя файла)
+        const pathParts = pathWithoutBase.split('/').filter(p => p && p !== 'index.html' && !p.endsWith('.html'));
+        const depth = pathParts.length;
+        
+        // Для корня (index.html) depth = 0, для site-pages/ depth = 1, для site-pages/case-studies/ depth = 2
+        return depth > 0 ? '../'.repeat(depth) : './';
+    }
+
+    const basePath = getBasePath();
+    const componentsPath = basePath + 'site-components/';
 
     const components = [
-        { id: "header", url: `${basePath}/site-components/header.html` },
-        { id: "footer", url: `${basePath}/site-components/footer.html` }
+        { id: "main-header", url: componentsPath + 'header.html' },
+        { id: "header", url: componentsPath + 'header.html' },
+        { id: "main-footer", url: componentsPath + 'footer.html' },
+        { id: "footer", url: componentsPath + 'footer.html' }
     ];
 
     components.forEach(component => {
@@ -19,19 +36,28 @@ document.addEventListener("DOMContentLoaded", function () {
                     return response.text();
                 })
                 .then(data => {
-                    // ВАЖНО: Внутри загруженного HTML (например, в меню) ссылки тоже могут быть без префикса.
-                    // Нужно заменить href="/" на href="/my-website/" если мы на GitHub
+                    // Заменяем абсолютные пути на относительные
                     let processedData = data;
-                    if (isGitHub) {
-                         // Простая замена путей от корня на пути с префиксом
-                         // Ищем href="/... и заменяем, исключая уже правильные пути
-                         processedData = data.replace(/href="\/([^\"]*)"/g, 'href="/my-website/$1"');
-                    }
+                    
+                    // Заменяем href="/" на относительный путь к главной
+                    // Для корня это будет "./", для подпапок "../" или "../index.html"
+                    const indexPath = basePath === './' ? './' : basePath + 'index.html';
+                    processedData = processedData.replace(/href="\/"/g, `href="${indexPath}"`);
+                    
+                    // Заменяем href="/site-pages/ на относительные пути
+                    processedData = processedData.replace(/href="\/site-pages\//g, `href="${basePath}site-pages/`);
+                    
+                    // Заменяем другие абсолютные пути (начинающиеся с /, но не внешние)
+                    processedData = processedData.replace(/href="\/([^\/"#?]+)"/g, (match, path) => {
+                        // Пропускаем внешние ссылки (http, https, mailto, tel)
+                        if (path.match(/^(https?:|mailto:|tel:)/)) return match;
+                        return `href="${basePath}${path}"`;
+                    });
                     
                     element.innerHTML = processedData;
                     
                     // Перезапуск логики для хедера (мобильное меню)
-                    if (component.id === 'header') {
+                    if (component.id === 'header' || component.id === 'main-header') {
                         document.dispatchEvent(new Event('headerLoaded'));
                     }
                 })
