@@ -31,7 +31,8 @@
     "lint:css": "stylelint assets/scss/**/*.scss",
     "lint:css:fix": "stylelint assets/scss/**/*.scss --fix",
     "prepare": "husky",
-    "dev": "concurrently \"npm run sass:watch\" \"live-server\"",
+    "dev": "concurrently \"npm run sass:watch\" \"live-server --port=8080 --open=/index.html\"",
+    "serve": "live-server --port=8080 --open=/index.html",
     "precommit": "lint-staged",
     "test": "echo 'Tests are not configured for this project'"
   },

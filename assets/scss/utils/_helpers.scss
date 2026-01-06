@@ -44,6 +44,47 @@
   background-color: var(--light-bg-color) !important;
 }
 
+/* Tailwind-подобные цветовые утилиты */
+.text-green-500 {
+  color: #16a34a !important;
+}
+
+.text-orange-500 {
+  color: #f59e0b !important;
+}
+
+.text-blue-500 {
+  color: #2563eb !important;
+}
+
+.text-purple-500 {
+  color: #9333ea !important;
+}
+
+.text-teal-500 {
+  color: #14b8a6 !important;
+}
+
+.text-red-500 {
+  color: #ef4444 !important;
+}
+
+.text-blue-600 {
+  color: #2563eb !important;
+}
+
+.text-purple-600 {
+  color: #9333ea !important;
+}
+
+.text-green-600 {
+  color: #16a34a !important;
+}
+
+.text-dark-color {
+  color: var(--dark-color) !important;
+}
+
 /* --- Отступы (Spacing) --- */
 
 /* Margins */

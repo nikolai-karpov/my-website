@@ -68,6 +68,11 @@
   }
 }
 
+.title-line {
+  display: block;
+  line-height: 1.2;
+}
+
 .hero-subtitle {
   font-size: 1.25rem;
   line-height: 1.6;
@@ -90,6 +95,47 @@
   @media (max-width: 992px) {
     justify-content: center;
   }
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    gap: 20px;
+    justify-content: center;
+  }
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media (max-width: 768px) {
+    align-items: center;
+  }
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  line-height: 1;
+  margin-bottom: 8px;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.8;
+  text-transform: lowercase;
 }
 
 /* --- Hero Visual (Фото + Карточки) --- */
@@ -281,8 +327,15 @@
 
   @media (max-width: 768px) {
     margin-bottom: 50px;
-    h2 { font-size: 2rem; margin-bottom: 16px; }
-    p { font-size: 1.1rem; }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
   }
 }
 
@@ -339,10 +392,6 @@
     transform: translateY(-8px);
     box-shadow: var(--card-shadow-hover);
     border-color: rgb(74, 144, 226, 0.2);
-
-    .link-arrow i {
-      transform: translateX(5px);
-    }
   }
 
   h3 {
@@ -377,9 +426,20 @@
   justify-content: center;
   font-size: 1.5rem;
 
-  &.bg-blue-100 { background: #e0f2fe; color: #0284c7; }
-  &.bg-purple-100 { background: #f3e8ff; color: #9333ea; }
-  &.bg-green-100 { background: #dcfce7; color: #16a34a; }
+  &.bg-blue-100 {
+    background: #e0f2fe;
+    color: #0284c7;
+  }
+
+  &.bg-purple-100 {
+    background: #f3e8ff;
+    color: #9333ea;
+  }
+
+  &.bg-green-100 {
+    background: #dcfce7;
+    color: #16a34a;
+  }
 }
 
 .case-tag {
@@ -406,8 +466,17 @@
   text-decoration: none;
   transition: color 0.2s;
 
-  i { transition: transform 0.2s; }
-  &:hover { color: var(--primary-hover-color); }
+  i {
+    transition: transform 0.2s;
+  }
+
+  &:hover {
+    color: var(--primary-hover-color);
+  }
+}
+
+.case-card-interactive:hover .link-arrow i {
+  transform: translateX(5px);
 }
 
 /* --- 4. Tech Stack Section (Cards Grid) --- */
@@ -449,16 +518,6 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 25px -5px rgb(0, 0, 0, 0.1), 0 10px 10px -5px rgb(0, 0, 0, 0.04);
-    border-color: rgb(74, 144, 226, 0.3);
-
-    .tech-card__icon {
-      transform: scale(1.1) rotate(5deg);
-    }
-  }
 }
 
 .tech-card__icon {
@@ -473,15 +532,60 @@
   transition: transform 0.3s ease;
 
   /* Брендовые цвета для иконок */
-  &.python { background: #e0f2fe; color: #0284c7; }
-  &.powerbi { background: #fff7ed; color: #f59e0b; }
-  &.bpmn { background: #f0fdf4; color: #16a34a; }
-  &.jira { background: #eff6ff; color: #2563eb; }
-  &.figma { background: #faf5ff; color: #a855f7; }
-  &.prompt { background: #fdf4ff; color: #db2777; }
-  &.api { background: #f1f5f9; color: #475569; }
-  &.cloud { background: #fee2e2; color: #dc2626; }
-  &.nocode { background: #fff1f2; color: #e11d48; }
+  &.python {
+    background: #e0f2fe;
+    color: #0284c7;
+  }
+
+  &.powerbi {
+    background: #fff7ed;
+    color: #f59e0b;
+  }
+
+  &.bpmn {
+    background: #f0fdf4;
+    color: #16a34a;
+  }
+
+  &.jira {
+    background: #eff6ff;
+    color: #2563eb;
+  }
+
+  &.figma {
+    background: #faf5ff;
+    color: #a855f7;
+  }
+
+  &.prompt {
+    background: #fdf4ff;
+    color: #db2777;
+  }
+
+  &.api {
+    background: #f1f5f9;
+    color: #475569;
+  }
+
+  &.cloud {
+    background: #fee2e2;
+    color: #dc2626;
+  }
+
+  &.nocode {
+    background: #fff1f2;
+    color: #e11d48;
+  }
+}
+
+.tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgb(0, 0, 0, 0.1), 0 10px 10px -5px rgb(0, 0, 0, 0.04);
+  border-color: rgb(74, 144, 226, 0.3);
+}
+
+.tech-card:hover .tech-card__icon {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .tech-card h4 {
