@@ -1,414 +1,533 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- 1. SEO & Meta -->
     <title>Карпов Николай — Системное внедрение ИИ</title>
-    <meta name="description" content="Внедряю ИИ в инженерные и бизнес-процессы. От Главного инженера проекта до архитектора AI-решений. Автоматизация, аналитика, обучение." />
-    <meta name="keywords" content="ИИ, Python, Pandas, BPMN, внедрение AI, бизнес-аналитика, LLM, ChatGPT, Jira, Confluence, промпт-инжиниринг" />
+    <meta
+      name="description"
+      content="Внедряю ИИ в инженерные и бизнес-процессы. От Главного инженера проекта до архитектора AI-решений. Автоматизация, аналитика, обучение."
+    />
+    <meta
+      name="keywords"
+      content="ИИ, Python, Pandas, BPMN, внедрение AI, бизнес-аналитика, LLM, ChatGPT, Jira, Confluence, промпт-инжиниринг"
+    />
     <meta name="author" content="Карпов Николай" />
 
     <!-- Hreflang & Canonical -->
-    <link rel="alternate" hreflang="ru" href="https://nikolai-karpov.github.io/" />
+    <link
+      rel="alternate"
+      hreflang="ru"
+      href="https://nikolai-karpov.github.io/"
+    />
     <link rel="canonical" href="https://nikolai-karpov.github.io/" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Карпов Николай — Системное внедрение ИИ" />
-    <meta property="og:description" content="Внедряю ИИ в инженерные и бизнес-процессы. Архитектура решений, а не просто запросы к нейросети." />
+    <meta
+      property="og:title"
+      content="Карпов Николай — Системное внедрение ИИ"
+    />
+    <meta
+      property="og:description"
+      content="Внедряю ИИ в инженерные и бизнес-процессы. Архитектура решений, а не просто запросы к нейросети."
+    />
     <meta property="og:image" content="assets/images/og-image.jpg" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://nikolai-karpov.github.io/" />
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary_large_image" />
 
     <!-- JSON-LD -->
     <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": "Карпов Николай",
-            "jobTitle": "Архитектор AI-решений",
-            "image": "assets/images/profile-placeholder.jpg",
-            "url": "https://nikolai-karpov.github.io",
-            "knowsAbout": ["Artificial Intelligence", "Python", "Data Analysis", "BPMN", "Project Management"],
-            "worksFor": {
-                "@type": "Organization",
-                "name": "AI Consulting"
-            }
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Карпов Николай",
+        "jobTitle": "Архитектор AI-решений",
+        "image": "assets/images/profile-placeholder.jpg",
+        "url": "https://nikolai-karpov.github.io",
+        "knowsAbout": [
+          "Artificial Intelligence",
+          "Python",
+          "Data Analysis",
+          "BPMN",
+          "Project Management"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "AI Consulting"
         }
+      }
     </script>
 
     <!-- Шрифты и Иконки -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-            rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
     />
     <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
 
     <!-- Анимации (Defer) -->
     <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-            rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      rel="stylesheet"
     />
 
     <!-- Основной CSS -->
-    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
-</head>
+  </head>
 
-<body class="loading">
-
-<!-- Прелоадер -->
-<div class="preloader">
-    <div class="preloader-content">
+  <body class="loading">
+    <!-- Прелоадер -->
+    <div class="preloader">
+      <div class="preloader-content">
         <div class="neural-network-animation">
-            <div class="neuron"></div>
-            <div class="neuron"></div>
-            <div class="neuron"></div>
+          <div class="neuron"></div>
+          <div class="neuron"></div>
+          <div class="neuron"></div>
         </div>
         <p>Инициализация систем...</p>
+      </div>
     </div>
-</div>
 
-<!-- Хедер -->
-<header id="main-header" class="main-header" role="banner" data-component="site-components/header.html">
-    <div class="container">
-        <nav aria-label="Основное меню"><a href="/">Главная</a></nav>
-    </div>
-</header>
+    <!-- Хедер -->
+    <header
+      id="main-header"
+      class="main-header"
+      role="banner"
+      data-component="site-components/header.html"
+    >
+      <div class="container">
+        <nav aria-label="Основное меню"><a href="./">Главная</a></nav>
+      </div>
+    </header>
 
-<main role="main">
-    <!-- === HERO SECTION === -->
-    <section class="hero-section">
+    <main role="main">
+      <!-- === HERO SECTION === -->
+      <section class="hero-section">
         <div class="hero-background">
-            <canvas id="neuralCanvas">Ваш браузер не поддерживает canvas.</canvas>
+          <canvas id="neuralCanvas">Ваш браузер не поддерживает canvas.</canvas>
         </div>
         <div class="container">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <i class="fas fa-check-circle"></i> Инженерный подход к AI
-                    </div>
-                    <h1 class="hero-title">
-                        Системное внедрение ИИ в
-                        <span class="gradient-text">инженерные и бизнес-процессы</span>
-                    </h1>
-                    <p class="hero-subtitle">
-                        От Главного инженера проекта (ГИП) до архитектора AI-решений.
-                        Автоматизирую рутину, создаю «цифровых сотрудников» и обучаю команды
-                        работать с нейросетями без «слепого доверия».
-                    </p>
+          <div class="hero-container">
+            <div class="hero-content">
+              <div class="hero-badge">
+                <i class="fas fa-check-circle"></i> Инженерный подход к AI
+              </div>
+              <h1 class="hero-title">
+                Системное внедрение ИИ в
+                <span class="gradient-text">инженерные и бизнес-процессы</span>
+              </h1>
+              <p class="hero-subtitle">
+                От Главного инженера проекта (ГИП) до архитектора AI-решений.
+                Автоматизирую рутину, создаю «цифровых сотрудников» и обучаю
+                команды работать с нейросетями без «слепого доверия».
+              </p>
 
-                    <div class="hero-actions">
-                        <a href="#portfolio" class="cta-button primary">
-                            <i class="fas fa-briefcase"></i>
-                            Смотреть решения
-                        </a>
-                        <a href="site-pages/contacts.html" class="cta-button secondary">
-                            <i class="fas fa-rocket"></i>
-                            Обсудить задачу
-                        </a>
-                    </div>
-                </div>
-
-                <div class="hero-visual">
-                    <!-- Плавающие карточки LLM моделей -->
-                    <div class="floating-card card-1"><i class="fas fa-robot text-green-500"></i><span>ChatGPT</span></div>
-                    <div class="floating-card card-2"><i class="fas fa-comment-dots text-orange-500"></i><span>Claude</span></div>
-                    <div class="floating-card card-3"><i class="fas fa-project-diagram text-blue-500"></i><span>DeepSeek</span></div>
-                    <div class="floating-card card-4"><i class="fas fa-brain text-purple-500"></i><span>Qwen</span></div>
-                    <div class="floating-card card-5"><i class="fas fa-search text-teal-500"></i><span>Perplexity</span></div>
-                    <div class="floating-card card-6"><i class="fas fa-code text-dark-color"></i><span>Kimi</span></div>
-                    <div class="floating-card card-7"><i class="fas fa-leaf text-red-500"></i><span>YandexGPT</span></div>
-
-                    <div class="profile-image">
-                        <img
-                                src="assets/images/profile-placeholder.jpg"
-                                alt="Карпов Николай"
-                                onerror="this.src='https://ui-avatars.com/api/?name=Nikolai+Karpov&background=4A90E2&color=fff&size=300'"
-                        />
-                        <div class="image-glow"></div>
-                    </div>
-                </div>
+              <div class="hero-actions">
+                <a href="#portfolio" class="cta-button primary">
+                  <i class="fas fa-briefcase"></i>
+                  Смотреть решения
+                </a>
+                <a href="site-pages/contacts.html" class="cta-button secondary">
+                  <i class="fas fa-rocket"></i>
+                  Обсудить задачу
+                </a>
+              </div>
             </div>
-        </div>
-    </section>
 
-    <!-- === КОМПЕТЕНЦИИ (Обо мне) === -->
-    <section class="competencies-section">
+            <div class="hero-visual">
+              <!-- Плавающие карточки LLM моделей -->
+              <div class="floating-card card-1">
+                <i class="fas fa-robot text-green-500"></i><span>ChatGPT</span>
+              </div>
+              <div class="floating-card card-2">
+                <i class="fas fa-comment-dots text-orange-500"></i
+                ><span>Claude</span>
+              </div>
+              <div class="floating-card card-3">
+                <i class="fas fa-project-diagram text-blue-500"></i
+                ><span>DeepSeek</span>
+              </div>
+              <div class="floating-card card-4">
+                <i class="fas fa-brain text-purple-500"></i><span>Qwen</span>
+              </div>
+              <div class="floating-card card-5">
+                <i class="fas fa-search text-teal-500"></i
+                ><span>Perplexity</span>
+              </div>
+              <div class="floating-card card-6">
+                <i class="fas fa-code text-dark-color"></i><span>Kimi</span>
+              </div>
+              <div class="floating-card card-7">
+                <i class="fas fa-leaf text-red-500"></i><span>YandexGPT</span>
+              </div>
+
+              <div class="profile-image">
+                <img
+                  src="assets/images/profile-placeholder.jpg"
+                  alt="Карпов Николай"
+                  onerror="this.src='https://ui-avatars.com/api/?name=Nikolai+Karpov&background=4A90E2&color=fff&size=300'"
+                />
+                <div class="image-glow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- === КОМПЕТЕНЦИИ (Обо мне) === -->
+      <section class="competencies-section">
         <div class="container">
-            <div class="section-header text-center">
-                <h2>Три ключевые компетенции</h2>
-                <p>
-                    Комбинация бизнес-аналитики, технологий и обучения, которая обеспечивает
-                    системный результат, а не разовый хайп.
-                </p>
+          <div class="section-header text-center">
+            <h2>Три ключевые компетенции</h2>
+            <p>
+              Комбинация бизнес-аналитики, технологий и обучения, которая
+              обеспечивает системный результат, а не разовый хайп.
+            </p>
+          </div>
+
+          <div class="competencies-grid">
+            <div class="card--competency" data-aos="fade-up">
+              <div class="card__icon"><i class="fas fa-chart-bar"></i></div>
+              <h3>Бизнес-аналитик</h3>
+              <p class="card__description">
+                Анализирую трудовые функции и выявляю операционные "узкие
+                места". Превращаю хаос рутины в четкие алгоритмы для
+                автоматизации.
+              </p>
+              <div class="card__details">
+                <ul class="card__features">
+                  <li>
+                    <i class="fas fa-check"></i> Аудит процессов (BPMN 2.0)
+                  </li>
+                  <li>
+                    <i class="fas fa-check"></i> Выявление точек роста ROI
+                  </li>
+                  <li><i class="fas fa-check"></i> Формирование четких ТЗ</li>
+                </ul>
+              </div>
             </div>
 
-            <div class="competencies-grid">
-                <div class="card--competency" data-aos="fade-up">
-                    <div class="card__icon"><i class="fas fa-chart-bar"></i></div>
-                    <h3>Бизнес-аналитик</h3>
-                    <p class="card__description">
-                        Анализирую трудовые функции и выявляю операционные "узкие места".
-                        Превращаю хаос рутины в четкие алгоритмы для автоматизации.
-                    </p>
-                    <div class="card__details">
-                        <ul class="card__features">
-                            <li><i class="fas fa-check"></i> Аудит процессов (BPMN 2.0)</li>
-                            <li><i class="fas fa-check"></i> Выявление точек роста ROI</li>
-                            <li><i class="fas fa-check"></i> Формирование четких ТЗ</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card--competency" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card__icon"><i class="fas fa-microchip"></i></div>
-                    <h3>Архитектор ИИ-решений</h3>
-                    <p class="card__description">
-                        Проектирую и собираю рабочие системы. От простых промптов до
-                        сложных RAG-пайплайнов и автономных агентов.
-                    </p>
-                    <div class="card__details">
-                        <ul class="card__features">
-                            <li><i class="fas fa-check"></i> Advanced Prompt Engineering</li>
-                            <li><i class="fas fa-check"></i> Python (Pandas/NumPy)</li>
-                            <li><i class="fas fa-check"></i> RAG и работа с базами знаний</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card--competency" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card__icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h3>Педагогический дизайнер</h3>
-                    <p class="card__description">
-                        Снимаю страх перед технологиями. Разрабатываю программы обучения,
-                        которые гарантируют принятие инструментов командой.
-                    </p>
-                    <div class="card__details">
-                        <ul class="card__features">
-                            <li><i class="fas fa-check"></i> Методология ADDIE</li>
-                            <li><i class="fas fa-check"></i> Управление изменениями</li>
-                            <li><i class="fas fa-check"></i> Обучение через практику</li>
-                        </ul>
-                    </div>
-                </div>
+            <div
+              class="card--competency"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="card__icon"><i class="fas fa-microchip"></i></div>
+              <h3>Архитектор ИИ-решений</h3>
+              <p class="card__description">
+                Проектирую и собираю рабочие системы. От простых промптов до
+                сложных RAG-пайплайнов и автономных агентов.
+              </p>
+              <div class="card__details">
+                <ul class="card__features">
+                  <li>
+                    <i class="fas fa-check"></i> Advanced Prompt Engineering
+                  </li>
+                  <li><i class="fas fa-check"></i> Python (Pandas/NumPy)</li>
+                  <li>
+                    <i class="fas fa-check"></i> RAG и работа с базами знаний
+                  </li>
+                </ul>
+              </div>
             </div>
+
+            <div
+              class="card--competency"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="card__icon">
+                <i class="fas fa-graduation-cap"></i>
+              </div>
+              <h3>Педагогический дизайнер</h3>
+              <p class="card__description">
+                Снимаю страх перед технологиями. Разрабатываю программы
+                обучения, которые гарантируют принятие инструментов командой.
+              </p>
+              <div class="card__details">
+                <ul class="card__features">
+                  <li><i class="fas fa-check"></i> Методология ADDIE</li>
+                  <li><i class="fas fa-check"></i> Управление изменениями</li>
+                  <li><i class="fas fa-check"></i> Обучение через практику</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- === ПОРТФОЛИО (КЕЙСЫ) === -->
-    <section id="portfolio" class="cases-section">
+      <!-- === ПОРТФОЛИО (КЕЙСЫ) === -->
+      <section id="portfolio" class="cases-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Рабочие инструменты и кейсы</h2>
-                <p>Реальные примеры того, как ИИ решает задачи бизнеса прямо сейчас</p>
-            </div>
+          <div class="section-header">
+            <h2>Рабочие инструменты и кейсы</h2>
+            <p>
+              Реальные примеры того, как ИИ решает задачи бизнеса прямо сейчас
+            </p>
+          </div>
 
-            <div class="cases-grid-3">
-                <article class="case-card-interactive" data-aos="fade-up">
-                    <div class="case-card__header">
-                        <div class="case-icon bg-blue-100 text-blue-600"><i class="fas fa-chart-pie"></i></div>
-                        <span class="case-tag">Аналитика</span>
-                    </div>
-                    <h3>AI-анализ стоимости внедрения</h3>
-                    <p>Пример глубокого аналитического отчета для Фармы/IT. Демонстрация точности расчетов, структуры и прогнозирования ROI.</p>
-                    <div class="case-footer">
-                        <a href="site-pages/case-studies/report.html" class="link-arrow">Изучить отчет <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
+          <div class="cases-grid-3">
+            <article class="case-card-interactive" data-aos="fade-up">
+              <div class="case-card__header">
+                <div class="case-icon bg-blue-100 text-blue-600">
+                  <i class="fas fa-chart-pie"></i>
+                </div>
+                <span class="case-tag">Аналитика</span>
+              </div>
+              <h3>AI-анализ стоимости внедрения</h3>
+              <p>
+                Пример глубокого аналитического отчета для Фармы/IT.
+                Демонстрация точности расчетов, структуры и прогнозирования ROI.
+              </p>
+              <div class="case-footer">
+                <a href="site-pages/case-studies/report.html" class="link-arrow"
+                  >Изучить отчет <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </article>
 
-                <article class="case-card-interactive" data-aos="fade-up" data-aos-delay="100">
-                    <div class="case-card__header">
-                        <div class="case-icon bg-purple-100 text-purple-600"><i class="fas fa-magic"></i></div>
-                        <span class="case-tag">Автоматизация B2B</span>
-                    </div>
-                    <h3>Генератор стратегий продаж</h3>
-                    <p>Действующий инструмент. Анализирует данные компании, проверяет гос. статус и генерирует персонализированную стратегию (ABM).</p>
-                    <div class="case-footer">
-                        <a href="site-pages/prompt_generator.html" class="link-arrow">Открыть инструмент <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
+            <article
+              class="case-card-interactive"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="case-card__header">
+                <div class="case-icon bg-purple-100 text-purple-600">
+                  <i class="fas fa-magic"></i>
+                </div>
+                <span class="case-tag">Автоматизация B2B</span>
+              </div>
+              <h3>Генератор стратегий продаж</h3>
+              <p>
+                Действующий инструмент. Анализирует данные компании, проверяет
+                гос. статус и генерирует персонализированную стратегию (ABM).
+              </p>
+              <div class="case-footer">
+                <a href="site-pages/prompt_generator.html" class="link-arrow"
+                  >Открыть инструмент <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </article>
 
-                <article class="case-card-interactive" data-aos="fade-up" data-aos-delay="200">
-                    <div class="case-card__header">
-                        <div class="case-icon bg-green-100 text-green-600"><i class="fas fa-graduation-cap"></i></div>
-                        <span class="case-tag">Методология</span>
-                    </div>
-                    <h3>Курс "AI для инженера"</h3>
-                    <p>Интерактивная презентация (Playbook). От стратегии до конкретных пайплайнов автоматизации ПД и промпт-инжиниринга.</p>
-                    <div class="case-footer">
-                        <a href="present_course/main.html" class="link-arrow">Смотреть презентацию <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </article>
-            </div>
+            <article
+              class="case-card-interactive"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="case-card__header">
+                <div class="case-icon bg-green-100 text-green-600">
+                  <i class="fas fa-graduation-cap"></i>
+                </div>
+                <span class="case-tag">Методология</span>
+              </div>
+              <h3>Курс "AI для инженера"</h3>
+              <p>
+                Интерактивная презентация (Playbook). От стратегии до конкретных
+                пайплайнов автоматизации ПД и промпт-инжиниринга.
+              </p>
+              <div class="case-footer">
+                <a href="present_course/main.html" class="link-arrow"
+                  >Смотреть презентацию <i class="fas fa-arrow-right"></i
+                ></a>
+              </div>
+            </article>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- === TECH STACK (UPDATED: CARDS GRID) === -->
-    <section class="tech-stack-section">
+      <!-- === TECH STACK (UPDATED: CARDS GRID) === -->
+      <section class="tech-stack-section">
         <div class="container">
-            <div class="section-header text-center">
-                <h2>Инструментарий и Технологии</h2>
-                <p>Полный стек для реализации проектов любой сложности: от анализа данных до внедрения нейросетей</p>
+          <div class="section-header text-center">
+            <h2>Инструментарий и Технологии</h2>
+            <p>
+              Полный стек для реализации проектов любой сложности: от анализа
+              данных до внедрения нейросетей
+            </p>
+          </div>
+
+          <div class="tech-grid-cards">
+            <!-- 1. Python -->
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="0">
+              <div class="tech-card__icon python">
+                <i class="fab fa-python"></i>
+              </div>
+              <h4>Python</h4>
+              <p>Pandas, NumPy, Automation</p>
+              <span class="tech-category">Разработка</span>
             </div>
 
-            <div class="tech-grid-cards">
-                <!-- 1. Python -->
-                <div class="tech-card" data-aos="zoom-in" data-aos-delay="0">
-                    <div class="tech-card__icon python">
-                        <i class="fab fa-python"></i>
-                    </div>
-                    <h4>Python</h4>
-                    <p>Pandas, NumPy, Automation</p>
-                    <span class="tech-category">Разработка</span>
-                </div>
-
-                <!-- 2. Power BI -->
-                <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="tech-card__icon powerbi">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <h4>Power BI</h4>
-                    <p>Дашборды и аналитика</p>
-                    <span class="tech-category">Данные</span>
-                </div>
-
-                <!-- 3. BPMN -->
-                <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="tech-card__icon bpmn">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <h4>BPMN 2.0</h4>
-                    <p>Моделирование процессов</p>
-                    <span class="tech-category">Процессы</span>
-                </div>
-
-                <!-- 4. Jira -->
-                <div class="tech-card" data-aos="zoom-in" data-aos-delay="0">
-                    <div class="tech-card__icon jira">
-                        <i class="fab fa-jira"></i>
-                    </div>
-                    <h4>Jira / Confluence</h4>
-                    <p>Управление проектами</p>
-                    <span class="tech-category">Менеджмент</span>
-                </div>
-
-                <!-- 5. Figma -->
-                <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="tech-card__icon figma">
-                        <i class="fab fa-figma"></i>
-                    </div>
-                    <h4>Figma / Miro</h4>
-                    <p>Прототипирование UI</p>
-                    <span class="tech-category">Дизайн</span>
-                </div>
-
-                <!-- 6. Prompt Engineering -->
-                <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="tech-card__icon prompt">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h4>Prompt Engineering</h4>
-                    <p>Сложные цепные промпты</p>
-                    <span class="tech-category">AI Core</span>
-                </div>
-
-                <!-- 7. LLM APIs -->
-                <div class="tech-card" data-aos="zoom-in" data-aos-delay="0">
-                    <div class="tech-card__icon api">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h4>LLM APIs & RAG</h4>
-                    <p>OpenAI, Anthropic, GigaChat</p>
-                    <span class="tech-category">Интеграции</span>
-                </div>
-
-                <!-- 8. Cloud -->
-                <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="tech-card__icon cloud">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h4>Yandex Cloud</h4>
-                    <p>Serverless Functions</p>
-                    <span class="tech-category">Инфраструктура</span>
-                </div>
-
-                <!-- 9. No-Code -->
-                <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="tech-card__icon nocode">
-                        <i class="fas fa-bolt"></i>
-                    </div>
-                    <h4>n8n / Make</h4>
-                    <p>Быстрая автоматизация</p>
-                    <span class="tech-category">Low-code</span>
-                </div>
+            <!-- 2. Power BI -->
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
+              <div class="tech-card__icon powerbi">
+                <i class="fas fa-chart-bar"></i>
+              </div>
+              <h4>Power BI</h4>
+              <p>Дашборды и аналитика</p>
+              <span class="tech-category">Данные</span>
             </div>
+
+            <!-- 3. BPMN -->
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="tech-card__icon bpmn">
+                <i class="fas fa-project-diagram"></i>
+              </div>
+              <h4>BPMN 2.0</h4>
+              <p>Моделирование процессов</p>
+              <span class="tech-category">Процессы</span>
+            </div>
+
+            <!-- 4. Jira -->
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="0">
+              <div class="tech-card__icon jira">
+                <i class="fab fa-jira"></i>
+              </div>
+              <h4>Jira / Confluence</h4>
+              <p>Управление проектами</p>
+              <span class="tech-category">Менеджмент</span>
+            </div>
+
+            <!-- 5. Figma -->
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
+              <div class="tech-card__icon figma">
+                <i class="fab fa-figma"></i>
+              </div>
+              <h4>Figma / Miro</h4>
+              <p>Прототипирование UI</p>
+              <span class="tech-category">Дизайн</span>
+            </div>
+
+            <!-- 6. Prompt Engineering -->
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="tech-card__icon prompt">
+                <i class="fas fa-brain"></i>
+              </div>
+              <h4>Prompt Engineering</h4>
+              <p>Сложные цепные промпты</p>
+              <span class="tech-category">AI Core</span>
+            </div>
+
+            <!-- 7. LLM APIs -->
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="0">
+              <div class="tech-card__icon api">
+                <i class="fas fa-robot"></i>
+              </div>
+              <h4>LLM APIs & RAG</h4>
+              <p>OpenAI, Anthropic, GigaChat</p>
+              <span class="tech-category">Интеграции</span>
+            </div>
+
+            <!-- 8. Cloud -->
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
+              <div class="tech-card__icon cloud">
+                <i class="fas fa-cloud"></i>
+              </div>
+              <h4>Yandex Cloud</h4>
+              <p>Serverless Functions</p>
+              <span class="tech-category">Инфраструктура</span>
+            </div>
+
+            <!-- 9. No-Code -->
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="tech-card__icon nocode">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <h4>n8n / Make</h4>
+              <p>Быстрая автоматизация</p>
+              <span class="tech-category">Low-code</span>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- === LEAD MAGNET / CTA === -->
-    <section class="lead-magnet-section">
+      <!-- === LEAD MAGNET / CTA === -->
+      <section class="lead-magnet-section">
         <div class="container">
-            <div class="lead-magnet-card">
-                <div class="lead-content">
-                    <div class="lead-badge">
-                        <i class="fas fa-check-double"></i> Самодиагностика
-                    </div>
-                    <h2>Готова ли ваша компания к ИИ?</h2>
-                    <p class="lead-description">
-                        Внедрение нейросетей — это не магия, а зрелость процессов.
-                        Пройдите чек-лист из 5 пунктов, чтобы понять, с чего начать.
-                    </p>
+          <div class="lead-magnet-card">
+            <div class="lead-content">
+              <div class="lead-badge">
+                <i class="fas fa-check-double"></i> Самодиагностика
+              </div>
+              <h2>Готова ли ваша компания к ИИ?</h2>
+              <p class="lead-description">
+                Внедрение нейросетей — это не магия, а зрелость процессов.
+                Пройдите чек-лист из 5 пунктов, чтобы понять, с чего начать.
+              </p>
 
-                    <ul class="benefits-list">
-                        <li><i class="fas fa-check"></i> Информационный перегруз сотрудников?</li>
-                        <li><i class="fas fa-check"></i> База знаний есть, но в ней сложно искать?</li>
-                        <li><i class="fas fa-check"></i> Рост бизнеса упирается в найм людей?</li>
-                    </ul>
+              <ul class="benefits-list">
+                <li>
+                  <i class="fas fa-check"></i> Информационный перегруз
+                  сотрудников?
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> База знаний есть, но в ней сложно
+                  искать?
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Рост бизнеса упирается в найм
+                  людей?
+                </li>
+              </ul>
 
-                    <div class="cta-group">
-                        <a href="site-pages/contacts.html" class="cta-button primary">
-                            Заказать аудит процессов
-                        </a>
-                    </div>
-                </div>
-                <div class="lead-visual">
-                    <i class="fas fa-clipboard-check" style="font-size: 8rem; color: var(--primary-color); opacity: 0.8;"></i>
-                </div>
+              <div class="cta-group">
+                <a href="site-pages/contacts.html" class="cta-button primary">
+                  Заказать аудит процессов
+                </a>
+              </div>
             </div>
+            <div class="lead-visual">
+              <i
+                class="fas fa-clipboard-check"
+                style="
+                  font-size: 8rem;
+                  color: var(--primary-color);
+                  opacity: 0.8;
+                "
+              ></i>
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
+    </main>
 
-</main>
+    <!-- Футер -->
+    <footer
+      id="main-footer"
+      class="main-footer"
+      role="contentinfo"
+      data-component="site-components/footer.html"
+    ></footer>
 
-<!-- Футер -->
-<footer id="main-footer" class="main-footer" role="contentinfo" data-component="site-components/footer.html"></footer>
+    <!-- Скрипты -->
+    <script src="assets/js/components-loader.js"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+    ></script>
+    <script defer src="assets/js/animations.js"></script>
+    <script defer src="assets/js/main.js"></script>
 
-<!-- Скрипты -->
-<script src="assets/js/components-loader.js"></script>
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script defer src="assets/js/animations.js"></script>
-<script defer src="assets/js/main.js"></script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        if (typeof AOS !== 'undefined') {
-            AOS.init({ duration: 800, once: true });
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof AOS !== "undefined") {
+          AOS.init({ duration: 800, once: true });
         } else {
-            window.addEventListener('load', function() {
-                if (typeof AOS !== 'undefined') {
-                    AOS.init({ duration: 800, once: true });
-                }
-            });
+          window.addEventListener("load", function () {
+            if (typeof AOS !== "undefined") {
+              AOS.init({ duration: 800, once: true });
+            }
+          });
         }
-    });
-</script>
-</body>
+      });
+    </script>
+  </body>
 </html>

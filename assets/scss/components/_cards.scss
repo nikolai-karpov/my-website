@@ -57,7 +57,11 @@
   line-height: 1.7;
   color: var(--text-color);
   opacity: 0.85;
-  margin-bottom: auto; /* Прижимает всё, что ниже, к низу карточки */
+  margin-bottom: 24px; /* Отступ перед списком функций */
+}
+
+.card__details {
+  margin-top: auto; /* Прижимает список функций к низу карточки */
 }
 
 /* Мобильная адаптация */
