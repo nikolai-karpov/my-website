@@ -188,6 +188,54 @@
     right: 40px;
     animation-delay: 4s;
   }
+
+  /* 6. Верх слева */
+  &.card-6 {
+    top: 15%;
+    left: 5%;
+    animation-delay: 3.5s;
+  }
+
+  /* 7. Центр сверху */
+  &.card-7 {
+    top: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 1s;
+  }
+
+  @media (max-width: 768px) {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+
+    /* На мобильных скрываем боковые, чтобы не перекрывать лицо */
+    &.card-4, &.card-5, &.card-6 {
+      display: none;
+    }
+
+    &.card-1 {
+      top: 0;
+      right: 0;
+    }
+
+    &.card-2 {
+      top: auto;
+      bottom: 0;
+      right: 0;
+    }
+
+    &.card-3 {
+      top: auto;
+      bottom: 0;
+      left: 0;
+    }
+
+    &.card-7 {
+      top: 0;
+      left: 0;
+      transform: none;
+    }
+  }
 }
 
 @keyframes float {

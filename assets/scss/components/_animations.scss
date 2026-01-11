@@ -1,0 +1,25 @@
+/* Анимации для profile-image */
+.profile-image::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  z-index: -1;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Анимации для floating cards */
+.floating-card.card-1 { animation-delay: 0s; }
+.floating-card.card-2 { animation-delay: 2s; }
+.floating-card.card-3 { animation-delay: 4s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
