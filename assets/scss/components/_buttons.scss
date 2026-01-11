@@ -1,11 +1,8 @@
-/* CTA buttons */
-
-.cta-button {
+/* Миксин для базовых стилей кнопок */
+@mixin button-base {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: var(--primary-color);
-  color: var(--white-color);
   padding: 15px 30px;
   border-radius: var(--border-radius);
   font-weight: bold;
@@ -14,6 +11,25 @@
   border: none;
   cursor: pointer;
   text-decoration: none;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--card-shadow-hover);
+    text-decoration: none;
+  }
+
+  &.large {
+    padding: 18px 40px;
+    font-size: 1.2rem;
+  }
+}
+
+/* CTA buttons - основной класс */
+.cta-button {
+  @include button-base;
+
+  background-color: var(--primary-color);
+  color: var(--white-color);
 
   &.primary {
     background: var(--gradient-primary);
@@ -30,65 +46,56 @@
     }
   }
 
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--card-shadow-hover);
-    text-decoration: none;
+  &:hover:not(.secondary) {
     background-color: var(--primary-hover-color);
-  }
-
-  &.large {
-    padding: 18px 40px;
-    font-size: 1.2rem;
   }
 }
 
-/* Legacy helpers */
+/* Legacy helpers - обратная совместимость */
+
+/* .btn и .btn-primary используют те же стили, что и .cta-button */
+.btn,
 .btn-primary,
 .submit-btn,
 .form-button {
-  background: var(--gradient-primary);
+  @include button-base;
+
+  background-color: var(--primary-color);
   color: var(--white-color);
+
+  &.primary {
+    background: var(--gradient-primary);
+  }
+
+  &:hover {
+    background-color: var(--primary-hover-color);
+  }
 }
 
 .btn-secondary,
 .view-all-button {
+  @include button-base;
+
   background: transparent;
   border: 2px solid var(--primary-color);
   color: var(--primary-color);
-}
-
-/* Стили по умолчанию для .btn */
-.btn {
-  background: var(--white-color);
-  color: var(--primary-color);
-}
-
-/* Общие стили кнопок */
-.btn,
-.submit-btn,
-.form-button,
-.view-all-button {
-  display: inline-block;
-  padding: 12px 30px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  font-size: 1rem;
-  border-radius: var(--border-radius);
-  border: none;
-  cursor: pointer;
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgb(0, 0, 0, 0.1);
+    background: var(--primary-color);
+    color: var(--white-color);
   }
 }
 
-/* Ховер для вторичных кнопок */
-.btn-secondary:hover,
-.view-all-button:hover {
-  background: var(--primary-color);
-  color: var(--white-color);
+/* Стили по умолчанию для .btn (если используется без модификаторов) */
+.btn:not(.primary, .secondary, .btn-primary, .btn-secondary) {
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+
+  &:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+  }
 }
 
 /* Кнопка "Наверх" */

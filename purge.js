@@ -8,6 +8,7 @@ async function purgeCSS() {
     // 🔍 Где искать используемые классы
     content: [
       'index.html',                           // Главная страница
+      'new_index.html',                       // Новая версия главной страницы
       'site-pages/**/*.html',                 // Все остальные страницы
       'site-components/**/*.html',            // Компоненты (header, footer)
       'assets/js/**/*.js'                     // JS — на случай динамических классов
@@ -28,11 +29,13 @@ async function purgeCSS() {
       // Классы по шаблону (регулярки)
       greedy: [
         /^btn-/,           // Все кнопки: btn-primary, btn-lg
-        /^card-/,          // Все карточки: card, card--competency
-        /^text-/,          // Цвета текста: text-center, text-primary
-        /^bg-/,            // Фоны: bg-light
+        /^card-/,          // Все карточки: card, card--competency, case-card-interactive
+        /^case-/,          // Кейсы: case-card, case-card-interactive, case-icon, case-footer
+        /^tech-/,          // Технологии: tech-card, tech-grid-cards, tech-stack-section
+        /^text-/,          // Цвета текста: text-center, text-primary, text-blue-600
+        /^bg-/,            // Фоны: bg-light, bg-blue-100
         /^flex/,           // .flex И flex-* классы (включая просто .flex)
-        /^grid-/,          // Grid: grid-2, grid-3
+        /^grid-/,          // Grid: grid-2, grid-3, cases-grid-3
         /^animate-/,       // Анимации
         /^items-/,         // items-center, items-start
         /^justify-/,       // justify-center, justify-between
