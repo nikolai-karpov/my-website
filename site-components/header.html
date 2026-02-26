@@ -97,6 +97,26 @@
         visibility: visible;
     }
 
+    /* Гарантированные стили для мобильного меню */
+    .mobile-nav {
+        position: fixed !important;
+        top: 0 !important;
+        right: 0 !important;
+        width: 300px !important;
+        height: 100vh !important;
+        background: var(--white-color) !important;
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1) !important;
+        transition: transform 0.3s ease !important;
+        z-index: 101 !important;
+        padding: 80px 30px 30px !important;
+        overflow-y: auto !important;
+        transform: translateX(100%) !important;
+    }
+
+    .mobile-nav[aria-hidden="false"] {
+        transform: translateX(0) !important;
+    }
+
     /* Подсветка активного пункта меню */
     .desktop-nav a.active,
     .mobile-nav a.active {
@@ -129,10 +149,18 @@
             const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
             const isMenuOpen = !isExpanded; // Новое состояние меню
             
+            console.log('Toggle menu:', { isExpanded, isMenuOpen });
+            
             hamburger.setAttribute('aria-expanded', isMenuOpen);
             mobileNav.setAttribute('aria-hidden', !isMenuOpen); // false когда открыто
             mobileOverlay.classList.toggle('active', isMenuOpen);
             document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+            
+            console.log('After toggle:', {
+                hamburgerAria: hamburger.getAttribute('aria-expanded'),
+                navAria: mobileNav.getAttribute('aria-hidden'),
+                overlayClass: mobileOverlay.className
+            });
         }
 
         hamburger.addEventListener('click', toggleMenu);
