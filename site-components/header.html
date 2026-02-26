@@ -152,24 +152,28 @@
 
         function toggleMenu() {
             const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-            const isMenuOpen = !isExpanded; // Новое состояние меню
+            // Если кнопка развернута (крестик), то меню должно быть открыто
+            // Если кнопка свернута (гамбургер), то меню должно быть закрыто
+            const isMenuOpen = isExpanded;
             
             console.log('Toggle menu:', { isExpanded, isMenuOpen });
             
-            hamburger.setAttribute('aria-expanded', isMenuOpen);
-            mobileNav.setAttribute('aria-hidden', !isMenuOpen); // false когда открыто
-            mobileOverlay.classList.toggle('active', isMenuOpen);
-            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+            // При клике меняем состояние на противоположное
+            const newExpandedState = !isExpanded;
+            hamburger.setAttribute('aria-expanded', newExpandedState);
+            mobileNav.setAttribute('aria-hidden', !newExpandedState); // false когда открыто
+            mobileOverlay.classList.toggle('active', newExpandedState);
+            document.body.style.overflow = newExpandedState ? 'hidden' : '';
             
             // Принудительно применяем стили для отладки
-            if (isMenuOpen) {
+            if (newExpandedState) {
                 mobileNav.style.transform = 'translateX(0)';
                 mobileNav.style.right = '0';
-                console.log('Applied styles:', mobileNav.style.transform, mobileNav.style.right);
+                console.log('Menu OPENED - applied styles:', mobileNav.style.transform, mobileNav.style.right);
             } else {
                 mobileNav.style.transform = 'translateX(100%)';
                 mobileNav.style.right = '-300px';
-                console.log('Applied hidden styles:', mobileNav.style.transform, mobileNav.style.right);
+                console.log('Menu CLOSED - applied styles:', mobileNav.style.transform, mobileNav.style.right);
             }
             
             console.log('After toggle:', {
