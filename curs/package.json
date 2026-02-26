@@ -1,0 +1,50 @@
+{
+  "name": "ai-course-methodology-portfolio",
+  "version": "1.0.0",
+  "description": "Интерактивный портфель методологии AI-курса - веб-приложение для визуализации дорожной карты внедрения LLM и технологической карты учебного курса",
+  "main": "index.html",
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./css/style.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./css/style.css --minify",
+    "build:css": "tailwindcss -i ./src/input.css -o ./css/style.css",
+    "serve": "live-server . --port=3000 --watch=.,css/*.css,js/*.js,data/*.json --ignore=node_modules",
+    "dev:full": "concurrently \"npm run dev\" \"npm run serve\"",
+    "test": "echo \"No tests specified\" && exit 0",
+    "clean": "rm -rf css/style.css"
+  },
+  "keywords": [
+    "ai",
+    "llm",
+    "курс",
+    "портфолио",
+    "frontend",
+    "tailwind",
+    "визуализация"
+  ],
+  "author": "Frontend Developer",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.3.3",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "concurrently": "^8.2.0",
+    "live-server": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11",
+    "maintained node versions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://sourcecraft.dev/nikolai-pir-s-ru/curs"
+  },
+  "bugs": {
+    "url": "https://sourcecraft.dev/nikolai-pir-s-ru/curs/issues"
+  },
+  "homepage": "https://sourcecraft.dev/nikolai-pir-s-ru/curs"
+}
