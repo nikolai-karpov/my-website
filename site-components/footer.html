@@ -68,3 +68,36 @@
         </nav>
     </div>
 </footer>
+
+<script>
+    // Инициализация после загрузки всех компонентов
+    document.addEventListener('DOMContentLoaded', function() {
+        // Небольшая задержка чтобы гарантировать загрузку header
+        setTimeout(function() {
+            console.log('Initializing components...');
+            
+            // Инициализируем мобильное меню
+            if (typeof window.initializeMobileMenu === 'function') {
+                window.initializeMobileMenu();
+            } else {
+                console.warn('initializeMobileMenu function not found');
+            }
+            
+            // Инициализируем переключатель темы
+            if (typeof window.initializeThemeToggle === 'function') {
+                window.initializeThemeToggle();
+            } else {
+                console.warn('initializeThemeToggle function not found');
+            }
+            
+            // Устанавливаем активную страницу
+            if (typeof window.setActivePage === 'function') {
+                window.setActivePage();
+            } else {
+                console.warn('setActivePage function not found');
+            }
+            
+            console.log('Component initialization complete');
+        }, 100);
+    });
+</script>

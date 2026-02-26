@@ -135,11 +135,19 @@
 </style>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    // Регистрация функций для мобильного меню (вызываются из футера)
+    window.initializeMobileMenu = function() {
         const hamburger = document.querySelector('.hamburger');
         const mobileNav = document.querySelector('.mobile-nav');
         const mobileOverlay = document.querySelector('.mobile-overlay');
         const mobileLinks = document.querySelectorAll('.mobile-nav a');
+
+        if (!hamburger || !mobileNav || !mobileOverlay) {
+            console.error('Mobile menu elements not found!');
+            return;
+        }
+
+        console.log('Mobile menu elements found, initializing...');
 
         // Инициализация начального состояния
         hamburger.setAttribute('aria-expanded', 'false');
@@ -188,29 +196,23 @@
         hamburger.addEventListener('click', toggleMenu);
         mobileOverlay.addEventListener('click', toggleMenu);
         mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
-    });
+        
+        console.log('Mobile menu initialized successfully');
+    };
 
-    function setActivePage() {
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        const links = document.querySelectorAll('.desktop-nav a, .mobile-nav a');
-
-        links.forEach(link => {
-            const href = link.getAttribute('href');
-            if (href === currentPage) {
-                link.classList.add('active');
-            }
-        });
-    }
-
-    // Вызвать после загрузки DOM
-    document.addEventListener('DOMContentLoaded', setActivePage);
-
-    // Переключатель темы
-    document.addEventListener('DOMContentLoaded', function() {
+    // Регистрация функций для переключателя темы
+    window.initializeThemeToggle = function() {
         const themeToggle = document.getElementById('theme-toggle');
         const themeToggleMobile = document.getElementById('theme-toggle-mobile');
         const themeIcon = document.getElementById('theme-icon');
         const themeIconMobile = document.getElementById('theme-icon-mobile');
+
+        if (!themeToggle || !themeIcon) {
+            console.error('Theme toggle elements not found!');
+            return;
+        }
+
+        console.log('Theme toggle elements found, initializing...');
 
         // Проверяем сохраненную тему или системные настройки
         const savedTheme = localStorage.getItem('theme');
@@ -224,8 +226,8 @@
             
             // Обновляем иконки
             const iconClass = theme === 'dark' ? 'fa-sun' : 'fa-moon';
-            themeIcon.className = `fas ${iconClass}`;
-            themeIconMobile.className = `fas ${iconClass}`;
+            if (themeIcon) themeIcon.className = `fas ${iconClass}`;
+            if (themeIconMobile) themeIconMobile.className = `fas ${iconClass}`;
         }
 
         // Устанавливаем начальную тему
@@ -239,7 +241,7 @@
         }
 
         themeToggle.addEventListener('click', toggleTheme);
-        themeToggleMobile.addEventListener('click', toggleTheme);
+        if (themeToggleMobile) themeToggleMobile.addEventListener('click', toggleTheme);
 
         // Следим за системными настройками
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
@@ -247,5 +249,20 @@
                 setTheme(e.matches ? 'dark' : 'light');
             }
         });
-    });
+
+        console.log('Theme toggle initialized successfully');
+    };
+
+    // Регистрация функции для активной страницы
+    window.setActivePage = function() {
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        const links = document.querySelectorAll('.desktop-nav a, .mobile-nav a');
+
+        links.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === currentPage) {
+                link.classList.add('active');
+            }
+        });
+    };
 </script>
