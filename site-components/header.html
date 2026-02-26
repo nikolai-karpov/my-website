@@ -97,24 +97,6 @@
         visibility: visible;
     }
 
-    .mobile-nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 300px;
-        height: 100vh;
-        background: var(--white-color);
-        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
-        transition: right 0.3s ease;
-        z-index: 999;
-        padding: 80px 30px 30px;
-        overflow-y: auto;
-    }
-
-    .mobile-nav[aria-hidden="false"] {
-        right: 0;
-    }
-
     /* Подсветка активного пункта меню */
     .desktop-nav a.active,
     .mobile-nav a.active {
