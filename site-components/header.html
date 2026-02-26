@@ -139,12 +139,18 @@
         const mobileOverlay = document.querySelector('.mobile-overlay');
         const mobileLinks = document.querySelectorAll('.mobile-nav a');
 
+        // Инициализация начального состояния
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileNav.setAttribute('aria-hidden', 'true');
+
         function toggleMenu() {
             const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-            hamburger.setAttribute('aria-expanded', !isExpanded);
-            mobileNav.setAttribute('aria-hidden', !isExpanded);
-            mobileOverlay.classList.toggle('active');
-            document.body.style.overflow = !isExpanded ? 'hidden' : '';
+            const isMenuOpen = !isExpanded; // Новое состояние меню
+            
+            hamburger.setAttribute('aria-expanded', isMenuOpen);
+            mobileNav.setAttribute('aria-hidden', !isMenuOpen); // false когда открыто
+            mobileOverlay.classList.toggle('active', isMenuOpen);
+            document.body.style.overflow = isMenuOpen ? 'hidden' : '';
         }
 
         hamburger.addEventListener('click', toggleMenu);
