@@ -144,6 +144,11 @@
         // Инициализация начального состояния
         hamburger.setAttribute('aria-expanded', 'false');
         mobileNav.setAttribute('aria-hidden', 'true');
+        
+        // Принудительно скрываем меню при загрузке
+        mobileNav.style.transform = 'translateX(100%)';
+        mobileNav.style.right = '-300px';
+        console.log('Initial nav styles applied');
 
         function toggleMenu() {
             const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
@@ -156,10 +161,23 @@
             mobileOverlay.classList.toggle('active', isMenuOpen);
             document.body.style.overflow = isMenuOpen ? 'hidden' : '';
             
+            // Принудительно применяем стили для отладки
+            if (isMenuOpen) {
+                mobileNav.style.transform = 'translateX(0)';
+                mobileNav.style.right = '0';
+                console.log('Applied styles:', mobileNav.style.transform, mobileNav.style.right);
+            } else {
+                mobileNav.style.transform = 'translateX(100%)';
+                mobileNav.style.right = '-300px';
+                console.log('Applied hidden styles:', mobileNav.style.transform, mobileNav.style.right);
+            }
+            
             console.log('After toggle:', {
                 hamburgerAria: hamburger.getAttribute('aria-expanded'),
                 navAria: mobileNav.getAttribute('aria-hidden'),
-                overlayClass: mobileOverlay.className
+                overlayClass: mobileOverlay.className,
+                navTransform: mobileNav.style.transform,
+                navRight: mobileNav.style.right
             });
         }
 
