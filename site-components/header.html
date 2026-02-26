@@ -135,15 +135,18 @@
 </style>
 
 <script>
+    console.log('=== HEADER LOADING - REGISTERING FUNCTIONS ===');
+    
     // Регистрация функций для мобильного меню (вызываются из футера)
     window.initializeMobileMenu = function() {
+        console.log('initializeMobileMenu called');
         const hamburger = document.querySelector('.hamburger');
         const mobileNav = document.querySelector('.mobile-nav');
         const mobileOverlay = document.querySelector('.mobile-overlay');
         const mobileLinks = document.querySelectorAll('.mobile-nav a');
 
         if (!hamburger || !mobileNav || !mobileOverlay) {
-            console.error('Mobile menu elements not found!');
+            console.error('Mobile menu elements not found!', { hamburger, mobileNav, mobileOverlay });
             return;
         }
 
@@ -199,16 +202,18 @@
         
         console.log('Mobile menu initialized successfully');
     };
+    console.log('initializeMobileMenu function registered');
 
     // Регистрация функций для переключателя темы
     window.initializeThemeToggle = function() {
+        console.log('initializeThemeToggle called');
         const themeToggle = document.getElementById('theme-toggle');
         const themeToggleMobile = document.getElementById('theme-toggle-mobile');
         const themeIcon = document.getElementById('theme-icon');
         const themeIconMobile = document.getElementById('theme-icon-mobile');
 
         if (!themeToggle || !themeIcon) {
-            console.error('Theme toggle elements not found!');
+            console.error('Theme toggle elements not found!', { themeToggle, themeIcon });
             return;
         }
 
@@ -252,9 +257,11 @@
 
         console.log('Theme toggle initialized successfully');
     };
+    console.log('initializeThemeToggle function registered');
 
     // Регистрация функции для активной страницы
     window.setActivePage = function() {
+        console.log('setActivePage called');
         const currentPage = window.location.pathname.split('/').pop() || 'index.html';
         const links = document.querySelectorAll('.desktop-nav a, .mobile-nav a');
 
@@ -265,4 +272,6 @@
             }
         });
     };
+    console.log('setActivePage function registered');
+    console.log('=== HEADER FUNCTIONS REGISTRATION COMPLETE ===');
 </script>

@@ -72,12 +72,34 @@
 <script>
     // Инициализация после загрузки всех компонентов
     document.addEventListener('DOMContentLoaded', function() {
-        // Небольшая задержка чтобы гарантировать загрузку header
+        // Увеличиваем задержку и добавляем детальную отладку
         setTimeout(function() {
-            console.log('Initializing components...');
+            console.log('=== COMPONENT INITIALIZATION START ===');
+            console.log('Checking DOM elements...');
+            
+            // Проверяем наличие элементов
+            const hamburger = document.querySelector('.hamburger');
+            const mobileNav = document.querySelector('.mobile-nav');
+            const mobileOverlay = document.querySelector('.mobile-overlay');
+            const themeToggle = document.getElementById('theme-toggle');
+            
+            console.log('Elements found:', {
+                hamburger: !!hamburger,
+                mobileNav: !!mobileNav,
+                mobileOverlay: !!mobileOverlay,
+                themeToggle: !!themeToggle
+            });
+            
+            // Проверяем наличие функций
+            console.log('Functions available:', {
+                initializeMobileMenu: typeof window.initializeMobileMenu,
+                initializeThemeToggle: typeof window.initializeThemeToggle,
+                setActivePage: typeof window.setActivePage
+            });
             
             // Инициализируем мобильное меню
             if (typeof window.initializeMobileMenu === 'function') {
+                console.log('Calling initializeMobileMenu...');
                 window.initializeMobileMenu();
             } else {
                 console.warn('initializeMobileMenu function not found');
@@ -85,6 +107,7 @@
             
             // Инициализируем переключатель темы
             if (typeof window.initializeThemeToggle === 'function') {
+                console.log('Calling initializeThemeToggle...');
                 window.initializeThemeToggle();
             } else {
                 console.warn('initializeThemeToggle function not found');
@@ -92,12 +115,13 @@
             
             // Устанавливаем активную страницу
             if (typeof window.setActivePage === 'function') {
+                console.log('Calling setActivePage...');
                 window.setActivePage();
             } else {
                 console.warn('setActivePage function not found');
             }
             
-            console.log('Component initialization complete');
-        }, 100);
+            console.log('=== COMPONENT INITIALIZATION COMPLETE ===');
+        }, 500); // Увеличили задержку до 500мс
     });
 </script>
