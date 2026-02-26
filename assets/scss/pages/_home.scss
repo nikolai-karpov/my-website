@@ -363,25 +363,34 @@
   flex-shrink: 0;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 12px rgb(0, 0, 0, 0.08);
+  background: linear-gradient(135deg, rgb(74, 144, 226, 0.1) 0%, rgb(74, 144, 226, 0.05) 100%);
+  color: var(--primary-color);
+}
 
-  &.bg-blue-100 {
-    background: #e0f2fe;
-    color: #0284c7;
+.tech-card__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  transition: transform 0.3s ease;
+  background: linear-gradient(135deg, rgb(74, 144, 226, 0.1) 0%, rgb(74, 144, 226, 0.05) 100%);
+  color: var(--primary-color);
+}
+
+/* Темная тема для иконок */
+[data-theme="dark"] {
+  .case-icon {
+    background: linear-gradient(135deg, rgb(74, 144, 226, 0.2) 0%, rgb(74, 144, 226, 0.1) 100%);
+    color: var(--primary-color);
   }
-
-  &.bg-purple-100 {
-    background: #f3e8ff;
-    color: #9333ea;
-  }
-
-  &.bg-green-100 {
-    background: #dcfce7;
-    color: #16a34a;
-  }
-
-  &.bg-orange-100 {
-    background: #fed7aa;
-    color: #ea580c;
+  
+  .tech-card__icon {
+    background: linear-gradient(135deg, rgb(74, 144, 226, 0.2) 0%, rgb(74, 144, 226, 0.1) 100%);
+    color: var(--primary-color);
   }
 }
 
@@ -426,64 +435,6 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-}
-
-.tech-card__icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.8rem;
-  margin-bottom: 16px;
-  transition: transform 0.3s ease;
-
-  /* Брендовые цвета для иконок */
-  &.python {
-    background: #e0f2fe;
-    color: #0284c7;
-  }
-
-  &.powerbi {
-    background: #fff7ed;
-    color: #f59e0b;
-  }
-
-  &.bpmn {
-    background: #f0fdf4;
-    color: #16a34a;
-  }
-
-  &.jira {
-    background: #eff6ff;
-    color: #2563eb;
-  }
-
-  &.figma {
-    background: #faf5ff;
-    color: #a855f7;
-  }
-
-  &.prompt {
-    background: #fdf4ff;
-    color: #db2777;
-  }
-
-  &.api {
-    background: #f1f5f9;
-    color: #475569;
-  }
-
-  &.cloud {
-    background: #fee2e2;
-    color: #dc2626;
-  }
-
-  &.nocode {
-    background: #fff1f2;
-    color: #e11d48;
-  }
 }
 
 .tech-card:hover {

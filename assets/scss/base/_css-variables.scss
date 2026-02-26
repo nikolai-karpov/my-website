@@ -31,3 +31,24 @@
     /* Анимации */
     --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
+/* Темная тема */
+[data-theme="dark"] {
+    --primary-color: #60a5fa;
+    --primary-hover-color: #3b82f6;
+    --primary-dark: #2563eb;
+    --dark-color: #f8fafc;
+    --text-color: #cbd5e1;
+    --light-bg-color: #1e293b;
+    --white-color: #0f172a;
+    --border-color: #334155;
+
+    /* Градиенты для темной темы */
+    --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    --gradient-accent: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
+    --neural-glow: rgb(96, 165, 250, 0.15);
+
+    /* Тени для темной темы */
+    --card-shadow: 0 10px 40px rgb(0, 0, 0, 0.3);
+    --card-shadow-hover: 0 20px 60px rgb(0, 0, 0, 0.4);
+}

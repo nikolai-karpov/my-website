@@ -10,6 +10,9 @@
                 <li><a href="/site-pages/case-studies/index.html">Кейсы</a></li>
                 <li><a href="/site-pages/results.html">Результаты</a></li>
                 <li><a href="/site-pages/contacts.html" class="cta-button primary">Контакты</a></li>
+                <li><button class="theme-toggle" id="theme-toggle" aria-label="Переключить тему">
+                    <i class="fas fa-moon" id="theme-icon"></i>
+                </button></li>
             </ul>
         </nav>
 
@@ -31,6 +34,10 @@
                 <li><a href="/site-pages/case-studies/index.html">Кейсы</a></li>
                 <li><a href="/site-pages/results.html">Результаты</a></li>
                 <li><a href="/site-pages/contacts.html">Контакты</a></li>
+                <li><button class="theme-toggle mobile-nav-item" id="theme-toggle-mobile" aria-label="Переключить тему">
+                    <i class="fas fa-moon" id="theme-icon-mobile"></i>
+                    <span>Переключить тему</span>
+                </button></li>
             </ul>
         </nav>
     </div>
@@ -159,4 +166,48 @@
 
     // Вызвать после загрузки DOM
     document.addEventListener('DOMContentLoaded', setActivePage);
+
+    // Переключатель темы
+    document.addEventListener('DOMContentLoaded', function() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const themeIcon = document.getElementById('theme-icon');
+        const themeIconMobile = document.getElementById('theme-icon-mobile');
+
+        // Проверяем сохраненную тему или системные настройки
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+
+        // Применяем тему
+        function setTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            
+            // Обновляем иконки
+            const iconClass = theme === 'dark' ? 'fa-sun' : 'fa-moon';
+            themeIcon.className = `fas ${iconClass}`;
+            themeIconMobile.className = `fas ${iconClass}`;
+        }
+
+        // Устанавливаем начальную тему
+        setTheme(currentTheme);
+
+        // Обработчики кликов
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        }
+
+        themeToggle.addEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', toggleTheme);
+
+        // Следим за системными настройками
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem('theme')) {
+                setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+    });
 </script>

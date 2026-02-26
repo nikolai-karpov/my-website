@@ -54,18 +54,19 @@
 .mobile-nav {
   position: fixed;
   top: 0;
-  right: -100%; /* Скрыто за экраном */
+  right: 0;
   width: 300px;
   height: 100vh;
   background: var(--white-color);
   box-shadow: -5px 0 30px rgb(0, 0, 0, 0.1);
-  transition: right 0.3s ease;
-  z-index: 999;
+  transition: transform 0.3s ease;
+  z-index: 101;
   padding: 80px 30px 30px;
   overflow-y: auto;
+  transform: translateX(100%); /* Скрыто за экраном через transform */
 
   &[aria-hidden="false"] {
-    right: 0; /* Показываем */
+    transform: translateX(0); /* Показываем */
   }
 
   ul {
@@ -261,7 +262,7 @@ i {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
-  z-index: 998;
+  z-index: 100;
 
   &.active {
     opacity: 1;
