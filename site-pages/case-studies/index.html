@@ -144,28 +144,28 @@
                 </div>
             </article>
 
-            <!-- КЕЙС: PSEUDONYMIZER MVP -->
+            <!-- КЕЙС: HR-АГЕНТ (N8N) -->
             <article class="case-card featured">
                 <div class="case-image">
-                    <img src="../../assets/images/case-report.jpeg" alt="Корпоративный анонимайзер документов: обезличивание перед LLM и интеграциями" loading="lazy">
-                    <div class="case-badge">ИБ / Данные</div>
+                    <img src="../../assets/images/case-automation.jpeg" alt="Автоматизация HR: n8n, Telegram и LLM" loading="lazy">
+                    <div class="case-badge">Workflow / HR</div>
                 </div>
                 <div class="case-content">
-                    <span class="case-client">MVP в контейнере</span>
-                    <h3>Pseudonymizer MVP — корпоративный анонимайзер документов</h3>
+                    <span class="case-client">People Ops</span>
+                    <h3>Агент для HR на n8n: от аудио к типизированному отчёту</h3>
                     <p class="case-description">
-                        Одностраничное приложение в Docker: гибридная детекция (regex + spaCy NER), кастомные сущности из словаря, детерминистичные плейсхолдеры, сессии для обратимого восстановления, асинхронная обработка крупных PDF и отдельный JSON API для почтовых воркеров. Веб-UI, настройки инстанса, мониторинг и LLM-чат только по уже обезличенному тексту.
+                        End-to-end сценарий в Telegram: транскрибация с метками спикеров, обогащённая стенограмма, авто-классификация типа HR-встречи и запуск одного из шести промптовых шаблонов анализа. Результат — в чат частями, на почту и как Word через вспомогательный сервис конвертации.
                     </p>
 
                     <div class="tech-stack">
-                        <span class="tech-item">FastAPI</span>
-                        <span class="tech-item">spaCy</span>
-                        <span class="tech-item">Docker</span>
-                        <span class="tech-item">SQLite</span>
-                        <span class="tech-item">Prometheus</span>
+                        <span class="tech-item">n8n</span>
+                        <span class="tech-item">Telegram</span>
+                        <span class="tech-item">AssemblyAI</span>
+                        <span class="tech-item">OpenAI</span>
+                        <span class="tech-item">SMTP · DOCX</span>
                     </div>
 
-                    <a href="pseudonymizer-mvp.html" class="case-link">
+                    <a href="hr-n8n-agent.html" class="case-link">
                         <span>Разбор архитектуры</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
