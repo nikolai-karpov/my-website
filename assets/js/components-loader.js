@@ -1,3 +1,11 @@
+/* Страницы вроде site-pages/results.html проверяют typeof loadComponent; без этого
+   срабатывает «fallback» с неверным URL и перезаписывает шапку сообщением об ошибке. */
+window.loadComponent =
+    window.loadComponent ||
+    function loadComponentLegacyPlaceholder() {
+        /* фактическая загрузка — в DOMContentLoaded ниже */
+    };
+
 document.addEventListener("DOMContentLoaded", function () {
     // Определяем базовый путь на основе текущего location
     function getBasePath() {
