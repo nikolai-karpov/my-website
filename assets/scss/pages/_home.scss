@@ -394,6 +394,35 @@
   }
 }
 
+/* --- Портфолио (кейсы) на главной: секция + сетка --- */
+.cases-section {
+  padding: 100px 0;
+  background: var(--light-bg-color);
+}
+
+.cases-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cases-cta {
+  margin-top: 48px;
+  text-align: center;
+}
+
+[data-theme="dark"] .cases-section {
+  background: rgb(15, 23, 42);
+}
+
 /* Старые стили удалены - теперь используются улучшенные стили внутри .case-card-interactive */
 
 /* --- 4. Tech Stack Section (Cards Grid) --- */

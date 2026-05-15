@@ -36,6 +36,7 @@ async function purgeCSS() {
         /^btn-/,           // Все кнопки: btn-primary, btn-lg
         /^card-/,          // Все карточки: card, card--competency, case-card-interactive
         /^case-/,          // Кейсы: case-card, case-card-interactive, case-icon, case-footer
+        /^cases-/,         // Главная: cases-section, cases-grid-3, cases-cta
         /^tech-/,          // Технологии: tech-card, tech-grid-cards, tech-stack-section
         /^text-/,          // Цвета текста: text-center, text-primary, text-blue-600
         /^bg-/,            // Фоны: bg-light, bg-blue-100
