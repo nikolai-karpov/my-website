@@ -3,201 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Методология - AI Implementation Playbook</title>
-    <link href="../assets/css/main.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Методология | Карпов Николай — внедрение ИИ</title>
+    <meta name="description" content="Системный подход к внедрению ИИ: диагностика, прототипирование и масштабирование решений.">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="../assets/css/main.css" as="style">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
 </head>
-<body class="bg-gray-50">
-    <div id="header"></div>
+<body class="methodology-page">
 
-    <main>
-        <!-- Hero Section -->
-        <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
-            <div class="container mx-auto px-4 text-center">
-                <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
-                    Методология <span class="text-blue-600">AI Implementation Playbook</span>
-                </h1>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                    Системный подход к внедрению искусственного интеллекта в ваш бизнес
-                </p>
+<header id="main-header" data-component="site-components/header.html"></header>
+
+<main>
+    <section class="methodology-hero">
+        <div class="container">
+            <h1>Методология <span class="methodology-hero__accent">AI Implementation Playbook</span></h1>
+            <p>Системный подход к внедрению искусственного интеллекта в операционные процессы: от диагностики до устойчивого результата.</p>
+        </div>
+    </section>
+
+    <section class="methodology-panel">
+        <div class="container">
+            <div class="methodology-panel__intro">
+                <h2>Глубокая диагностика</h2>
+                <p>Комплексный анализ текущих бизнес-процессов и данных — основа для решений, которые реально работают в вашей среде.</p>
             </div>
-        </section>
 
-        <!-- Diagnostic Section -->
-        <section class="py-16 bg-white">
-            <div class="container mx-auto px-4 max-w-6xl lg:max-w-7xl">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Глубокая диагностика</h2>
-                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Комплексный анализ текущих бизнес-процессов с использованием AI-инструментов
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <div class="space-y-8">
-                            <div class="flex items-start space-x-4">
-                                <div class="bg-blue-100 p-3 rounded-full flex-shrink-0">
-                                    <i class="fas fa-search text-blue-600 text-2xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Анализ потоков данных</h3>
-                                    <p class="text-gray-600 leading-relaxed">
-                                        Мы изучаем, как данные перемещаются по вашей системе, выявляем узкие места и возможности для автоматизации.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start space-x-4">
-                                <div class="bg-blue-100 p-3 rounded-full flex-shrink-0">
-                                    <i class="fas fa-chart-line text-blue-600 text-2xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Оценка эффективности</h3>
-                                    <p class="text-gray-600 leading-relaxed">
-                                        Анализируем текущую эффективность процессов и определяем области с наибольшим потенциалом для улучшения.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start space-x-4">
-                                <div class="bg-blue-100 p-3 rounded-full flex-shrink-0">
-                                    <i class="fas fa-lightbulb text-blue-600 text-2xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Идентификация возможностей</h3>
-                                    <p class="text-gray-600 leading-relaxed">
-                                        Находим конкретные точки внедрения AI-решений, которые принесут максимальную пользу.
-                                    </p>
-                                </div>
-                            </div>
+            <div class="methodology-split">
+                <div class="methodology-feature-stack">
+                    <div class="methodology-feature">
+                        <div class="methodology-feature__icon methodology-feature__icon--blue" aria-hidden="true">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="methodology-feature__body">
+                            <h3>Анализ потоков данных</h3>
+                            <p>Изучаем, как данные движутся по системе, находим узкие места и точки, где автоматизация и LLM дадут максимальный эффект.</p>
                         </div>
                     </div>
-
-                    <div class="bg-gray-50 p-8 rounded-2xl">
-                        <h3 class="text-2xl font-semibold text-gray-800 mb-6">Результат диагностики</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-center space-x-3">
-                                <i class="fas fa-check-circle text-green-500 text-lg"></i>
-                                <span class="text-gray-700">Детальный отчет о текущем состоянии процессов</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <i class="fas fa-check-circle text-green-500 text-lg"></i>
-                                <span class="text-gray-700">Рекомендации по оптимизации</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <i class="fas fa-check-circle text-green-500 text-lg"></i>
-                                <span class="text-gray-700">План внедрения AI-решений</span>
-                            </div>
-                            <div class="flex items-center space-x-3">
-                                <i class="fas fa-check-circle text-green-500 text-lg"></i>
-                                <span class="text-gray-700">Оценка ROI от внедрения</span>
-                            </div>
+                    <div class="methodology-feature">
+                        <div class="methodology-feature__icon methodology-feature__icon--blue" aria-hidden="true">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="methodology-feature__body">
+                            <h3>Оценка эффективности</h3>
+                            <p>Сопоставляем фактическую нагрузку, время цикла и качество результата — чтобы приоритизировать внедрение по ROI.</p>
+                        </div>
+                    </div>
+                    <div class="methodology-feature">
+                        <div class="methodology-feature__icon methodology-feature__icon--blue" aria-hidden="true">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="methodology-feature__body">
+                            <h3>Карта возможностей</h3>
+                            <p>Формируем перечень сценариев с ИИ с оценкой рисков, зависимостей от данных и готовности команды.</p>
                         </div>
                     </div>
                 </div>
+
+                <aside class="methodology-aside-card">
+                    <h3>Результат диагностики</h3>
+                    <ul class="methodology-checklist">
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Отчёт о текущем состоянии процессов и данных</span></li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Рекомендации по оптимизации и данным</span></li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>План пилотов и критерии успеха</span></li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Оценка потенциального эффекта (время / деньги)</span></li>
+                    </ul>
+                </aside>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Prototyping Section -->
-        <section class="py-16 bg-gray-50">
-            <div class="container mx-auto px-4 max-w-6xl lg:max-w-7xl">
-                <div class="text-center mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Быстрое прототипирование</h2>
-                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Создание рабочих прототипов AI-решений для тестирования и валидации гипотез
-                    </p>
-                </div>
+    <section class="methodology-panel methodology-panel--muted">
+        <div class="container">
+            <div class="methodology-panel__intro">
+                <h2>Быстрое прототипирование</h2>
+                <p>Рабочие прототипы для проверки гипотез на реальных задачах — без многомесячных «больших релизов».</p>
+            </div>
 
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="order-2 md:order-1">
-                        <div class="bg-white p-8 rounded-2xl shadow-sm">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-6">Процесс разработки</h3>
-                            <div class="space-y-4">
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-1 text-blue-500 text-sm bg-blue-100 rounded-full w-6 h-6 flex items-center justify-center"></i>
-                                    <span class="text-gray-700">Анализ требований и данных</span>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-2 text-blue-500 text-sm bg-blue-100 rounded-full w-6 h-6 flex items-center justify-center"></i>
-                                    <span class="text-gray-700">Разработка MVP-решения</span>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-3 text-blue-500 text-sm bg-blue-100 rounded-full w-6 h-6 flex items-center justify-center"></i>
-                                    <span class="text-gray-700">Тестирование и валидация</span>
-                                </div>
-                                <div class="flex items-center space-x-3">
-                                    <i class="fas fa-4 text-blue-500 text-sm bg-blue-100 rounded-full w-6 h-6 flex items-center justify-center"></i>
-                                    <span class="text-gray-700">Итерации и улучшения</span>
-                                </div>
+            <div class="methodology-split methodology-split__reverse">
+                <div class="methodology-split__col methodology-split__col--visual">
+                    <div class="card-prototyping">
+                        <h3>Процесс разработки</h3>
+                        <div class="methodology-steps">
+                            <div class="methodology-step">
+                                <span class="methodology-step__num">1</span>
+                                <span>Уточнение сценария, данных и ограничений интеграции</span>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="order-1 md:order-2">
-                        <div class="space-y-8">
-                            <div class="flex items-start space-x-4">
-                                <div class="bg-green-100 p-3 rounded-full flex-shrink-0">
-                                    <i class="fas fa-bolt text-green-600 text-2xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Быстрая разработка</h3>
-                                    <p class="text-gray-600 leading-relaxed">
-                                        Создаем прототипы за 2-4 недели, используя современные фреймворки и готовые решения.
-                                    </p>
-                                </div>
+                            <div class="methodology-step">
+                                <span class="methodology-step__num">2</span>
+                                <span>MVP: цепочка промптов, RAG или API-обвязка под ваш стек</span>
                             </div>
-
-                            <div class="flex items-start space-x-4">
-                                <div class="bg-green-100 p-3 rounded-full flex-shrink-0">
-                                    <i class="fas fa-robot text-green-600 text-2xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Гибкая архитектура</h3>
-                                    <p class="text-gray-600 leading-relaxed">
-                                        Прототипы легко масштабируются и адаптируются под ваши будущие потребности.
-                                    </p>
-                                </div>
+                            <div class="methodology-step">
+                                <span class="methodology-step__num">3</span>
+                                <span>Пилот с измеримыми метриками и обратной связью пользователей</span>
                             </div>
-
-                            <div class="flex items-start space-x-4">
-                                <div class="bg-green-100 p-3 rounded-full flex-shrink-0">
-                                    <i class="fas fa-sync-alt text-green-600 text-2xl"></i>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Итеративное улучшение</h3>
-                                    <p class="text-gray-600 leading-relaxed">
-                                        Постоянно улучшаем решения на основе обратной связи и результатов тестирования.
-                                    </p>
-                                </div>
+                            <div class="methodology-step">
+                                <span class="methodology-step__num">4</span>
+                                <span>Итерации: доработка модели, данных и UX до целевого качества</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Начните с бесплатной диагностики ваших процессов</h2>
-                <p class="text-xl mb-8 max-w-2xl mx-auto">
-                    Получите детальный анализ текущего состояния и рекомендации по внедрению AI-решений
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="mailto:your.email@example.com" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                        <i class="fas fa-envelope mr-2"></i>Отправить заявку
-                    </a>
-                    <a href="https://t.me/your_username" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
-                        <i class="fab fa-telegram mr-2"></i>Связаться в Telegram
-                    </a>
+                <div class="methodology-split__col methodology-split__col--text methodology-feature-stack">
+                    <div class="methodology-feature">
+                        <div class="methodology-feature__icon methodology-feature__icon--green" aria-hidden="true">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="methodology-feature__body">
+                            <h3>Короткий цикл поставки</h3>
+                            <p>Первые проверяемые результаты — в горизонте недель: фокус на измеримом улучшении, а не на «слайдах о будущем».</p>
+                        </div>
+                    </div>
+                    <div class="methodology-feature">
+                        <div class="methodology-feature__icon methodology-feature__icon--green" aria-hidden="true">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="methodology-feature__body">
+                            <h3>Архитектура под рост</h3>
+                            <p>Прототип закладывает паттерны наблюдаемости, версионирования промптов и безопасного доступа к данным.</p>
+                        </div>
+                    </div>
+                    <div class="methodology-feature">
+                        <div class="methodology-feature__icon methodology-feature__icon--green" aria-hidden="true">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <div class="methodology-feature__body">
+                            <h3>Непрерывное улучшение</h3>
+                            <p>Метрики пилота → изменения в данных и промптах → повторный замер: замкнутый контур улучшений.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <div id="footer"></div>
+    <section class="cta-section">
+        <div class="container">
+            <h2>Начните с диагностики процессов</h2>
+            <p>Короткий созвон и предварительный разбор задачи — без обязательств. Дальше предложу формат пилота под ваш контекст.</p>
+            <div class="methodology-cta-actions">
+                <a href="mailto:nikolai@pir-s.ru" class="btn-primary btn-large"><i class="fas fa-envelope"></i>&nbsp;Написать на email</a>
+                <a href="https://t.me/Nikolai_999" class="btn-secondary btn-large" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i>&nbsp;Telegram</a>
+            </div>
+        </div>
+    </section>
+</main>
 
-    <script src="../assets/js/components-loader.js" defer></script>
+<footer id="main-footer" data-component="site-components/footer.html"></footer>
+
+<script src="../assets/js/components-loader.js" defer></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        if (typeof loadComponent === 'undefined' && typeof fetch !== 'undefined') {
+            var load = function (url, elementId) {
+                fetch(url).then(function (r) { return r.ok ? r.text() : Promise.reject(); })
+                    .then(function (html) {
+                        var el = document.getElementById(elementId);
+                        if (el) el.innerHTML = html;
+                    }).catch(function () {});
+            };
+            load('../site-components/header.html', 'main-header');
+            load('../site-components/footer.html', 'main-footer');
+        }
+    });
+</script>
 </body>
 </html>
