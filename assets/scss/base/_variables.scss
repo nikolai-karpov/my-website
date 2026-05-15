@@ -58,7 +58,7 @@
   --transition: all 0.3s ease;
 }
 
-/* Улучшенная поддержка темной темы */
+/* Улучшенная поддержка темной темы (системная, до явного выбора в JS) */
 @media (prefers-color-scheme: dark) {
   :root {
     /* Основные цвета для темной темы */
@@ -75,4 +75,45 @@
     --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     --neural-glow: rgb(74, 144, 226, 0.15);
   }
+}
+
+/*
+ * Ручной переключатель темы (data-theme на <html>).
+ * Специфичность выше, чем у :root в media — перекрывает prefers-color-scheme.
+ * Раньше эти токены жили в _css-variables.scss, который не импортировался в main.scss.
+ */
+[data-theme="light"] {
+  --primary-color: #4A90E2;
+  --primary-hover-color: #357ABD;
+  --primary-dark: #1d4ed8;
+  --dark-color: #2c3e50;
+  --text-color: #34495e;
+  --light-bg-color: #f8f9fa;
+  --white-color: #fff;
+  --border-color: #e0e0e0;
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --neural-glow: rgb(74, 144, 226, 0.1);
+  --card-shadow:
+    0 4px 6px -1px rgb(0, 0, 0, 0.05),
+    0 2px 4px -1px rgb(0, 0, 0, 0.03);
+  --card-shadow-hover:
+    0 20px 25px -5px rgb(0, 0, 0, 0.1),
+    0 10px 10px -5px rgb(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] {
+  --primary-color: #60a5fa;
+  --primary-hover-color: #3b82f6;
+  --primary-dark: #2563eb;
+  --dark-color: #f8fafc;
+  --text-color: #cbd5e1;
+  --light-bg-color: #1e293b;
+  --white-color: #0f172a;
+  --border-color: #334155;
+  --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  --gradient-accent: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
+  --neural-glow: rgb(96, 165, 250, 0.15);
+  --card-shadow: 0 10px 40px rgb(0, 0, 0, 0.3);
+  --card-shadow-hover: 0 20px 60px rgb(0, 0, 0, 0.4);
 }

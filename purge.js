@@ -26,6 +26,10 @@ async function purgeCSS() {
         'active', 'hidden', 'show', 'open', 'menu-open', 'visible', 'invisible',
         'loading', 'error', // Добавил общие классы
       ],
+      // Селекторы с атрибутом темы задаются только из JS (html data-theme) — иначе PurgeCSS вырезает стили тёмной темы
+      deep: [
+        /data-theme/,
+      ],
       // Классы по шаблону (регулярки)
       greedy: [
         /^btn-/,           // Все кнопки: btn-primary, btn-lg
