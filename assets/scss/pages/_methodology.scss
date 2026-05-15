@@ -328,10 +328,12 @@
 .methodology-hero--rich {
   position: relative;
   overflow: hidden;
-  padding: 96px 0 104px;
+
+  /* Нижний отступ героя: карточки этапов больше не заезжают сюда (см. .methodology-stats) */
+  padding: 96px 0 72px;
 
   @media (max-width: 768px) {
-    padding: 72px 0 80px;
+    padding: 72px 0 56px;
   }
 }
 
@@ -360,6 +362,9 @@
 .methodology-hero__inner {
   position: relative;
   z-index: 1;
+
+  /* Дополнительный «воздух» между лидом и концом синего блока (карточки ниже по потоку) */
+  padding-bottom: clamp(20px, 4vw, 40px);
 }
 
 .methodology-hero__eyebrow {
@@ -400,16 +405,16 @@
   color: #bfdbfe;
 }
 
-/* --- Плашки этапов (перекрытие героя) --- */
+/* --- Плашки этапов (после героя, без отрицательного margin — иначе «прилипают» к тексту) --- */
 .methodology-stats {
   position: relative;
   z-index: 2;
-  margin-top: -32px;
-  padding: 28px 0 80px;
+  margin-top: 0;
+  padding: clamp(40px, 6vw, 64px) 0 80px;
+  background: var(--white-color);
 
   @media (max-width: 768px) {
-    margin-top: -24px;
-    padding: 20px 0 64px;
+    padding: 36px 0 64px;
   }
 }
 
