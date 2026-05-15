@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кейс: HR-агент на n8n — транскрибация и анализ встреч | Карпов Николай</title>
+
+    <meta name="description" content="Оркестрация в n8n: Telegram, AssemblyAI, LLM-классификация типа HR-встречи и шесть сценариев отчёта. Единая точка входа для рекрутинга и оценки персонала.">
+    <meta name="keywords" content="n8n, HR automation, AssemblyAI, OpenAI, Telegram бот, транскрибация, оценка персонала">
+
+    <meta property="og:title" content="Кейс: HR-агент на n8n | Карпов Николай">
+    <meta property="og:description" content="От голосового файла в Telegram до структурированного отчёта: пайплайн с классификацией и мультиканальной доставкой.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://nikolai-karpov.github.io/site-pages/case-studies/hr-n8n-agent.html">
+
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+</head>
+<body class="loading">
+
+<div class="preloader">
+    <div class="preloader-content">
+        <div class="neural-network-animation">
+            <div class="neuron"></div>
+            <div class="neuron"></div>
+            <div class="neuron"></div>
+        </div>
+        <p>Загружаем кейс...</p>
+    </div>
+</div>
+
+<header id="main-header">
+    <div class="container">
+        <p>Загрузка навигации...</p>
+    </div>
+</header>
+
+<main>
+    <section class="case-hero">
+        <div class="container">
+            <div class="case-hero-content">
+                <div class="client-info">
+                    <i class="fas fa-users-cog"></i>
+                    <span>HR • Рекрутинг и оценка</span>
+                </div>
+
+                <h1>Кейс: HR-агент на n8n</h1>
+                <p class="subtitle">Рабочий workflow в n8n: приём аудио в Telegram, транскрибация с разметкой спикеров, обогащение стенограммы и маршрутизация к одному из шести типов HR-анализа — с выдачей в чат, на почту и в документ Word.</p>
+
+                <div class="key-metrics">
+                    <div class="metric-card">
+                        <span class="metric-value">6</span>
+                        <span class="metric-label">Сценариев отчёта (интервью, оценка, переход и др.)</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">Auto</span>
+                        <span class="metric-label">Классификация типа встречи перед анализом</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">3</span>
+                        <span class="metric-label">Канала доставки результата</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="case-details">
+        <div class="container">
+            <div class="case-section">
+                <div class="section-sidebar">
+                    <div class="section-badge">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <span>Проблема</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <h3>Записи встреч не превращаются сами в управленческие артефакты</h3>
+                    <p>У HR и руководителей накапливаются аудиозаписи собеседований и оценочных бесед. Ручная расшифровка долгая, а дальше каждый тип встречи исторически оформлялся разными шаблонами. Нужна была одна дисциплина: загрузил файл — получил согласованную структуру вывода без переключения между инструментами.</p>
+
+                    <div class="tech-stack">
+                        <span class="tech-item">Аудио как вход</span>
+                        <span class="tech-item">Разные форматы отчётов</span>
+                        <span class="tech-item">Повторяемость процесса</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-section">
+                <div class="section-sidebar">
+                    <div class="section-badge">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Решение</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <h3>Оркестрация в n8n с явной маршрутизацией</h3>
+                    <p>Точка входа — Telegram: пользователь отправляет голосовое или файл. Цепочка получает бинарные данные, отправляет их в сервис транскрибации с поддержкой спикеров и русского языка, затем сопоставляет голосовые сегменты с известными участниками через отдельный HTTP-сервис и передаёт сырой текст в LLM для оформления полной стенограммы с ролями и условными таймкодами.</p>
+                    <p>После сохранения результата бот предлагает меню: получить транскрипт, запустить авто-классификацию типа HR-встречи или выбрать анализ вручную. Классификатор относит запись к одному из шести типов (от интервью с кандидатом до комплексной оценки сотрудника); для каждого типа вызывается свой строго структурированный промпт крупной модели. Ответ нормализуется под HTML для Telegram, при необходимости режется на части по лимитам мессенджера; параллельно предусмотрена конвертация Markdown в DOCX и отправка на e-mail через SMTP.</p>
+
+                    <div class="process-flow">
+                        <h4>Укрупнённый поток:</h4>
+                        <div class="flow-steps">
+                            <div class="flow-step">
+                                <div class="step-number">1</div>
+                                <div class="step-title">Триггер и файл</div>
+                                <div class="step-description">Telegram-бот принимает аудио или документ, извлекает идентификаторы чата и файла</div>
+                            </div>
+                            <div class="flow-step">
+                                <div class="step-number">2</div>
+                                <div class="step-title">Транскрибация и спикеры</div>
+                                <div class="step-description">Внешний API распознаёт речь; кастомный матчер обогащает подписи спикеров</div>
+                            </div>
+                            <div class="flow-step">
+                                <div class="step-number">3</div>
+                                <div class="step-title">Стенограмма</div>
+                                <div class="step-description">LLM приводит текст к протоколу: роли, уверенность, полнота без сокращений смысла</div>
+                            </div>
+                            <div class="flow-step">
+                                <div class="step-number">4</div>
+                                <div class="step-title">Тип → анализ</div>
+                                <div class="step-description">Switch по действию пользователя или по классу встречи; отдельная ветка для «неизвестного» типа с логированием</div>
+                            </div>
+                            <div class="flow-step">
+                                <div class="step-number">5</div>
+                                <div class="step-title">Доставка</div>
+                                <div class="step-description">Inline-меню: сообщения в Telegram, письмо, вложение Word; обработка ошибок и повторных запросов</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-stack">
+                        <span class="tech-item">n8n</span>
+                        <span class="tech-item">Telegram</span>
+                        <span class="tech-item">AssemblyAI</span>
+                        <span class="tech-item">OpenAI API</span>
+                        <span class="tech-item">SMTP</span>
+                        <span class="tech-item">Кастомные HTTP-сервисы</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-section">
+                <div class="section-sidebar">
+                    <div class="section-badge">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Инженерный фокус</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <h3>Не только промпты, но и устойчивость пайплайна</h3>
+                    <p>В проекте заложены разделение «сообщение vs callback» для корректной работы inline-кнопок, хранение состояния сессии (ожидание e-mail, привязка к ключу сообщения), очистка устаревших записей, ветки retry при временных сбоях LLM и отдельные обработчики ошибок транскрибации и классификации. Это снижает «залипание» сценариев в продакшене и упрощает сопровождение.</p>
+                </div>
+            </div>
+
+            <div class="case-section">
+                <div class="section-sidebar">
+                    <div class="section-badge">
+                        <i class="fas fa-trophy"></i>
+                        <span>Эффект</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <h3>Единый HR-контур на no-code оркестраторе</h3>
+                    <p>Специалист по персоналу остаётся в привычном Telegram, а тяжёлая цепочка — распознавание, обогащение, выбор методики анализа и форматы выдачи — инкапсулирована в воспроизводимом workflow. Такой подход хорошо масштабируется сменой промптов и подключением корпоративных политик хранения данных без переписывания «с нуля».</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Нужен похожий агент под ваши регламенты?</h2>
+            <p>Могу спроектировать цепочку, промпт-систему и интеграции с учётом ИБ и хранения персональных данных.</p>
+            <a href="../contacts.html" class="btn btn-primary">Обсудить проект</a>
+        </div>
+    </section>
+</main>
+
+<footer id="main-footer">
+    <div class="container">
+        <p>Загрузка подвала...</p>
+    </div>
+</footer>
+
+<a href="#" class="back-to-top" aria-label="Наверх">
+    <i class="fas fa-chevron-up"></i>
+</a>
+
+<div class="mobile-footer-menu">
+    <nav class="mobile-nav-menu">
+        <a href="../../index.html" class="mobile-nav-item">
+            <i class="fas fa-home"></i>
+            <span>Главная</span>
+        </a>
+        <a href="../methodology.html" class="mobile-nav-item">
+            <i class="fas fa-cogs"></i>
+            <span>Методология</span>
+        </a>
+        <a href="index.html" class="mobile-nav-item active">
+            <i class="fas fa-briefcase"></i>
+            <span>Кейсы</span>
+        </a>
+        <a href="../contacts.html" class="mobile-nav-item">
+            <i class="fas fa-envelope"></i>
+            <span>Контакты</span>
+        </a>
+    </nav>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            document.body.classList.remove('loading');
+        }, 800);
+    });
+</script>
+<script src="../../assets/js/components-loader.js" defer></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            const header = document.getElementById('main-header');
+            const footer = document.getElementById('main-footer');
+            if (header && header.innerHTML.includes('Загрузка навигации')) {
+                const loadComponent = (url, elementId) => {
+                    fetch(url)
+                        .then(response => {
+                            if (!response.ok) throw new Error('Network error');
+                            return response.text();
+                        })
+                        .then(html => {
+                            document.getElementById(elementId).innerHTML = html;
+                        })
+                        .catch(() => {
+                            document.getElementById(elementId).innerHTML =
+                                '<div class="container"><p class="text-center">Компонент временно недоступен</p></div>';
+                        });
+                };
+                loadComponent('../../site-components/header.html', 'main-header');
+                loadComponent('../../site-components/footer.html', 'main-footer');
+            }
+        }, 2000);
+    });
+</script>
+
+</body>
+</html>
