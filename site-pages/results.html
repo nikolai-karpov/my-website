@@ -182,23 +182,25 @@
 <!-- Основной загрузчик компонентов -->
 <script src="../assets/js/components-loader.js" defer></script>
 
-<!-- Fallback: если components-loader.js не загрузился -->
+<!-- Резерв: только если components-loader.js не подключился (нет loadComponent) -->
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        if (typeof loadComponent === 'undefined') {
+        if (typeof loadComponent === 'undefined' && typeof fetch !== 'undefined') {
             console.warn('[Fallback] components-loader.js не загружен — используем fetch');
             const load = (url, elementId) => {
                 fetch(url)
                     .then(r => r.ok ? r.text() : Promise.reject())
                     .then(html => {
-                        document.getElementById(elementId).innerHTML = html;
+                        const el = document.getElementById(elementId);
+                        if (el) el.innerHTML = html;
                     })
                     .catch(() => {
-                        document.getElementById(elementId).innerHTML = `<div class="error">Компонент ${url} не загружен</div>`;
+                        const el = document.getElementById(elementId);
+                        if (el) el.innerHTML = `<div class="error">Компонент ${url} не загружен</div>`;
                     });
             };
-            load('site-components/header.html', 'main-header');
-            load('site-components/footer.html', 'main-footer');
+            load('../site-components/header.html', 'main-header');
+            load('../site-components/footer.html', 'main-footer');
         }
     });
 </script>
