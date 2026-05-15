@@ -6,10 +6,13 @@
     <title>Методология | Карпов Николай — внедрение ИИ</title>
     <meta name="description" content="Системный подход к внедрению ИИ: диагностика, прототипирование и масштабирование решений.">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="../assets/css/main.css" as="style">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body class="methodology-page">
@@ -17,58 +20,87 @@
 <header id="main-header" data-component="site-components/header.html"></header>
 
 <main>
-    <section class="methodology-hero">
+    <section class="methodology-hero methodology-hero--rich">
+        <div class="methodology-hero__glow" aria-hidden="true"></div>
+        <div class="methodology-hero__grid" aria-hidden="true"></div>
+        <div class="container methodology-hero__inner">
+            <p class="methodology-hero__eyebrow" data-aos="fade-up" data-aos-duration="700">Практика внедрения</p>
+            <h1 data-aos="fade-up" data-aos-duration="700" data-aos-delay="80">
+                Методология <span class="methodology-hero__accent">AI Implementation Playbook</span>
+            </h1>
+            <p class="methodology-hero__lead" data-aos="fade-up" data-aos-duration="700" data-aos-delay="140">
+                От диагностики процессов и данных до пилота с метриками — без «магии нейросети» и без бесконечных согласований ради согласований.
+            </p>
+        </div>
+    </section>
+
+    <section class="methodology-stats" aria-label="Этапы подхода">
         <div class="container">
-            <h1>Методология <span class="methodology-hero__accent">AI Implementation Playbook</span></h1>
-            <p>Системный подход к внедрению искусственного интеллекта в операционные процессы: от диагностики до устойчивого результата.</p>
+            <ul class="methodology-stats__grid">
+                <li class="methodology-stat-card" data-aos="fade-up" data-aos-duration="650">
+                    <span class="methodology-stat-card__icon" aria-hidden="true"><i class="fas fa-microscope"></i></span>
+                    <span class="methodology-stat-card__label">Диагностика</span>
+                    <span class="methodology-stat-card__hint">Процессы, данные, ограничения</span>
+                </li>
+                <li class="methodology-stat-card" data-aos="fade-up" data-aos-duration="650" data-aos-delay="90">
+                    <span class="methodology-stat-card__icon" aria-hidden="true"><i class="fas fa-flask"></i></span>
+                    <span class="methodology-stat-card__label">Прототип</span>
+                    <span class="methodology-stat-card__hint">MVP за недели, не за кварталы</span>
+                </li>
+                <li class="methodology-stat-card" data-aos="fade-up" data-aos-duration="650" data-aos-delay="180">
+                    <span class="methodology-stat-card__icon" aria-hidden="true"><i class="fas fa-chart-line"></i></span>
+                    <span class="methodology-stat-card__label">Масштаб</span>
+                    <span class="methodology-stat-card__hint">Метрики, владение, риски</span>
+                </li>
+            </ul>
         </div>
     </section>
 
     <section class="methodology-panel">
         <div class="container">
-            <div class="methodology-panel__intro">
+            <div class="section-header">
                 <h2>Глубокая диагностика</h2>
-                <p>Комплексный анализ текущих бизнес-процессов и данных — основа для решений, которые реально работают в вашей среде.</p>
+                <p>Комплексный разбор текущих бизнес-процессов и данных — основа для решений, которые работают в вашей среде, а не в презентации.</p>
             </div>
 
             <div class="methodology-split">
                 <div class="methodology-feature-stack">
-                    <div class="methodology-feature">
+                    <article class="methodology-feature" data-aos="fade-up" data-aos-duration="700">
                         <div class="methodology-feature__icon methodology-feature__icon--blue" aria-hidden="true">
                             <i class="fas fa-search"></i>
                         </div>
                         <div class="methodology-feature__body">
                             <h3>Анализ потоков данных</h3>
-                            <p>Изучаем, как данные движутся по системе, находим узкие места и точки, где автоматизация и LLM дадут максимальный эффект.</p>
+                            <p>Смотрим, как данные движутся по системе, где теряется качество и время — и где автоматизация и LLM дадут максимальный эффект.</p>
                         </div>
-                    </div>
-                    <div class="methodology-feature">
+                    </article>
+                    <article class="methodology-feature" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
                         <div class="methodology-feature__icon methodology-feature__icon--blue" aria-hidden="true">
                             <i class="fas fa-chart-line"></i>
                         </div>
                         <div class="methodology-feature__body">
                             <h3>Оценка эффективности</h3>
-                            <p>Сопоставляем фактическую нагрузку, время цикла и качество результата — чтобы приоритизировать внедрение по ROI.</p>
+                            <p>Сопоставляем нагрузку, длительность цикла и качество результата — чтобы приоритизировать внедрение по ROI, а не по хайпу.</p>
                         </div>
-                    </div>
-                    <div class="methodology-feature">
+                    </article>
+                    <article class="methodology-feature" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
                         <div class="methodology-feature__icon methodology-feature__icon--blue" aria-hidden="true">
                             <i class="fas fa-lightbulb"></i>
                         </div>
                         <div class="methodology-feature__body">
                             <h3>Карта возможностей</h3>
-                            <p>Формируем перечень сценариев с ИИ с оценкой рисков, зависимостей от данных и готовности команды.</p>
+                            <p>Сценарии с ИИ, риски, зависимости от данных и готовность команды — в одном артефакте, с которым можно идти к решению.</p>
                         </div>
-                    </div>
+                    </article>
                 </div>
 
-                <aside class="methodology-aside-card">
-                    <h3>Результат диагностики</h3>
+                <aside class="methodology-aside-card" data-aos="fade-left" data-aos-duration="750" data-aos-delay="120">
+                    <h3>Что на выходе</h3>
                     <ul class="methodology-checklist">
-                        <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Отчёт о текущем состоянии процессов и данных</span></li>
-                        <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Рекомендации по оптимизации и данным</span></li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Отчёт о процессах и данных «как есть»</span></li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Рекомендации по данным и интеграциям</span></li>
                         <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>План пилотов и критерии успеха</span></li>
-                        <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Оценка потенциального эффекта (время / деньги)</span></li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Оценка эффекта: время и деньги</span></li>
                     </ul>
                 </aside>
             </div>
@@ -77,76 +109,79 @@
 
     <section class="methodology-panel methodology-panel--muted">
         <div class="container">
-            <div class="methodology-panel__intro">
+            <div class="section-header">
                 <h2>Быстрое прототипирование</h2>
-                <p>Рабочие прототипы для проверки гипотез на реальных задачах — без многомесячных «больших релизов».</p>
+                <p>Рабочие прототипы на реальных задачах: проверяем гипотезу измеримыми метриками, а не слайдами о «будущем ИИ».</p>
             </div>
 
             <div class="methodology-split methodology-split__reverse">
                 <div class="methodology-split__col methodology-split__col--visual">
-                    <div class="card-prototyping">
+                    <div class="methodology-prototype-card card-prototyping" data-aos="fade-up" data-aos-duration="750">
                         <h3>Процесс разработки</h3>
                         <div class="methodology-steps">
                             <div class="methodology-step">
                                 <span class="methodology-step__num">1</span>
-                                <span>Уточнение сценария, данных и ограничений интеграции</span>
+                                <span>Сценарий, данные, ограничения интеграции и безопасности</span>
                             </div>
                             <div class="methodology-step">
                                 <span class="methodology-step__num">2</span>
-                                <span>MVP: цепочка промптов, RAG или API-обвязка под ваш стек</span>
+                                <span>MVP: промпты, RAG или API-обвязка под ваш стек</span>
                             </div>
                             <div class="methodology-step">
                                 <span class="methodology-step__num">3</span>
-                                <span>Пилот с измеримыми метриками и обратной связью пользователей</span>
+                                <span>Пилот с метриками и обратной связью пользователей</span>
                             </div>
                             <div class="methodology-step">
                                 <span class="methodology-step__num">4</span>
-                                <span>Итерации: доработка модели, данных и UX до целевого качества</span>
+                                <span>Итерации: данные, модель, UX до целевого качества</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="methodology-split__col methodology-split__col--text methodology-feature-stack">
-                    <div class="methodology-feature">
+                    <article class="methodology-feature" data-aos="fade-up" data-aos-duration="700">
                         <div class="methodology-feature__icon methodology-feature__icon--green" aria-hidden="true">
                             <i class="fas fa-bolt"></i>
                         </div>
                         <div class="methodology-feature__body">
                             <h3>Короткий цикл поставки</h3>
-                            <p>Первые проверяемые результаты — в горизонте недель: фокус на измеримом улучшении, а не на «слайдах о будущем».</p>
+                            <p>Первые проверяемые результаты — в горизонте недель: измеримое улучшение важнее красивой дорожной карты на год.</p>
                         </div>
-                    </div>
-                    <div class="methodology-feature">
+                    </article>
+                    <article class="methodology-feature" data-aos="fade-up" data-aos-duration="700" data-aos-delay="100">
                         <div class="methodology-feature__icon methodology-feature__icon--green" aria-hidden="true">
                             <i class="fas fa-robot"></i>
                         </div>
                         <div class="methodology-feature__body">
                             <h3>Архитектура под рост</h3>
-                            <p>Прототип закладывает паттерны наблюдаемости, версионирования промптов и безопасного доступа к данным.</p>
+                            <p>Наблюдаемость, версии промптов, доступ к данным — чтобы пилот не превратился в «скрипт на коленке».</p>
                         </div>
-                    </div>
-                    <div class="methodology-feature">
+                    </article>
+                    <article class="methodology-feature" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
                         <div class="methodology-feature__icon methodology-feature__icon--green" aria-hidden="true">
                             <i class="fas fa-sync-alt"></i>
                         </div>
                         <div class="methodology-feature__body">
-                            <h3>Непрерывное улучшение</h3>
-                            <p>Метрики пилота → изменения в данных и промптах → повторный замер: замкнутый контур улучшений.</p>
+                            <h3>Замкнутый контур</h3>
+                            <p>Метрики пилота → правки в данных и промптах → повторный замер. Так качество растёт предсказуемо.</p>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="cta-section">
+    <section class="cta-section methodology-cta">
         <div class="container">
-            <h2>Начните с диагностики процессов</h2>
-            <p>Короткий созвон и предварительный разбор задачи — без обязательств. Дальше предложу формат пилота под ваш контекст.</p>
-            <div class="methodology-cta-actions">
+            <h2 data-aos="fade-up" data-aos-duration="700">Начните с диагностики</h2>
+            <p data-aos="fade-up" data-aos-duration="700" data-aos-delay="80">Короткий созвон и разбор задачи — без обязательств. Предложу формат пилота под ваш контекст и ограничения.</p>
+            <div class="methodology-cta-actions" data-aos="fade-up" data-aos-duration="700" data-aos-delay="140">
                 <a href="mailto:nikolai@pir-s.ru" class="btn-primary btn-large"><i class="fas fa-envelope"></i>&nbsp;Написать на email</a>
                 <a href="https://t.me/Nikolai_999" class="btn-secondary btn-large" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i>&nbsp;Telegram</a>
             </div>
+            <p class="methodology-cta__fineprint" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                <a href="contacts.html" class="methodology-cta__link">Страница контактов</a> — все способы связи и форма заявки.
+            </p>
         </div>
     </section>
 </main>
@@ -154,6 +189,8 @@
 <footer id="main-footer" data-component="site-components/footer.html"></footer>
 
 <script src="../assets/js/components-loader.js" defer></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script defer src="../assets/js/main.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         if (typeof loadComponent === 'undefined' && typeof fetch !== 'undefined') {
@@ -166,6 +203,11 @@
             };
             load('../site-components/header.html', 'main-header');
             load('../site-components/footer.html', 'main-footer');
+        }
+    });
+    document.addEventListener('headerLoaded', function () {
+        if (typeof AOS !== 'undefined') {
+            AOS.refresh();
         }
     });
 </script>
