@@ -6,7 +6,7 @@
     <title>Инженерные решения и Кейсы | Карпов Николай</title>
 
     <!-- SEO -->
-    <meta name="description" content="Библиотека разработанных инструментов и аналитических отчетов. Автоматизация B2B продаж, финансовое моделирование внедрения ИИ, образовательные методики.">
+    <meta name="description" content="Кейсы и инструменты: ABM-генератор, отчёты ROI, HR-агент на n8n, Pseudonymizer MVP (обезличивание в Docker), курс по внедрению ИИ.">
 
     <!-- Стили -->
     <!-- Абсолютный путь к главному CSS (работает везде) -->
@@ -166,6 +166,34 @@
                     </div>
 
                     <a href="hr-n8n-agent.html" class="case-link">
+                        <span>Разбор архитектуры</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- КЕЙС: PSEUDONYMIZER MVP -->
+            <article class="case-card featured">
+                <div class="case-image">
+                    <img src="../../assets/images/case-report.jpeg" alt="Корпоративный анонимайзер документов: обезличивание перед LLM и интеграциями" loading="lazy">
+                    <div class="case-badge">ИБ / Данные</div>
+                </div>
+                <div class="case-content">
+                    <span class="case-client">MVP в контейнере</span>
+                    <h3>Pseudonymizer MVP — корпоративный анонимайзер документов</h3>
+                    <p class="case-description">
+                        Одностраничное приложение в Docker: гибридная детекция (regex + spaCy NER), кастомные сущности из словаря, детерминистичные плейсхолдеры, сессии для обратимого восстановления, асинхронная обработка крупных PDF и отдельный JSON API для почтовых воркеров. Веб-UI, настройки инстанса, мониторинг и LLM-чат только по уже обезличенному тексту.
+                    </p>
+
+                    <div class="tech-stack">
+                        <span class="tech-item">FastAPI</span>
+                        <span class="tech-item">spaCy</span>
+                        <span class="tech-item">Docker</span>
+                        <span class="tech-item">SQLite</span>
+                        <span class="tech-item">Prometheus</span>
+                    </div>
+
+                    <a href="pseudonymizer-mvp.html" class="case-link">
                         <span>Разбор архитектуры</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
