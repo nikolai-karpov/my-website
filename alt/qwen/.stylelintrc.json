@@ -1,0 +1,24 @@
+{
+  "extends": "stylelint-config-standard-scss",
+  "rules": {
+    "scss/load-no-partial-leading-underscore": null,
+    "selector-class-pattern": [
+      "^([a-z][a-zA-Z0-9]*|([a-z][a-z0-9]*)(__[a-zA-Z0-9]+)?(--[a-z0-9]+)?|([a-z][a-z0-9]*)(-[a-z0-9]+)*)$",
+      {
+        "message": "Используйте camelCase, kebab-case или BEM (block, block__element, block--modifier)"
+      }
+    ],
+    "keyframes-name-pattern": [
+      "^([a-z][a-zA-Z0-9]*|([a-z][a-z0-9]*)(-[a-z0-9]+)*)$",
+      {
+        "message": "Используйте camelCase или kebab-case для имен анимаций"
+      }
+    ],
+    "color-function-notation": null,
+    "alpha-value-notation": null,
+    "media-feature-range-notation": null,
+    "number-max-precision": null,
+    "scss/no-duplicate-mixins": null,
+    "scss/operator-no-unspaced": null
+  }
+}

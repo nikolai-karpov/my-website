@@ -1,0 +1,468 @@
+presentation_meta:
+  main_goal: "Представить учебный курс не как теорию, а как 'Готовую методологию внедрения'. Это артефакт, доказывающий практический опыт внедрения ИИ в организации."
+  concept: "Руководство по внедрению искусственного интеллекта ('The AI Implementation Playbook'). Это интерактивная демонстрация методологии с акцентом на бизнес-логику и результат."
+  author: "Николай Карпов | Руководитель по внедрению AI"
+
+pages:
+  - id: 1
+    slug: title-screen
+    title: "Титульный экран"
+    concept: "Стратегия, а не просто технология"
+    content:
+      header: "Руководство по внедрению искусственного интеллекта: От стратегии до измеримого результата"
+      subheader: "Готовая методология внедрения ИИ в сложные бизнес-процессы на примере проектной организации."
+      visual:
+        type: abstract_graphics
+        visual_content: "Абстрактные нейронные связи или диаграмма бизнес-процесса."
+        technical_note: "Использовать SVG с нейронными связями"
+    goal: "Сразу заявить о себе как о стратеге, который мыслит категориями бизнеса (результат, методология), а не просто как о техническом специалисте."
+
+  - id: 2
+    slug: problem
+    title: "Проблема"
+    concept: "От хаоса к системе"
+    content:
+      header: "Проблема: AI — это не волшебная кнопка"
+      subheader: "Почему 9 из 10 инициатив по внедрению ИИ не приносят результата?"
+      columns:
+        - icon: "unclear_goals.svg"
+          title: "Неясные цели"
+          text: "Внедряем «потому что модно», а не для решения конкретной бизнес-боли."
+        - icon: "bad_data.svg"
+          title: "Плохие данные"
+          text: "Подаем на вход ИИ «мусор» — получаем «мусор» на выходе."
+        - icon: "no_integration.svg"
+          title: "Отсутствие интеграции"
+          text: "Новый инструмент не встраивается в реальные рабочие процессы сотрудников."
+      takeaway: "Мой подход превращает этот хаос в управляемый и предсказуемый процесс."
+    goal: "Показать, что я понимаю реальные проблемы бизнеса и риски, а не витаю в облаках. Это повышает доверие."
+
+  - id: 3
+    slug: solution
+    title: "Решение"
+    concept: "Моя 3-шаговая методология"
+    content:
+      header: "Решение: Масштабируемая система внедрения"
+      visual:
+        component_type: "methodology_diagram"
+        layout: 
+          type: "horizontal_flow"
+          columns: 3
+          spacing: "60px"
+          alignment: "top"
+          connectors: "arrow_bidirectional"
+        interaction:
+          type: "hover_reveal"
+          content: "tools"
+          animation: "fade_in_up"
+          duration: "0.3s"
+        styling:
+          theme: "professional_business"
+          accent: "gradient_primary"
+          card_style: "elevated"
+        ui_specification: |
+          - Три крупных блока, расположенных горизонтально
+          - Блоки соединены стрелками (→) между собой
+          - Каждый блок имеет заголовок (title), описание метода (method_description) и результат (deliverable)
+          - При наведении курсора на блок появляется тултип с инструментами (tools)
+          - Стиль: профессиональный, бизнес-ориентированный дизайн
+        modules:
+          - id: "module_1"
+            title: "АНАЛИЗ И АУДИТ"
+            method_description: "Находим процессы, где ИИ даст максимальный эффект. Анализируем данные, выявляем риски."
+            deliverable: "Четкое ТЗ и реестр проектных ограничений."
+            tools: ["VS Code", "GigaChat", "Яндекс.Таблицы"]
+          - id: "module_2"
+            title: "АВТОМАТИЗАЦИЯ И ИНТЕГРАЦИЯ"
+            method_description: "Проектируем и создаем работающие ИИ-инструменты (промпты, пайплайны), встраивая их в текущие рабочие процессы."
+            deliverable: "Готовый прототип или MVP, решающий конкретную задачу."
+            tools: ["Yandex Cloud Functions", "Apps Script", "API"]
+          - id: "module_3"
+            title: "КОНТРОЛЬ И ОПТИМИЗАЦИЯ"
+            method_description: "Проверяем качество работы ИИ, измеряем эффективность по KPI, дорабатываем решение."
+            deliverable: "Измеримый бизнес-эффект и система поддержки."
+            tools: ["Яндекс.Таблицы (KPI)", "Яндекс.Вики (База знаний)"]
+    goal: "Продемонстрировать структурированный, системный подход и показать наличие готового «рецепта» для решения любой задачи."
+
+  - id: 4
+    slug: case-1-data-analysis
+    title: "Практический кейс №1 (Модуль 1)"
+    concept: "Как мы находим ценность в данных"
+    content:
+      header: "Кейс №1: От данных к решениям: Реестр ограничений"
+      visual:
+        type: before_after_schema
+        interactivity: "click_to_reveal_prompts" 
+        interactive_elements:
+          - element_type: "document_icon"
+            document: "ТЗ"
+            prompt_example: "Проанализируй техническое задание и выдели ключевые требования, ограничения и специальные условия."
+            modal_content: "Пример промпта для анализа ТЗ..."
+          - element_type: "document_icon" 
+            document: "Отчет по геологии"
+            prompt_example: "Выяви из отчета по инженерно-геологическим изысканиям все ограничения для проектирования фундаментов."
+            modal_content: "Пример промпта для анализа геологии..."
+        ui_specification: |
+          - Слева: иконки документов с подписями (ТЗ, отчеты, ТУ) + фигурка растерянного инженера
+          - По центру: блок "AI-анализатор (моя методология)"
+          - Справа: аккуратная таблица "Сводный реестр рисков и ограничений проекта"
+          - При клике на иконки документов открывается модальное окно с примером промпта
+        before:
+          title: "ДО"
+          description: "Иконки документов (PDF, DOCX, TXT) с подписями «ТЗ от заказчика», «Отчет по геологии», «ТУ на подключение» указывают на фигурку растерянного инженера."
+        process: "Блок «AI-анализатор (моя методология)»"
+        after:
+          title: "ПОСЛЕ"
+          description: "Аккуратная таблица/дашборд с названием «Сводный реестр рисков и ограничений проекта»."
+      business_effect: "Снижение риска ошибок из-за «человеческого фактора» на 30%. Экономия до 40 часов работы ГИПа на старте проекта."
+    goal: "Показать на конкретном, осязаемом примере, как мой подход решает реальную боль бизнеса."
+
+  - id: 5
+    slug: case-2-pipeline
+    title: "Практический кейс №2 (Модуль 2)"
+    concept: "Создание реального пайплайна автоматизации"
+    content:
+      header: "Кейс №2: От идеи к системе: Рабочий пайплайн"
+      visual:
+        type: animated_pipeline_diagram
+        animation_type: "sequential_reveal"
+        ui_specification: |
+          - Горизонтальная последовательность элементов
+          - Анимация: элементы появляются последовательно по клику/скроллу
+          - Стрелки между элементами анимируются как "поток данных"
+          - Стиль: техническая диаграмма с иконками сервисов
+        steps:
+          - type: "service"
+            name: "Яндекс.Таблицы"
+            label: "Данные о продукте"
+          - type: "arrow"
+          - type: "service"
+            name: "Cloud Functions / Apps Script"
+            label: "Мой скрипт-обработчик"
+          - type: "arrow"
+            label: "API Call"
+          - type: "service"
+            name: "GigaChat / YandexGPT"
+            label: "Генерация описания"
+          - type: "arrow"
+          - type: "service"
+            name: "Яндекс.Документы или Сайт"
+            label: "Готовый результат"
+      user_message:
+        main_quote: "Это не теория. Это архитектура реального рабочего инструмента, который я могу спроектировать и дать ТЗ на разработку. Именно такие системы позволяют автоматизировать рутину."
+        competencies_applied: ["Бизнес-анализ", "Проектирование API-интеграций", "Разработка спецификаций", "Управление проектом"]
+        course_connection: "Именно такую архитектуру пайплайнов учатся создавать инженеры на моем курсе."
+    goal: "Это мой 'нокаутирующий удар'. Показать, что я мыслю не просто промптами, а системами и процессами. Элегантно соединить мой реальный проект с тем, что было сказано работодателю."
+
+  - id: 6
+    slug: tech-stack
+    title: "Инструментарий"
+    concept: "Технологический стек внедрения"
+    content:
+      header: "Используемый технологический стек"
+      AI_INSTRUCTION: "Сгруппируй логотипы инструментов по ролям в методологии"  # ✅ ТОЛЬКО ДЛЯ ИИ
+      tool_groups:
+        - role: "Для анализа"
+          tools: ["GigaChat", "VS Code"]
+        - role: "Для автоматизации"
+          tools: ["Yandex Cloud Functions", "Apps Script", "API"]
+        - role: "Для контроля"
+          tools: ["Яндекс.Таблицы (KPI)", "Яндекс.Вики (База знаний)"]
+    goal: "Быстро показать техническую осведомленность и конкретные инструменты, с которыми я работаю."
+
+  - id: 7
+    slug: business-results
+    title: "Результат"
+    concept: "Эффект для бизнеса"
+    content:
+      header: "Ожидаемый бизнес-эффект для бизнеса"
+      key_results:
+        - icon: "speed.svg"
+          title: "СКОРОСТЬ"
+          text: "Ускорение подготовки документации и отчетов за счет пайплайнов."
+        - icon: "quality.svg"
+          title: "КАЧЕСТВО"
+          text: "Снижение количества ошибок за счет автоматической проверки по нормативам."
+        - icon: "efficiency.svg"
+          title: "ЭФФЕКТИВНОСТЬ"
+          text: "Высвобождение времени квалифицированных специалистов от рутины для решения творческих задач."
+        - icon: "transparency.svg"
+          title: "ПРОЗРАЧНОСТЬ"
+          text: "Создание единой базы знаний (промпты, датасеты), снижение зависимости от конкретных сотрудников."
+    goal: "Перевести все технические и методологические наработки на язык денег и выгоды для компании."
+
+  - id: 8
+    slug: final-screen
+    title: "Финальный экран"
+    concept: "Готов к внедрению"
+    content:
+      header: "Давайте адаптируем эту методологию для Вас"
+      subheader: "Я готов обсудить, как мой подход может быть применен для решения ваших конкретных задач: от оптимизации бизнес-процессов до автоматизации рутины."
+      competencies_list_title: "Мои ключевые компетенции:"
+      competencies:
+        - "Бизнес-анализ и выявление потребностей"
+        - "Проектирование и управление IT-решениями"
+        - "Стратегия внедрения AI-инструментов"
+        - "Разработка систем автоматизации (пайплайнов)"
+      contacts:
+        resume_link: "#"
+        telegram: "t.me/@Nikolai_999"
+        email: "nikolai@pir-s.ru"
+    goal: "Завершить на сильной ноте и показать, что я уже думаю о задачах компании. Это прямой призыв к действию."
+
+  - id: 9
+    slug: creation-process
+    title: "Мета-доказательство"
+    concept: "Этот артефакт создан с помощью ИИ"
+    content:
+      header: "Эта презентация — живое доказательство моей экспертизы во внедрении ИИ"
+      subheader: "Я применил собственную методологию для создания этого артефакта — точно так же, как я внедряю автоматизацию в бизнес-процессы."
+      process_steps:
+        - step: "Анализ"
+          action: "Стратегическое планирование: DeepSeek/Gemini помог проанализировать датасет курса, требования, цели и структурировать ключевые бизнес-сообщения."
+          result: "Четкая структура повествования, ориентированная на результат."
+          business_value: "Сокращение времени анализа формирование контента на 80%"
+          icon: "analysis_ai.svg"
+        - step: "Автоматизация" 
+          action: "Быстрое прототипирование: LLM сгенерировала машиночитаемый YAML-датасет и HTML-код по моей спецификации."
+          result: "Рабочий прототип презентации за несколько часов, а не недель."
+          icon: "automation_ai.svg"
+        - step: "Контроль"
+          action: "Итеративное улучшение: Через серию уточнений и контроля качества я довел прототип до финального продукта."
+          result: "Профессиональный артефакт, готовый к демонстрации."
+          icon: "quality_ai.svg"
+      takeaway: "Я не просто рассказываю о внедрении ИИ — я использую его как ежедневный рабочий инструмент."
+      metrics:
+        - "Время создания презентации: 3 дня вместо 3 недель"
+        - "Итераций промптов: 12 версий до идеального датасета" 
+        - "Качество структуры: машинный + экспертный анализ"
+    goal: "Показать глубину понимания процесса внедрения на личном, осязаемом примере."
+
+    # === DESIGN-TOKEN БЛОК ===
+# Задаёт «единый язык» визуального оформления презентации и будущего портфолио
+# Любой класс CSS может читать значения через var(--<key>)
+
+design_tokens:
+
+  # 1. Цветовая схема
+  color:
+    primary:
+      value: '#4A90E2'
+      usage: ["buttons", "links", "accent elements"]
+      variants:
+        100: '#e3f2fd'  # light background
+        500: '#4A90E2'  # base
+        700: '#357ABD'  # hover
+        900: '#0d47a1'  # active/dark
+    gradient_p:     'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+    gradient_a:     'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+    
+    background:
+      light:        '#ffffff'
+      grey:         '#f8f9fa'
+      dark:         '#0f172a'
+    
+    text:
+      main:         '#34495e'
+      muted:        '#64748b'
+      invert:       '#ffffff'
+    
+    border:         '#e0e0e0'
+    shadow:
+      base:         '0 10px 40px rgba(0,0,0,.08)'
+      hover:        '0 20px 60px rgba(0,0,0,.12)'
+    neural_glow:    'rgba(74,144,226,.10)' # подсветка иконок
+
+  # 2. Типографика
+  typography:
+    family:         '"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif'
+    base_size:      '1rem'               # 16 px
+    scale:
+      xs:           '0.75rem'            # 12
+      sm:           '0.875rem'           # 14
+      base:         '1rem'               # 16
+      lg:           '1.125rem'           # 18
+      xl:           '1.25rem'            # 20
+      2xl:          '1.5rem'             # 24
+      3xl:          '2rem'               # 32
+      4xl:          '3rem'               # 48
+    weight:
+      normal:       '400'
+      semibold:     '600'
+      bold:         '700'
+    line_height:    '1.6'
+
+  # 3. Отступы и сетка
+  spacing:
+    xs:  '8px'
+    sm:  '16px'
+    md:  '24px'
+    lg:  '32px'
+    xl:  '48px'
+    container: '1140px'        # max-width контейнера
+    radius:    '8px'           # border-radius
+    radius_lg: '16px'
+
+  # 4. Анимации
+  motion:
+    ease:     'cubic-bezier(.25,.46,.45,.94)'
+    duration: '.4s'
+    default:  'all .3s ease'
+    reduced:  false             # true = убрать движение для ‑prefers-reduced-motion
+
+  # 5. Адаптив
+  breakpoint:
+    mobile:  '480px'
+    tablet:  '768px'
+    desktop: '1024px'
+
+  # 6. Компонентные токены (БАЗОВЫЕ ПАРАМЕТРЫ)
+  component_tokens:
+    card:
+      base_class:  'base-card'
+      padding:     '40px 30px'
+      shadow:      'shadow.base'
+      shadow_hover: 'shadow.hover'
+      border_radius: 'radius_lg'
+      top_accent:  'gradient_p'   # полоска ::before   
+    
+    button:
+      primary:
+        bg:        'gradient_p'
+        color:     'color.text.invert'
+        hover_y:   '-2px'
+      secondary:
+        bg:        'transparent'
+        border:    '2px solid color.primary'
+        color:     'color.primary'
+
+    icon:
+      size:        '80px'
+      bg:          'color.neural_glow'
+      color:       'color.primary'
+      radius:      '50%'
+
+    methodology_diagram:
+      block_width: "300px"
+      block_height: "200px" 
+      block_spacing: "60px"
+      connector_color: "var(--color-primary-500)"
+      
+    pipeline_diagram:
+      step_width: "150px"
+      step_spacing: "40px"
+      arrow_animation: "flow 2s infinite"
+  
+ # 7. Специфика презентации
+  presentation:   
+    slide_gap:     '80px 0'          # section padding
+    hero_min_h:    '60vh'            # высота титульного экрана
+    code_bg:       '#1e293b'         # подсветка примеров кода
+    code_color:    '#e2e8f0'  
+
+# 8. Темная схема (override)
+  dark:
+    color:
+      background:
+        light:     '#1e293b'
+        grey:      '#0f172a'
+      text:
+        main:      '#e2e8f0'
+        muted:     '#94a3b8'
+      border:      '#334155'
+    shadow:
+      base:        '0 10px 40px rgba(0,0,0,.30)'
+      hover:       '0 20px 60px rgba(0,0,0,.40)'
+
+    # 9. Печать
+  print:
+    hide: ['.main-header','.main-footer','.cta-section','.mobile-footer-menu']
+    font_size:   '12pt'
+    line_height: '1.4'
+    box_shadow:  'none'
+    border:      '1px solid #000'
+
+component_system:  
+  # Базовые компоненты
+  base_components:
+    card:
+      class: "base-card"
+      extends: "design_tokens.component_tokens.card"
+      variants:
+        default: {}
+        elevated:
+          class: "base-card--elevated"
+          styles:
+            box_shadow: "var(--shadow-hover)"
+            transform: "translateY(-10px)"
+        outline:
+          class: "base-card--outline" 
+          styles:
+            border: "2px solid var(--color-border)"
+            box_shadow: "none"
+      
+      states:
+        hover:
+          transform: "translateY(-5px)"
+          box_shadow: "var(--shadow-hover)"
+        active:
+          transform: "translateY(-2px)"
+        disabled:
+          opacity: "0.6"
+          pointer_events: "none"
+    
+    button:
+      extends: "design_tokens.component_tokens.button"
+      states:
+        hover:
+          transform: "translateY(-2px)"
+          box_shadow: "var(--shadow-hover)"
+        active:
+          transform: "translateY(0)"
+        disabled:
+          opacity: "0.5"
+          cursor: "not-allowed"
+    icon:
+      extends: "design_tokens.component_tokens.icon" 
+  
+
+  # 7. Специфичные компоненты презентации
+  presentation_components:
+    methodology_block:
+      extends: "card"
+      variants:
+        analysis:
+          accent_color: "blue"
+          icon: "analysis_ai.svg"
+        automation:
+          accent_color: "green" 
+          icon: "automation_ai.svg"
+        control:
+          accent_color: "purple"
+          icon: "quality_ai.svg"
+  
+  responsive_breakpoints:
+    mobile:
+      max_width: "768px"
+      rules:
+        methodology_diagram:
+          layout: "vertical_stack"
+          spacing: "40px"
+        pipeline_steps:
+          direction: "vertical"
+          animation: "fade_in_up"
+    
+    tablet:
+      min_width: "769px"
+      max_width: "1024px"
+      rules:
+        methodology_diagram:
+          layout: "horizontal_compact"
+
+  icon_system:
+    size_scale:
+      xs: "16px"
+      sm: "24px" 
+      md: "32px"
+      lg: "48px"
+      xl: "64px"

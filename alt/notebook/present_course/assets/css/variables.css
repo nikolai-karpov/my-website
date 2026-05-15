@@ -1,0 +1,152 @@
+/* === DESIGN TOKENS === */
+/* Основные переменные, наследуемые из инлайновых стилей и расширяемые */
+
+:root {
+/* === ЦВЕТОВАЯ СХЕМА === */
+    --color-primary-100: #e3f2fd;
+    --color-primary-500: #4A90E2;
+    --color-primary-700: #357ABD;
+    --color-primary-900: #0d47a1;
+
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --gradient-neural: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+
+    --color-background-light: #ffffff;
+    --color-background-grey: #f8f9fa;
+    --color-background-dark: #0f172a;
+    --color-background-card: rgba(255, 255, 255, 0.95);
+
+    --color-text-main: #34495e;
+    --color-text-muted: #64748b;
+    --color-text-invert: #ffffff;
+    --color-text-accent: #4A90E2;
+
+    --color-border: #e0e0e0;
+    --color-border-light: #f1f5f9;
+
+    --shadow-base: 0 10px 40px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.12);
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.06);
+    --shadow-glow: 0 0 40px rgba(74, 144, 226, 0.15);
+
+    --neural-glow: rgba(74, 144, 226, 0.10);
+    --neural-glow-intense: rgba(74, 144, 226, 0.20);
+
+    /* === ТИПОГРАФИКА === */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-family-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', monospace;
+
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 2rem;
+    --font-size-4xl: 3rem;
+    --font-size-hero: 4rem;
+
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.6;
+    --line-height-relaxed: 1.8;
+
+    --letter-spacing-tight: -0.02em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.02em;
+
+    /* === ОТСТУПЫ И СЕТКА === */
+    --spacing-xxs: 4px;
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
+    --spacing-2xl: 64px;
+    --spacing-3xl: 96px;
+
+    --container-width: 1140px;
+    --container-padding: var(--spacing-lg);
+
+    --border-radius: 8px;
+    --border-radius-sm: 4px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 16px;
+    --border-radius-xl: 24px;
+    --border-radius-2xl: 32px;
+    --border-radius-full: 50%;
+
+    /* === АНИМАЦИИ И ТРАНЗИЦИИ === */
+    --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-in-out: cubic-bezier(0.42, 0, 0.58, 1);
+    --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+    --duration-fast: 0.2s;
+    --duration-normal: 0.3s;
+    --duration-slow: 0.5s;
+    --duration-deliberate: 0.8s;
+
+    --motion-default: all var(--duration-normal) var(--ease-smooth);
+    --motion-bounce: all var(--duration-normal) var(--ease-bounce);
+
+    /* === Z-INDEX СЛОИ === */
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 1030;
+    --z-modal: 1040;
+    --z-popover: 1050;
+    --z-tooltip: 1060;
+    --z-toast: 1070;
+
+    /* === КОМПОНЕНТНЫЕ ТОКЕНЫ === */
+    --card-padding: var(--spacing-xl) var(--spacing-lg);
+    --card-shadow: var(--shadow-card);
+    --card-shadow-hover: var(--shadow-hover);
+
+    --button-padding: var(--spacing-sm) var(--spacing-lg);
+    --button-border-radius: var(--border-radius-lg);
+
+    --icon-size-sm: 24px;
+    --icon-size-md: 40px;
+    --icon-size-lg: 60px;
+    --icon-size-xl: 80px;
+
+    --methodology-block-width: 300px;
+    --methodology-block-height: 220px;
+    --methodology-block-spacing: 60px;
+
+    --pipeline-step-width: 150px;
+    --pipeline-step-spacing: 40px;
+}
+
+/* === ТЕМНАЯ ТЕМА === */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-background-light: #1e293b;
+        --color-background-grey: #0f172a;
+        --color-background-card: rgba(30, 41, 59, 0.95);
+
+        --color-text-main: #e2e8f0;
+        --color-text-muted: #94a3b8;
+
+        --color-border: #334155;
+        --color-border-light: #1e293b;
+
+        --shadow-base: 0 10px 40px rgba(0, 0, 0, 0.3);
+        --shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.4);
+        --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* === АДАПТИВНЫЕ ТОЧКИ ОСТАНОВА === */
+@custom-media --mobile (max-width: 768px);
+@custom-media --tablet (min-width: 769px) and (max-width: 1024px);
+@custom-media --desktop (min-width: 1025px);

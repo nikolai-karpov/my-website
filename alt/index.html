@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Альтернативные снимки сайта (не в меню)</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; color: #1e293b; }
+    h1 { font-size: 1.25rem; }
+    code { background: #f1f5f9; padding: 0.15rem 0.35rem; border-radius: 4px; font-size: 0.9rem; word-break: break-all; }
+    ul { padding-left: 1.2rem; }
+    p.note { font-size: 0.9rem; color: #64748b; }
+  </style>
+</head>
+<body>
+  <h1>Снимки с других веток (без ссылок с основного сайта)</h1>
+  <p>Откройте URL напрямую. На GitHub Pages префикс репозитория обычно <code>/my-website/</code>.</p>
+  <ul>
+    <li><strong>Ветка <code>notebook</code></strong> — <a href="notebook/index.html">alt/notebook/index.html</a><br />
+      Полный URL: <code>https://nikolai-karpov.github.io/my-website/alt/notebook/index.html</code></li>
+    <li><strong>Ветка <code>qwen-code-…</code></strong> — <a href="qwen/index.html">alt/qwen/index.html</a><br />
+      Полный URL: <code>https://nikolai-karpov.github.io/my-website/alt/qwen/index.html</code></li>
+  </ul>
+  <p class="note">Обновление снимков из git: см. скрипт <code>npm run alt:rebuild</code> в корневом <code>package.json</code>.</p>
+</body>
+</html>

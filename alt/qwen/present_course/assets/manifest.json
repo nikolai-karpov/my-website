@@ -1,0 +1,23 @@
+{
+  "name": "AI Implementation Playbook",
+  "short_name": "AI Playbook",
+  "description": "Practical methodology for implementing AI in business processes",
+  "start_url": "/present_course/main.html",
+  "display": "fullscreen",
+  "background_color": "#0f172a",
+  "theme_color": "#4A90E2",
+  "orientation": "landscape",
+  "icons": [
+    {
+      "src": "assets/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["business", "productivity", "education"]
+}

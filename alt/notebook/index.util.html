@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карпов Николай | Инструктор по внедрению ИИ в бизнес-процессы</title>
+
+    <!-- Современные мета-теги для SEO -->
+    <meta name="description" content="Внедряю ИИ в операционные процессы предприятий. Сокращаю время рутины на 85%, обеспечиваю adoption rate 95%+. Бизнес-аналитик, педагогический дизайнер.">
+    <meta name="keywords" content="внедрение ИИ, бизнес-аналитика, педагогический дизайн, автоматизация процессов, LLM, ChatGPT">
+
+    <!-- Open Graph для соцсетей -->
+    <meta property="og:title" content="Карпов Николай | Инструктор по внедрению ИИ">
+    <meta property="og:description" content="Решаю операционные проблемы через точечное внедрение ИИ">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+
+    <!-- Современные шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Иконки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body class="loading">
+<!-- Прелоадер для профессионального впечатления -->
+<div class="preloader">
+    <div class="preloader-content">
+        <div class="neural-network-animation">
+            <div class="neuron"></div>
+            <div class="neuron"></div>
+            <div class="neuron"></div>
+        </div>
+        <p>Загрузка интеллектуального портфолио</p>
+    </div>
+</div>
+
+<header id="main-header" class="main-header">
+    <!-- Fallback навигация -->
+    <div class="container">
+        <div class="header-container">
+            <a href="./index.html" class="logo">Карпов Николай</a>
+            <nav>
+                <ul class="flex gap-3 items-center">
+                    <li><a href="./index.html">Главная</a></li>
+                    <li><a href="methodology.html">Методология</a></li>
+                    <li><a href="cases.html">Кейсы</a></li>
+                    <li><a href="results.html">Результаты</a></li>
+                    <li><a href="contacts.html" class="cta-button primary">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- ===== ГЕРОЙ-БЛОК С АНИМАЦИЕЙ ===== -->
+    <section class="hero-section">
+        <div class="hero-background">
+            <canvas id="neuralCanvas"></canvas>
+        </div>
+        <div class="container">
+            <div class="hero-container">
+                <div class="hero-content text-center">
+                    <div class="hero-badge d-inline-block mb-4">
+                        <span>🚀 ROI от 1.5 млн руб./год на проект</span>
+                    </div>
+                    <h1 class="hero-title mb-3">
+                        <span class="title-line d-block">Внедряю <span class="gradient-text">искусственный интеллект</span></span>
+                        <span class="title-line d-block">в бизнес-процессы предприятий</span>
+                    </h1>
+                    <p class="hero-subtitle mb-4">
+                        Превращаю операционные "боли" в измеримые KPI через системное внедрение LLM и обучение команд
+                    </p>
+
+                    <div class="hero-stats flex justify-center gap-4 mb-4">
+                        <div class="stat text-center">
+                            <span class="stat-number d-block">85%</span>
+                            <span class="stat-label d-block">сокращение рутины</span>
+                        </div>
+                        <div class="stat text-center">
+                            <span class="stat-number d-block">95%</span>
+                            <span class="stat-label d-block">adoption rate</span>
+                        </div>
+                        <div class="stat text-center">
+                            <span class="stat-number d-block">2-4</span>
+                            <span class="stat-label d-block">недели до результата</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions flex justify-center gap-2">
+                        <a href="contacts.html" class="cta-button primary">
+                            <i class="fas fa-brain"></i>
+                            Начать бесплатную диагностику
+                        </a>
+                        <a href="#cases" class="cta-button secondary">
+                            <i class="fas fa-chart-line"></i>
+                            Смотреть кейсы
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="floating-card card-1">
+                        <i class="fab fa-google"></i>
+                        <span>Gemini Pro</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-robot"></i>
+                        <span>YandexGPT</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i class="fas fa-code"></i>
+                        <span>DeepSeek</span>
+                    </div>
+                    <!-- Ваше фото в современном стиле -->
+                    <div class="profile-image">
+                        <img src="images/profile-placeholder.jpg" alt="Карпов Николай" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPua1i+ivleWbvuWDjzwvdGV4dD48L3N2Zz4='">
+                        <div class="image-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== КОМПЕТЕНЦИИ С ИНТЕРАКТИВОМ ===== -->
+    <section class="competencies-section">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2>Три ключевые компетенции для успешного внедрения ИИ</h2>
+                <p class="mb-0">Комбинация бизнес-аналитики, технологий и обучения, которая обеспечивает реальные результаты</p>
+            </div>
+
+            <div class="competencies-grid">
+                <div class="card--competency" data-aos="fade-up">
+                    <div class="card__icon">
+                        <i class="fas fa-chart-network"></i>
+                    </div>
+                    <h3>Бизнес-аналитик</h3>
+                    <p class="card__description">Выявляю операционные "узкие места" с экономическим эффектом от 500+ тыс. руб./мес</p>
+
+                    <div class="card__details">
+                        <ul class="card__features">
+                            <li><i class="fas fa-check"></i> Анализ трудовых функций</li>
+                            <li><i class="fas fa-check"></i> Формулирование ROI-гипотез</li>
+                            <li><i class="fas fa-check"></i> Картирование процессов</li>
+                        </ul>
+                        <div class="card__metric">
+                            <span class="card__metric-value d-block">1.5M+</span>
+                            <span class="card__metric-label d-block">руб. средний годовой эффект</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card--competency" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card__icon">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3>Архитектор ИИ-решений</h3>
+                    <p class="card__description">Создаю рабочие прототипы за 3-5 дней с использованием современных LLM</p>
+
+                    <div class="card__details">
+                        <ul class="card__features">
+                            <li><i class="fas fa-check"></i> Промпт-инжиниринг</li>
+                            <li><i class="fas fa-check"></i> RAG-архитектуры</li>
+                            <li><i class="fas fa-check"></i> API-интеграции</li>
+                        </ul>
+                        <div class="card__metric">
+                            <span class="card__metric-value d-block">1000+</span>
+                            <span class="card__metric-label d-block">стр. за 15 мин. анализа</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card--competency" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card__icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Педагогический дизайнер</h3>
+                    <p class="card__description">Обеспечиваю adoption rate 95%+ через человеко-центричное обучение</p>
+
+                    <div class="card__details">
+                        <ul class="card__features">
+                            <li><i class="fas fa-check"></i> Модель ADDIE</li>
+                            <li><i class="fas fa-check"></i> Микро-обучение</li>
+                            <li><i class="fas fa-check"></i> Геймификация</li>
+                        </ul>
+                        <div class="card__metric">
+                            <span class="card__metric-value d-block">95%</span>
+                            <span class="card__metric-label d-block">adoption rate в пилотах</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ЛИД-МАГНИТ ПРЕМИУМ-КЛАССА ===== -->
+    <section class="lead-magnet-section">
+        <div class="container">
+            <div class="lead-magnet-card">
+                <div class="lead-content">
+                    <div class="lead-badge d-inline-flex items-center gap-2 mb-4">
+                        <i class="fas fa-gem"></i>
+                        Эксклюзивный материал
+                    </div>
+                    <h2 class="mb-3">Чек-лист готовности бизнеса к внедрению ИИ</h2>
+                    <p class="lead-description mb-4">На основе анализа 40+ успешных внедрений в промышленности, строительстве и IT</p>
+
+                    <ul class="benefits-list mb-4">
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-primary"></i> 5 критериев технологической готовности</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-primary"></i> Методика расчета потенциального ROI</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-primary"></i> Чек-лист организационных изменений</li>
+                        <li class="flex items-center gap-3"><i class="fas fa-check-circle text-primary"></i> Шаблон дорожной карты внедрения</li>
+                    </ul>
+
+                    <form class="lead-form" id="checklist-form">
+                        <div class="form-group flex gap-2 mb-3">
+                            <input type="email" placeholder="Ваш корпоративный email" required>
+                            <button type="submit" class="form-button flex items-center gap-2">
+                                <i class="fas fa-download"></i>
+                                Получить чек-лист
+                            </button>
+                        </div>
+                        <p class="form-note">PDF-файл • 12 стр. • Бесплатно</p>
+                    </form>
+                </div>
+
+                <div class="lead-visual flex items-center justify-center">
+                    <div class="document-preview">
+                        <div class="page page-1"></div>
+                        <div class="page page-2"></div>
+                        <div class="page page-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ПРЕВЬЮ КЕЙСОВ ===== -->
+    <section id="cases" class="cases-section">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2>Реализованные проекты</h2>
+                <p class="mb-0">Кейсы системного внедрения ИИ в операционные процессы предприятий</p>
+            </div>
+
+            <div class="cases-grid">
+                <article class="case-card featured">
+                    <div class="case-image">
+                        <img src="images/case-construction.jpg" alt="AI в строительстве" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhGOUZBIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPuWbvuWDj+W8uuWItuW6pjwvdGV4dD48L3N2Zz4='">
+                        <div class="case-badge">ROI 1.2M руб./год</div>
+                    </div>
+                    <div class="case-content">
+                        <h3 class="mb-2">AI-ассистент строительного технадзора</h3>
+                        <p class="case-client text-primary mb-2">Крупный девелопер • 5 инженеров</p>
+                        <p class="case-description mb-4">Telegram-бот с YandexGPT для автоматизации полевой отчетности</p>
+
+                        <div class="case-results flex gap-4 mb-4">
+                            <div class="result text-center">
+                                <span class="result-number d-block">85%</span>
+                                <span class="result-label d-block">сокращение времени отчетов</span>
+                            </div>
+                            <div class="result text-center">
+                                <span class="result-number d-block">48ч → 2ч</span>
+                                <span class="result-label d-block">информирование о проблемах</span>
+                            </div>
+                        </div>
+
+                        <a href="cases/case-construction.html" class="case-link flex items-center gap-2">
+                            Изучить кейс
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="case-card">
+                    <div class="case-image">
+                        <img src="images/case-tender.jpg" alt="AI для тендеров" onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhGOUZBIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzY2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPuWbvuWDj+WIneS4reWkhOeQhjwvdGV4dD48L3N2Zz4='">
+                        <div class="case-badge">ROI 2.8M руб./год</div>
+                    </div>
+                    <div class="case-content">
+                        <h3 class="mb-2">Автоматизация анализа тендерной документации</h3>
+                        <p class="case-client text-primary mb-2">Проектный институт • 3 аналитика</p>
+                        <p class="case-description mb-4">DeepSeek-система для обработки 500+ стр. технических заданий</p>
+
+                        <div class="case-results flex gap-4 mb-4">
+                            <div class="result text-center">
+                                <span class="result-number d-block">90%</span>
+                                <span class="result-label d-block">ускорение анализа</span>
+                            </div>
+                            <div class="result text-center">
+                                <span class="result-number d-block">45%</span>
+                                <span class="result-label d-block">рост обрабатываемых тендеров</span>
+                            </div>
+                        </div>
+
+                        <a href="cases/case-procurement.html" class="case-link flex items-center gap-2">
+                            Изучить кейс
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="cases-cta text-center mt-5">
+                <a href="cases.html" class="view-all-button flex items-center gap-2 justify-center">
+                    <i class="fas fa-briefcase"></i>
+                    Смотреть все кейсы
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA С КОНВЕРСИОННЫМИ ЭЛЕМЕНТАМИ ===== -->
+    <section class="conversion-section">
+        <div class="container">
+            <div class="conversion-card">
+                <div class="conversion-content text-center">
+                    <h2 class="text-white mb-3">Начните с бесплатной диагностики ваших процессов</h2>
+                    <p class="conversion-subtitle mb-4">За 60 минут видеозвонка вы получите:</p>
+
+                    <div class="conversion-benefits mb-4">
+                        <div class="benefit flex items-center gap-3 text-left">
+                            <i class="fas fa-bullseye"></i>
+                            <span>Выявление 1-2 ключевых точек для внедрения ИИ</span>
+                        </div>
+                        <div class="benefit flex items-center gap-3 text-left">
+                            <i class="fas fa-calculator"></i>
+                            <span>Расчет потенциального экономического эффекта</span>
+                        </div>
+                        <div class="benefit flex items-center gap-3 text-left">
+                            <i class="fas fa-road"></i>
+                            <span>План-прототип дорожной карты внедрения</span>
+                        </div>
+                    </div>
+
+                    <div class="conversion-actions">
+                        <a href="contacts.html" class="cta-button primary large flex items-center gap-2 justify-center">
+                            <i class="fas fa-calendar-check"></i>
+                            Забронировать диагностику
+                        </a>
+                        <div class="conversion-meta flex justify-center gap-4 mt-3">
+                            <div class="meta-item flex items-center gap-2">
+                                <i class="fas fa-clock"></i>
+                                <span>60 минут • Бесплатно</span>
+                            </div>
+                            <div class="meta-item flex items-center gap-2">
+                                <i class="fas fa-user-tie"></i>
+                                <span>Для руководителей отделов</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer id="main-footer" class="main-footer">
+    <!-- Fallback футер -->
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3 class="mb-2">Карпов Николай</h3>
+                <p class="mb-3">Инструктор по внедрению ИИ в бизнес-процессы</p>
+                <div class="social-links flex gap-2">
+                    <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4 class="footer-heading">Навигация</h4>
+                <ul>
+                    <li><a href="./index.html">Главная</a></li>
+                    <li><a href="methodology.html">Методология</a></li>
+                    <li><a href="cases.html">Кейсы</a></li>
+                    <li><a href="results.html">Результаты</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4 class="footer-heading">Контакты</h4>
+                <div class="contact-item flex items-start gap-2">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:nikolai@pir-s.ru">nikolai@pir-s.ru</a>
+                </div>
+                <div class="contact-item flex items-start gap-2">
+                    <i class="fab fa-telegram"></i>
+                    <a href="https://t.me/@Nikolai_999">@Nikolai_999</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom flex justify-between items-center">
+            <div class="copyright">© 2024 Карпов Николай. Все права защищены.</div>
+        </div>
+    </div>
+</footer>
+<script src="./js/components.js" defer></script>
+
+<!-- Скрипты для профессиональных анимаций -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="js/neural-network.js"></script>
+<script src="js/animations.js"></script>
+
+<script>
+    // Инициализация анимаций
+    document.addEventListener('DOMContentLoaded', function() {
+        // Убираем прелоадер
+        setTimeout(() => {
+            document.body.classList.remove('loading');
+        }, 1000);
+
+        // Инициализация AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // Обработка формы лид-магнита
+        const checklistForm = document.getElementById('checklist-form');
+        if (checklistForm) {
+            checklistForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                // Здесь должна быть интеграция с email-сервисом
+                alert(`Спасибо! Чек-лист отправлен на ${email}`);
+                this.reset();
+            });
+        }
+    });
+
+    // Обработка ошибок изображений
+    document.addEventListener('error', function(e) {
+        if (e.target.tagName === 'IMG') {
+            console.warn('Image failed to load:', e.target.src);
+        }
+    }, true);
+</script>
+</body>
+</html>

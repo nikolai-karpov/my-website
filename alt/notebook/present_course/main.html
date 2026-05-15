@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Implementation Playbook - Николай Карпов</title>
+
+    <!-- Критические стили -->
+    <style>
+        :root {
+            --color-primary-500: #4A90E2;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --color-background-light: #ffffff;
+            --color-background-grey: #f8f9fa;
+            --color-text-main: #34495e;
+            --color-text-muted: #64748b;
+            --color-text-invert: #ffffff;
+            --shadow-base: 0 10px 40px rgba(0,0,0,.08);
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --border-radius: 8px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; overflow-x: hidden; }
+
+        .slide {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            opacity: 0; visibility: hidden;
+            transition: all 0.6s ease;
+            padding: 40px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow-y: auto;
+        }
+
+        .slide.active { opacity: 1; visibility: visible; }
+        .slide-content { max-width: 1200px; width: 100%; margin: 0 auto; }
+
+        /* Компактные заголовки */
+        .title-concept {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .title-header {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        /* Навигация */
+        .progress-indicator {
+            position: fixed; top: 50%; right: 20px;
+            transform: translateY(-50%); z-index: 1000;
+        }
+
+        .progress-dot {
+            display: block; width: 10px; height: 10px;
+            border-radius: 50%; background: var(--color-text-muted);
+            margin: 12px 0; cursor: pointer; opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        .progress-dot.active { opacity: 1; background: var(--color-primary-500); transform: scale(1.3); }
+
+        .nav-buttons {
+            position: fixed; bottom: 30px; left: 50%;
+            transform: translateX(-50%); display: flex; gap: 15px;
+        }
+
+        .nav-btn {
+            background: var(--color-primary-500); color: white;
+            border: none; padding: 10px 20px; border-radius: var(--border-radius);
+            cursor: pointer; font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+<!-- Навигация -->
+<nav class="progress-indicator" id="progress-indicator"></nav>
+<div class="nav-buttons">
+    <button class="nav-btn nav-btn-prev">← Назад</button>
+    <button class="nav-btn nav-btn-next">Вперед →</button>
+</div>
+
+<!-- Контейнер для слайдов -->
+<main id="presentation-container">
+    <!-- Слайды загружаются динамически -->
+</main>
+
+<!-- Загрузка слайдов -->
+<script>
+    document.addEventListener('DOMContentLoaded', async function() {
+        const container = document.getElementById('presentation-container');
+        const slideFiles = [
+            'slides/01-title.html',
+            'slides/02-problem.html',
+            'slides/03-solution.html',
+            'slides/04-case-1.html',
+            'slides/05-case-2.html',
+            'slides/06-tech-stack.html',
+            'slides/07-results.html',
+            'slides/08-final.html',
+            'slides/09-meta.html'
+        ];
+
+        // Загружаем все слайды
+        for (let i = 0; i < slideFiles.length; i++) {
+            try {
+                const response = await fetch(slideFiles[i]);
+                const html = await response.text();
+                const slide = document.createElement('section');
+                slide.className = `slide ${i === 0 ? 'active' : ''}`;
+                slide.id = slideFiles[i].split('/')[1].replace('.html', '');
+                slide.innerHTML = html;
+                container.appendChild(slide);
+            } catch (error) {
+                console.error('Error loading slide:', slideFiles[i], error);
+            }
+        }
+
+        // Инициализация навигации
+        initializeNavigation();
+    });
+
+    function initializeNavigation() {
+        const slides = document.querySelectorAll('.slide');
+        const progressContainer = document.getElementById('progress-indicator');
+        const prevBtn = document.querySelector('.nav-btn-prev');
+        const nextBtn = document.querySelector('.nav-btn-next');
+        let currentSlide = 0;
+
+        // Создаем точки навигации
+        slides.forEach((slide, index) => {
+            const dot = document.createElement('div');
+            dot.className = `progress-dot ${index === 0 ? 'active' : ''}`;
+            dot.setAttribute('data-slide', index);
+            dot.addEventListener('click', () => goToSlide(index));
+            progressContainer.appendChild(dot);
+        });
+
+        function goToSlide(index) {
+            if (index < 0 || index >= slides.length) return;
+
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+            currentSlide = index;
+
+            document.querySelectorAll('.progress-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+
+            updateNavButtons();
+            window.location.hash = slides[index].id;
+        }
+
+        function updateNavButtons() {
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+
+        prevBtn.addEventListener('click', () => currentSlide > 0 && goToSlide(currentSlide - 1));
+        nextBtn.addEventListener('click', () => currentSlide < slides.length - 1 && goToSlide(currentSlide + 1));
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') currentSlide < slides.length - 1 && goToSlide(currentSlide + 1);
+            else if (e.key === 'ArrowLeft') currentSlide > 0 && goToSlide(currentSlide - 1);
+        });
+
+        if (window.location.hash) {
+            const targetSlide = document.querySelector(window.location.hash);
+            if (targetSlide) {
+                const index = Array.from(slides).indexOf(targetSlide);
+                goToSlide(index);
+            }
+        }
+
+        updateNavButtons();
+    }
+</script>
+</body>
+</html>

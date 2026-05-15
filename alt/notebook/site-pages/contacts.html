@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты | Карпов Николай - Инструктор по внедрению ИИ</title>
+
+    <!-- Подключаем единый файл стилей -->
+    <link rel="stylesheet" href="../assets/scss/purged/main.css" />
+
+    <!-- Фавикон — должен быть в корне проекта -->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<!-- Указываем правильный путь к компонентам -->
+<header id="main-header" data-component="site-components/header.html">
+    <div class="container header-container">
+        <a href="../index.html" class="logo">Карпов Николай</a>
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="../index.html">Главная</a></li>
+                <li><a href="methodology.html">Методология</a></li>
+                <li><a href="case-studies/">Кейсы</a></li>
+                <li><a href="results.html">Результаты</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <button class="hamburger" aria-label="Меню" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        <div class="mobile-overlay"></div>
+    </div>
+</header>
+
+<main>
+    <!-- Герой-секция -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Давайте создадим что-то вместе</h1>
+            <p>Готовы обсудить вашу задачу? Выберите наиболее удобный способ для связи. Я отвечаю в течение нескольких часов в рабочее время.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Левая колонка: Прямые контакты -->
+                <div class="contact-info">
+                    <h2>Прямые контакты</h2>
+                    <ul class="contact-methods">
+                        <li>
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <strong>Email</strong>
+                                <a href="mailto:your-email@example.com">your-email@example.com</a>
+                                <p>Отправьте детали проекта, и я свяжусь с вами в течение 4 часов</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">✈️</div>
+                            <div class="contact-details">
+                                <strong>Telegram</strong>
+                                <a href="https://t.me/your_username" target="_blank" rel="noopener noreferrer">@your_username</a>
+                                <p>Идеально для быстрых вопросов и оперативной связи</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-icon">💼</div>
+                            <div class="contact-details">
+                                <strong>LinkedIn</strong>
+                                <a href="#" target="_blank" rel="noopener noreferrer">Профиль в LinkedIn</a>
+                                <p>Для профессиональных запросов и долгосрочного сотрудничества</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="availability">
+                        <h3>Доступность</h3>
+                        <p>• Отвечаю на сообщения в течение 4 часов в рабочее время (Пн-Пт, 9:00-18:00)</p>
+                        <p>• Первая консультация — бесплатно (30 минут)</p>
+                        <p>• Готов к встречам онлайн или в Москве</p>
+                    </div>
+                </div>
+
+                <!-- Правая колонка: Контактная форма -->
+                <div class="contact-form">
+                    <h2>Оставить заявку на диагностику</h2>
+                    <form action="https://formsubmit.co/your-email@example.com" method="POST" id="contactForm">
+                        <input type="hidden" name="_subject" value="Новая заявка с сайта - Контакты">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://nikolai-karpov.github.io/my-website/site-pages/thank-you.html">
+
+                        <div class="form-group">
+                            <label for="name">Ваше имя *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-preference">Предпочтительный способ связи *</label>
+                            <select id="contact-preference" name="contact-preference" required>
+                                <option value="">Выберите способ связи</option>
+                                <option value="email">Email</option>
+                                <option value="telegram">Telegram</option>
+                                <option value="phone">Телефон</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group contact-field" id="email-field">
+                            <label for="email">Email для связи *</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+
+                        <div class="form-group contact-field" id="telegram-field">
+                            <label for="telegram">Ваш Telegram *</label>
+                            <input type="text" id="telegram" name="telegram" placeholder="@username">
+                        </div>
+
+                        <div class="form-group contact-field" id="phone-field">
+                            <label for="phone">Ваш телефон *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Компания (опционально)</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-type">Тип проекта</label>
+                            <select id="project-type" name="project-type">
+                                <option value="">Выберите тип проекта</option>
+                                <option value="consultation">Консультация по внедрению ИИ</option>
+                                <option value="training">Обучение команды</option>
+                                <option value="development">Разработка AI-решения</option>
+                                <option value="analysis">Анализ процессов</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Опишите вашу задачу или "боль" *</label>
+                            <textarea id="message" name="message" placeholder="Например: Наши менеджеры тратят 30% времени на рутинные отчеты..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Отправить заявку</button>
+                        <p class="form-note">Я свяжусь с вами в течение 4 часов в рабочее время</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Часто задаваемые вопросы</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>Сколько стоит первая консультация?</h3>
+                    <p>Первая диагностическая сессия (30 минут) проводится бесплатно. На ней мы определим проблему и наметим возможные пути решения.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Какой формат сотрудничества возможен?</h3>
+                    <p>Работаю в форматах: разовые консультации, проектная работа, обучение команд, разработка AI-решений под ключ.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>С какими отраслями вы работаете?</h3>
+                    <p>Имею опыт в строительстве, ритейле, образовании, IT и производстве. Готов рассмотреть проекты из других отраслей.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Как быстро можно ожидать результат?</h3>
+                    <p>Пилотное внедрение занимает 2-4 недели. Первые результаты обычно видны уже через 1-2 недели после старта проекта.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Правильный путь к footer -->
+<footer id="main-footer" data-component="site-components/footer.html">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Карпов Николай</h3>
+                <p>Специалист по внедрению AI-решений в бизнес-процессы. Помогаю компаниям автоматизировать рутину и повышать эффективность с помощью искусственного интеллекта.</p>
+                <div class="social-links">
+                    <a href="https://t.me/karpov_ai" class="social-link" aria-label="Telegram">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                    <a href="mailto:karpov@example.com" class="social-link" aria-label="Email">
+                        <i class="far fa-envelope"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="methodology.html">Методология</a></li>
+                    <li><a href="case-studies/">Кейсы</a></li>
+                    <li><a href="results.html">Результаты</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Проекты</h4>
+                <ul>
+                    <li><a href="case-studies/construction.html">Строительство</a></li>
+                    <li><a href="case-studies/procurement.html">Закупки</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h4>Контакты</h4>
+                <div class="contact-item">
+                    <i class="far fa-envelope"></i>
+                    <a href="mailto:karpov@example.com">karpov@example.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-telegram"></i>
+                    <a href="https://t.me/karpov_ai">@karpov_ai</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="#">LinkedIn профиль</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">&copy; 2025, Карпов Николай. Все права защищены.</div>
+            <div class="footer-nav">
+                <a href="privacy.html">Политика конфиденциальности</a>
+                <a href="terms.html">Условия использования</a>
+            </div>
+            <a href="#" class="back-to-top" aria-label="Наверх">
+                <i class="fas fa-chevron-up"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="mobile-footer-menu">
+        <nav class="mobile-nav">
+            <a href="../index.html" class="mobile-nav-item"><i class="fas fa-home"></i><span>Главная</span></a>
+            <a href="case-studies/" class="mobile-nav-item"><i class="fas fa-briefcase"></i><span>Кейсы</span></a>
+            <a href="results.html" class="mobile-nav-item"><i class="fas fa-chart-line"></i><span>Результаты</span></a>
+            <a href="contacts.html" class="mobile-nav-item"><i class="fas fa-phone-alt"></i><span>Контакты</span></a>
+        </nav>
+    </div>
+</footer>
+
+<!-- Исправленный путь к скрипту -->
+<script src="../assets/js/components-loader.js" defer></script>
+
+<!-- Скрипт для динамических полей формы -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactPreference = document.getElementById('contact-preference');
+        const emailField = document.getElementById('email-field');
+        const telegramField = document.getElementById('telegram-field');
+        const phoneField = document.getElementById('phone-field');
+
+        function hideAllContactFields() {
+            [emailField, telegramField, phoneField].forEach(field => {
+                field.classList.remove('active');
+            });
+            ['email', 'telegram', 'phone'].forEach(id => {
+                document.getElementById(id).removeAttribute('required');
+            });
+        }
+
+        function showContactField(field) {
+            hideAllContactFields();
+            field.classList.add('active');
+            document.getElementById(field.id.replace('-field', '')).setAttribute('required', 'required');
+        }
+
+        contactPreference.addEventListener('change', function() {
+            switch(this.value) {
+                case 'email': showContactField(emailField); break;
+                case 'telegram': showContactField(telegramField); break;
+                case 'phone': showContactField(phoneField); break;
+                default: hideAllContactFields(); break;
+            }
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            const selected = contactPreference.value;
+            let valid = true;
+
+            if (!selected) {
+                alert('Выберите способ связи');
+                valid = false;
+            }
+
+            if (selected === 'email' && !document.getElementById('email').value) {
+                alert('Укажите email');
+                valid = false;
+            } else if (selected === 'telegram' && !document.getElementById('telegram').value) {
+                alert('Укажите Telegram');
+                valid = false;
+            } else if (selected === 'phone' && !document.getElementById('phone').value) {
+                alert('Укажите телефон');
+                valid = false;
+            }
+
+            if (!valid) e.preventDefault();
+        });
+    });
+</script>
+</body>
+</html>

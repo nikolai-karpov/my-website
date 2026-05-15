@@ -1,0 +1,281 @@
+/* Стили для страницы контактов */
+
+.contact-hero {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #2c5aa0 100%);
+  color: white;
+  text-align: center;
+  padding: 80px 0 60px;
+
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+
+    @media (max-width: 768px) {
+      font-size: 2.2rem;
+    }
+  }
+
+  p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  align-items: start;
+  margin: 60px 0;
+}
+
+/* --- Contact Info Column --- */
+.contact-info,
+.contact-form {
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--primary-color);
+    }
+  }
+}
+
+.contact-methods {
+  li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding: 20px;
+    background: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 3px 10px rgb(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgb(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--light-bg-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
+
+.contact-details {
+  flex: 1;
+
+  strong {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--dark-color);
+  }
+
+  a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-weight: 500;
+
+    &:hover {
+      color: #2c5aa0;
+    }
+  }
+
+  p {
+    margin: 5px 0 0;
+    color: var(--text-color);
+    font-size: 0.95rem;
+  }
+}
+
+.availability {
+  background: var(--light-bg-color);
+  padding: 25px;
+  border-radius: var(--border-radius);
+  margin-top: 30px;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-color);
+  }
+}
+
+/* --- Contact Form --- */
+.contact-form {
+  background: var(--white-color);
+  padding: 40px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 5px 20px rgb(0, 0, 0, 0.08);
+
+  @media (max-width: 768px) {
+    padding: 25px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark-color);
+  }
+
+  /* Общие стили для текстовых полей и select */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-family: var(--font-family);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgb(44, 90, 160, 0.1);
+    }
+  }
+
+  /* Стили для textarea (отдельно, чтобы соблюсти порядок) */
+  textarea {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-family: var(--font-family);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    min-height: 150px;
+    resize: vertical;
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgb(44, 90, 160, 0.1);
+    }
+  }
+}
+
+.submit-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+
+  &:hover {
+    background: #2c5aa0;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgb(44, 90, 160, 0.2);
+  }
+}
+
+.form-note {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.contact-field {
+  display: none;
+
+  &.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.faq-section {
+  background: var(--light-bg-color);
+  padding: 60px 0;
+  margin-top: 60px;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+  }
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.faq-item {
+  background: var(--white-color);
+  padding: 25px;
+  border-radius: var(--border-radius);
+  box-shadow: 0 3px 10px rgb(0, 0, 0, 0.05);
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin: 0;
+  }
+}

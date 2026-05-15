@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Implementation Playbook – Николай Карпов</title>
+
+    <!-- СТИЛИ ПРЕЗЕНТАЦИИ -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/presentation.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- КРИТИЧЕСКИЕ СТИЛИ (безопасные) -->
+    <style>
+        /* Базовые стили для презентации */
+        body.presentation-page {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            position: fixed;
+            top: 0;
+            left: 0;
+        background: var(--color-background-light, #ffffff);
+        }
+
+        /* Управляемые состояния слайдов */
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            display: none;
+            transition: opacity 0.8s var(--ease-smooth);
+            padding: var(--spacing-xl);
+            background: var(--color-background-light);
+            overflow-y: auto;
+            z-index: 1;
+        }
+
+        .slide.active {
+            display: flex;
+            opacity: 1;
+            visibility: visible;
+            z-index: 2;
+        }
+
+        /* Контейнер презентации */
+        #presentation-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body class="presentation-page">
+
+<!-- КНОПКА ВЫХОДА -->
+<a href="../index.html" class="exit-btn" title="Вернуться в портфолио">
+    <i class="fas fa-times"></i>
+</a>
+
+<!-- Индикатор прогресса -->
+<nav class="progress-indicator" id="progress-indicator"></nav>
+
+<!-- Контейнер для слайдов -->
+<main id="presentation-container">
+    <!-- Сюда JS загрузит слайды -->
+</main>
+
+<!-- Кнопки навигации -->
+<div class="nav-buttons">
+    <button class="nav-btn nav-btn-prev" aria-label="Назад">← Назад</button>
+    <button class="nav-btn nav-btn-next" aria-label="Вперёд">Вперёд →</button>
+</div>
+
+<!-- СКРИПТЫ -->
+<script src="assets/js/navigation.js"></script>
+<script src="assets/js/animations.js"></script>
+<script src="assets/js/interactions.js"></script>
+
+<!-- ОСНОВНОЙ СКРИПТ ПРЕЗЕНТАЦИИ -->
+<script type="module">
+    const slideFiles = [
+        'slides/01-title.html',
+        'slides/02-problem.html',
+        'slides/03-solution.html',
+        'slides/04-case-1.html',
+        'slides/05-case-2.html',
+        'slides/06-tech-stack.html',
+        'slides/07-results.html',
+        'slides/08-final.html',
+        'slides/09-meta.html'
+    ];
+
+    const container = document.getElementById('presentation-container');
+    const progress = document.getElementById('progress-indicator');
+    let slides = [];
+    let current = 0;
+
+    async function loadSlides() {
+        console.log('🚀 Загрузка слайдов...');
+
+        // Очищаем контейнер
+        container.innerHTML = '';
+        slides = [];
+
+        for (const [index, file] of slideFiles.entries()) {
+            try {
+                const response = await fetch(file);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const html = await response.text();
+
+                const slide = document.createElement('section');
+                slide.className = 'slide';
+
+                // ID в формате slide-01-title, slide-02-problem и т.д.
+                const fileName = file.replace('slides/', '').replace('.html', '');
+                slide.id = 'slide-' + fileName;
+
+                slide.innerHTML = html;
+                container.appendChild(slide);
+                slides.push(slide);
+
+                console.log(`✅ Загружен: ${slide.id}`);
+
+            } catch (e) {
+                console.error('❌ Ошибка загрузки:', file, e);
+                // Создаем заглушку
+                const fallback = document.createElement('section');
+                fallback.className = 'slide';
+                fallback.id = 'slide-error-' + index;
+                fallback.innerHTML = `<div class="slide-content"><h2>Ошибка загрузки</h2><p>${file}</p></div>`;
+                container.appendChild(fallback);
+                slides.push(fallback);
+            }
+        }
+
+        if (slides.length > 0) {
+            console.log(`🎯 Всего загружено: ${slides.length} слайдов`);
+            initNavigation();
+
+            // АКТИВИРУЕМ ПЕРВЫЙ СЛАЙД
+            slides[0].classList.add('active');
+            current = 0;
+
+            updateUI();
+            updateHash();
+
+            // Инициализируем системы
+            setTimeout(() => {
+                if (window.presentationNavigation) {
+                    window.presentationNavigation.slides = slides;
+                    window.presentationNavigation.currentSlide = 0;
+                    window.presentationNavigation.updateProgressIndicator();
+                    window.presentationNavigation.updateNavButtons();
+                }
+
+                if (window.presentationAnimations) {
+                    window.presentationAnimations.triggerSlideAnimations(slides[0], 0);
+                }
+
+                if (window.presentationInteractions) {
+                    window.presentationInteractions.initSlideInteractions(slides[0]);
+                }
+            }, 300);
+        }
+    }
+
+    function initNavigation() {
+        // Инициализируем индикатор прогресса
+        initProgressIndicator();
+
+        // Вешаем обработчики на кнопки
+        const prevBtn = document.querySelector('.nav-btn-prev');
+        const nextBtn = document.querySelector('.nav-btn-next');
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => goToSlide(current - 1));
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => goToSlide(current + 1));
+        }
+
+        // Клавиатурная навигация
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                e.preventDefault();
+                goToSlide(current - 1);
+            } else if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+                e.preventDefault();
+                goToSlide(current + 1);
+            }
+        });
+
+        // Touch навигация
+        initTouchNavigation();
+    }
+
+    function initProgressIndicator() {
+        if (!progress) return;
+
+        progress.innerHTML = '';
+
+        slides.forEach((slide, index) => {
+            const dot = document.createElement('div');
+            dot.className = 'progress-dot';
+            dot.setAttribute('data-slide-index', index);
+            dot.setAttribute('data-title', getSlideTitle(slide));
+
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+            });
+
+            progress.appendChild(dot);
+        });
+    }
+
+    function getSlideTitle(slide) {
+        const titleElement = slide.querySelector('.title-concept') ||
+                           slide.querySelector('.title-header') ||
+                           slide.querySelector('.case-header') ||
+                           slide.querySelector('h2') ||
+                           slide.querySelector('h1');
+
+        if (titleElement) {
+            let title = titleElement.textContent || '';
+            if (title.length > 30) title = title.substring(0, 27) + '...';
+            return title;
+        }
+
+        return `Слайд ${slide.id.replace('slide-', '')}`;
+    }
+
+    function initTouchNavigation() {
+        let touchStartY = 0;
+        let touchStartX = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
+            touchStartX = e.touches[0].clientX;
+        }, { passive: true });
+
+        document.addEventListener('touchend', (e) => {
+            const touchEndY = e.changedTouches[0].clientY;
+            const touchEndX = e.changedTouches[0].clientX;
+            const diffY = touchStartY - touchEndY;
+            const diffX = touchStartX - touchEndX;
+
+            // Горизонтальный свайп > вертикального
+            if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+                if (diffX > 0) {
+                    goToSlide(current + 1); // Свайп влево
+                } else {
+                    goToSlide(current - 1); // Свайп вправо
+                }
+            }
+        }, { passive: true });
+    }
+
+    async function goToSlide(index) {
+        if (index < 0 || index >= slides.length) return;
+
+        // Убираем активный класс со старого слайда
+        slides[current].classList.remove('active');
+
+        // Добавляем активный класс новому слайду
+        current = index;
+        slides[current].classList.add('active');
+
+        // Обновляем UI
+        updateUI();
+        updateHash();
+
+        // Запускаем анимации для нового слайда
+        setTimeout(() => {
+            if (window.presentationAnimations) {
+                window.presentationAnimations.handleSlideChange({
+                    detail: {
+                        slideElement: slides[current],
+                        slideIndex: current
+                    }
+                });
+            }
+
+            if (window.presentationInteractions) {
+                window.presentationInteractions.initSlideInteractions(slides[current]);
+            }
+        }, 100);
+
+        // Диспатчим событие для других систем
+        dispatchSlideChangeEvent();
+    }
+
+    function updateUI() {
+        // Обновляем прогресс-индикатор
+        document.querySelectorAll('.progress-dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === current);
+        });
+
+        // Обновляем кнопки навигации
+        const prevBtn = document.querySelector('.nav-btn-prev');
+        const nextBtn = document.querySelector('.nav-btn-next');
+
+        if (prevBtn) {
+            prevBtn.disabled = current === 0;
+            prevBtn.style.opacity = current === 0 ? '0.5' : '1';
+        }
+
+        if (nextBtn) {
+            const isLast = current === slides.length - 1;
+            nextBtn.disabled = isLast;
+            nextBtn.style.opacity = isLast ? '0.5' : '1';
+            nextBtn.textContent = isLast ? 'Завершить →' : 'Вперёд →';
+        }
+    }
+
+    function updateHash() {
+        const slideId = slides[current].id;
+        if (history.replaceState) {
+            history.replaceState(null, null, `#${slideId}`);
+        } else {
+            window.location.hash = slideId;
+        }
+
+        // Обновляем заголовок страницы
+        document.title = `${getSlideTitle(slides[current])} | AI Implementation Playbook`;
+    }
+
+    function dispatchSlideChangeEvent() {
+        const event = new CustomEvent('slideChange', {
+            detail: {
+                slideIndex: current,
+                slideElement: slides[current],
+                totalSlides: slides.length,
+                slideId: slides[current].id
+            }
+        });
+        document.dispatchEvent(event);
+    }
+
+    // Запускаем загрузку
+    loadSlides().then(() => {
+        console.log('🎉 Презентация готова к работе!');
+    }).catch(error => {
+        console.error('💥 Ошибка инициализации:', error);
+    });
+
+    // Хэш-навигация при загрузке
+    window.addEventListener('hashchange', () => {
+        const hash = window.location.hash.substring(1);
+        if (!hash) return;
+
+        const targetIndex = slides.findIndex(slide => slide.id === hash);
+        if (targetIndex !== -1 && targetIndex !== current) {
+            goToSlide(targetIndex);
+        }
+    });
+
+    // Инициализация по хэшу при загрузке
+    window.addEventListener('load', () => {
+        const hash = window.location.hash.substring(1);
+        if (hash && slides.length > 0) {
+            const targetIndex = slides.findIndex(slide => slide.id === hash);
+            if (targetIndex !== -1) {
+                setTimeout(() => goToSlide(targetIndex), 100);
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

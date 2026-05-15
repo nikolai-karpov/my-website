@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты в цифрах | Карпов Николай - Инструктор по внедрению ИИ</title>
+
+    <!-- Подключаем единый файл стилей -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Дополнительные стили для страницы результатов -->
+    <style>
+        .results-hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2c5aa0 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0 60px;
+        }
+        .results-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        .results-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        .stats-highlight {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        .highlight-item {
+            text-align: center;
+        }
+        .highlight-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .highlight-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        .dashboard-section {
+            padding: 80px 0;
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        .dashboard-card {
+            background: var(--white-color);
+            padding: 40px 30px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+        .dashboard-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+        .dashboard-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--card-shadow-hover);
+        }
+        .metric-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--neural-glow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+        .metric-value {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        .metric-value.smaller {
+            font-size: 2.8rem;
+        }
+        .metric-label {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin-bottom: 15px;
+            display: block;
+        }
+        .metric-description {
+            font-size: 0.95rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--light-bg-color);
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: 4px;
+            transition: width 1.5s ease-in-out;
+        }
+        .calculator-section {
+            background: var(--light-bg-color);
+            padding: 80px 0;
+        }
+        .calculator-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+            background: var(--white-color);
+            padding: 50px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--card-shadow);
+        }
+        .calculator-form h3 {
+            margin-bottom: 30px;
+            color: var(--dark-color);
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+        .calculator-result {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2c5aa0 100%);
+            color: white;
+            padding: 40px;
+            border-radius: var(--border-radius-lg);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .calculator-result::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+        }
+        .result-value {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 20px 0;
+            position: relative;
+        }
+        .result-note {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 20px;
+        }
+        .result-fte {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        .download-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        .download-card {
+            background: var(--white-color);
+            padding: 60px 40px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--card-shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .download-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--neural-glow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+        @media (max-width: 992px) {
+            .calculator-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .calculator-result {
+                margin-top: 0;
+            }
+        }
+        @media (max-width: 768px) {
+            .results-hero h1 {
+                font-size: 2.2rem;
+            }
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-highlight {
+                gap: 20px;
+            }
+            .calculator-grid {
+                padding: 30px 20px;
+            }
+            .result-value {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+
+    <!-- Иконка для вкладки браузера -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header id="main-header" data-component="components/header.html"></header>
+
+<main>
+    <!-- Герой-секция -->
+    <section class="results-hero">
+        <div class="container">
+            <h1>Результаты, которые говорят сами за себя</h1>
+            <p>Данные синтезированы из 42 пилотных проектов в 12 различных отделах. Они наглядно демонстрируют системный, а не случайный эффект от внедрения ИИ в рабочие процессы.</p>
+
+            <div class="stats-highlight">
+                <div class="highlight-item">
+                    <span class="highlight-number">42</span>
+                    <span class="highlight-label">Успешных проекта</span>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-number">12</span>
+                    <span class="highlight-label">Разных отраслей</span>
+                </div>
+                <div class="highlight-item">
+                    <span class="highlight-number">94%</span>
+                    <span class="highlight-label">Adoption Rate</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Дашборд с метриками -->
+    <section class="dashboard-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Измеримые результаты внедрений</h2>
+                <p>Ключевые метрики эффективности по итогам 2024 года</p>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="metric-value">52%</div>
+                    <div class="metric-label">Средняя экономия времени</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 52%"></div>
+                    </div>
+                    <div class="metric-description">На рутинных задачах и подготовке отчетов</div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="metric-value smaller">3×</div>
+                    <div class="metric-label">Ускорение обработки</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 75%"></div>
+                    </div>
+                    <div class="metric-description">С 41 мин до 14 мин в среднем на задачу</div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="metric-value">90%</div>
+                    <div class="metric-label">Принятие сотрудниками</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 90%"></div>
+                    </div>
+                    <div class="metric-description">Переходят от скепсиса к активному использованию</div>
+                </div>
+
+                <div class="dashboard-card">
+                    <div class="metric-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="metric-value smaller">2.6</div>
+                    <div class="metric-label">FTE высвобождено</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%"></div>
+                    </div>
+                    <div class="metric-description">Эквивалент полной занятости в отделе из 10 человек</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Калькулятор ROI -->
+    <section class="calculator-section">
+        <div class="container">
+            <div class="calculator-container">
+                <div class="section-header">
+                    <h2>Примерьте результат на себя</h2>
+                    <p>Рассчитайте потенциальную экономию для вашего бизнеса</p>
+                </div>
+
+                <div class="calculator-grid">
+                    <div class="calculator-form">
+                        <h3>Рассчитайте вашу потенциальную экономию</h3>
+                        <div class="form-group">
+                            <label for="employees">
+                                <i class="fas fa-users"></i>
+                                Количество сотрудников в процессе:
+                            </label>
+                            <input type="number" id="employees" value="5" min="1" max="100">
+                        </div>
+                        <div class="form-group">
+                            <label for="hours">
+                                <i class="far fa-clock"></i>
+                                Часов в неделю на рутинную задачу (на 1 чел):
+                            </label>
+                            <input type="number" id="hours" value="10" min="1" max="40">
+                        </div>
+                        <div class="form-group">
+                            <label for="rate">
+                                <i class="fas fa-ruble-sign"></i>
+                                Средняя часовая ставка (руб.):
+                            </label>
+                            <input type="number" id="rate" value="1000" min="100" max="10000">
+                        </div>
+                        <button class="cta-button primary large" onclick="calculateROI()">
+                            <i class="fas fa-calculator"></i>
+                            Рассчитать экономию
+                        </button>
+                    </div>
+
+                    <div class="calculator-result">
+                        <h3>Ваша потенциальная экономия в год:</h3>
+                        <div class="result-value" id="result-value">1 352 000 ₽</div>
+                        <div class="result-note">
+                            Или <span class="result-fte" id="result-fte">~ 1.3 FTE</span> высвобожденного времени
+                        </div>
+                        <p class="result-note">которое можно направить на стратегические задачи и развитие бизнеса</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция скачивания отчета -->
+    <section class="download-section">
+        <div class="container">
+            <div class="download-card">
+                <div class="download-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h2>Хотите увидеть полную картину?</h2>
+                <p style="max-width: 600px; margin: 0 auto 30px; font-size: 1.2rem;">
+                    Все цифры, представленные на этой странице, взяты из сводного аналитического отчета.
+                    Изучите его, чтобы понять методологию, увидеть успешные практики и ключевые барьеры на пути внедрения.
+                </p>
+                <a href="Final_Business_Impact_Report.pdf" class="cta-button primary large" download>
+                    <i class="fas fa-download"></i>
+                    Скачать полный аналитический отчет
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer id="main-footer" data-component="components/footer.html"></footer>
+
+<!-- Скрипт для подгрузки шапки, подвала и работы калькулятора -->
+<script>
+    // Загрузка компонентов
+    const loadComponent = (url, elementId) => {
+        fetch(url)
+            .then(response => response.ok ? response.text() : Promise.reject(`Error loading ${url}`))
+            .then(data => { document.getElementById(elementId).innerHTML = data; })
+            .catch(error => console.error(`Could not load component:`, error));
+    };
+
+    // Анимация появления прогресс-баров
+    const animateProgressBars = () => {
+        const progressBars = document.querySelectorAll('.progress-fill');
+        progressBars.forEach(bar => {
+            const width = bar.style.width;
+            bar.style.width = '0%';
+            setTimeout(() => {
+                bar.style.width = width;
+            }, 500);
+        });
+    };
+
+    // Логика калькулятора
+    function calculateROI() {
+        const employees = parseFloat(document.getElementById('employees').value) || 0;
+        const hours = parseFloat(document.getElementById('hours').value) || 0;
+        const rate = parseFloat(document.getElementById('rate').value) || 0;
+
+        // Предполагаем 52 рабочих недели в году и среднюю экономию времени в 52%
+        const economy_percentage = 0.52;
+        const weeks_in_year = 52;
+
+        const total_hours_per_week = employees * hours;
+        const saved_hours_per_week = total_hours_per_week * economy_percentage;
+
+        const yearly_savings_rub = saved_hours_per_week * rate * weeks_in_year;
+
+        // Расчет FTE (1 FTE = 40 часов в неделю)
+        const saved_fte = saved_hours_per_week / 40;
+
+        // Форматирование и вывод результата
+        const formatter = new Intl.NumberFormat('ru-RU', {
+            style: 'currency',
+            currency: 'RUB',
+            maximumFractionDigits: 0
+        });
+
+        // Анимация изменения цифры
+        animateValue('result-value', 0, yearly_savings_rub, 1500, formatter);
+        animateValue('result-fte', 0, saved_fte, 1500, null, true);
+    }
+
+    // Функция анимации чисел
+    function animateValue(id, start, end, duration, formatter = null, isFte = false) {
+        const obj = document.getElementById(id);
+        const startTime = performance.now();
+
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            // easing function
+            const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+            const current = start + (end - start) * easeOutQuart;
+
+            if (formatter) {
+                obj.textContent = formatter.format(Math.round(current));
+            } else if (isFte) {
+                obj.textContent = `~ ${current.toFixed(1)} FTE`;
+            } else {
+                obj.textContent = Math.round(current);
+            }
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            }
+        }
+
+        requestAnimationFrame(update);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        loadComponent('header.html', 'main-header');
+        loadComponent('footer.html', 'main-footer');
+        setTimeout(animateProgressBars, 1000);
+
+        // Авторасчет при загрузке
+        setTimeout(calculateROI, 500);
+    });
+</script>
+</body>
+</html>
