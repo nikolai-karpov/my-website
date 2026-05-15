@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главный кейс: платформа ПИР и ИИ-ассистент для проектировщика | Карпов Николай</title>
+
+    <meta name="description" content="Платформа для управления проектированием (pir-s.ru): React, BFF на Node/TypeScript, Hasura, Docker; демо-контур с AI Co-Pilot по ИРД — классификация, нормконтроль, коллизии, задел под аналитический Python-сервис.">
+    <meta name="keywords" content="ПИР, ИРД, Hasura, GraphQL, React, BFF, проектирование, ИИ-ассистент, ГИП">
+
+    <meta property="og:title" content="Платформа ПИР и ИИ-ассистент для проектировщика | Карпов Николай">
+    <meta property="og:description" content="Многослойная платформа проектного контура и сценарии ИИ вокруг исходно-разрешительной документации.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://nikolai-karpov.github.io/my-website/site-pages/case-studies/pir-s-platform-gip.html">
+
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+</head>
+<body class="loading">
+
+<div class="preloader">
+    <div class="preloader-content">
+        <div class="neural-network-animation">
+            <div class="neuron"></div>
+            <div class="neuron"></div>
+            <div class="neuron"></div>
+        </div>
+        <p>Загружаем кейс...</p>
+    </div>
+</div>
+
+<header id="main-header">
+    <div class="container">
+        <p>Загрузка навигации...</p>
+    </div>
+</header>
+
+<main>
+    <section class="case-hero">
+        <div class="container">
+            <div class="case-hero-content">
+                <div class="client-info">
+                    <i class="fas fa-layer-group"></i>
+                    <span>Проектно-изыскательские работы · Цифровой контур</span>
+                </div>
+
+                <h1>Главный кейс: платформа управления проектированием и ИИ-ассистент для инженера-проектировщика</h1>
+                <p class="subtitle">Репозиторий <strong>pir-s.ru</strong> (демо-ветка <code>demo</code>) — это сквозная платформа для ведения объектов и документации ПИР с выделенным BFF, GraphQL-слоем Hasura и набором экранов для ИИ-помощника вокруг исходно-разрешительной документации (ИРД): от реестра и «исходных данных» до дашбордов нормконтроля, коллизий и заделов под генерацию ТЗ на разделы.</p>
+
+                <div class="key-metrics">
+                    <div class="metric-card">
+                        <span class="metric-value">5 слоёв</span>
+                        <span class="metric-label">Client · BFF · Hasura · Deploy · Seeder/Docs</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">GraphQL + REST</span>
+                        <span class="metric-label">Apollo-наследие и BFF-адаптация для новых AI-экранов</span>
+                    </div>
+                    <div class="metric-card">
+                        <span class="metric-value">ИРД</span>
+                        <span class="metric-label">Классификация, валидация, аналитика, демо-mock API</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="case-details">
+        <div class="container">
+            <div class="case-section">
+                <div class="section-sidebar">
+                    <div class="section-badge">
+                        <i class="fas fa-bullseye"></i>
+                        <span>Задача</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <h3>Единый цифровой контур вместо «папок и почты»</h3>
+                    <p>Инженер-проектировщик и главный инженер проекта (ГИП) тонут в объёмах ИРД, версиях, согласованиях и ручных проверках. Нужна платформа, где объект живёт в одной модели данных, а ИИ-помощник не «рисует слайды», а опирается на структурированные артефакты: реестр документов, XML-контуры, статусы разделов и воспроизводимые контракты между фронтом, BFF и аналитическим backend.</p>
+                    <div class="tech-stack">
+                        <span class="tech-item">Объекты ПИР</span>
+                        <span class="tech-item">ИРД</span>
+                        <span class="tech-item">Нормконтроль</span>
+                        <span class="tech-item">Согласования</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-section">
+                <div class="section-sidebar">
+                    <div class="section-badge">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Архитектура</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <h3>Многослойная система в одном репозитории</h3>
+                    <p><strong>client/</strong> — React-приложение (CRA + craco): исторически Apollo/GraphQL для доменных данных, новые сценарии AI/ИРД/ORD/normcontrol часто идут через REST к BFF. <strong>server/</strong> — Node/TypeScript BFF: сессии и auth, интеграции, хранилища, адаптация ответов Hasura, webhook/actions и демонстрационные mock-маршруты для ИИ-экранов. <strong>hasura/</strong> — источник истины по схеме БД: metadata, idempotent SQL-миграции, демо-сид. <strong>deploy/</strong> — Docker-образы, nginx, supervisord, сценарии выкладки. <strong>seeder/</strong> и <strong>docs/</strong> — воспроизводимые demo-данные (включая примеры XML ИРД и референсные analysis JSON), контракты и спеки для согласованной эволюции продукта.</p>
+                </div>
+            </div>
+
+            <div class="case-section">
+                <div class="section-sidebar">
+                    <div class="section-badge">
+                        <i class="fas fa-robot"></i>
+                        <span>ИИ-ассистент</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <h3>Что делает ассистент для ГИПа в демо-контуре</h3>
+                    <p>В продуктовой карте заложены сценарии вокруг ИРД: расширенная классификация типов документов, валидация XML, модульный анализ и фрагментация под лимиты LLM, поиск коллизий, чек-листы нормконтроля, генерация сопутствующих текстов и ТЗ на разделы проектной документации. В демо-ветке часть тяжёлого анализа заменена контролируемыми mock-эндпоинтами и фикстурами, чтобы команда могла развивать UX и контракты без блокировки на полный ML-контур; параллельно описан перенос зрелых артефактов из исследовательского контура <strong>ai-gip</strong> и зарезервирован слот <strong>analysis-container/</strong> под Python-runtime анализа.</p>
+                    <div class="tech-stack">
+                        <span class="tech-item">REST mock + BFF</span>
+                        <span class="tech-item">Контракты JSON</span>
+                        <span class="tech-item">Qdrant / RAG</span>
+                        <span class="tech-item">FastAPI (roadmap)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="case-section">
+                <div class="section-sidebar">
+                    <div class="section-badge">
+                        <i class="fas fa-book"></i>
+                        <span>Инженерная культура</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <h3>Документация как часть продукта</h3>
+                    <p>В репозитории закреплены runbook демо-сервера, журнал «граблей» по областям (frontend, Hasura, deploy, Postgres), спецификации по IRD analysis для demo и аудит переноса возможностей из ai-gip. Это снижает стоимость онбординга и позволяет агентам и людям работать точечно — по файлам маршрутов, меню, BFF-роутов и миграций — вместо раздувания одного бесконечного контекста.</p>
+                </div>
+            </div>
+
+            <div class="case-section">
+                <div class="section-sidebar">
+                    <div class="section-badge">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <span>Границы</span>
+                    </div>
+                </div>
+                <div class="section-content">
+                    <h3>Честно про объём и риски</h3>
+                    <p>Демо-контур намеренно упрощает часть тяжёлых веток (например, обработку «живых» сканов) в пользу XML-прототипов и фикстур. Папки вроде <code>ai-gip/</code>, <code>mcp-server/</code>, <code>qdrant-config/</code> в worktree — вспомогательные и исследовательские материалы, а не обязательный runtime в каждой сборке. Публичное портфолио не дублирует закрытый Git: для знакомства с продуктом ориентир — домен <strong>pir-s.ru</strong> и ветка <code>demo</code> по согласованию с владельцем репозитория.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Нужна похожая архитектура под ваш ПИР-контур?</h2>
+            <p>Можно спроектировать слои данных, BFF и сценарии ИИ-ассистента с учётом регламентов и ИБ.</p>
+            <a href="../contacts.html" class="btn btn-primary">Обсудить проект</a>
+            <p style="margin-top: 24px;"><a href="index.html" class="case-link"><span>Все кейсы</span> <i class="fas fa-arrow-right"></i></a></p>
+        </div>
+    </section>
+</main>
+
+<footer id="main-footer"></footer>
+
+<a href="#" class="back-to-top" aria-label="Наверх">
+    <i class="fas fa-chevron-up"></i>
+</a>
+
+<div class="mobile-footer-menu">
+    <nav class="mobile-nav-menu">
+        <a href="../../index.html" class="mobile-nav-item">
+            <i class="fas fa-home"></i>
+            <span>Главная</span>
+        </a>
+        <a href="../methodology.html" class="mobile-nav-item">
+            <i class="fas fa-cogs"></i>
+            <span>Методология</span>
+        </a>
+        <a href="index.html" class="mobile-nav-item active">
+            <i class="fas fa-briefcase"></i>
+            <span>Кейсы</span>
+        </a>
+        <a href="../contacts.html" class="mobile-nav-item">
+            <i class="fas fa-envelope"></i>
+            <span>Контакты</span>
+        </a>
+    </nav>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            document.body.classList.remove('loading');
+        }, 800);
+    });
+</script>
+<script src="../../assets/js/components-loader.js" defer></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            const header = document.getElementById('main-header');
+            if (header && header.innerHTML.includes('Загрузка навигации')) {
+                const loadComponent = (url, elementId) => {
+                    fetch(url)
+                        .then(response => {
+                            if (!response.ok) throw new Error('Network error');
+                            return response.text();
+                        })
+                        .then(html => {
+                            document.getElementById(elementId).innerHTML = html;
+                        })
+                        .catch(() => {
+                            document.getElementById(elementId).innerHTML =
+                                '<div class="container"><p class="text-center">Компонент временно недоступен</p></div>';
+                        });
+                };
+                loadComponent('../../site-components/header.html', 'main-header');
+                loadComponent('../../site-components/footer.html', 'main-footer');
+            }
+        }, 2000);
+    });
+</script>
+
+</body>
+</html>
