@@ -198,25 +198,6 @@
 
     <div id="footer"></div>
 
-    <script>
-        // Загрузка header и footer
-        document.addEventListener('DOMContentLoaded', function() {
-            // Загрузка header
-            fetch('../site-components/header.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('header').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading header:', error));
-
-            // Загрузка footer
-            fetch('../site-components/footer.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('footer').innerHTML = data;
-                })
-                .catch(error => console.error('Error loading footer:', error));
-        });
-    </script>
+    <script src="../assets/js/components-loader.js" defer></script>
 </body>
 </html>

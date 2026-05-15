@@ -537,45 +537,5 @@
         }
       });
     </script>
-
-    <!-- Переключатель темы -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const themeToggle = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-
-        // Проверяем сохраненную тему или системные настройки
-        const savedTheme = localStorage.getItem('theme');
-        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
-
-        // Применяем тему
-        function setTheme(theme) {
-          document.documentElement.setAttribute('data-theme', theme);
-          localStorage.setItem('theme', theme);
-          
-          // Обновляем иконку
-          const iconClass = theme === 'dark' ? 'fa-sun' : 'fa-moon';
-          themeIcon.className = `fas ${iconClass}`;
-        }
-
-        // Устанавливаем начальную тему
-        setTheme(currentTheme);
-
-        // Обработчик клика
-        themeToggle.addEventListener('click', function() {
-          const currentTheme = document.documentElement.getAttribute('data-theme');
-          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-          setTheme(newTheme);
-        });
-
-        // Следим за системными настройками
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-          if (!localStorage.getItem('theme')) {
-            setTheme(e.matches ? 'dark' : 'light');
-          }
-        });
-      });
-    </script>
   </body>
 </html>

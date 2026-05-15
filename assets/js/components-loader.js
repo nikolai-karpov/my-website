@@ -65,3 +65,59 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+/**
+ * Тема: скрипты из header.html не выполняются при вставке через innerHTML,
+ * а обработчики на «старой» кнопке до fetch теряются после подмены шапки.
+ * Делегирование клика + синхронизация иконок после headerLoaded.
+ */
+(function setupGlobalThemeToggle() {
+    if (window.__nkThemeToggleBound) return;
+    window.__nkThemeToggleBound = true;
+
+    function effectiveTheme() {
+        const saved = localStorage.getItem("theme");
+        if (saved === "dark" || saved === "light") return saved;
+        return window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+    }
+
+    function updateThemeIcons(theme) {
+        const iconClass = theme === "dark" ? "fa-sun" : "fa-moon";
+        document.querySelectorAll(".theme-toggle > i").forEach((icon) => {
+            icon.className = `fas ${iconClass}`;
+        });
+    }
+
+    function setTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+        updateThemeIcons(theme);
+    }
+
+    document.addEventListener("click", function (e) {
+        const btn = e.target.closest(".theme-toggle");
+        if (!btn) return;
+        const current =
+            document.documentElement.getAttribute("data-theme") || "light";
+        setTheme(current === "dark" ? "light" : "dark");
+    });
+
+    document.addEventListener("headerLoaded", function () {
+        const attr = document.documentElement.getAttribute("data-theme");
+        const theme =
+            attr === "dark" || attr === "light" ? attr : effectiveTheme();
+        updateThemeIcons(theme);
+    });
+
+    window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", function (e) {
+            if (!localStorage.getItem("theme")) {
+                setTheme(e.matches ? "dark" : "light");
+            }
+        });
+
+    setTheme(effectiveTheme());
+})();
