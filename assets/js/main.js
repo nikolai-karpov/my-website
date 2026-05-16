@@ -1,81 +1,96 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Убираем прелоадер
-    setTimeout(() => {
-        document.body.classList.remove('loading');
-    }, 1000);
+(() => {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Инициализация AOS
-    AOS.init({
-        duration: 800,
-        once: true,
-        offset: 100
+  // ---------- Theme toggle ----------
+  const KEY = 'altv2-theme';
+  const root = document.documentElement;
+  const stored = localStorage.getItem(KEY);
+
+  if (stored === 'dark' || stored === 'light') {
+    root.setAttribute('data-theme', stored);
+  }
+
+  const toggle = document.getElementById('themeToggle');
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      const current =
+        root.getAttribute('data-theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      const next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem(KEY, next);
     });
+  }
 
-    // Обработка формы лид-магнита
-    const checklistForm = document.getElementById('checklist-form');
-    if (checklistForm) {
-        checklistForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            // Здесь должна быть интеграция с email-сервисом
-            alert(`Спасибо! Чек-лист отправлен на ${email}`);
-            this.reset();
-        });
-    }
-});
+  // ---------- Sticky header shadow ----------
+  const header = document.querySelector('.site-header');
+  const onScrollHeader = () => {
+    if (header) header.classList.toggle('is-scrolled', window.scrollY > 8);
+  };
 
-// Обработка ошибок изображений
-document.addEventListener('error', function(e) {
-    if (e.target.tagName === 'IMG') {
-        console.warn('Image failed to load:', e.target.src);
-    }
-}, true);
+  // ---------- Scroll-to-top button ----------
+  const scrollTopBtn = document.getElementById('scrollTop');
+  const onScrollTop = () => {
+    if (scrollTopBtn) scrollTopBtn.classList.toggle('is-visible', window.scrollY > 400);
+  };
 
-// Мобильное меню (Event Delegation для динамически загружаемого хедера)
-document.addEventListener('click', function(e) {
-    // Проверяем, был ли клик по кнопке гамбургера
-    const hamburger = e.target.closest('.hamburger');
-    
-    if (hamburger) {
-        const mobileNav = document.querySelector('.mobile-nav');
-        const mobileOverlay = document.querySelector('.mobile-overlay');
-        
-        // Переключаем состояние
-        const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-        hamburger.setAttribute('aria-expanded', !isExpanded);
-        mobileNav.setAttribute('aria-hidden', !isExpanded);
-        mobileOverlay.classList.toggle('active');
-        document.body.style.overflow = !isExpanded ? 'hidden' : '';
-    }
-    
-    // Обработка клика по оверлею
-    if (e.target.classList.contains('mobile-overlay') && e.target.classList.contains('active')) {
-        const hamburger = document.querySelector('.hamburger');
-        const mobileNav = document.querySelector('.mobile-nav');
-        const mobileOverlay = document.querySelector('.mobile-overlay');
-        
-        hamburger.setAttribute('aria-expanded', 'false');
-        mobileNav.setAttribute('aria-hidden', 'true');
-        mobileOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-    
-    // Обработка клика по ссылкам в мобильном меню
-    if (e.target.closest('.mobile-nav a')) {
-        const hamburger = document.querySelector('.hamburger');
-        const mobileNav = document.querySelector('.mobile-nav');
-        const mobileOverlay = document.querySelector('.mobile-overlay');
-        
-        hamburger.setAttribute('aria-expanded', 'false');
-        mobileNav.setAttribute('aria-hidden', 'true');
-        mobileOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-});
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: reduceMotion ? 'auto' : 'smooth',
+      });
+    });
+  }
 
-// Обработка ошибок изображений
-document.addEventListener('error', function(e) {
-    if (e.target.tagName === 'IMG') {
-        console.warn('Image failed to load:', e.target.src);
-    }
-}, true);
+  // Combined scroll handler
+  const onScroll = () => {
+    onScrollHeader();
+    onScrollTop();
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // ---------- Smooth in-page nav ----------
+  if (!reduceMotion) {
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const id = link.getAttribute('href');
+        if (id.length < 2) return;
+        const target = document.querySelector(id);
+        if (!target) return;
+        e.preventDefault();
+        const headerH = (document.querySelector('.site-header')?.offsetHeight) || 0;
+        const top = target.getBoundingClientRect().top + window.scrollY - headerH - 12;
+        window.scrollTo({ top, behavior: 'smooth' });
+        history.pushState(null, '', id);
+      });
+    });
+  }
+
+  // ---------- Active nav highlight on scroll ----------
+  const navLinks = Array.from(document.querySelectorAll('.site-nav a[href^="#"]'));
+  if (navLinks.length && 'IntersectionObserver' in window) {
+    const sections = navLinks
+      .map((a) => document.querySelector(a.getAttribute('href')))
+      .filter(Boolean);
+
+    const setActive = (id) => {
+      navLinks.forEach((a) => {
+        a.classList.toggle('is-active', a.getAttribute('href') === '#' + id);
+      });
+    };
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActive(visible.target.id);
+      },
+      { rootMargin: '-30% 0px -55% 0px', threshold: [0, 0.1, 0.4, 0.8] }
+    );
+
+    sections.forEach((s) => io.observe(s));
+  }
+})();
