@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yard Management — Бронирование окон загрузки/выгрузки</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1115;
+      --panel: #161922;
+      --panel-2: #1c2030;
+      --line: #262b3d;
+      --line-soft: #1f2435;
+      --text: #e6e8ef;
+      --text-dim: #9097ab;
+      --text-muted: #5b6175;
+      --accent: #ffd23f;
+      /* янтарный — как в исходной табличке */
+      --accent-2: #4cc9f0;
+      --ok: #3ddc97;
+      --warn: #ff9f1c;
+      --danger: #ef476f;
+      --k1: #3ddc97;
+      /* коэф. 1 — паллеты */
+      --k2: #4cc9f0;
+      /* коэф. 2 — сборка  */
+      --k3: #ff9f1c;
+      /* коэф. 3 — россыпь/контейнеры */
+      --k4: #ef476f;
+      /* коэф. 4 — вагоны */
+      /* Таблица расписания: минимум гибкой колонки и всей сетки (горизонтальный скролл) */
+      --tl-col-sku-min: 148px;
+      --tl-table-min-width: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Manrope', -apple-system, sans-serif;
+      font-size: 13px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ============ TOP BAR ============ */
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px;
+      background: var(--panel);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, var(--accent), #ff9f1c);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #0f1115;
+      font-size: 16px;
+    }
+
+    .brand-text {
+      line-height: 1.2;
+    }
+
+    .brand-text .title {
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: -0.01em;
+    }
+
+    .brand-text .sub {
+      font-size: 11px;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .warehouse-tabs {
+      display: flex;
+      gap: 4px;
+      background: var(--panel-2);
+      padding: 4px;
+      border-radius: 8px;
+    }
+
+    .warehouse-tabs button {
+      background: transparent;
+      border: 0;
+      color: var(--text-dim);
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .warehouse-tabs button.active {
+      background: var(--accent);
+      color: #0f1115;
+    }
+
+    .warehouse-tabs button:not(.active):hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .user-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      background: var(--panel-2);
+      border-radius: 20px;
+      font-size: 12px;
+    }
+
+    .user-avatar {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4cc9f0, #4361ee);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 11px;
+      color: white;
+    }
+
+    .user-role {
+      color: var(--text-dim);
+      font-size: 11px;
+    }
+
+    /* ============ HEADER STRIP — лимит, дата, статус ============ */
+    .header-strip {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 18px 24px;
+      background: linear-gradient(180deg, var(--panel) 0%, var(--bg) 100%);
+      border-bottom: 1px solid var(--line);
+      gap: 24px;
+    }
+
+    .date-nav {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .date-nav button {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      color: var(--text);
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .date-nav button:hover {
+      border-color: var(--accent);
+    }
+
+    .date-display {
+      text-align: left;
+    }
+
+    .date-display .day {
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .date-display .meta {
+      font-size: 11px;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 2px;
+    }
+
+    .capacity-panel {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 12px 22px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .cap-block {
+      text-align: center;
+    }
+
+    .cap-block .label {
+      font-size: 10px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .cap-block .value {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-top: 2px;
+    }
+
+    .cap-block .value.accent {
+      color: var(--accent);
+    }
+
+    .cap-block .value.ok {
+      color: var(--ok);
+    }
+
+    .cap-block .value.warn {
+      color: var(--warn);
+    }
+
+    .cap-bar {
+      width: 220px;
+      height: 8px;
+      background: var(--panel-2);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cap-bar-fill {
+      height: 100%;
+      width: 74%;
+      background: linear-gradient(90deg, var(--ok) 0%, var(--accent) 70%, var(--danger) 100%);
+      border-radius: 4px;
+      transition: width 0.3s;
+    }
+
+    .cap-bar-marker {
+      position: absolute;
+      left: 95%;
+      top: -2px;
+      bottom: -2px;
+      width: 2px;
+      background: var(--danger);
+    }
+
+    .right-status {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .live-indicator {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--ok);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.3;
+      }
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0f1115;
+      border: 0;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-weight: 700;
+      font-size: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform 0.1s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+    }
+
+    /* ============ RULES STRIP ============ */
+    .rules-strip {
+      display: flex;
+      gap: 12px;
+      padding: 12px 24px;
+      background: var(--panel-2);
+      border-bottom: 1px solid var(--line);
+      overflow-x: auto;
+    }
+
+    .rule-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--line);
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .rule-chip .rule-icon {
+      font-size: 13px;
+    }
+
+    .rule-chip strong {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* ============ MAIN GRID ============ */
+    .main {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 0;
+      min-height: calc(100vh - 200px);
+    }
+
+    .schedule-area {
+      padding: 20px 24px;
+      overflow-x: auto;
+      overflow-y: visible;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .schedule-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+
+    .schedule-toolbar h2 {
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+    }
+
+    .filter-chip {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      color: var(--text-dim);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .filter-chip.active {
+      color: var(--text);
+      border-color: var(--accent);
+      background: rgba(255, 210, 63, 0.06);
+    }
+
+    /* ============ TIMELINE TABLE ============ */
+    .timeline {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      /* Не даём колонкам схлопнуться до нуля: таблица шире вьюпорта → скролл у .schedule-area */
+      min-width: max(100%, var(--tl-table-min-width));
+    }
+
+    .timeline-header {
+      display: grid;
+      grid-template-columns: 90px 100px 120px minmax(var(--tl-col-sku-min), 1fr) 96px 96px 90px 110px 130px 130px 50px;
+      background: var(--panel-2);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+
+    .timeline-header>div {
+      padding: 12px 10px;
+      border-right: 1px solid var(--line-soft);
+      min-width: 0;
+      line-height: 1.25;
+      hyphens: auto;
+    }
+
+    .timeline-header>div:last-child {
+      border-right: 0;
+    }
+
+    .slot-row {
+      display: grid;
+      grid-template-columns: 90px 100px 120px minmax(var(--tl-col-sku-min), 1fr) 96px 96px 90px 110px 130px 130px 50px;
+      border-top: 1px solid var(--line-soft);
+      transition: background 0.1s;
+      position: relative;
+    }
+
+    .slot-row:hover {
+      background: rgba(255, 255, 255, 0.015);
+    }
+
+    .slot-row>div {
+      padding: 12px 10px;
+      border-right: 1px solid var(--line-soft);
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+      min-width: 0;
+      overflow-wrap: break-word;
+    }
+
+    /* Колонка «Заказы / SKU»: выравнивание многострочного текста, без наслоения на соседние ячейки */
+    .slot-row>div:nth-child(4) {
+      align-items: flex-start;
+      align-self: stretch;
+    }
+
+    .slot-row>div:last-child {
+      border-right: 0;
+    }
+
+    .time-cell {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      justify-content: center !important;
+      background: rgba(255, 255, 255, 0.015);
+      position: relative;
+    }
+
+    .time-cell .time-main {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .time-cell .time-sub {
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .time-cell .time-tag {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      font-size: 9px;
+      padding: 1px 5px;
+      border-radius: 3px;
+      background: var(--accent);
+      color: #0f1115;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+    }
+
+    .time-cell.special {
+      background: rgba(255, 210, 63, 0.08);
+    }
+
+    .time-cell.special .time-note {
+      font-size: 9px;
+      color: var(--accent);
+      margin-top: 4px;
+      line-height: 1.3;
+    }
+
+    .orders-cell {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      gap: 3px;
+    }
+
+    .order-id {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text);
+      padding: 1px 6px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 3px;
+      display: inline-block;
+    }
+
+    .order-id.head {
+      background: rgba(255, 210, 63, 0.14);
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .client-cell {
+      font-weight: 600;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 9px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .badge.tc-fura {
+      background: rgba(76, 201, 240, 0.12);
+      color: var(--accent-2);
+    }
+
+    .badge.tc-cont {
+      background: rgba(255, 159, 28, 0.12);
+      color: var(--warn);
+    }
+
+    .badge.tc-vagon {
+      background: rgba(239, 71, 111, 0.12);
+      color: var(--danger);
+    }
+
+    .badge.tp-deliv {
+      background: rgba(61, 220, 151, 0.10);
+      color: var(--ok);
+    }
+
+    .badge.tp-self {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-dim);
+    }
+
+    .tonnage {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .tonnage.high {
+      color: var(--warn);
+    }
+
+    /* Коэффициент сложности */
+    .k-cell {
+      gap: 6px;
+    }
+
+    .k-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 5px;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 11px;
+      color: #0f1115;
+    }
+
+    .k-badge.k1 {
+      background: var(--k1);
+    }
+
+    .k-badge.k2 {
+      background: var(--k2);
+    }
+
+    .k-badge.k3 {
+      background: var(--k3);
+    }
+
+    .k-badge.k4 {
+      background: var(--k4);
+    }
+
+    .k-label {
+      font-size: 10px;
+      color: var(--text-dim);
+    }
+
+    /* Расчёт времени */
+    .duration-cell {
+      flex-direction: column !important;
+      align-items: flex-start !important;
+    }
+
+    .duration-main {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .duration-sub {
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* Комментарий */
+    .comment-cell {
+      font-size: 11px;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+
+    .comment-cell.warn {
+      color: var(--warn);
+    }
+
+    .comment-cell.danger {
+      color: var(--danger);
+      font-weight: 600;
+    }
+
+    /* Тел водителя */
+    .phone-cell .phone {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+    }
+
+    .phone-cell .phone.empty {
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .phone-cell .phone.required {
+      color: var(--danger);
+    }
+
+    /* Действия */
+    .action-cell {
+      justify-content: center !important;
+    }
+
+    .icon-btn {
+      background: transparent;
+      border: 0;
+      color: var(--text-dim);
+      cursor: pointer;
+      padding: 4px 6px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    .icon-btn:hover {
+      background: var(--panel-2);
+      color: var(--text);
+    }
+
+    /* Статусные метки слева у строки */
+    .slot-row::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: transparent;
+    }
+
+    .slot-row.over-limit::before {
+      background: var(--danger);
+    }
+
+    .slot-row.warning::before {
+      background: var(--warn);
+    }
+
+    .slot-row.ok::before {
+      background: var(--ok);
+    }
+
+    /* ============ ПУСТОЙ СЛОТ — кнопка добавления ============ */
+    .add-slot {
+      display: grid;
+      grid-template-columns: 90px minmax(0, 1fr);
+      border-top: 1px solid var(--line-soft);
+      background: rgba(76, 201, 240, 0.02);
+      cursor: pointer;
+    }
+
+    .add-slot:hover {
+      background: rgba(76, 201, 240, 0.06);
+    }
+
+    .add-slot .time-cell {
+      color: var(--accent-2);
+    }
+
+    .add-slot .add-content {
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent-2);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* ============ SIDEBAR ============ */
+    .sidebar {
+      background: var(--panel);
+      border-left: 1px solid var(--line);
+      padding: 20px;
+      overflow-y: auto;
+      max-height: calc(100vh - 160px);
+      position: sticky;
+      top: 160px;
+    }
+
+    .sidebar h3 {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .sidebar-section {
+      margin-bottom: 28px;
+    }
+
+    /* Легенда коэффициентов */
+    .coef-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .coef-item {
+      display: grid;
+      grid-template-columns: 28px 1fr auto;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      background: var(--panel-2);
+      border-radius: 8px;
+      border: 1px solid var(--line-soft);
+    }
+
+    .coef-item .k-badge {
+      width: 26px;
+      height: 26px;
+    }
+
+    .coef-item .coef-name {
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .coef-item .coef-desc {
+      font-size: 10px;
+      color: var(--text-dim);
+      margin-top: 1px;
+    }
+
+    .coef-item .coef-time {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* Конфликты / уведомления */
+    .alert {
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(239, 71, 111, 0.08);
+      border-left: 3px solid var(--danger);
+      margin-bottom: 8px;
+    }
+
+    .alert.warn {
+      background: rgba(255, 159, 28, 0.08);
+      border-left-color: var(--warn);
+    }
+
+    .alert.info {
+      background: rgba(76, 201, 240, 0.06);
+      border-left-color: var(--accent-2);
+    }
+
+    .alert .alert-title {
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .alert .alert-text {
+      font-size: 11px;
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+
+    /* Активные пользователи */
+    .users-online {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .user-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      background: var(--panel-2);
+      border-radius: 6px;
+      font-size: 11px;
+    }
+
+    .user-row .user-avatar {
+      width: 24px;
+      height: 24px;
+      font-size: 10px;
+    }
+
+    .user-row .user-info {
+      flex: 1;
+    }
+
+    .user-row .user-name {
+      font-weight: 600;
+    }
+
+    .user-row .user-action {
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-top: 1px;
+    }
+
+    .user-row .user-status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--ok);
+    }
+
+    .user-row .user-status-dot.editing {
+      background: var(--warn);
+      animation: pulse 1.5s infinite;
+    }
+
+    /* Bottom totals */
+    .totals-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      padding: 16px 24px;
+      background: var(--panel);
+      border-top: 1px solid var(--line);
+    }
+
+    .total-card {
+      background: var(--panel-2);
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--line-soft);
+    }
+
+    .total-card .label {
+      font-size: 10px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .total-card .value {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-top: 4px;
+    }
+
+    .total-card .delta {
+      font-size: 10px;
+      margin-top: 2px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .delta.up {
+      color: var(--ok);
+    }
+
+    .delta.down {
+      color: var(--danger);
+    }
+
+    /* Footer / mockup notes */
+    .mockup-notes {
+      padding: 24px;
+      background: var(--panel-2);
+      border-top: 1px dashed var(--accent);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .mockup-notes h4 {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .mockup-notes ul {
+      padding-left: 18px;
+      color: var(--text-dim);
+    }
+
+    .mockup-notes li {
+      margin-bottom: 4px;
+    }
+
+    .mockup-notes b {
+      color: var(--text);
+    }
+
+    /* Узкий экран: график на всю ширину, сайдбар ниже — больше места под горизонтальный скролл таблицы */
+    @media (max-width: 1180px) {
+      .main {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+        top: auto;
+        max-height: none;
+        border-left: 0;
+        border-top: 1px solid var(--line);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============ TOP BAR ============ -->
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-logo">YM</div>
+      <div class="brand-text">
+        <div class="title">Yard Management</div>
+        <div class="sub">Бронирование окон · v0.1 макет</div>
+      </div>
+    </div>
+
+    <div class="warehouse-tabs">
+      <button class="active">Ермолино</button>
+      <button>СГП-10</button>
+      <button>Богородск</button>
+      <button>Упаковка Ермолино</button>
+    </div>
+
+    <div class="top-actions">
+      <div class="user-chip">
+        <div class="user-avatar">МЛ</div>
+        <div>
+          <div style="font-weight:600;">М. Логинова</div>
+          <div class="user-role">Ведущий менеджер</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ HEADER STRIP ============ -->
+  <div class="header-strip">
+    <div class="date-nav">
+      <button>‹</button>
+      <div class="date-display">
+        <div class="day">Чт, 14 ноября</div>
+        <div class="meta">Неделя 46 · смена дневная · 2025</div>
+      </div>
+      <button>›</button>
+    </div>
+
+    <div class="capacity-panel">
+      <div class="cap-block">
+        <div class="label">Лимит / день</div>
+        <div class="value accent">350 т</div>
+      </div>
+      <div>
+        <div class="cap-bar">
+          <div class="cap-bar-fill" style="width: 74%;"></div>
+          <div class="cap-bar-marker"></div>
+        </div>
+        <div
+          style="display:flex; justify-content:space-between; font-size:10px; color:var(--text-dim); margin-top:6px; font-family:'JetBrains Mono',monospace;">
+          <span>0 т</span><span style="color:var(--accent);">260 т забронировано</span><span>350 т</span>
+        </div>
+      </div>
+      <div class="cap-block">
+        <div class="label">Свободно</div>
+        <div class="value ok">90 т</div>
+      </div>
+      <div class="cap-block">
+        <div class="label">Машин</div>
+        <div class="value">12 / 24</div>
+      </div>
+    </div>
+
+    <div class="right-status">
+      <div class="live-indicator">
+        <span class="live-dot"></span>
+        <span>3 онлайн · автосохранение</span>
+      </div>
+      <button class="btn-primary">＋ Новое окно</button>
+    </div>
+  </div>
+
+  <!-- ============ RULES STRIP ============ -->
+  <div class="rules-strip">
+    <div class="rule-chip">
+      <span class="rule-icon">🚛</span>
+      <span>Фура — <strong>2 ч</strong> на окно</span>
+    </div>
+    <div class="rule-chip">
+      <span class="rule-icon">📦</span>
+      <span>Контейнер / Леруа — <strong>4 ч</strong> (2 окна)</span>
+    </div>
+    <div class="rule-chip">
+      <span class="rule-icon">⚠️</span>
+      <span>Не более <strong>3 машин</strong> в одном окне</span>
+    </div>
+    <div class="rule-chip">
+      <span class="rule-icon">📊</span>
+      <span>Тоннаж от <strong>10 т</strong> учитывается отдельно</span>
+    </div>
+    <div class="rule-chip">
+      <span class="rule-icon">🔒</span>
+      <span>Заполняет <strong>ведущий менеджер</strong> или логист</span>
+    </div>
+  </div>
+
+  <!-- ============ MAIN ============ -->
+  <div class="main">
+
+    <!-- ============ SCHEDULE AREA ============ -->
+    <div class="schedule-area">
+      <div class="schedule-toolbar">
+        <h2>График окон · 14 ноября</h2>
+        <div class="filters">
+          <button class="filter-chip active">Все</button>
+          <button class="filter-chip">Сети</button>
+          <button class="filter-chip">E-com</button>
+          <button class="filter-chip">Экспорт</button>
+          <button class="filter-chip">Контракт</button>
+        </div>
+      </div>
+
+      <div class="timeline">
+
+        <!-- HEADER -->
+        <div class="timeline-header">
+          <div>Окно</div>
+          <div># заказа</div>
+          <div>Клиент</div>
+          <div>Заказы / SKU</div>
+          <div>Тип ТС</div>
+          <div>Перевозка</div>
+          <div>Тоннаж</div>
+          <div>Сложность</div>
+          <div>Расчёт времени</div>
+          <div>Тел. водителя</div>
+          <div></div>
+        </div>
+
+        <!-- SLOT 01:00 -->
+        <div class="slot-row ok">
+          <div class="time-cell">
+            <span class="time-main">01:00</span>
+            <span class="time-sub">— 03:00</span>
+          </div>
+          <div class="orders-cell">
+            <span class="order-id">OOC00011262</span>
+            <span class="order-id">OOC00010799</span>
+          </div>
+          <div class="client-cell">Эласго</div>
+          <div style="font-size:11px; color:var(--text-dim);">Готовая продукция · 2 заказа</div>
+          <div><span class="badge tc-fura">фура</span></div>
+          <div><span class="badge tp-deliv">доставка</span></div>
+          <div><span class="tonnage high">18 т</span></div>
+          <div class="k-cell"><span class="k-badge k1">1</span><span class="k-label">паллеты</span></div>
+          <div class="duration-cell">
+            <span class="duration-main">2:00 ч</span>
+            <span class="duration-sub">факт. 1:48</span>
+          </div>
+          <div class="phone-cell"><span class="phone">+7 985 ··· 14-22</span></div>
+          <div class="action-cell"><button class="icon-btn">⋯</button></div>
+        </div>
+
+        <!-- SLOT 01:00 — Агроторг -->
+        <div class="slot-row ok">
+          <div class="time-cell">
+            <span class="time-main">01:00</span>
+            <span class="time-sub">— 03:00</span>
+          </div>
+          <div class="orders-cell">
+            <span class="order-id">OOC00010717</span>
+            <span class="order-id">OOC00011277</span>
+            <span class="order-id">OOC00011493</span>
+            <span class="order-id">OOC00010288</span>
+          </div>
+          <div class="client-cell">Агроторг ООО Рязань</div>
+          <div style="font-size:11px; color:var(--text-dim);">Сборный заказ · 4 номенклатуры</div>
+          <div><span class="badge tc-fura">фура</span></div>
+          <div><span class="badge tp-deliv">доставка</span></div>
+          <div><span class="tonnage">5 т</span></div>
+          <div class="k-cell"><span class="k-badge k2">2</span><span class="k-label">сборка</span></div>
+          <div class="duration-cell">
+            <span class="duration-main">2:00 ч</span>
+            <span class="duration-sub">+30 мин сборка</span>
+          </div>
+          <div class="phone-cell"><span class="phone">+7 916 ··· 88-04</span></div>
+          <div class="action-cell"><button class="icon-btn">⋯</button></div>
+        </div>
+
+        <!-- SLOT 04:00 -->
+        <div class="slot-row ok">
+          <div class="time-cell">
+            <span class="time-main">04:00</span>
+            <span class="time-sub">— 06:00</span>
+          </div>
+          <div class="orders-cell"><span class="order-id">OOC00011591</span></div>
+          <div class="client-cell">Кирэй Кемикал ООО</div>
+          <div style="font-size:11px; color:var(--text-dim);">Контрактный клиент</div>
+          <div><span class="badge tc-fura">фура</span></div>
+          <div><span class="badge tp-deliv">доставка</span></div>
+          <div><span class="tonnage high">20 т</span></div>
+          <div class="k-cell"><span class="k-badge k1">1</span><span class="k-label">паллеты</span></div>
+          <div class="duration-cell"><span class="duration-main">2:00 ч</span></div>
+          <div class="phone-cell"><span class="phone">+7 903 ··· 22-15</span></div>
+          <div class="action-cell"><button class="icon-btn">⋯</button></div>
+        </div>
+
+        <!-- SLOT 05:00 -->
+        <div class="slot-row warning">
+          <div class="time-cell">
+            <span class="time-main">05:00</span>
+            <span class="time-sub">— 07:00</span>
+          </div>
+          <div class="orders-cell"><span class="order-id">OOC00011861</span></div>
+          <div class="client-cell">Маннинг ОКП</div>
+          <div style="font-size:11px; color:var(--text-dim);">—</div>
+          <div><span class="badge tc-fura">фура</span></div>
+          <div><span class="badge tp-deliv">доставка</span></div>
+          <div><span class="tonnage high">20 т</span></div>
+          <div class="k-cell"><span class="k-badge k2">2</span><span class="k-label">сборка</span></div>
+          <div class="duration-cell">
+            <span class="duration-main">2:30 ч</span>
+            <span class="duration-sub">риск задержки</span>
+          </div>
+          <div class="phone-cell"><span class="phone empty">не указан</span></div>
+          <div class="action-cell"><button class="icon-btn">⋯</button></div>
+        </div>
+
+        <!-- SLOT 05:00 — Бэст Прайс -->
+        <div class="slot-row ok">
+          <div class="time-cell">
+            <span class="time-main">05:00</span>
+            <span class="time-sub">— 07:00</span>
+          </div>
+          <div class="orders-cell"><span class="order-id">—</span></div>
+          <div class="client-cell">Бэст Прайс Домодедово</div>
+          <div style="font-size:11px; color:var(--text-dim);">Сеть · приоритет</div>
+          <div><span class="badge tc-fura">фура</span></div>
+          <div><span class="badge tp-deliv">доставка</span></div>
+          <div><span class="tonnage">15 т</span></div>
+          <div class="k-cell"><span class="k-badge k1">1</span><span class="k-label">паллеты</span></div>
+          <div class="duration-cell"><span class="duration-main">2:00 ч</span></div>
+          <div class="phone-cell"><span class="phone required">требуется</span></div>
+          <div class="action-cell"><button class="icon-btn">⋯</button></div>
+        </div>
+
+        <!-- SLOT 07:00 — Шкуренко -->
+        <div class="slot-row ok">
+          <div class="time-cell">
+            <span class="time-main">07:00</span>
+            <span class="time-sub">— 09:00</span>
+          </div>
+          <div class="orders-cell"><span class="order-id head">OOC00011382</span></div>
+          <div class="client-cell">Шкуренко ТД ООО</div>
+          <div style="font-size:11px; color:var(--text-dim);">Головной заказ</div>
+          <div><span class="badge tc-fura">фура</span></div>
+          <div><span class="badge tp-deliv">доставка</span></div>
+          <div><span class="tonnage">4 т</span></div>
+          <div class="k-cell"><span class="k-badge k1">1</span><span class="k-label">паллеты</span></div>
+          <div class="duration-cell"><span class="duration-main">2:00 ч</span></div>
+          <div class="phone-cell"><span class="phone">+7 952 ··· 04-91</span></div>
+          <div class="action-cell"><button class="icon-btn">⋯</button></div>
+        </div>
+
+        <!-- SLOT 07:00 — Оптовик -->
+        <div class="slot-row warning">
+          <div class="time-cell">
+            <span class="time-main">07:00</span>
+            <span class="time-sub">— 09:00</span>
+          </div>
+          <div class="orders-cell">
+            <span class="order-id">OOC00011020</span>
+            <span class="order-id">OOC00010284</span>
+            <span class="order-id">OOC00010711</span>
+            <span class="order-id">OOC00011283</span>
+            <span class="order-id">OOC00011491</span>
+            <span class="order-id">OOC00011819</span>
+          </div>
+          <div class="client-cell">Оптовик + Агроторг Брянск</div>
+          <div style="font-size:11px; color:var(--text-dim);">Сборный · 6 заказов</div>
+          <div><span class="badge tc-fura">фура</span></div>
+          <div><span class="badge tp-deliv">доставка</span></div>
+          <div><span class="tonnage">7 т</span></div>
+          <div class="k-cell"><span class="k-badge k2">2</span><span class="k-label">сборка</span></div>
+          <div class="duration-cell">
+            <span class="duration-main">3:00 ч</span>
+            <span class="duration-sub">сложная сборка</span>
+          </div>
+          <div class="phone-cell"><span class="phone">+7 920 ··· 11-67</span></div>
+          <div class="action-cell"><button class="icon-btn">⋯</button></div>
+        </div>
+
+        <!-- SLOT 09:00 — Озон -->
+        <div class="slot-row ok">
+          <div class="time-cell">
+            <span class="time-main">09:00</span>
+            <span class="time-sub">— 11:00</span>
+          </div>
+          <div class="orders-cell"><span class="order-id">OOC00010542</span></div>
+          <div class="client-cell">Озон Бугры</div>
+          <div style="font-size:11px; color:var(--text-dim);">E-com · приоритет</div>
+          <div><span class="badge tc-fura">фура</span></div>
+          <div><span class="badge tp-deliv">доставка</span></div>
+          <div><span class="tonnage high">20 т</span></div>
+          <div class="k-cell"><span class="k-badge k1">1</span><span class="k-label">паллеты</span></div>
+          <div class="duration-cell"><span class="duration-main">2:00 ч</span></div>
+          <div class="phone-cell"><span class="phone">+7 921 ··· 33-08</span></div>
+          <div class="action-cell"><button class="icon-btn">⋯</button></div>
+        </div>
+
+        <!-- SLOT 09:00 — Бэст Прайс ЕКБ -->
+        <div class="slot-row ok">
+          <div class="time-cell">
+            <span class="time-main">09:00</span>
+            <span class="time-sub">— 11:00</span>
+          </div>
+          <div class="orders-cell"><span class="order-id">—</span></div>
+          <div class="client-cell">Бэст Прайс ЕКБ</div>
+          <div style="font-size:11px; color:var(--text-dim);">Сеть</div>
+          <div><span class="badge tc-fura">фура</span></div>
+          <div><span class="badge tp-deliv">доставка</span></div>
+          <div><span class="tonnage">15 т</span></div>
+          <div class="k-cell"><span class="k-badge k1">1</span><span class="k-label">паллеты</span></div>
+          <div class="duration-cell"><span class="duration-main">2:00 ч</span></div>
+          <div class="phone-cell"><span class="phone required">требуется</span></div>
+          <div class="action-cell"><button class="icon-btn">⋯</button></div>
+        </div>
+
+        <!-- SLOT 10:00 — спец-окно (как в Excel — жёлтым) -->
+        <div class="slot-row warning">
+          <div class="time-cell special">
+            <span class="time-tag">ДОП</span>
+            <span class="time-main">10:00</span>
+            <span class="time-sub">— 12:00</span>
+            <span class="time-note">Доп. окно — отгрузка ВБ со склада Ермолино упаковка</span>
+          </div>
+          <div class="orders-cell"><span class="order-id">OOC00009407</span></div>
+          <div class="client-cell">Мин. оборона</div>
+          <div style="font-size:11px; color:var(--text-dim);">Согласовано вручную</div>
+          <div><span class="badge tc-fura">фура</span></div>
+          <div><span class="badge tp-deliv">доставка</span></div>
+          <div><span class="tonnage high">20 т</span></div>
+          <div class="k-cell"><span class="k-badge k2">2</span><span class="k-label">сборка</span></div>
+          <div class="duration-cell">
+            <span class="duration-main">2:30 ч</span>
+            <span class="duration-sub">через др. склад</span>
+          </div>
+          <div class="phone-cell"><span class="phone">+7 906 ··· 71-90</span></div>
+          <div class="action-cell"><button class="icon-btn">⋯</button></div>
+        </div>
+
+        <!-- SLOT 11:00 — Лобня -->
+        <div class="slot-row ok">
+          <div class="time-cell">
+            <span class="time-main">11:00</span>
+            <span class="time-sub">— 13:00</span>
+          </div>
+          <div class="orders-cell">
+            <span class="order-id">OOC00010282</span>
+            <span class="order-id">OOC00011285</span>
+            <span class="order-id">OOC00010708</span>
+            <span class="order-id">OOC00012038</span>
+            <span class="order-id">OOC00011488</span>
+          </div>
+          <div class="client-cell">Агроторг РЦ Лобня</div>
+          <div style="font-size:11px; color:var(--text-dim);">Сеть · 5 заказов</div>
+          <div><span class="badge tc-fura">фура</span></div>
+          <div><span class="badge tp-deliv">доставка</span></div>
+          <div><span class="tonnage">8 т</span></div>
+          <div class="k-cell"><span class="k-badge k2">2</span><span class="k-label">сборка</span></div>
+          <div class="duration-cell">
+            <span class="duration-main">2:30 ч</span>
+          </div>
+          <div class="phone-cell"><span class="phone">+7 925 ··· 09-44</span></div>
+          <div class="action-cell"><button class="icon-btn">⋯</button></div>
+        </div>
+
+        <!-- SLOT 11:00 — Богородск -->
+        <div class="slot-row over-limit">
+          <div class="time-cell">
+            <span class="time-main">11:00</span>
+            <span class="time-sub">— 13:00</span>
+          </div>
+          <div class="orders-cell">
+            <span class="order-id">OOC00010287</span>
+            <span class="order-id">OOC00010715</span>
+            <span class="order-id">OOC00011278</span>
+            <span class="order-id">OOC00012037</span>
+          </div>
+          <div class="client-cell">Агроторг РЦ 5 Богородск</div>
+          <div style="font-size:11px; color:var(--danger); font-weight:600;">⚠ 3-я машина в окне — превышение</div>
+          <div><span class="badge tc-fura">фура</span></div>
+          <div><span class="badge tp-deliv">доставка</span></div>
+          <div><span class="tonnage">7 т</span></div>
+          <div class="k-cell"><span class="k-badge k2">2</span><span class="k-label">сборка</span></div>
+          <div class="duration-cell">
+            <span class="duration-main">2:30 ч</span>
+            <span class="duration-sub" style="color:var(--danger);">конфликт</span>
+          </div>
+          <div class="phone-cell"><span class="phone empty">не указан</span></div>
+          <div class="action-cell"><button class="icon-btn">⋯</button></div>
+        </div>
+
+        <!-- ADD SLOT -->
+        <div class="add-slot">
+          <div class="time-cell"><span class="time-main">13:00</span></div>
+          <div class="add-content">＋ Добавить бронирование на 13:00 — 15:00 (свободно: 90 т)</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============ SIDEBAR ============ -->
+    <div class="sidebar">
+
+      <!-- Конфликты / уведомления -->
+      <div class="sidebar-section">
+        <h3>Конфликты и подсказки</h3>
+        <div class="alert">
+          <div class="alert-title">⚠ Превышение лимита машин</div>
+          <div class="alert-text">11:00 — забронированы 3 фуры. Правило: «не более 3 машин в окне» нарушено. Перенести
+            Богородск на 13:00.</div>
+        </div>
+        <div class="alert warn">
+          <div class="alert-title">⚠ Не указан телефон водителя</div>
+          <div class="alert-text">2 строки без контакта водителя. Поле обязательно для пропуска через КПП.</div>
+        </div>
+        <div class="alert info">
+          <div class="alert-title">ℹ Рекомендация системы</div>
+          <div class="alert-text">Сложная сборка (К=2) у Оптовика в 07:00 + Лобня в 11:00 — склад войдёт в 95% к 12:30.
+            Распределить по дням.</div>
+        </div>
+      </div>
+
+      <!-- Коэффициенты сложности -->
+      <div class="sidebar-section">
+        <h3>Коэффициенты сложности</h3>
+        <div class="coef-list">
+          <div class="coef-item">
+            <span class="k-badge k1">1</span>
+            <div>
+              <div class="coef-name">Монопаллеты</div>
+              <div class="coef-desc">фура целыми паллетами</div>
+            </div>
+            <span class="coef-time">2:00 ч</span>
+          </div>
+          <div class="coef-item">
+            <span class="k-badge k2">2</span>
+            <div>
+              <div class="coef-name">Частичная сборка</div>
+              <div class="coef-desc">контракт, проверка</div>
+            </div>
+            <span class="coef-time">2:30 – 3:00</span>
+          </div>
+          <div class="coef-item">
+            <span class="k-badge k3">3</span>
+            <div>
+              <div class="coef-name">Россыпь</div>
+              <div class="coef-desc">контейнеры</div>
+            </div>
+            <span class="coef-time">4:00 ч</span>
+          </div>
+          <div class="coef-item">
+            <span class="k-badge k4">4</span>
+            <div>
+              <div class="coef-name">Вагоны</div>
+              <div class="coef-desc">ЖД отгрузка</div>
+            </div>
+            <span class="coef-time">по графику</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Кто сейчас в системе -->
+      <div class="sidebar-section">
+        <h3>Сейчас в системе</h3>
+        <div class="users-online">
+          <div class="user-row">
+            <div class="user-avatar" style="background: linear-gradient(135deg, #f72585, #b5179e);">МЛ</div>
+            <div class="user-info">
+              <div class="user-name">Логинова М.</div>
+              <div class="user-action">редактирует слот 11:00</div>
+            </div>
+            <span class="user-status-dot editing"></span>
+          </div>
+          <div class="user-row">
+            <div class="user-avatar" style="background: linear-gradient(135deg, #4cc9f0, #4361ee);">ИК</div>
+            <div class="user-info">
+              <div class="user-name">Карпенко И. (логист)</div>
+              <div class="user-action">просматривает</div>
+            </div>
+            <span class="user-status-dot"></span>
+          </div>
+          <div class="user-row">
+            <div class="user-avatar" style="background: linear-gradient(135deg, #3ddc97, #06d6a0);">АС</div>
+            <div class="user-info">
+              <div class="user-name">Семёнов А. (экспорт)</div>
+              <div class="user-action">просматривает</div>
+            </div>
+            <span class="user-status-dot"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Связанные системы -->
+      <div class="sidebar-section">
+        <h3>Связанные системы</h3>
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <div
+            style="display:flex; justify-content:space-between; padding:8px 10px; background:var(--panel-2); border-radius:6px; font-size:11px;">
+            <span>1С УПП</span><span style="color:var(--ok);">● синхр.</span>
+          </div>
+          <div
+            style="display:flex; justify-content:space-between; padding:8px 10px; background:var(--panel-2); border-radius:6px; font-size:11px;">
+            <span>WMS (склад)</span><span style="color:var(--ok);">● онлайн</span>
+          </div>
+          <div
+            style="display:flex; justify-content:space-between; padding:8px 10px; background:var(--panel-2); border-radius:6px; font-size:11px;">
+            <span>BI · ёмкость складов</span><span style="color:var(--ok);">● 74%</span>
+          </div>
+          <div
+            style="display:flex; justify-content:space-between; padding:8px 10px; background:var(--panel-2); border-radius:6px; font-size:11px;">
+            <span>Транспортная логистика</span><span style="color:var(--text-dim);">○ не подкл.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ TOTALS ============ -->
+  <div class="totals-row">
+    <div class="total-card">
+      <div class="label">Окон занято</div>
+      <div class="value">12 <span style="font-size:13px; color:var(--text-dim); font-weight:500;">/ 24</span></div>
+      <div class="delta up">▲ +3 к ср. дню</div>
+    </div>
+    <div class="total-card">
+      <div class="label">Тоннаж · план</div>
+      <div class="value" style="color: var(--accent);">260 т</div>
+      <div class="delta">74% от лимита</div>
+    </div>
+    <div class="total-card">
+      <div class="label">Сложные сборки (К≥2)</div>
+      <div class="value" style="color: var(--warn);">5 окон</div>
+      <div class="delta down">риск перегруза с 12:30</div>
+    </div>
+    <div class="total-card">
+      <div class="label">Конфликтов</div>
+      <div class="value" style="color: var(--danger);">1</div>
+      <div class="delta down">требует вмешательства</div>
+    </div>
+  </div>
+
+  <!-- ============ MOCKUP NOTES ============ -->
+  <div class="mockup-notes">
+    <h4>// Заметки к макету для обсуждения</h4>
+    <ul>
+      <li><b>Полное соответствие исходной табличке:</b> сохранены все колонки Excel — Временное окно, Номер заказа,
+        Наименование клиента, Тип ТС, Тип перевозки, Тоннаж от 10, Комментарий, Тел. водителя.</li>
+      <li><b>Решение конфликтов «кто успел — тот и сохранил»:</b> в правом верхнем углу — индикатор «3 онлайн ·
+        автосохранение», в сайдбаре — список редактирующих с подсветкой строки, которую правит другой пользователь.</li>
+      <li><b>Учёт сложности заказа</b> (раздел 4 протокола): добавлена колонка «Сложность» с коэффициентами 1–4 из
+        стенограммы (07:42), время погрузки рассчитывается автоматически. Сейчас показано как факт + дельта.</li>
+      <li><b>Лимит 350 т и счётчик 260 т</b> из шапки Excel — вынесены в верхний бар с прогресс-полосой и красным
+        маркером 95% (порог из стенограммы 13:14).</li>
+      <li><b>Спец-окно 10:00</b> с жёлтой подсветкой («Доп. окно ВБ со склада упаковки», «Случно согласовал с
+        Кервиненым») — реализовано через бейдж «ДОП» и note под временем, как в исходнике.</li>
+      <li><b>Правила в виде чипов:</b> «не более 3 машин», «фура — 2 ч», «контейнер — 4 ч», «тоннаж от 10», «заполняет
+        ведущий менеджер» — всё подсказывает система автоматически вместо устных договорённостей.</li>
+      <li><b>Подсказки нейросети</b> (раздел 4 протокола): блок «Конфликты и подсказки» — система предупреждает о
+        превышении машин, отсутствующих телефонах, риске коллапса склада.</li>
+      <li><b>Связь с 1С / WMS / BI:</b> блок «Связанные системы» в сайдбаре — фундамент для предложенного в протоколе
+        решения «Yard Management на системном уровне».</li>
+      <li><b>Готовность к интерфейсу 1С:Такси</b> (стенограмма 05:15) — макет можно встроить как iframe или сделать
+        веб-версию, подтягивающую данные через API из УПП.</li>
+    </ul>
+    <div
+      style="margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 11px; color: var(--text-muted);">
+      <b style="color:var(--accent);">Открытые вопросы для следующей встречи:</b>
+      точные SLA коэффициентов 1–4 (нужен замер), регламент изменения брони после 18:00, права доступа (КАМ vs логист vs
+      экспорт), интеграция с рекламационным отделом для расчёта штрафов за простои.
+    </div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ИИ на производстве — презентация A4 альбом (6 листов)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0c0e12;
+      --surface: #141820;
+      --elevated: #1c222e;
+      --text: #f0f3f8;
+      --text-soft: #c5d0e0;
+      --muted: #8b9cb0;
+      --line: rgba(255,255,255,0.1);
+      --accent: #4db4ff;
+      --pdm: #f0a050;
+      --cv: #6b9fff;
+      --twin: #b49cff;
+      --genai: #4ade9a;
+      --rag: #3ee0d0;
+      --analytics: #8b9bff;
+      --plan: #5eead4;
+      --title-pad: 11mm;
+      --slide-w: 297mm;
+      --slide-h: 210mm;
+      --pad: 9mm 10mm;
+      --font: "DM Sans", system-ui, sans-serif;
+      --serif: "Instrument Serif", Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    html {
+      background: #12151c;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--text);
+      background: #4a5568;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Титульный лист */
+    .page-trim.page--title {
+      padding: 0;
+      height: 210mm;
+      min-height: 210mm;
+      max-height: 210mm;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .page-trim.page--title .sheet {
+      width: 100%;
+      flex: 1;
+      min-height: 0;
+      margin: 0;
+      padding: var(--title-pad);
+      background: var(--bg);
+      border: none;
+      box-shadow: none;
+      display: grid;
+      grid-template-columns: 36% 1fr;
+      gap: 9mm;
+      align-items: stretch;
+      box-sizing: border-box;
+    }
+    .page-trim.page--title .sheet__visual {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      min-height: 0;
+      align-self: stretch;
+    }
+    .page-trim.page--title .sheet__visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 32%;
+      display: block;
+    }
+    .page-trim.page--title .sheet__main {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      min-width: 0;
+      font-size: 10.5pt;
+      line-height: 1.36;
+    }
+    .page-trim.page--title .kicker {
+      font-size: 9pt;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 2mm;
+    }
+    .page-trim.page--title .sheet__main h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 27pt;
+      line-height: 1.04;
+      margin: 0 0 2.5mm;
+      letter-spacing: -0.02em;
+    }
+    .page-trim.page--title .lead {
+      margin: 0 0 3mm;
+      color: var(--text-soft);
+      font-size: 11pt;
+      line-height: 1.38;
+      max-width: 100%;
+    }
+    .page-trim.page--title .prose {
+      margin: 0 0 3mm;
+      color: var(--text-soft);
+      font-size: 10.5pt;
+      line-height: 1.42;
+    }
+    .page-trim.page--title .prose + .prose {
+      margin-top: 2.5mm;
+    }
+    .page-trim.page--title .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3mm;
+      margin: 0 0 3.5mm;
+    }
+    .page-trim.page--title .stat {
+      text-align: center;
+      padding: 2.5mm 2mm;
+      background: var(--elevated);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+    .page-trim.page--title .stat b {
+      display: block;
+      font-size: 24pt;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+    .page-trim.page--title .stat span {
+      display: block;
+      margin-top: 1.5mm;
+      font-size: 8.5pt;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .page-trim.page--title .sheet__main h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 15pt;
+      margin: 0 0 1mm;
+      letter-spacing: -0.01em;
+    }
+    .page-trim.page--title .sub {
+      font-size: 10pt;
+      color: var(--muted);
+      margin: 0 0 2mm;
+      line-height: 1.32;
+    }
+    .page-trim.page--title .diagram-wrap {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 2mm 2.5mm 2.5mm;
+      margin-bottom: 2.5mm;
+    }
+    .page-trim.page--title .diagram-wrap svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-height: 34mm;
+    }
+    .page-trim.page--title .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2mm 2mm;
+    }
+    .page-trim.page--title .chip {
+      font-size: 10pt;
+      font-weight: 600;
+      padding: 1.8mm 3mm;
+      border-radius: 999px;
+      background: var(--elevated);
+      border: 1px solid var(--line);
+      color: var(--text-soft);
+      white-space: nowrap;
+    }
+    .page-trim.page--title .chip i {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      margin-right: 6px;
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
+    }
+    .sheet-attribution {
+      margin: 3mm 0 0;
+      font-size: 9pt;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .page-root {
+      min-height: 100vh;
+      padding: 10mm 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+    }
+    .page-trim {
+      width: 297mm;
+      min-height: 210mm;
+      height: auto;
+      max-width: 297mm;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      background: var(--bg);
+      border: 0.75pt solid #c5cedd;
+      box-shadow: 0 0 0 0.75pt rgba(0,0,0,0.45), 0 20px 50px rgba(0,0,0,0.35);
+      overflow: visible;
+      padding: var(--pad);
+      display: flex;
+      flex-direction: column;
+    }
+    .page-root > .page-trim + .page-trim {
+      margin-top: 10mm;
+    }
+    .head {
+      flex-shrink: 0;
+      margin-bottom: 3.5mm;
+      padding-bottom: 2.5mm;
+      border-bottom: 1px solid var(--line);
+    }
+    .head h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 22pt;
+      line-height: 1.12;
+      margin: 0 0 2mm;
+      letter-spacing: -0.02em;
+    }
+    .table-wrap {
+      flex: 1;
+      min-height: 0;
+      overflow: visible;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10.75pt;
+      line-height: 1.4;
+    }
+    thead th {
+      text-align: left;
+      font-size: 9.35pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      padding: 2.2mm 2.2mm 1.8mm;
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+      vertical-align: bottom;
+    }
+    tbody td {
+      padding: 1.65mm 2.1mm;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      vertical-align: top;
+      color: var(--text-soft);
+    }
+    tbody tr:nth-child(even) td {
+      background: rgba(28, 34, 46, 0.35);
+    }
+    .co-name {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 1.05em;
+    }
+    .col-country {
+      width: 11%;
+      white-space: nowrap;
+      color: var(--muted);
+      font-size: 10.15pt;
+    }
+    .col-ind { width: 13%; white-space: nowrap; }
+    .col-detail { width: 48%; }
+    .col-co { width: 18%; }
+
+    .map-body {
+      flex: 1;
+      min-height: 0;
+    }
+    .scenario-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3.4mm;
+    }
+    .scenario-item {
+      display: grid;
+      grid-template-columns: 10.5mm minmax(0, 1fr);
+      gap: 0 3.6mm;
+      align-items: start;
+      padding: 3.6mm 3.8mm 3.7mm 3.5mm;
+      border-radius: 9px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: linear-gradient(135deg, rgba(28, 34, 46, 0.65) 0%, rgba(20, 24, 32, 0.4) 100%);
+    }
+    .scenario-icon {
+      width: 10.5mm;
+      height: 10.5mm;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+      background: rgba(77, 180, 255, 0.1);
+      border: 1px solid rgba(77, 180, 255, 0.22);
+      margin-top: 0.15mm;
+    }
+    .scenario-icon svg {
+      width: 5.2mm;
+      height: 5.2mm;
+      display: block;
+    }
+    .scenario-copy {
+      min-width: 0;
+    }
+    .scenario-title {
+      display: block;
+      font-size: 9.85pt;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.28;
+      margin: 0 0 1.1mm;
+      letter-spacing: -0.015em;
+    }
+    .scenario-detail {
+      margin: 0;
+      font-size: 8.85pt;
+      line-height: 1.44;
+      color: var(--text-soft);
+    }
+
+    .page-trim.page--conclusions {
+      min-height: 210mm;
+      height: 210mm;
+      max-height: 210mm;
+      overflow: hidden;
+    }
+    .page--conclusions .head-sub {
+      margin: 0;
+      font-size: 11pt;
+      font-weight: 500;
+      line-height: 1.38;
+      color: var(--muted);
+      max-width: 100%;
+    }
+    .page--conclusions .conclusions-body {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: 82mm minmax(0, 1fr);
+      gap: 5.5mm;
+      align-items: stretch;
+      margin-left: -10mm;
+      width: calc(100% + 10mm);
+      box-sizing: border-box;
+    }
+    .page--conclusions .conclusions-main {
+      min-width: 0;
+      overflow-y: auto;
+      padding-right: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .page--conclusions .conclusions-figure {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      min-height: 0;
+      align-self: stretch;
+      border-radius: 0 10px 10px 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-left: none;
+      background: var(--surface);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+    }
+    .page--conclusions .conclusions-figure img {
+      flex: 1 1 auto;
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      object-fit: cover;
+      object-position: 50% 48%;
+    }
+    .page--conclusions .conclusions-cards {
+      flex: 1;
+      min-height: 0;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 3.5mm;
+    }
+    .page--conclusions .conclusions-cards > li {
+      margin: 0;
+    }
+    .page--conclusions .conclusions-card {
+      display: grid;
+      grid-template-columns: 10.5mm minmax(0, 1fr);
+      gap: 0 3.8mm;
+      align-items: start;
+      padding: 5.4mm 5.6mm 5.5mm 5.2mm;
+      border-radius: 9px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: linear-gradient(135deg, rgba(28, 34, 46, 0.55) 0%, rgba(20, 24, 32, 0.38) 100%);
+    }
+    .page--conclusions .conclusions-card-icon {
+      width: 10.5mm;
+      height: 10.5mm;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+      background: rgba(77, 180, 255, 0.1);
+      border: 1px solid rgba(77, 180, 255, 0.22);
+      margin-top: 0.1mm;
+    }
+    .page--conclusions .conclusions-card-icon svg {
+      width: 5.2mm;
+      height: 5.2mm;
+      display: block;
+    }
+    .page--conclusions .conclusions-card-title {
+      display: block;
+      font-size: 9.95pt;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.25;
+      margin: 0 0 1mm;
+      letter-spacing: -0.015em;
+    }
+    .page--conclusions .conclusions-card-detail {
+      margin: 0;
+      font-size: 8.95pt;
+      line-height: 1.42;
+      color: var(--text-soft);
+    }
+    .page--conclusions .head {
+      margin-bottom: 2.6mm;
+      padding-bottom: 2mm;
+    }
+
+    .page-trim.page--mistakes {
+      min-height: 210mm;
+      height: 210mm;
+      max-height: 210mm;
+      overflow: hidden;
+    }
+    .page--mistakes .head {
+      margin-bottom: 2.6mm;
+      padding-bottom: 2mm;
+    }
+    .page--mistakes .head-sub {
+      margin: 0;
+      font-size: 11pt;
+      font-weight: 500;
+      line-height: 1.38;
+      color: var(--muted);
+      max-width: 100%;
+    }
+    .page--mistakes .mistakes-layout {
+      flex: 1;
+      min-height: 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 82mm;
+      gap: 6mm;
+      align-items: stretch;
+      margin-right: -10mm;
+      width: calc(100% + 10mm);
+      box-sizing: border-box;
+    }
+    .page--mistakes .mistakes-main {
+      min-width: 0;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      padding-right: 1mm;
+    }
+    .page--mistakes .mistakes-figure {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      min-height: 0;
+      align-self: stretch;
+      border-radius: 10px 0 0 10px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-right: none;
+      background: var(--surface);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+    }
+    .page--mistakes .mistakes-figure img {
+      flex: 1 1 auto;
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      object-fit: cover;
+      object-position: 50% 45%;
+    }
+    .page--mistakes .mistakes-body {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      gap: 3.5mm;
+    }
+    .page--mistakes .mistake-block {
+      display: grid;
+      grid-template-columns: 11.5mm minmax(0, 1fr);
+      gap: 0 4.2mm;
+      align-items: start;
+      padding: 5.8mm 5.6mm 5.9mm 5.4mm;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: linear-gradient(145deg, rgba(28, 34, 46, 0.55) 0%, rgba(20, 24, 32, 0.38) 100%);
+    }
+    .page--mistakes .mistake-card-icon {
+      width: 11.5mm;
+      height: 11.5mm;
+      border-radius: 9px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--accent);
+      background: rgba(77, 180, 255, 0.1);
+      border: 1px solid rgba(77, 180, 255, 0.22);
+      margin-top: 0.2mm;
+    }
+    .page--mistakes .mistake-card-icon svg {
+      width: 5.4mm;
+      height: 5.4mm;
+      display: block;
+    }
+    .page--mistakes .mistake-card-copy {
+      min-width: 0;
+    }
+    .page--mistakes .mistake-block--takeaway {
+      border-color: rgba(77, 180, 255, 0.32);
+      background: linear-gradient(145deg, rgba(77, 180, 255, 0.1) 0%, rgba(20, 24, 32, 0.45) 100%);
+      margin-top: 0;
+    }
+    .page--mistakes .mistake-block--takeaway .mistake-card-icon {
+      color: #7dd3fc;
+      border-color: rgba(125, 211, 252, 0.35);
+      background: rgba(77, 180, 255, 0.14);
+    }
+    .page--mistakes .mistake-title {
+      margin: 0 0 1.5mm;
+      font-size: 10.65pt;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .page--mistakes .mistake-text {
+      margin: 0 0 1.35mm;
+      font-size: 9.65pt;
+      line-height: 1.5;
+      color: var(--text-soft);
+    }
+    .page--mistakes .mistake-text:last-child {
+      margin-bottom: 0;
+    }
+    .page--mistakes .mistake-source {
+      margin: 0;
+      font-size: 8.45pt;
+      line-height: 1.4;
+      color: var(--muted);
+    }
+    .page--mistakes .mistake-source a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .page--mistakes .mistake-source a:hover {
+      text-decoration: underline;
+    }
+    /* Кнопка на сайт — сразу под карточками в левой колонке, без отдельного футера */
+    .page--mistakes .mistakes-site-cta {
+      flex-shrink: 0;
+      align-self: flex-end;
+      margin-top: 2mm;
+    }
+    .page--mistakes .mistakes-site-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2.2mm 6.5mm;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #0c0e12;
+      font-weight: 700;
+      font-size: 10pt;
+      text-decoration: none;
+      border: 1px solid rgba(77, 180, 255, 0.55);
+    }
+    .page--mistakes .mistakes-site-btn:hover {
+      filter: brightness(1.08);
+    }
+    .page--mistakes .mistakes-site-btn:focus-visible {
+      outline: 2px solid #7ec8ff;
+      outline-offset: 2px;
+    }
+
+    @page {
+      size: A4 landscape;
+      margin: 0;
+    }
+    @media print {
+      html { background: #fff; }
+      body { margin: 0; background: #fff; }
+      .page-root { padding: 0; min-height: auto; }
+      .page-trim {
+        box-shadow: none;
+        border: 0.25pt solid #333;
+        height: 210mm;
+        min-height: 210mm;
+        max-height: 210mm;
+        overflow: hidden;
+        page-break-after: always;
+        break-after: page;
+      }
+      .page-trim:last-of-type {
+        page-break-after: auto;
+        break-after: auto;
+      }
+      .page--map .scenario-list {
+        gap: 2.6mm;
+      }
+      .page--map .scenario-item {
+        padding: 2.8mm 3mm 2.9mm 2.8mm;
+        gap: 0 3.2mm;
+      }
+      .page--map .scenario-title {
+        font-size: 9.25pt;
+        margin-bottom: 0.75mm;
+      }
+      .page--map .scenario-detail {
+        font-size: 8.2pt;
+        line-height: 1.38;
+      }
+      .page--map .scenario-icon {
+        width: 9.5mm;
+        height: 9.5mm;
+      }
+      .page--map .scenario-icon svg {
+        width: 4.6mm;
+        height: 4.6mm;
+      }
+      .page--conclusions .head h1 {
+        font-size: 20pt;
+      }
+      .page--conclusions .head-sub {
+        font-size: 9.6pt;
+      }
+      .page--conclusions .conclusions-cards {
+        gap: 2.8mm;
+      }
+      .page--conclusions .conclusions-card {
+        padding: 4.2mm 4.5mm 4.3mm 4.1mm;
+        gap: 0 3.4mm;
+      }
+      .page--conclusions .conclusions-card-title {
+        font-size: 9.15pt;
+        margin-bottom: 0.65mm;
+      }
+      .page--conclusions .conclusions-card-detail {
+        font-size: 8.05pt;
+        line-height: 1.36;
+      }
+      .page--conclusions .conclusions-card-icon {
+        width: 9.5mm;
+        height: 9.5mm;
+      }
+      .page--conclusions .conclusions-card-icon svg {
+        width: 4.6mm;
+        height: 4.6mm;
+      }
+      .page--conclusions .conclusions-figure img {
+        object-position: 50% 44%;
+      }
+      .page--mistakes .head h1 {
+        font-size: 20pt;
+      }
+      .page--mistakes .head-sub {
+        font-size: 9.5pt;
+      }
+      .page--mistakes .mistake-title {
+        font-size: 9.35pt;
+        margin-bottom: 0.85mm;
+      }
+      .page--mistakes .mistake-text {
+        font-size: 8.55pt;
+        line-height: 1.38;
+      }
+      .page--mistakes .mistake-source {
+        font-size: 7.85pt;
+      }
+      .page--mistakes .mistakes-body {
+        gap: 2.8mm;
+      }
+      .page--mistakes .mistake-block {
+        padding: 4.5mm 4.4mm 4.6mm 4.2mm;
+        gap: 0 3.6mm;
+      }
+      .page--mistakes .mistake-card-icon {
+        width: 10mm;
+        height: 10mm;
+      }
+      .page--mistakes .mistake-card-icon svg {
+        width: 4.8mm;
+        height: 4.8mm;
+      }
+      .page--mistakes .mistakes-figure img {
+        object-position: 50% 44%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-root">
+    <div id="deck-title" class="page-trim page--title" role="document" aria-label="Титульный лист: обзор ИИ на производстве">
+      <article class="sheet" aria-label="Обзор: ИИ на производстве">
+        <div class="sheet__visual">
+          <img src="assets/hero_manufacturing_ai_overview.png" width="1920" height="1080" alt="" />
+        </div>
+
+        <div class="sheet__main">
+          <p class="kicker">Обзор · производственный контур</p>
+          <h1>Нейросети и ИИ<br />на производстве</h1>
+          <p class="lead">
+        Публично описанные внедрения у крупных производителей: компьютерное зрение на линии, прогнозное обслуживание, цифровой двойник,
+        генеративный ИИ в инженерии OT, планирование от спроса и аналитика простоев. Обзор помогает сопоставить тип сценария с исходными данными цеха
+            и с теми показателями эффективности, которые компании чаще всего выносят во внешние материалы.
+          </p>
+
+          <p class="prose">
+        Это не каталог продуктов поставщиков, а <strong style="color:var(--text)">карта применений</strong>: по каким цепочкам «сигнал → модель → эффект»
+            в реальных историях строится аргументация, и где измеримый результат звучит убедительнее всего.
+          </p>
+
+          <div class="stats" aria-label="Масштаб подборки">
+            <div class="stat"><b>20</b><span>примеров из практики</span></div>
+            <div class="stat"><b>10+</b><span>сценариев</span></div>
+            <div class="stat"><b>12</b><span>отраслевых групп</span></div>
+          </div>
+
+          <h2>От данных к сценарию</h2>
+          <p class="sub">Три опоры — телеметрия и события OT/MES, изображения с линий и сенсорные ряды — питают разные классы моделей: от контроля качества до энергомониторинга и прогноза отказов.</p>
+
+          <div class="diagram-wrap">
+        <svg viewBox="0 0 780 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="gFlowTitle" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#4db4ff;stop-opacity:0.4"/>
+              <stop offset="100%" style="stop-color:#4ade9a;stop-opacity:0.22"/>
+            </linearGradient>
+          </defs>
+          <rect x="24" y="56" width="118" height="88" rx="8" fill="#1c222e" stroke="rgba(255,255,255,0.1)"/>
+          <text x="83" y="42" text-anchor="middle" fill="#8b9cb0" font-size="12" font-family="DM Sans,sans-serif">OT / MES</text>
+          <text x="83" y="98" text-anchor="middle" fill="#c5d0e0" font-size="11" font-family="DM Sans,sans-serif">PLC · SCADA</text>
+          <text x="83" y="118" text-anchor="middle" fill="#c5d0e0" font-size="11" font-family="DM Sans,sans-serif">события</text>
+          <rect x="174" y="56" width="118" height="88" rx="8" fill="#1c222e" stroke="rgba(255,255,255,0.1)"/>
+          <text x="233" y="42" text-anchor="middle" fill="#8b9cb0" font-size="12" font-family="DM Sans,sans-serif">Изображения</text>
+          <text x="233" y="98" text-anchor="middle" fill="#c5d0e0" font-size="11" font-family="DM Sans,sans-serif">линия · видео</text>
+          <text x="233" y="118" text-anchor="middle" fill="#c5d0e0" font-size="11" font-family="DM Sans,sans-serif">дефектоскопия</text>
+          <rect x="324" y="56" width="118" height="88" rx="8" fill="#1c222e" stroke="rgba(255,255,255,0.1)"/>
+          <text x="383" y="42" text-anchor="middle" fill="#8b9cb0" font-size="12" font-family="DM Sans,sans-serif">Ряды</text>
+          <text x="383" y="98" text-anchor="middle" fill="#c5d0e0" font-size="11" font-family="DM Sans,sans-serif">сенсоры</text>
+          <text x="383" y="118" text-anchor="middle" fill="#c5d0e0" font-size="11" font-family="DM Sans,sans-serif">энергия · вибро</text>
+          <path d="M 142 100 L 170 100" stroke="url(#gFlowTitle)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M 292 100 L 320 100" stroke="url(#gFlowTitle)" stroke-width="3" stroke-linecap="round"/>
+          <path d="M 442 100 Q 456 72 472 88" fill="none" stroke="url(#gFlowTitle)" stroke-width="2.5"/>
+          <path d="M 442 100 Q 456 128 472 112" fill="none" stroke="url(#gFlowTitle)" stroke-width="2.5"/>
+          <rect x="472" y="22" width="298" height="156" rx="10" fill="#141820" stroke="rgba(77,180,255,0.35)"/>
+          <text x="621" y="46" text-anchor="middle" fill="#4db4ff" font-size="12" font-weight="700" font-family="DM Sans,sans-serif">Сценарии</text>
+          <text x="621" y="78" text-anchor="middle" fill="#9aaab8" font-size="10.5" font-family="DM Sans,sans-serif">Предиктивное ТО · выход годных · энергия</text>
+          <text x="621" y="98" text-anchor="middle" fill="#9aaab8" font-size="10.5" font-family="DM Sans,sans-serif">КЗ / ОТК · генеративный ИИ на OT</text>
+          <text x="621" y="118" text-anchor="middle" fill="#9aaab8" font-size="10.5" font-family="DM Sans,sans-serif">OEE · RAG · спрос</text>
+          <text x="621" y="144" text-anchor="middle" fill="#8b9cb0" font-size="8.75" font-family="DM Sans,sans-serif">Измеримый эффект — при зрелых данных</text>
+          <text x="621" y="160" text-anchor="middle" fill="#8b9cb0" font-size="8.75" font-family="DM Sans,sans-serif">и учёте</text>
+          </svg>
+          </div>
+
+          <div class="chips">
+            <span class="chip"><i style="background:var(--pdm)"></i>PdM</span>
+            <span class="chip"><i style="background:var(--cv)"></i>Компьютерное зрение</span>
+            <span class="chip"><i style="background:var(--twin)"></i>Цифровой двойник / цех</span>
+            <span class="chip"><i style="background:var(--genai)"></i>Генеративный ИИ в инженерии</span>
+            <span class="chip"><i style="background:var(--rag)"></i>RAG / документация</span>
+            <span class="chip"><i style="background:var(--analytics)"></i>Простои / OEE</span>
+            <span class="chip"><i style="background:var(--plan)"></i>Спрос → цех</span>
+          </div>
+
+          <p class="sheet-attribution">Подготовил обзор: Карпов Николай. 2026</p>
+        </div>
+      </article>
+    </div>
+
+    <div id="deck-index-1" class="page-trim" role="document" aria-label="Индекс кейсов, первая страница">
+      <header class="head">
+        <h1>Примеры внедрений ИИ в производственном контуре</h1>
+      </header>
+      <div class="table-wrap">
+        <table>
+          <colgroup>
+            <col class="col-co" />
+            <col class="col-country" />
+            <col class="col-ind" />
+            <col class="col-detail" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th class="col-co">Компания / объект</th>
+              <th class="col-country">Страна</th>
+              <th class="col-ind">Отрасль</th>
+              <th class="col-detail">Что делают и заявленный эффект</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="co-name">BMW Group</span></td>
+              <td class="col-country">DE / глобально</td>
+              <td>Автопром</td>
+              <td>Камеры и нейросети на линии; данные и искусственные примеры для обучения. У источника: сильнее выход специалистов по данным; время приёмки проверок примерно на две трети меньше; заметно быстрее, чем по старой схеме.</td>
+            </tr>
+            <tr>
+              <td><span class="co-name">Foxconn</span></td>
+              <td class="col-country">—</td>
+              <td>Электроника</td>
+              <td>Проверка изделий по снимкам без участия человека в каждой точке. Свыше 6000 шт. в месяц; заявленная точность &gt;99%.</td>
+            </tr>
+            <tr>
+              <td><span class="co-name">Unilever Хэфэй</span></td>
+              <td class="col-country">CN</td>
+              <td>Потребтовары</td>
+              <td>Учёт эффективности линии, цифровой двойник, прогноз поломок. Эффективность оборудования +8 п.п., цикл партии −15%, потери до −20%.</td>
+            </tr>
+            <tr>
+              <td><span class="co-name">ArcelorMittal Belgium</span></td>
+              <td class="col-country">BE</td>
+              <td>Металлургия</td>
+              <td>Камеры для контроля качества и безопасности. Численный эффект в открытом материале не раскрыт.</td>
+            </tr>
+            <tr>
+              <td><span class="co-name">TSMC Adv. Packaging</span></td>
+              <td class="col-country">TW</td>
+              <td>Полупроводники</td>
+              <td>Меньше брака на упаковочном участке, автоматическая подстройка процесса по данным, прогнозные модели. Долю годных в открытом тексте не публикуют.</td>
+            </tr>
+            <tr>
+              <td><span class="co-name">Schaeffler + Siemens</span></td>
+              <td class="col-country">DE</td>
+              <td>Машиностроение</td>
+              <td>Подсказки нейросети при программировании контроллеров и в техподдержке инженеров. Цифры эффекта не раскрыты.</td>
+            </tr>
+            <tr>
+              <td><span class="co-name">Nestlé (FR sites)</span></td>
+              <td class="col-country">FR</td>
+              <td>Пищевое</td>
+              <td>Видео с площадок во взрывоопасных зонах для разборов и контроля. 22 завода, 600 камер.</td>
+            </tr>
+            <tr>
+              <td><span class="co-name">Глобальный косметический производитель</span></td>
+              <td class="col-country">US</td>
+              <td>Косметика</td>
+              <td>Разбор причин остановок линии по данным диспетчеризации. На 90% меньше лишних пуск–стоп, на 15–20% больше времени работы оборудования, порядка 100 тыс. долл. в год экономии по оценке.</td>
+            </tr>
+            <tr>
+              <td><span class="co-name">Северсталь + SAP</span></td>
+              <td class="col-country">RU</td>
+              <td>Металлургия</td>
+              <td>Прототип моделей по расходу энергии. Эффект в процентах в открытом материале не раскрыт.</td>
+            </tr>
+            <tr>
+              <td><span class="co-name">BlueScope</span></td>
+              <td class="col-country">AU + глобально</td>
+              <td>Металлургия</td>
+              <td>Предупреждение поломок по сигналам датчиков. У источника: <strong style="color:var(--text);font-weight:600">свыше 1950 ч</strong> отложенного простоя; <strong style="color:var(--text);font-weight:600">53</strong> остановки по процессу (цитата).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="deck-index-2" class="page-trim" role="document" aria-label="Индекс кейсов, вторая страница">
+      <header class="head">
+        <h1>Примеры внедрений ИИ в производственном контуре</h1>
+      </header>
+      <div class="table-wrap">
+        <table>
+          <colgroup>
+            <col class="col-co" />
+            <col class="col-country" />
+            <col class="col-ind" />
+            <col class="col-detail" />
+          </colgroup>
+          <thead>
+            <tr>
+              <th class="col-co">Компания / объект</th>
+              <th class="col-country">Страна</th>
+              <th class="col-ind">Отрасль</th>
+              <th class="col-detail">Что делают и заявленный эффект</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="co-name">Midea</span></td>
+              <td class="col-country">CN</td>
+              <td>Быттехника</td>
+              <td>Проверка качества по изображениям на линии. +10% к точности обнаружения дефектов (по источнику).</td>
+            </tr>
+            <tr>
+              <td><span class="co-name">Powerleader</span></td>
+              <td class="col-country">—</td>
+              <td>Электроника</td>
+              <td>Автоматическая проверка по снимкам. Заявленная точность свыше 99%.</td>
+            </tr>
+            <tr>
+              <td><span class="co-name">OEM не назван</span></td>
+              <td class="col-country">CN</td>
+              <td>Автопром</td>
+              <td>Визуальный контроль и цифровые сервисы на заводе без названия бренда. У вендора: на 80% меньше «непойманного» брака, −6 мин на автомобиль, +20% к отгрузке в срок (данные без независимой проверки).</td>
+            </tr>
+            <tr>
+              <td><span class="co-name">NVIDIA (референс)</span></td>
+              <td class="col-country">US</td>
+              <td>Разные отрасли</td>
+              <td>Учебный пример методики поиска дефектов на снимках. Точность и полнота обнаружения — в оригинальном материале.</td>
+            </tr>
+            <tr>
+              <td><span class="co-name">Federal Package</span></td>
+              <td class="col-country">US</td>
+              <td>Контрактная упаковка</td>
+              <td>Контроль капель, этикетки и брака по видеопотоку. Свыше 99% обнаружения дефекта; 100% изделий проходят проверку; скорость линии порядка 80 и 60 изделий в минуту (по типу операции).</td>
+            </tr>
+            <tr>
+              <td><span class="co-name">Hyundai Staria manuals</span></td>
+              <td class="col-country">—</td>
+              <td>Автопром, сервис</td>
+              <td>Поиск ответов в руководствах по тексту и рисункам; модель подстраивают под задачу. По статье: выше автоматические оценки ответов; эксперты — 4,4 из 5.</td>
+            </tr>
+            <tr>
+              <td><span class="co-name">Производство дисплеев</span></td>
+              <td class="col-country">—</td>
+              <td>Электроника</td>
+              <td>Объединённые данные с датчиков, связь оборудования с сетью и контроль качества по камерам. Очень большой архив измерений; контроль с камер — как новая возможность.</td>
+            </tr>
+            <tr>
+              <td><span class="co-name">Toyota MH Europe</span></td>
+              <td class="col-country">EU</td>
+              <td>Склад и техника</td>
+              <td>Концепция роботов-транспортировщиков с элементами ИИ. Публичных измеримых результатов нет (презентация 2018 года).</td>
+            </tr>
+            <tr>
+              <td><span class="co-name">Atria</span></td>
+              <td class="col-country">FI</td>
+              <td>Пищевое, мясо</td>
+              <td>Прогноз спроса нейросетью для планирования выпуска. 98,1% точности по недельному горизонту; на 13% меньше ручных поправок плана.</td>
+            </tr>
+            <tr>
+              <td><span class="co-name">Perfetti Van Melle</span></td>
+              <td class="col-country">IT</td>
+              <td>Кондитерия, НИОКР</td>
+              <td>Связи между компонентами рецептур, чтобы сократить лабораторные прогоны. В научной статье — ожидание сокращения числа испытаний и времени вывода продукта на рынок (ориентиры, не заводской отчёт).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="deck-map" class="page-trim page--map" role="document" aria-label="Карта производственных сценариев">
+      <header class="head">
+        <h1>Карта производственных сценариев</h1>
+      </header>
+      <div class="map-body">
+          <ul class="scenario-list" role="list">
+            <li class="scenario-item">
+              <span class="scenario-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </span>
+              <div class="scenario-copy">
+                <strong class="scenario-title">Прогнозное обслуживание</strong>
+                <p class="scenario-detail">Поломки и остановки предсказывают по сигналам с оборудования: BlueScope и решение Senseye; у Unilever эта логика сочетается с учётом эффективности линии и цифровым двойником.</p>
+              </div>
+            </li>
+            <li class="scenario-item">
+              <span class="scenario-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+              </span>
+              <div class="scenario-copy">
+                <strong class="scenario-title">Контроль качества по камерам</strong>
+                <p class="scenario-detail">BMW, Foxconn, Midea, Powerleader, безымянный автозавод (данные у поставщика), ArcelorMittal, учебный пример NVIDIA, Federal Package на упаковке, производство дисплеев с озером данных и сенсорами.</p>
+              </div>
+            </li>
+            <li class="scenario-item">
+              <span class="scenario-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>
+              </span>
+              <div class="scenario-copy">
+                <strong class="scenario-title">Цифровой двойник и «умная» фабрика</strong>
+                <p class="scenario-detail">Завод Unilever в Хэфэй; архитектура упаковочного производства TSMC.</p>
+              </div>
+            </li>
+            <li class="scenario-item">
+              <span class="scenario-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+              </span>
+              <div class="scenario-copy">
+                <strong class="scenario-title">Помощник инженеру автоматизации</strong>
+                <p class="scenario-detail">Подсказки при программировании контроллеров и в поддержке: Schaeffler и Siemens.</p>
+              </div>
+            </li>
+            <li class="scenario-item">
+              <span class="scenario-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M8 7h8M8 11h6"/></svg>
+              </span>
+              <div class="scenario-copy">
+                <strong class="scenario-title">Поиск по технической документации</strong>
+                <p class="scenario-detail">Руководства с текстом и иллюстрациями: Hyundai Staria.</p>
+              </div>
+            </li>
+            <li class="scenario-item">
+              <span class="scenario-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16l4-4 4 4 6-7"/></svg>
+              </span>
+              <div class="scenario-copy">
+                <strong class="scenario-title">Простои и загрузка линии по фактическим данным</strong>
+                <p class="scenario-detail">Анонимный косметический завод, решение Rockwell.</p>
+              </div>
+            </li>
+            <li class="scenario-item">
+              <span class="scenario-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+              </span>
+              <div class="scenario-copy">
+                <strong class="scenario-title">Энергия и нештатные режимы</strong>
+                <p class="scenario-detail">Прототип Северсталь и SAP; поиск аномалий на больших массивах данных — в том числе в связке с производителем дисплеев и единым хранилищем измерений.</p>
+              </div>
+            </li>
+            <li class="scenario-item">
+              <span class="scenario-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
+              </span>
+              <div class="scenario-copy">
+                <strong class="scenario-title">Видео с площадок</strong>
+                <p class="scenario-detail">Разборы и контроль во взрывоопасных зонах: Nestlé и поставщик оснащения.</p>
+              </div>
+            </li>
+            <li class="scenario-item">
+              <span class="scenario-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg>
+              </span>
+              <div class="scenario-copy">
+                <strong class="scenario-title">Планирование выпуска от спроса</strong>
+                <p class="scenario-detail">Atria и RELEX.</p>
+              </div>
+            </li>
+            <li class="scenario-item">
+              <span class="scenario-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 3h15"/><path d="M6 3v11.4A6 6 0 0 0 12 21a6 6 0 0 0 6-6.6V3"/><path d="M10 10h4"/></svg>
+              </span>
+              <div class="scenario-copy">
+                <strong class="scenario-title">Рецептуры в разработке</strong>
+                <p class="scenario-detail">Связи между компонентами, чтобы сократить лабораторные прогоны: Perfetti Van Melle.</p>
+              </div>
+            </li>
+            <li class="scenario-item">
+              <span class="scenario-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
+              </span>
+              <div class="scenario-copy">
+                <strong class="scenario-title">Внутренняя логистика и двор</strong>
+                <p class="scenario-detail">Концепция без устойчивых публичных метрик: Toyota Material Handling Europe.</p>
+              </div>
+            </li>
+          </ul>
+      </div>
+    </div>
+
+    <div id="deck-conclusions" class="page-trim page--conclusions" role="document" aria-label="Выводы для производственной компании">
+      <header class="head">
+        <h1>Выводы</h1>
+        <p class="head-sub">Что наиболее применимо для производственной компании</p>
+      </header>
+      <div class="conclusions-body">
+        <figure class="conclusions-figure">
+          <img
+            src="assets/map_scenarios_vertical_slide3.png"
+            width="1536"
+            height="1024"
+            alt="Иллюстрация: умное производство и потоки данных"
+            decoding="async"
+          />
+        </figure>
+        <div class="conclusions-main">
+          <ul class="conclusions-cards" role="list">
+            <li class="conclusions-card">
+              <span class="conclusions-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </span>
+              <div>
+                <strong class="conclusions-card-title">Телеметрия и классификация простоя</strong>
+                <p class="conclusions-card-detail">Сначала выстраивают учёт событий и причины остановок. Затем подключают ML: кейс Rockwell — фундамент для любых «умных» моделей поверх фактических данных с цеха.</p>
+              </div>
+            </li>
+            <li class="conclusions-card">
+              <span class="conclusions-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </span>
+              <div>
+                <strong class="conclusions-card-title">Предиктивное обслуживание (PdM) и «часы простоя»</strong>
+                <p class="conclusions-card-detail">Сильный сюжет для бизнеса, но без сенсоров и дисциплины CMMS эффект не удержать. Опорный пример в выборке — BlueScope.</p>
+              </div>
+            </li>
+            <li class="conclusions-card">
+              <span class="conclusions-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+              </span>
+              <div>
+                <strong class="conclusions-card-title">Компьютерное зрение на линии</strong>
+                <p class="conclusions-card-detail">Нужны объёмы размеченных и управляемых данных. Синтетика и MLOps сокращают путь к запуску — BMW и методика NVIDIA как референсы.</p>
+              </div>
+            </li>
+            <li class="conclusions-card">
+              <span class="conclusions-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></svg>
+              </span>
+              <div>
+                <strong class="conclusions-card-title">Генеративный ИИ в производстве</strong>
+                <p class="conclusions-card-detail">Ближе к инженерии автоматизации и контексту PLC, чем к «магии цеха». Практичный срез — Schaeffler и Siemens.</p>
+              </div>
+            </li>
+            <li class="conclusions-card">
+              <span class="conclusions-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg>
+              </span>
+              <div>
+                <strong class="conclusions-card-title">Полупроводниковые фабрики</strong>
+                <p class="conclusions-card-detail">Задают архитектурный эталон связки MES, APC и ADC. Именованные показатели эффективности в открытом доступе при этом встречаются реже.</p>
+              </div>
+            </li>
+            <li class="conclusions-card">
+              <span class="conclusions-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
+              </span>
+              <div>
+                <strong class="conclusions-card-title">Видео для корневого разбора</strong>
+                <p class="conclusions-card-detail">Как инструмент разборов масштабируется проще, чем «полный AI» по всему контуру. Ориентир в выборке — Nestlé.</p>
+              </div>
+            </li>
+            <li class="conclusions-card">
+              <span class="conclusions-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M8 7h8M8 11h6"/></svg>
+              </span>
+              <div>
+                <strong class="conclusions-card-title">Техдок и мультимодальность</strong>
+                <p class="conclusions-card-detail">RAG по PDF с рисунками и LoRA близко к боли «китайских мануалов». Нужны отдельный контур OCR и перевода и ссылки на страницы оригинала.</p>
+              </div>
+            </li>
+            <li class="conclusions-card">
+              <span class="conclusions-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></svg>
+              </span>
+              <div>
+                <strong class="conclusions-card-title">Планирование от спроса</strong>
+                <p class="conclusions-card-detail">Atria показывает именованные показатели на недельном горизонте. Мост к загрузке линий — отдельный интеграционный слой, а не сама модель спроса.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="deck-mistakes" class="page-trim page--mistakes" role="document" aria-label="Типовые ошибки внедрения ИИ">
+      <header class="head">
+        <h1>Типовые ошибки</h1>
+        <p class="head-sub">Чего не работает</p>
+      </header>
+      <div class="mistakes-layout">
+        <div class="mistakes-main">
+          <div class="mistakes-body">
+            <article class="mistake-block">
+              <span class="mistake-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg>
+              </span>
+              <div class="mistake-card-copy">
+                <h2 class="mistake-title">Разрыв «пилот — масштаб»</h2>
+                <p class="mistake-text">
+                  По данным BCG за 2025 год, при уже существенных инвестициях в искусственный интеллект <strong style="color:var(--text);font-weight:600">около 60&nbsp;% компаний в мире не получали заметной материальной отдачи</strong> от его использования: растёт внедрение, но не растёт влияние на бизнес-результат.
+                </p>
+                <p class="mistake-source">
+                  <a href="https://www.bcg.com/publications/2025/ai-adoption-puzzle-why-usage-up-impact-not">BCG, 2025</a>
+                  · материал консалтинговой компании (обобщение по отрасли, не отчёт с одной фабрики).
+                </p>
+              </div>
+            </article>
+            <article class="mistake-block">
+              <span class="mistake-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+              </span>
+              <div class="mistake-card-copy">
+                <h2 class="mistake-title">Нет «заводского зрения» и целостных данных</h2>
+                <p class="mistake-text">
+                  В обзоре Wirtek (2026) говорится, что <strong style="color:var(--text);font-weight:600">многие проекты так и остаются на стадии пилота</strong>: мешают слабое понимание производственных систем, отсутствие «factory insight» и разрозненность данных между участками и ИТ-слоями.
+                </p>
+                <p class="mistake-source">
+                  <a href="https://www.wirtek.com/blog/why-ai-fails-in-manufacturing-without-factory-insight">Wirtek, 2026</a>
+                  · корпоративный блог вендора; как самостоятельное доказательство по заводам материал слабее, но как диагностическая рамка полезен.
+                </p>
+              </div>
+            </article>
+            <article class="mistake-block mistake-block--takeaway">
+              <span class="mistake-card-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+              </span>
+              <div class="mistake-card-copy">
+                <h2 class="mistake-title">Итог</h2>
+                <p class="mistake-text">
+                  Узкое место редко в недостатке алгоритмов. Чаще это <strong style="color:var(--text);font-weight:600">интеграция OT и IT</strong> и <strong style="color:var(--text);font-weight:600">владение проблемой</strong> со стороны бизнеса: ясная постановка задачи, доступ к данным с цеха и ответственность за изменение процессов, а не только за «модель в Jupyter».
+                </p>
+              </div>
+            </article>
+            <div class="mistakes-site-cta">
+              <a href="index.html" class="mistakes-site-btn">Перейти на сайт</a>
+            </div>
+          </div>
+        </div>
+        <figure class="mistakes-figure">
+          <img
+            src="assets/Generated_image.png"
+            width="578"
+            height="1023"
+            alt="Иллюстрация к разделу «Типовые ошибки»"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

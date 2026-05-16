@@ -1,0 +1,8 @@
+{
+  "name": "skladskaya-logistika-docx",
+  "private": true,
+  "description": "Генерация DOCX из wrd.js",
+  "dependencies": {
+    "docx": "^9.5.0"
+  }
+}

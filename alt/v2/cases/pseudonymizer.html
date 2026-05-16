@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudonymizer MVP — фундамент работы с внешними LLM | Карпов Николай</title>
+    <meta
+      name="description"
+      content="Контейнеризованный сервис обезличивания документов: гибридная детекция PII (regex + spaCy NER), детерминистичные плейсхолдеры, сессии обратимого восстановления и JSON API. Фундамент guardrails для работы с внешними LLM."
+    />
+    <link rel="canonical" href="https://nikolai-karpov.github.io/alt/v2/cases/pseudonymizer.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <header class="site-header" role="banner">
+      <div class="container site-header__inner">
+        <a href="../" class="brand" aria-label="На главную">
+          <span class="brand__dot" aria-hidden="true"></span>
+          <span>Внедрение нейросетей</span>
+        </a>
+        <nav class="site-nav" aria-label="Основная навигация">
+          <a href="../#approach">Подход</a>
+          <a href="../#cases">Кейсы</a>
+          <a href="../methodology.html">Методология</a>
+          <a href="../#security">ИБ</a>
+          <a href="../#contact">Контакт</a>
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" stroke-linejoin="round" />
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main">
+      <section class="article-hero container">
+        <a href="../#cases" class="back-link">
+          <span aria-hidden="true">←</span> Все кейсы
+        </a>
+
+        <div class="article-hero__meta">
+          <span>Главный кейс ИБ</span>
+          <span>Фундамент guardrails</span>
+          <span>Docker · FastAPI</span>
+        </div>
+
+        <h1 class="article-hero__title">
+          Pseudonymizer MVP — фундамент работы с внешними LLM
+        </h1>
+
+        <p class="article-hero__hook">
+          Одностраничное веб-приложение в Docker-контейнере для автоматического
+          обезличивания чувствительных данных в документах: гибридная детекция,
+          детерминистичные плейсхолдеры, сессии для обратимого восстановления и
+          отдельный JSON API для интеграций (в т. ч. почтовых воркеров).
+          Без такого шлюза корпоративные данные в принципе нельзя пускать
+          в публичные модели — поэтому это фундамент guardrails, а не один
+          из приёмов ИБ.
+        </p>
+      </section>
+
+      <section class="article container">
+        <div class="article__body">
+          <dl class="spec-table">
+            <dt>Роль</dt>
+            <dd>Архитектор и разработчик</dd>
+            <dt>Стадия</dt>
+            <dd>MVP в эксплуатации, интеграционный API доступен</dd>
+            <dt>Стек</dt>
+            <dd>Python 3.11 · FastAPI · Uvicorn · spaCy (ru/en) · SQLite · Docker Compose · slowapi</dd>
+            <dt>Детекция</dt>
+            <dd>Гибрид: regex + NER + кастомные словари</dd>
+            <dt>Форматы</dt>
+            <dd>txt · docx · pdf · md · xlsx</dd>
+            <dt>Интеграции</dt>
+            <dd>Sync API · async jobs · email-воркеры · мониторинг Prometheus</dd>
+          </dl>
+
+          <h2 data-num="01">Проблема</h2>
+          <p>
+            <strong>Документы нельзя свободно передавать в LLM и в смежные системы.</strong>
+            В корпоративных сценариях в текстах постоянно встречаются ФИО,
+            контакты, ИНН, номера договоров и собственные таксономии (коды
+            площадок, названия юрлиц). Ручная вычистка не масштабируется;
+            простая замена по списку пропускает контекст и ломает
+            согласованность плейсхолдеров внутри одного файла.
+          </p>
+          <p>
+            В корпоративном контексте без обезличивания пилоты с внешними
+            LLM либо тормозятся службой ИБ, либо обходят политики
+            «телефоном» — оба варианта плохие.
+          </p>
+
+          <h2 data-num="02">Решение — сервис псевдонимизации с предсказуемым поведением</h2>
+          <p>
+            MVP упакован в Docker: веб-интерфейс с drag-and-drop, предпросмотром
+            и выгрузкой, плюс набор REST-эндпоинтов на FastAPI. Детекция
+            строится как пайплайн:
+          </p>
+          <ul>
+            <li><strong>Регулярные правила</strong> для телефонов, e-mail, ИНН, номеров договоров.</li>
+            <li><strong>spaCy-модели</strong> для сущностей типа PERSON (ru/en).</li>
+            <li><strong>Кастомные типы</strong> из JSON-словаря (коды площадок, бренды, артикулы) — живут в отдельной SQLite-базе с резервным копированием перед записью.</li>
+          </ul>
+
+          <div class="pullquote">
+            Замена детерминистична: одно и то же значение в рамках документа
+            всегда получает один и тот же плейсхолдер (на базе стабильного
+            хэша). Это упрощает ревью и последующее восстановление.
+          </div>
+
+          <p>
+            При опциональном API-ключе создаётся <strong>сессия</strong>
+            с маппингом — обезличенный текст уходит в LLM, ответ возвращается,
+            и сессия позволяет восстановить контекст по тем же плейсхолдерам.
+            Для крупных файлов срабатывает <strong>асинхронная очередь</strong>
+            с опросом статуса задания вместо блокирующего ответа.
+          </p>
+
+          <figure class="figure">
+            <div class="figure__frame">
+              <!-- TODO: вставить скриншот UI анонимайзера. Замените блок ниже на:
+                   <img src="../../../assets/images/pseudonymizer-ui.png" alt="UI анонимайзера: drag-and-drop, предпросмотр, статистика по типам сущностей" /> -->
+              <div class="figure__placeholder">
+                <div class="figure__placeholder-label">Место под скриншот</div>
+                <div class="figure__placeholder-hint">
+                  UI анонимайзера: drag-and-drop загрузка документа,
+                  предпросмотр обезличенного результата, статистика
+                  по найденным типам сущностей (ФИО, телефоны, ИНН,
+                  кастомные словарные типы).
+                </div>
+                <div class="figure__placeholder-path">../../../assets/images/pseudonymizer-ui.png</div>
+              </div>
+            </div>
+            <figcaption class="figure__caption">
+              Скриншот 1 — UI с пайплайном детекции (regex + spaCy NER + словарные типы).
+            </figcaption>
+          </figure>
+
+          <h2 data-num="03">Поток обработки</h2>
+          <ol>
+            <li><strong>Загрузка.</strong> Файл в UI или API; проверка размера и лимитов; при большом объёме — постановка в очередь (HTTP 202 + job id).</li>
+            <li><strong>Детекция.</strong> Гибридный детектор с приоритетами типов; для PDF — постраничный режим на крупных файлах.</li>
+            <li><strong>Маппинг.</strong> Единый маппер значений → плейсхолдеры; статистика по типам сущностей в ответе API.</li>
+            <li><strong>Выдача.</strong> Предпросмотр, скачивание, конвертация формата; при сессии — восстановление исходника по session_id.</li>
+            <li><strong>Наблюдаемость.</strong> Prometheus-метрики, UI мониторинга, отдельные лимиты для email-интеграции.</li>
+          </ol>
+
+          <h2 data-num="04">Инженерные решения, не только «найти и заменить»</h2>
+
+          <p>
+            <strong>Фазы аутентификации для UI и отдельные правила для интеграционных префиксов.</strong>
+            Внешний оператор инстанса и автоматизированные клиенты разнесены по разным контурам доступа.
+          </p>
+
+          <p>
+            <strong>Rate limiting</strong> с ключом по хэшу API-ключа или IP —
+            slowapi на FastAPI. Отдельный пул лимитов для email-воркеров.
+          </p>
+
+          <p>
+            <strong>TTL и очистка сессий, дедлайны и семафоры на тяжёлые задачи.</strong>
+            Документы не остаются «навсегда»; долгие задачи не блокируют
+            пул воркеров на бесконечный срок.
+          </p>
+
+          <p>
+            <strong>Страницы настроек словаря и мониторинга</strong> с
+            осознанным разделением: что требует ключа, что доступно
+            оператору инстанса только из доверенной сети.
+          </p>
+
+          <figure class="figure">
+            <div class="figure__frame">
+              <!-- TODO: вставить скриншот мониторинга/настроек. Замените блок ниже на:
+                   <img src="../../../assets/images/pseudonymizer-monitoring.png" alt="UI мониторинга: метрики Prometheus, статусы async-задач, словарь сущностей" /> -->
+              <div class="figure__placeholder">
+                <div class="figure__placeholder-label">Место под скриншот</div>
+                <div class="figure__placeholder-hint">
+                  Страница мониторинга: счётчики Prometheus, очередь
+                  асинхронных задач, статусы сессий, либо страница
+                  настроек словаря кастомных типов с историей изменений.
+                </div>
+                <div class="figure__placeholder-path">../../../assets/images/pseudonymizer-monitoring.png</div>
+              </div>
+            </div>
+            <figcaption class="figure__caption">
+              Скриншот 2 — наблюдаемость и эксплуатация (или интерфейс
+              управления словарём сущностей).
+            </figcaption>
+          </figure>
+
+          <h2 data-num="05">Сценарий «LLM поверх обезличенного текста»</h2>
+          <p>
+            Для случаев «отправить в публичную модель и вернуть результат»
+            предусмотрен поток чата с подстановкой только плейсхолдеров и
+            <strong>отдельная процедура восстановления</strong>. Это
+            принципиально: нельзя смешивать сырой PII и внешние модели в
+            одном запросе без явного шага. Архитектура заставляет
+            оператора пройти этот шаг — он не «по умолчанию», а в коде.
+          </p>
+
+          <h2 data-num="06">Эффект — готовый контур для пилота ИБ и интеграторов</h2>
+          <p>
+            Команда получает воспроизводимый артефакт:
+          </p>
+          <ul>
+            <li>Один репозиторий и понятный <em>compose</em>-сценарий с TLS для локальной проверки.</li>
+            <li>Swagger для контрактов API.</li>
+            <li>Выделенный API для пакетной обработки почты — без раскрытия внутренних ключей и путей в публичном описании.</li>
+            <li>Метрики Prometheus и UI мониторинга.</li>
+          </ul>
+
+          <div class="callout">
+            <div class="callout__label">Что демонстрирует кейс</div>
+            Способность спроектировать и реализовать критически важный
+            ИБ-инфраструктурный продукт с предсказуемым поведением,
+            обратимыми операциями и пригодностью для интеграции в почтовый
+            и API-поток. Это не «эссе про guardrails», а работающий
+            контур, который проходит ревью корпоративной ИБ.
+          </div>
+
+          <h2 data-num="07">Связанные артефакты ИБ</h2>
+          <ul>
+            <li><strong>HLD защищённого LLM-контура</strong> — Zero Trust, Defense in Depth, DLP-шлюз с матрицей сущностей, SIEM, ротация ключей, локализация логов в РФ.</li>
+            <li><strong>Матрица guardrails</strong> — маршрутизация данных, утверждённые и запрещённые инструменты, политики псевдонимизации, HITL по доменам, метрики качества.</li>
+            <li><strong>Политика защиты коммерческой тайны</strong> и приложения для согласования с корпоративной ИБ.</li>
+          </ul>
+
+          <p>
+            Все три артефакта применялись в реальных согласованиях с
+            корпоративной ИБ и стали частью методологической базы для
+            пилотов в крупном промышленном холдинге — см.
+            <a href="holding-audit.html">кейс аудита</a>.
+          </p>
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="container">
+          <div class="kicker" style="margin-bottom: 18px;">Похожая задача?</div>
+          <h2 class="cta__title">Нужен анонимайзер под ваши регламенты?</h2>
+          <p class="cta__lead">
+            Помогу с архитектурой детекции, политиками хранения маппингов
+            и границами доверия между UI, API и внешними LLM. Возможны
+            варианты под on-prem с собственным набором сущностей.
+          </p>
+          <div class="hero__cta" style="justify-content: center;">
+            <a href="../#contact" class="btn btn--gradient">
+              Обсудить
+              <span class="btn__arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="../" class="btn btn--ghost">Все кейсы</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div>© 2026 · Карпов Николай</div>
+        <div>
+          <a href="../methodology.html">Методология</a>
+          ·
+          <a href="../">Главная v2</a>
+          ·
+          <a href="../../../">Старая версия</a>
+        </div>
+      </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" type="button" aria-label="Наверх">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 15l6-6 6 6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+
+    <script src="../assets/js/main.js" defer></script>
+  </body>
+</html>

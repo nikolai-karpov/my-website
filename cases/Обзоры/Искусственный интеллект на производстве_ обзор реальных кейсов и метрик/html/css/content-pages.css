@@ -1,0 +1,354 @@
+/**
+ * Адаптивные страницы разделов (смартфон — 8K+).
+ * Корневой контейнер: .cp (content page).
+ */
+.cp {
+  --cp-pad: clamp(1rem, 2.5vw, 2.5rem);
+  --cp-radius: clamp(10px, 0.8vw, 14px);
+  --cp-gap: clamp(0.75rem, 1.8vw, 1.35rem);
+  --cp-max: min(100%, 112rem);
+  width: 100%;
+  max-width: var(--cp-max);
+  margin: 0 auto;
+  padding: 0 var(--cp-pad) clamp(2rem, 4vw, 4rem);
+  box-sizing: border-box;
+}
+
+.cp-head {
+  margin-bottom: clamp(1.25rem, 3vw, 2.25rem);
+  padding-bottom: clamp(0.75rem, 1.5vw, 1.25rem);
+  border-bottom: 1px solid var(--line);
+  max-width: min(100%, 56rem);
+}
+
+.cp-head h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.65rem, 2.5vw + 1rem, 3.25rem);
+  line-height: 1.1;
+  margin: 0 0 0.35em;
+  letter-spacing: -0.02em;
+}
+
+.cp-head .cp-sub {
+  margin: 0;
+  font-size: clamp(1rem, 0.6vw + 0.85rem, 1.25rem);
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--muted);
+  max-width: 50rem;
+}
+
+/* ——— Карта сценариев ——— */
+.cp-map-body {
+  width: 100%;
+}
+
+.cp-scenario-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--cp-gap);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 90em) {
+  .cp-scenario-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 140em) {
+  .cp-scenario-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.cp-scenario-item {
+  display: grid;
+  grid-template-columns: clamp(2.5rem, 4vw, 3.5rem) minmax(0, 1fr);
+  gap: 0 clamp(0.65rem, 1.5vw, 1.1rem);
+  align-items: start;
+  padding: clamp(0.85rem, 1.8vw, 1.35rem);
+  border-radius: var(--cp-radius);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(28, 34, 46, 0.65) 0%, rgba(20, 24, 32, 0.4) 100%);
+}
+
+.cp-scenario-icon {
+  width: clamp(2.5rem, 4vw, 3.5rem);
+  height: clamp(2.5rem, 4vw, 3.5rem);
+  border-radius: clamp(8px, 0.6vw, 12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--accent);
+  background: rgba(77, 180, 255, 0.1);
+  border: 1px solid rgba(77, 180, 255, 0.22);
+}
+
+.cp-scenario-icon svg {
+  width: 55%;
+  height: 55%;
+  display: block;
+}
+
+.cp-scenario-title {
+  display: block;
+  font-size: clamp(0.95rem, 0.35vw + 0.85rem, 1.15rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.25;
+  margin: 0 0 0.35em;
+  letter-spacing: -0.015em;
+}
+
+.cp-scenario-detail {
+  margin: 0;
+  font-size: clamp(0.875rem, 0.25vw + 0.8rem, 1.05rem);
+  line-height: 1.5;
+  color: var(--text-soft);
+}
+
+/* ——— Выводы ——— */
+.cp-conclusions-body {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: start;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 56em) {
+  .cp-conclusions-body {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    align-items: stretch;
+  }
+}
+
+@media (min-width: 100em) {
+  .cp-conclusions-body {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(1.5rem, 2.5vw, 3rem);
+  }
+}
+
+.cp-conclusions-figure {
+  margin: 0;
+  order: -1;
+  border-radius: var(--cp-radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  max-height: min(70vh, 42rem);
+}
+
+@media (min-width: 56em) {
+  .cp-conclusions-figure {
+    order: 0;
+    max-height: none;
+    min-height: min(70vh, 36rem);
+  }
+}
+
+.cp-conclusions-figure img {
+  width: 100%;
+  height: 100%;
+  min-height: 12rem;
+  object-fit: cover;
+  object-position: 50% 48%;
+  display: block;
+}
+
+.cp-conclusions-cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--cp-gap);
+}
+
+.cp-conclusions-card {
+  display: grid;
+  grid-template-columns: clamp(2.5rem, 4vw, 3.5rem) minmax(0, 1fr);
+  gap: 0 clamp(0.65rem, 1.5vw, 1.1rem);
+  align-items: start;
+  padding: clamp(0.9rem, 1.8vw, 1.4rem);
+  border-radius: var(--cp-radius);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(28, 34, 46, 0.55) 0%, rgba(20, 24, 32, 0.38) 100%);
+}
+
+.cp-conclusions-card-icon {
+  width: clamp(2.5rem, 4vw, 3.5rem);
+  height: clamp(2.5rem, 4vw, 3.5rem);
+  border-radius: clamp(8px, 0.6vw, 12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--accent);
+  background: rgba(77, 180, 255, 0.1);
+  border: 1px solid rgba(77, 180, 255, 0.22);
+}
+
+.cp-conclusions-card-icon svg {
+  width: 55%;
+  height: 55%;
+  display: block;
+}
+
+.cp-conclusions-card-title {
+  display: block;
+  font-size: clamp(0.95rem, 0.35vw + 0.85rem, 1.12rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.25;
+  margin: 0 0 0.35em;
+}
+
+.cp-conclusions-card-detail {
+  margin: 0;
+  font-size: clamp(0.875rem, 0.25vw + 0.8rem, 1.02rem);
+  line-height: 1.48;
+  color: var(--text-soft);
+}
+
+/* ——— Типовые ошибки ——— */
+.cp-mistakes-layout {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: start;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 56em) {
+  .cp-mistakes-layout {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+    align-items: stretch;
+  }
+}
+
+@media (min-width: 100em) {
+  .cp-mistakes-layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.55fr);
+  }
+}
+
+.cp-mistakes-figure {
+  margin: 0;
+  border-radius: var(--cp-radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  max-height: min(65vh, 38rem);
+}
+
+@media (min-width: 56em) {
+  .cp-mistakes-figure {
+    max-height: none;
+    min-height: min(80vh, 48rem);
+    order: 1;
+  }
+
+  .cp-mistakes-main {
+    order: 0;
+  }
+}
+
+.cp-mistakes-figure img {
+  width: 100%;
+  height: 100%;
+  min-height: 14rem;
+  object-fit: cover;
+  object-position: 50% 45%;
+  display: block;
+}
+
+.cp-mistakes-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cp-gap);
+}
+
+.cp-mistake-block {
+  display: grid;
+  grid-template-columns: clamp(2.65rem, 4.2vw, 3.75rem) minmax(0, 1fr);
+  gap: 0 clamp(0.75rem, 1.6vw, 1.2rem);
+  align-items: start;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border-radius: var(--cp-radius);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(145deg, rgba(28, 34, 46, 0.55) 0%, rgba(20, 24, 32, 0.38) 100%);
+}
+
+.cp-mistake-block--takeaway {
+  border-color: rgba(77, 180, 255, 0.32);
+  background: linear-gradient(145deg, rgba(77, 180, 255, 0.1) 0%, rgba(20, 24, 32, 0.45) 100%);
+}
+
+.cp-mistake-card-icon {
+  width: clamp(2.65rem, 4.2vw, 3.75rem);
+  height: clamp(2.65rem, 4.2vw, 3.75rem);
+  border-radius: clamp(8px, 0.65vw, 12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--accent);
+  background: rgba(77, 180, 255, 0.1);
+  border: 1px solid rgba(77, 180, 255, 0.22);
+}
+
+.cp-mistake-block--takeaway .cp-mistake-card-icon {
+  color: #7dd3fc;
+  border-color: rgba(125, 211, 252, 0.35);
+  background: rgba(77, 180, 255, 0.14);
+}
+
+.cp-mistake-card-icon svg {
+  width: 52%;
+  height: 52%;
+  display: block;
+}
+
+.cp-mistake-title {
+  margin: 0 0 0.5em;
+  font-size: clamp(1rem, 0.4vw + 0.9rem, 1.2rem);
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.cp-mistake-text {
+  margin: 0 0 0.65em;
+  font-size: clamp(0.9rem, 0.3vw + 0.82rem, 1.05rem);
+  line-height: 1.52;
+  color: var(--text-soft);
+}
+
+.cp-mistake-text:last-child {
+  margin-bottom: 0;
+}
+
+.cp-mistake-source {
+  margin: 0;
+  font-size: clamp(0.8rem, 0.2vw + 0.75rem, 0.95rem);
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.cp-mistake-source a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.cp-mistake-source a:hover {
+  text-decoration: underline;
+}
