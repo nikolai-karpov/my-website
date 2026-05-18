@@ -542,14 +542,76 @@
           </div>
         </div>
 
-        <figure class="figure" style="margin-top: 3rem;">
-          <div class="figure__frame">
-            <img src="images/n8n-whisper-production.png" alt="n8n workflow production: 143 ноды для транскрипции и анализа интервью, шесть функциональных кластеров" />
-          </div>
-          <figcaption class="figure__caption">
-            Артефакт: self-hosted n8n, workflow «production» — пайплайн транскрипции и анализа интервью (Whisper + LLM-analyzers). 143 ноды, шесть функциональных кластеров: приём аудио, транскрипция, обогащение метаданными, ветки анализа по типу интервью и сложным случаям, выдача результата.
-          </figcaption>
-        </figure>
+        <div class="artifact" style="margin-top: 3rem;">
+          <header class="section-head" style="margin-bottom: 1.5rem;">
+            <div class="section-head__kicker">Артефакт навыка · n8n</div>
+            <div>
+              <h3 class="section-head__title" style="font-size: clamp(1.4rem, 2.2vw, 1.9rem);">
+                Self-hosted production-пайплайн на 143 нодах
+              </h3>
+              <p class="section-head__lead">
+                Не туториал и не сборка из шаблонов — рабочий контур
+                обработки интервью. Один Telegram-бот как точка входа,
+                AssemblyAI для транскрипции, OpenAI + DeepSeek как
+                взаимозаменяемые analyzers, e-mail и DOCX-выдача,
+                self-diagnosis. Поддерживается и развивается в проде.
+              </p>
+            </div>
+          </header>
+
+          <figure class="figure">
+            <div class="figure__frame">
+              <img src="images/n8n-whisper-production.png" alt="n8n workflow production: 143 ноды, шесть функциональных кластеров — приём, транскрипция, классификация типа интервью, ветки анализаторов, обработка ошибок, выдача" />
+            </div>
+            <figcaption class="figure__caption">
+              n8n self-hosted, workflow «production» — пайплайн транскрипции и анализа интервью.
+            </figcaption>
+          </figure>
+
+          <ul style="margin-top: 1.5rem; line-height: 1.7;">
+            <li>
+              <strong>143 ноды, 181 соединение, 28 ветвлений</strong> (20 If + 8 Switch) —
+              не «hello world», а реальный пайплайн с состоянием.
+            </li>
+            <li>
+              <strong>Систематический error-handling.</strong>
+              31 узел с явной обработкой ошибок: отдельные хендлеры
+              для каждой ветки анализаторов (Type 1–6 + Complex + Corporate),
+              для трёх стадий AssemblyAI (Upload / Start / Check), retry
+              с backoff и счётчиком, разделение retryable и критических ошибок.
+            </li>
+            <li>
+              <strong>Multi-LLM с fallback.</strong>
+              OpenAI как основной провайдер, DeepSeek Chat как резервный —
+              переключение без перезаписи воркфлоу.
+            </li>
+            <li>
+              <strong>Telegram state-machine.</strong>
+              Маршрутизация message vs callback_query, отдельные состояния
+              «ждём email», «подтверждение отправки», «выбор типа выдачи»
+              (preview / file / DOCX / email).
+            </li>
+            <li>
+              <strong>Каталог промптов с UI.</strong>
+              Меню → preview → доставка как сообщение / файл / e-mail.
+              Реализован отдельной веткой воркфлоу с self-fetch.
+            </li>
+            <li>
+              <strong>Self-diagnosis.</strong>
+              Отдельная ветка валидации и notify-каскад с диагностическими
+              отчётами в Telegram — observability без внешних DASHBOARDS.
+            </li>
+          </ul>
+
+          <p style="margin-top: 1.5rem; opacity: 0.85; font-size: 0.95rem;">
+            <strong>Что это значит для заказчика.</strong>
+            Уверенно проектирую и поддерживаю production-воркфлоу
+            с интеграциями LLM, аудио-транскрипции, мессенджеров и почты,
+            многоуровневой обработкой ошибок и состояниями диалогов.
+            Не «знаком с n8n» по resume — а проектирую и эксплуатирую
+            артефакт такого класса самостоятельно.
+          </p>
+        </div>
       </section>
 
       <!-- ============ CONTACT ============ -->
