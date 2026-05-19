@@ -58,4 +58,8 @@ htmlcov/
 *.bmp
 *.gif
 *.webm
-alt/
+alt/site-pages/case-studies/_*
+
+# Local drafts of AI-assistant case (manual deploy only)
+site-pages/case-studies/_draft-*.md
+site-pages/case-studies/_plan-*.md

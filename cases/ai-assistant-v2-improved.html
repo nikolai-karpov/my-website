@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Персональный ИИ-ассистент руководителя (v2) | Карпов Николай</title>
+    <meta
+      name="description"
+      content="Кейс: автономный AI-ассистент, замыкающий цикл «встреча → протокол → календарь → follow-up». Компоненты в эксплуатации у автора; адаптируется под корпоративный контур (Exchange 2016, локальный Whisper, псевдонимайзер)."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+    <style>
+      .draft-banner {
+        background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+        color: #312e81;
+        padding: 12px 20px;
+        border-radius: 8px;
+        margin: 24px 0;
+        font-size: 14px;
+        line-height: 1.5;
+      }
+      .draft-banner strong { color: #1e1b4b; }
+
+      .cycle-flow {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(4, 1fr);
+        margin: 28px 0 18px;
+      }
+      @media (max-width: 899px) {
+        .cycle-flow { grid-template-columns: 1fr 1fr; }
+      }
+      @media (max-width: 480px) {
+        .cycle-flow { grid-template-columns: 1fr; }
+      }
+      .cycle-step {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px 18px;
+        position: relative;
+      }
+      .cycle-step__num {
+        display: inline-block;
+        background: var(--accent, #6366f1);
+        color: #fff;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 26px;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      .cycle-step__title { font-weight: 600; margin-bottom: 6px; font-size: 15px; }
+      .cycle-step__desc { font-size: 13px; line-height: 1.5; color: var(--text-muted, #555); }
+
+      .compare-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 18px 0;
+        font-size: 14px;
+      }
+      .compare-table th, .compare-table td {
+        padding: 10px 14px;
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+      .compare-table th {
+        background: var(--bg-alt);
+        font-weight: 600;
+        font-size: 13px;
+      }
+      .compare-table td:first-child {
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      @media (max-width: 720px) {
+        .compare-table thead { display: none; }
+        .compare-table tbody tr {
+          display: block;
+          margin-bottom: 18px;
+          border: 1px solid var(--border);
+          border-radius: 10px;
+          padding: 10px 14px;
+        }
+        .compare-table tbody td {
+          display: block;
+          border: none;
+          padding: 4px 0;
+        }
+        .compare-table tbody td:first-child {
+          font-weight: 700;
+          font-size: 15px;
+          margin-bottom: 4px;
+          padding-bottom: 6px;
+          border-bottom: 1px solid var(--border);
+        }
+        .compare-table tbody td:not(:first-child)::before {
+          content: attr(data-label) ": ";
+          font-weight: 600;
+          color: var(--text-muted, #666);
+        }
+      }
+
+      .status-pill {
+        display: inline-block;
+        padding: 2px 9px;
+        border-radius: 12px;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+      }
+      .status-pill--ok { background: #d1fae5; color: #065f46; }
+      .status-pill--warn { background: #fef3c7; color: #92400e; }
+      .status-pill--build { background: #dbeafe; color: #1e40af; }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header" role="banner">
+      <div class="container site-header__inner">
+        <a href="../" class="brand" aria-label="На главную">
+          <span class="brand__dot" aria-hidden="true"></span>
+          <span>Внедрение нейросетей</span>
+        </a>
+        <nav class="site-nav" aria-label="Основная навигация">
+          <a href="../#approach">Подход</a>
+          <a href="../#cases">Кейсы</a>
+          <a href="../methodology.html">Методология</a>
+          <a href="../#security">ИБ</a>
+          <a href="../#contact">Контакт</a>
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" stroke-linejoin="round" />
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main">
+      <section class="article-hero container">
+        <a href="../" class="back-link">
+          <span aria-hidden="true">←</span> Главная
+        </a>
+
+        <div class="article-hero__meta">
+          <span>Черновик v2 — улучшенный</span>
+          <span>4 функции для ЛПР</span>
+          <span>Компоненты в эксплуатации</span>
+        </div>
+
+        <h1 class="article-hero__title">
+          Персональный ИИ-ассистент руководителя
+        </h1>
+
+        <p class="article-hero__hook">
+          Автономный агент, который ведёт переговоры за вас: транскрибирует встречи,
+          формирует протокол с задачами, заводит контрольные точки в календарь
+          и сам ведёт follow-up по договорённостям — пока вы заняты следующей встречей.
+        </p>
+
+        <div class="draft-banner">
+          🔒 <strong>Версия v2 (улучшенная).</strong> Переработана с фокусом на 4 функции, которые нужны ЛПР.
+          Сравнение с исходным черновиком — <a href="ai-assistant-v1-hermes.html">версия v1 от Hermes</a>.
+          Эта страница не индексируется поисковиками и не закреплена в навигации сайта.
+        </div>
+      </section>
+
+      <section class="article container">
+        <div class="article__body">
+          <dl class="spec-table">
+            <dt>Цикл</dt>
+            <dd>Встреча → Протокол → Календарь → Follow-up</dd>
+            <dt>Контур</dt>
+            <dd>Локальный STT + псевдонимизация + EWS-адаптация</dd>
+            <dt>Стек</dt>
+            <dd>Hermes Agent · Whisper · MemPalace · Pseudonymizer</dd>
+            <dt>ИБ</dt>
+            <dd>Zero Trust · HITL · Локальная память</dd>
+            <dt>Стадия</dt>
+            <dd>Компоненты в эксплуатации, сборка под ваш ландшафт — 2–3 спринта</dd>
+            <dt>Роль</dt>
+            <dd>Архитектор · разработчик · интегратор</dd>
+          </dl>
+
+          <h2 data-num="01">Задача от руководителя</h2>
+          <p>
+            <strong>Руководитель тратит на администрирование переговоров больше, чем на сами переговоры.</strong>
+            Каждый день у генерального — 5–8 встреч, ещё столько же — звонков.
+            После каждой нужно: написать протокол, поставить задачи,
+            занести контрольные точки в календарь, через неделю напомнить
+            всем причастным и собрать статус. На это уходит вторая половина
+            дня — а её нет, потому что в неё уже стоят следующие встречи.
+            И уходит память: через две недели договорённости теряются,
+            исполнение «провисает».
+          </p>
+          <p>
+            Контролировать вручную — не масштабируется. Делегировать секретарю —
+            не везде допустимо (конфиденциальность, скорость, доступ к экосистеме).
+          </p>
+          <ul>
+            <li>Протоколы не пишутся → договорённости теряются</li>
+            <li>Задачи не заводятся → исполнители «забыли»</li>
+            <li>Контрольные точки не заведены → срыв сроков виден постфактум</li>
+            <li>Follow-up не делается → статус узнаём от исполнителя, не от системы</li>
+          </ul>
+
+          <h2 data-num="02">Решение — четыре функции, замыкающие цикл</h2>
+          <p>
+            <strong>Цикл «Встреча → Протокол → Календарь → Follow-up» — без участия секретаря.</strong>
+          </p>
+
+          <div class="cycle-flow">
+            <div class="cycle-step">
+              <div class="cycle-step__num">1</div>
+              <div class="cycle-step__title">Встреча</div>
+              <div class="cycle-step__desc">Аудио из Teams / Meet / диктофона / прямого подключения. Транскрибация локально (Whisper) или в защищённом контуре.</div>
+            </div>
+            <div class="cycle-step">
+              <div class="cycle-step__num">2</div>
+              <div class="cycle-step__title">Протокол</div>
+              <div class="cycle-step__desc">Резюме: главные тезисы, решения, разногласия. Список задач с владельцем и сроком. Отправка участникам.</div>
+            </div>
+            <div class="cycle-step">
+              <div class="cycle-step__num">3</div>
+              <div class="cycle-step__title">Календарь</div>
+              <div class="cycle-step__desc">Контрольные точки на даты дедлайнов. Промежуточные напоминания (за 3 дня, за день). Связь события с протоколом.</div>
+            </div>
+            <div class="cycle-step">
+              <div class="cycle-step__num">4</div>
+              <div class="cycle-step__title">Follow-up</div>
+              <div class="cycle-step__desc">За X дней до дедлайна — запрос исполнителю «статус?». Сверка ответа с обязательством. Вывод: в графике / риск / сорвано. Эскалация руководителю при риске.</div>
+            </div>
+          </div>
+
+          <h2 data-num="03">Что работает сегодня — без фантазий</h2>
+          <p>
+            Доказательная база — компоненты в эксплуатации у меня:
+          </p>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Компонент</th>
+                <th>Где работает</th>
+                <th>Статус</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Компонент">Транскрибация голоса (RU)</td>
+                <td data-label="Где">Hermes Agent + faster-whisper, локально</td>
+                <td data-label="Статус"><span class="status-pill status-pill--build">Доводим под одну команду</span></td>
+              </tr>
+              <tr>
+                <td data-label="Компонент">Резюме через LLM</td>
+                <td data-label="Где">Hermes Agent + Z.AI / Cerebras / Groq fallback</td>
+                <td data-label="Статус"><span class="status-pill status-pill--ok">В эксплуатации</span></td>
+              </tr>
+              <tr>
+                <td data-label="Компонент">Pipeline «встреча → action items»</td>
+                <td data-label="Где">Skill teams-meeting-pipeline (Microsoft Graph)</td>
+                <td data-label="Статус"><span class="status-pill status-pill--ok">Работает на MS Teams</span></td>
+              </tr>
+              <tr>
+                <td data-label="Компонент">Календарь</td>
+                <td data-label="Где">Skill google-workspace (OAuth Gmail / Calendar)</td>
+                <td data-label="Статус"><span class="status-pill status-pill--ok">В эксплуатации</span></td>
+              </tr>
+              <tr>
+                <td data-label="Компонент">Follow-up по расписанию</td>
+                <td data-label="Где">Встроенный cron + LLM на каждое срабатывание</td>
+                <td data-label="Статус"><span class="status-pill status-pill--ok">Daily reflection активен у меня</span></td>
+              </tr>
+              <tr>
+                <td data-label="Компонент">Семантическая память</td>
+                <td data-label="Где">MemPalace (ChromaDB + Knowledge Graph, локально)</td>
+                <td data-label="Статус"><span class="status-pill status-pill--ok">42 drawer · 37 entities</span></td>
+              </tr>
+              <tr>
+                <td data-label="Компонент">Псевдонимизация перед облачным LLM</td>
+                <td data-label="Где">Свой Pseudonymizer (FastAPI + spaCy + морфология)</td>
+                <td data-label="Статус"><span class="status-pill status-pill--ok">MVP в эксплуатации</span></td>
+              </tr>
+              <tr>
+                <td data-label="Компонент">HITL на критических операциях</td>
+                <td data-label="Где">Permission UI в мессенджере («✅ Allow / ❌ Deny»)</td>
+                <td data-label="Статус"><span class="status-pill status-pill--ok">Использую каждый день</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p style="margin-top: 14px;">
+            <strong>На демо вы увидите:</strong> короткое аудио встречи (10–15 мин) →
+            транскрибация → черновик протокола с задачами → запись событий в календарь →
+            cron на follow-up. Через сутки система сама присылает напоминание «спросить
+            такого-то про статус».
+          </p>
+
+          <h2 data-num="04">Архитектура под ваш контур</h2>
+          <p>
+            Архитектурный документ под Exchange 2016 (проект <strong>MeetOptima</strong>, ТЗ v2.0)
+            у вас уже есть. Ниже — как тот же стек, что работает у меня,
+            укладывается в этот контур:
+          </p>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Слой</th>
+                <th>У меня сейчас</th>
+                <th>В вашем контуре</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Слой">Мессенджер</td>
+                <td data-label="Сейчас">MAX (max.ru)</td>
+                <td data-label="Контур">Корпоративный мессенджер / MS Teams / Telegram-бот за периметром</td>
+              </tr>
+              <tr>
+                <td data-label="Слой">Календарь</td>
+                <td data-label="Сейчас">Google Calendar OAuth</td>
+                <td data-label="Контур">Microsoft Exchange 2016 → EWS API (не Graph — для on-prem)</td>
+              </tr>
+              <tr>
+                <td data-label="Слой">STT (транскрибация)</td>
+                <td data-label="Сейчас">faster-whisper локально</td>
+                <td data-label="Контур">Whisper-large-v3 в защищённом контуре + Yandex SpeechKit как fallback</td>
+              </tr>
+              <tr>
+                <td data-label="Слой">LLM</td>
+                <td data-label="Сейчас">Z.AI / Cerebras / Groq fallback chain</td>
+                <td data-label="Контур">Локальная LLM (Qwen3 / Llama-3.3 на GPU) + шлюз к внешним через псевдонимайзер</td>
+              </tr>
+              <tr>
+                <td data-label="Слой">Шлюз приватности</td>
+                <td data-label="Сейчас">Свой Pseudonymizer (FastAPI + spaCy)</td>
+                <td data-label="Контур">Тот же стек разворачивается в периметре; сертифицирован под 152-ФЗ</td>
+              </tr>
+              <tr>
+                <td data-label="Слой">Память</td>
+                <td data-label="Сейчас">MemPalace локально (ChromaDB + KG)</td>
+                <td data-label="Контур">То же — оффлайн, эмбеддинги на CPU, никаких внешних API</td>
+              </tr>
+              <tr>
+                <td data-label="Слой">Аудит и логирование</td>
+                <td data-label="Сейчас">Hermes session log + diary</td>
+                <td data-label="Контур">ELK-compatible JSON-логи (формат описан в MeetOptima)</td>
+              </tr>
+              <tr>
+                <td data-label="Слой">HITL</td>
+                <td data-label="Сейчас">Permission UI в мессенджере</td>
+                <td data-label="Контур">То же + интеграция с корпоративным AD для подтверждения от секретаря</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="pullquote">
+            Для on-prem Exchange-контура полный комплект «agent + EWS + локальный
+            Whisper + псевдонимайзер + память» — это <strong>2–3 спринта</strong>
+            под ваш ландшафт. Архитектурный документ MeetOptima v2.0 описывает
+            всю эту обвязку детально.
+          </div>
+
+          <h2 data-num="05">Информационная безопасность — входное условие</h2>
+          <p>Методология 4 шага (та же, что в моих других кейсах):</p>
+          <ol>
+            <li><strong>Маршрутизация данных</strong> — что отдаём наружу, что обрабатываем локально, что вообще не трогаем. Голос встречи — никогда не уходит в облако без явного решения.</li>
+            <li><strong>Псевдонимизация перед облачным LLM</strong> — собственный Pseudonymizer обезличивает ФИО, телефоны, договоры, суммы. После ответа LLM — обратное восстановление в безопасном контуре.</li>
+            <li><strong>Guardrails + HITL</strong> — финансы, юр-формулировки, отправка наружу — всегда «✅» от руководителя. Кнопками в мессенджере, без терминала.</li>
+            <li><strong>Защищённый LLM-контур</strong> — Zero Trust, локальный LLM, DLP, SIEM, ротация ключей. Аудит-логи в ELK.</li>
+          </ol>
+
+          <p><strong>Дополнительные точки контроля:</strong></p>
+          <ul>
+            <li><strong>Redaction секретов</strong> — автоматическая маскировка API-ключей и паролей в логах (работает у меня сейчас).</li>
+            <li><strong>Локальное хранение памяти</strong> — MemPalace полностью offline, эмбеддинги через ONNX Runtime, никаких внешних embedding-API.</li>
+            <li><strong>ИБ-аудит навыков</strong> — любой сторонний плагин агента проходит аудит перед установкой (есть собственный шаблон чек-листа).</li>
+          </ul>
+
+          <h2 data-num="06">Стек — конкретно</h2>
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Слой</th>
+                <th>Технология</th>
+                <th>Лицензия</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="Слой">Агентный фреймворк</td><td data-label="Технология">Hermes Agent (Nous Research)</td><td data-label="Лицензия">MIT, fork под нашу настройку</td></tr>
+              <tr><td data-label="Слой">LLM-ядро</td><td data-label="Технология">Z.AI GLM-5.1 / Groq Llama-3.3 / Cerebras Qwen-3 / локальные Qwen3 / Llama-3.3</td><td data-label="Лицензия">Облако или on-prem GPU</td></tr>
+              <tr><td data-label="Слой">Транскрибация</td><td data-label="Технология">faster-whisper / Whisper-large-v3 / Yandex SpeechKit</td><td data-label="Лицензия">Open-source / коммерческая</td></tr>
+              <tr><td data-label="Слой">Память</td><td data-label="Технология">MemPalace (ChromaDB + ONNX all-MiniLM-L6-v2 + KG)</td><td data-label="Лицензия">Open-source, локально</td></tr>
+              <tr><td data-label="Слой">Календарь</td><td data-label="Технология">Google Workspace API / EWS API (Exchange 2016)</td><td data-label="Лицензия">OAuth / Service account</td></tr>
+              <tr><td data-label="Слой">Почта</td><td data-label="Технология">Himalaya CLI (IMAP/SMTP)</td><td data-label="Лицензия">Open-source</td></tr>
+              <tr><td data-label="Слой">Мессенджер</td><td data-label="Технология">MAX / Telegram / MS Teams — адаптеры к Hermes</td><td data-label="Лицензия">Bot API / Graph API</td></tr>
+              <tr><td data-label="Слой">Псевдонимизация</td><td data-label="Технология">Свой Pseudonymizer (FastAPI + spaCy + pymorphy3 + regex + Aho-Corasick)</td><td data-label="Лицензия">Моя разработка</td></tr>
+              <tr><td data-label="Слой">Оркестрация задач</td><td data-label="Технология">todo + cron + delegation (встроенные в Hermes)</td><td data-label="Лицензия">Open-source</td></tr>
+              <tr><td data-label="Слой">Деплой</td><td data-label="Технология">Docker, docker-compose, опционально Kubernetes</td><td data-label="Лицензия">Open-source</td></tr>
+            </tbody>
+          </table>
+
+          <h2 data-num="07">Сроки и зона ответственности</h2>
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Спринт</th>
+                <th>Цель</th>
+                <th>Артефакт</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td data-label="Спринт">Спринт 1 (1–2 нед)</td><td data-label="Цель">EWS-коннектор + Whisper в вашем контуре + первый протокол</td><td data-label="Артефакт">Pilot: одна реальная встреча → протокол → задачи в почте</td></tr>
+              <tr><td data-label="Спринт">Спринт 2 (1–2 нед)</td><td data-label="Цель">Контрольные точки в Exchange + follow-up cron + HITL-кнопки</td><td data-label="Артефакт">Pilot: 5 встреч за неделю → автоматический follow-up на 5-й день</td></tr>
+              <tr><td data-label="Спринт">Спринт 3 (1–2 нед)</td><td data-label="Цель">Псевдонимайзер интегрирован, аудит ИБ, документация</td><td data-label="Артефакт">Передача в эксплуатацию</td></tr>
+              <tr><td data-label="Спринт">После</td><td data-label="Цель">Поддержка + развитие новых функций</td><td data-label="Артефакт">Оптимизация календаря, тематическая группировка — из ТЗ MeetOptima v2.0. По договору.</td></tr>
+            </tbody>
+          </table>
+
+          <h2 data-num="08">Бонус: что ассистент закроет дополнительно</h2>
+
+          <p><strong>📧 Работа с почтой:</strong></p>
+          <ul>
+            <li>Сегментация и классификация входящих (проект / персональное / рассылка / срочное)</li>
+            <li>Выделение главного из длинных цепочек (что решено, что договорено, что не отвечено)</li>
+            <li>Драфты ответов в вашем стиле, отправка только после «✅»</li>
+            <li>Follow-up на неотвеченные письма от ключевых контрагентов</li>
+          </ul>
+
+          <p><strong>🔍 Исследования и факт-чекинг:</strong></p>
+          <ul>
+            <li>Брифинги перед встречами (профиль контрагента, последние новости, фин. статус)</li>
+            <li>Сверка цитат и фактов в документах перед подписанием</li>
+            <li>Обзоры рынка / конкурентов с источниками</li>
+          </ul>
+
+          <p><strong>📋 Курирование портфеля проектов:</strong></p>
+          <ul>
+            <li>Сводные отчёты по проектам (статус из GitHub / Jira / писем)</li>
+            <li>Раскраска просрочек, эскалация</li>
+            <li>Связь между протоколами встреч и task-tracker'ами</li>
+          </ul>
+
+          <h2 data-num="09">Доказательства</h2>
+          <ul>
+            <li><strong>Hermes Agent (открытый фреймворк):</strong> <a href="https://github.com/nousresearch/hermes-agent">github.com/nousresearch/hermes-agent</a></li>
+            <li><strong>Мой форк с производственной конфигурацией:</strong> <a href="https://github.com/nikolai-karpov/hermes-agent">github.com/nikolai-karpov/hermes-agent</a></li>
+            <li><strong>Архитектурный документ MeetOptima v2.0</strong> — у вас на руках</li>
+            <li><strong>Pseudonymizer MVP в эксплуатации</strong> — см. <a href="pseudonymizer.html">кейс</a></li>
+          </ul>
+
+          <div class="callout">
+            <div class="callout__label">Что демонстрирует кейс</div>
+            Способность собрать готового персонального ИИ-ассистента ЛПР
+            под корпоративный on-prem контур из проверенных компонентов:
+            архитектура уже спроектирована (MeetOptima), стек уже работает
+            на моём контуре, ИБ-фундамент уже построен. Дальнейшая работа —
+            интеграция в ваш ландшафт, не разработка «с нуля».
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div>© 2026 · Карпов Николай · черновик v2, не для публикации</div>
+        <div>
+          <a href="ai-assistant-v1-hermes.html">← см. версию v1 (исходный черновик Hermes)</a>
+        </div>
+      </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" type="button" aria-label="Наверх">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 15l6-6 6 6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+
+    <script src="../assets/js/main.js" defer></script>
+  </body>
+</html>
