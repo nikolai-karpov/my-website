@@ -26,20 +26,35 @@ my-website/
 │   │   └── style.css      # Основные стили
 │   └── js/
 │       └── main.js        # Основной JavaScript
-├── cases/                  # HTML-кейсы новой версии
+├── cases/                  # Исходные материалы кейсов (НЕ HTML-страницы)
+│   ├── Кейс_*.md          # Исследовательские заметки по 34 мировым ИИ-кейсам
+│   ├── Обзоры/            # Самостоятельные HTML-отчёты-обзоры (research artifact)
+│   ├── publications/      # Публикации и материалы
+│   └── warehouse_logistic/# Прототип и материалы по складской логистике
+├── site-pages/             # Все страницы, доступные с главной (index.html)
+│   ├── ai-assistant.html
 │   ├── carriers-platform.html
+│   ├── contacts.html
 │   ├── holding-audit.html
+│   ├── hr-n8n-agent.html
 │   ├── pir-s.html
+│   ├── prompt_generator.html
 │   ├── pseudonymizer.html
 │   ├── rd-prompt-engineering.html
 │   └── prototypes/
-│       └── yard-booking.html
+│       └── yard-booking.html # Прототип бронирования окон (используется carriers-platform)
 ├── legacy/                 # Старая версия сайта (deprecated)
 │   ├── index.html         # Старая главная страница
-│   ├── methodology.html   # Старая страница методологии
 │   ├── assets/            # Старые CSS, JS, SCSS
 │   ├── css/               # Старые стили
-│   └── scss/              # Старые SCSS файлы
+│   ├── scss/              # Старые SCSS файлы
+│   └── site-pages/        # Неактуальные страницы предыдущей версии
+│       ├── methodology.html
+│       ├── invest_memo.html
+│       ├── pirs-strategy*.html
+│       ├── results.html
+│       ├── report_farma.html
+│       └── case-studies/  # Старая структура кейсов (index, construction, procurement, ...)
 ├── docs/                   # Документация проекта
 │   ├── README.md          # Основная документация
 │   ├── AGENTS.md          # Документация по агентам
@@ -67,8 +82,6 @@ my-website/
 ├── site-components/        # Компоненты сайта
 │   ├── header.html
 │   └── footer.html
-├── site-pages/             # Дополнительные страницы
-│   └── case-studies/
 ├── alt/                    # Исходная папка (игнорируется git)
 ├── package.json            # Зависимости проекта
 ├── package-lock.json       # Блокировка зависимостей
@@ -136,7 +149,8 @@ npm run build
 - Расположена в корне проекта
 - Включает [`index.html`](index.html), [`methodology.html`](methodology.html)
 - Использует папку [`assets/`](assets/) для стилей и скриптов
-- Кейсы находятся в [`cases/`](cases/)
+- Все страницы, доступные с главной, лежат в [`site-pages/`](site-pages/)
+- Папка [`cases/`](cases/) — только для исходных материалов (markdown-исследования, обзоры, прототипы); HTML-страниц в ней быть не должно
 
 ### Легаси-версия
 - Расположена в папке [`legacy/`](legacy/)
@@ -147,15 +161,19 @@ npm run build
 
 ## 📝 Кейсы
 
-Кейсы проекта находятся в папке [`cases/`](cases/) и включают:
+HTML-страницы кейсов лежат в [`site-pages/`](site-pages/) (все они доступны с главной [`index.html`](index.html)):
 
-- [`carriers-platform.html`](cases/carriers-platform.html) — Платформа перевозчиков
-- [`holding-audit.html`](cases/holding-audit.html) — Аудит холдинга
-- [`pir-s.html`](cases/pir-s.html) — ПИР-С
-- [`pseudonymizer.html`](cases/pseudonymizer.html) — Псевдонимизатор
-- [`rd-prompt-engineering.html`](cases/rd-prompt-engineering.html) — R&D Prompt Engineering
+- [`ai-assistant.html`](site-pages/ai-assistant.html) — Персональный ИИ-ассистент руководителя
+- [`carriers-platform.html`](site-pages/carriers-platform.html) — Платформа перевозчиков
+- [`holding-audit.html`](site-pages/holding-audit.html) — Аудит холдинга
+- [`pir-s.html`](site-pages/pir-s.html) — ПИР-Система
+- [`pseudonymizer.html`](site-pages/pseudonymizer.html) — Pseudonymizer MVP
+- [`rd-prompt-engineering.html`](site-pages/rd-prompt-engineering.html) — Промпт-инжиниринг для R&D
+- [`hr-n8n-agent.html`](site-pages/hr-n8n-agent.html) — HR-агент на n8n
+- [`prompt_generator.html`](site-pages/prompt_generator.html) — Генератор стратегий продаж
+- [`contacts.html`](site-pages/contacts.html) — Полная форма заявки
 
-Дополнительные материалы по кейсам находятся в подпапках [`cases/Обзоры/`](cases/Обзоры/) и [`cases/publications/`](cases/publications/).
+Исходные материалы и заметки по кейсам — в [`cases/`](cases/) (markdown-исследования, обзоры в [`cases/Обзоры/`](cases/Обзоры/), публикации в [`cases/publications/`](cases/publications/)). **В папке `cases/` не должно быть HTML-страниц сайта** — они принадлежат `site-pages/`.
 
 ---
 
@@ -220,4 +238,4 @@ npm run lint:css:fix   # Автоисправление стилей
 
 ---
 
-**Последнее обновление:** Май 2026
+**Последнее обновление:** Май 2026 — реструктуризация: HTML-кейсы перенесены из `cases/` в `site-pages/`, неактуальные страницы предыдущей версии переведены в `legacy/site-pages/`.
