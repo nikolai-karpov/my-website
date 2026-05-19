@@ -1563,19 +1563,33 @@ img { max-width: 100%; height: auto; display: block; }
   white-space: nowrap;
 }
 @media (max-width: 720px) {
+  .compare-table {
+    display: block;
+    max-width: 100%;
+  }
   .compare-table thead { display: none; }
+  .compare-table tbody {
+    display: block;
+    width: 100%;
+  }
   .compare-table tbody tr {
     display: block;
     margin-bottom: 18px;
     border: 1px solid var(--line);
     border-radius: 10px;
     padding: 10px 14px;
+    box-sizing: border-box;
+    max-width: 100%;
   }
-  .compare-table tbody td {
+  .compare-table tbody td,
+  .compare-table tbody td:first-child {
     display: block;
     border: none;
     padding: 4px 0;
     white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    max-width: 100%;
   }
   .compare-table tbody td:first-child {
     font-weight: 700;
