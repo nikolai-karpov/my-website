@@ -1113,17 +1113,34 @@ img { max-width: 100%; height: auto; display: block; }
 
 .spec-table {
   margin: 24px 0 32px;
-  padding: 28px;
+  padding: 18px 16px;
   background: var(--bg-alt);
   border: 1px solid var(--line);
   border-radius: 6px;
   font-family: var(--font-mono);
   font-size: 13px;
   display: grid;
-  gap: 16px 24px;
+  gap: 10px 20px;
 }
 
-@media (min-width: 600px) { .spec-table { grid-template-columns: 180px 1fr; } }
+.spec-table dt + dd { margin-top: -4px; }
+
+@media (min-width: 600px) {
+  .spec-table {
+    padding: 22px 24px;
+    gap: 14px 24px;
+    grid-template-columns: 140px 1fr;
+  }
+  .spec-table dt + dd { margin-top: 0; }
+}
+
+@media (min-width: 900px) {
+  .spec-table {
+    padding: 28px;
+    gap: 16px 24px;
+    grid-template-columns: 180px 1fr;
+  }
+}
 
 .spec-table dt {
   text-transform: uppercase;

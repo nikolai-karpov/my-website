@@ -106,20 +106,24 @@
 
       .protocol-cycle {
         margin: 20px 0;
-        padding: 18px 22px;
+        padding: 14px 14px;
         background: var(--bg-alt);
         border-left: 3px solid var(--accent, #6366f1);
         border-radius: 8px;
       }
       .protocol-cycle ol {
         margin: 0;
-        padding-left: 22px;
+        padding-left: 0;
       }
       .protocol-cycle ol li {
         margin-bottom: 10px;
         line-height: 1.55;
       }
       .protocol-cycle ol li strong { color: var(--text, #111); }
+
+      @media (min-width: 600px) {
+        .protocol-cycle { padding: 18px 22px; }
+      }
     </style>
   </head>
 
