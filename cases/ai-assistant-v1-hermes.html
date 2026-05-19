@@ -18,56 +18,6 @@
     />
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
-
-    <style>
-      /* Минорные стили под этот кейс */
-      .draft-banner {
-        background: linear-gradient(135deg, #fef3c7, #fde68a);
-        color: #92400e;
-        padding: 12px 20px;
-        border-radius: 8px;
-        margin: 24px 0;
-        font-size: 14px;
-        line-height: 1.5;
-      }
-      .draft-banner strong { color: #78350f; }
-      .arch-ascii {
-        background: var(--bg-alt);
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        padding: 16px;
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 12px;
-        line-height: 1.5;
-        overflow-x: auto;
-        white-space: pre;
-        margin: 18px 0;
-      }
-      @media (max-width: 600px) {
-        .arch-ascii { font-size: 10px; padding: 12px; }
-      }
-      .feature-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
-        margin: 24px 0;
-      }
-      .feature-card {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 18px 20px;
-      }
-      .feature-card h4 {
-        margin: 0 0 10px;
-        font-size: 16px;
-        display: flex;
-        gap: 8px;
-        align-items: center;
-      }
-      .feature-card ul { margin: 8px 0 0; padding-left: 18px; font-size: 14px; }
-      .feature-card li { margin-bottom: 4px; }
-    </style>
   </head>
 
   <body>
@@ -119,7 +69,7 @@
           работая 24/7 через мессенджер.
         </p>
 
-        <div class="draft-banner">
+        <div class="draft-banner draft-banner--warn">
           ⚠️ <strong>Черновик v1.</strong> Эту версию составил Hermes Agent самостоятельно по запросу.
           Опубликована для сравнения с улучшенной <a href="ai-assistant-v2-improved.html">версией v2</a>.
           Не закреплена в навигации сайта.

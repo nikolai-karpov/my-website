@@ -18,113 +18,6 @@
     />
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
-
-    <style>
-      .cycle-flow {
-        display: grid;
-        gap: 14px;
-        grid-template-columns: repeat(4, 1fr);
-        margin: 28px 0 18px;
-      }
-      @media (max-width: 899px) {
-        .cycle-flow { grid-template-columns: 1fr 1fr; }
-      }
-      @media (max-width: 480px) {
-        .cycle-flow { grid-template-columns: 1fr; }
-      }
-      .cycle-step {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 16px 18px;
-        position: relative;
-      }
-      .cycle-step__num {
-        display: inline-block;
-        background: var(--accent, #6366f1);
-        color: #fff;
-        width: 26px;
-        height: 26px;
-        border-radius: 50%;
-        text-align: center;
-        line-height: 26px;
-        font-size: 13px;
-        font-weight: 600;
-        margin-bottom: 8px;
-      }
-      .cycle-step__title { font-weight: 600; margin-bottom: 6px; font-size: 15px; }
-      .cycle-step__desc { font-size: 13px; line-height: 1.5; color: var(--text-muted, #555); }
-
-      .compare-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 18px 0;
-        font-size: 14px;
-      }
-      .compare-table th, .compare-table td {
-        padding: 10px 14px;
-        text-align: left;
-        border-bottom: 1px solid var(--border);
-        vertical-align: top;
-      }
-      .compare-table th {
-        background: var(--bg-alt);
-        font-weight: 600;
-        font-size: 13px;
-      }
-      .compare-table td:first-child {
-        font-weight: 600;
-        white-space: nowrap;
-      }
-      @media (max-width: 720px) {
-        .compare-table thead { display: none; }
-        .compare-table tbody tr {
-          display: block;
-          margin-bottom: 18px;
-          border: 1px solid var(--border);
-          border-radius: 10px;
-          padding: 10px 14px;
-        }
-        .compare-table tbody td {
-          display: block;
-          border: none;
-          padding: 4px 0;
-        }
-        .compare-table tbody td:first-child {
-          font-weight: 700;
-          font-size: 15px;
-          margin-bottom: 4px;
-          padding-bottom: 6px;
-          border-bottom: 1px solid var(--border);
-        }
-        .compare-table tbody td:not(:first-child)::before {
-          content: attr(data-label) ": ";
-          font-weight: 600;
-          color: var(--text-muted, #666);
-        }
-      }
-
-      .protocol-cycle {
-        margin: 20px 0;
-        padding: 14px 14px;
-        background: var(--bg-alt);
-        border-left: 3px solid var(--accent, #6366f1);
-        border-radius: 8px;
-      }
-      .protocol-cycle ol {
-        margin: 0;
-        padding-left: 0;
-      }
-      .protocol-cycle ol li {
-        margin-bottom: 10px;
-        line-height: 1.55;
-      }
-      .protocol-cycle ol li strong { color: var(--text, #111); }
-
-      @media (min-width: 600px) {
-        .protocol-cycle { padding: 18px 22px; }
-      }
-    </style>
   </head>
 
   <body>
@@ -253,7 +146,7 @@
             </ol>
           </div>
 
-          <h2 data-num="04">Персональный портал согласования <span style="font-size: 14px; font-weight: 400; color: var(--text-muted, #666); margin-left: 8px; padding: 2px 8px; background: #fef3c7; color: #92400e; border-radius: 10px; text-transform: none; letter-spacing: 0;">экспериментальный модуль</span></h2>
+          <h2 data-num="04">Персональный портал согласования <span class="status-pill status-pill--warn" style="margin-left: 8px; vertical-align: middle;">экспериментальный модуль</span></h2>
           <p>
             Альтернатива почтовой рассылке для случаев, когда нужны юридически
             чистая фиксация согласования и аудиторский след по каждому участнику.
