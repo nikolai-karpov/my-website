@@ -61,6 +61,9 @@ htmlcov/
 alt/
 alt/site-pages/case-studies/_*
 
+# Claude Code local state (worktrees, settings) — must not leak as gitlinks
+.claude/
+
 # Local drafts of AI-assistant case (manual deploy only)
 site-pages/case-studies/_draft-*.md
 site-pages/case-studies/_plan-*.md
