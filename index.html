@@ -29,7 +29,25 @@
 
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
-  </head>
+  
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(109350250, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109350250" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
 
   <body>
     <!-- ============ HEADER ============ -->
@@ -44,6 +62,7 @@
           <a href="#approach">Подход</a>
           <a href="#cases">Кейсы</a>
           <a href="site-pages/methodology.html">Методология</a>
+          <a href="site-pages/publications/index.html">Обзоры</a>
           <a href="#security">ИБ</a>
           <a href="#contact">Контакт</a>
           <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">
@@ -236,7 +255,7 @@
         <header class="section-head">
           <div class="section-head__kicker">Кейсы</div>
           <div>
-            <h2 class="section-head__title">Четыре главных кейса — три профессии и их точка пересечения</h2>
+            <h2 class="section-head__title">Пять главных кейсов — три профессии, их точка пересечения и production-артефакт навыка</h2>
             <p class="section-head__lead">
               ПИР-Система — главный архитектурный кейс. Анонимайзер — главный кейс
               по информационной безопасности и фундамент мультиагентных решений. Аудит холдинга вместе с
@@ -244,7 +263,9 @@
               системного подхода к стратегии ИИ. Персональный ИИ-ассистент
               руководителя — точка, где сходятся все три профессии: архитектура
               мультиагентной системы, ИБ-фундамент и системный подход к рабочему
-              процессу руководителя.
+              процессу руководителя. Self-hosted n8n-пайплайн на 143 нодах —
+              отдельный артефакт навыка production-автоматизации: рабочий
+              контур обработки интервью, не туториал и не сборка из шаблонов.
             </p>
           </div>
         </header>
@@ -391,6 +412,40 @@
           </dl>
         </article>
 
+        <article class="case-featured">
+          <div>
+            <div class="case-featured__meta">
+              <span>Артефакт навыка · n8n</span>
+              <span>Self-hosted · в проде</span>
+              <span>143 ноды</span>
+            </div>
+            <h3 class="case-featured__title">
+              Self-hosted n8n production-пайплайн на 143 нодах
+            </h3>
+            <p class="case-featured__hook">
+              Не туториал и не сборка из шаблонов — рабочий контур обработки
+              интервью. Один Telegram-бот как точка входа, AssemblyAI для
+              транскрипции, OpenAI и DeepSeek как взаимозаменяемые analyzers,
+              e-mail и DOCX-выдача, self-diagnosis. 31 узел error-handling,
+              retry с backoff, состояния диалога без внешнего хранилища.
+              Поддерживается и развивается в проде.
+            </p>
+            <a href="site-pages/hr-n8n-agent.html" class="case-featured__link">
+              Архитектура воркфлоу и error-handling
+              <span class="btn__arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <dl class="case-featured__specs">
+            <div class="case-featured__spec"><dt>Размер</dt><dd>143 ноды · 181 соединение · 28 ветвлений</dd></div>
+            <div class="case-featured__spec"><dt>Error-handling</dt><dd>31 узел с явной обработкой ошибок</dd></div>
+            <div class="case-featured__spec"><dt>Стек</dt><dd>n8n · Telegram · AssemblyAI · OpenAI · DeepSeek</dd></div>
+            <div class="case-featured__spec"><dt>Multi-LLM</dt><dd>OpenAI + DeepSeek с fallback</dd></div>
+            <div class="case-featured__spec"><dt>Выдача</dt><dd>Telegram · DOCX · e-mail</dd></div>
+            <div class="case-featured__spec"><dt>Роль</dt><dd>Архитектор · разработчик воркфлоу</dd></div>
+          </dl>
+        </article>
+
         <!-- Other cases -->
         <div style="margin-top: clamp(60px, 8vw, 90px);">
           <div class="kicker" style="margin-bottom: 24px;">Остальные решения</div>
@@ -405,12 +460,6 @@
               <div class="case-row__tag">Промышл. логистика</div>
               <div class="case-row__title">Платформа управления перевозчиками</div>
               <div class="case-row__desc">5 контуров (YMS, тендеры, смарт-контракты, ML-сигналы). Дизайн + живой HTML-прототип бронирования окон; пилот на паузе по решению заказчика.</div>
-              <div class="case-row__arrow" aria-hidden="true">→</div>
-            </a>
-            <a href="site-pages/hr-n8n-agent.html" class="case-row">
-              <div class="case-row__tag">People Ops</div>
-              <div class="case-row__title">HR-агент на n8n</div>
-              <div class="case-row__desc">Telegram → транскрибация → классификация типа встречи и выдача отчёта</div>
               <div class="case-row__arrow" aria-hidden="true">→</div>
             </a>
             <a href="site-pages/prompt_generator.html" class="case-row">
@@ -586,76 +635,6 @@
           </div>
         </div>
 
-        <div class="artifact" style="margin-top: 3rem;">
-          <header class="section-head" style="margin-bottom: 1.5rem;">
-            <div class="section-head__kicker">Артефакт навыка · n8n</div>
-            <div>
-              <h3 class="section-head__title" style="font-size: clamp(1.4rem, 2.2vw, 1.9rem);">
-                Self-hosted production-пайплайн на 143 нодах
-              </h3>
-              <p class="section-head__lead">
-                Не туториал и не сборка из шаблонов — рабочий контур
-                обработки интервью. Один Telegram-бот как точка входа,
-                AssemblyAI для транскрипции, OpenAI + DeepSeek как
-                взаимозаменяемые analyzers, e-mail и DOCX-выдача,
-                self-diagnosis. Поддерживается и развивается в проде.
-              </p>
-            </div>
-          </header>
-
-          <figure class="figure">
-            <div class="figure__frame">
-              <img src="assets/images/n8n-whisper-production.png" alt="n8n workflow production: 143 ноды, шесть функциональных кластеров — приём, транскрипция, классификация типа интервью, ветки анализаторов, обработка ошибок, выдача" />
-            </div>
-            <figcaption class="figure__caption">
-              n8n self-hosted, workflow «production» — пайплайн транскрипции и анализа интервью.
-            </figcaption>
-          </figure>
-
-          <ul style="margin-top: 1.5rem; line-height: 1.7;">
-            <li>
-              <strong>143 ноды, 181 соединение, 28 ветвлений</strong> (20 If + 8 Switch) —
-              не «hello world», а реальный пайплайн с состоянием.
-            </li>
-            <li>
-              <strong>Систематический error-handling.</strong>
-              31 узел с явной обработкой ошибок: отдельные хендлеры
-              для каждой ветки анализаторов (Type 1–6 + Complex + Corporate),
-              для трёх стадий AssemblyAI (Upload / Start / Check), retry
-              с backoff и счётчиком, разделение retryable и критических ошибок.
-            </li>
-            <li>
-              <strong>Multi-LLM с fallback.</strong>
-              OpenAI как основной провайдер, DeepSeek Chat как резервный —
-              переключение без перезаписи воркфлоу.
-            </li>
-            <li>
-              <strong>Telegram state-machine.</strong>
-              Маршрутизация message vs callback_query, отдельные состояния
-              «ждём email», «подтверждение отправки», «выбор типа выдачи»
-              (preview / file / DOCX / email).
-            </li>
-            <li>
-              <strong>Каталог промптов с UI.</strong>
-              Меню → preview → доставка как сообщение / файл / e-mail.
-              Реализован отдельной веткой воркфлоу с self-fetch.
-            </li>
-            <li>
-              <strong>Self-diagnosis.</strong>
-              Отдельная ветка валидации и notify-каскад с диагностическими
-              отчётами в Telegram — observability без внешних DASHBOARDS.
-            </li>
-          </ul>
-
-          <p style="margin-top: 1.5rem; opacity: 0.85; font-size: 0.95rem;">
-            <strong>Что это значит для заказчика.</strong>
-            Уверенно проектирую и поддерживаю production-воркфлоу
-            с интеграциями LLM, аудио-транскрипции, мессенджеров и почты,
-            многоуровневой обработкой ошибок и состояниями диалогов.
-            Не «знаком с n8n» по resume — а проектирую и эксплуатирую
-            артефакт такого класса самостоятельно.
-          </p>
-        </div>
       </section>
 
       <!-- ============ CONTACT ============ -->
@@ -688,18 +667,18 @@
               <path d="M21 4L3 11l6 2 2 6 4-4 4 3z" stroke-linejoin="round" stroke-linecap="round" />
             </svg>
             <div class="channel__label">Telegram</div>
-            <div class="channel__value">@Nikolai_999</div>
+            <div class="channel__value">Отправить сообщение</div>
             <div class="channel__hint">Оперативные вопросы, быстрая связь</div>
           </a>
 
-          <a class="channel" href="https://max.ru/Nikolai_999" target="_blank" rel="noopener">
+          <a class="channel" href="https://max.ru/u/f9LHodD0cOL_eEXl1b172yfwNhDe8o1PfKbwEvubjA5_2Cf9bL6HuUlgfuQ" target="_blank" rel="noopener">
             <svg class="channel__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <path d="M4 6h16v12H4z" stroke-linejoin="round" />
               <path d="M4 6l8 7 8-7" stroke-linejoin="round" />
               <circle cx="18" cy="6" r="2.5" fill="currentColor" stroke="none" />
             </svg>
             <div class="channel__label">MAX · мессенджер</div>
-            <div class="channel__value">@Nikolai_999</div>
+            <div class="channel__value">Открыть чат</div>
             <div class="channel__hint">Российский мессенджер от VK</div>
           </a>
         </div>
