@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 420" preserveAspectRatio="xMidYMid slice" role="img" aria-label="ИИ-мониторинг фармацевтического производства">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1f4d"/>
+      <stop offset="55%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.45"/>
+      <stop offset="60%" stop-color="#60a5fa" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tank" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="50%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="liquid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="420" fill="url(#bg)"/>
+  <rect width="1600" height="420" fill="url(#glow)"/>
+
+  <!-- Grid -->
+  <g stroke="#93c5fd" stroke-opacity="0.07" stroke-width="1">
+    <path d="M0 70 H1600 M0 140 H1600 M0 210 H1600 M0 280 H1600 M0 350 H1600"/>
+    <path d="M100 0 V420 M260 0 V420 M420 0 V420 M580 0 V420 M740 0 V420 M900 0 V420 M1060 0 V420 M1220 0 V420 M1380 0 V420 M1540 0 V420"/>
+  </g>
+
+  <!-- Conveyor floor -->
+  <rect x="0" y="320" width="1600" height="14" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <g fill="#334155">
+    <rect x="40" y="334" width="60" height="8"/>
+    <rect x="160" y="334" width="60" height="8"/>
+    <rect x="280" y="334" width="60" height="8"/>
+    <rect x="400" y="334" width="60" height="8"/>
+    <rect x="520" y="334" width="60" height="8"/>
+    <rect x="640" y="334" width="60" height="8"/>
+    <rect x="760" y="334" width="60" height="8"/>
+    <rect x="880" y="334" width="60" height="8"/>
+    <rect x="1000" y="334" width="60" height="8"/>
+    <rect x="1120" y="334" width="60" height="8"/>
+    <rect x="1240" y="334" width="60" height="8"/>
+    <rect x="1360" y="334" width="60" height="8"/>
+    <rect x="1480" y="334" width="60" height="8"/>
+  </g>
+
+  <!-- Vials on conveyor -->
+  <g>
+    <g transform="translate(120 270)">
+      <rect x="-10" y="0" width="20" height="50" rx="3" fill="#e0e7ff"/>
+      <rect x="-10" y="0" width="20" height="14" fill="#3b82f6"/>
+      <rect x="-8" y="20" width="16" height="26" fill="#60a5fa" fill-opacity="0.6"/>
+    </g>
+    <g transform="translate(220 270)">
+      <rect x="-10" y="0" width="20" height="50" rx="3" fill="#e0e7ff"/>
+      <rect x="-10" y="0" width="20" height="14" fill="#3b82f6"/>
+      <rect x="-8" y="20" width="16" height="26" fill="#60a5fa" fill-opacity="0.6"/>
+    </g>
+    <g transform="translate(320 270)">
+      <rect x="-10" y="0" width="20" height="50" rx="3" fill="#e0e7ff"/>
+      <rect x="-10" y="0" width="20" height="14" fill="#3b82f6"/>
+      <rect x="-8" y="20" width="16" height="26" fill="#60a5fa" fill-opacity="0.6"/>
+    </g>
+    <g transform="translate(420 270)">
+      <rect x="-10" y="0" width="20" height="50" rx="3" fill="#e0e7ff"/>
+      <rect x="-10" y="0" width="20" height="14" fill="#3b82f6"/>
+      <rect x="-8" y="20" width="16" height="26" fill="#60a5fa" fill-opacity="0.6"/>
+    </g>
+    <g transform="translate(520 270)">
+      <rect x="-10" y="0" width="20" height="50" rx="3" fill="#e0e7ff"/>
+      <rect x="-10" y="0" width="20" height="14" fill="#3b82f6"/>
+      <rect x="-8" y="20" width="16" height="26" fill="#60a5fa" fill-opacity="0.6"/>
+    </g>
+  </g>
+
+  <!-- Reactor tanks -->
+  <g transform="translate(720 130)">
+    <rect x="-70" y="0" width="140" height="190" rx="14" fill="url(#tank)" stroke="#475569" stroke-width="2"/>
+    <rect x="-58" y="60" width="116" height="120" rx="8" fill="url(#liquid)" opacity="0.85"/>
+    <ellipse cx="0" cy="60" rx="58" ry="10" fill="#93c5fd" opacity="0.6"/>
+    <rect x="-50" y="14" width="40" height="10" rx="3" fill="#22c55e"/>
+    <rect x="10" y="14" width="40" height="10" rx="3" fill="#facc15"/>
+    <circle cx="0" cy="40" r="6" fill="#ef4444"/>
+    <!-- Pipes -->
+    <path d="M0 0 V-40 H120" stroke="#64748b" stroke-width="6" fill="none"/>
+    <path d="M0 0 V-40 H-120" stroke="#64748b" stroke-width="6" fill="none"/>
+  </g>
+
+  <g transform="translate(950 150)">
+    <rect x="-60" y="0" width="120" height="170" rx="14" fill="url(#tank)" stroke="#475569" stroke-width="2"/>
+    <rect x="-50" y="56" width="100" height="104" rx="8" fill="url(#liquid)" opacity="0.85"/>
+    <ellipse cx="0" cy="56" rx="50" ry="9" fill="#93c5fd" opacity="0.6"/>
+    <rect x="-44" y="14" width="34" height="10" rx="3" fill="#22c55e"/>
+    <rect x="10" y="14" width="34" height="10" rx="3" fill="#22d3ee"/>
+    <circle cx="0" cy="36" r="5" fill="#22c55e"/>
+    <!-- Pipe -->
+    <path d="M0 0 V-30 H-110" stroke="#64748b" stroke-width="6" fill="none"/>
+  </g>
+
+  <!-- Sensors -->
+  <g fill="#fbbf24">
+    <circle cx="170" cy="160" r="6"/>
+    <circle cx="380" cy="150" r="6"/>
+    <circle cx="600" cy="120" r="6"/>
+    <circle cx="850" cy="120" r="6"/>
+    <circle cx="1090" cy="140" r="6"/>
+    <circle cx="1300" cy="160" r="6"/>
+  </g>
+  <g stroke="#fbbf24" stroke-opacity="0.45" stroke-width="1" fill="none">
+    <path d="M170 160 L380 150 L600 120 L850 120 L1090 140 L1300 160"/>
+  </g>
+
+  <!-- Monitoring dashboard (left) -->
+  <g transform="translate(80 80)">
+    <rect x="0" y="0" width="240" height="150" rx="10" fill="#0f172a" fill-opacity="0.85" stroke="#334155"/>
+    <rect x="12" y="14" width="60" height="10" rx="2" fill="#22d3ee"/>
+    <rect x="80" y="14" width="40" height="10" rx="2" fill="#475569"/>
+    <!-- Chart -->
+    <polyline points="14,120 40,90 70,100 100,70 130,80 160,50 195,55 225,30" stroke="#22d3ee" stroke-width="2.5" fill="none"/>
+    <polyline points="14,135 40,125 70,110 100,115 130,100 160,90 195,85 225,70" stroke="#a78bfa" stroke-width="2" fill="none"/>
+    <g fill="#475569">
+      <circle cx="40" cy="90" r="3"/>
+      <circle cx="100" cy="70" r="3"/>
+      <circle cx="160" cy="50" r="3"/>
+      <circle cx="225" cy="30" r="3"/>
+    </g>
+    <text x="12" y="140" font-family="ui-monospace,monospace" font-size="9" fill="#64748b">REAL-TIME · pH · T° · HUMIDITY</text>
+  </g>
+
+  <!-- Monitoring dashboard (right) -->
+  <g transform="translate(1240 70)">
+    <rect x="0" y="0" width="280" height="160" rx="10" fill="#0f172a" fill-opacity="0.85" stroke="#334155"/>
+    <text x="14" y="26" font-family="ui-monospace,monospace" font-size="10" fill="#93c5fd" font-weight="700">AI · PROCESS CONTROL</text>
+    <!-- Bars -->
+    <g>
+      <rect x="14" y="40" width="14" height="100" fill="#1e293b"/>
+      <rect x="14" y="75" width="14" height="65" fill="#3b82f6"/>
+      <rect x="38" y="40" width="14" height="100" fill="#1e293b"/>
+      <rect x="38" y="60" width="14" height="80" fill="#60a5fa"/>
+      <rect x="62" y="40" width="14" height="100" fill="#1e293b"/>
+      <rect x="62" y="90" width="14" height="50" fill="#22d3ee"/>
+      <rect x="86" y="40" width="14" height="100" fill="#1e293b"/>
+      <rect x="86" y="70" width="14" height="70" fill="#a78bfa"/>
+      <rect x="110" y="40" width="14" height="100" fill="#1e293b"/>
+      <rect x="110" y="50" width="14" height="90" fill="#22d3ee"/>
+    </g>
+    <!-- KPI -->
+    <text x="150" y="62" font-family="ui-sans-serif,system-ui" font-size="11" fill="#94a3b8">YIELD</text>
+    <text x="150" y="84" font-family="ui-sans-serif,system-ui" font-weight="700" font-size="22" fill="#22d3ee">+18.4%</text>
+    <text x="150" y="108" font-family="ui-sans-serif,system-ui" font-size="11" fill="#94a3b8">ENERGY</text>
+    <text x="150" y="130" font-family="ui-sans-serif,system-ui" font-weight="700" font-size="22" fill="#a78bfa">−12.7%</text>
+  </g>
+</svg>

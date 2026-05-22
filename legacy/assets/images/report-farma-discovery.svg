@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 420" preserveAspectRatio="xMidYMid slice" role="img" aria-label="ИИ в лаборатории открытия лекарств">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1f4d"/>
+      <stop offset="55%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#60a5fa" stop-opacity="0.4"/>
+      <stop offset="60%" stop-color="#60a5fa" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#60a5fa" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="strandA" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="strandB" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a78bfa"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="liquid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="420" fill="url(#bg)"/>
+  <rect width="1600" height="420" fill="url(#glow)"/>
+
+  <!-- Grid -->
+  <g stroke="#93c5fd" stroke-opacity="0.07" stroke-width="1">
+    <path d="M0 70 H1600 M0 140 H1600 M0 210 H1600 M0 280 H1600 M0 350 H1600"/>
+  </g>
+
+  <!-- DNA helix left -->
+  <g transform="translate(180 100) scale(0.85)">
+    <path d="M0 0 C 120 60, 120 130, 0 190 C -120 250, -120 320, 0 380" fill="none" stroke="url(#strandA)" stroke-width="6" stroke-linecap="round"/>
+    <path d="M0 0 C -120 60, -120 130, 0 190 C 120 250, 120 320, 0 380" fill="none" stroke="url(#strandB)" stroke-width="6" stroke-linecap="round"/>
+    <g stroke="#e0e7ff" stroke-opacity="0.55" stroke-width="3" stroke-linecap="round">
+      <line x1="-50" y1="30" x2="50" y2="30"/>
+      <line x1="-70" y1="60" x2="70" y2="60"/>
+      <line x1="-58" y1="95" x2="58" y2="95"/>
+      <line x1="-30" y1="130" x2="30" y2="130"/>
+      <line x1="-50" y1="220" x2="50" y2="220"/>
+      <line x1="-70" y1="250" x2="70" y2="250"/>
+      <line x1="-58" y1="285" x2="58" y2="285"/>
+      <line x1="-30" y1="320" x2="30" y2="320"/>
+    </g>
+    <g fill="#22d3ee">
+      <circle cx="-50" cy="30" r="5"/><circle cx="50" cy="30" r="5"/>
+      <circle cx="-70" cy="60" r="5"/><circle cx="70" cy="60" r="5"/>
+      <circle cx="-58" cy="95" r="5"/><circle cx="58" cy="95" r="5"/>
+      <circle cx="-30" cy="130" r="5"/><circle cx="30" cy="130" r="5"/>
+    </g>
+    <g fill="#c4b5fd">
+      <circle cx="-50" cy="220" r="5"/><circle cx="50" cy="220" r="5"/>
+      <circle cx="-70" cy="250" r="5"/><circle cx="70" cy="250" r="5"/>
+      <circle cx="-58" cy="285" r="5"/><circle cx="58" cy="285" r="5"/>
+      <circle cx="-30" cy="320" r="5"/><circle cx="30" cy="320" r="5"/>
+    </g>
+  </g>
+
+  <!-- Funnel: many candidates → few -->
+  <g transform="translate(500 60)">
+    <!-- Background candidate dots -->
+    <g fill="#60a5fa" fill-opacity="0.55">
+      <circle cx="40" cy="20" r="4"/><circle cx="80" cy="14" r="4"/><circle cx="120" cy="22" r="4"/>
+      <circle cx="160" cy="12" r="4"/><circle cx="200" cy="24" r="4"/><circle cx="240" cy="14" r="4"/>
+      <circle cx="280" cy="22" r="4"/><circle cx="320" cy="18" r="4"/><circle cx="360" cy="14" r="4"/>
+      <circle cx="60" cy="48" r="4"/><circle cx="100" cy="52" r="4"/><circle cx="140" cy="46" r="4"/>
+      <circle cx="180" cy="50" r="4"/><circle cx="220" cy="44" r="4"/><circle cx="260" cy="52" r="4"/>
+      <circle cx="300" cy="46" r="4"/><circle cx="340" cy="50" r="4"/>
+    </g>
+    <!-- Funnel shape -->
+    <path d="M0 80 L400 80 L260 200 L260 280 L140 280 L140 200 Z" fill="rgba(96,165,250,0.15)" stroke="#60a5fa" stroke-width="2"/>
+    <!-- Filtered candidates inside funnel -->
+    <g fill="#22d3ee">
+      <circle cx="160" cy="120" r="5"/>
+      <circle cx="200" cy="110" r="5"/>
+      <circle cx="240" cy="125" r="5"/>
+      <circle cx="180" cy="160" r="5"/>
+      <circle cx="220" cy="155" r="5"/>
+    </g>
+    <!-- Hit at bottom -->
+    <g transform="translate(200 250)">
+      <polygon points="0,-26 22,-13 22,13 0,26 -22,13 -22,-13" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+      <polygon points="0,-22 19,-11 19,11 0,22 -19,11 -19,-11" fill="none" stroke="#92400e" stroke-opacity="0.4" stroke-width="1.5"/>
+      <text x="0" y="4" text-anchor="middle" font-family="ui-sans-serif,system-ui" font-weight="700" font-size="11" fill="#1e293b">HIT</text>
+    </g>
+    <!-- Labels -->
+    <text x="0" y="70" font-family="ui-monospace,monospace" font-size="10" fill="#93c5fd">10⁶ MOLECULES</text>
+    <text x="200" y="320" text-anchor="middle" font-family="ui-monospace,monospace" font-size="10" fill="#fbbf24">SELECTED CANDIDATE</text>
+  </g>
+
+  <!-- Beakers / lab glassware -->
+  <g transform="translate(1020 160)">
+    <!-- Flask 1 (Erlenmeyer) -->
+    <g>
+      <path d="M-30 -60 L-30 -50 L-60 30 L60 30 L30 -50 L30 -60 Z" fill="rgba(15,23,42,0.7)" stroke="#cbd5e1" stroke-width="2"/>
+      <path d="M-46 -10 L46 -10 L52 10 L-52 10 Z" fill="url(#liquid)" opacity="0.9"/>
+      <line x1="-30" y1="-50" x2="30" y2="-50" stroke="#cbd5e1"/>
+      <line x1="-46" y1="-10" x2="46" y2="-10" stroke="#94a3b8" stroke-opacity="0.4"/>
+      <ellipse cx="-20" cy="0" rx="8" ry="3" fill="#e0e7ff" fill-opacity="0.5"/>
+    </g>
+  </g>
+
+  <g transform="translate(1170 150)">
+    <!-- Test tube -->
+    <rect x="-16" y="-70" width="32" height="100" rx="2" fill="rgba(15,23,42,0.6)" stroke="#cbd5e1" stroke-width="2"/>
+    <path d="M-16 30 Q 0 50 16 30 Z" fill="rgba(15,23,42,0.6)" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="-14" y="-8" width="28" height="36" fill="url(#liquid)" opacity="0.9"/>
+    <path d="M-14 28 Q 0 46 14 28 Z" fill="url(#liquid)" opacity="0.9"/>
+    <rect x="-18" y="-72" width="36" height="8" fill="#475569"/>
+    <!-- Bubbles -->
+    <circle cx="-4" cy="10" r="2" fill="#e0e7ff" opacity="0.7"/>
+    <circle cx="5" cy="22" r="1.5" fill="#e0e7ff" opacity="0.7"/>
+    <circle cx="2" cy="-2" r="2" fill="#e0e7ff" opacity="0.7"/>
+  </g>
+
+  <g transform="translate(1290 180)">
+    <!-- Round flask -->
+    <circle cx="0" cy="0" r="44" fill="rgba(15,23,42,0.6)" stroke="#cbd5e1" stroke-width="2"/>
+    <path d="M0 -54 V-44 M-8 -54 H8" stroke="#cbd5e1" stroke-width="2" fill="none"/>
+    <path d="M-44 0 A 44 44 0 0 0 44 0 L42 14 A 44 44 0 0 1 -42 14 Z" fill="url(#liquid)" opacity="0.85"/>
+    <ellipse cx="-14" cy="-4" rx="10" ry="3" fill="#e0e7ff" fill-opacity="0.4"/>
+  </g>
+
+  <!-- Molecule (large center-right) -->
+  <g transform="translate(800 220)">
+    <g stroke="#bfdbfe" stroke-width="3" fill="none" stroke-linecap="round">
+      <line x1="-60" y1="-30" x2="60" y2="-30"/>
+      <line x1="60" y1="-30" x2="120" y2="20"/>
+      <line x1="120" y1="20" x2="60" y2="70"/>
+      <line x1="60" y1="70" x2="-60" y2="70"/>
+      <line x1="-60" y1="70" x2="-120" y2="20"/>
+      <line x1="-120" y1="20" x2="-60" y2="-30"/>
+      <line x1="60" y1="-30" x2="80" y2="-80"/>
+      <line x1="-60" y1="70" x2="-80" y2="120"/>
+      <line x1="120" y1="20" x2="180" y2="20"/>
+    </g>
+    <g>
+      <circle cx="-60" cy="-30" r="9" fill="#e0e7ff"/>
+      <circle cx="60" cy="-30" r="9" fill="#e0e7ff"/>
+      <circle cx="120" cy="20" r="9" fill="#34d399"/>
+      <circle cx="60" cy="70" r="9" fill="#e0e7ff"/>
+      <circle cx="-60" cy="70" r="9" fill="#e0e7ff"/>
+      <circle cx="-120" cy="20" r="9" fill="#f472b6"/>
+      <circle cx="80" cy="-80" r="9" fill="#fbbf24"/>
+      <circle cx="-80" cy="120" r="9" fill="#fbbf24"/>
+      <circle cx="180" cy="20" r="9" fill="#60a5fa"/>
+    </g>
+  </g>
+
+  <!-- Spec chart bottom -->
+  <g transform="translate(1080 320)">
+    <rect x="0" y="0" width="480" height="80" rx="8" fill="#0f172a" fill-opacity="0.85" stroke="#334155"/>
+    <text x="14" y="20" font-family="ui-monospace,monospace" font-size="10" fill="#22d3ee" font-weight="700">BINDING AFFINITY · AI PREDICTION</text>
+    <polyline points="14,68 50,52 90,58 130,38 170,46 210,28 250,40 290,24 330,30 370,18 410,26 450,12 470,18" stroke="#22d3ee" stroke-width="2" fill="none"/>
+    <g fill="#a78bfa">
+      <circle cx="90" cy="58" r="3"/><circle cx="170" cy="46" r="3"/><circle cx="250" cy="40" r="3"/><circle cx="330" cy="30" r="3"/><circle cx="410" cy="26" r="3"/>
+    </g>
+  </g>
+</svg>
