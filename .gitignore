@@ -58,6 +58,7 @@ htmlcov/
 *.bmp
 *.gif
 *.webm
+alt/
 alt/site-pages/case-studies/_*
 
 # Local drafts of AI-assistant case (manual deploy only)
