@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ИИ в R&D рецептур — мировые кейсы (пищевая и техническая химия)</title>
+  <meta name="description" content="Три разобранных кейса применения ИИ в разработке рецептур и составов: McCormick + IBM ONE (пищевая, NPD −66%), Bridgestone + Enthought Edge (резиновые смеси, −30–50% времени), NotCo Giuseppe (растительные альтернативы). С переносом опыта на ГСМ, масла и антифризы." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../production/css/site.css" />
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(109350250, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109350250" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+  <a class="skip-link" href="#main">К основному содержанию</a>
+
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a class="site-logo" href="index.html">ИИ в R&D рецептур</a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav-wrap" aria-label="Открыть меню">
+        <span class="visually-hidden">Меню</span>
+        <span class="menu-toggle__icon" aria-hidden="true"></span>
+      </button>
+      <div id="site-nav-wrap" class="site-nav-wrap">
+        <ul class="site-nav" aria-label="Разделы и кейсы">
+          <li><a href="index.html" aria-current="page">Главная</a></li>
+          <li><a href="../index.html">Все публикации</a></li>
+          <li><a href="../../../index.html">На сайт</a></li>
+          <li class="site-nav__group">
+            <a href="#sec-cases" class="site-nav__cases-trigger">Кейсы</a>
+            <ul class="site-nav__cases" aria-label="Список кейсов">
+              <li><a href="cases/mccormick-ibm-one.html">McCormick + IBM ONE</a></li>
+              <li><a href="cases/bridgestone-enthought.html">Bridgestone + Enthought Edge</a></li>
+              <li><a href="cases/notco-giuseppe.html">NotCo · Giuseppe</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="site-main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__text">
+        <p class="hero__kicker">Обзор · R&D-рецептуры</p>
+        <h1 id="hero-title">ИИ в разработке составов и рецептур</h1>
+        <p class="lead">
+          Три разобранных мировых кейса применения ИИ в R&D пищевой и технической химии: McCormick (платформа IBM ONE, AI for Product Composition), Bridgestone (Enthought Edge, Active Learning + Gaussian Processes), NotCo (Giuseppe, молекулярный подбор). Каждый кейс — с переносом опыта на разработку машинных масел, антифризов и смазочных материалов.
+        </p>
+      </div>
+    </section>
+
+    <div class="stats" aria-label="Масштаб подборки">
+      <div class="stat"><b>3</b><span>именных кейса R&D</span></div>
+      <div class="stat"><b>30–67%</b><span>сокращение цикла NPD</span></div>
+      <div class="stat"><b>4–14</b><span>месяцев на MVP / пилот</span></div>
+    </div>
+
+    <section class="section" aria-labelledby="sec-deck">
+      <h2 id="sec-deck">Связанные разделы</h2>
+      <p>
+        Кейсы R&D-рецептур ориентированы на отрасли с дорогими лабораторными испытаниями — пищевая химия, резиновые смеси, ГСМ, антифризы, фарма, косметика. Подходы (Active Learning, Bayesian Optimization, Generative Design) пересекаются с производственными ИИ-сценариями.
+      </p>
+      <div class="card-grid card-grid--2">
+        <article class="card">
+          <h3>ИИ на производстве</h3>
+          <p>20 кейсов внедрения ИИ в производственный контур: компьютерное зрение, прогнозное обслуживание, цифровой двойник.</p>
+          <a class="btn" href="../production/index.html">К производству</a>
+        </article>
+        <article class="card">
+          <h3>Другие обзоры</h3>
+          <p>Финансы и управленческий учёт, коммерческий анализ, LLM-инфраструктура для агентов.</p>
+          <p style="margin:0.75rem 0 0;display:flex;flex-wrap:wrap;gap:0.5rem">
+            <a class="btn btn--secondary" href="../finance/index.html">Финансы</a>
+            <a class="btn btn--secondary" href="../commercial-ai.html">Коммерческий анализ</a>
+            <a class="btn btn--secondary" href="../llm-research.html">LLM-инфраструктура</a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="sec-cases">
+      <h2 id="sec-cases">Детальные кейсы</h2>
+      <p class="case-catalog-lead">Три мировых эталона + дорожные карты под переносы в смежные отрасли.</p>
+      <ul class="case-card-grid">
+        <li>
+          <a href="cases/mccormick-ibm-one.html" class="case-card">
+            <span class="case-card__logo"><img src="https://www.google.com/s2/favicons?domain=mccormickcorporation.com&sz=128" width="48" height="48" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" /></span>
+            <span class="case-card__body">
+              <span class="case-card__name">McCormick & IBM — платформа ONE</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="cases/bridgestone-enthought.html" class="case-card">
+            <span class="case-card__logo"><img src="https://www.google.com/s2/favicons?domain=bridgestone.com&sz=128" width="48" height="48" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" /></span>
+            <span class="case-card__body">
+              <span class="case-card__name">Bridgestone + Enthought Edge</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="cases/notco-giuseppe.html" class="case-card">
+            <span class="case-card__logo"><img src="https://www.google.com/s2/favicons?domain=notco.com&sz=128" width="48" height="48" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" /></span>
+            <span class="case-card__body">
+              <span class="case-card__name">NotCo · Giuseppe</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <nav aria-label="Нижняя навигация">
+        <a href="index.html">Главная раздела</a>
+        <a href="../index.html">Все публикации</a>
+        <a href="../../../index.html">На сайт</a>
+      </nav>
+      <p class="site-footer__meta">
+        Подготовил обзор: Карпов Николай. 2026
+      </p>
+    </div>
+  </footer>
+
+  <script src="../production/js/site.js" defer></script>
+</body>
+</html>

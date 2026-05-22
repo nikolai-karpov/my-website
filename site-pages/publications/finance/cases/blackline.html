@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BlackLine — автоматизация закрытия периода и сверки счетов</title>
+  <meta name="description" content="BlackLine для последней мили финансов: кейсы Coca-Cola (85% автосверки), Hyatt (−40% времени закрытия), eBay (−95% intercompany расхождений), Zimmer Biomet. Transaction Matching и Continuous Accounting." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../production/css/site.css" />
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(109350250, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109350250" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+  <a class="skip-link" href="#main">К основному содержанию</a>
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a class="site-logo" href="../index.html">ИИ в финансах</a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav-wrap" aria-label="Открыть меню">
+        <span class="visually-hidden">Меню</span>
+        <span class="menu-toggle__icon" aria-hidden="true"></span>
+      </button>
+      <div id="site-nav-wrap" class="site-nav-wrap">
+        <ul class="site-nav" aria-label="Разделы и кейсы">
+          <li><a href="../index.html">Главная</a></li>
+          <li><a href="../../index.html">Все публикации</a></li>
+          <li class="site-nav__group">
+            <a href="../index.html#sec-cases" class="site-nav__cases-trigger">Кейсы</a>
+            <ul class="site-nav__cases" aria-label="Список кейсов">
+              <li><a href="overview.html">Обзор: ИИ в финансах</a></li>
+              <li><a href="reporting-automation.html">Автоматизация отчётности</a></li>
+              <li><a href="specialized-finance.html">Специализированные процессы</a></li>
+              <li><a href="ibm-watson.html">IBM watsonx</a></li>
+              <li><a href="sap-business-ai.html">SAP Business AI · Joule</a></li>
+              <li><a href="oracle-ai.html">Oracle AI</a></li>
+              <li><a href="workday-prism.html">Workday Prism AI</a></li>
+              <li><a href="anaplan-planiq.html">Anaplan PlanIQ</a></li>
+              <li><a href="blackline.html" aria-current="page">BlackLine</a></li>
+              <li><a href="mckinsey-quantumblack.html">McKinsey QuantumBlack</a></li>
+              <li><a href="deloitte.html">Deloitte AI</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="site-main site-main--case site-main--case-wide">
+    <article class="case-page case-page--wide">
+      <p class="case-back"><a href="../index.html">← Кейсы</a></p>
+
+      <header class="case-hero">
+        <div class="case-hero__logo" aria-hidden="true">
+          <img src="https://www.google.com/s2/favicons?domain=blackline.com&sz=128" width="64" height="64" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+        </div>
+        <div>
+          <h1 class="case-hero__title">BlackLine — автоматизация закрытия периода и сверок</h1>
+          <p class="case-hero__subtitle">«Последняя миля» финансов: закрытие периода, выверка счетов, межфирменные расчёты. Кейсы Coca-Cola, Hyatt Hotels, eBay, Zimmer Biomet.</p>
+        </div>
+      </header>
+
+      <section class="case-facts-media" aria-label="Кратко о кейсе">
+        <div class="case-facts-media__grid">
+          <ul class="case-facts">
+            <li><span class="label">Платформа</span>BlackLine Cloud, Modern Accounting Playbook</li>
+            <li><span class="label">Подход</span>«Поверх» любых ERP (SAP, Oracle, NetSuite, MS Dynamics, Workday)</li>
+            <li><span class="label">Методы</span>ML для сопоставления транзакций, NLP для анализа документов</li>
+            <li><span class="label">Подход к закрытию</span>Continuous Accounting — равномерное распределение задач вместо аврала</li>
+            <li><span class="label">Безопасность</span>Ролевой доступ, шифрование, SOC 1/2, ISO 27001</li>
+            <li><span class="label">Скорость сверки</span>В <strong>1000 раз быстрее</strong> Excel при миллионах строк</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-section case-section--results">
+        <h2 class="case-section__title">Именные кейсы</h2>
+        <div class="case-results-grid">
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Coca-Cola</h3><p class="case-result-card__meta">Account Reconciliations + Transaction Matching.</p></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Объём</span>&gt;<strong>50 000 счетов</strong> по миру.</li>
+              <li><span class="case-result-card__label">Автосверка банка</span><strong>85%</strong> — команда перешла с поиска данных на их анализ.</li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Hyatt Hotels</h3><p class="case-result-card__meta">BlackLine как контрольный центр.</p></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Проблема</span>Децентрализованное закрытие в сотнях отелей, нет прозрачности.</li>
+              <li><span class="case-result-card__label">Время закрытия</span><strong>−40%</strong></li>
+              <li><span class="case-result-card__label">SOX</span>Улучшение контроля соответствия.</li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">eBay</h3><p class="case-result-card__meta">Intercompany Hub.</p></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Межфирменные расхождения</span><strong>−95%</strong></li>
+              <li><span class="case-result-card__label">Сверка</span>Автоматически в реальном времени.</li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Zimmer Biomet</h3><p class="case-result-card__meta">ИИ-модуль Cash Application (медтех).</p></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Сопоставление платежей</span><strong>75–80%</strong> сразу после внедрения.</li>
+              <li><span class="case-result-card__label">Эффект</span>Высвобождение ресурсов для сложных исключений.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-section--story-grid">
+        <div class="case-story-grid" role="group" aria-label="Модули">
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Transaction Matching</h2>
+            <div class="case-story-card__body">
+              <p>Сверка миллионов строк данных из разных систем (банк, ERP, CRM) — в 1000 раз быстрее Excel.</p>
+            </div>
+          </article>
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Smart Close</h2>
+            <div class="case-story-card__body">
+              <p>Автоматическое выполнение задач закрытия в SAP в фоновом режиме. Сокращение цикла закрытия на 2–4 дня.</p>
+            </div>
+          </article>
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Journals</h2>
+            <div class="case-story-card__body">
+              <p>Автоматическое создание, проверка и проведение журнальных проводок в ERP. Минимизация ошибок и автоматический аудит-след.</p>
+            </div>
+          </article>
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Intercompany Hub</h2>
+            <div class="case-story-card__body">
+              <p>Централизованное управление транзакциями между филиалами. Предотвращение дисбаланса Net Settlement в конце месяца.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-sources">
+        <h2>Источники</h2>
+        <ol>
+          <li><a href="https://capitalizeconsulting.com/blackline-features-and-capabilities/">Capitalize Consulting — BlackLine Features</a><span class="case-sources__tag">обзор</span></li>
+          <li><a href="https://www.cointab.net/us/a-detailed-overview-of-blackline-account-reconciliation/">Cointab — BlackLine Account Reconciliation</a><span class="case-sources__tag">модуль</span></li>
+          <li><a href="https://www.prnewswire.com/news-releases/new-intercompany-hub-from-blackline-standardizes-and-controls-high-volume-internal-transactions-freeing-modern-finance-organizations-from-rote-tasks-and-accounting-errors-282919981.html">PR Newswire — Intercompany Hub</a><span class="case-sources__tag">анонс</span></li>
+          <li><a href="https://pages.blackline.com/rs/815-GQP-915/images/blackLine_intercompany_hub_datasheet.pdf">BlackLine — Intercompany Hub Datasheet</a><span class="case-sources__tag">datasheet</span></li>
+          <li><a href="https://e3mag.com/en/continuous-accounting-automation/">E3 Magazine — Continuous Accounting Automation</a><span class="case-sources__tag">подход</span></li>
+          <li><a href="https://sandpointc.com/blog/blackline-vs-erp/">Sandpoint Consulting — BlackLine vs ERP</a><span class="case-sources__tag">сравнение</span></li>
+        </ol>
+      </section>
+
+      <section class="case-section case-section--relevance">
+        <h2 class="case-section__title">Релевантность для холдинга</h2>
+        <p>
+          Сильная сторона BlackLine — <strong class="case-pipeline">«поверх ERP»</strong>: внедрение без миграции. Подходит холдингам с несколькими ERP-системами в разных «дочках», где нужно унифицировать сверки и закрытие. Те же паттерны переносятся в производство (сверка производства и запасов), логистику (расчёты с перевозчиками), розницу (сверка продаж и возвратов).
+        </p>
+      </section>
+
+      <div class="case-actions">
+        <a class="btn" href="../index.html">К списку кейсов</a>
+        <a class="btn btn--secondary" href="reporting-automation.html">Автоматизация отчётности</a>
+        <a class="btn btn--secondary" href="sap-business-ai.html">SAP Business AI</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <nav aria-label="Нижняя навигация">
+        <a href="../index.html">Главная раздела</a>
+        <a href="../../index.html">Все публикации</a>
+      </nav>
+      <p class="site-footer__meta">Подготовил обзор: Карпов Николай. 2026</p>
+    </div>
+  </footer>
+  <script src="../../production/js/site.js" defer></script>
+</body>
+</html>

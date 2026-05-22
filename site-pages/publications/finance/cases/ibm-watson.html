@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IBM watsonx в финансовом секторе — кейсы и метрики</title>
+  <meta name="description" content="IBM Watson (watsonx) в финансах: кейсы NatWest, Bradesco, IBM Finance, Generali Poland, Asteria. Conversational AI, watsonx.governance, обнаружение мошенничества и RegTech." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../production/css/site.css" />
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(109350250, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109350250" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+  <a class="skip-link" href="#main">К основному содержанию</a>
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a class="site-logo" href="../index.html">ИИ в финансах</a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav-wrap" aria-label="Открыть меню">
+        <span class="visually-hidden">Меню</span>
+        <span class="menu-toggle__icon" aria-hidden="true"></span>
+      </button>
+      <div id="site-nav-wrap" class="site-nav-wrap">
+        <ul class="site-nav" aria-label="Разделы и кейсы">
+          <li><a href="../index.html">Главная</a></li>
+          <li><a href="../../index.html">Все публикации</a></li>
+          <li class="site-nav__group">
+            <a href="../index.html#sec-cases" class="site-nav__cases-trigger">Кейсы</a>
+            <ul class="site-nav__cases" aria-label="Список кейсов">
+              <li><a href="overview.html">Обзор: ИИ в финансах</a></li>
+              <li><a href="reporting-automation.html">Автоматизация отчётности</a></li>
+              <li><a href="specialized-finance.html">Специализированные процессы</a></li>
+              <li><a href="ibm-watson.html" aria-current="page">IBM watsonx</a></li>
+              <li><a href="sap-business-ai.html">SAP Business AI · Joule</a></li>
+              <li><a href="oracle-ai.html">Oracle AI</a></li>
+              <li><a href="workday-prism.html">Workday Prism AI</a></li>
+              <li><a href="anaplan-planiq.html">Anaplan PlanIQ</a></li>
+              <li><a href="blackline.html">BlackLine</a></li>
+              <li><a href="mckinsey-quantumblack.html">McKinsey QuantumBlack</a></li>
+              <li><a href="deloitte.html">Deloitte AI</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="site-main site-main--case site-main--case-wide">
+    <article class="case-page case-page--wide">
+      <p class="case-back"><a href="../index.html">← Кейсы</a></p>
+
+      <header class="case-hero">
+        <div class="case-hero__logo" aria-hidden="true">
+          <img src="https://www.google.com/s2/favicons?domain=ibm.com&sz=128" width="64" height="64" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+        </div>
+        <div>
+          <h1 class="case-hero__title">IBM watsonx — ИИ в финансовом секторе</h1>
+          <p class="case-hero__subtitle">Виртуальные ассистенты, автоматизация бэк-офиса, watsonx.governance для соответствия GDPR/Basel III. Кейсы NatWest, Bradesco, IBM Finance, Generali, Asteria.</p>
+        </div>
+      </header>
+
+      <section class="case-facts-media" aria-label="Кратко о кейсе">
+        <div class="case-facts-media__grid">
+          <ul class="case-facts">
+            <li><span class="label">Платформа</span>IBM watsonx (watsonx.ai, watsonx.data, watsonx.governance)</li>
+            <li><span class="label">Методы</span>ML, NLP, генеративный ИИ</li>
+            <li><span class="label">Интеграция</span>API-ориентированная архитектура, облачные и гибридные среды</li>
+            <li><span class="label">Стоимость канала</span>Цифровой ответ — ~$0,50 vs $6,00 за человеческий</li>
+            <li><span class="label">Аудит-готовность</span>Сокращение подготовки к аудиту на 90% (в партнёрстве с Vectice)</li>
+            <li><span class="label">Сильная сторона</span>watsonx.governance — отслеживание происхождения моделей, обнаружение смещений, XAI</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-section case-section--story-grid">
+        <div class="case-story-grid" role="group" aria-label="Области применения">
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Клиентский опыт</h2>
+            <div class="case-story-card__body">
+              <p><strong>Conversational AI</strong> — автоматизация запросов уровней 1 и 2, круглосуточная поддержка, существенное снижение операционных затрат. <strong>Omnichannel Support</strong> — единое развёртывание через веб, мобильные и голосовые каналы.</p>
+            </div>
+          </article>
+
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Риски и соответствие</h2>
+            <div class="case-story-card__body">
+              <p><strong>Fraud Detection</strong> — обнаружение аномалий в реальном времени и моделирование поведения. <strong>Регуляторное соответствие</strong> — автоматическое сопоставление требований с внутренними контролями, анализ тысяч актов.</p>
+            </div>
+          </article>
+
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Управление моделями</h2>
+            <div class="case-story-card__body">
+              <p><strong>watsonx.governance</strong> — отслеживание происхождения моделей, обнаружение смещений, объяснимые выходы для GDPR и Basel III. <strong>Документация моделей</strong> в партнёрстве с Vectice сократила подготовку к аудиту на 90%.</p>
+            </div>
+          </article>
+
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Перенос на холдинг</h2>
+            <div class="case-story-card__body">
+              <p>Производство: прогнозное обслуживание оборудования, оптимизация цепочек поставок. Логистика: динамическое планирование маршрутов, управление активами. Розница: персонализированные рекомендации, управление запасами.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-section--results">
+        <h2 class="case-section__title">Результаты по кейсам</h2>
+        <div class="case-results-grid">
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">NatWest Group (UK)</h3><p class="case-result-card__meta">AI-платформа Marge → преемник Cora+.</p></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">NPS</span><strong>+20%</strong></li>
+              <li><span class="case-result-card__label">Длительность звонков</span><strong>−10%</strong></li>
+              <li><span class="case-result-card__label">Объём запросов</span>~<strong>11 млн/год</strong></li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Bradesco (Бразилия)</h3><p class="case-result-card__meta">Watson в 5 200 отделениях.</p></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Время ответа</span>10 мин → <strong>секунды</strong></li>
+              <li><span class="case-result-card__label">Объём</span><strong>283 000</strong> вопросов/мес</li>
+              <li><span class="case-result-card__label">Точность</span><strong>95%</strong></li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">IBM Finance (внутри)</h3><p class="case-result-card__meta">watsonx.ai + Orchestrate для ручных проводок.</p></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Цикл</span><strong>−90%</strong></li>
+              <li><span class="case-result-card__label">Годовая экономия</span><strong>$600 000</strong></li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Generali Poland</h3><p class="case-result-card__meta">Виртуальный ассистент Leon на watsonx Assistant.</p></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Без перенаправления</span><strong>97%</strong> диалогов</li>
+              <li><span class="case-result-card__label">Экономия</span>~<strong>120 ч/мес</strong></li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Asteria (Швеция)</h3><p class="case-result-card__meta">Smart Finance Advisor для SMB на watsonx.</p></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Консультации по кредитам</span><strong>−33%</strong> времени (пилот)</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-sources">
+        <h2>Источники</h2>
+        <ol>
+          <li><a href="https://www.ibm.com/case-studies/natwest-group-watson">IBM Case Study — NatWest Group</a><span class="case-sources__tag">кейс</span></li>
+          <li><a href="https://www.ibm.com/case-studies/bradesco">IBM Case Study — Bradesco</a><span class="case-sources__tag">кейс</span></li>
+          <li><a href="https://www.ibm.com/case-studies/ibm-finance">IBM Case Study — IBM Finance</a><span class="case-sources__tag">кейс</span></li>
+          <li><a href="https://www.ibm.com/think/topics/artificial-intelligence-finance">IBM Think — AI Finance</a><span class="case-sources__tag">обзор</span></li>
+          <li><a href="https://www.ibm.com/new/product-blog/partner-ecosystem-banking-finance">IBM — Partner Ecosystem Banking & Finance</a><span class="case-sources__tag">экосистема</span></li>
+          <li><a href="https://www.ibm.com/watson/assets/duo/pdf/watson_assistant/The_Total_Economic_Impact_of_IBM_Watson_Assistant-March_2020_v3.pdf">Forrester TEI — Watson Assistant</a><span class="case-sources__tag">ROI</span></li>
+          <li><a href="https://www.ibm.com/new/product-blog/ibm-watsonx-platform-compliance-obligations-to-controls-mapping">IBM — Compliance Obligations to Controls Mapping</a><span class="case-sources__tag">RegTech</span></li>
+          <li><a href="https://www.vectice.com/blog/vectice-ibm-watsonx-integration">Vectice — IBM watsonx Integration</a><span class="case-sources__tag">аудит моделей</span></li>
+        </ol>
+      </section>
+
+      <section class="case-section case-section--relevance">
+        <h2 class="case-section__title">Релевантность для холдинга</h2>
+        <p>
+          Шаблон IBM: <strong class="case-pipeline">Conversational AI + watsonx.governance + RegTech</strong>. Подходит холдингам с распределённым клиентским контуром и жёсткими требованиями к объяснимости моделей (фин. сектор, страхование, регулируемые отрасли). Готовый аудит-след моделей — критично для службы ИБ и комплаенса.
+        </p>
+      </section>
+
+      <div class="case-actions">
+        <a class="btn" href="../index.html">К списку кейсов</a>
+        <a class="btn btn--secondary" href="sap-business-ai.html">SAP Business AI</a>
+        <a class="btn btn--secondary" href="oracle-ai.html">Oracle AI</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <nav aria-label="Нижняя навигация">
+        <a href="../index.html">Главная раздела</a>
+        <a href="../../index.html">Все публикации</a>
+      </nav>
+      <p class="site-footer__meta">Подготовил обзор: Карпов Николай. 2026</p>
+    </div>
+  </footer>
+  <script src="../../production/js/site.js" defer></script>
+</body>
+</html>

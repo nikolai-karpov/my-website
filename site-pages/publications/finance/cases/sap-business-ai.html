@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SAP Business AI и Joule в финансовых процессах</title>
+  <meta name="description" content="SAP Business AI + Joule: кейсы Accenture, Western Sugar, De Agostini, Mitsui, Mercedes-Benz Mobility. SAP Cash Application, S/4HANA, Ariba, Concur и автономные финансы." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../production/css/site.css" />
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(109350250, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109350250" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+  <a class="skip-link" href="#main">К основному содержанию</a>
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a class="site-logo" href="../index.html">ИИ в финансах</a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav-wrap" aria-label="Открыть меню">
+        <span class="visually-hidden">Меню</span>
+        <span class="menu-toggle__icon" aria-hidden="true"></span>
+      </button>
+      <div id="site-nav-wrap" class="site-nav-wrap">
+        <ul class="site-nav" aria-label="Разделы и кейсы">
+          <li><a href="../index.html">Главная</a></li>
+          <li><a href="../../index.html">Все публикации</a></li>
+          <li class="site-nav__group">
+            <a href="../index.html#sec-cases" class="site-nav__cases-trigger">Кейсы</a>
+            <ul class="site-nav__cases" aria-label="Список кейсов">
+              <li><a href="overview.html">Обзор: ИИ в финансах</a></li>
+              <li><a href="reporting-automation.html">Автоматизация отчётности</a></li>
+              <li><a href="specialized-finance.html">Специализированные процессы</a></li>
+              <li><a href="ibm-watson.html">IBM watsonx</a></li>
+              <li><a href="sap-business-ai.html" aria-current="page">SAP Business AI · Joule</a></li>
+              <li><a href="oracle-ai.html">Oracle AI</a></li>
+              <li><a href="workday-prism.html">Workday Prism AI</a></li>
+              <li><a href="anaplan-planiq.html">Anaplan PlanIQ</a></li>
+              <li><a href="blackline.html">BlackLine</a></li>
+              <li><a href="mckinsey-quantumblack.html">McKinsey QuantumBlack</a></li>
+              <li><a href="deloitte.html">Deloitte AI</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="site-main site-main--case site-main--case-wide">
+    <article class="case-page case-page--wide">
+      <p class="case-back"><a href="../index.html">← Кейсы</a></p>
+
+      <header class="case-hero">
+        <div class="case-hero__logo" aria-hidden="true">
+          <img src="https://www.google.com/s2/favicons?domain=sap.com&sz=128" width="64" height="64" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+        </div>
+        <div>
+          <h1 class="case-hero__title">SAP Business AI и Joule в финансах</h1>
+          <p class="case-hero__subtitle">Автоматизация SAP Cash Application, Build Process Automation, Ariba и Concur. Кейсы Accenture, Western Sugar, De Agostini, Mitsui, Mercedes-Benz Mobility.</p>
+        </div>
+      </header>
+
+      <section class="case-facts-media" aria-label="Кратко о кейсе">
+        <div class="case-facts-media__grid">
+          <ul class="case-facts">
+            <li><span class="label">Платформа</span>SAP Business Technology Platform (BTP), S/4HANA Cloud, Ariba, Concur</li>
+            <li><span class="label">Ассистент</span>Joule — генеративный ИИ для контекстных рекомендаций и оркестрации</li>
+            <li><span class="label">Сценарии</span>Cash Application, Financial Closing, Expense Management, Compliance, Fraud Detection</li>
+            <li><span class="label">Cash Application</span>Сокращение усилий по сопоставлению дебиторки до <strong>71%</strong></li>
+            <li><span class="label">Анализ первопричин</span>−<strong>90%</strong> усилий на расследование ошибок при закрытии</li>
+            <li><span class="label">Joule Compliance Manager</span>−<strong>85%</strong> усилий на оценку соответствия</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-section case-section--results">
+        <h2 class="case-section__title">Именные кейсы</h2>
+        <div class="case-results-grid">
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Accenture</h3><p class="case-result-card__meta">SAP Cash Application на ML.</p></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Проблема</span>Ручная обработка <strong>250 000</strong> записей счетов.</li>
+              <li><span class="case-result-card__label">Результат</span>Удвоение автообработки — <strong>54%</strong> счетов без человека.</li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Western Sugar Cooperative</h3><p class="case-result-card__meta">SAP Ariba Central Invoice Management + S/4HANA Cloud.</p></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Время обработки</span><strong>−25%</strong></li>
+              <li><span class="case-result-card__label">Стоимость счёта</span>$8 → <strong>$6</strong></li>
+              <li><span class="case-result-card__label">Поставщики</span><strong>40 000</strong> счетов/год с минимумом ручной работы</li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">De Agostini Publishing</h3><p class="case-result-card__meta">SAP Build Process Automation + AI Business Services.</p></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Счета с PO</span>Автоматизированы <strong>91%</strong></li>
+              <li><span class="case-result-card__label">Счета без PO</span>Автоматизированы <strong>80%</strong></li>
+              <li><span class="case-result-card__label">Экономия</span><strong>500–680 ч/мес</strong></li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Mitsui</h3><p class="case-result-card__meta">Автосверка банковских выписок (ML).</p></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Точность</span>&gt;<strong>90%</strong></li>
+              <li><span class="case-result-card__label">Экономия</span><strong>36 000 ч/год</strong></li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Mercedes-Benz Mobility</h3><p class="case-result-card__meta">Self-learning в SAP Cash Application.</p></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Нераспределённые счета</span><strong>58%</strong> обработано автоматически</li>
+              <li><span class="case-result-card__label">Время на счёт</span><strong>5–10 мин</strong></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-section--story-grid">
+        <div class="case-story-grid" role="group" aria-label="Области применения">
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Управление расходами</h2>
+            <div class="case-story-card__body">
+              <p>Автоматическое извлечение из чеков и счетов; интеллектуальная категоризация; выявление аномалий и нарушений политики (SAP Concur).</p>
+            </div>
+          </article>
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Закрытие периода</h2>
+            <div class="case-story-card__body">
+              <p>Автоматическое выполнение задач закрытия, мониторинг исключений и предложения корректирующих действий — цикл сокращается с нескольких дней до часов.</p>
+            </div>
+          </article>
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Управление денежными средствами</h2>
+            <div class="case-story-card__body">
+              <p>Прогнозирование Cash Flow на исторических данных + внешние факторы; автосопоставление платежей и счетов; оптимизация ликвидности.</p>
+            </div>
+          </article>
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Перенос на холдинг</h2>
+            <div class="case-story-card__body">
+              <p>Производство: прогнозное обслуживание, контроль качества. Логистика: запасы, маршруты, прогноз спроса. Продажи: прогноз сделок, CRM, динамическое ценообразование.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-sources">
+        <h2>Источники</h2>
+        <ol>
+          <li><a href="https://www.sap.com/products/financial-management/ai.html">SAP — AI in Financial Management</a><span class="case-sources__tag">вендор</span></li>
+          <li><a href="https://www.sap.com/resources/sap-business-ai-customers-in-action">SAP — Business AI Customers in Action</a><span class="case-sources__tag">кейсы</span></li>
+          <li><a href="https://www.linkedin.com/pulse/autonomous-finance-in-depth-analysis-saps-ai-driven-optimization-zou-ee9fe">Autonomous Finance — SAP's AI-Driven Optimization</a><span class="case-sources__tag">аналитика</span></li>
+          <li><a href="https://www.sap.com/products/technology-platform/ai.html">SAP — AI Technology Platform</a><span class="case-sources__tag">платформа</span></li>
+          <li><a href="https://community.sap.com/t5/technology-blog-posts-by-members/breaking-boundaries-clean-core-and-ai-first-strategies-transforming-sap/ba-p/13517265">SAP Community — Clean Core and AI-First Strategies</a><span class="case-sources__tag">стратегия</span></li>
+          <li><a href="https://www.sap.com/resources/ai-in-finance">SAP — AI in Finance</a><span class="case-sources__tag">обзор</span></li>
+        </ol>
+      </section>
+
+      <section class="case-section case-section--relevance">
+        <h2 class="case-section__title">Релевантность для холдинга</h2>
+        <p>
+          Подходит компаниям с действующим ERP-ядром SAP: <strong class="case-pipeline">SAP Cash Application + Joule + Build Process Automation</strong> — целостный путь от touchless AP/AR к Autonomous Finance без переноса данных в чужой контур. Аудит-след сохраняется в S/4HANA.
+        </p>
+      </section>
+
+      <div class="case-actions">
+        <a class="btn" href="../index.html">К списку кейсов</a>
+        <a class="btn btn--secondary" href="ibm-watson.html">IBM watsonx</a>
+        <a class="btn btn--secondary" href="oracle-ai.html">Oracle AI</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <nav aria-label="Нижняя навигация">
+        <a href="../index.html">Главная раздела</a>
+        <a href="../../index.html">Все публикации</a>
+      </nav>
+      <p class="site-footer__meta">Подготовил обзор: Карпов Николай. 2026</p>
+    </div>
+  </footer>
+  <script src="../../production/js/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Специализированные финансовые процессы с ИИ — AR, RegTech, Cash Flow, FP&A</title>
+  <meta name="description" content="Углублённые практики: ML-анализ дебиторской задолженности, регуляторная отчётность (RegTech), прогнозирование денежных потоков и сценарное FP&A. Алгоритмы (XGBoost, NLP), кейсы и инструменты." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../production/css/site.css" />
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(109350250, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109350250" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+  <a class="skip-link" href="#main">К основному содержанию</a>
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a class="site-logo" href="../index.html">ИИ в финансах</a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav-wrap" aria-label="Открыть меню">
+        <span class="visually-hidden">Меню</span>
+        <span class="menu-toggle__icon" aria-hidden="true"></span>
+      </button>
+      <div id="site-nav-wrap" class="site-nav-wrap">
+        <ul class="site-nav" aria-label="Разделы и кейсы">
+          <li><a href="../index.html">Главная</a></li>
+          <li><a href="../../index.html">Все публикации</a></li>
+          <li class="site-nav__group">
+            <a href="../index.html#sec-cases" class="site-nav__cases-trigger">Кейсы</a>
+            <ul class="site-nav__cases" aria-label="Список кейсов">
+              <li><a href="overview.html">Обзор: ИИ в финансах</a></li>
+              <li><a href="reporting-automation.html">Автоматизация отчётности</a></li>
+              <li><a href="specialized-finance.html" aria-current="page">Специализированные процессы</a></li>
+              <li><a href="ibm-watson.html">IBM watsonx</a></li>
+              <li><a href="sap-business-ai.html">SAP Business AI · Joule</a></li>
+              <li><a href="oracle-ai.html">Oracle AI</a></li>
+              <li><a href="workday-prism.html">Workday Prism AI</a></li>
+              <li><a href="anaplan-planiq.html">Anaplan PlanIQ</a></li>
+              <li><a href="blackline.html">BlackLine</a></li>
+              <li><a href="mckinsey-quantumblack.html">McKinsey QuantumBlack</a></li>
+              <li><a href="deloitte.html">Deloitte AI</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="site-main site-main--case site-main--case-wide">
+    <article class="case-page case-page--wide">
+      <p class="case-back"><a href="../index.html">← Кейсы</a></p>
+
+      <header class="case-hero">
+        <div class="case-hero__logo" aria-hidden="true">
+          <span class="case-card__logo--initials" style="font-size:1.4rem">06</span>
+        </div>
+        <div>
+          <h1 class="case-hero__title">Специализированные финансовые процессы с ИИ</h1>
+          <p class="case-hero__subtitle">Углублённые практики: ML-анализ дебиторки, регуляторная отчётность (RegTech), Cash Flow Forecasting, сценарное FP&A. Конкретные алгоритмы, кейсы и приоритеты внедрения по сложности и эффекту.</p>
+        </div>
+      </header>
+
+      <section class="case-facts-media" aria-label="Кратко о кейсе">
+        <div class="case-facts-media__grid">
+          <ul class="case-facts">
+            <li><span class="label">Тип материала</span>Обзорный кейс по специализированным процессам</li>
+            <li><span class="label">Покрытие</span>Дебиторская задолженность, RegTech, Cash Flow, FP&A</li>
+            <li><span class="label">Алгоритмы</span>Логистическая регрессия, XGBoost / CatBoost, K-means, NLP</li>
+            <li><span class="label">Снижение трудозатрат в RegTech</span><strong>50–70%</strong> за счёт автоматизации сбора и валидации</li>
+            <li><span class="label">Точность извлечения данных</span>До <strong>98%</strong> в извлечении из неструктурированных документов</li>
+            <li><span class="label">Сценарии «что если»</span>Принятие решений за 5 минут до совещания</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-section case-section--story-grid">
+        <div class="case-story-grid" role="group" aria-label="Направления: AR, RegTech, Cash Flow, FP&A">
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">ML для дебиторской задолженности</h2>
+            <div class="case-story-card__body">
+              <ul>
+                <li><strong>Прогноз платёжного поведения</strong> — XGBoost/CatBoost предсказывают точную дату оплаты на основе истории и внешних факторов.</li>
+                <li><strong>Динамический кредитный скоринг</strong> — лимиты и условия отсрочки пересчитываются в реальном времени.</li>
+                <li><strong>Оптимизация взыскания</strong> — ML определяет канал (email, звонок, SMS) и время напоминания.</li>
+                <li><strong>Cash Application</strong> — CV+NLP сопоставляют входящие платежи со счетами даже при ошибках в назначении.</li>
+              </ul>
+              <p><strong>Эффект:</strong> снижение DSO, минимизация безнадёжных долгов, своевременная остановка отгрузок рискованным клиентам.</p>
+            </div>
+          </article>
+
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">RegTech — регуляторная отчётность</h2>
+            <div class="case-story-card__body">
+              <ul>
+                <li><strong>Автосбор и валидация</strong> — извлечение из разрозненных баз и неструктурированных документов с точностью до 98%; проверка XML/XBRL.</li>
+                <li><strong>NLP-анализ нормативов</strong> — сканирование изменений в законодательстве и уведомление о корректировках форм.</li>
+                <li><strong>AML/KYC и аномалии</strong> — ML находит подозрительные транзакции и ключевые индикаторы риска (KRI).</li>
+              </ul>
+              <p><strong>Барьеры:</strong> качество данных, «чёрный ящик» и требования XAI, кадровый дефицит на стыке Data Science + комплаенс.</p>
+            </div>
+          </article>
+
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Cash Flow Forecasting</h2>
+            <div class="case-story-card__body">
+              <p><strong>Inflow.</strong> Ритейлер платит не в пятницу (как в договоре), а во вторник, если сумма &gt; 1 млн руб. — ИИ корректирует ожидаемый приток и предотвращает ложные ожидания ликвидности.</p>
+              <p><strong>Outflow.</strong> Сеть кофеен — ИИ анализирует погоду и городские мероприятия, предсказывает всплеск спроса на холодный кофе, автоматически рассчитывает закупки и даты списания.</p>
+              <p><strong>Налоги и проценты.</strong> ML мониторит курсы и графики погашения, подсказывает «окно» для конвертации или досрочного погашения.</p>
+            </div>
+          </article>
+
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">FP&A — стратегическая аналитика</h2>
+            <div class="case-story-card__body">
+              <p><strong>Кейс 1.</strong> Производитель: 3 недели в Excel → <strong>несколько часов</strong>; точность прогноза <strong>82% → 96%</strong>.</p>
+              <p><strong>Кейс 2.</strong> Логистика: цифровой двойник денежных потоков; решения за 5 минут; хеджирование топливных рисков, сохранение <strong>15% годовой прибыли</strong>.</p>
+              <p><strong>Кейс 3.</strong> Холдинг: 70% времени аналитиков уходило на причины расхождений → ИИ автоматически формирует текстовые пояснения.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-section--results">
+        <h2 class="case-section__title">Приоритеты внедрения и инструменты</h2>
+        <div class="case-results-grid">
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Приоритеты по сложности и эффекту</h3></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">№1</span><strong>Прогнозирование Cash Flow</strong> — низкая сложность, высокий эффект.</li>
+              <li><span class="case-result-card__label">№2</span><strong>Анализ дебиторки</strong> — средняя сложность, высокий эффект.</li>
+              <li><span class="case-result-card__label">№3</span><strong>Автоматизация Variance Analysis</strong> — средняя сложность, средний эффект.</li>
+              <li><span class="case-result-card__label">№4</span><strong>RegTech</strong> — высокая сложность, высокий эффект.</li>
+            </ul>
+          </article>
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Инструменты по категориям</h3></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">AR/AP</span>HighRadius · Quadient · Serrala · BlackLine</li>
+              <li><span class="case-result-card__label">RegTech</span>Fenergo · Iris RegTech · Cleareye</li>
+              <li><span class="case-result-card__label">Cash Flow</span>Trovata · Tesorio · Cashforce</li>
+              <li><span class="case-result-card__label">FP&A</span>Anaplan · Pigment · Datarails · Cube · Vena</li>
+              <li><span class="case-result-card__label">Variance</span>Datarails · Cube · Prophix</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-sources">
+        <h2>Источники</h2>
+        <ol>
+          <li><a href="https://www.forrester.com/blogs/top-ai-use-cases-for-accounts-receivable-automation-in-2025/">Forrester — AI Use Cases for AR Automation 2025</a><span class="case-sources__tag">тренды</span></li>
+          <li><a href="https://www.emagia.com/ru/resources/glossary/how-ai-can-transform-your-accounts-receivable-process/">Emagia — AI for Accounts Receivable</a><span class="case-sources__tag">обзор</span></li>
+          <li><a href="https://www.lucid.now/blog/how-ai-simplifies-regulatory-reporting-for-startups/">Lucid.now — AI for Regulatory Reporting</a><span class="case-sources__tag">RegTech</span></li>
+          <li><a href="https://irisregtech.com/regtech-in-2024-wrap-up-a-year-of-ai-data-standardization-and-sustainability/">Iris RegTech — RegTech 2024</a><span class="case-sources__tag">RegTech</span></li>
+          <li><a href="https://www.deloitte.com/nl/en/services/consulting-risk/perspectives/navigating-the-regulatory-landscape-with-technology.html">Deloitte — Navigating Regulatory Landscape</a><span class="case-sources__tag">консалтинг</span></li>
+          <li><a href="https://cleareye.ai/regulatory-technology-compliance-automation-trends-banks/">Cleareye.ai — Compliance Automation Trends</a><span class="case-sources__tag">тренды</span></li>
+          <li><a href="https://www.researchgate.net/publication/390172925_The_Role_of_AI_in_RegTech_Automating_Compliance_and_Regulatory_Reporting_in_the_Fintech_Sector">ResearchGate — AI in RegTech</a><span class="case-sources__tag">исследование</span></li>
+        </ol>
+      </section>
+
+      <section class="case-section case-section--relevance">
+        <h2 class="case-section__title">Точка старта для холдинга</h2>
+        <p>
+          Рекомендуется начать с <strong class="case-pipeline">прогнозирования денежных потоков</strong>: минимальные требования к данным (12–24 мес истории платежей), быстрый ROI, низкие риски. Параллельно — анализ дебиторской задолженности. RegTech и AR требуют интеграции и зрелого data management, поэтому идут на следующем шаге.
+        </p>
+      </section>
+
+      <div class="case-actions">
+        <a class="btn" href="../index.html">К списку кейсов</a>
+        <a class="btn btn--secondary" href="anaplan-planiq.html">Anaplan PlanIQ</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <nav aria-label="Нижняя навигация">
+        <a href="../index.html">Главная раздела</a>
+        <a href="../../index.html">Все публикации</a>
+      </nav>
+      <p class="site-footer__meta">Подготовил обзор: Карпов Николай. 2026</p>
+    </div>
+  </footer>
+  <script src="../../production/js/site.js" defer></script>
+</body>
+</html>

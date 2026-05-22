@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bridgestone + Enthought Edge — data-driven R&D в химии</title>
+  <meta name="description" content="Bridgestone + Enthought Edge: переход от Edison-подхода к data-driven R&D. Active Learning, Gaussian Processes, Bayesian Optimization. Сокращение разработки составов на 30–50%. Дорожная карта 12–14 мес для масел и антифризов." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../production/css/site.css" />
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(109350250, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109350250" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+  <a class="skip-link" href="#main">К основному содержанию</a>
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a class="site-logo" href="../index.html">ИИ в R&D рецептур</a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav-wrap" aria-label="Открыть меню">
+        <span class="visually-hidden">Меню</span>
+        <span class="menu-toggle__icon" aria-hidden="true"></span>
+      </button>
+      <div id="site-nav-wrap" class="site-nav-wrap">
+        <ul class="site-nav" aria-label="Разделы и кейсы">
+          <li><a href="../index.html">Главная</a></li>
+          <li><a href="../../index.html">Все публикации</a></li>
+          <li class="site-nav__group">
+            <a href="../index.html#sec-cases" class="site-nav__cases-trigger">Кейсы</a>
+            <ul class="site-nav__cases" aria-label="Список кейсов">
+              <li><a href="mccormick-ibm-one.html">McCormick + IBM ONE</a></li>
+              <li><a href="bridgestone-enthought.html" aria-current="page">Bridgestone + Enthought Edge</a></li>
+              <li><a href="notco-giuseppe.html">NotCo · Giuseppe</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="site-main site-main--case site-main--case-wide">
+    <article class="case-page case-page--wide">
+      <p class="case-back"><a href="../index.html">← Кейсы</a></p>
+
+      <header class="case-hero">
+        <div class="case-hero__logo" aria-hidden="true">
+          <img src="https://www.google.com/s2/favicons?domain=bridgestone.com&sz=128" width="64" height="64" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+        </div>
+        <div>
+          <h1 class="case-hero__title">Bridgestone + Enthought Edge</h1>
+          <p class="case-hero__subtitle">Один из самых ярких примеров цифровой трансформации в «тяжёлой» химии. Переход от Edison-подхода к data-driven R&D через Active Learning, Gaussian Processes и Bayesian Optimization. Сокращение времени разработки составов на 30–50%.</p>
+        </div>
+      </header>
+
+      <section class="case-facts-media" aria-label="Кратко о кейсе">
+        <div class="case-facts-media__grid">
+          <ul class="case-facts">
+            <li><span class="label">Отрасль</span>Резиновые смеси, шины (Bridgestone — Tier-1 в шинной индустрии)</li>
+            <li><span class="label">Подход</span>Active Learning + Human-in-the-loop вместо «100 проб в лаборатории»</li>
+            <li><span class="label">Модели</span>Gaussian Processes, Bayesian Optimization, Random Forest / XGBoost</li>
+            <li><span class="label">Сокращение цикла</span><strong>30–50%</strong> времени на разработку новых составов</li>
+            <li><span class="label">Команда</span>15–25 чел. подрядчика + ~10 внутренних (Data Scientists + Chemical Engineers)</li>
+            <li><span class="label">Бюджет (типичный для Tier-1)</span>$1,5–5 млн (лицензии, кастомная разработка, очистка данных)</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-section case-section--story-grid">
+        <div class="case-story-grid" role="group" aria-label="Стек и подход">
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Архитектуры моделей</h2>
+            <div class="case-story-card__body">
+              <ul>
+                <li><strong>Gaussian Processes</strong> — суррогатные модели для малых химических датасетов: предсказывают результат + степень неуверенности.</li>
+                <li><strong>Bayesian Optimization</strong> — баланс exploration (новые компоненты) и exploitation (известные удачные составы).</li>
+                <li><strong>Random Forest / XGBoost</strong> — оценка важности признаков: какой полимер или присадка сильнее влияет на износостойкость.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Active Learning и Human-in-the-loop</h2>
+            <div class="case-story-card__body">
+              <p>В химии данных мало — эксперименты дорогие. Стратегия: модель обучается на ~1000 образцах и виртуально проверяет миллионы комбинаций. Затем указывает химику: «Я не уверена в этом диапазоне концентраций — проведите реальный эксперимент здесь». Результат возвращается в модель и улучшает её.</p>
+            </div>
+          </article>
+
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Сбор «грязных» данных</h2>
+            <div class="case-story-card__body">
+              <p>Извлечение результатов лабораторных испытаний за последние 20–30 лет из PDF, Excel и бумажных журналов. В химии разметка = результат теста: «Состав X при температуре Y показал вязкость Z».</p>
+            </div>
+          </article>
+
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Главный сдвиг</h2>
+            <div class="case-story-card__body">
+              <p>Данные перестали быть «отчётами о тестах» и стали <strong>активом для обучения</strong>. Вместо 100 составов в лаборатории — <strong>5, отобранных алгоритмом</strong>.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-section--results">
+        <h2 class="case-section__title">Перенос на машинные масла и антифризы</h2>
+        <div class="case-results-grid">
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Соответствие параметров</h3></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Features</span>Концентрация полимерных загустителей, ингибиторов коррозии, щелочное число, тип базового масла (II/III/IV).</li>
+              <li><span class="case-result-card__label">Targets</span>Индекс вязкости, температура вспышки, NOACK, стабильность к сдвигу, антикоррозия.</li>
+              <li><span class="case-result-card__label">Главная сложность</span>Взаимодействие присадок (синергия и антагонизм) — нелинейные связи хорошо ловятся ML.</li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Рекомендации</h3></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Не начинать с Deep Learning</span>Обычные нейросети для химии переобучаются. Предпочтительны байесовские методы и Random Forest.</li>
+              <li><span class="case-result-card__label">Химический онтологический словарь</span>Стандартизация по CAS и функциональным группам; «Присадка А» = «Компонент Б» у другого поставщика.</li>
+              <li><span class="case-result-card__label">Гибридные модели</span>Законы физики/химии (уравнения вязкости) + ML — модель не предлагает «галлюциногенный» рецепт.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-section--results">
+        <h2 class="case-section__title">Дорожная карта 12–14 месяцев</h2>
+        <div class="case-results-grid">
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">1. Цифровой фундамент</h3><p class="case-result-card__meta">Месяцы 1–3.</p></header>
+            <ul class="case-result-card__list">
+              <li>Инвентаризация протоколов (ASTM/ГОСТ) за 5–10 лет; единый онтологический словарь компонентов.</li>
+              <li>Оценка качества и очистка данных; выбор стека (Enthought/Citrine или своя сборка на Scikit-optimize/GPyTorch).</li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">2. Суррогатная модель</h3><p class="case-result-card__meta">Месяцы 4–6.</p></header>
+            <ul class="case-result-card__list">
+              <li>Feature engineering (дескрипторы для масел); обучение модели-предсказателя (состав → свойства).</li>
+              <li>Back-testing на старых рецептах. Критерий перехода — точность <strong>&gt;85%</strong>.</li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">3. Active Learning</h3><p class="case-result-card__meta">Месяцы 7–9.</p></header>
+            <ul class="case-result-card__list">
+              <li>Bayesian Optimization; ввод ограничений (цена, нормы по цинку и т.д.).</li>
+              <li>Цикл: ИИ предлагает составы → лаборатория тестирует → результаты возвращаются → модель уточняется.</li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">4. Интеграция</h3><p class="case-result-card__meta">Месяцы 10–12.</p></header>
+            <ul class="case-result-card__list">
+              <li>UI-калькулятор: ползунки присадок → мгновенный прогноз свойств.</li>
+              <li>Автоматизация TDS и отчётов. Масштабирование на антифризы и спецжидкости.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-section--results">
+        <h2 class="case-section__title">Риски и команда</h2>
+        <div class="case-results-grid">
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Главные риски</h3></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Мало данных (N&lt;500)</span>Transfer Learning: предобучение на общедоступных физико-химических свойствах, дообучение на своих тестах.</li>
+              <li><span class="case-result-card__label">Смена поставщика присадок</span>Обучать модель на свойствах химии (CAS, функциональные группы), а не на торговых названиях.</li>
+              <li><span class="case-result-card__label">Сопротивление персонала</span>Позиционировать систему как «умный калькулятор», не как замену химику.</li>
+            </ul>
+          </article>
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Команда</h3></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Product Owner</span>1 — химик-технолог с пониманием бизнеса.</li>
+              <li><span class="case-result-card__label">Data Engineer</span>1 — Excel/LIMS → единая БД.</li>
+              <li><span class="case-result-card__label">Data Scientist</span>1–2 — Bayesian Optimization и табличные данные.</li>
+              <li><span class="case-result-card__label">Лабораторная группа</span>Существующий штат для проверочных тестов.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-sources">
+        <h2>Источники</h2>
+        <ol>
+          <li><a href="https://www.enthought.com/case-studies/">Enthought — Case Studies (в т.ч. Bridgestone)</a><span class="case-sources__tag">подрядчик</span></li>
+          <li><a href="https://www.bridgestone.com/responsibilities/sustainability/innovation/">Bridgestone — Innovation</a><span class="case-sources__tag">компания</span></li>
+          <li><a href="https://www.citrine.io/">Citrine Informatics — Materials AI</a><span class="case-sources__tag">аналог</span></li>
+        </ol>
+      </section>
+
+      <section class="case-section case-section--relevance">
+        <h2 class="case-section__title">Релевантность для проекта</h2>
+        <p>
+          Самый прагматичный подход для химии с малыми датасетами: <strong class="case-pipeline">Active Learning + Gaussian Processes + физико-химические ограничения</strong>. Не требует Deep Learning и больших GPU-кластеров. Полностью соответствует ограничениям ГСМ-индустрии (дорогие тесты, малая база рецептур, частая смена поставщиков). Готовая дорожная карта на год.
+        </p>
+      </section>
+
+      <div class="case-actions">
+        <a class="btn" href="../index.html">К списку кейсов</a>
+        <a class="btn btn--secondary" href="mccormick-ibm-one.html">McCormick + IBM ONE</a>
+        <a class="btn btn--secondary" href="notco-giuseppe.html">NotCo Giuseppe</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <nav aria-label="Нижняя навигация">
+        <a href="../index.html">Главная раздела</a>
+        <a href="../../index.html">Все публикации</a>
+      </nav>
+      <p class="site-footer__meta">Подготовил обзор: Карпов Николай. 2026</p>
+    </div>
+  </footer>
+  <script src="../../production/js/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NotCo · Giuseppe — молекулярный подбор и хеминформатика</title>
+  <meta name="description" content="NotCo Giuseppe: молекулярный подбор для замены животных компонентов растительными при сохранении свойств. Discernment Layer, RDKit, DeepChem, Chemprop, GP+Bayes. MVP для ГСМ за 4–6 месяцев." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../production/css/site.css" />
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(109350250, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109350250" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+  <a class="skip-link" href="#main">К основному содержанию</a>
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a class="site-logo" href="../index.html">ИИ в R&D рецептур</a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav-wrap" aria-label="Открыть меню">
+        <span class="visually-hidden">Меню</span>
+        <span class="menu-toggle__icon" aria-hidden="true"></span>
+      </button>
+      <div id="site-nav-wrap" class="site-nav-wrap">
+        <ul class="site-nav" aria-label="Разделы и кейсы">
+          <li><a href="../index.html">Главная</a></li>
+          <li><a href="../../index.html">Все публикации</a></li>
+          <li class="site-nav__group">
+            <a href="../index.html#sec-cases" class="site-nav__cases-trigger">Кейсы</a>
+            <ul class="site-nav__cases" aria-label="Список кейсов">
+              <li><a href="mccormick-ibm-one.html">McCormick + IBM ONE</a></li>
+              <li><a href="bridgestone-enthought.html">Bridgestone + Enthought Edge</a></li>
+              <li><a href="notco-giuseppe.html" aria-current="page">NotCo · Giuseppe</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="site-main site-main--case site-main--case-wide">
+    <article class="case-page case-page--wide">
+      <p class="case-back"><a href="../index.html">← Кейсы</a></p>
+
+      <header class="case-hero">
+        <div class="case-hero__logo" aria-hidden="true">
+          <img src="https://www.google.com/s2/favicons?domain=notco.com&sz=128" width="64" height="64" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" />
+        </div>
+        <div>
+          <h1 class="case-hero__title">NotCo — ИИ-платформа Giuseppe</h1>
+          <p class="case-hero__subtitle">Молекулярный подбор: ИИ заменяет животные молекулы растительными при сохранении вкуса и текстуры. Подход напрямую переносится на ГСМ, где критичны функциональные свойства (вязкость, термостабильность), а не органолептика.</p>
+        </div>
+      </header>
+
+      <section class="case-facts-media" aria-label="Кратко о кейсе">
+        <div class="case-facts-media__grid">
+          <ul class="case-facts">
+            <li><span class="label">Отрасль</span>Пищевая промышленность — растительные альтернативы животных продуктов</li>
+            <li><span class="label">Метод</span>Молекулярный подбор (molecular matching) + Discernment Layer на оценках экспертов</li>
+            <li><span class="label">Данные</span>Проприетарная база тысяч растений: молекулярные профили, физико-химические свойства, функциональные характеристики</li>
+            <li><span class="label">Инвестиции</span>&gt;<strong>$460 млн</strong>; оценка компании до <strong>$1,5 млрд</strong> (инвесторы — Bezos Expeditions и др.)</li>
+            <li><span class="label">Цикл R&D</span>Сокращение с лет до месяцев</li>
+            <li><span class="label">Команда</span>Смешанная — AI-инженеры, food scientists, химики и технологи; сотни сотрудников</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-section case-section--story-grid">
+        <div class="case-story-grid" role="group" aria-label="Архитектура Giuseppe">
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Метод molecular matching</h2>
+            <div class="case-story-card__body">
+              <p>ИИ сопоставляет структуру целевого продукта (например, молока) с базой данных растений, чтобы найти комбинации, дающие ту же вязкость и стабильность. Алгоритмы минимизируют «расстояние» между химическими профилями оригинала и копии.</p>
+            </div>
+          </article>
+
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Discernment Layer</h2>
+            <div class="case-story-card__body">
+              <p>ИИ обучается на обратной связи от людей (эксперты по сенсорике, шеф-повара), которые оценивают прототипы. Замыкается цикл: молекулярное предсказание → человеческая оценка → корректировка модели.</p>
+            </div>
+          </article>
+
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Данные</h2>
+            <div class="case-story-card__body">
+              <p>Сочетание объективных химических данных (ГХ-МС, жидкостная хроматография) и субъективных оценок (вкус, запах, текстура), переведённых в цифровой вид.</p>
+            </div>
+          </article>
+
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Перенос на ГСМ</h2>
+            <div class="case-story-card__body">
+              <p><strong>Вкус → трибология.</strong> Целевые параметры — индекс вязкости, температура вспышки, противоизносные свойства (пятно износа), антикоррозия. <strong>Молекулярный дизайн</strong> — цифровые двойники присадок и базовых масел; ИИ ищет синергию компонентов. <strong>Ускорение R&D</strong> — быстрый подбор пакетов под новые стандарты или замену дефицитных компонентов.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-section--results">
+        <h2 class="case-section__title">Архитектура «Giuseppe для ГСМ»</h2>
+        <div class="case-results-grid">
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Ядро: хеминформатика</h3></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">RDKit</span>Основная библиотека: дескрипторы и «отпечатки» молекул присадок и базовых масел.</li>
+              <li><span class="case-result-card__label">DeepChem</span>Фреймворк глубокого обучения в химии; предобученные модели для растворимости, вязкости, токсичности.</li>
+              <li><span class="case-result-card__label">SMILES</span>Текстовое представление структуры молекул для подачи в нейросети.</li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Модели и алгоритмы</h3></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Chemprop (GCNN)</span>Молекулы как графы — предсказание свойств новых присадок.</li>
+              <li><span class="case-result-card__label">GP + Bayesian Opt</span>Оптимизация составов: предложение → тест → обновление модели; минимум реальных варок.</li>
+              <li><span class="case-result-card__label">XGBoost / RF</span>Регрессия на табличных данных — индекс вязкости по составу.</li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Инженерный стек</h3></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Python</span>Базовый язык.</li>
+              <li><span class="case-result-card__label">PyTorch / TF</span>Кастомные нейросетевые архитектуры.</li>
+              <li><span class="case-result-card__label">MLflow / DVC</span>Версионирование моделей и данных (каждый эксперимент дорог).</li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Данные для ГСМ</h3></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">FTIR</span>ИК-спектроскопия для идентификации и предсказания концентрации присадок (ZnDDP, MoDTC).</li>
+              <li><span class="case-result-card__label">Трибологические логи</span>Четырёхшариковые машины трения: диаметр пятна износа, нагрузка сваривания.</li>
+              <li><span class="case-result-card__label">PubChem / ChEMBL</span>Базовые характеристики молекул-кандидатов.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-section--results">
+        <h2 class="case-section__title">MVP «Giuseppe для ГСМ» — 4–6 месяцев</h2>
+        <div class="case-results-grid">
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">1. Оцифровка данных</h3><p class="case-result-card__meta">1 месяц.</p></header>
+            <ul class="case-result-card__list">
+              <li>LIMS-протоколы из PDF/Excel → единая БД (SQL/NoSQL).</li>
+              <li>Features: % базовых масел (I–V) и пакетов присадок (CAS) → вязкость (−35°C…100°C), NOACK, CCS, пятно износа, TBN.</li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">2. Предиктивная модель</h3><p class="case-result-card__meta">1,5 месяца.</p></header>
+            <ul class="case-result-card__list">
+              <li>Gradient Boosting (XGBoost/LightGBM) для табличных рецептур.</li>
+              <li>Физико-химические ограничения (уравнение Вальтера) в loss-функции; обучение на 10–15 базовых компонентах.</li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">3. Генерация рецептур</h3><p class="case-result-card__meta">1 месяц.</p></header>
+            <ul class="case-result-card__list">
+              <li>Инверсия: «Хочу 5W-30 с вязкостью X и ценой Y → дай состав».</li>
+              <li>Bayesian Optimization + cost-optimization; RDKit для проверки совместимости и исключения конфликтов.</li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">4. Active Learning + UI</h3><p class="case-result-card__meta">1 месяц.</p></header>
+            <ul class="case-result-card__list">
+              <li>Лабораторный тест 3–5 вариантов от ИИ; feedback loop с обновлением весов.</li>
+              <li>Dash/Streamlit-интерфейс: слайдеры параметров → список компонентов.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-section--results">
+        <h2 class="case-section__title">Команда и бюджет MVP</h2>
+        <div class="case-results-grid">
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Минимальный состав</h3></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Data Scientist (ML/химия)</span>1</li>
+              <li><span class="case-result-card__label">Инженер данных</span>1</li>
+              <li><span class="case-result-card__label">Главный технолог (валидатор)</span>1</li>
+            </ul>
+          </article>
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Инструменты и бюджет</h3></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Стек</span>Python (RDKit, Chemprop); CPU достаточно — GPU не обязательны.</li>
+              <li><span class="case-result-card__label">Основные затраты</span>Оплата команды и контрольные лабораторные тесты, не инфраструктура.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-sources">
+        <h2>Источники</h2>
+        <ol>
+          <li><a href="https://www.notco.com/">NotCo — официальный сайт</a><span class="case-sources__tag">компания</span></li>
+          <li><a href="https://techcrunch.com/2022/07/26/notco-tech-platform-launch/">TechCrunch — NotCo Giuseppe Platform</a><span class="case-sources__tag">пресса</span></li>
+          <li><a href="https://www.rdkit.org/">RDKit — Open-Source Cheminformatics</a><span class="case-sources__tag">библиотека</span></li>
+          <li><a href="https://deepchem.io/">DeepChem — Democratizing Deep Learning for Sciences</a><span class="case-sources__tag">фреймворк</span></li>
+          <li><a href="https://github.com/chemprop/chemprop">Chemprop — GCNN for molecular property prediction</a><span class="case-sources__tag">библиотека</span></li>
+        </ol>
+      </section>
+
+      <section class="case-section case-section--relevance">
+        <h2 class="case-section__title">Релевантность для проекта</h2>
+        <p>
+          Самая лёгкая для старта парадигма: <strong class="case-pipeline">RDKit + Chemprop + Bayesian Optimization</strong>. MVP за 4–6 месяцев командой из 3 человек на CPU. Подходит для R&D-команд, у которых уже есть исторические рецептуры с результатами тестов и нужно быстро получить «умный калькулятор» для подбора компонентов под заданный допуск (API SP, ACEA C3, ГОСТ).
+        </p>
+      </section>
+
+      <div class="case-actions">
+        <a class="btn" href="../index.html">К списку кейсов</a>
+        <a class="btn btn--secondary" href="mccormick-ibm-one.html">McCormick + IBM ONE</a>
+        <a class="btn btn--secondary" href="bridgestone-enthought.html">Bridgestone + Enthought</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <nav aria-label="Нижняя навигация">
+        <a href="../index.html">Главная раздела</a>
+        <a href="../../index.html">Все публикации</a>
+      </nav>
+      <p class="site-footer__meta">Подготовил обзор: Карпов Николай. 2026</p>
+    </div>
+  </footer>
+  <script src="../../production/js/site.js" defer></script>
+</body>
+</html>

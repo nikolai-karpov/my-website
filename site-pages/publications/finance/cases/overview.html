@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ИИ в финансах и управленческом учёте — обзор и метрики</title>
+  <meta name="description" content="Обзорный кейс: контекст 2024–2026, направления применения ИИ в управленческом учёте и общих финансовых функциях, кейсы JPMorgan / Microsoft / AmEx / Siemens / Сбер, метрики, стек инструментов, дорожная карта." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../production/css/site.css" />
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(109350250, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109350250" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+  <a class="skip-link" href="#main">К основному содержанию</a>
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a class="site-logo" href="../index.html">ИИ в финансах</a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav-wrap" aria-label="Открыть меню">
+        <span class="visually-hidden">Меню</span>
+        <span class="menu-toggle__icon" aria-hidden="true"></span>
+      </button>
+      <div id="site-nav-wrap" class="site-nav-wrap">
+        <ul class="site-nav" aria-label="Разделы и кейсы">
+          <li><a href="../index.html">Главная</a></li>
+          <li><a href="../../index.html">Все публикации</a></li>
+          <li class="site-nav__group">
+            <a href="../index.html#sec-cases" class="site-nav__cases-trigger">Кейсы</a>
+            <ul class="site-nav__cases" aria-label="Список кейсов">
+              <li><a href="overview.html" aria-current="page">Обзор: ИИ в финансах</a></li>
+              <li><a href="reporting-automation.html">Автоматизация отчётности</a></li>
+              <li><a href="specialized-finance.html">Специализированные процессы</a></li>
+              <li><a href="ibm-watson.html">IBM watsonx</a></li>
+              <li><a href="sap-business-ai.html">SAP Business AI · Joule</a></li>
+              <li><a href="oracle-ai.html">Oracle AI</a></li>
+              <li><a href="workday-prism.html">Workday Prism AI</a></li>
+              <li><a href="anaplan-planiq.html">Anaplan PlanIQ</a></li>
+              <li><a href="blackline.html">BlackLine</a></li>
+              <li><a href="mckinsey-quantumblack.html">McKinsey QuantumBlack</a></li>
+              <li><a href="deloitte.html">Deloitte AI</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="site-main site-main--case site-main--case-wide">
+    <article class="case-page case-page--wide">
+      <p class="case-back"><a href="../index.html">← Кейсы</a></p>
+
+      <header class="case-hero">
+        <div class="case-hero__logo" aria-hidden="true">
+          <span class="case-card__logo--initials" style="font-size:1.4rem">04</span>
+        </div>
+        <div>
+          <h1 class="case-hero__title">ИИ в финансах и управленческом учёте</h1>
+          <p class="case-hero__subtitle">Обзорный кейс: контекст рынка, направления применения, именные кейсы (JPMorgan, Microsoft, AmEx, Siemens, Сбер), метрики и дорожная карта внедрения.</p>
+        </div>
+      </header>
+
+      <section class="case-facts-media" aria-label="Кратко о кейсе">
+        <div class="case-facts-media__grid">
+          <ul class="case-facts">
+            <li><span class="label">Тип материала</span>Обзорный кейс по направлению</li>
+            <li><span class="label">Фокус</span>Управленческий учёт, FP&A, AR/AP, казначейство, аудит, комплаенс</li>
+            <li><span class="label">Период</span>Публичные кейсы 2024–2026</li>
+            <li><span class="label">Аудитория</span>CFO, руководитель управленческого учёта, контролёр группы</li>
+            <li><span class="label">Главный тренд</span>Autonomous Finance — многоуровневая делегация рутинных операций алгоритмам</li>
+            <li><span class="label">Доказательность</span>Высокая: множество публичных кейсов с количественными метриками от вендоров и заказчиков</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-section case-section--story-grid">
+        <div class="case-story-grid" role="group" aria-label="Контекст рынка, направления, тренд Autonomous Finance, Continuous Close">
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Контекст рынка</h2>
+            <div class="case-story-card__body">
+              <p>К 2026 году внедрение ИИ в финансовый департамент перешло от экспериментов к промышленной эксплуатации. <strong>39%</strong> российских компаний уже используют ИИ в финансах и документообороте. Глобальные лидеры фиксируют рост продуктивности <strong>на 20%</strong> за счёт генеративного ИИ. Точность прогнозов выручки у Microsoft достигла <strong>99%</strong>.</p>
+            </div>
+          </article>
+
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Направления в управленческом учёте</h2>
+            <div class="case-story-card__body">
+              <ul>
+                <li><strong>Cash Flow Forecasting</strong> — модели ликвидности с учётом сезонности и платёжной дисциплины контрагентов.</li>
+                <li><strong>Автоклассификация расходов</strong> по статьям бюджета и ЦФО.</li>
+                <li><strong>Variance Analysis</strong> — подсветка отклонений план/факт и оценка влияния.</li>
+                <li><strong>Предиктивное бюджетирование</strong> — динамические Rolling Forecasts.</li>
+                <li><strong>Финансовый сторителлинг</strong> — LLM-пояснения к отчётам (Revenue, EBITDA, ROI).</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Направления в общих финансовых функциях</h2>
+            <div class="case-story-card__body">
+              <ul>
+                <li><strong>Fraud Detection</strong> — анализ транзакций в реальном времени.</li>
+                <li><strong>Кредитный скоринг</strong> по альтернативным источникам данных.</li>
+                <li><strong>Intelligent Document Processing</strong> — OCR + NLP с точностью 94–98%.</li>
+                <li><strong>Управление рисками</strong> и стресс-сценарии.</li>
+                <li><strong>RegTech</strong> — автосбор и валидация регуляторной отчётности.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Autonomous Finance и Continuous Close</h2>
+            <div class="case-story-card__body">
+              <p>Главный тренд 2026 — переход к <strong>автономным финансам</strong>: системы не только подсвечивают проблему, но и сами выполняют корректирующие действия по заранее заданным правилам с алгоритмическим контролем и аудиторским следом. Отказ от ежемесячного «закрытия книги» в пользу <strong>Continuous Close</strong> — отчётность не на конец месяца, а в любой момент.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-section--results" aria-labelledby="sec-results">
+        <h2 id="sec-results" class="case-section__title">Именные кейсы и метрики</h2>
+        <p class="case-results-intro">Шесть базовых кейсов из обзора. Полный набор метрик и сравнение «до/после» — в сводной странице.</p>
+
+        <div class="case-results-grid">
+          <article class="case-result-card">
+            <header class="case-result-card__head">
+              <h3 class="case-result-card__title">JPMorgan Chase — COiN</h3>
+              <p class="case-result-card__meta">NLP-анализ кредитных договоров.</p>
+            </header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Высвобождено</span><strong>360 000 ч/год</strong> юристов и финотдела; проверка договора — секунды вместо часов.</li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head">
+              <h3 class="case-result-card__title">Microsoft — прогноз выручки</h3>
+              <p class="case-result-card__meta">Ансамбль нейросетей по сегментам (Azure, Office 365).</p>
+            </header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Точность прогноза</span><strong>99%</strong>; более агрессивное инвестирование свободных средств в R&D.</li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head">
+              <h3 class="case-result-card__title">American Express</h3>
+              <p class="case-result-card__meta">Real-time fraud detection на глубоких нейросетях.</p>
+            </header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Предотвращено</span>Мошенничества на <strong>&gt;$2 млрд/год</strong>; самообучение на новых типах атак.</li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head">
+              <h3 class="case-result-card__title">Siemens — Audit Analytics</h3>
+              <p class="case-result-card__meta">Outlier Detection в бухгалтерских проводках.</p>
+            </header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Внутренний контроль</span>Аудиторы фокусируются на <strong>1% подозрительных</strong> записей; эффективность <strong>+40%</strong>.</li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head">
+              <h3 class="case-result-card__title">Unilever — Pricing</h3>
+              <p class="case-result-card__meta">Нейросети моделируют эластичность спроса.</p>
+            </header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Маржа</span>Сохранение целевой маржинальности в периоды высокой ценовой волатильности.</li>
+            </ul>
+          </article>
+
+          <article class="case-result-card">
+            <header class="case-result-card__head">
+              <h3 class="case-result-card__title">Сбер — кредитование юрлиц</h3>
+              <p class="case-result-card__meta">PD-модели по движениям расчётного счёта и открытым данным.</p>
+            </header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Малый бизнес</span>Решения <strong>за 7 минут</strong> без участия человека (2024–2025).</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-section--results">
+        <h2 class="case-section__title">Сводные результаты по данным CFO</h2>
+        <div class="case-results-grid">
+          <article class="case-result-card">
+            <header class="case-result-card__head">
+              <h3 class="case-result-card__title">Эффект на финансовую функцию</h3>
+            </header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Время закрытия периодов</span>Сокращение в среднем на <strong>7,5 дней</strong>.</li>
+              <li><span class="case-result-card__label">Ошибки в документах</span>Снижение до <strong>90%</strong>.</li>
+              <li><span class="case-result-card__label">Продуктивность</span>Рост на <strong>20–30%</strong>.</li>
+              <li><span class="case-result-card__label">ROI</span><strong>150–300%</strong> за 2–3 года; срок окупаемости пилотов 3–6 месяцев.</li>
+            </ul>
+          </article>
+          <article class="case-result-card">
+            <header class="case-result-card__head">
+              <h3 class="case-result-card__title">Дорожная карта внедрения</h3>
+            </header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">I · Аудит данных</span>1–2 мес — инвентаризация финансовых данных, гэп-анализ.</li>
+              <li><span class="case-result-card__label">II · Пилот</span>2–3 мес — Cash Flow Forecasting или AP Automation (быстрый ROI).</li>
+              <li><span class="case-result-card__label">III · Масштабирование</span>3–6 мес — классификация затрат, анализ отклонений, ИИ-мэппинг.</li>
+              <li><span class="case-result-card__label">IV · Continuous Close</span>6–12 мес — самообучающиеся системы с аудиторским следом.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-sources">
+        <h2>Источники</h2>
+        <ol>
+          <li><a href="https://assets.kpmg.com/content/dam/kpmgsites/dk/pdf/dk-2024/december/dk-global-ai-in-finance-report.pdf.coredownload.inline.pdf">KPMG — Global AI in Finance Report</a><span class="case-sources__tag">обзор рынка</span></li>
+          <li><a href="https://www.bcg.com/publications/2025/how-finance-leaders-can-get-roi-from-ai">BCG — How Finance Leaders Can Get ROI from AI</a><span class="case-sources__tag">ROI</span></li>
+          <li><a href="https://www.deloitte.com/us/en/insights/industry/technology/artificial-intelligence-roi.html">Deloitte — AI ROI Insights</a><span class="case-sources__tag">ROI</span></li>
+          <li><a href="https://www.workday.com/en-us/perspectives/finance/2025/03/how-ai-changing-corporate-finance-2025.html">Workday — How AI is Changing Corporate Finance 2025</a><span class="case-sources__tag">тренды</span></li>
+          <li><a href="https://developers.sber.ru/help/gigachat-api/ai-in-finance">Сбер — AI в финансах</a><span class="case-sources__tag">RU</span></li>
+          <li><a href="https://www.theuxda.com/blog/ai-gold-rush-21-digital-banking-ai-case-studies-cx-transformation">UXDA — 21 Digital Banking AI Case Studies</a><span class="case-sources__tag">кейсы</span></li>
+          <li><a href="https://cloud.google.com/discover/finance-ai">Google Cloud — Finance AI</a><span class="case-sources__tag">вендор</span></li>
+          <li><a href="https://digitaldefynd.com/IQ/ai-in-finance-case-studies/">DigitalDefynd — AI in Finance Case Studies</a><span class="case-sources__tag">кейсы</span></li>
+        </ol>
+      </section>
+
+      <section class="case-section case-section--relevance">
+        <h2 class="case-section__title">Релевантность для холдинга</h2>
+        <p>
+          Подход универсален: <strong class="case-pipeline">аудит данных → пилот с быстрым ROI → масштабирование → Continuous Close</strong>. Стартовая точка для большинства холдингов — прогнозирование денежных потоков (минимум данных, 12–24 мес истории) или AP Automation (окупается за 3–6 месяцев). Те же ИИ-паттерны переносятся в производство (сверка затрат и норм расхода), логистику (matching отгрузок и платежей) и розницу (сверка кассовых данных и эквайринга).
+        </p>
+      </section>
+
+      <div class="case-actions">
+        <a class="btn" href="../index.html">К списку кейсов</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <nav aria-label="Нижняя навигация">
+        <a href="../index.html">Главная раздела</a>
+        <a href="../../index.html">Все публикации</a>
+      </nav>
+      <p class="site-footer__meta">Подготовил обзор: Карпов Николай. 2026</p>
+    </div>
+  </footer>
+  <script src="../../production/js/site.js" defer></script>
+</body>
+</html>

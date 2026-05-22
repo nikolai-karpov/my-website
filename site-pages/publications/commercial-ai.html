@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ИИ в коммерческом анализе — обзор кейсов, инструментов и ROI (март 2026) | Карпов Николай</title>
+    <meta
+      name="description"
+      content="Аналитический обзор внедрения ИИ/ML в коммерческий анализ: рынок 2024–2026, отраслевые кейсы (производство, ритейл, B2B, холдинги), стек технологий (GenAI/ML/Agentic), Python-библиотеки и SaaS-платформы, бенчмарки ROI и метрики эффективности."
+    />
+    <link rel="canonical" href="https://nikolai-karpov.github.io/my-website/site-pages/publications/commercial-ai.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../assets/css/style.css" />
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+    <style>
+      /* === Локальные дополнения к дизайн-системе для этой страницы === */
+
+      /* Этот обзор — табличный, читабельная колонка 920px тесна. */
+      .article__body { max-width: none; }
+
+      /* Переключатель вкладок в стиле llm-research */
+      .tab-switch {
+        display: inline-flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        padding: 4px;
+        margin: 28px 0 8px;
+        background: var(--bg-alt);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        font-family: var(--font-mono);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .tab-switch__btn {
+        appearance: none;
+        background: transparent;
+        border: 0;
+        color: var(--text-muted);
+        padding: 10px 18px;
+        border-radius: 999px;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: inherit;
+        letter-spacing: inherit;
+        text-transform: inherit;
+        transition: background 0.15s ease, color 0.15s ease;
+      }
+      .tab-switch__btn:hover { color: var(--text); }
+      .tab-switch__btn.is-active {
+        background: var(--surface);
+        color: var(--accent);
+        box-shadow: var(--shadow-sm);
+      }
+      .tab-panel { display: none; }
+      .tab-panel.is-active { display: block; }
+
+      /* Метрика-плитка: крупная цифра + подпись */
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        margin: 24px 0 32px;
+      }
+      .metric-card {
+        padding: 22px 20px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-left: 3px solid var(--accent);
+        border-radius: 8px;
+      }
+      .metric-card__value {
+        font-family: var(--font-display);
+        font-size: 1.7rem;
+        font-weight: 600;
+        color: var(--accent);
+        line-height: 1.15;
+      }
+      .metric-card__label {
+        margin-top: 8px;
+        font-size: 0.92rem;
+        color: var(--text-muted);
+        line-height: 1.45;
+      }
+
+      /* Карточка кейса: компания + результат + источник */
+      .case-card {
+        margin: 16px 0;
+        padding: 20px 22px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-left: 3px solid var(--line-strong);
+        border-radius: 8px;
+      }
+      .case-card--ru { border-left-color: #e94e4e; }
+      .case-card--global { border-left-color: #3b82f6; }
+      .case-card__head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 8px 14px;
+        margin-bottom: 8px;
+      }
+      .case-card__name {
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text);
+      }
+      .case-card__tag {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--text-muted);
+      }
+      .case-card__result {
+        margin-top: 10px;
+        padding: 10px 14px;
+        background: var(--bg-alt);
+        border-radius: 6px;
+        font-size: 0.95rem;
+      }
+      .case-card__result strong { color: var(--accent); }
+
+      /* Колонки для блока «тренды/направления» */
+      .col-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 18px;
+        margin: 20px 0 28px;
+      }
+      .col-item {
+        padding: 18px 20px;
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+      }
+      .col-item h4 {
+        margin: 0 0 8px;
+        font-family: var(--font-display);
+        font-size: 1.02rem;
+        font-weight: 600;
+      }
+      .col-item p { margin: 0; font-size: 0.95rem; color: var(--text-muted); }
+      .col-item__kicker {
+        font-family: var(--font-mono);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--accent);
+        margin-bottom: 6px;
+      }
+
+      .info-note {
+        margin: 24px 0;
+        padding: 18px 22px;
+        background: var(--bg-alt);
+        border-left: 2px solid #3b82f6;
+        border-radius: 0 6px 6px 0;
+        font-size: 0.96rem;
+      }
+
+      .sources {
+        margin-top: 32px;
+        padding: 18px 22px;
+        background: var(--bg-alt);
+        border-radius: 8px;
+        font-size: 0.88rem;
+      }
+      .sources strong { font-family: var(--font-display); }
+      .sources ul {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        columns: 2;
+        column-gap: 28px;
+      }
+      .sources li { margin-bottom: 4px; break-inside: avoid; }
+      @media (max-width: 720px) {
+        .sources ul { columns: 1; }
+      }
+    </style>
+  
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(109350250, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109350250" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+
+  <body>
+    <header class="site-header" role="banner">
+      <div class="container site-header__inner">
+        <a href="../../" class="brand" aria-label="На главную">
+          <span class="brand__dot" aria-hidden="true"></span>
+          <span>Внедрение нейросетей</span>
+        </a>
+        <nav class="site-nav" aria-label="Основная навигация">
+          <a href="../../#approach">Подход</a>
+          <a href="../../#cases">Кейсы</a>
+          <a href="../methodology.html">Методология</a>
+          <a href="index.html" class="is-active">Обзоры</a>
+          <a href="../../#security">ИБ</a>
+          <a href="../../#contact">Контакт</a>
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" stroke-linejoin="round" />
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main">
+      <section class="article-hero container">
+        <a href="index.html" class="back-link">
+          <span aria-hidden="true">←</span> Публикации
+        </a>
+
+        <div class="article-hero__meta">
+          <span>Аналитический обзор</span>
+          <span>ИИ · коммерческий анализ · ROI</span>
+          <span>Опубликовано в марте 2026</span>
+        </div>
+
+        <h1 class="article-hero__title">
+          ИИ в коммерческом анализе:<br>кейсы, инструменты, метрики&nbsp;ROI
+        </h1>
+
+        <p class="article-hero__hook">
+          Что произошло с применением ИИ/ML в коммерческом блоке за 2024–2026:
+          рынок и отраслевая зрелость, стек технологий (GenAI · ML · Agentic),
+          разбор кейсов от Amazon и Сбера до B2B-холдингов, бенчмарки ROI и
+          метрики эффективности — всё, что нужно для разговора с CFO и
+          коммерческим директором о следующем пилоте.
+        </p>
+
+        <div class="tab-switch" role="tablist" aria-label="Разделы обзора">
+          <button class="tab-switch__btn is-active" type="button" role="tab" aria-selected="true" data-tab="market">Рынок и тренды</button>
+          <button class="tab-switch__btn" type="button" role="tab" aria-selected="false" data-tab="tech">Технологии и инструменты</button>
+          <button class="tab-switch__btn" type="button" role="tab" aria-selected="false" data-tab="cases">Кейсы внедрения</button>
+          <button class="tab-switch__btn" type="button" role="tab" aria-selected="false" data-tab="roi">ROI и метрики</button>
+        </div>
+      </section>
+
+      <section class="article container">
+        <div class="article__body">
+
+          <!-- ========================================================== -->
+          <!-- TAB 1: РЫНОК И ТРЕНДЫ                                       -->
+          <!-- ========================================================== -->
+          <div class="tab-panel is-active" id="tab-market" role="tabpanel">
+
+            <dl class="spec-table">
+              <dt>Фокус</dt>
+              <dd>Внедрение ИИ/ML в коммерческий анализ: продажи, ценообразование, FP&A, цепочки поставок</dd>
+              <dt>Период</dt>
+              <dd>Аналитика и кейсы 2024–2026 годов</dd>
+              <dt>Сегменты</dt>
+              <dd>Производство · Ритейл · B2B · Холдинги · Крупные корпорации (Enterprise)</dd>
+              <dt>Источники</dt>
+              <dd>Gartner, IDC, Forrester, Deloitte, KPMG, Stanford HAI, McKinsey, Яков и Партнёры, АНО ЦЭ, АйРассвет, Эксперт РА, ICT.Moscow, NVIDIA, SAP</dd>
+            </dl>
+
+            <h2 data-num="01">Где сейчас находится рынок</h2>
+            <p>
+              К началу 2024 года около 78% организаций уже использовали ИИ —
+              на 55% больше, чем годом ранее. В 2024–2026 годах внедрение
+              перешло от пилотов к промышленной эксплуатации: к концу 2025
+              года более 70% финансовых организаций используют ИИ в
+              продуктивном контуре против 30% в 2023-м.
+            </p>
+
+            <div class="metric-grid">
+              <div class="metric-card">
+                <div class="metric-card__value">$249,5 млрд</div>
+                <div class="metric-card__label">Мировой рынок ИИ в финансах к 2032 году (с $31,5 млрд в 2024) — CAGR 34,3%</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-card__value">520 млрд ₽</div>
+                <div class="metric-card__label">Российский рынок Big Data и ИИ, рост ~20% в год</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-card__value">13 трлн ₽</div>
+                <div class="metric-card__label">Прогноз вклада ИИ в экономику РФ к 2030 году (Яков и Партнёры)</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-card__value">60%</div>
+                <div class="metric-card__label">Крупных российских компаний уже внедрили ML в коммерческий анализ (АНО ЦЭ, янв. 2026)</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-card__value">71%</div>
+                <div class="metric-card__label">Компаний используют ИИ в финансовых операциях, включая казначейство и налоги (KPMG, опрос 2900 руководителей)</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-card__value">×2</div>
+                <div class="metric-card__label">Расширение маржи денежного потока у компаний с ИИ vs средний рынок</div>
+              </div>
+            </div>
+
+            <h2 data-num="02">Отраслевая зрелость</h2>
+            <p>
+              По расходам на ИИ в России лидирует финансовый сектор
+              (ICT.Moscow / FinExpertiza, декабрь 2025). Транспорт и
+              логистика — на втором месте по доле персонала, работающего с
+              ИИ. К 2027 году Gartner ожидает, что 20% бизнес-процессов будут
+              поддерживаться автономными аналитическими системами без участия
+              человека.
+            </p>
+
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Сегмент</th>
+                  <th>Основной фокус ИИ</th>
+                  <th>Ключевые технологии</th>
+                  <th>Главный бизнес-эффект</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Сегмент"><strong>Производство</strong></td>
+                  <td data-label="Фокус">Связь спроса с мощностями</td>
+                  <td data-label="Технологии">Predictive Maintenance + Demand Sensing</td>
+                  <td data-label="Эффект">Снижение складских излишков и простоев на 15–25%</td>
+                </tr>
+                <tr>
+                  <td data-label="Сегмент"><strong>Ритейл</strong></td>
+                  <td data-label="Фокус">Поведение миллионов покупателей</td>
+                  <td data-label="Технологии">Computer Vision + рекомендательные системы</td>
+                  <td data-label="Эффект">Рост среднего чека и LTV; снижение out-of-stock до 35%</td>
+                </tr>
+                <tr>
+                  <td data-label="Сегмент"><strong>B2B</strong></td>
+                  <td data-label="Фокус">Длинный цикл сделки, высокая стоимость потери клиента</td>
+                  <td data-label="Технологии">Lead Scoring + NLP анализа звонков/писем</td>
+                  <td data-label="Эффект">Повышение конверсии в сделку на 15–25%</td>
+                </tr>
+                <tr>
+                  <td data-label="Сегмент"><strong>Холдинги</strong></td>
+                  <td data-label="Фокус">Синергия и внутренняя чистота данных</td>
+                  <td data-label="Технологии">MDM на базе ИИ + Process Mining</td>
+                  <td data-label="Эффект">Оптимизация трансфертных цен и оборотного капитала</td>
+                </tr>
+                <tr>
+                  <td data-label="Сегмент"><strong>Large Enterprise</strong></td>
+                  <td data-label="Фокус">Масштабируемость и прозрачность</td>
+                  <td data-label="Технологии">Data Lake + AutoML + AI Agents</td>
+                  <td data-label="Эффект">Real-time дашборды, сокращение TTI на 50–70%</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 data-num="03">Шесть трендов 2025–2026</h2>
+            <p>
+              По свежим обзорам Gartner Hype Cycle for AI in Finance 2025,
+              Deloitte Tech Trends 2025, Forrester «State of ML 2025» и
+              российских отчётов (АНО ЦЭ, АйРассвет, Эксперт РА) — ключевые
+              направления, под которые сейчас перестраиваются коммерческие
+              блоки.
+            </p>
+
+            <div class="col-grid">
+              <div class="col-item">
+                <div class="col-item__kicker">01 · Agentic AI</div>
+                <h4>ИИ-агенты вместо ответов</h4>
+                <p>К 2025 году 25% предприятий развернут автономных ИИ-агентов: агент сам находит падение продаж, анализирует цены конкурентов, формирует акцию и запускает её в рекламном кабинете.</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">02 · Autonomous Finance</div>
+                <h4>От локальных пилотов к автономности</h4>
+                <p>Финансовая аналитика переходит от ручных экспериментов к автономным финансам и массовому внедрению GenAI поверх MLOps-инфраструктуры.</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">03 · Explainable AI</div>
+                <h4>Интерпретируемые модели</h4>
+                <p>Фокус смещается с «чёрных ящиков» на объяснимые модели — обязательное условие для финансового сектора и комплаенса. Технологии: SHAP, LIME.</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">04 · GenAI + ML гибрид</div>
+                <h4>80% предприятий к 2026</h4>
+                <p>Gartner прогнозирует, что к 2026 году более 80% предприятий будут использовать генеративный ИИ в сочетании с классическим ML для глубокого коммерческого анализа (рост с &lt;5% в 2023).</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">05 · Sovereign Cloud + SLM</div>
+                <h4>Локальные LLM и гибрид</h4>
+                <p>Крупные компании переходят на собственные LLM (YandexGPT, GigaChat) и малые специализированные модели (SLM), чтобы не передавать коммерческие данные во внешние облака.</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">06 · AI Governance</div>
+                <h4>Доверие как метрика</h4>
+                <p>К 2028 году использование платформ управления ИИ повысит доверие клиентов на 30%. Регуляторные требования становятся обязательной частью стека.</p>
+              </div>
+            </div>
+
+            <h2 data-num="04">Ключевые отчёты, на которые имеет смысл опираться</h2>
+
+            <div class="col-grid">
+              <div class="col-item">
+                <div class="col-item__kicker">Глобальные</div>
+                <h4>Gartner, Deloitte, KPMG, Forrester, Stanford HAI</h4>
+                <p>Hype Cycle for AI in Finance 2025 · 2025 Finance Software Investments · Magic Quadrant for Data Science & ML 2025 · Deloitte Tech Trends 2025 · Global AI in Finance Report (KPMG) · State of ML 2025 (Forrester) · AI Index Report 2025 (Stanford).</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">Россия</div>
+                <h4>Яков и Партнёры, АНО ЦЭ, АйРассвет, Эксперт РА</h4>
+                <p>«Будущее искусственного интеллекта» (АНО ЦЭ, 2025) · совместный отчёт Я&П и «Альянса ИИ» (2024–2025) о +5–15% EBITDA от ML в SCM · «Эффективность ИИ в бизнесе 2025–2026» (АйРассвет, 7 сценариев и ROI) · IT-расходы банков 2024–2026 (Эксперт РА).</p>
+              </div>
+            </div>
+
+            <div class="info-note">
+              <strong>Главный вывод по рынку:</strong> 2024–2026 — время, когда ИИ в коммерческом блоке перестал быть «экспериментом для PR». Компании, дошедшие до промышленной эксплуатации, фиксируют двукратное опережение по марже денежного потока. Это переводит разговор из плоскости «нужно ли пробовать» в плоскость «как не отстать».
+            </div>
+
+          </div>
+          <!-- /TAB 1 -->
+
+          <!-- ========================================================== -->
+          <!-- TAB 2: ТЕХНОЛОГИИ И ИНСТРУМЕНТЫ                              -->
+          <!-- ========================================================== -->
+          <div class="tab-panel" id="tab-tech" role="tabpanel">
+
+            <h2 data-num="01">Стек технологий по направлениям</h2>
+            <p>
+              Технологический ландшафт делится на три большие зоны:
+              генеративный ИИ для коммуникаций, классический ML для операций
+              и агентский ИИ (Agentic AI) — качественно новый этап,
+              описанный в Gartner Top Strategic Tech Trends 2025.
+            </p>
+
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Направление</th>
+                  <th>Что делает</th>
+                  <th>Технологии</th>
+                  <th>Эффект</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Направление"><strong>GenAI для коммуникаций</strong></td>
+                  <td data-label="Что делает">Гиперперсонализация, ИИ-ассистенты в продажах, локальные LLM, генерация контента</td>
+                  <td data-label="Технологии">GPT-4/Claude/GigaChat, мультимодальные модели</td>
+                  <td data-label="Эффект">Снижение затрат на контент на 40–60%; снижение CAC до 25%</td>
+                </tr>
+                <tr>
+                  <td data-label="Направление"><strong>ML для операций</strong></td>
+                  <td data-label="Что делает">Динамическое ценообразование, прогноз спроса, Next Best Action, churn-аналитика</td>
+                  <td data-label="Технологии">XGBoost, LSTM, Reinforcement Learning, Random Forest</td>
+                  <td data-label="Эффект">Рост маржинальности 5–12%; снижение out-of-stock на 15%</td>
+                </tr>
+                <tr>
+                  <td data-label="Направление"><strong>Agentic AI</strong></td>
+                  <td data-label="Что делает">Цепочки автономных действий (анализ → решение → исполнение в рекламном кабинете / CRM)</td>
+                  <td data-label="Технологии">LangChain, CrewAI, мультимодальные агенты</td>
+                  <td data-label="Эффект">Сокращение цикла сделки на 25%, операционных затрат на 30–50%</td>
+                </tr>
+                <tr>
+                  <td data-label="Направление"><strong>Computer Vision</strong></td>
+                  <td data-label="Что делает">Мониторинг полок, контроль выкладки, аналитика очередей</td>
+                  <td data-label="Технологии">CNN, Detection / Tracking-модели</td>
+                  <td data-label="Эффект">Снижение упущенных продаж (out-of-stock) на 15%</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 data-num="02">Generative BI и платформы анализа</h2>
+            <p>
+              «Естественный язык как интерфейс к данным» — то, чем
+              отличается 2026 год. Аналитик задаёт вопрос текстом или
+              голосом и получает не дашборд, а готовую гипотезу с разбором
+              драйверов.
+            </p>
+
+            <div class="col-grid">
+              <div class="col-item">
+                <div class="col-item__kicker">Generative BI</div>
+                <h4>Microsoft Fabric + Copilot</h4>
+                <p>Единое облако данных. «Почему упали продажи в регионе X?» → текстовый отчёт с выявленными причинами (логистика, погода, конкуренты).</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">Generative BI</div>
+                <h4>Tableau Pulse (Salesforce)</h4>
+                <p>Нейросеть сама следит за метриками: «замечена аномалия в марже», анализ драйверов, варианты коррекции.</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">Generative BI</div>
+                <h4>ThoughtSpot</h4>
+                <p>LLM генерирует сложный SQL на лету по запросу на естественном языке. Real-time аналитика без участия дата-инженера.</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">AutoML</div>
+                <h4>DataRobot</h4>
+                <p>Лидер MLOps. Модули автоматического комплаенса для регуляторов (Basel III, IFRS 9). Кредитный скоринг, стресс-тестирование.</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">AutoML</div>
+                <h4>H2O.ai (Driverless AI)</h4>
+                <p>Инвестбанкинг и страхование: временные ряды, фрод-мониторинг, XAI для аудита.</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">Data Platform</div>
+                <h4>Databricks</h4>
+                <p>Единая платформа: исторические массивы + потоковые данные, real-time ML-инференс, Unity Catalog для governance.</p>
+              </div>
+            </div>
+
+            <h2 data-num="03">Revenue AI и Sales Intelligence</h2>
+
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Инструмент</th>
+                  <th>Категория</th>
+                  <th>Что делает</th>
+                  <th>Эффект</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Инструмент"><strong>Gong / Chorus.ai</strong></td>
+                  <td data-label="Категория">Speech Analytics</td>
+                  <td data-label="Что делает">NLP-анализ звонков и встреч: сигналы покупки, отработка возражений</td>
+                  <td data-label="Эффект">Конверсия +10–15%</td>
+                </tr>
+                <tr>
+                  <td data-label="Инструмент"><strong>Clari</strong></td>
+                  <td data-label="Категория">Revenue Intelligence</td>
+                  <td data-label="Что делает">Прогноз закрытия сделок, авто-напоминания клиенту через встроенных агентов</td>
+                  <td data-label="Эффект">Точность прогноза до 95%</td>
+                </tr>
+                <tr>
+                  <td data-label="Инструмент"><strong>6sense / Demandbase</strong></td>
+                  <td data-label="Категория">ABM / Intent Data</td>
+                  <td data-label="Что делает">Поиск компаний, ищущих ваш продукт, до того как они зашли на сайт</td>
+                  <td data-label="Эффект">+40% квалифицированных лидов (кейс Harley-Davidson)</td>
+                </tr>
+                <tr>
+                  <td data-label="Инструмент"><strong>PROS / Zilliant</strong></td>
+                  <td data-label="Категория">Dynamic Pricing</td>
+                  <td data-label="Что делает">Расчёт оптимальной цены под клиента (B2B) или товар (Retail) в реальном времени</td>
+                  <td data-label="Эффект">Прибыль +2–5%</td>
+                </tr>
+                <tr>
+                  <td data-label="Инструмент"><strong>Salesforce Einstein</strong></td>
+                  <td data-label="Категория">CRM AI</td>
+                  <td data-label="Что делает">Предсказание вероятности закрытия сделок, Next Best Action</td>
+                  <td data-label="Эффект">Рост конверсии и качества пайплайна</td>
+                </tr>
+                <tr>
+                  <td data-label="Инструмент"><strong>Voca.tech / Mango Office</strong></td>
+                  <td data-label="Категория">Speech Analytics RU</td>
+                  <td data-label="Что делает">Российские аналоги для нейросетевой аналитики звонков</td>
+                  <td data-label="Эффект">Контроль скриптов, sentiment-анализ</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 data-num="04">Supply Chain & Demand</h2>
+
+            <div class="col-grid">
+              <div class="col-item">
+                <div class="col-item__kicker">Enterprise Planning</div>
+                <h4>Blue Yonder / o9 Solutions</h4>
+                <p>Лидеры enterprise-планирования. ИИ синхронизирует коммерческие планы с производством и логистикой; в 2026 — полная автономность формирования заказов поставщикам.</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">Forecasting</div>
+                <h4>Amazon Forecast</h4>
+                <p>Глубокие нейросети (CNN/RNN) с учётом сотен внешних факторов: праздники, тренды соцсетей, цены на топливо. Сокращение излишков на 25–30%.</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">ERP-встройка</div>
+                <h4>SAP IBP + Anticipatory AI</h4>
+                <p>Прогноз задержек платежей, сбоев в цепочках поставок, превентивные алерты внутри ERP.</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">Россия</div>
+                <h4>«Цифра», Optimacros, Visiology, Форсайт</h4>
+                <p>Российские платформы для прогноза спроса и сценарного планирования. От 70 тыс. ₽/мес. Адаптированы под сбор данных из множества филиалов.</p>
+              </div>
+            </div>
+
+            <h2 data-num="05">Платформы ML для финансового анализа</h2>
+
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Платформа</th>
+                  <th>Сегмент</th>
+                  <th>Сильная сторона 2026</th>
+                  <th>Типовые сценарии</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Платформа"><strong>SAS Viya</strong></td>
+                  <td data-label="Сегмент">Банки</td>
+                  <td data-label="Сильная сторона">Полная интеграция с облачными ИИ-агентами, авто-комплаенс</td>
+                  <td data-label="Сценарии">Кредитный риск, рыночный риск, операционный риск</td>
+                </tr>
+                <tr>
+                  <td data-label="Платформа"><strong>Upstart</strong></td>
+                  <td data-label="Сегмент">Финтех</td>
+                  <td data-label="Сильная сторона">Замена FICO: тысячи нетрадиционных переменных</td>
+                  <td data-label="Сценарии">Потребительское кредитование, малый бизнес</td>
+                </tr>
+                <tr>
+                  <td data-label="Платформа"><strong>Sentieo (AlphaSense)</strong></td>
+                  <td data-label="Сегмент">Equity research</td>
+                  <td data-label="Сильная сторона">Авто-чтение отчётов, расшифровка звонков инвесторов, скрытые настроения рынка</td>
+                  <td data-label="Сценарии">M&A анализ, конкурентная разведка</td>
+                </tr>
+                <tr>
+                  <td data-label="Платформа"><strong>Kavout</strong></td>
+                  <td data-label="Сегмент">Quant</td>
+                  <td data-label="Сильная сторона">K-Score: deep learning-рейтинг доходности активов</td>
+                  <td data-label="Сценарии">Квантовые стратегии, портфельное управление</td>
+                </tr>
+                <tr>
+                  <td data-label="Платформа"><strong>Anaplan + Polaris Engine</strong></td>
+                  <td data-label="Сегмент">FP&A</td>
+                  <td data-label="Сильная сторона">Предиктивное сценарное планирование (тысячи вариантов бюджета)</td>
+                  <td data-label="Сценарии">Бюджетирование, сценарный анализ</td>
+                </tr>
+                <tr>
+                  <td data-label="Платформа"><strong>Mosaic</strong></td>
+                  <td data-label="Сегмент">Mid-market / финтех</td>
+                  <td data-label="Сильная сторона">Подключение к банку + CRM, прогноз кассовых разрывов на 3 месяца</td>
+                  <td data-label="Сценарии">FP&A для стартапов, средний бизнес</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 data-num="06">Python-стек 2026 для аналитика</h2>
+            <p>
+              К 2026 году стандартный стек сместился в сторону <strong>Agentic
+              AI</strong> (автономных агентов) и <strong>Causal AI</strong>
+              (причинно-следственный анализ): аналитик описывает задачу
+              текстом, а агент сам пишет SQL и строит графики.
+            </p>
+
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Задача</th>
+                  <th>Библиотека</th>
+                  <th>Зачем</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Задача">Сбор и очистка</td>
+                  <td data-label="Библиотека"><strong>Polars</strong></td>
+                  <td data-label="Зачем">~10× быстрее Pandas на больших данных</td>
+                </tr>
+                <tr>
+                  <td data-label="Задача">Интерфейс запросов</td>
+                  <td data-label="Библиотека"><strong>PandasAI + GPT/Claude API</strong></td>
+                  <td data-label="Зачем">Естественный язык как интерфейс к данным</td>
+                </tr>
+                <tr>
+                  <td data-label="Задача">Прогноз спроса</td>
+                  <td data-label="Библиотека"><strong>NeuralProphet · Darts</strong></td>
+                  <td data-label="Зачем">Нейросетевое прогнозирование, сложная сезонность, ансамбли (TFT, N-BEATS, Transformer)</td>
+                </tr>
+                <tr>
+                  <td data-label="Задача">Сегментация / отток</td>
+                  <td data-label="Библиотека"><strong>PyCaret · AutoGluon</strong></td>
+                  <td data-label="Зачем">AutoML на табличных данных, low-code</td>
+                </tr>
+                <tr>
+                  <td data-label="Задача">Causal-анализ</td>
+                  <td data-label="Библиотека"><strong>CausalML (Uber) · DoWhy (Microsoft)</strong></td>
+                  <td data-label="Зачем">«Если поднимем цену на 5% — что реально изменится?»</td>
+                </tr>
+                <tr>
+                  <td data-label="Задача">NLP отзывов</td>
+                  <td data-label="Библиотека"><strong>BERTopic</strong></td>
+                  <td data-label="Зачем">Авто-кластеризация тем в тысячах отзывов</td>
+                </tr>
+                <tr>
+                  <td data-label="Задача">Агенты</td>
+                  <td data-label="Библиотека"><strong>LangChain · CrewAI</strong></td>
+                  <td data-label="Зачем">Команды агентов: парсинг конкурентов → анализ продаж → SWOT</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 data-num="07">Тип внедрения: SaaS, on-premise, гибрид, open source</h2>
+
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Тип</th>
+                  <th>Примеры</th>
+                  <th>Плюсы</th>
+                  <th>Минусы</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Тип"><strong>SaaS</strong></td>
+                  <td data-label="Примеры">Clari, 6sense, Anaplan</td>
+                  <td data-label="Плюсы">Быстрое внедрение, авто-обновления, масштабируемость</td>
+                  <td data-label="Минусы">Зависимость от сети, вопросы безопасности</td>
+                </tr>
+                <tr>
+                  <td data-label="Тип"><strong>On-premise</strong></td>
+                  <td data-label="Примеры">SAS Viya, Tableau Server</td>
+                  <td data-label="Плюсы">Контроль данных, соответствие регуляторам</td>
+                  <td data-label="Минусы">Высокий TCO, сложность поддержки</td>
+                </tr>
+                <tr>
+                  <td data-label="Тип"><strong>Гибрид</strong></td>
+                  <td data-label="Примеры">Microsoft Fabric, Databricks</td>
+                  <td data-label="Плюсы">Баланс безопасности и производительности</td>
+                  <td data-label="Минусы">Сложность интеграции</td>
+                </tr>
+                <tr>
+                  <td data-label="Тип"><strong>Open Source</strong></td>
+                  <td data-label="Примеры">LangChain, PyCaret, Darts</td>
+                  <td data-label="Плюсы">Бесплатно, кастомизация, сообщество</td>
+                  <td data-label="Минусы">Требуют экспертизы in-house</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="info-note">
+              <strong>Стоимость интеграции в РФ:</strong> базовые ИИ-решения — от 15 000 до 300 000 ₽; настройка и обучение — от 10 000 до 100 000 ₽. Для крупных enterprise-проектов бюджет считается через MLOps-команду + лицензии + облако.
+            </div>
+
+          </div>
+          <!-- /TAB 2 -->
+
+          <!-- ========================================================== -->
+          <!-- TAB 3: КЕЙСЫ ВНЕДРЕНИЯ                                       -->
+          <!-- ========================================================== -->
+          <div class="tab-panel" id="tab-cases" role="tabpanel">
+
+            <h2 data-num="01">Глобальные кейсы</h2>
+            <p>
+              Подборка публично описанных внедрений у крупных компаний.
+              Указаны цифры из официальных отчётов и кейс-стади
+              вендоров/консультантов.
+            </p>
+
+            <div class="case-card case-card--global">
+              <div class="case-card__head">
+                <span class="case-card__name">Amazon</span>
+                <span class="case-card__tag">E-commerce · Recommendations</span>
+              </div>
+              <p>Рекомендательная система на базе ИИ для подбора товаров. Анализ истории покупок, просмотров, сезонности.</p>
+              <div class="case-card__result"><strong>До 35%</strong> всей выручки приходится на ИИ-рекомендации.</div>
+            </div>
+
+            <div class="case-card case-card--global">
+              <div class="case-card__head">
+                <span class="case-card__name">Starbucks (Deep Brew)</span>
+                <span class="case-card__tag">Retail · Hyper-personalization</span>
+              </div>
+              <p>ИИ-движок анализирует историю покупок, время суток и погоду для гиперперсонализации предложений в приложении.</p>
+              <div class="case-card__result">Рост продаж через мобильное приложение на <strong>22%</strong> (~$2,1 млрд годовой выручки).</div>
+            </div>
+
+            <div class="case-card case-card--global">
+              <div class="case-card__head">
+                <span class="case-card__name">Vodafone</span>
+                <span class="case-card__tag">Telecom · Sales Planning</span>
+              </div>
+              <p>ИИ-платформа для автоматизации постановки целей продаж и распределения квот по менеджерам.</p>
+              <div class="case-card__result">Ускорение цикла планирования <strong>на 50%</strong>, <strong>90%</strong> уровень автоматизации в распределении квот.</div>
+            </div>
+
+            <div class="case-card case-card--global">
+              <div class="case-card__head">
+                <span class="case-card__name">Lumen</span>
+                <span class="case-card__tag">B2B · Sales Enablement</span>
+              </div>
+              <p>ИИ-помощник для подготовки к встречам: анализ прошлых взаимодействий, новостей и трендов клиента.</p>
+              <div class="case-card__result">Сокращение времени подготовки <strong>с 4 часов до 15 минут</strong>.</div>
+            </div>
+
+            <div class="case-card case-card--global">
+              <div class="case-card__head">
+                <span class="case-card__name">Razorpay</span>
+                <span class="case-card__tag">FinTech · Lead Scoring</span>
+              </div>
+              <p>ML-скоринг лидов на основе профиля компании и поведения. Менеджеры фокусируются на «горячих» контактах.</p>
+              <div class="case-card__result">Рост ежемесячного GMV <strong>на 50%</strong>, сокращение цикла конверсии на месяц.</div>
+            </div>
+
+            <div class="case-card case-card--global">
+              <div class="case-card__head">
+                <span class="case-card__name">Unilever</span>
+                <span class="case-card__tag">FMCG · Supply Chain</span>
+              </div>
+              <p>Синхронизация 20 контрольных башен цепей поставок с помощью ИИ. Оперативная реакция на изменения спроса.</p>
+              <div class="case-card__result">Снижение риска дефицита товаров, единая операционная картина по сети поставщиков.</div>
+            </div>
+
+            <div class="case-card case-card--global">
+              <div class="case-card__head">
+                <span class="case-card__name">Harley-Davidson</span>
+                <span class="case-card__tag">Marketing · Targeting</span>
+              </div>
+              <p>ИИ-платформа для уточнения стратегий таргетинга в digital-маркетинге.</p>
+              <div class="case-card__result">Рост квалифицированных лидов <strong>на 40%</strong>.</div>
+            </div>
+
+            <div class="case-card case-card--global">
+              <div class="case-card__head">
+                <span class="case-card__name">Klarna</span>
+                <span class="case-card__tag">FinTech · GenAI Content</span>
+              </div>
+              <p>Замена ручного производства визуального контента на генеративный ИИ.</p>
+              <div class="case-card__result">Экономия <strong>$1,5 млн</strong> на изображениях за квартал; снижение коммерческих расходов <strong>на $10 млн в год</strong>.</div>
+            </div>
+
+            <div class="case-card case-card--global">
+              <div class="case-card__head">
+                <span class="case-card__name">Activision</span>
+                <span class="case-card__tag">Gaming · Sales AI</span>
+              </div>
+              <p>ИИ-приоритизация взаимодействий менеджеров с клиентами (партнёрский канал).</p>
+              <div class="case-card__result">Рост числа закрытых контрактов на одного представителя.</div>
+            </div>
+
+            <div class="case-card case-card--global">
+              <div class="case-card__head">
+                <span class="case-card__name">Netflix</span>
+                <span class="case-card__tag">Media · Personalization</span>
+              </div>
+              <p>Индивидуальный подбор контента для пользователей на базе модели предпочтений.</p>
+              <div class="case-card__result">Удержание аудитории и рост вовлеченности — ключевые драйверы LTV.</div>
+            </div>
+
+            <h2 data-num="02">Российские кейсы</h2>
+
+            <div class="case-card case-card--ru">
+              <div class="case-card__head">
+                <span class="case-card__name">СберБанк</span>
+                <span class="case-card__tag">Финансы · Скоринг · Process Mining</span>
+              </div>
+              <p>Активное использование ИИ для автоматизации рутинных задач и аналитики. Sber Process Mining находит «бутылочные горлышки» в коммерческом цикле. ИИ-модели оценки контрагентов работают с РСБУ/МСФО, транзакциями, связями.</p>
+              <div class="case-card__result">Снижение затрат <strong>до 40%</strong> в ряде направлений. Кредитные лимиты — с нескольких дней до минут. Ожидаемый эффект ИИ для группы — <strong>550 млрд ₽</strong>.</div>
+            </div>
+
+            <div class="case-card case-card--ru">
+              <div class="case-card__head">
+                <span class="case-card__name">МегаФон, Билайн</span>
+                <span class="case-card__tag">Telecom · Customer AI</span>
+              </div>
+              <p>ИИ для оптимизации бизнес-процессов, аналитики и автоматизации работы с клиентами.</p>
+              <div class="case-card__result">Снижение операционных затрат, повышение эффективности взаимодействия с клиентами.</div>
+            </div>
+
+            <div class="case-card case-card--ru">
+              <div class="case-card__head">
+                <span class="case-card__name">Промышленные холдинги РФ</span>
+                <span class="case-card__tag">Manufacturing · Spend Analysis</span>
+              </div>
+              <p>Нейросети для выявления аномалий в закупках: сравнение цен по счетам-фактурам с рыночными медианами и историческими данными.</p>
+              <div class="case-card__result">Выявление «серых» закупок и дублирующих платежей: <strong>3–5% экономии OPEX</strong>.</div>
+            </div>
+
+            <h2 data-num="03">Типовые кейсы по функциям</h2>
+            <p>
+              Помимо именных кейсов, в 2025–2026 годах сформировался набор
+              «типовых» сценариев с устойчивыми эффектами — на них опираются
+              расчёты ROI при пилотах.
+            </p>
+
+            <div class="case-card">
+              <div class="case-card__head">
+                <span class="case-card__name">Умный скоринг лидов (FinTech / B2B)</span>
+                <span class="case-card__tag">Sales Ops</span>
+              </div>
+              <p>ML-модели (Gradient Boosting) + GenAI для анализа профиля клиента в соцсетях и СМИ. ИИ отсеивает «холодные» контакты, приоритизируя готовых к покупке.</p>
+              <div class="case-card__result">Рост конверсии из лида в сделку <strong>на 15–20%</strong>.</div>
+            </div>
+
+            <div class="case-card">
+              <div class="case-card__head">
+                <span class="case-card__name">AI-коучинг звонков (Ритейл / Телеком)</span>
+                <span class="case-card__tag">Sales Ops</span>
+              </div>
+              <p>Speech-to-Text + LLM для анализа тональности и соблюдения скриптов. Real-time подсказки менеджеру.</p>
+              <div class="case-card__result">Сокращение цикла обучения новых сотрудников <strong>на 30%</strong>, рост допродаж <strong>на 12%</strong>.</div>
+            </div>
+
+            <div class="case-card">
+              <div class="case-card__head">
+                <span class="case-card__name">Динамическое ценообразование (E-commerce / Fashion)</span>
+                <span class="case-card__tag">Pricing</span>
+              </div>
+              <p>Reinforcement Learning. Цены меняются по эластичности, ценам конкурентов и складским остаткам, без глубоких скидок.</p>
+              <div class="case-card__result">Увеличение валовой прибыли <strong>на 7–10%</strong>.</div>
+            </div>
+
+            <div class="case-card">
+              <div class="case-card__head">
+                <span class="case-card__name">Генерация персонализированного контента (Travel / Lifestyle)</span>
+                <span class="case-card__tag">Marketing</span>
+              </div>
+              <p>Мультимодальные модели (текст + фото). Тысячи вариантов баннеров и текстов под узкие сегменты.</p>
+              <div class="case-card__result">Снижение CAC <strong>на 25%</strong>.</div>
+            </div>
+
+            <div class="case-card">
+              <div class="case-card__head">
+                <span class="case-card__name">Прогнозирование спроса (FMCG / Производство)</span>
+                <span class="case-card__tag">Planning</span>
+              </div>
+              <p>Time-series forecasting с учётом внешних данных (погода, праздники, логистические задержки).</p>
+              <div class="case-card__result">Снижение out-of-stock <strong>на 15%</strong>, сокращение избыточных запасов <strong>на 20%</strong>.</div>
+            </div>
+
+            <div class="case-card">
+              <div class="case-card__head">
+                <span class="case-card__name">Прогноз Cash Flow (крупный ритейлер)</span>
+                <span class="case-card__tag">Treasury · FP&A</span>
+              </div>
+              <p>ML-модель прогноза денежного потока: платёжная дисциплина контрагентов, графики отгрузок, сезонность.</p>
+              <div class="case-card__result">Точность прогноза остатков на счетах выросла <strong>до 95%</strong>, снижен объём «замороженных» средств.</div>
+            </div>
+
+            <div class="case-card">
+              <div class="case-card__head">
+                <span class="case-card__name">Прогноз оттока B2B (Logistics / SaaS)</span>
+                <span class="case-card__tag">Retention</span>
+              </div>
+              <p>Random Forest на 50+ факторах (частота обращений, задержки оплат, тональность писем). Менеджер получает список «красных» клиентов и рекомендации бонуса.</p>
+              <div class="case-card__result">Снижение Churn <strong>на 22%</strong>, рост LTV <strong>на 18%</strong>, <strong>ROI 300%</strong> в первый год.</div>
+            </div>
+
+          </div>
+          <!-- /TAB 3 -->
+
+          <!-- ========================================================== -->
+          <!-- TAB 4: ROI И МЕТРИКИ                                         -->
+          <!-- ========================================================== -->
+          <div class="tab-panel" id="tab-roi" role="tabpanel">
+
+            <h2 data-num="01">Бенчмарки ROI</h2>
+            <p>
+              Эффективность ИИ-проектов оценивается через сочетание ROI,
+              операционных KPI и качества моделей. Успешные enterprise-кейсы
+              окупаются за <strong>6–12 месяцев</strong>; в среднем по
+              рынку — 2–4 года, только 13% проектов окупаются менее чем за
+              год.
+            </p>
+
+            <div class="metric-grid">
+              <div class="metric-card">
+                <div class="metric-card__value">$3,70</div>
+                <div class="metric-card__label">Средний возврат на $1 вложений в ML в коммерции (2025–2026)</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-card__value">300%+</div>
+                <div class="metric-card__label">ROI у наиболее успешных компаний за первый год</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-card__value">17,3%</div>
+                <div class="metric-card__label">Средний прирост ROI в продажах от внедрения ML (McKinsey, Deloitte)</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-card__value">6–12 мес</div>
+                <div class="metric-card__label">Срок окупаемости успешных enterprise-проектов</div>
+              </div>
+            </div>
+
+            <h2 data-num="02">Бенчмарки по отраслям</h2>
+
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Отрасль</th>
+                  <th>Прирост ROI от внедрения ML</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td data-label="Отрасль">Финансовые услуги</td><td data-label="ROI"><strong>19,8%</strong></td></tr>
+                <tr><td data-label="Отрасль">Ритейл / E-commerce</td><td data-label="ROI"><strong>18,1%</strong></td></tr>
+                <tr><td data-label="Отрасль">B2B-технологии</td><td data-label="ROI"><strong>16,4%</strong></td></tr>
+                <tr><td data-label="Отрасль">Средний показатель</td><td data-label="ROI"><strong>17,3%</strong></td></tr>
+              </tbody>
+            </table>
+
+            <h2 data-num="03">Эффект по направлениям</h2>
+
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Технология</th>
+                  <th>Сфера</th>
+                  <th>Ожидаемый эффект</th>
+                  <th>Срок окупаемости</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Технология"><strong>GenAI</strong></td>
+                  <td data-label="Сфера">Маркетинг и поддержка</td>
+                  <td data-label="Эффект">Снижение затрат на контент <strong>40–60%</strong></td>
+                  <td data-label="Окупаемость">3–6 мес</td>
+                </tr>
+                <tr>
+                  <td data-label="Технология"><strong>ML Models</strong></td>
+                  <td data-label="Сфера">Ценообразование и стоки</td>
+                  <td data-label="Эффект">Рост маржинальности <strong>5–12%</strong></td>
+                  <td data-label="Окупаемость">4–6 мес</td>
+                </tr>
+                <tr>
+                  <td data-label="Технология"><strong>AI Agents</strong></td>
+                  <td data-label="Сфера">Продажи и логистика</td>
+                  <td data-label="Эффект">Сокращение цикла сделки <strong>на 25%</strong></td>
+                  <td data-label="Окупаемость">5–8 мес</td>
+                </tr>
+                <tr>
+                  <td data-label="Технология"><strong>Computer Vision</strong></td>
+                  <td data-label="Сфера">Ритейл (мониторинг полок)</td>
+                  <td data-label="Эффект">Снижение out-of-stock <strong>на 15%</strong></td>
+                  <td data-label="Окупаемость">6–9 мес</td>
+                </tr>
+                <tr>
+                  <td data-label="Технология"><strong>Скоринг лидов</strong></td>
+                  <td data-label="Сфера">B2B-продажи</td>
+                  <td data-label="Эффект">+15–20% эффективности сейлзов</td>
+                  <td data-label="Окупаемость">3–6 мес</td>
+                </tr>
+                <tr>
+                  <td data-label="Технология"><strong>Cross-sell / Up-sell</strong></td>
+                  <td data-label="Сфера">Retail · B2C</td>
+                  <td data-label="Эффект">+10–15% среднего чека</td>
+                  <td data-label="Окупаемость">5–8 мес</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 data-num="04">Ключевые KPI</h2>
+
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Коммерческая функция</th>
+                  <th>Метрика</th>
+                  <th>Средний эффект</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td data-label="Функция">B2B-продажи</td><td data-label="Метрика">Время на подготовку к встрече</td><td data-label="Эффект">Сокращение <strong>на 50%</strong></td></tr>
+                <tr><td data-label="Функция">Ритейл</td><td data-label="Метрика">Точность прогноза спроса</td><td data-label="Эффект">Повышение <strong>на 15–25%</strong></td></tr>
+                <tr><td data-label="Функция">Маркетинг</td><td data-label="Метрика">CTR кампаний</td><td data-label="Эффект">Рост <strong>в 1,5–2 раза</strong></td></tr>
+                <tr><td data-label="Функция">Клиентский сервис</td><td data-label="Метрика">Стоимость обработки тикета</td><td data-label="Эффект">Снижение <strong>на 40%</strong></td></tr>
+                <tr><td data-label="Функция">Финансы</td><td data-label="Метрика">Time-to-Report (закрытие периода)</td><td data-label="Эффект">Сокращение <strong>на 30–40%</strong></td></tr>
+                <tr><td data-label="Функция">Аналитика</td><td data-label="Метрика">Time-to-Insight (TTI)</td><td data-label="Эффект">Сокращение <strong>на 50–70%</strong></td></tr>
+                <tr><td data-label="Функция">B2B-сейлз</td><td data-label="Метрика">Выполнение квоты продаж</td><td data-label="Эффект">Рост вероятности в <strong>3,7 раза</strong></td></tr>
+                <tr><td data-label="Функция">Средний чек (AOV)</td><td data-label="Метрика">AI-консультанты</td><td data-label="Эффект">Увеличение <strong>на 29%</strong></td></tr>
+              </tbody>
+            </table>
+
+            <h2 data-num="05">Формула ROI и оценка экономии</h2>
+
+            <div class="info-note">
+              <strong>ROI</strong> = (Совокупная ценность от ИИ − Затраты на внедрение) / Затраты на внедрение × 100%
+            </div>
+
+            <div class="col-grid">
+              <div class="col-item">
+                <div class="col-item__kicker">Ценность (Gains)</div>
+                <h4>Что входит в числитель</h4>
+                <p>Прямая экономия трудозатрат; прирост выручки (CR, AOV, снижение Churn); предотвращённые потери (точность прогноза спроса, оптимизация остатков).</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">Затраты (Costs)</div>
+                <h4>Что входит в знаменатель</h4>
+                <p>Инфраструктура (compute, облако, лицензии); персонал (DS-команда, обучение); данные (сбор, очистка, разметка).</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">Time savings</div>
+                <h4>FTE-формула экономии</h4>
+                <p>Σ(Часы<sub>до</sub> − Часы<sub>после</sub>) × Ставка/час × 1,3 (налоги/накладные). Пример: 5 аналитиков, экономия 36 ч/нед × $25/ч ≈ <strong>$4 680/мес</strong> только на ФОТ.</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">Технические метрики</div>
+                <h4>Качество модели</h4>
+                <p>Accuracy / Precision / Recall · RMSE / MAE для прогнозов · F1-score в антифроде · Data Drift · Model Latency для real-time CRM-рекомендаций.</p>
+              </div>
+            </div>
+
+            <h2 data-num="06">Матрица приоритизации KPI по этапам</h2>
+
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Этап внедрения</th>
+                  <th>Основной KPI</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td data-label="Этап"><strong>Пилот (PoC)</strong></td><td data-label="KPI">Точность модели (Precision) и Time-to-Insight</td></tr>
+                <tr><td data-label="Этап"><strong>Масштабирование</strong></td><td data-label="KPI">FTE Savings и Конверсия в продажи</td></tr>
+                <tr><td data-label="Этап"><strong>Зрелость</strong></td><td data-label="KPI">Incremental Lift и ROI проекта</td></tr>
+              </tbody>
+            </table>
+
+            <h2 data-num="07">Барьеры и лучшие практики</h2>
+
+            <div class="col-grid">
+              <div class="col-item">
+                <div class="col-item__kicker">Барьер</div>
+                <h4>«Грязные» данные</h4>
+                <p>В 1C / ERP / Excel одни и те же статьи называются по-разному. Решается Data Governance и единым хранилищем (SSOT). До 80% проектов спотыкаются именно здесь.</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">Барьер</div>
+                <h4>«Чёрный ящик»</h4>
+                <p>Финансистам важно понимать, почему модель выдала такой прогноз. Лекарство — XAI (SHAP, LIME) и интерпретация в текстовом виде.</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">Барьер</div>
+                <h4>Утечка конфиденциальных данных</h4>
+                <p>Риск передачи финпоказателей во внешние LLM. Решается локальными моделями внутри контура (YandexGPT, GigaChat, SLM, on-premise).</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">Best practice</div>
+                <h4>Оценивать в деньгах, а не в точности</h4>
+                <p>5% ошибки прогноза, снижающей складские остатки на 10 млн ₽ — это успех. A/B-тесты «по старинке vs ML» дают реальный KPI.</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">Best practice</div>
+                <h4>Data-centric AI</h4>
+                <p>80% времени — на Feature Engineering. Простая регрессия на чистых данных бьёт нейросеть на «грязных».</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">Best practice</div>
+                <h4>MLOps и мониторинг Drift</h4>
+                <p>Модель «протухает». Авто-переобучение при падении точности ниже порога + алерты при сдвиге данных (пандемия, новые конкуренты).</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">Best practice</div>
+                <h4>Next Best Action в интерфейсе</h4>
+                <p>Выводы ML — прямо в карточке клиента CRM. «Не заказывал 2 недели. Churn 70%. Предложите бонус X».</p>
+              </div>
+              <div class="col-item">
+                <div class="col-item__kicker">Best practice</div>
+                <h4>Узкий кейс и Baseline</h4>
+                <p>Не «улучшить продажи вообще», а «сократить отток B2B на 5%». ML должен быть значимо лучше простых методов (Excel, средние).</p>
+              </div>
+            </div>
+
+          </div>
+          <!-- /TAB 4 -->
+
+          <hr style="margin: 48px 0 24px; border: 0; border-top: 1px solid var(--line);" />
+
+          <div class="sources">
+            <strong>Источники.</strong>
+            <ul>
+              <li><a href="https://yakovpartners.ru/publications/ai-2025/" target="_blank" rel="noopener">Яков и Партнёры — Внедрение ИИ до 13 трлн ₽ к 2030</a></li>
+              <li><a href="https://incomand.ru/blog/-/blogs/rus_ai_market_2025" target="_blank" rel="noopener">Incomand — Рынок Big Data и ИИ в России</a></li>
+              <li><a href="https://www.marketsandmarkets.com/Market-Reports/ai-in-finance-market-90552286.html" target="_blank" rel="noopener">MarketsandMarkets — AI in Finance Market</a></li>
+              <li><a href="https://www.gartner.com/en/newsroom/press-releases/2025-09-10-gartner-hype-cycle-for-ai-in-finance-identifies-three-near-term-focus-areas-for-cfos" target="_blank" rel="noopener">Gartner — Hype Cycle for AI in Finance 2025</a></li>
+              <li><a href="https://www.gartner.com/en/documents/6802734" target="_blank" rel="noopener">Gartner — Magic Quadrant for Data Science & ML 2025</a></li>
+              <li><a href="https://d-economy.ru/news/ano-cje-vypustila-analiticheskij-otchet-budushhee-iskusstvennogo-intellekta/" target="_blank" rel="noopener">АНО ЦЭ — «Будущее искусственного интеллекта»</a></li>
+              <li><a href="https://airassvet.ru/articles/effektivnost-iskusstvennogo-intellekta-v-rossiyskom-biznese-2025-2026-analiticheskiy-otchet-o-7-klyuchevyh-stsenariyah-metrikah-roi-i-strategiyah-vnedreniya" target="_blank" rel="noopener">АйРассвет — Эффективность ИИ в российском бизнесе 2025–2026</a></li>
+              <li><a href="https://raexpert.ru/researches/banks/bank_it_2026/" target="_blank" rel="noopener">Эксперт РА — IT-расходы банков 2024–2026</a></li>
+              <li><a href="https://kpmg.com/xx/en/our-insights/ai-and-technology/kpmg-global-ai-in-finance-report.html" target="_blank" rel="noopener">KPMG — Global AI in Finance Report</a></li>
+              <li><a href="https://www.deloitte.com/global/en/industries/investment-management/perspectives/tech-trends.html" target="_blank" rel="noopener">Deloitte — Tech Trends 2025</a></li>
+              <li><a href="https://hai.stanford.edu/ai-index/2025-ai-index-report" target="_blank" rel="noopener">Stanford HAI — AI Index Report 2025</a></li>
+              <li><a href="https://ict.moscow/analytics/raskhody-biznesa-i-gosorganizatsii-na-ii/" target="_blank" rel="noopener">ICT.Moscow / FinExpertiza — Расходы бизнеса на ИИ</a></li>
+              <li><a href="https://issek.hse.ru/news/1091369132.html" target="_blank" rel="noopener">АНО ЦЭ — Исследование зрелости ИИ в бизнесе</a></li>
+              <li><a href="https://blogs.nvidia.com/blog/ai-in-retail-cpg-survey-2025/" target="_blank" rel="noopener">NVIDIA — AI in Retail Survey 2025</a></li>
+              <li><a href="https://www.comnews.ru/content/242874/2025-12-11/2025-w50/1008/effekt-germana-grefa-550-mlrd-ozhidaniya" target="_blank" rel="noopener">ComNews — Эффект Сбера: 550 млрд ₽</a></li>
+              <li><a href="https://www.retail.ru/cases/rgm-revolyutsiya-v-fmcg-menyaem-pravila-v-upravlenii-promokampaniyami-dlya-maksimizatsii-roi/" target="_blank" rel="noopener">Retail.ru — RGM-революция в FMCG: ROI промо</a></li>
+              <li><a href="https://www.tadviser.ru/index.php/Статья:Искусственный_интеллект_(рынок_России)" target="_blank" rel="noopener">TAdviser — Рынок ИИ в России</a></li>
+              <li><a href="https://vc.ru/ai/2282231-stoimost-vnedreniya-ii-v-biznes" target="_blank" rel="noopener">vc.ru — Стоимость внедрения ИИ в бизнес</a></li>
+              <li><a href="https://habr.com/ru/companies/sberbank/articles/835786/" target="_blank" rel="noopener">Habr (Сбер) — Кейсы внедрения ИИ</a></li>
+              <li><a href="https://developers.sber.ru/help/gigachat-api/business-analytics" target="_blank" rel="noopener">Sber Developers — Бизнес-аналитика и Process Mining</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="cta">
+        <div class="container">
+          <div class="kicker" style="margin-bottom: 18px;">Подобный обзор под вашу отрасль</div>
+          <h2 class="cta__title">Нужен материал под совет директоров или CFO?</h2>
+          <p class="cta__lead">
+            Готовлю такие обзоры под конкретного заказчика за 1–3 недели — как
+            самостоятельный артефакт под стратегическую сессию или как часть
+            аудита готовности к ИИ. Подбираем релевантные кейсы, метрики и
+            стек технологий именно под вашу отрасль и масштаб.
+          </p>
+          <div class="hero__cta" style="justify-content: center;">
+            <a href="../../#contact" class="btn btn--gradient">
+              Обсудить обзор
+              <span class="btn__arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="index.html" class="btn btn--ghost">Все публикации</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div>© 2026 · Карпов Николай</div>
+        <div>
+          <a href="../methodology.html">Методология</a>
+          ·
+          <a href="index.html">Публикации</a>
+          ·
+          <a href="../../">Главная</a>
+        </div>
+      </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" type="button" aria-label="Наверх">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 15l6-6 6 6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+
+    <script src="../../assets/js/main.js" defer></script>
+    <script>
+      (function () {
+        const tabs = document.querySelectorAll('.tab-switch__btn');
+        const panels = document.querySelectorAll('.tab-panel');
+        const valid = new Set(['market', 'tech', 'cases', 'roi']);
+        function activate(name) {
+          tabs.forEach(t => {
+            const active = t.dataset.tab === name;
+            t.classList.toggle('is-active', active);
+            t.setAttribute('aria-selected', active ? 'true' : 'false');
+          });
+          panels.forEach(p => p.classList.toggle('is-active', p.id === 'tab-' + name));
+          if (history.replaceState) {
+            history.replaceState(null, '', '#' + name);
+          }
+        }
+        tabs.forEach(t => t.addEventListener('click', () => activate(t.dataset.tab)));
+        const hash = (location.hash || '').replace('#', '');
+        if (valid.has(hash)) activate(hash);
+      })();
+    </script>
+  </body>
+</html>

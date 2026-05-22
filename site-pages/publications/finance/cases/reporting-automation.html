@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Автоматизация отчётности и документооборота с помощью ИИ</title>
+  <meta name="description" content="Continuous Close, обработка AP/AR, консолидация данных, нарративная отчётность LLM. Кейсы Logitech, Superdry, Valcon, Сбер, Альфа-Банк. Метрики до/после и дорожная карта." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../production/css/site.css" />
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(109350250, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109350250" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+  <a class="skip-link" href="#main">К основному содержанию</a>
+  <header class="site-header">
+    <div class="site-header__bar">
+      <a class="site-logo" href="../index.html">ИИ в финансах</a>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-nav-wrap" aria-label="Открыть меню">
+        <span class="visually-hidden">Меню</span>
+        <span class="menu-toggle__icon" aria-hidden="true"></span>
+      </button>
+      <div id="site-nav-wrap" class="site-nav-wrap">
+        <ul class="site-nav" aria-label="Разделы и кейсы">
+          <li><a href="../index.html">Главная</a></li>
+          <li><a href="../../index.html">Все публикации</a></li>
+          <li class="site-nav__group">
+            <a href="../index.html#sec-cases" class="site-nav__cases-trigger">Кейсы</a>
+            <ul class="site-nav__cases" aria-label="Список кейсов">
+              <li><a href="overview.html">Обзор: ИИ в финансах</a></li>
+              <li><a href="reporting-automation.html" aria-current="page">Автоматизация отчётности</a></li>
+              <li><a href="specialized-finance.html">Специализированные процессы</a></li>
+              <li><a href="ibm-watson.html">IBM watsonx</a></li>
+              <li><a href="sap-business-ai.html">SAP Business AI · Joule</a></li>
+              <li><a href="oracle-ai.html">Oracle AI</a></li>
+              <li><a href="workday-prism.html">Workday Prism AI</a></li>
+              <li><a href="anaplan-planiq.html">Anaplan PlanIQ</a></li>
+              <li><a href="blackline.html">BlackLine</a></li>
+              <li><a href="mckinsey-quantumblack.html">McKinsey QuantumBlack</a></li>
+              <li><a href="deloitte.html">Deloitte AI</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="site-main site-main--case site-main--case-wide">
+    <article class="case-page case-page--wide">
+      <p class="case-back"><a href="../index.html">← Кейсы</a></p>
+
+      <header class="case-hero">
+        <div class="case-hero__logo" aria-hidden="true">
+          <span class="case-card__logo--initials" style="font-size:1.4rem">05</span>
+        </div>
+        <div>
+          <h1 class="case-hero__title">Автоматизация отчётности и документооборота</h1>
+          <p class="case-hero__subtitle">Continuous Close, обработка AP/AR, OCR+NLP с точностью 98%, консолидация данных, нарративные отчёты от LLM. Кейсы Logitech, Superdry, Valcon, Сбер, Альфа-Банк, DataSnipper, MindBridge.</p>
+        </div>
+      </header>
+
+      <section class="case-facts-media" aria-label="Кратко о кейсе">
+        <div class="case-facts-media__grid">
+          <ul class="case-facts">
+            <li><span class="label">Тип материала</span>Обзорный кейс по направлению</li>
+            <li><span class="label">Фокус</span>Отчётность, AP/AR, аудит, консолидация, нарративные отчёты</li>
+            <li><span class="label">Главный сдвиг</span>От ежемесячного «закрытия книги» к Continuous Close в реальном времени</li>
+            <li><span class="label">Ускорение закрытия</span>Прогноз 2026: время закрытия периодов сокращается на <strong>30%</strong></li>
+            <li><span class="label">Точность OCR/NLP</span>94–98% против 70–85% у классического OCR</li>
+            <li><span class="label">Срок окупаемости</span>3–6 месяцев для AP Automation в enterprise</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-section case-section--story-grid">
+        <div class="case-story-grid" role="group" aria-label="Возможности ИИ, обработка документов, консолидация, тренд Chat with Data">
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Ключевые возможности ИИ</h2>
+            <div class="case-story-card__body">
+              <ul>
+                <li><strong>Распознавание и классификация</strong> — счета, акты, чеки с точностью до 98%; автораспределение по категориям.</li>
+                <li><strong>Continuous Close</strong> — автосверка банковских выписок и транзакций в реальном времени.</li>
+                <li><strong>Variance Analysis</strong> — текстовые пояснения к отклонениям и аномалиям.</li>
+                <li><strong>Narrative Reports</strong> — LLM-резюме для совета на основе графиков и таблиц.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Обработка документов (AP/AR)</h2>
+            <div class="case-story-card__body">
+              <p><strong>Accounts Payable.</strong> Logitech и Superdry достигли <strong>90%</strong> touchless processing; Billerud и Adyen снизили стоимость обработки; Valcon на Microsoft Fabric — сверка с <strong>3 недель до секунд</strong>.</p>
+              <p><strong>Accounts Receivable.</strong> Serrala и BlackLine прогнозируют просрочки; Quadient и HighRadius автоматизируют cash application; Quadient — GenAI-ответы на email.</p>
+              <p><strong>Банки.</strong> Сбербанк — ИИ принимает решения по <strong>80%+</strong> кредитов малого/микробизнеса; Альфа-Банк — ML для анализа документов.</p>
+            </div>
+          </article>
+
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Консолидация и Smart Mapping</h2>
+            <div class="case-story-card__body">
+              <p><strong>Smart Mapping.</strong> NLP анализирует названия статей: «Rent» в одном филиале и «Аренда офиса» в другом ИИ относит к одной группе. Точность авто-сопоставления — <strong>95%+</strong>.</p>
+              <p><strong>Внутригрупповые обороты.</strong> BlackLine, OneStream, Oracle Cloud EPM мгновенно сопоставляют дебиторку одной «дочки» с кредиторкой другой и подсвечивают расхождения.</p>
+              <p><strong>Continuous Consolidation.</strong> Pigment и Anaplan через API забирают данные из 1C, SAP, Oracle и обновляют сводный дашборд ежедневно.</p>
+            </div>
+          </article>
+
+          <article class="case-story-card">
+            <h2 class="case-story-card__title case-section__title">Chat with Data и сводки</h2>
+            <div class="case-story-card__body">
+              <p>Тренд 2025–2026: CFO может не искать цифру в таблице, а спросить чат-бота: <em>«Какая маржинальность по категории А была в прошлом квартале и почему она ниже средней?»</em> — ИИ соберёт сводку из разных вкладок мгновенно.</p>
+              <p>ИИ автоматически распределяет общие расходы по ЦФО на основе реального потребления — точный расчёт себестоимости.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-section--results">
+        <h2 class="case-section__title">Сравнение «до» и «после»</h2>
+        <div class="case-results-grid">
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Стоимость и точность</h3></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Обработка счёта</span>$12–15 → <strong>$2–4</strong></li>
+              <li><span class="case-result-card__label">Точность распознавания</span>OCR 70–85% → <strong>AI 94–98%</strong></li>
+              <li><span class="case-result-card__label">Срок закрытия</span>10–15 дней → <strong>1–3 дня</strong></li>
+            </ul>
+          </article>
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Именные результаты</h3></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">Logitech, Superdry</span><strong>90%</strong> touchless processing</li>
+              <li><span class="case-result-card__label">Valcon</span>3 недели → <strong>секунды</strong> (MS Fabric)</li>
+              <li><span class="case-result-card__label">Сбербанк</span><strong>80%+</strong> решений по кредитам без человека</li>
+              <li><span class="case-result-card__label">Время обработки</span>−<strong>70–80%</strong>; ошибки −<strong>80%</strong></li>
+            </ul>
+          </article>
+          <article class="case-result-card">
+            <header class="case-result-card__head"><h3 class="case-result-card__title">Топ-3 решения для консолидации (2026)</h3></header>
+            <ul class="case-result-card__list">
+              <li><span class="case-result-card__label">№1 · Глобал</span><strong>Workiva</strong> — стандарт для публичных компаний, LLM-пояснения к формам.</li>
+              <li><span class="case-result-card__label">№2 · SMB</span><strong>Datarails</strong> — Excel-first; ИИ-коннекторы поверх разрозненных файлов.</li>
+              <li><span class="case-result-card__label">№3 · РФ</span><strong>Optimacros</strong> — сложная консолидация и сценарное планирование с предиктивами.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-section case-sources">
+        <h2>Источники</h2>
+        <ol>
+          <li><a href="https://valcon.com/case-studies/real-time-ai-solution-to-improve-invoice-processing-with-microsoft-fabric/">Valcon — Real-time AI invoice processing (Microsoft Fabric)</a><span class="case-sources__tag">кейс</span></li>
+          <li><a href="https://www.forrester.com/blogs/top-ai-use-cases-for-accounts-payable-automation-in-2025/">Forrester — AI Use Cases for AP Automation 2025</a><span class="case-sources__tag">тренды</span></li>
+          <li><a href="https://www.forrester.com/blogs/top-ai-use-cases-for-accounts-receivable-automation-in-2025/">Forrester — AI Use Cases for AR Automation 2025</a><span class="case-sources__tag">тренды</span></li>
+          <li><a href="https://energent.ai/use-cases/en/compare/the-best-ai-financial-reporting-automation">Energent.ai — AI Financial Reporting Automation</a><span class="case-sources__tag">сравнение</span></li>
+          <li><a href="https://www.drivetrain.ai/solutions/ai-financial-reporting-software-for-businesses">Drivetrain.ai — AI Financial Reporting Software</a><span class="case-sources__tag">обзор</span></li>
+          <li><a href="https://www.datasnipper.com/resources/top-artificial-intelligence-tools-financial-service-professionals">DataSnipper — AI Tools for Financial Professionals</a><span class="case-sources__tag">инструменты</span></li>
+          <li><a href="https://www.mindbridge.ai">MindBridge — AI Audit</a><span class="case-sources__tag">вендор</span></li>
+          <li><a href="https://www.vedomosti.ru/kapital/trends/articles/2024/04/14/1031785-kak-banki-ispolzuyut-iskusstvennii-intellekt-v-obsluzhivanii-biznesa">Ведомости — Как банки используют ИИ</a><span class="case-sources__tag">RU</span></li>
+        </ol>
+      </section>
+
+      <section class="case-section case-section--relevance">
+        <h2 class="case-section__title">Точка старта для холдинга</h2>
+        <p>
+          Рекомендуемая первая точка — <strong class="case-pipeline">AP Automation</strong>: окупается за 3–6 месяцев и требует меньше интеграционных работ, чем консолидация. Следующий шаг — ИИ-мэппинг для сведения данных из разных систем, затем Continuous Close. Те же паттерны переносятся в логистику (сверка отгрузок и платежей), производство (учёт затрат и норм расхода), розницу (сверка кассы и эквайринга).
+        </p>
+      </section>
+
+      <div class="case-actions">
+        <a class="btn" href="../index.html">К списку кейсов</a>
+        <a class="btn btn--secondary" href="blackline.html">Кейс BlackLine</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <nav aria-label="Нижняя навигация">
+        <a href="../index.html">Главная раздела</a>
+        <a href="../../index.html">Все публикации</a>
+      </nav>
+      <p class="site-footer__meta">Подготовил обзор: Карпов Николай. 2026</p>
+    </div>
+  </footer>
+  <script src="../../production/js/site.js" defer></script>
+</body>
+</html>

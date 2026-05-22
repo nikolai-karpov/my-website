@@ -18,7 +18,25 @@
     />
     <link rel="stylesheet" href="../../assets/css/style.css" />
     <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
-  </head>
+  
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(109350250, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109350250" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
 
   <body>
     <header class="site-header" role="banner">
@@ -31,7 +49,7 @@
           <a href="../../#approach">Подход</a>
           <a href="../../#cases">Кейсы</a>
           <a href="../methodology.html">Методология</a>
-          <a href="index.html" class="is-active">Публикации</a>
+          <a href="index.html" class="is-active">Обзоры</a>
           <a href="../../#security">ИБ</a>
           <a href="../../#contact">Контакт</a>
           <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">
@@ -84,6 +102,41 @@
         </header>
 
         <div class="cases-list">
+          <a href="llm-research.html" class="case-row">
+            <div class="case-row__tag">LLM · инфраструктура</div>
+            <div class="case-row__title">LLM для AI-агентов: подписки и PAYG API (май 2026)</div>
+            <div class="case-row__desc">Какие подписки на LLM разрешено использовать в OpenClaw, OpenCode, Hermes и других агентах; самые дешёвые PAYG API за 1M токенов; тренды форумов и рекомендуемая router-конфигурация.</div>
+            <div class="case-row__arrow" aria-hidden="true">→</div>
+          </a>
+
+          <a href="production/index.html" class="case-row">
+            <div class="case-row__tag">Производство · обзор</div>
+            <div class="case-row__title">Нейросети и ИИ на производстве: обзор кейсов и метрик (апрель 2026)</div>
+            <div class="case-row__desc">Публичные внедрения у крупных производителей: компьютерное зрение на линии, прогнозное обслуживание, цифровой двойник, генеративный ИИ в OT-инженерии, планирование от спроса. 20 примеров, карта сценариев, выводы и типовые ошибки, презентация A4 для печати.</div>
+            <div class="case-row__arrow" aria-hidden="true">→</div>
+          </a>
+
+          <a href="commercial-ai.html" class="case-row">
+            <div class="case-row__tag">Коммерческий анализ · ROI</div>
+            <div class="case-row__title">ИИ в коммерческом анализе: кейсы, инструменты, метрики ROI (март 2026)</div>
+            <div class="case-row__desc">Рынок 2024–2026 и шесть трендов (Agentic AI, Autonomous Finance, XAI), отраслевые сценарии (производство, ритейл, B2B, холдинги, enterprise), стек технологий (GenAI/ML/Agentic, Python 2026, SaaS), глобальные и российские кейсы (Amazon, Starbucks, Klarna, Vodafone, Сбер) и бенчмарки ROI с формулами расчёта.</div>
+            <div class="case-row__arrow" aria-hidden="true">→</div>
+          </a>
+
+          <a href="finance/index.html" class="case-row">
+            <div class="case-row__tag">Финансы · управленческий учёт</div>
+            <div class="case-row__title">ИИ в финансах и управленческом учёте: мировые кейсы, ROI, дорожная карта (февраль 2026)</div>
+            <div class="case-row__desc">Хаб раздела: аналитический обзор для CFO и службы управленческого учёта (контекст 2024–2026, бенчмарки ROI 150–300%, поэтапная дорожная карта от Cash Flow Forecasting до Continuous Close) + 11 детальных кейсов на отдельных страницах — три обзорных направления и восемь вендорских платформ (IBM watsonx, SAP Joule, Oracle AI, Workday Prism, Anaplan PlanIQ, BlackLine, McKinsey QuantumBlack, Deloitte). Именные кейсы: JPMorgan COiN, Microsoft, AmEx, Siemens, Сбер, NatWest, Bradesco, Accenture, Aon, Netflix, Coca-Cola, Hyatt, eBay.</div>
+            <div class="case-row__arrow" aria-hidden="true">→</div>
+          </a>
+
+          <a href="rd-recipes/index.html" class="case-row">
+            <div class="case-row__tag">R&D · рецептуры и составы</div>
+            <div class="case-row__title">ИИ в R&D рецептур: McCormick, Bridgestone, NotCo — три мировых эталона</div>
+            <div class="case-row__desc">Платформа IBM ONE (AI for Product Composition, 1 млрд+ точек данных), Enthought Edge у Bridgestone (Active Learning + Gaussian Processes, −30–50% времени) и NotCo Giuseppe (молекулярный подбор на RDKit/DeepChem/Chemprop). Каждый кейс — с готовой дорожной картой переноса опыта на машинные масла, антифризы и техническую химию.</div>
+            <div class="case-row__arrow" aria-hidden="true">→</div>
+          </a>
+
           <a href="../../legacy/site-pages/report_farma.html" class="case-row">
             <div class="case-row__tag">Фармацевтика</div>
             <div class="case-row__title">Анализ ИИ для оптимизации ресурсов в фармацевтической отрасли</div>
@@ -124,10 +177,6 @@
       <div class="container site-footer__inner">
         <div>© 2026 · Карпов Николай</div>
         <div>
-          <a href="../../">Главная v2</a>
-          ·
-          <a href="../../">Старая версия сайта</a>
-          ·
           <a href="https://github.com/nikolai-karpov" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
