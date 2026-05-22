@@ -756,7 +756,8 @@ img { max-width: 100%; height: auto; display: block; }
 /* ---------- Security Principles ---------- */
 .principles {
   display: grid;
-  gap: clamp(24px, 3vw, 36px);
+  gap: clamp(28px, 3.5vw, 40px);
+  margin-bottom: clamp(40px, 6vh, 60px);
 }
 
 @media (min-width: 720px) {
@@ -764,44 +765,67 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .principle {
-  padding: 28px 0 0;
+  padding: 32px 0 0;
   border-top: 1px solid var(--line-strong);
+  position: relative;
+}
+
+.principle::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 48px;
+  height: 1px;
+  background: var(--accent);
 }
 
 .principle__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 10px;
+  margin-bottom: 14px;
+  background: var(--accent-soft);
+  padding: 6px 10px;
+  border-radius: 6px;
 }
 
 .principle__title {
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-  font-weight: 500;
+  font-size: 1.45rem;
+  margin-bottom: 14px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
 }
 
 .principle__body {
   color: var(--text-muted);
   font-size: 0.98rem;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 .principle__link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: 12px;
+  margin-top: 14px;
   font-family: var(--font-mono);
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--accent);
+  text-decoration: none;
 }
 
-.principle__link:hover { color: var(--accent-hover); }
+.principle__link:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
 
 /* ---------- Tech Stack ---------- */
 .stack { display: grid; gap: clamp(28px, 4vw, 48px); }
@@ -850,9 +874,9 @@ img { max-width: 100%; height: auto; display: block; }
 /* ---------- Contact Channels ---------- */
 .channels {
   display: grid;
-  gap: 16px;
+  gap: 20px;
   grid-template-columns: 1fr;
-  max-width: 720px;
+  max-width: 800px;
   margin: 0 auto 32px;
 }
 
@@ -863,26 +887,52 @@ img { max-width: 100%; height: auto; display: block; }
 .channel {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 22px;
+  gap: 8px;
+  padding: 28px 24px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 12px;
   background: var(--surface);
   text-align: left;
-  transition: border-color .2s ease, transform .25s ease, box-shadow .25s ease;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .25s ease, transform .3s cubic-bezier(.4,0,.2,1), box-shadow .3s ease;
+}
+
+.channel::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 12px;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-bright), transparent 60%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity .3s ease;
 }
 
 .channel:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  border-color: transparent;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-violet);
+}
+
+.channel:hover::before {
+  opacity: 1;
 }
 
 .channel__icon {
-  width: 26px;
-  height: 26px;
-  margin-bottom: 8px;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 10px;
   color: var(--accent);
+  transition: transform .3s ease;
+}
+
+.channel:hover .channel__icon {
+  transform: scale(1.1);
 }
 
 .channel__label {
@@ -895,8 +945,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 .channel__value {
   font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 500;
+  font-size: 1.15rem;
+  font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--text);
 }
@@ -904,7 +954,8 @@ img { max-width: 100%; height: auto; display: block; }
 .channel__hint {
   font-size: 0.85rem;
   color: var(--text-muted);
-  margin-top: 6px;
+  margin-top: 4px;
+  line-height: 1.45;
 }
 
 /* ---------- CTA Block ---------- */
