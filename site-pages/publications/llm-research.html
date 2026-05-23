@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LLM для AI-агентов — подписки и PAYG API (май 2026) | Карпов Николай</title>
+    <title>LLM и транскрибация речи — подписки, PAYG API, STT/ASR (май 2026) | Карпов Николай</title>
     <meta
       name="description"
-      content="Аналитический обзор: какие подписки на LLM разрешают использовать модель в OpenClaw, OpenCode, Hermes и других агентах; самые дешёвые PAYG API за 1M токенов; тренды форумов, отделение бот-промо от реальных отзывов и итоговая router-конфигурация."
+      content="Аналитический обзор: подписки на LLM для OpenClaw, OpenCode, Hermes и других агентов; самые дешёвые PAYG API за 1M токенов; обзор облачных и open-source транскрибаторов (Whisper, GigaAM, Deepgram, AssemblyAI и др.); router-конфигурация и рекомендации под русский язык."
     />
     <link rel="canonical" href="https://nikolai-karpov.github.io/my-website/site-pages/publications/llm-research.html" />
 
@@ -221,24 +221,26 @@
 
         <div class="article-hero__meta">
           <span>Аналитический обзор</span>
-          <span>LLM · Подписки · PAYG API</span>
-          <span>Обновлено 22 мая 2026</span>
+          <span>LLM · Подписки · PAYG API · STT</span>
+          <span>Обновлено 23 мая 2026</span>
         </div>
 
         <h1 class="article-hero__title">
-          LLM для AI-агентов: подписки и&nbsp;PAYG&nbsp;API
+          LLM и&nbsp;транскрибация речи: подписки, PAYG&nbsp;API, STT
         </h1>
 
         <p class="article-hero__hook">
           Какие вендоры продают подписки на LLM, разрешая использовать их
           в OpenClaw, OpenCode, Hermes и других агентах. Самые дешёвые PAYG
-          API за 1M токенов. Тренды форумов, отделение бот-промо от реальных
-          отзывов и рекомендуемая router-конфигурация для продакшена.
+          API за 1M токенов. Отдельная закладка — обзор сервисов и моделей
+          транскрибации речи: облачные API, подписки-нотейкеры и open-source
+          стек с рекомендациями под русский язык.
         </p>
 
         <div class="tab-switch" role="tablist" aria-label="Разделы обзора">
           <button class="tab-switch__btn is-active" type="button" role="tab" aria-selected="true" data-tab="subscriptions">Подписки для агентов</button>
           <button class="tab-switch__btn" type="button" role="tab" aria-selected="false" data-tab="payg">Дешёвые PAYG API</button>
+          <button class="tab-switch__btn" type="button" role="tab" aria-selected="false" data-tab="stt">Транскрибация речи</button>
         </div>
       </section>
 
@@ -1233,10 +1235,762 @@
           </div>
           <!-- /TAB 2 -->
 
+          <!-- ========================================================== -->
+          <!-- TAB 3: STT (Speech-to-Text)                                 -->
+          <!-- ========================================================== -->
+          <div class="tab-panel" id="tab-stt" role="tabpanel">
+
+            <dl class="spec-table">
+              <dt>Фокус</dt>
+              <dd>Транскрибация речи: облачные API, подписки-нотейкеры, open-source модели</dd>
+              <dt>Сценарии</dt>
+              <dd>Встречи · колл-центры · подкасты · юриспруденция · промышленность · приватный self-host</dd>
+              <dt>Период</dt>
+              <dd>Актуально на 23 мая 2026 — рынок стратифицируется быстро</dd>
+              <dt>Источники</dt>
+              <dd>Официальные документации OpenAI, Deepgram, AssemblyAI, Google, Amazon, Azure, Speechmatics, Groq, Gladia, ElevenLabs; GitHub OpenAI Whisper, GigaAM, NVIDIA NeMo; обсуждения Reddit и HN</dd>
+            </dl>
+
+            <div class="info-note">
+              <strong>Мета-обзор.</strong> Рынок STT стратифицировался:
+              специализированные модели обгоняют универсальный Whisper от
+              OpenAI на конкретных задачах, оставаясь конкурентными по цене.
+              <strong>40-кратный</strong> разброс цен между самым дешёвым и
+              самым дорогим провайдером. Русский язык поддерживают 80%
+              облачных сервисов, но качество сильно разнится.
+            </div>
+
+            <h2 data-num="01">Сводная таблица облачных API</h2>
+            <p>
+              Поминутная и почасовая стоимость, наличие бесплатного тира,
+              поддержка стриминга, русского языка и диаризации спикеров
+              у основных PAYG-провайдеров.
+            </p>
+
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Провайдер</th>
+                  <th>Модель</th>
+                  <th>$/мин</th>
+                  <th>$/час</th>
+                  <th>Бесплатно</th>
+                  <th>Стриминг</th>
+                  <th>Русский</th>
+                  <th>Диаризация</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Провайдер"><strong>OpenAI</strong></td>
+                  <td data-label="Модель">gpt-4o-mini-transcribe</td>
+                  <td data-label="$/мин">$0.003</td>
+                  <td data-label="$/час"><span class="num-hi">$0.18</span></td>
+                  <td data-label="Бесплатно">Нет ($5 кредит)</td>
+                  <td data-label="Стриминг"><span class="status-pill status-pill--ok">Да</span></td>
+                  <td data-label="Русский">99+ яз.</td>
+                  <td data-label="Диаризация">+$0</td>
+                </tr>
+                <tr>
+                  <td data-label="Провайдер"><strong>OpenAI</strong></td>
+                  <td data-label="Модель">gpt-4o-transcribe</td>
+                  <td data-label="$/мин">$0.006</td>
+                  <td data-label="$/час">$0.36</td>
+                  <td data-label="Бесплатно">Нет</td>
+                  <td data-label="Стриминг"><span class="status-pill status-pill--ok">Да</span></td>
+                  <td data-label="Русский">99+ яз.</td>
+                  <td data-label="Диаризация">Да</td>
+                </tr>
+                <tr>
+                  <td data-label="Провайдер"><strong>OpenAI</strong></td>
+                  <td data-label="Модель">whisper-1 (legacy)</td>
+                  <td data-label="$/мин">$0.006</td>
+                  <td data-label="$/час">$0.36</td>
+                  <td data-label="Бесплатно">Нет</td>
+                  <td data-label="Стриминг"><span class="status-pill status-pill--neutral">Нет</span></td>
+                  <td data-label="Русский">99+ яз.</td>
+                  <td data-label="Диаризация">—</td>
+                </tr>
+                <tr>
+                  <td data-label="Провайдер"><strong>Groq</strong></td>
+                  <td data-label="Модель">Whisper V3 Large</td>
+                  <td data-label="$/мин">$0.0019</td>
+                  <td data-label="$/час">$0.111</td>
+                  <td data-label="Бесплатно">Free tier</td>
+                  <td data-label="Стриминг"><span class="status-pill status-pill--neutral">Нет</span></td>
+                  <td data-label="Русский">Да</td>
+                  <td data-label="Диаризация">—</td>
+                </tr>
+                <tr>
+                  <td data-label="Провайдер"><strong>Groq</strong></td>
+                  <td data-label="Модель">Whisper Large v3 Turbo</td>
+                  <td data-label="$/мин"><span class="num-hi">$0.00067</span></td>
+                  <td data-label="$/час"><span class="num-hi">$0.04</span></td>
+                  <td data-label="Бесплатно">Free tier</td>
+                  <td data-label="Стриминг"><span class="status-pill status-pill--neutral">Нет</span></td>
+                  <td data-label="Русский">Да</td>
+                  <td data-label="Диаризация">—</td>
+                </tr>
+                <tr>
+                  <td data-label="Провайдер"><strong>fal.ai</strong></td>
+                  <td data-label="Модель">Wizper V3</td>
+                  <td data-label="$/мин"><span class="num-hi">$0.0005</span></td>
+                  <td data-label="$/час"><span class="num-hi">$0.03</span></td>
+                  <td data-label="Бесплатно">Нет</td>
+                  <td data-label="Стриминг"><span class="status-pill status-pill--neutral">Нет</span></td>
+                  <td data-label="Русский">Да</td>
+                  <td data-label="Диаризация">—</td>
+                </tr>
+                <tr>
+                  <td data-label="Провайдер"><strong>Deepgram</strong></td>
+                  <td data-label="Модель">Nova-3 (batch)</td>
+                  <td data-label="$/мин">$0.0077</td>
+                  <td data-label="$/час">$0.46</td>
+                  <td data-label="Бесплатно">$200 кредит</td>
+                  <td data-label="Стриминг"><span class="status-pill status-pill--ok">Да</span></td>
+                  <td data-label="Русский">Да</td>
+                  <td data-label="Диаризация">+$0.002/мин</td>
+                </tr>
+                <tr>
+                  <td data-label="Провайдер"><strong>Deepgram</strong></td>
+                  <td data-label="Модель">Nova-3 (streaming)</td>
+                  <td data-label="$/мин">$0.0048</td>
+                  <td data-label="$/час">$0.29</td>
+                  <td data-label="Бесплатно">$200 кредит</td>
+                  <td data-label="Стриминг"><span class="status-pill status-pill--ok">Да</span></td>
+                  <td data-label="Русский">Да</td>
+                  <td data-label="Диаризация">+$0.002/мин</td>
+                </tr>
+                <tr>
+                  <td data-label="Провайдер"><strong>Deepgram</strong></td>
+                  <td data-label="Модель">Flux (batch)</td>
+                  <td data-label="$/мин">$0.0077</td>
+                  <td data-label="$/час">$0.46</td>
+                  <td data-label="Бесплатно">$200 кредит</td>
+                  <td data-label="Стриминг"><span class="status-pill status-pill--ok">Да</span></td>
+                  <td data-label="Русский">Да</td>
+                  <td data-label="Диаризация">+$0.002/мин</td>
+                </tr>
+                <tr>
+                  <td data-label="Провайдер"><strong>AssemblyAI</strong></td>
+                  <td data-label="Модель">Universal-3 Pro</td>
+                  <td data-label="$/мин">$0.0035</td>
+                  <td data-label="$/час">$0.21</td>
+                  <td data-label="Бесплатно">185 ч/мес</td>
+                  <td data-label="Стриминг"><span class="status-pill status-pill--ok">Да</span></td>
+                  <td data-label="Русский">99+ яз.</td>
+                  <td data-label="Диаризация">+$0.0003/мин</td>
+                </tr>
+                <tr>
+                  <td data-label="Провайдер"><strong>AssemblyAI</strong></td>
+                  <td data-label="Модель">Universal-2</td>
+                  <td data-label="$/мин">$0.0025</td>
+                  <td data-label="$/час"><span class="num-hi">$0.15</span></td>
+                  <td data-label="Бесплатно">185 ч/мес</td>
+                  <td data-label="Стриминг"><span class="status-pill status-pill--ok">Да</span></td>
+                  <td data-label="Русский">99+ яз.</td>
+                  <td data-label="Диаризация">+$0.0003/мин</td>
+                </tr>
+                <tr>
+                  <td data-label="Провайдер"><strong>AssemblyAI</strong></td>
+                  <td data-label="Модель">Universal-Streaming</td>
+                  <td data-label="$/мин">$0.0025</td>
+                  <td data-label="$/час">$0.15</td>
+                  <td data-label="Бесплатно">333 ч/мес</td>
+                  <td data-label="Стриминг"><span class="status-pill status-pill--ok">Да</span></td>
+                  <td data-label="Русский">En только</td>
+                  <td data-label="Диаризация">+$0.002/мин</td>
+                </tr>
+                <tr>
+                  <td data-label="Провайдер"><strong>Google Cloud</strong></td>
+                  <td data-label="Модель">Chirp 3 Dynamic Batch</td>
+                  <td data-label="$/мин">$0.003</td>
+                  <td data-label="$/час">$0.18</td>
+                  <td data-label="Бесплатно">60 мин/мес</td>
+                  <td data-label="Стриминг"><span class="status-pill status-pill--neutral">Нет</span></td>
+                  <td data-label="Русский">Да</td>
+                  <td data-label="Диаризация">—</td>
+                </tr>
+                <tr>
+                  <td data-label="Провайдер"><strong>Google Cloud</strong></td>
+                  <td data-label="Модель">Chirp 3 Standard</td>
+                  <td data-label="$/мин">$0.016</td>
+                  <td data-label="$/час">$0.96</td>
+                  <td data-label="Бесплатно">60 мин/мес</td>
+                  <td data-label="Стриминг"><span class="status-pill status-pill--ok">Да</span></td>
+                  <td data-label="Русский">Да</td>
+                  <td data-label="Диаризация">Да</td>
+                </tr>
+                <tr>
+                  <td data-label="Провайдер"><strong>Amazon</strong></td>
+                  <td data-label="Модель">Transcribe Standard</td>
+                  <td data-label="$/мин"><span class="num-lo">$0.024</span></td>
+                  <td data-label="$/час"><span class="num-lo">$1.44</span></td>
+                  <td data-label="Бесплатно">60 мин/мес (12 мес)</td>
+                  <td data-label="Стриминг"><span class="status-pill status-pill--ok">Да</span></td>
+                  <td data-label="Русский">Да</td>
+                  <td data-label="Диаризация">Да</td>
+                </tr>
+                <tr>
+                  <td data-label="Провайдер"><strong>Azure</strong></td>
+                  <td data-label="Модель">Speech Standard (real-time)</td>
+                  <td data-label="$/мин">$0.017</td>
+                  <td data-label="$/час">$1.00</td>
+                  <td data-label="Бесплатно">5 ч/мес</td>
+                  <td data-label="Стриминг"><span class="status-pill status-pill--ok">Да</span></td>
+                  <td data-label="Русский">Да</td>
+                  <td data-label="Диаризация">+$0.005/мин</td>
+                </tr>
+                <tr>
+                  <td data-label="Провайдер"><strong>Azure</strong></td>
+                  <td data-label="Модель">Speech Standard (batch)</td>
+                  <td data-label="$/мин">$0.003</td>
+                  <td data-label="$/час">$0.18</td>
+                  <td data-label="Бесплатно">5 ч/мес</td>
+                  <td data-label="Стриминг"><span class="status-pill status-pill--neutral">Нет</span></td>
+                  <td data-label="Русский">Да</td>
+                  <td data-label="Диаризация">+$0.005/мин</td>
+                </tr>
+                <tr>
+                  <td data-label="Провайдер"><strong>Speechmatics</strong></td>
+                  <td data-label="Модель">Enhanced</td>
+                  <td data-label="$/мин">$0.004</td>
+                  <td data-label="$/час">$0.24</td>
+                  <td data-label="Бесплатно">480 мин/мес</td>
+                  <td data-label="Стриминг"><span class="status-pill status-pill--ok">Да</span></td>
+                  <td data-label="Русский">55+ яз.</td>
+                  <td data-label="Диаризация">Да</td>
+                </tr>
+                <tr>
+                  <td data-label="Провайдер"><strong>Rev.ai</strong></td>
+                  <td data-label="Модель">Async</td>
+                  <td data-label="$/мин"><span class="num-lo">$0.02</span></td>
+                  <td data-label="$/час"><span class="num-lo">$1.20</span></td>
+                  <td data-label="Бесплатно">Нет</td>
+                  <td data-label="Стриминг"><span class="status-pill status-pill--ok">Да</span></td>
+                  <td data-label="Русский">37+ яз.</td>
+                  <td data-label="Диаризация">Да</td>
+                </tr>
+                <tr>
+                  <td data-label="Провайдер"><strong>Gladia</strong></td>
+                  <td data-label="Модель">Solaria (async)</td>
+                  <td data-label="$/мин">$0.0102</td>
+                  <td data-label="$/час">$0.61</td>
+                  <td data-label="Бесплатно">10 ч/мес</td>
+                  <td data-label="Стриминг"><span class="status-pill status-pill--ok">Да</span></td>
+                  <td data-label="Русский">100+ яз.</td>
+                  <td data-label="Диаризация">Да</td>
+                </tr>
+                <tr>
+                  <td data-label="Провайдер"><strong>ElevenLabs</strong></td>
+                  <td data-label="Модель">STT</td>
+                  <td data-label="$/мин">в подписку</td>
+                  <td data-label="$/час">—</td>
+                  <td data-label="Бесплатно">см. подписки</td>
+                  <td data-label="Стриминг"><span class="status-pill status-pill--ok">Да</span></td>
+                  <td data-label="Русский">99+ яз.</td>
+                  <td data-label="Диаризация">Да</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 data-num="02">Подписки, куда входит транскрибация</h2>
+            <p>
+              Альтернатива PAYG: фиксированный платёж в месяц. Подходит для
+              регулярного потока встреч, интервью и созвонов. Разделена на
+              три категории: «нотейкеры», платформы с встроенной транскрипцией
+              и креативные инструменты.
+            </p>
+
+            <h3 style="margin-top: 24px;">Сервисы-«нотейкеры» (встречи → текст)</h3>
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Сервис</th>
+                  <th>Что делает</th>
+                  <th>Подписка</th>
+                  <th>Языки</th>
+                  <th>Ссылка</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Сервис"><strong>Otter.ai</strong></td>
+                  <td data-label="Что делает">AI-нотейкер для Zoom/Teams/Meet</td>
+                  <td data-label="Подписка">Free: 300 мин/мес · Pro: $8–17/мес (1200 мин) · Business: $20–30/мес (безлимит)</td>
+                  <td data-label="Языки">En, мульти-язык</td>
+                  <td data-label="Ссылка"><a href="https://otter.ai/pricing" target="_blank" rel="noopener">otter.ai</a></td>
+                </tr>
+                <tr>
+                  <td data-label="Сервис"><strong>Fireflies.ai</strong></td>
+                  <td data-label="Что делает">AI-нотейкер + аналитика встреч</td>
+                  <td data-label="Подписка">Free: безлимит транскр., 800 мин хран. · Pro: $10–18/мес · Business: $19–29/мес</td>
+                  <td data-label="Языки">100+ яз.</td>
+                  <td data-label="Ссылка"><a href="https://fireflies.ai/pricing" target="_blank" rel="noopener">fireflies.ai</a></td>
+                </tr>
+                <tr>
+                  <td data-label="Сервис"><strong>Rev</strong></td>
+                  <td data-label="Что делает">Транскрибация + субтитры + AI-анализ</td>
+                  <td data-label="Подписка">Free: 45 мин/мес · Essentials: $25/мес (5000 мин) · Pro: $48/мес (10 000 мин) · Unlimited: custom</td>
+                  <td data-label="Языки">37+ яз.</td>
+                  <td data-label="Ссылка"><a href="https://www.rev.com/pricing" target="_blank" rel="noopener">rev.com</a></td>
+                </tr>
+                <tr>
+                  <td data-label="Сервис"><strong>Trint</strong></td>
+                  <td data-label="Что делает">Транскрибация + редактор + перевод</td>
+                  <td data-label="Подписка">Starter: $52/мес (7 файлов) · Advanced: $80/мес (безлимит) · Enterprise: custom</td>
+                  <td data-label="Языки">40+ яз.</td>
+                  <td data-label="Ссылка"><a href="https://www.trint.com" target="_blank" rel="noopener">trint.com</a></td>
+                </tr>
+                <tr>
+                  <td data-label="Сервис"><strong>Noota</strong></td>
+                  <td data-label="Что делает">AI-нотейкер для встреч и интервью</td>
+                  <td data-label="Подписка">Free: 5 встреч/мес · Pro: €19/мес · Business: €29/мес</td>
+                  <td data-label="Языки">50+ яз.</td>
+                  <td data-label="Ссылка"><a href="https://www.noota.io" target="_blank" rel="noopener">noota.io</a></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3 style="margin-top: 24px;">Платформы с транскрипцией «в комплекте»</h3>
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Платформа</th>
+                  <th>Что входит</th>
+                  <th>Тариф</th>
+                  <th>Языки</th>
+                  <th>Примечание</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Платформа"><strong>Zoom</strong></td>
+                  <td data-label="Что входит">AI Companion — автосаммари, транскрипция встречи</td>
+                  <td data-label="Тариф">Pro+ ($13.33/мес и выше)</td>
+                  <td data-label="Языки">En, 30+ яз.</td>
+                  <td data-label="Примечание">Только для хоста с лицензией</td>
+                </tr>
+                <tr>
+                  <td data-label="Платформа"><strong>Microsoft Teams</strong></td>
+                  <td data-label="Что входит">Copilot → транскрипция + саммари</td>
+                  <td data-label="Тариф">Copilot M365 ($30/мес)</td>
+                  <td data-label="Языки">40+ яз.</td>
+                  <td data-label="Примечание">Входит в Microsoft 365 Copilot</td>
+                </tr>
+                <tr>
+                  <td data-label="Платформа"><strong>Google Meet</strong></td>
+                  <td data-label="Что входит">«Сохранить транскрипцию» + Duet AI</td>
+                  <td data-label="Тариф">Google Workspace ($8–18/мес)</td>
+                  <td data-label="Языки">En, до 10 яз.</td>
+                  <td data-label="Примечание">Автоматическая транскрипция встроена</td>
+                </tr>
+                <tr>
+                  <td data-label="Платформа"><strong>Google Workspace</strong></td>
+                  <td data-label="Что входит">Gemini транскрибация + саммари</td>
+                  <td data-label="Тариф">Gemini Business / Enterprise</td>
+                  <td data-label="Языки">40+ яз.</td>
+                  <td data-label="Примечание">Входит в подписку Workspace</td>
+                </tr>
+                <tr>
+                  <td data-label="Платформа"><strong>ElevenLabs</strong></td>
+                  <td data-label="Что входит">STT API (Speech-to-Text)</td>
+                  <td data-label="Тариф">Free: 10 мин · Starter: $5/мес (30 мин) · Pro: $22/мес (100 мин) · Scale: $99/мес (500 мин) · Enterprise: custom</td>
+                  <td data-label="Языки">99+ яз.</td>
+                  <td data-label="Примечание">TTS + клонирование + STT в одном балансе. <strong>Блокирует доступ из РФ, Беларуси.</strong></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3 style="margin-top: 24px;">Креативные платформы с транскрипцией</h3>
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Платформа</th>
+                  <th>Что входит</th>
+                  <th>Тариф</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Платформа"><strong>Descript</strong></td>
+                  <td data-label="Что входит">Транскрибация → редактирование видео по тексту</td>
+                  <td data-label="Тариф">Free: 1 ч/мес · Hobbyist: $19/мес (10 ч) · Pro: $24/мес (безлимит)</td>
+                </tr>
+                <tr>
+                  <td data-label="Платформа"><strong>CapCut</strong></td>
+                  <td data-label="Что входит">Автосубтитры + транскрипция</td>
+                  <td data-label="Тариф">Free базово · Pro: $7.99/мес</td>
+                </tr>
+                <tr>
+                  <td data-label="Платформа"><strong>DaVinci Resolve</strong></td>
+                  <td data-label="Что входит">Встроенная транскрипция (Whisper)</td>
+                  <td data-label="Тариф">Free · Studio: $295 (единоразово)</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 data-num="03">Открытые модели (self-hosted)</h2>
+            <p>
+              Для случаев, когда нужна приватность (152-ФЗ), офлайн или
+              кастомизация под домен. Три семейства: Whisper и его форки,
+              русско-ориентированный GigaAM от Сбера и NVIDIA NeMo /
+              Parakeet для стриминга и диаризации.
+            </p>
+
+            <h3 style="margin-top: 24px;">Whisper-семейство (OpenAI, open-source)</h3>
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Вариант</th>
+                  <th>Что улучшает</th>
+                  <th>Скорость</th>
+                  <th>Память</th>
+                  <th>WER (ru)</th>
+                  <th>Репозиторий</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Вариант"><strong>Whisper large-v3</strong></td>
+                  <td data-label="Что улучшает">Базовая модель OpenAI</td>
+                  <td data-label="Скорость">~10× real-time (CPU)</td>
+                  <td data-label="Память">~10 GB VRAM</td>
+                  <td data-label="WER">~12–15%</td>
+                  <td data-label="Репозиторий"><a href="https://github.com/openai/whisper" target="_blank" rel="noopener">openai/whisper</a></td>
+                </tr>
+                <tr>
+                  <td data-label="Вариант"><strong>faster-whisper</strong></td>
+                  <td data-label="Что улучшает">CTranslate2 оптимизация</td>
+                  <td data-label="Скорость">4× быстрее whisper</td>
+                  <td data-label="Память">3–4 GB VRAM (int8)</td>
+                  <td data-label="WER">~12–15%</td>
+                  <td data-label="Репозиторий"><a href="https://github.com/SYSTRAN/faster-whisper" target="_blank" rel="noopener">SYSTRAN/faster-whisper</a></td>
+                </tr>
+                <tr>
+                  <td data-label="Вариант"><strong>whisper.cpp</strong></td>
+                  <td data-label="Что улучшает">C/C++ inference, CPU-first</td>
+                  <td data-label="Скорость">2–3× faster-whisper на CPU</td>
+                  <td data-label="Память">~5 GB RAM</td>
+                  <td data-label="WER">~12–15%</td>
+                  <td data-label="Репозиторий"><a href="https://github.com/ggerganov/whisper.cpp" target="_blank" rel="noopener">ggerganov/whisper.cpp</a></td>
+                </tr>
+                <tr>
+                  <td data-label="Вариант"><strong>whisperX</strong></td>
+                  <td data-label="Что улучшает">faster-whisper + forced alignment + diarization</td>
+                  <td data-label="Скорость">4× whisper + diarization</td>
+                  <td data-label="Память">4–6 GB VRAM</td>
+                  <td data-label="WER">~12–15% + диаризация</td>
+                  <td data-label="Репозиторий"><a href="https://github.com/m-bain/whisperX" target="_blank" rel="noopener">m-bain/whisperX</a></td>
+                </tr>
+                <tr>
+                  <td data-label="Вариант"><strong>insanely-fast-whisper</strong></td>
+                  <td data-label="Что улучшает">Batched inference на GPU</td>
+                  <td data-label="Скорость">10× faster-whisper</td>
+                  <td data-label="Память">8+ GB VRAM</td>
+                  <td data-label="WER">~12–15%</td>
+                  <td data-label="Репозиторий"><a href="https://github.com/Vaibhavs10/insanely-fast-whisper" target="_blank" rel="noopener">Vaibhavs10/insanely-fast-whisper</a></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="review-card">
+              <h3>Отзывы сообщества: Whisper</h3>
+              <table class="compare-table">
+                <thead><tr><th>Хвалят</th><th>Ругают</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Хвалят">
+                      <ul>
+                        <li>«Whisper large-v3 на русском — рабочая лошадка, особенно в связке faster-whisper + Pyannote для диаризации»</li>
+                        <li>Хорошее покрытие 99+ языков из коробки</li>
+                        <li>Большой ecosystem форков и оптимизаций</li>
+                      </ul>
+                    </td>
+                    <td data-label="Ругают">
+                      <ul>
+                        <li>Hallucinations на тишине и музыке</li>
+                        <li>Нет встроенной диаризации</li>
+                        <li>Долгий на CPU без GPU</li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="verdict">
+                <strong>Совет:</strong> whisperX — лучшая сборка для
+                продакшена: fast + diarization + alignment в одном пайплайне.
+              </div>
+            </div>
+
+            <h3 style="margin-top: 24px;">GigaAM (Salute Developers, Сбер)</h3>
+            <p>
+              <strong>Единственная крупная open-source модель, специально
+              обученная на русском языке.</strong>
+            </p>
+            <dl class="spec-table">
+              <dt>Архитектура</dt>
+              <dd>Conformer (220–240M параметров)</dd>
+              <dt>Объём предобучения</dt>
+              <dd>700 000 часов (v3)</dd>
+              <dt>Язык</dt>
+              <dd>Русский (специализация)</dd>
+              <dt>WER</dt>
+              <dd>На 30% ниже Whisper-large-v3 на новых доменах</dd>
+              <dt>Лицензия</dt>
+              <dd>Open-source</dd>
+              <dt>Word-level timestamps</dt>
+              <dd>Из коробки</dd>
+              <dt>Длинные аудио</dt>
+              <dd><code>transcribe_longform</code> через Pyannote segmentation</dd>
+              <dt>Версии</dt>
+              <dd>v1 → v2 (−15% WER) → v3 (700K часов, −30% WER на новых доменах)</dd>
+              <dt>Репозиторий</dt>
+              <dd><a href="https://github.com/salute-developers/GigaAM" target="_blank" rel="noopener">github.com/salute-developers/GigaAM</a></dd>
+            </dl>
+
+            <div class="review-card review-card--best">
+              <h3>Отзывы: GigaAM</h3>
+              <table class="compare-table">
+                <thead><tr><th>Хвалят</th><th>Ругают</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Хвалят">
+                      <ul>
+                        <li>«GigaAM v3 лучше Whisper на русском с сильным акцентом и шуме»</li>
+                        <li>Word-level timestamps из коробки — не нужен whisperX</li>
+                      </ul>
+                    </td>
+                    <td data-label="Ругают">
+                      <ul>
+                        <li>Нет мультиязычности — только русский</li>
+                        <li>Нужен HF_TOKEN для Pyannote (ограничение лицензии)</li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 style="margin-top: 24px;">NVIDIA NeMo / Parakeet</h3>
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Модель</th>
+                  <th>Назначение</th>
+                  <th>Язык</th>
+                  <th>Особенность</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Модель"><strong>Parakeet-unified-en-0.6b</strong> (апрель 2026)</td>
+                  <td data-label="Назначение">Офлайн + стриминг ASR</td>
+                  <td data-label="Язык">En</td>
+                  <td data-label="Особенность">160 ms минимальная латентность, punctuation</td>
+                </tr>
+                <tr>
+                  <td data-label="Модель"><strong>Nemotron-Speech-Streaming</strong> (март 2026)</td>
+                  <td data-label="Назначение">Потоковое распознавание</td>
+                  <td data-label="Язык">En</td>
+                  <td data-label="Особенность">Обучена на большем корпусе, ниже WER</td>
+                </tr>
+                <tr>
+                  <td data-label="Модель"><strong>NVIDIA NeMo Diarizer</strong></td>
+                  <td data-label="Назначение">Диаризация спикеров</td>
+                  <td data-label="Язык">Мульти</td>
+                  <td data-label="Особенность">State-of-the-art diarization</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="source">
+              Репозиторий: <a href="https://github.com/NVIDIA/NeMo" target="_blank" rel="noopener">github.com/NVIDIA/NeMo</a>
+            </p>
+
+            <h3 style="margin-top: 24px;">Meta MMS (Massively Multilingual Speech)</h3>
+            <dl class="spec-table">
+              <dt>Языки</dt>
+              <dd>1000+ языков</dd>
+              <dt>Модель</dt>
+              <dd>Wav2Vec 2.0</dd>
+              <dt>Лицензия</dt>
+              <dd>CC BY-NC 4.0 (некоммерческая)</dd>
+              <dt>Назначение</dt>
+              <dd>Исследования, low-resource языки</dd>
+              <dt>Hub</dt>
+              <dd><a href="https://huggingface.co/facebook/mms-1b-all" target="_blank" rel="noopener">huggingface.co/facebook/mms-1b-all</a></dd>
+            </dl>
+
+            <h2 data-num="04">Диаризация спикеров</h2>
+            <p>
+              Диаризация — отдельная задача «кто когда говорил». В облаке
+              обычно встроена, в self-hosted — нужен отдельный движок.
+            </p>
+
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Решение</th>
+                  <th>Тип</th>
+                  <th>WER / DER</th>
+                  <th>Цена</th>
+                  <th>Русский</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Решение"><strong>Pyannote.audio 3.1</strong></td>
+                  <td data-label="Тип">Open-source</td>
+                  <td data-label="DER">DER ~10–12% (зависит от домена)</td>
+                  <td data-label="Цена">Бесплатно (HF Token)</td>
+                  <td data-label="Русский">Да</td>
+                </tr>
+                <tr>
+                  <td data-label="Решение"><strong>NVIDIA NeMo Diarizer</strong></td>
+                  <td data-label="Тип">Open-source</td>
+                  <td data-label="DER">DER ~8–10%</td>
+                  <td data-label="Цена">Бесплатно (GPU)</td>
+                  <td data-label="Русский">Да</td>
+                </tr>
+                <tr>
+                  <td data-label="Решение"><strong>AssemblyAI Diarization</strong></td>
+                  <td data-label="Тип">Облако</td>
+                  <td data-label="DER">Встроена</td>
+                  <td data-label="Цена">+$0.02/ч</td>
+                  <td data-label="Русский">Да</td>
+                </tr>
+                <tr>
+                  <td data-label="Решение"><strong>Deepgram Diarization</strong></td>
+                  <td data-label="Тип">Облако</td>
+                  <td data-label="DER">Встроена</td>
+                  <td data-label="Цена">+$0.12/ч</td>
+                  <td data-label="Русский">Да</td>
+                </tr>
+                <tr>
+                  <td data-label="Решение"><strong>Rev.ai Diarization</strong></td>
+                  <td data-label="Тип">Облако</td>
+                  <td data-label="DER">Встроена</td>
+                  <td data-label="Цена">Включена</td>
+                  <td data-label="Русский">Да</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="info-note">
+              <strong>Лучший выбор self-hosted:</strong> Pyannote 3.1 —
+              стандарт индустрии, мягко интегрируется с Whisper/GigaAM
+              через forced alignment.
+            </div>
+
+            <h2 data-num="05">Русский язык: что выбрать</h2>
+            <p>
+              Сводная рекомендация по приоритету: качество, цена, фичи,
+              compliance или полная приватность.
+            </p>
+
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Приоритет</th>
+                  <th>Рекомендация</th>
+                  <th>Почему</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Приоритет"><strong>Лучшее качество, self-hosted</strong></td>
+                  <td data-label="Рекомендация">GigaAM v3 + Pyannote 3.1</td>
+                  <td data-label="Почему">Специализация на русском, −30% WER vs Whisper</td>
+                </tr>
+                <tr>
+                  <td data-label="Приоритет"><strong>Быстро и дёшево, API</strong></td>
+                  <td data-label="Рекомендация">Groq Whisper v3 Turbo ($0.04/ч)</td>
+                  <td data-label="Почему">Бесплатный лимит, скорость 228× real-time</td>
+                </tr>
+                <tr>
+                  <td data-label="Приоритет"><strong>Баланс цена/качество, API</strong></td>
+                  <td data-label="Рекомендация">OpenAI gpt-4o-mini-transcribe ($0.18/ч)</td>
+                  <td data-label="Почему">Дёшево, с диаризацией, стриминг</td>
+                </tr>
+                <tr>
+                  <td data-label="Приоритет"><strong>Продакшен + features</strong></td>
+                  <td data-label="Рекомендация">AssemblyAI Universal-2 ($0.15/ч)</td>
+                  <td data-label="Почему">185 ч бесплатно, диаризация, entities</td>
+                </tr>
+                <tr>
+                  <td data-label="Приоритет"><strong>Enterprise, compliance</strong></td>
+                  <td data-label="Рекомендация">Speechmatics Enhanced ($0.24/ч)</td>
+                  <td data-label="Почему">On-prem, 55+ языков, HIPAA</td>
+                </tr>
+                <tr>
+                  <td data-label="Приоритет"><strong>Полная приватность</strong></td>
+                  <td data-label="Рекомендация">faster-whisper + Pyannote на своём GPU</td>
+                  <td data-label="Почему">Данные не уходят наружу (152-ФЗ)</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2 data-num="06">Сравнение по сценариям</h2>
+            <p>
+              Готовые рекомендации под конкретные кейсы: что выбрать без
+              лишних компромиссов.
+            </p>
+
+            <table class="compare-table">
+              <thead>
+                <tr>
+                  <th>Сценарий</th>
+                  <th>Подписка</th>
+                  <th>API</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Сценарий"><strong>Встречи и совещания</strong> (meeting notes)</td>
+                  <td data-label="Подписка">Otter.ai, Fireflies.ai, Rev, Zoom AI Companion, Teams Copilot</td>
+                  <td data-label="API">AssemblyAI (streaming + diarization), Deepgram Nova-3</td>
+                </tr>
+                <tr>
+                  <td data-label="Сценарий"><strong>Колл-центры</strong> (call analytics)</td>
+                  <td data-label="Подписка">—</td>
+                  <td data-label="API">Deepgram Nova-3 (real-time streaming, 200 ms latency), Azure Speech, Amazon Transcribe Call Analytics</td>
+                </tr>
+                <tr>
+                  <td data-label="Сценарий"><strong>Медиа и подкасты</strong> (batch)</td>
+                  <td data-label="Подписка">Descript</td>
+                  <td data-label="API">OpenAI gpt-4o-mini-transcribe (дёшево), Groq Whisper (быстро), AssemblyAI Universal-3 Pro (лучшее качество)</td>
+                </tr>
+                <tr>
+                  <td data-label="Сценарий"><strong>Юриспруденция</strong> (legal)</td>
+                  <td data-label="Подписка">Rev Pro (verbatim, 37 языков, custom templates)</td>
+                  <td data-label="API">Speechmatics (on-prem, compliance)</td>
+                </tr>
+                <tr>
+                  <td data-label="Сценарий"><strong>Промышленность · Russian-only · приватность</strong></td>
+                  <td data-label="Подписка">—</td>
+                  <td data-label="API">GigaAM v3 (локально, русский), faster-whisper + Pyannote (универсальный fallback)</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="callout">
+              <div class="callout__label">Итог</div>
+              На май 2026 связка <strong>GigaAM v3 + Pyannote 3.1</strong>
+              выигрывает там, где важен русский и приватность.
+              <strong>Groq Whisper Turbo</strong> — лучший выбор по
+              скорости и цене. <strong>AssemblyAI Universal-2</strong> —
+              универсальный продакшн с щедрым бесплатным тиром (185 ч/мес).
+            </div>
+          </div>
+          <!-- /TAB 3 -->
+
           <hr style="margin: 48px 0 24px; border: 0; border-top: 1px solid var(--line);" />
 
           <p style="font-family: var(--font-mono); font-size: 12px; color: var(--text-faint); letter-spacing: 0.04em;">
-            <strong>Источники:</strong> официальные документации OpenCode, xAI, Xiaomi MiMo, Qwen Cloud, MiniMax, Zhipu AI, Alibaba Cloud, OpenAI, Anthropic, Google, Moonshot AI, Cerebras, Awan LLM, Groq; Reddit (r/LocalLLaMA, r/vibecoding, r/LLMDevs, r/ChatGPTCoding, r/opencodeCLI); Atlas Cloud, andrew.ooo, AIStackChoice, ofox.ai, Vibecoding.app.
+            <strong>Источники (LLM):</strong> официальные документации OpenCode, xAI, Xiaomi MiMo, Qwen Cloud, MiniMax, Zhipu AI, Alibaba Cloud, OpenAI, Anthropic, Google, Moonshot AI, Cerebras, Awan LLM, Groq; Reddit (r/LocalLLaMA, r/vibecoding, r/LLMDevs, r/ChatGPTCoding, r/opencodeCLI); Atlas Cloud, andrew.ooo, AIStackChoice, ofox.ai, Vibecoding.app.
+          </p>
+          <p style="font-family: var(--font-mono); font-size: 12px; color: var(--text-faint); letter-spacing: 0.04em;">
+            <strong>Источники (STT):</strong> официальные документации OpenAI, Deepgram, AssemblyAI, Google Cloud, Amazon Transcribe, Azure Speech, Speechmatics, Groq, Gladia, Rev, ElevenLabs, fal.ai; API Scout, CompareVoiceAI, CostGoat; репозитории OpenAI Whisper, SYSTRAN/faster-whisper, whisper.cpp, whisperX, salute-developers/GigaAM, NVIDIA NeMo, Pyannote.audio.
           </p>
           <p style="font-family: var(--font-mono); font-size: 12px; color: var(--text-faint); letter-spacing: 0.04em;">
             <strong>Агенты:</strong> OpenClaw, OpenCode, Hermes, Claude Code, Cursor, Cline, Kilo Code, Continue.dev и др.
@@ -1302,7 +2056,7 @@
         }
         tabs.forEach(t => t.addEventListener('click', () => activate(t.dataset.tab)));
         const hash = (location.hash || '').replace('#', '');
-        if (hash === 'payg' || hash === 'subscriptions') activate(hash);
+        if (hash === 'payg' || hash === 'subscriptions' || hash === 'stt') activate(hash);
         // Бэк-совместимость со старым якорем
         else if (location.hash === '#payg') activate('payg');
       })();
