@@ -93,4 +93,13 @@
 
     sections.forEach((s) => io.observe(s));
   }
+
+  // ---------- Yandex Metrika goal delegation ----------
+  document.addEventListener('click', (e) => {
+    const el = e.target.closest('[data-goal]');
+    if (!el) return;
+    const goal = el.getAttribute('data-goal');
+    if (!goal || typeof window.ym !== 'function') return;
+    window.ym(109350250, 'reachGoal', goal);
+  });
 })();
