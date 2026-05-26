@@ -1,17 +1,3 @@
-# Site configuration for Yandex Webmaster
-sites:
-  - domain: my-website
-    platform: github-pages
-    repository: nikolai-karpov/my-website
-    source_branch: main
-    gh_pages_branch: gh-pages
-    publish_directory: /
-    status: active
-    
-  - domain: nikolai-karpov.github.io
-    platform: github-pages  
-    repository: nikolai-karpov/my-website
-    source_branch: main
-    gh_pages_branch: gh-pages
-    publish_directory: /
-    status: active
+site:
+  root: ""
+  ref: "main"
