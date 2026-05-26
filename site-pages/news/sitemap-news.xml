@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-gemini-3-5-flash-moshch-pro-urovnia-po-tsene-flash/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-26T11:29:32+03:00</news:publication_date>
+      <news:title>Google выпустила Gemini 3.5 Flash с контекстом 1M токенов и мультимодальностью</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-llm-bez-poiska-generator-galliutsinatsii-kak-my-s-etim-sprav/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-26T11:28:33+03:00</news:publication_date>
+      <news:title>Яндекс: как построить AI Chat для интранета на базе поиска и снизить галлюцинации</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-chem-chashche-agent-sprashivaet-razresheniia-tem-khuzhe-on-z/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-26T11:27:18+03:00</news:publication_date>
+      <news:title>Claude Code: sandboxing с bubblewrap/seatbelt снял 84% запросов на одобрение</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-dobavili-novuiu-model-gemini-3-5-flash/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-26T11:26:15+03:00</news:publication_date>
+      <news:title>Gemini 3.5 Flash: 83.6% на MCP Atlas, обходит 3.1 Pro и конкурирует с GPT-5.5</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-oblachnaia-llm-na-16-gb-vram-chast-2-langgraph-server-langsm/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-26T11:25:09+03:00</news:publication_date>
+      <news:title>LangGraph Server автоматически поднимает REST API для локальной LLM на 16 ГБ VRAM</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-google-skormila-ii-trillion-minut-s-fitnes-brasletov-i-nauch/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-26T11:23:57+03:00</news:publication_date>
+      <news:title>Google SensorFM: foundation-модель на 1 трлн минут данных с фитнес-браслетов</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-bitgn-ecom1-sostoitsia-30-maia-raspisanie-remote-first/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-26T11:22:53+03:00</news:publication_date>
+      <news:title>BitGN ECOM1: 105 пользователей, 62.8k прогонов агентов, 8.41M Tool Calls за 7 дней</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-quoting-spacex-s-1/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-26T11:21:47+03:00</news:publication_date>
+      <news:title>Anthropic платит SpaceX $1.25 млрд/мес за compute в COLOSSUS до мая 2029</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-finish-reason-length-polnyi-otvet-id-chatcmpl-dhxmnvfa0m3jak/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-26T11:20:44+03:00</news:publication_date>
+      <news:title>GPT-5-mini: 1200 reasoning-токенов за 13.9 секунды, TTFT 249 мс</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-towards-speed-of-light-text-generation-with-nemotron-labs-di/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-26T11:19:40+03:00</news:publication_date>
+      <news:title>NVIDIA релизила Nemotron-Labs Diffusion LMs: генерация текста со скоростью света</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-llm-bez-poiska-generator-galliutsinatsii-kak-my-s-etim-sprav/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-26T01:07:24+03:00</news:publication_date>
+      <news:title>Яндекс: LLM-изация интранет-поиска с A/B-тестами и архитектурой ранжирования</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-datasette-agent-charts-0-1a1/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-26T01:06:28+03:00</news:publication_date>
+      <news:title>datasette-agent-charts 0.1a1: тултипы, observable10 и проверки прав</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-anthropic-platit-spacex-125-mlrd-v-mesiats-za-vychisleniia-v/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-26T01:05:49+03:00</news:publication_date>
+      <news:title>Anthropic платит SpaceX $1,25 млрд в месяц за вычисления</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-dobavili-novuiu-model-gemini-3-5-flash/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-26T01:04:52+03:00</news:publication_date>
+      <news:title>Gemini 3.5 Flash: 83.6% на MCP Atlas, обходит 3.1 Pro в агентных задачах</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-wordstat-api-instrument-dlia-polucheniia-statistiki-poiskovy/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-26T01:03:53+03:00</news:publication_date>
+      <news:title>Wordstat API Яндекса вышел в GA: агрегация по месяцам/неделям/дням и региональная аналитика</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-delta-channels-how-were-evolving-our-runtime-for-long-runnin/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-26T01:02:57+03:00</news:publication_date>
+      <news:title>LangGraph 1.2: DeltaChannels снижают рост хранилища с O(N²) до константы</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-google-skormila-ii-trillion-minut-s-fitnes-brasletov-i-nauch/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-26T01:02:20+03:00</news:publication_date>
+      <news:title>Google SensorFM: foundation model для сенсорных данных с тела обучена на 1+ трлн минут</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-prosba-proverit-sovmestimost-modeli-openai-gpt-5-3-codex-s-v/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-26T01:01:16+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-quoting-spacex-s-1/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-26T01:00:36+03:00</news:publication_date>
+      <news:title>Anthropic платит SpaceX $1.25 млрд/мес за доступ к COLOSSUS II</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-2-novaia-model-budet-v-srednem-v-15-raza-deshevle-deepseek-v/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-26T00:59:39+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-23-v-chate-nedavno-obsuzhdali-na-chto-ispolzovat-ostavshiesia-s/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-24T10:37:50+03:00</news:publication_date>
+      <news:title>В чате недавно обсуждали, на что использовать оставшиеся свободные tokens в подп</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-23-produktovyi-inzhener-vibe-coder/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-24T10:37:50+03:00</news:publication_date>
+      <news:title>Продуктовый инженер (Vibe Coder)</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-23-zapilil-mini-igru-za-chas-zakinul-v-github-actions-prokinul/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-24T10:37:50+03:00</news:publication_date>
+      <news:title>Запилил мини-игру за час, закинул в Github Actions, прокинул в Telegram Mini App</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-23-5-promtov-chtoby-zabit-otlozhku-na-nedeliu-mesiats-vpered/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-24T10:37:50+03:00</news:publication_date>
+      <news:title>💬 5 промтов, чтобы забить отложку на неделю/месяц вперёд.</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-23-google-search-an-agent/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-24T10:37:50+03:00</news:publication_date>
+      <news:title>Google Search an agent🔋</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-23-bitgn-live-liderbordy-teper-uchityvaiut-vremia-progona/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-24T10:37:50+03:00</news:publication_date>
+      <news:title>**BitGN Live лидерборды теперь учитывают время прогона</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-23-pishete-prompt-poluchaete-plokhoi-otvet-rugaetes-s-neiroseti/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-24T10:37:50+03:00</news:publication_date>
+      <news:title>Пишете промпт, получаете плохой ответ, ругаетесь с нейросетью и всё переделывает</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-23-ecom1-poluchil-prodolzhenie-na-vtoroi-sezon/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-24T10:37:50+03:00</news:publication_date>
+      <news:title>ECOM1 получил продолжение на второй сезон!</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-23-were-announcing-new-community-investments-in-missouri/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-24T10:37:50+03:00</news:publication_date>
+      <news:title>We’re announcing new community investments in Missouri.</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-23-100-things-we-announced-at-i-o-2026/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-24T10:37:50+03:00</news:publication_date>
+      <news:title>100 things we announced at I/O 2026</news:title>
+    </news:news>
+  </url>
+
+</urlset>

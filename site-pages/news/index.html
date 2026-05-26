@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Новости — Карпов Николай</title>
+    <meta
+      name="description"
+      content="Лента обзоров и комментариев по AI-индустрии: новые модели, корпоративные внедрения, вайбкодинг и проекты."
+    />
+    <link rel="canonical" href="https://nikolai-karpov.github.io/my-website/site-pages/news/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Новости — Карпов Николай" />
+    <meta property="og:description" content="Лента обзоров и комментариев по AI-индустрии." />
+    <meta property="og:url" content="https://nikolai-karpov.github.io/my-website/site-pages/news/" />
+    <meta property="og:locale" content="ru_RU" />
+
+    <link rel="alternate" type="application/rss+xml" title="Новости (RSS)" href="https://nikolai-karpov.github.io/my-website/site-pages/news/feed.xml" />
+    <link rel="alternate" type="application/feed+json" title="Новости (JSON Feed)" href="https://nikolai-karpov.github.io/my-website/site-pages/news/feed.json" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/my-website/assets/css/style.css" />
+    <link rel="icon" href="/my-website/favicon.ico" type="image/x-icon" />
+
+    <style>
+      .news-hub__intro {
+        width: min(100% - 2rem, 72ch);
+        margin: 0 auto clamp(28px, 4vw, 48px);
+      }
+      .news-hub__feeds {
+        font-family: var(--font-mono);
+        font-size: 13px;
+        color: var(--text-muted);
+        margin-top: 12px;
+      }
+      .news-hub__feeds a { color: var(--accent); text-decoration: none; }
+      .news-hub__feeds a:hover { color: var(--accent-hover); text-decoration: underline; }
+      .news-hub__month {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--text-faint);
+        margin: 36px 0 6px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+      }
+      .news-hub__month:first-of-type { border-top: 0; padding-top: 0; margin-top: 0; }
+      .news-card {
+        display: grid;
+        gap: 6px 18px;
+        padding: 22px 0;
+        border-top: 1px solid var(--line);
+        text-decoration: none;
+        color: inherit;
+        transition: background 0.15s ease, padding 0.15s ease;
+      }
+      .news-card:hover { background: var(--bg-alt); padding-inline: 14px; }
+      .news-card:last-child { border-bottom: 1px solid var(--line); }
+      .news-card__meta {
+        display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center;
+        font-family: var(--font-mono);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--text-faint);
+      }
+      .news-card__pill {
+        display: inline-flex; align-items: center; gap: 4px;
+        padding: 3px 9px;
+        background: var(--bg-alt);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--accent);
+      }
+      .news-card:hover .news-card__pill { background: var(--surface); }
+      .news-card__title {
+        font-family: var(--font-display);
+        font-size: clamp(1.15rem, 1.3vw + 0.6rem, 1.5rem);
+        line-height: 1.25;
+        color: var(--text);
+        font-weight: 500;
+      }
+      .news-card:hover .news-card__title { color: var(--accent); }
+      .news-card__desc {
+        color: var(--text-muted);
+        font-size: 0.98rem;
+        line-height: 1.55;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header" role="banner">
+      <div class="container site-header__inner">
+        <a href="/my-website/" class="brand" aria-label="На главную">
+          <span class="brand__dot" aria-hidden="true"></span>
+          <span>Внедрение нейросетей</span>
+        </a>
+        <nav class="site-nav" aria-label="Основная навигация">
+          <a href="/my-website/#approach">Подход</a>
+          <a href="/my-website/#cases">Кейсы</a>
+          <a href="/my-website/site-pages/methodology.html">Методология</a>
+          <a href="/my-website/site-pages/publications/index.html">Обзоры</a>
+          <a href="https://nikolai-karpov.github.io/my-website/site-pages/news/" class="is-active">Новости</a>
+          <a href="/my-website/#contact">Контакт</a>
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" stroke-linejoin="round" />
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main">
+      <section class="article-hero container">
+        <a href="/my-website/" class="back-link">
+          <span aria-hidden="true">←</span> На главную
+        </a>
+        <div class="article-hero__meta">
+          <span>Лента · AI-индустрия · ежедневно</span>
+        </div>
+        <h1 class="article-hero__title">Новости</h1>
+        <div class="news-hub__intro">
+          <p class="article-hero__hook">
+            Лента обзоров и комментариев по AI-индустрии: новые модели, корпоративные внедрения, вайбкодинг и проекты. Короткие заметки с моим взглядом.
+          </p>
+          <p class="news-hub__feeds">
+            Подписаться: <a href="https://nikolai-karpov.github.io/my-website/site-pages/news/feed.xml">RSS</a> · <a href="https://nikolai-karpov.github.io/my-website/site-pages/news/feed.json">JSON Feed</a>
+          </p>
+        </div>
+      </section>
+
+      <section class="section container">
+        
+        
+          <div class="news-hub__month">Май 2026</div>
+          
+            <a class="news-card" href="2026-05-26-gemini-3-5-flash-moshch-pro-urovnia-po-tsene-flash/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-26T11:29:32+03:00">26 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">Google выпустила Gemini 3.5 Flash с контекстом 1M токенов и мультимодальностью</div>
+              <div class="news-card__desc">Google представила модель Gemini 3.5 Flash с контекстом 1 048 576 токенов и полной мультимодальностью. Позиционируется как производительность Pro-класса при стоимости и скорости Flash-серии.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-26-llm-bez-poiska-generator-galliutsinatsii-kak-my-s-etim-sprav/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🎯 Проекты</span>
+                <time datetime="2026-05-26T11:28:33+03:00">26 май 2026</time>
+                <span>2 мин</span>
+              </div>
+              <div class="news-card__title">Яндекс: как построить AI Chat для интранета на базе поиска и снизить галлюцинации</div>
+              <div class="news-card__desc">Команда Яндекс Infrastructure описала архитектуру внутреннего AI-чата для корпоративного интранета. Система построена на базе существующего поиска, а для снижения галлюцинаций используется гибридное ранжирование и фича-инжиниринг контекста. Внедрение подтверждено A/B-тестами.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-26-chem-chashche-agent-sprashivaet-razresheniia-tem-khuzhe-on-z/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">⚒ Вайбкодинг</span>
+                <time datetime="2026-05-26T11:27:18+03:00">26 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">Claude Code: sandboxing с bubblewrap/seatbelt снял 84% запросов на одобрение</div>
+              <div class="news-card__desc">Anthropic описала архитектуру безопасности Claude Code: агент работает в песочнице с двойной изоляцией — по файлам и сети. Подход снял 84% запросов на подтверждение действий.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-26-dobavili-novuiu-model-gemini-3-5-flash/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-26T11:26:15+03:00">26 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">Gemini 3.5 Flash: 83.6% на MCP Atlas, обходит 3.1 Pro и конкурирует с GPT-5.5</div>
+              <div class="news-card__desc">Google представила Gemini 3.5 Flash на I/O. Модель показывает 83.6% на агентном бенчмарке MCP Atlas и 76.2% на Terminal-Bench 2.1, обходя предыдущую Pro-версию и конкурируя с GPT-5.5.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-26-oblachnaia-llm-na-16-gb-vram-chast-2-langgraph-server-langsm/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🎯 Проекты</span>
+                <time datetime="2026-05-26T11:25:09+03:00">26 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">LangGraph Server автоматически поднимает REST API для локальной LLM на 16 ГБ VRAM</div>
+              <div class="news-card__desc">Selectel опубликовал вторую часть гайда по запуску облачной LLM на 16 ГБ VRAM. В этот раз — построение графовой инфраструктуры LangGraph с автоматическим созданием REST API, трейсингом в LangSmith и SDK для разработки.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-26-google-skormila-ii-trillion-minut-s-fitnes-brasletov-i-nauch/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-26T11:23:57+03:00">26 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">Google SensorFM: foundation-модель на 1 трлн минут данных с фитнес-браслетов</div>
+              <div class="news-card__desc">Google обучила SensorFM на данных от 5 млн человек. Модель сначала выучивает структуру физиологических сигналов, а затем переиспользует представление для предсказаний по кардиологии, метаболизму и сну. На 34 из 35 задач эмбеддинги превзошли ручные признаки.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-26-bitgn-ecom1-sostoitsia-30-maia-raspisanie-remote-first/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🎯 Проекты</span>
+                <time datetime="2026-05-26T11:22:53+03:00">26 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">BitGN ECOM1: 105 пользователей, 62.8k прогонов агентов, 8.41M Tool Calls за 7 дней</div>
+              <div class="news-card__desc">30 мая стартует бенчмарк ECOM1 для оценки AI-агентов. Платформа уже показала масштаб: 105 пользователей за 7 дней совершили 62.8k прогонов, сгенерировав 8.41M вызовов инструментов и 1.35 лет агентского времени.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-26-quoting-spacex-s-1/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🏢 Корпоративное</span>
+                <time datetime="2026-05-26T11:21:47+03:00">26 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">Anthropic платит SpaceX $1.25 млрд/мес за compute в COLOSSUS до мая 2029</div>
+              <div class="news-card__desc">SpaceX раскрыла в S-1 контракт с Anthropic: $1.25 млрд ежемесячно за доступ к compute-мощностям COLOSSUS и COLOSSUS II. Соглашение действует до мая 2029 года с возможностью расторжения за 90 дней.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-26-finish-reason-length-polnyi-otvet-id-chatcmpl-dhxmnvfa0m3jak/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-26T11:20:44+03:00">26 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">GPT-5-mini: 1200 reasoning-токенов за 13.9 секунды, TTFT 249 мс</div>
+              <div class="news-card__desc">Лог API-ответа от модели openai/gpt-5-mini показывает конкретные метрики инференса: 1200 completion_tokens (все reasoning), 3188 prompt_tokens (из них 3072 кешированы), latency 13.9 секунд и TTFT 249 мс. Ответ обрезан по лимиту длины.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-26-towards-speed-of-light-text-generation-with-nemotron-labs-di/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-26T11:19:40+03:00">26 май 2026</time>
+                <span>2 мин</span>
+              </div>
+              <div class="news-card__title">NVIDIA релизила Nemotron-Labs Diffusion LMs: генерация текста со скоростью света</div>
+              <div class="news-card__desc">NVIDIA опубликовала на Hugging Face семейство языковых моделей на основе диффузионной архитектуры (DLM). Ключевое обещание — генерация текста со скоростью, приближенной к скорости света, за счёт параллельного предсказания всех токенов одновременно.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-25-llm-bez-poiska-generator-galliutsinatsii-kak-my-s-etim-sprav/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🎯 Проекты</span>
+                <time datetime="2026-05-26T01:07:24+03:00">26 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">Яндекс: LLM-изация интранет-поиска с A/B-тестами и архитектурой ранжирования</div>
+              <div class="news-card__desc">Команда Yandex Infrastructure детально разобрала процесс интеграции LLM в корпоративный поиск по интранету. В статье обещаны цифры из реальных A/B-экспериментов и архитектура перехода от классического ранжирования к генеративной Q&amp;A-системе.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-25-datasette-agent-charts-0-1a1/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🎯 Проекты</span>
+                <time datetime="2026-05-26T01:06:28+03:00">26 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">datasette-agent-charts 0.1a1: тултипы, observable10 и проверки прав</div>
+              <div class="news-card__desc">Вышел релиз datasette-agent-charts 0.1a1. Обновление добавляет интерактивные тултипы, палитру observable10 для текстовых значений и проверку прав execute-sql перед инспекцией колонок.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-25-anthropic-platit-spacex-125-mlrd-v-mesiats-za-vychisleniia-v/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🏢 Корпоративное</span>
+                <time datetime="2026-05-26T01:05:49+03:00">26 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">Anthropic платит SpaceX $1,25 млрд в месяц за вычисления</div>
+              <div class="news-card__desc">Anthropic заключила контракт с SpaceX на поставку вычислительных мощностей стоимостью $1,25 млрд в месяц, что составляет $15 млрд в год. Детали сделки раскрыты в документах IPO SpaceX.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-25-dobavili-novuiu-model-gemini-3-5-flash/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-26T01:04:52+03:00">26 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">Gemini 3.5 Flash: 83.6% на MCP Atlas, обходит 3.1 Pro в агентных задачах</div>
+              <div class="news-card__desc">Google представила Gemini 3.5 Flash на I/O. Модель показала 83.6% на бенчмарке многошаговых агентных задач MCP Atlas и 76.2% на Terminal-Bench 2.1, обогнав Gemini 3.1 Pro и конкурируя с GPT-5.5.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-25-wordstat-api-instrument-dlia-polucheniia-statistiki-poiskovy/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🎯 Проекты</span>
+                <time datetime="2026-05-26T01:03:53+03:00">26 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">Wordstat API Яндекса вышел в GA: агрегация по месяцам/неделям/дням и региональная аналитика</div>
+              <div class="news-card__desc">Яндекс анонсировал выход Wordstat API в стадию General Availability. API предоставляет программный доступ к статистике поисковых запросов с возможностью агрегации по месяцам, неделям и дням, а также региональной аналитикой.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-25-delta-channels-how-were-evolving-our-runtime-for-long-runnin/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🎯 Проекты</span>
+                <time datetime="2026-05-26T01:02:57+03:00">26 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">LangGraph 1.2: DeltaChannels снижают рост хранилища с O(N²) до константы</div>
+              <div class="news-card__desc">В LangGraph 1.2 появился примитив DeltaChannel, оптимизирующий хранение состояния долгоживущих агентов. Вместо полных снапшотов система записывает только диффы, делая расходы на хранилище константными вне зависимости от длины сессии.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-25-google-skormila-ii-trillion-minut-s-fitnes-brasletov-i-nauch/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-26T01:02:20+03:00">26 май 2026</time>
+                <span>2 мин</span>
+              </div>
+              <div class="news-card__title">Google SensorFM: foundation model для сенсорных данных с тела обучена на 1+ трлн минут</div>
+              <div class="news-card__desc">Google выпустила SensorFM — foundation model для данных с носимых устройств. Обучена на 1+ триллионе минут сырых сенсорных сигналов от 5 млн человек. Эмбеддинги модели обошли ручной фичеринг на 34 из 35 предсказательных задач.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-25-prosba-proverit-sovmestimost-modeli-openai-gpt-5-3-codex-s-v/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-26T01:01:16+03:00">26 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title"></div>
+              <div class="news-card__desc"></div>
+            </a>
+          
+            <a class="news-card" href="2026-05-25-quoting-spacex-s-1/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🏢 Корпоративное</span>
+                <time datetime="2026-05-26T01:00:36+03:00">26 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">Anthropic платит SpaceX $1.25 млрд/мес за доступ к COLOSSUS II</div>
+              <div class="news-card__desc">В S-1 документе SpaceX раскрыта сделка с Anthropic: компания получает $1.25 млрд ежемесячно за предоставление вычислительных мощностей кластеров COLOSSUS и COLOSSUS II. Контракт действует до мая 2029 года.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-25-2-novaia-model-budet-v-srednem-v-15-raza-deshevle-deepseek-v/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-26T00:59:39+03:00">26 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title"></div>
+              <div class="news-card__desc"></div>
+            </a>
+          
+            <a class="news-card" href="2026-05-23-v-chate-nedavno-obsuzhdali-na-chto-ispolzovat-ostavshiesia-s/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-24T10:37:50+03:00">24 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">В чате недавно обсуждали, на что использовать оставшиеся свободные tokens в подп</div>
+              <div class="news-card__desc">Краткое описание события одним-двумя предложениями для карточки хаба.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-23-produktovyi-inzhener-vibe-coder/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-24T10:37:50+03:00">24 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">Продуктовый инженер (Vibe Coder)</div>
+              <div class="news-card__desc">Краткое описание события одним-двумя предложениями для карточки хаба.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-23-zapilil-mini-igru-za-chas-zakinul-v-github-actions-prokinul/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">⚒ Вайбкодинг</span>
+                <time datetime="2026-05-24T10:37:50+03:00">24 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">Запилил мини-игру за час, закинул в Github Actions, прокинул в Telegram Mini App</div>
+              <div class="news-card__desc">Краткое описание события одним-двумя предложениями для карточки хаба.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-23-5-promtov-chtoby-zabit-otlozhku-na-nedeliu-mesiats-vpered/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-24T10:37:50+03:00">24 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">💬 5 промтов, чтобы забить отложку на неделю/месяц вперёд.</div>
+              <div class="news-card__desc">Краткое описание события одним-двумя предложениями для карточки хаба.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-23-google-search-an-agent/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-24T10:37:50+03:00">24 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">Google Search an agent🔋</div>
+              <div class="news-card__desc">Краткое описание события одним-двумя предложениями для карточки хаба.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-23-bitgn-live-liderbordy-teper-uchityvaiut-vremia-progona/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-24T10:37:50+03:00">24 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">**BitGN Live лидерборды теперь учитывают время прогона</div>
+              <div class="news-card__desc">Краткое описание события одним-двумя предложениями для карточки хаба.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-23-pishete-prompt-poluchaete-plokhoi-otvet-rugaetes-s-neiroseti/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-24T10:37:50+03:00">24 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">Пишете промпт, получаете плохой ответ, ругаетесь с нейросетью и всё переделывает</div>
+              <div class="news-card__desc">Краткое описание события одним-двумя предложениями для карточки хаба.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-23-ecom1-poluchil-prodolzhenie-na-vtoroi-sezon/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-24T10:37:50+03:00">24 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">ECOM1 получил продолжение на второй сезон!</div>
+              <div class="news-card__desc">Краткое описание события одним-двумя предложениями для карточки хаба.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-23-were-announcing-new-community-investments-in-missouri/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🏢 Корпоративное</span>
+                <time datetime="2026-05-24T10:37:50+03:00">24 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">We’re announcing new community investments in Missouri.</div>
+              <div class="news-card__desc">Краткое описание события одним-двумя предложениями для карточки хаба.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-23-100-things-we-announced-at-i-o-2026/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-24T10:37:50+03:00">24 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">100 things we announced at I/O 2026</div>
+              <div class="news-card__desc">Краткое описание события одним-двумя предложениями для карточки хаба.</div>
+            </a>
+          
+        
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div>© 2026 · Карпов Николай</div>
+        <div>
+          <a href="https://github.com/nikolai-karpov" target="_blank" rel="noopener">GitHub</a>
+          ·
+          <a href="https://nikolai-karpov.github.io/my-website/site-pages/news/feed.xml">RSS</a>
+        </div>
+      </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" type="button" aria-label="Наверх">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 15l6-6 6 6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+
+    <script src="/my-website/assets/js/main.js" defer></script>
+  </body>
+</html>
