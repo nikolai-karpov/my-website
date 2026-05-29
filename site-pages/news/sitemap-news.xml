@@ -3,6 +3,126 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-improving-vector-search-reranking-with-postgresml-and-llamai/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-29T05:39:50+03:00</news:publication_date>
+      <news:title>PostgresML + LlamaIndex: реранкинг поднимает recall векторного поиска до 95%</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-improving-rag-effectiveness-with-retrieval-augmented-dual-in/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-29T05:39:09+03:00</news:publication_date>
+      <news:title>RA-DIT: двойной тюнинг LLM и ретривера для улучшения RAG</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-fine-tuning-a-linear-adapter-for-any-embedding-model/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-29T05:38:31+03:00</news:publication_date>
+      <news:title>LlamaIndex: fine-tuning линейного адаптера для эмбеддинг-моделей</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-building-and-evaluating-a-qa-system-with-llamaindex/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-29T05:37:51+03:00</news:publication_date>
+      <news:title>LlamaIndex: пошаговый паттерн QA-системы с оценкой через LLM-as-a-Judge</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-27-shipping-a-trillion-parameters-with-a-hub-bucket-delta-weigh/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-29T05:37:17+03:00</news:publication_date>
+      <news:title>Delta Weight Sync в TRL: синхронизация триллионных параметров через Hub Bucket</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-28-vazhnye-izmeneniia-dlia-tekh-kto-ispolzuet-ili-planiruet-vne/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-29T05:36:38+03:00</news:publication_date>
+      <news:title>Xiaomi снизила цены на модели mimo v2.5 и v2.5-pro до 70%</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-28-v-8-raz-bystree-na-tom-zhe-zheleze-prognal-moe-variant-qwen3/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-29T05:36:12+03:00</news:publication_date>
+      <news:title>MoE-вариант Qwen3-VL 30B-A3B ускоряет инференс в 8 раз на DGX Spark</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-jeppesen-a-boeing-company-saves-2000-engineering-hours-with/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-29T05:35:41+03:00</news:publication_date>
+      <news:title>Boeing сэкономил 2000 инженерных часов на едином чат-фреймворке LlamaIndex</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-fine-tuning-embeddings-for-rag-with-synthetic-data/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-29T05:35:16+03:00</news:publication_date>
+      <news:title>LlamaIndex: как улучшить RAG точной настройкой эмбеддингов на синтетических данных</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-introducing-gpt-5-4-openai/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-29T05:34:36+03:00</news:publication_date>
+      <news:title>GPT-5.4: 83% на GDPval, tool search в API и open-source оценка CoT</news:title>
+    </news:news>
+  </url>
+
+  <url>
     <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-gemini-3-5-flash-moshch-pro-urovnia-po-tsene-flash/</loc>
     <news:news>
       <news:publication>

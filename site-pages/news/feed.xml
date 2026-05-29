@@ -10,8 +10,130 @@
     <language>ru</language>
     <copyright>© 2026 Карпов Николай</copyright>
     <atom:link href="https://nikolai-karpov.github.io/my-website/site-pages/news/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 26 May 2026 11:53:26 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 29 May 2026 05:39:51 +0300</lastBuildDate>
     <generator>hermes/news_renderer</generator>
+
+    <item>
+      <title>PostgresML + LlamaIndex: реранкинг поднимает recall векторного поиска до 95%</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-improving-vector-search-reranking-with-postgresml-and-llamai/</link>
+      <description><![CDATA[LlamaIndex опубликовал разбор, как добавить реранкинг от PostgresML поверх векторного поиска. Ключевой результат: recall@10 вырос с 0.62 до 0.95 на тестовом наборе, при этом latency увеличилась всего на 40 мс.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Интеграция LlamaIndex с PostgresML для двухэтапного поиска: первый этап — быстрый векторный поиск (ANN), второй — точный реранкинг с помощью модели-классификатора, обученной на парах (запрос, документ).</p><h3>Как</h3><p>Архитектура состоит из трех компонентов:</p><ul><li><strong>Векторный индекс (HNSW)</strong> в PostgreSQL с расширением pgvector для быстрого отбора 100-200 кандидатов.</li><li><strong>PostgresML</strong> — вызов модели реранкинга (по умолчанию <code>cross-encoder/ms-marco-MiniLM-L-6-v2</code>) прямо внутри SQL-запроса через функцию <code>pgml.transform()</code>.</li><li><strong>LlamaIndex</strong> оркестрирует процесс: формирует эмбеддинги, делает первый запрос к ANN-индексу, затем передает кандидатов в PostgresML для реранкинга.</li></ul><p>Ключевая идея: реранкер работает не на всём корпусе, а только на коротком списке кандидатов от быстрого поиска, что делает двухэтапный подход вычислительно приемлемым.</p><h3>Цифры</h3><ul><li><strong>Recall@10</strong>: 0.62 (только векторный поиск) → 0.95 (с реранкингом).</li><li><strong>Latency</strong>: ~15 мс (только ANN) → ~55 мс (ANN + реранкинг).</li><li><strong>Модель реранкера</strong>: cross-encoder с 22M параметров, inference внутри PostgreSQL.</li><li><strong>Размер кандидатов</strong>: 100-200 документов на реранкинг.</li></ul><h3>Что перенять</h3><p>Паттерн двухэтапного поиска с реранкингом внутри БД — это рабочий способ поднять качество retrieval без миграции на внешние сервисы. PostgresML позволяет вызывать модели-кросс-энкодеры прямо в SQL, что убирает необходимость в отдельном ML-сервисе для реранкинга. Особенно полезно, если у вас уже PostgreSQL и не хочется усложнять инфраструктуру.</p>]]></content:encoded>
+      <pubDate>Fri, 29 May 2026 05:39:50 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-improving-vector-search-reranking-with-postgresml-and-llamai/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>RA-DIT: двойной тюнинг LLM и ретривера для улучшения RAG</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-improving-rag-effectiveness-with-retrieval-augmented-dual-in/</link>
+      <description><![CDATA[LlamaIndex описывает архитектуру RA-DIT — метод, который одновременно дообучает и языковую модель, и ретривер на основе взаимных сигналов. Подход показал прирост точности на задачах с открытыми доменами до 5% по сравнению с базовым RAG.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Retrieval-Augmented Dual Instruction Tuning (RA-DIT) — это методика дообучения, которая адаптирует одновременно два компонента RAG-пайплайна: языковую модель (LLM) и механизм извлечения (ретривер). В отличие от стандартного RAG, где ретривер и LLM работают независимо, RA-DIT создаёт между ними петлю обратной связи.</p><h3>Как</h3><p>Методика работает в два этапа. Сначала LLM дообучается предсказывать правильный ответ при условии предоставленного контекста (retrieval-augmented instruction tuning). Затем ретривер дообучается ранжировать документы так, чтобы они были максимально полезны для уже адаптированной LLM. Ключевая идея — ретривер учится не просто находить семантически близкие документы, а находить документы, которые реально помогают модели дать точный ответ.</p><h3>Цифры</h3><p>На бенчмарках с открытыми доменами (Natural Questions, TriviaQA) RA-DIT показал прирост точности на 2–5% по сравнению с классическим RAG. Метод особенно эффективен для моделей размером 7B–13B параметров, где каждый процент точности критичен. Дообучение ретривера на 100K пар запрос-документ даёт заметный эффект.</p><h3>Что перенять</h3><p>Паттерн «двойной адаптации» можно применить к любому RAG-пайплайну: дообучить LLM на данных с контекстом, а затем дообучить ретривер на фидбеке от этой LLM. Это особенно полезно в узких доменах (юридические документы, медицинские карты), где стандартные эмбеддинги плохо понимают специфику. Для старта достаточно 10–50K размеченных пар запрос-релевантный-документ.</p>]]></content:encoded>
+      <pubDate>Fri, 29 May 2026 05:39:09 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-improving-rag-effectiveness-with-retrieval-augmented-dual-in/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>LlamaIndex: fine-tuning линейного адаптера для эмбеддинг-моделей</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-fine-tuning-a-linear-adapter-for-any-embedding-model/</link>
+      <description><![CDATA[LlamaIndex опубликовали гайд по fine-tuning линейного адаптера поверх любой эмбеддинг-модели. Приём улучшает retrieval в RAG без переобучения базовой модели — только lightweight-слой на верху.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Метод fine-tuning линейного адаптера (linear adapter) для любой эмбеддинг-модели (например, OpenAI ada-002, Cohere, open-source). Адаптер — это дополнительный линейный слой поверх эмбеддингов, который обучается на вашем доменном датасете (query-document pairs).</p>
+
+<h3>Как</h3><p>Базовая эмбеддинг-модель замораживается. Обучается только линейный слой (матрица трансформации), который проецирует эмбеддинги в новое пространство. Это даёт два преимущества: (1) не нужно хранить градиенты по всей модели, (2) адаптер весит ~мегабайты и может быть применён поверх любого чекпоинта.</p><p>Для обучения используются пары (query, positive_doc, negative_doc) — triplet loss или contrastive loss. LlamaIndex提供уют пайплайн: загрузка датасета → генерация эмбеддингов базовой моделью → обучение адаптера → интеграция в retriever.</p>
+
+<h3>Цифры</h3><p>В блоге приводятся эксперименты на датасете LlamaIndex (внутренние документы). После fine-tuning адаптера recall@10 вырос с 0.65 до 0.78 (+20%). Время обучения адаптера — ~10 минут на GPU (vs. часы для полного fine-tuning эмбеддинг-модели). Размер адаптера — ~2 МБ.</p>
+
+<h3>Что перенять</h3><p>Паттерн «заморозить базовую модель + обучить линейный адаптер» применим не только к эмбеддингам, но и к любым feature extractor'ам в retrieval-пайплайнах. Если у вас есть размеченные пары (query, doc) — можно улучшить retrieval без доступа к весам базовой модели (например, при использовании proprietary API).</p>]]></content:encoded>
+      <pubDate>Fri, 29 May 2026 05:38:31 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-fine-tuning-a-linear-adapter-for-any-embedding-model/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>LlamaIndex: пошаговый паттерн QA-системы с оценкой через LLM-as-a-Judge</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-building-and-evaluating-a-qa-system-with-llamaindex/</link>
+      <description><![CDATA[LlamaIndex опубликовал руководство по созданию QA-системы на RAG с автоматической оценкой качества ответов. Ключевой приём — использование LLM в роли судьи для оценки полноты и релевантности, что заменяет ручную разметку.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Техническое руководство от LlamaIndex по построению и оценке QA-системы (Question-Answering) на базе Retrieval-Augmented Generation (RAG). Материал представляет собой конкретный паттерн с кодом, а не теоретическое описание.</p><h3>Как</h3><p>Архитектура строится на классическом RAG-пайплайне: загрузка документов → нарезка на чанки → создание эмбеддингов и индекса → извлечение релевантных чанков по запросу → генерация ответа LLM. Ключевое инженерное решение — этап оценки (evaluation), где используется подход <strong>LLM-as-a-Judge</strong>: другая LLM-модель оценивает сгенерированный ответ по критериям полноты (completeness) и релевантности (relevance) относительно эталонного ответа или контекста.</p><h3>Цифры</h3><p>В руководстве не приводятся конкретные метрики производительности (latency, throughput) или количественные результаты оценки. Фокус на качественном паттерне, а не на бенчмарках.</p><h3>Что перенять</h3><p>Паттерн <strong>LLM-as-a-Judge для оценки RAG</strong>: вместо ручной разметки датасета используйте LLM для автоматической оценки качества ответов по заданным критериям. Это позволяет итеративно улучшать систему (чанкинг, промпты, retrieval) без дорогой ручной разметки. Паттерн применим к любому RAG-проекту.</p>]]></content:encoded>
+      <pubDate>Fri, 29 May 2026 05:37:51 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-building-and-evaluating-a-qa-system-with-llamaindex/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Delta Weight Sync в TRL: синхронизация триллионных параметров через Hub Bucket</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-27-shipping-a-trillion-parameters-with-a-hub-bucket-delta-weigh/</link>
+      <description><![CDATA[Hugging Face представила Delta Weight Sync — метод синхронизации весов для распределённого обучения триллионных моделей в TRL. Вместо передачи полных чекпоинтов синхронизируются только дельты между итерациями, что снижает объём передаваемых данных на порядки.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Delta Weight Sync — это новый механизм синхронизации весов в библиотеке TRL (Transformer Reinforcement Learning) от Hugging Face. Метод позволяет обучать модели с триллионами параметров на распределённых кластерах, используя Hub Bucket в качестве промежуточного хранилища.</p><h3>Как</h3><p>Ключевая идея — передавать между воркерами не полные веса модели, а только дельты (разницу) между текущим и предыдущим состоянием. Каждый воркер вычисляет свою дельту после градиентного шага и загружает её в Hub Bucket. Другие воркеры скачивают только накопленные дельты и применяют их к своей локальной копии весов.</p><p>Это работает как распределённый аналог gradient accumulation, но на уровне весов: вместо агрегации градиентов агрегируются уже применённые обновления. Hub Bucket выступает как асинхронное хранилище, не требующее одновременного присутствия всех воркеров.</p><h3>Цифры</h3><p>Для модели с 1 триллионом параметров полный чекпоинт весов в FP16 занимает ~2 ТБ. При стандартной синхронизации каждую итерацию нужно передавать эти 2 ТБ между воркерами. Delta Weight Sync передаёт только дельты — типичный размер дельты после одного шага оптимизатора составляет 10–50 ГБ (0.5–2.5% от полного чекпоинта), что даёт ускорение синхронизации в 40–200×</p><h3>Что перенять</h3><p>Паттерн «дельта-синхронизация через объектное хранилище» применим к любому распределённому обучению, где полные чекпоинты слишком велики для частой передачи. Вместо AllReduce на каждом шаге можно накапливать дельты в S3-совместимом хранилище и применять их асинхронно.</p><p>Ключевое ограничение: метод предполагает, что все воркеры работают с одной и той же архитектурой и начальным чекпоинтом. Дельты не совместимы между разными версиями модели. Также асинхронность вносит задержку в конвергенцию — воркеры работают с slightly stale весами.</p>]]></content:encoded>
+      <pubDate>Fri, 29 May 2026 05:37:17 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-27-shipping-a-trillion-parameters-with-a-hub-bucket-delta-weigh/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Xiaomi снизила цены на модели mimo v2.5 и v2.5-pro до 70%</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-28-vazhnye-izmeneniia-dlia-tekh-kto-ispolzuet-ili-planiruet-vne/</link>
+      <description><![CDATA[Xiaomi объявила о снижении стоимости API-доступа к своим языковым моделям mimo v2.5 и v2.5-pro. Максимальное падение цен — на output-токены базовой модели v2.5, стоимость упала с 306 до 43 рублей за миллион токенов.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Xiaomi обновила прайс-лист на API-доступ к своим LLM-моделям линейки mimo v2.5. Изменения затронули две модели: базовую <code>xiaomi/mimo-v2.5</code> и продвинутую <code>xiaomi/mimo-v2.5-pro</code>.</p><h3>Как</h3><p>Снижение применено ко всем типам токенов (input и output) для обеих моделей. Новые цены уже активны на официальном сайте. Это не промо-акция, а постоянное изменение тарифной сетки.</p><h3>Цифры</h3><ul><li><strong>mimo v2.5 input:</strong> 61 ₽ → 21 ₽ (снижение на 65%)</li><li><strong>mimo v2.5 output:</strong> 306 ₽ → 43 ₽ (снижение на 86%)</li><li><strong>mimo v2.5-pro input:</strong> 153 ₽ → 67 ₽ (снижение на 56%)</li><li><strong>mimo v2.5-pro output:</strong> 459 ₽ → 133 ₽ (снижение на 71%)</li></ul><h3>Что перенять</h3><p>Если вы уже используете модели Xiaomi в продакшене — пересчитайте себестоимость инференса. Особенно выгодно стало генерировать длинные ответы на базовой v2.5: output-токены подешевели в 7 раз. Для прототипирования и нагрузочного тестирования модели стали значительно доступнее.</p>]]></content:encoded>
+      <pubDate>Fri, 29 May 2026 05:36:38 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-28-vazhnye-izmeneniia-dlia-tekh-kto-ispolzuet-ili-planiruet-vne/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>MoE-вариант Qwen3-VL 30B-A3B ускоряет инференс в 8 раз на DGX Spark</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-28-v-8-raz-bystree-na-tom-zhe-zheleze-prognal-moe-variant-qwen3/</link>
+      <description><![CDATA[На DGX Spark переход с dense Qwen3-VL-32B на MoE-вариант 30B-A3B дал 8-кратное ускорение: время обработки фото сократилось с 184 до 22 секунд, throughput вырос с 3.7 до 30 ток/с. Точность оценки содержания сохранилась, рамки чуть просели.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Сравнение dense Qwen3-VL-32B-Instruct и MoE-варианта Qwen3-VL-30B-A3B-Instruct (30B параметров всего, ~3B активных на токен) на задаче визуального поиска нарушений на фото. Обе модели в BF16 на DGX Spark.</p><h3>Как</h3><p>Ключевое архитектурное решение — замена dense-архитектуры на Mixture of Experts. В MoE-варианте на каждый токен активируется только ~3B из 30B параметров, тогда как dense-модель читает все 32B весов. Это критично, потому что bottleneck DGX Spark — пропускная способность памяти (273 ГБ/с), а не вычислительная мощность.</p><h3>Цифры</h3><ul><li><strong>Скорость генерации:</strong> 3.7 → 30 ток/с (×8.1)</li><li><strong>Время на фото:</strong> 184 с → 22 с (×8.4)</li><li><strong>Загрузка модели:</strong> 500 с → 250 с</li><li><strong>Пропускная способность памяти DGX Spark:</strong> 273 ГБ/с</li><li><strong>Потенциальный throughput:</strong> 20 000 фото/мес → 100 000+ фото/мес на том же железе</li></ul><h3>Что перенять</h3><p>Для memory-bound инференса (когда GPU простаивает в ожидании данных из памяти) MoE-модели с малым числом активных экспертов дают кратный прирост скорости без потери качества генерации. Это применимо к любому сценарию, где модель работает на железе с ограниченной пропускной способностью памяти — от edge-устройств до бюджетных GPU-серверов.</p>]]></content:encoded>
+      <pubDate>Fri, 29 May 2026 05:36:12 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-28-v-8-raz-bystree-na-tom-zhe-zheleze-prognal-moe-variant-qwen3/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Boeing сэкономил 2000 инженерных часов на едином чат-фреймворке LlamaIndex</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-jeppesen-a-boeing-company-saves-2000-engineering-hours-with/</link>
+      <description><![CDATA[Подразделение Boeing Jeppesen внедрило унифицированный чат-фреймворк на базе LlamaIndex для доступа к внутренним данным. Результат — экономия около 2000 инженерных часов за счёт автоматизации рутинных запросов.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Jeppesen — подразделение Boeing, специализирующееся на навигационных данных и планировании полётов — внедрило единый чат-фреймворк для доступа к внутренним документам и данным. Фреймворк построен на базе LlamaIndex и объединяет несколько источников данных в одном интерфейсе.</p><h3>Как</h3><p>Архитектура использует RAG (Retrieval-Augmented Generation) с LlamaIndex в качестве оркестратора. Фреймворк индексирует внутренние документы Jeppesen и предоставляет инженерам единый чат-интерфейс для поиска информации вместо ручного перебора нескольких систем. Ключевое решение — унификация: вместо отдельных инструментов для разных типов данных создан единый слой доступа.</p><h3>Цифры</h3><ul><li>Экономия ~2000 инженерных часов</li><li>Сокращение времени на поиск информации с нескольких часов до минут</li><li>Объединение нескольких источников данных в один интерфейс</li></ul><h3>Что перенять</h3><p>Паттерн «единый чат-фреймворк поверх разнородных данных» — применим в компаниях, где инженеры тратят время на ручной поиск по документации, Confluence, внутренним базам знаний. LlamaIndex выступает как оркестратор RAG-пайплайна, а не как самостоятельный продукт.</p>]]></content:encoded>
+      <pubDate>Fri, 29 May 2026 05:35:41 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-jeppesen-a-boeing-company-saves-2000-engineering-hours-with/</guid>
+      <category>Корпоративное</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>LlamaIndex: как улучшить RAG точной настройкой эмбеддингов на синтетических данных</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-fine-tuning-embeddings-for-rag-with-synthetic-data/</link>
+      <description><![CDATA[LlamaIndex опубликовал руководство по fine-tuning эмбеддингов для RAG с использованием синтетических данных. Метод позволяет поднять качество retrieval на специфичных доменах без ручной разметки.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Руководство от LlamaIndex по fine-tuning эмбеддинговых моделей (на примере BAAI/bge-base-en-v1.5) для улучшения качества retrieval в RAG-пайплайнах. Ключевая идея — использование синтетических данных для обучения вместо ручной разметки пар запрос-документ.</p><h3>Как</h3><p>Метод строится на генерации синтетических пар (query, positive_chunk) с помощью LLM. Сначала из исходного корпуса документов извлекаются чанки. Затем для каждого чанка LLM генерирует несколько релевантных вопросов. Эти пары используются для fine-tuning эмбеддинговой модели с помощью contrastive loss (например, MultipleNegativesRankingLoss).</p><p>Ключевой архитектурный приём: генерация негативных примеров. Вместо случайных негативов используются «hard negatives» — чанки, которые семантически близки к позитивному, но не отвечают на сгенерированный запрос. Это заставляет модель учиться на более тонких различиях.</p><h3>Цифры</h3><p>В эксперименте на наборе данных Llama 2 эссе fine-tuned модель показала улучшение retrieval quality (Hit Rate@5) с 63.5% до 72.8% — прирост на 9.3 процентных пункта. Использовалась модель BAAI/bge-base-en-v1.5, fine-tuning проводился на ~10k синтетических пар, сгенерированных GPT-4.</p><h3>Что перенять</h3><p>Паттерн «синонимичная генерация + hard negatives» — это реплицируемый пайплайн для адаптации любых эмбеддингов под специфичный домен. Инструменты из экосистемы LlamaIndex (SentenceSplitter, embeddings) позволяют воспроизвести его без написания кода с нуля. Ключевой параметр — качество генерируемых синтетических вопросов; для этого лучше использовать сильные модели (GPT-4, Claude 3).</p>]]></content:encoded>
+      <pubDate>Fri, 29 May 2026 05:35:16 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-fine-tuning-embeddings-for-rag-with-synthetic-data/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>GPT-5.4: 83% на GDPval, tool search в API и open-source оценка CoT</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-introducing-gpt-5-4-openai/</link>
+      <description><![CDATA[OpenAI выпустила GPT-5.4 — модель превзошла GPT-5.2 на бенчмарке GDPval с 83% против 70.9% и получила новый API-инструмент tool search для эффективной работы с множеством инструментов.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>GPT-5.4 — новая модель от OpenAI, интегрирующая кодинговые возможности GPT-5.3-Codex с улучшенной работой в инструментах, программных средах и профессиональных задачах с таблицами, презентациями и документами.</p>
+
+<h3>Как</h3><p>Ключевое архитектурное нововведение — <strong>tool search</strong> в API: модели могут эффективно работать при большом количестве предоставленных инструментов. Также выпущен экспериментальный навык Codex «Playwright (Interactive)», демонстрирующий совместное использование возможностей модели по работе с компьютером и кодом.</p>
+
+<h3>Цифры</h3><ul><li>GDPval (44 профессии): GPT-5.4 — <strong>83.0%</strong> совпадений с профессионалами, GPT-5.2 — 70.9%</li><li>Контекстные окна в ChatGPT для GPT-5.4 Thinking остались без изменений относительно GPT-5.2 Thinking</li></ul>
+
+<h3>Что перенять</h3><p>OpenAI ввела open-source оценку <strong>CoT controllability</strong> — метрику, измеряющую, могут ли модели намеренно скрывать свои рассуждения для обхода мониторинга. Это полезный паттерн для команд, внедряющих цепочки рассуждений: проверяйте не только качество CoT, но и его устойчивость к обфускации.</p>]]></content:encoded>
+      <pubDate>Fri, 29 May 2026 05:34:36 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-introducing-gpt-5-4-openai/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
 
     <item>
       <title>Google выпустила Gemini 3.5 Flash с контекстом 1M токенов и мультимодальностью</title>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LlamaIndex: fine-tuning линейного адаптера для эмбеддинг-моделей — Новости — Карпов Николай</title>
+    <meta name="description" content="LlamaIndex опубликовали гайд по fine-tuning линейного адаптера поверх любой эмбеддинг-модели. Приём улучшает retrieval в RAG без переобучения базовой модели — только lightweight-слой на верху." />
+    <meta name="author" content="Карпов Николай" />
+    <link rel="canonical" href="https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-fine-tuning-a-linear-adapter-for-any-embedding-model/" />
+
+    
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="LlamaIndex: fine-tuning линейного адаптера для эмбеддинг-моделей" />
+    <meta property="og:description" content="LlamaIndex опубликовали гайд по fine-tuning линейного адаптера поверх любой эмбеддинг-модели. Приём улучшает retrieval в RAG без переобучения базовой модели — только lightweight-слой на верху." />
+    <meta property="og:url" content="https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-fine-tuning-a-linear-adapter-for-any-embedding-model/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Карпов Николай" />
+    <meta property="article:published_time" content="2026-05-29T05:38:31+03:00" />
+    
+    <meta property="article:author" content="Карпов Николай" />
+    <meta property="article:section" content="Новые модели" />
+
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="LlamaIndex: fine-tuning линейного адаптера для эмбеддинг-моделей" />
+    <meta name="twitter:description" content="LlamaIndex опубликовали гайд по fine-tuning линейного адаптера поверх любой эмбеддинг-модели. Приём улучшает retrieval в RAG без переобучения базовой модели — только lightweight-слой на верху." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/my-website/assets/css/style.css" />
+    <link rel="icon" href="/my-website/favicon.ico" type="image/x-icon" />
+
+    
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "LlamaIndex: fine-tuning линейного адаптера для эмбеддинг-моделей",
+  "description": "LlamaIndex опубликовали гайд по fine-tuning линейного адаптера поверх любой эмбеддинг-модели. Приём улучшает retrieval в RAG без переобучения базовой модели — только lightweight-слой на верху.",
+  "datePublished": "2026-05-29T05:38:31+03:00",
+  "dateModified": "2026-05-29T05:38:31+03:00",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Карпов Николай",
+    "url": "https://nikolai-karpov.github.io/my-website/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Карпов Николай",
+    "url": "https://nikolai-karpov.github.io/my-website/"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-fine-tuning-a-linear-adapter-for-any-embedding-model/"
+  },
+  "url": "https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-fine-tuning-a-linear-adapter-for-any-embedding-model/",
+  "articleSection": "Новые модели"
+}</script>
+
+    <style>
+      .news-article { padding-bottom: clamp(64px, 10vh, 120px); }
+      .news-article__body {
+        width: min(100% - 2rem, 72ch);
+        margin-inline: auto;
+        font-size: clamp(1rem, 0.5vw + 0.85rem, 1.15rem);
+        line-height: 1.75;
+      }
+      .news-article__body h1 {
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+        line-height: 1.15;
+        margin: 0 0 18px;
+      }
+      .news-article__body .news-lead {
+        font-size: clamp(1.1rem, 0.7vw + 0.9rem, 1.3rem);
+        line-height: 1.55;
+        color: var(--text-muted);
+        margin: 0 0 32px;
+      }
+      .news-article__body h3 {
+        font-size: clamp(1.15rem, 1.2vw + 0.6rem, 1.4rem);
+        margin: 36px 0 12px;
+        font-weight: 600;
+      }
+      .news-article__body p { margin: 0 0 18px; color: var(--text); }
+      .news-article__body ul, .news-article__body ol { padding-left: 1.2em; margin: 0 0 18px; }
+      .news-article__body li { margin-bottom: 6px; }
+      .news-article__body a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+      .news-article__body a:hover { color: var(--accent-hover); }
+      .news-article__body blockquote.takeaway {
+        margin: 32px 0;
+        padding: 18px 22px;
+        background: var(--accent-soft);
+        border-left: 3px solid var(--accent);
+        border-radius: 0 6px 6px 0;
+        font-family: var(--font-display);
+        font-size: clamp(1.05rem, 0.4vw + 0.95rem, 1.2rem);
+        line-height: 1.5;
+        font-weight: 500;
+        color: var(--text);
+      }
+      .news-meta {
+        display: flex; flex-wrap: wrap; gap: 12px 18px;
+        align-items: center;
+        font-family: var(--font-mono);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--text-faint);
+        margin: 0 0 24px;
+      }
+      .news-meta__pill {
+        display: inline-flex; align-items: center; gap: 6px;
+        padding: 4px 10px;
+        background: var(--bg-alt);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        color: var(--accent);
+        letter-spacing: 0.08em;
+      }
+      .news-meta time { color: var(--text-muted); }
+      .news-sources {
+        margin: 36px 0 0;
+        padding: 20px 24px;
+        background: var(--bg-alt);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+      }
+      .news-sources h2 {
+        font-family: var(--font-mono);
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--text-faint);
+        margin: 0 0 12px;
+        font-weight: 500;
+      }
+      .news-sources ul { list-style: none; padding: 0; margin: 0; }
+      .news-sources li { margin-bottom: 8px; font-size: 0.95rem; }
+      .news-sources li:last-child { margin-bottom: 0; }
+      .news-sources a { color: var(--text); text-decoration: none; border-bottom: 1px dashed var(--line-strong); }
+      .news-sources a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header" role="banner">
+      <div class="container site-header__inner">
+        <a href="/my-website/" class="brand" aria-label="На главную">
+          <span class="brand__dot" aria-hidden="true"></span>
+          <span>Внедрение нейросетей</span>
+        </a>
+        <nav class="site-nav" aria-label="Основная навигация">
+          <a href="/my-website/#approach">Подход</a>
+          <a href="/my-website/#cases">Кейсы</a>
+          <a href="/my-website/site-pages/methodology.html">Методология</a>
+          <a href="/my-website/site-pages/publications/index.html">Обзоры</a>
+          <a href="/my-website/site-pages/news/" class="is-active">Новости</a>
+          <a href="/my-website/#contact">Контакт</a>
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" stroke-linejoin="round" />
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main">
+      <article class="news-article">
+        <div class="container">
+          <a href="/my-website/site-pages/news/" class="back-link" style="margin-top: clamp(60px, 8vh, 100px); display: inline-block;">
+            <span aria-hidden="true">←</span> Все новости
+          </a>
+        </div>
+
+        <div class="news-article__body" style="margin-top: 24px;">
+          <div class="news-meta">
+            <span class="news-meta__pill">🆕 Новые модели</span>
+            <time datetime="2026-05-29T05:38:31+03:00">29 май 2026</time>
+            <span>1 мин чтения</span>
+          </div>
+
+          <h1>LlamaIndex: fine-tuning линейного адаптера для эмбеддинг-моделей</h1>
+
+          <h3>Простым языком</h3>
+          <p>Эмбеддинг-модели (которые превращают текст в векторы) можно «настроить» под вашу задачу, не меняя саму модель. Для этого обучается крошечный линейный слой поверх векторов — он поворачивает пространство так, чтобы ваши документы и запросы оказались ближе друг к другу. Это быстро, дёшево и работает даже с API-моделями.</p>
+
+          
+          <h3>Что нового</h3>
+          <ul>
+            
+            <li>Заморозка базовой эмбеддинг-модели — обучается только линейный слой (матрица трансформации)</li>
+            
+            <li>Использование triplet/contrastive loss на парах (query, positive_doc, negative_doc)</li>
+            
+            <li>Адаптер весит ~2 МБ и может применяться поверх любого чекпоинта, включая proprietary API</li>
+            
+            <li>Пайплайн: загрузка датасета → генерация эмбеддингов → обучение адаптера → интеграция в retriever</li>
+            
+          </ul>
+          
+
+          
+          <h3>Вердикт</h3>
+          <p>Применять, если есть размеченные пары (query, doc) и baseline recall@K &lt; 0.7. Не применять, если базовая модель плохо понимает доменную терминологию — адаптер не исправит фундаментальные проблемы эмбеддингов.</p>
+          
+
+          
+          <blockquote class="takeaway">Линейный адаптер поверх эмбеддинг-модели — это ~2 МБ слой, который за 10 минут обучения улучшает recall@10 на ~20% на доменном датасете, не требуя доступа к весам базовой модели.</blockquote>
+          
+
+          
+          <aside class="news-sources">
+            <h2>Источники</h2>
+            <ul>
+              
+              <li><a href="https://www.llamaindex.ai/blog/fine-tuning-a-linear-adapter-for-any-embedding-model-8dd0a142d383" target="_blank" rel="noopener noreferrer">Fine-Tuning a Linear Adapter for Any Embedding Model</a> — <span style="color: var(--text-muted);">LlamaIndex Blog</span></li>
+              
+            </ul>
+          </aside>
+          
+        </div>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div>© 2026 · Карпов Николай</div>
+        <div>
+          <a href="https://github.com/nikolai-karpov" target="_blank" rel="noopener">GitHub</a>
+          ·
+          <a href="/my-website/site-pages/news/feed.xml">RSS</a>
+        </div>
+      </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" type="button" aria-label="Наверх">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 15l6-6 6 6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+
+    <script src="/my-website/assets/js/main.js" defer></script>
+  </body>
+</html>

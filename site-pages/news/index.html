@@ -146,6 +146,106 @@
         
           <div class="news-hub__month">Май 2026</div>
           
+            <a class="news-card" href="2026-05-29-improving-vector-search-reranking-with-postgresml-and-llamai/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🎯 Проекты</span>
+                <time datetime="2026-05-29T05:39:50+03:00">29 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">PostgresML + LlamaIndex: реранкинг поднимает recall векторного поиска до 95%</div>
+              <div class="news-card__desc">LlamaIndex опубликовал разбор, как добавить реранкинг от PostgresML поверх векторного поиска. Ключевой результат: recall@10 вырос с 0.62 до 0.95 на тестовом наборе, при этом latency увеличилась всего на 40 мс.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-29-improving-rag-effectiveness-with-retrieval-augmented-dual-in/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-29T05:39:09+03:00">29 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">RA-DIT: двойной тюнинг LLM и ретривера для улучшения RAG</div>
+              <div class="news-card__desc">LlamaIndex описывает архитектуру RA-DIT — метод, который одновременно дообучает и языковую модель, и ретривер на основе взаимных сигналов. Подход показал прирост точности на задачах с открытыми доменами до 5% по сравнению с базовым RAG.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-29-fine-tuning-a-linear-adapter-for-any-embedding-model/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-29T05:38:31+03:00">29 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">LlamaIndex: fine-tuning линейного адаптера для эмбеддинг-моделей</div>
+              <div class="news-card__desc">LlamaIndex опубликовали гайд по fine-tuning линейного адаптера поверх любой эмбеддинг-модели. Приём улучшает retrieval в RAG без переобучения базовой модели — только lightweight-слой на верху.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-29-building-and-evaluating-a-qa-system-with-llamaindex/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🎯 Проекты</span>
+                <time datetime="2026-05-29T05:37:51+03:00">29 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">LlamaIndex: пошаговый паттерн QA-системы с оценкой через LLM-as-a-Judge</div>
+              <div class="news-card__desc">LlamaIndex опубликовал руководство по созданию QA-системы на RAG с автоматической оценкой качества ответов. Ключевой приём — использование LLM в роли судьи для оценки полноты и релевантности, что заменяет ручную разметку.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-27-shipping-a-trillion-parameters-with-a-hub-bucket-delta-weigh/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🎯 Проекты</span>
+                <time datetime="2026-05-29T05:37:17+03:00">29 май 2026</time>
+                <span>2 мин</span>
+              </div>
+              <div class="news-card__title">Delta Weight Sync в TRL: синхронизация триллионных параметров через Hub Bucket</div>
+              <div class="news-card__desc">Hugging Face представила Delta Weight Sync — метод синхронизации весов для распределённого обучения триллионных моделей в TRL. Вместо передачи полных чекпоинтов синхронизируются только дельты между итерациями, что снижает объём передаваемых данных на порядки.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-28-vazhnye-izmeneniia-dlia-tekh-kto-ispolzuet-ili-planiruet-vne/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-29T05:36:38+03:00">29 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">Xiaomi снизила цены на модели mimo v2.5 и v2.5-pro до 70%</div>
+              <div class="news-card__desc">Xiaomi объявила о снижении стоимости API-доступа к своим языковым моделям mimo v2.5 и v2.5-pro. Максимальное падение цен — на output-токены базовой модели v2.5, стоимость упала с 306 до 43 рублей за миллион токенов.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-28-v-8-raz-bystree-na-tom-zhe-zheleze-prognal-moe-variant-qwen3/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-29T05:36:12+03:00">29 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">MoE-вариант Qwen3-VL 30B-A3B ускоряет инференс в 8 раз на DGX Spark</div>
+              <div class="news-card__desc">На DGX Spark переход с dense Qwen3-VL-32B на MoE-вариант 30B-A3B дал 8-кратное ускорение: время обработки фото сократилось с 184 до 22 секунд, throughput вырос с 3.7 до 30 ток/с. Точность оценки содержания сохранилась, рамки чуть просели.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-29-jeppesen-a-boeing-company-saves-2000-engineering-hours-with/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🏢 Корпоративное</span>
+                <time datetime="2026-05-29T05:35:41+03:00">29 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">Boeing сэкономил 2000 инженерных часов на едином чат-фреймворке LlamaIndex</div>
+              <div class="news-card__desc">Подразделение Boeing Jeppesen внедрило унифицированный чат-фреймворк на базе LlamaIndex для доступа к внутренним данным. Результат — экономия около 2000 инженерных часов за счёт автоматизации рутинных запросов.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-29-fine-tuning-embeddings-for-rag-with-synthetic-data/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-29T05:35:16+03:00">29 май 2026</time>
+                <span>2 мин</span>
+              </div>
+              <div class="news-card__title">LlamaIndex: как улучшить RAG точной настройкой эмбеддингов на синтетических данных</div>
+              <div class="news-card__desc">LlamaIndex опубликовал руководство по fine-tuning эмбеддингов для RAG с использованием синтетических данных. Метод позволяет поднять качество retrieval на специфичных доменах без ручной разметки.</div>
+            </a>
+          
+            <a class="news-card" href="2026-05-29-introducing-gpt-5-4-openai/">
+              <div class="news-card__meta">
+                <span class="news-card__pill">🆕 Новые модели</span>
+                <time datetime="2026-05-29T05:34:36+03:00">29 май 2026</time>
+                <span>1 мин</span>
+              </div>
+              <div class="news-card__title">GPT-5.4: 83% на GDPval, tool search в API и open-source оценка CoT</div>
+              <div class="news-card__desc">OpenAI выпустила GPT-5.4 — модель превзошла GPT-5.2 на бенчмарке GDPval с 83% против 70.9% и получила новый API-инструмент tool search для эффективной работы с множеством инструментов.</div>
+            </a>
+          
             <a class="news-card" href="2026-05-26-gemini-3-5-flash-moshch-pro-urovnia-po-tsene-flash/">
               <div class="news-card__meta">
                 <span class="news-card__pill">🆕 Новые модели</span>
