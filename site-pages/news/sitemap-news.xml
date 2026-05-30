@@ -3,6 +3,126 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-24-microsoft-vylozhila-v-open-source-ai-engineer-coach-plagin-k/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-30T05:37:17+03:00</news:publication_date>
+      <news:title>Microsoft open-sorsит AI Engineering Coach — плагин для анализа 45 анти-паттернов агентного кодинга</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-27-kompiuternoe-zrenie-bez-obucheniia-modelei-test-na-korobke-z/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-30T05:36:57+03:00</news:publication_date>
+      <news:title>Nvidia DGX Spark за 400K ₽: 20K фото/мес на Qwen3-VL-32B без обучения</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-workflows-v-claude-code-agentnye-paiplainy-teper-pishutsia-k/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-30T05:36:30+03:00</news:publication_date>
+      <news:title>Claude Code: Workflows — JS-скрипты для оркестрации агентных пайплайнов</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-introducing-gpt-5-for-developers-openai/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-30T05:36:01+03:00</news:publication_date>
+      <news:title>GPT-5 в API: SOTA по оценкам Cursor, Windsurf и Vercel, вдвое меньше ошибок tool calling</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-27-perplexity-vylozhili-v-open-source-svoi-unigram-tokenizer-ko/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-30T05:35:33+03:00</news:publication_date>
+      <news:title>Perplexity open-sourced Unigram tokenizer: CPU-нагрузка снижена в 5–6 раз</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-28-anthropic-tolko-chto-vypustila-claude-opus-4-8/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-30T05:35:12+03:00</news:publication_date>
+      <news:title>Claude Opus 4.8: SWE-Bench Pro 69.2%, Dynamic Workflows и «честный» агент</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-introducing-parsebench-the-first-document-parsing-benchmark/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-30T05:34:47+03:00</news:publication_date>
+      <news:title>LlamaIndex выпустила ParseBench — первый бенчмарк парсинга документов для AI-агентов</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-improving-retrieval-performance-by-fine-tuning-cohere-rerank/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-30T05:34:20+03:00</news:publication_date>
+      <news:title>Fine-tuning Cohere Reranker через LlamaIndex: +5–10% recall@10 на доменном retrieval</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-introducing-gpt-5-openai/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-30T05:33:43+03:00</news:publication_date>
+      <news:title>GPT-5: сикофантность снижена вдвое, активированы пороги Preparedness Framework v2</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-gpt-5-is-here-openai/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-30T05:33:16+03:00</news:publication_date>
+      <news:title>GPT-5: 400K контекст, 128K output, $1.25/$10 за 1M токенов</news:title>
+    </news:news>
+  </url>
+
+  <url>
     <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-improving-vector-search-reranking-with-postgresml-and-llamai/</loc>
     <news:news>
       <news:publication>
