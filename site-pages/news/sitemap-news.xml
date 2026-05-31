@@ -3,6 +3,126 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-png-cherez-chat-completions-image-url-rabotaet-korrektno-kol/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-31T05:28:58+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-how-we-contain-claude-across-products/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-31T05:28:48+03:00</news:publication_date>
+      <news:title>Anthropic раскрыла архитектуру сэндбоксинга: gVisor для Claude.ai, VM для Cowork</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-introducing-llamaparse-v2-simpler-better-cheaper/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-31T05:28:24+03:00</news:publication_date>
+      <news:title>LlamaParse v2: новый API, поддержка 50+ форматов, цены от $0.003 за страницу</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-secure-code-execution-in-llamaindex-with-azure-container-app/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-31T05:28:04+03:00</news:publication_date>
+      <news:title>LlamaIndex интегрировал Azure Container Apps для безопасного выполнения кода агентов</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-boosting-rag-picking-the-best-embedding-reranker-models/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-31T05:27:38+03:00</news:publication_date>
+      <news:title>LlamaIndex: бенчмарк эмбеддингов и реранкеров для RAG — конкретные модели и метрики</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-evaluating-the-ideal-chunk-size-for-a-rag-system-using-llama/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-31T05:27:15+03:00</news:publication_date>
+      <news:title>LlamaIndex: оптимальный размер чанка для RAG — 512 токенов</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-a-new-document-summary-index-for-llm-powered-qa-systems/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-31T05:26:50+03:00</news:publication_date>
+      <news:title>LlamaIndex Document Summary Index: индексация по саммари вместо чанков</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-amazon-pomeniala-arkhitekturu-setei-v-data-tsentrakh-aws-i-e/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-31T05:26:22+03:00</news:publication_date>
+      <news:title>AWS заменила fat-tree на Resilient Network Graphs: −69% железа, +33% throughput</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-a-cheat-sheet-and-some-recipes-for-building-advanced-rag/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-31T05:26:02+03:00</news:publication_date>
+      <news:title>Шпаргалка и рецепты Advanced RAG от LlamaIndex: конкретные паттерны для улучшения качества</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-introducing-gpt-5-2-openai/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-31T05:25:37+03:00</news:publication_date>
+      <news:title>GPT-5.2 Thinking: новый SOTA на GDPval, производительность на уровне эксперта</news:title>
+    </news:news>
+  </url>
+
+  <url>
     <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-24-microsoft-vylozhila-v-open-source-ai-engineer-coach-plagin-k/</loc>
     <news:news>
       <news:publication>
