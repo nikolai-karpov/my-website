@@ -3,6 +3,126 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-evaluating-multi-modal-retrieval-augmented-generation/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-01T05:44:08+03:00</news:publication_date>
+      <news:title>LlamaIndex: методология оценки мультимодального RAG с метриками retrieval и generation</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-llamaindex-v0-10/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-01T05:42:36+03:00</news:publication_date>
+      <news:title>LlamaIndex v0.10: новый API для агентов и RAG-пайплайнов</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-gpt4-v-experiments-with-general-specific-questions-and-chain/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-01T05:42:06+03:00</news:publication_date>
+      <news:title>GPT-4V: как формулировка вопроса и CoT влияют на точность ответов</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-ne-nastupaite-na-nashi-grabli-esli-sobiraetes-ispolzovat-tem/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-01T05:41:22+03:00</news:publication_date>
+      <news:title>Яндекс Еда: год на Temporal в продакшене — архитектура, тестирование и миграции Workflow на Go</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-27-itbench-aa-frontier-models-score-below-50-on-the-first-bench/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-01T05:40:38+03:00</news:publication_date>
+      <news:title>ITBench-AA: frontier-модели набирают ниже 50% на бенчмарке enterprise IT-агентов</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-workflows-v-claude-code-agentnye-paiplainy-teper-pishutsia-k/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-01T05:39:59+03:00</news:publication_date>
+      <news:title>Claude Code получил workflows: JS-скрипты для оркестрации агентных пайплайнов</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-bum-anthropic-vykatila-claude-opus-4-8/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-01T05:39:23+03:00</news:publication_date>
+      <news:title>Anthropic выпустила Claude Opus 4.8: fast mode 2.5× быстрее, Dynamic Workflows в Claude Code</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-amazon-pomeniala-arkhitekturu-setei-v-data-tsentrakh-aws-i-e/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-01T05:38:46+03:00</news:publication_date>
+      <news:title>AWS перешла на RNG: −69% железа в сети, +33% throughput для AI-кластеров</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-running-python-asgi-apps-in-the-browser-via-pyodide-a-servic/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-01T05:38:00+03:00</news:publication_date>
+      <news:title>Python ASGI-приложения в браузере через Pyodide + Service Worker вместо Web Worker</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-01T05:37:15+03:00</news:publication_date>
+      <news:title>LongLLMLingua: prompt compression для RAG с экономией до 20× токенов и решением middle loss</news:title>
+    </news:news>
+  </url>
+
+  <url>
     <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-png-cherez-chat-completions-image-url-rabotaet-korrektno-kol/</loc>
     <news:news>
       <news:publication>
@@ -87,18 +207,6 @@
   </url>
 
   <url>
-    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-amazon-pomeniala-arkhitekturu-setei-v-data-tsentrakh-aws-i-e/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Карпов Николай — Новости</news:name>
-        <news:language>ru</news:language>
-      </news:publication>
-      <news:publication_date>2026-05-31T05:26:22+03:00</news:publication_date>
-      <news:title>AWS заменила fat-tree на Resilient Network Graphs: −69% железа, +33% throughput</news:title>
-    </news:news>
-  </url>
-
-  <url>
     <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-a-cheat-sheet-and-some-recipes-for-building-advanced-rag/</loc>
     <news:news>
       <news:publication>
@@ -143,18 +251,6 @@
       </news:publication>
       <news:publication_date>2026-05-30T05:36:57+03:00</news:publication_date>
       <news:title>Nvidia DGX Spark за 400K ₽: 20K фото/мес на Qwen3-VL-32B без обучения</news:title>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-workflows-v-claude-code-agentnye-paiplainy-teper-pishutsia-k/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Карпов Николай — Новости</news:name>
-        <news:language>ru</news:language>
-      </news:publication>
-      <news:publication_date>2026-05-30T05:36:30+03:00</news:publication_date>
-      <news:title>Claude Code: Workflows — JS-скрипты для оркестрации агентных пайплайнов</news:title>
     </news:news>
   </url>
 
