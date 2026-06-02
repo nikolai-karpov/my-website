@@ -10,8 +10,134 @@
     <language>ru</language>
     <copyright>© 2026 Карпов Николай</copyright>
     <atom:link href="https://nikolai-karpov.github.io/my-website/site-pages/news/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 01 Jun 2026 05:44:09 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jun 2026 06:50:24 +0300</lastBuildDate>
     <generator>hermes/news_renderer</generator>
+
+    <item>
+      <title>LlamaIndex v0.10: новый API для агентов, переезд на Pydantic v2 и breaking changes</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-llamaindex-v0-10/</link>
+      <description><![CDATA[LlamaIndex выпустила мажорную версию 0.10 с переработанным API для агентов, обязательным переходом на Pydantic v2 и новой структурой пакетов. Релиз содержит множество breaking changes, требующих миграции существующих проектов.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>LlamaIndex v0.10 — мажорный релиз фреймворка для построения RAG- и агентных приложений поверх LLM. Основные изменения затрагивают API агентов, систему зависимостей и структуру пакетов.</p><h3>Как</h3><ul><li><strong>Новый Agent API:</strong> агенты теперь создаются через <code>FunctionAgent</code> вместо устаревших классов <code>OpenAIAgent</code>, <code>ReActAgent</code> и др. Единый интерфейс для всех провайдеров LLM.</li><li><strong>Pydantic v2:</strong> полный отказ от Pydantic v1. Все модели данных фреймворка переписаны на v2, что ускоряет сериализацию и валидацию.</li><li><strong>Модульная структура пакетов:</strong> интеграции вынесены в отдельные пакеты (<code>llama-index-llms-openai</code>, <code>llama-index-embeddings-openai</code> и т.д.) вместо монолитного <code>llama-index</code>.</li><li><strong>Workflow API:</strong> новый примитив <code>Workflow</code> для оркестрации многошаговых цепочек с событийной моделью вместо жёстких цепочек (chains).</li></ul><h3>Цифры</h3><ul><li>Более 40 deprecated-классов удалены (включая старые агенты, движки индексов типа <code>GPTVectorStoreIndex</code>).</li><li>Минимальная версия Python — 3.9.</li><li>Скорость импорта выросла за счёт ленивой загрузки модулей.</li></ul><h3>Что перенять</h3><p>Если проект на LlamaIndex — начать миграцию с замены агентов на <code>FunctionAgent</code> и обновления импортов пакетов. Новые проекты сразу используют модульную структуру: <code>pip install llama-index-llms-openai</code> вместо полного <code>llama-index</code>. Workflow API подходит для сценариев, где нужна сложная оркестрация (маршрутизация, fallback, параллельные вызовы) вместо линейных цепочек.</p>]]></content:encoded>
+      <pubDate>Tue, 02 Jun 2026 06:50:23 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-llamaindex-v0-10/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>GPT-4 vs Prometheus: бенчмарк judge-моделей для RAG-оценки от LlamaIndex</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-llamaindex-rag-evaluation-showdown-with-gpt-4-vs-open-source/</link>
+      <description><![CDATA[LlamaIndex провели прямое сравнение GPT-4 и open-source модели Prometheus в роли judge для оценки RAG-пайплайнов. Prometheus показал корреляцию 0.9 с человеческими оценками и работает дешевле GPT-4 в 10 раз.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>LlamaIndex опубликовали бенчмарк, сравнивающий два подхода к автоматической оценке качества RAG-систем: GPT-4 как judge и open-source модель Prometheus (на базе Llama-2-13B, дообученная на Feedback-Collection датасете). Оценка проводилась по трём метрикам: <strong>relevance</strong> (релевантность ответа вопросу), <strong>faithfulness</strong> (соответствие ответа контексту) и <strong>context quality</strong> (качество извлечённого контекста).</p>
+
+<h3>Как</h3><p>Для оценки использовалась библиотека <code>ragas</code> — стандартный фреймворк для метрик RAG-пайплайнов. Prometheus получает на вход вопрос, ответ модели и контекст, затем выставляет оценку по шкале 1–5 с объяснением (rubric-based scoring). Ключевое архитектурное отличие от GPT-4: Prometheus использует явные критерии оценки (rubrics), заданные в промпте, что делает процесс более воспроизводимым и контролируемым.</p>
+
+<h3>Цифры</h3><ul><li><strong>Корреляция с human judgments:</strong> Prometheus — 0.90, GPT-4 — 0.87 (по метрике relevance).</li><li><strong>Стоимость оценки:</strong> Prometheus (через Together AI) — ~$0.002 за пример, GPT-4 — ~$0.02 за пример (разница в 10×).</li><li><strong>Latency:</strong> Prometheus — ~2 секунды на пример, GPT-4 — ~4 секунды.</li><li><strong>Согласованность между judge-моделями:</strong> GPT-4 и Prometheus совпали в 82% случаев при бинарной классификации (хорошо/плохо).</li></ul>
+
+<h3>Что перенять</h3><p>Prometheus можно использовать как drop-in замену GPT-4 для RAG-оценки в CI/CD-пайплайнах: он дешевле, быстрее и даёт более воспроизводимые результаты благодаря rubric-based подходу. Для кастомных метрик достаточно написать rubric на английском и передать в промпт — дообучение не требуется.</p>]]></content:encoded>
+      <pubDate>Tue, 02 Jun 2026 06:47:56 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-llamaindex-rag-evaluation-showdown-with-gpt-4-vs-open-source/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>OpenAI DevDay: GPT-4 Turbo с 128K контекстом, Assistants API, Whisper v3</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-new-models-and-developer-products-announced-at-devday-openai/</link>
+      <description><![CDATA[На DevDay OpenAI анонсировала GPT-4 Turbo с контекстным окном 128K токенов, Assistants API для построения агентных приложений, Whisper v3 и снижение цен на API.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>GPT-4 Turbo — обновлённая версия GPT-4 с увеличенным контекстным окном 128K токенов (вместо 8K/32K у предыдущей версии). Модель доступна в превью через API. Параллельно запущен Assistants API — первый шаг к агентным интерфейсам внутри приложений разработчиков, с встроенными Retrieval и Code Interpreter.</p><h3>Как</h3><p>GPT-4 Turbo поддерживает функциональные вызовы (function calling) с выводом валидного JSON и новый JSON Mode, гарантирующий структурированный ответ. Assistants API предоставляет серверную инфраструктуру для агентов: хранение состояния потока, вызов инструментов (Retrieval для поиска по документам, Code Interpreter для выполнения кода) без необходимости управлять этим на стороне разработчика.</p><h3>Цифры</h3><ul><li>Контекст GPT-4 Turbo: <strong>128K токенов</strong> (рост в 16× относительно базового GPT-4).</li><li>Whisper v3 — обновлённая модель распознавания речи.</li><li>Обещано снижение цен на API и повышение rate limits (конкретные цифры в тексте не приведены).</li></ul><h3>Что перенять</h3><p>Паттерн Assistants API — вынос агентной логики (память потока, RAG, выполнение кода) в управляемый сервис. Для команд, строящих агентов, это позволяет не реализовывать state management и tool orchestration с нуля, а сосредоточиться на бизнес-логике.</p>]]></content:encoded>
+      <pubDate>Tue, 02 Jun 2026 06:46:39 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-new-models-and-developer-products-announced-at-devday-openai/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>OpenAI-модель опровергла гипотезу о расстояниях в дискретной геометрии</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-an-openai-model-has-disproved-a-central-conjecture-in-discre/</link>
+      <description><![CDATA[Модель OpenAI нашла контрпример к центральной гипотезе о минимальном числе расстояний между точками в R^n. Fields-медалист Тим Гауэрс назвал результат «вехой в AI-математике», а доказательство опубликовано в открытом PDF.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Решена задача о расстояниях единичной длины (unit distance problem) — одна из открытых проблем дискретной геометрии. Модель OpenAI построила контрпример к гипотезе, которая десятилетиями считалась правдоподобной: о том, что для любого конечного множества точек в R^n число попарных расстояний, равных 1, не может превышать определённого порога.</p><h3>Как</h3><p>Модель применила методы алгебраической теории чисел для конструкции множества точек с неожиданно большим числом единичных расстояний. Ключевая идея — использование специальных алгебраических структур (корней полиномов) для построения точек с точными расстояниями. Абридженная версия chain-of-thought модели опубликована отдельно.</p><h3>Цифры</h3><ul><li>Доказательство: полный PDF доступен на CDN OpenAI</li><li>Компаньон-статья от внешних математиков (включая Гауэрса) — отдельный PDF</li><li>Результат назван «milestone in AI mathematics» Fields-медалистом</li><li>Arul Shankar (ведущий теоретик чисел): модель способна к «original ingenious ideas»</li></ul><h3>Что перенять</h3><p>Паттерн: LLM как инструмент для поиска контрпримеров в дискретной математике — модель не просто перебирает, а предлагает конструкцию на основе алгебраических методов. Для инженеров это демонстрация, что reasoning-модели могут генерировать нестандартные конструкции, которые не находятся прямым перебором.</p>]]></content:encoded>
+      <pubDate>Tue, 02 Jun 2026 06:45:29 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-an-openai-model-has-disproved-a-central-conjecture-in-discre/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>1C Code Bench: бенчмарк для оценки LLM в написании кода на 1С</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-28-1c-code-bench-benchmark-dlia-otsenki-sposobnosti-llm-pisat-k/</link>
+      <description><![CDATA[Сбер AI выпустил 1C Code Bench — специализированный бенчмарк для систематического тестирования LLM на задачах программирования в экосистеме 1С:Предприятие. Это первый публичный инструмент для объективного сравнения моделей в этом домене.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>1C Code Bench — бенчмарк, разработанный для оценки способности больших языковых моделей (LLM) решать типовые задачи программирования на платформе 1С:Предприятие. Инструмент позволяет систематически тестировать и сравнивать различные LLM.</p><h3>Как</h3><p>Бенчмарк содержит набор типовых задач программирования на языке 1С, которые модели должны решить. Подход позволяет объективно измерять качество генерируемого кода в специфическом домене, где стандартные бенчмарки (HumanEval, MBPP) не релевантны из-за уникального синтаксиса и экосистемы 1С.</p><h3>Цифры</h3><p>В анонсе не приведены конкретные результаты тестирования моделей — только сам факт создания бенчмарка. Нет данных о количестве задач, метриках оценки или результатах конкретных LLM.</p><h3>Что перенять</h3><p>Паттерн создания доменных бенчмарков для оценки LLM в нишевых экосистемах. Если в вашей компании используется специфический стек (не только 1С — это может быть SAP ABAP, COBOL, внутренние DSL), аналогичный подход позволяет получить объективные данные о применимости LLM, а не полагаться на общие бенчмарки.</p>]]></content:encoded>
+      <pubDate>Tue, 02 Jun 2026 06:44:14 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-28-1c-code-bench-benchmark-dlia-otsenki-sposobnosti-llm-pisat-k/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>4 типа памяти агента: in-context, external, parametric, episodic — архитектуры и trade-off</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-pamiati-u-agenta-chetyre-i-kazhdaia-zakryvaet-svoiu-zadachu/</link>
+      <description><![CDATA[«Буферная память на всё» — главная причина, почему агент-демо работает, а продакшн разваливается. В посте @big_llm_course структурирован разбор четырёх типов памяти с конкретными архитектурами (RAG, Agentic RAG, GraphRAG) и рецептом лечения типичных провалов.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Четыре рабочих типа памяти агента, каждый под свою задачу:</p><ul><li><strong>In-context</strong> — история и факты прямо в промпте. Быстро, точно, но упирается в лимит окна и теряет середину длинного диалога.</li><li><strong>External</strong> — векторная база с поиском по запросу. Хранилище почти бесконечное, токены предсказуемы, но плохая выборка подсовывает шум и провоцирует галлюцинации.</li><li><strong>Parametric</strong> — знания в весах модели. Нулевая задержка, широкий кругозор, но факты устаревают после даты обучения.</li><li><strong>Episodic</strong> — память, переживающая сессии: по ID пользователя из базы подтягиваются имя, предпочтения и прошлые решения.</li></ul><h3>Как</h3><p>Под каждый тип — своя архитектура:</p><ul><li><strong>Классический RAG</strong> — линейный конвейер для статичных корпусов (документация, базы знаний).</li><li><strong>Agentic RAG</strong> — агент сам решает, когда искать и как переформулировать запрос. Цена — задержка и стоимость.</li><li><strong>GraphRAG</strong> — векторный поиск + граф связей между сущностями, когда ответ нужно собирать из разных источников.</li></ul><h3>Цифры</h3><p>В посте нет конкретных метрик (TTFT, latency, стоимость на 1k токенов). Все trade-off описаны качественно: «быстро vs. бесконечное хранилище vs. устаревание фактов». Для продакшн-оценки придётся бенчмаркать на своих данных.</p><h3>Что перенять</h3><p>Типичные провалы лечатся конкретными приёмами:</p><ul><li><strong>In-context переполняется</strong> → сжатие старых сообщений в сводку (summary buffer).</li><li><strong>RAG выдаёт шум</strong> → гибридный поиск (dense + sparse) с re-ranker.</li><li><strong>Агентные циклы галлюцинируют</strong> → supervisor-узел с порогом уверенности.</li></ul>]]></content:encoded>
+      <pubDate>Tue, 02 Jun 2026 06:43:05 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-pamiati-u-agenta-chetyre-i-kazhdaia-zakryvaet-svoiu-zadachu/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>OpenAI Model Release Notes: хронология от GPT-4o до GPT-5.2 Thinking</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-model-release-notes-openai-help-center/</link>
+      <description><![CDATA[Полный реестр релизов OpenAI с ноября 2024 по февраль 2026: от обновлений GPT-4o до GPT-5.2 Thinking и o3-pro. Конкретные даты и версии для планирования миграций.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>OpenAI ведёт публичный хронологический реестр релизов моделей в Help Center. Последняя запись — февраль 2026 года, обновление настроек thinking time для GPT-5.2 Thinking в ChatGPT.</p><h3>Как</h3><p>Реестр фиксирует каждый релиз с датой и коротким описанием. Это позволяет отследить, когда какая модель стала доступна в ChatGPT и API, и какие модели заменяли предыдущие.</p><h3>Цифры</h3><ul><li><strong>GPT-5.2 Thinking</strong> — обновление настроек thinking time, 4 февраля 2026</li><li><strong>GPT-5-Codex-Mini</strong> — новая кодинг-модель, дата не указана в заголовке</li><li><strong>GPT-5</strong> — обновление, 3 октября 2025</li><li><strong>GPT-5-codex</strong> — доступен в Responses API, 23 сентября 2025</li><li><strong>o3-pro</strong> — запуск для Pro-пользователей в ChatGPT и API, 10 июня 2025</li><li><strong>GPT-4.1</strong> — релиз в ChatGPT для всех платных пользователей, 14 мая 2025</li><li><strong>GPT-4.1 mini</strong> — замена GPT-4o mini, 14 мая 2025</li><li><strong>GPT-4o</strong> — 6 обновлений с ноября 2024 по май 2025</li></ul>]]></content:encoded>
+      <pubDate>Tue, 02 Jun 2026 06:41:45 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-model-release-notes-openai-help-center/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>OpenAI выпускает gpt-oss-120b и gpt-oss-20b — первые open-weight модели</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-introducing-gpt-oss-openai/</link>
+      <description><![CDATA[OpenAI анонсировала gpt-oss-120b и gpt-oss-20b — две open-weight языковые модели с публикацией на Hugging Face, model card и research paper. Это первый релиз open-weight моделей от OpenAI с полной документацией и оценкой по Preparedness Framework.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>OpenAI выпустила две open-weight модели: <strong>gpt-oss-120b</strong> (120 млрд параметров) и <strong>gpt-oss-20b</strong> (20 млрд параметров). Модели доступны на Hugging Face, сопровождаются model card и исследовательской статьёй.</p><h3>Как</h3><p>Помимо стандартного safety-тренинга и оценок, OpenAI провела дополнительный слой проверки: adversarially fine-tuned версия gpt-oss-120b была протестирована в рамках Preparedness Framework. Это первый случай, когда open-weight релиз OpenAI прошёл полный цикл оценки безопасности с публикацией результатов.</p><h3>Цифры</h3><ul><li><strong>gpt-oss-120b</strong> — 120 млрд параметров</li><li><strong>gpt-oss-20b</strong> — 20 млрд параметров</li><li>Партнёры для тестирования: AI Sweden, Orange, Snowflake</li></ul><h3>Что перенять</h3><p>Модели позиционируются для on-premise развёртывания (data security) и fine-tuning на специализированных датасетах. Партнёры уже тестируют сценарии: хостинг on-premises для чувствительных данных и дообучение на доменных данных.</p>]]></content:encoded>
+      <pubDate>Tue, 02 Jun 2026 06:40:23 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-introducing-gpt-oss-openai/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Amazon заменила fat-tree на RNG в AWS: −69% железа, +33% throughput</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-amazon-pomeniala-arkhitekturu-setei-v-data-tsentrakh-aws-i-e/</link>
+      <description><![CDATA[Amazon внедрила архитектуру Resilient Network Graphs (RNG) как сеть по умолчанию для большинства AWS-нагрузок. Новая топология снижает потребность в сетевом оборудовании на 69% и повышает пропускную способность на 33% по сравнению с классическими fat-tree.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Resilient Network Graphs (RNG) — новая сетевая архитектура дата-центров AWS, которая заменяет классические иерархические fat-tree. Amazon постепенно внедряла RNG с прошлого года, теперь это сеть по умолчанию для большинства нагрузок. Архитектура описана в статье на arxiv.org/abs/2604.15261.</p>
+
+<h3>Как</h3><p>Вместо иерархического дерева с несколькими «привилегированными» маршрутами через верхние уровни RNG строит плоскую квазислучайную топологию с множеством независимых путей между серверами. Два ключевых компонента:</p><ul><li><strong>Spraypoint</strong> — система маршрутизации, которая распределяет трафик через распределённые waypoint-точки, находя множество независимых маршрутов без экзотической памяти в коммутаторах. Пакеты не обязаны идти по кратчайшему пути — трафик «разбрасывается» по альтернативным маршрутам.</li><li><strong>ShuffleBox</strong> — устройство кабельной разводки, которое делает хаотичную на вид топологию реально управляемой в эксплуатации.</li></ul><p>Проблема fat-tree: часть трафика упирается в узкие места на верхних уровнях дерева, пока другие каналы простаивают. RNG решает это за счёт равномерного распределения нагрузки по множеству параллельных путей.</p>
+
+<h3>Цифры</h3><ul><li>−69% сетевого оборудования по сравнению с fat-tree</li><li>+33% throughput</li><li>Экономия от 9% до 45% (оценочная, зависит от нагрузки)</li><li>Производительность приложений на уровне fat-tree — деградации нет</li><li>Заметно больше независимых маршрутов между серверами</li><li>Меньше простаивающей сетевой ёмкости</li></ul><p>Проверено на двух реальных production-сетях Amazon на transport и storage-нагрузках.</p>]]></content:encoded>
+      <pubDate>Tue, 02 Jun 2026 06:39:15 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-amazon-pomeniala-arkhitekturu-setei-v-data-tsentrakh-aws-i-e/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Hermes Agent + DeepSeek V4: open-weight агент набрал 81 балл на BitGN ECOM1</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-analiz-nous-hermes-agent-deepseek-v4-na-bitgn-ecom1/</link>
+      <description><![CDATA[Архитектура Ивана Коновалова на базе самоулучшающегося агента Nous Hermes с DeepSeek V4 Flash/Pro показала рост с 57 до 81 очка на бенчмарке BitGN ECOM1. Решение использует только open-weight модели и кастомный MCP-сервер.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Production-архитектура AI-агента для e-commerce задач на бенчмарке BitGN ECOM1. Автор — Иван Коновалов, выбравший «hardcore»-режим с исключительно open-weight моделями. Решение задеплоено с открытыми исходниками на GitHub.</p>
+
+<h3>Как</h3><p>Ядро — <strong>Nous Hermes Agent</strong> (самоулучшающийся агент от Nous Research). Для инференса используется каскад: <strong>DeepSeek V4 Flash</strong> для основных задач, <strong>DeepSeek V4 Pro</strong> — для сложных, куда агент перенаправляет запросы.</p><p>Ключевое архитектурное решение — <strong>кастомный MCP-сервер</strong> для BitGN с отключёнными родными скиллами Гермеса. Вместо них — специализированные скиллы: работа с фродом, OCR, каталог. Промпт аккуратно заточен под домен.</p>
+
+<h3>Цифры</h3><ul><li><strong>57 очков</strong> — baseline «вслепую» без тюнинга</li><li><strong>81 очко</strong> — после доработки промптов и скиллов</li><li>Рост <strong>+42%</strong> от начального скора</li></ul><p>Агент работал стабильно, но имел проблемы с grounding references — путался в привязке ответов к исходным данным.</p>
+
+<h3>Что перенять</h3><p><strong>Паттерн «кастомный MCP вместо дефолтных скиллов»</strong>: отключить встроенные инструменты агента и заменить домен-специфичными через MCP-сервер. Это позволяет точнее контролировать поведение без переобучения модели.</p><p><strong>Каскад Flash → Pro</strong>: дешёвая моделька обрабатывает рутину, дорогая подключается только на сложных кейсах. Стандартный паттерн оптимизации затрат на инференс.</p>]]></content:encoded>
+      <pubDate>Tue, 02 Jun 2026 06:37:43 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-analiz-nous-hermes-agent-deepseek-v4-na-bitgn-ecom1/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
 
     <item>
       <title>LlamaIndex: методология оценки мультимодального RAG с метриками retrieval и generation</title>
@@ -115,17 +241,6 @@
       <pubDate>Mon, 01 Jun 2026 05:39:23 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-bum-anthropic-vykatila-claude-opus-4-8/</guid>
       <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>AWS перешла на RNG: −69% железа в сети, +33% throughput для AI-кластеров</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-amazon-pomeniala-arkhitekturu-setei-v-data-tsentrakh-aws-i-e/</link>
-      <description><![CDATA[Amazon заменила классические fat-tree на Resilient Network Graphs (RNG) в большинстве дата-центров AWS. Новая архитектура делает сеть плоской и квазислучайной, убирая узкие места иерархических деревьев. По данным компании — экономия железа до 69%, рост throughput на 33%.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Resilient Network Graphs (RNG) — новая сетевая архитектура AWS, ставшая дефолтной для большинства нагрузок. Заменяет классическую fat-tree, где трафик иерархически поднимается к корню дерева и упирается в congestion на верхних уровнях, пока нижние каналы простаивают.</p><h3>Как</h3><p>RNG делает сеть плоской и квазислучайной: вместо нескольких «привилегированных» маршрутов через верхние уровни — множество независимых путей между серверами. Два ключевых компонента:</p><ul><li><strong>Spraypoint</strong> — система маршрутизации, распределяющая трафик по множеству путей через распределённые waypoint-точки. Не требует экзотической памяти в коммутаторах — пакеты не обязаны идти по кратчайшему маршруту.</li><li><strong>ShuffleBox</strong> — устройство кабельной разводки, делающее хаотичную топологию реально управляемой.</li></ul><p>Подход позволяет обойтись без дорогих spine-коммутаторов верхнего уровня: нагрузка размазывается по всей ткани сети равномерно.</p><h3>Цифры</h3><p>Amazon тестировала RNG на двух production-сетях (transport и storage-нагрузки) в сравнении с fat-tree:</p><ul><li>производительность приложений — на уровне fat-tree (без деградации)</li><li>заметно больше независимых маршрутов между серверами</li><li>оценочная экономия от 9% до 45% на сетевом железе</li><li>меньше простаивающей сетевой ёмкости</li><li>заявленные −69% железа и +33% throughput на полном стеке</li></ul><h3>Что перенять</h3><p>Для проектировщиков AI-кластеров RNG-подход решает конкретную боль: в кластерах для обучения LLM all-reduce и all-to-all паттерны генерируют bursty-трафик, который в fat-tree упирается в spine-уровень. Квазислучайная топология с распределённой маршрутизацией позволяет задействовать всю пропускную способность ткани, а не только часть. Паттерн «много независимых путей + waypoint-маршрутизация без дорогих коммутаторов» можно переносить в приватные кластеры — снижается стоимость сети при сохранении latency для коллективных операций.</p>]]></content:encoded>
-      <pubDate>Mon, 01 Jun 2026 05:38:46 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-amazon-pomeniala-arkhitekturu-setei-v-data-tsentrakh-aws-i-e/</guid>
-      <category>Проекты</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
 
@@ -531,105 +646,6 @@
       <pubDate>Tue, 26 May 2026 11:27:18 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-chem-chashche-agent-sprashivaet-razresheniia-tem-khuzhe-on-z/</guid>
       <category>Вайбкодинг</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Gemini 3.5 Flash: 83.6% на MCP Atlas, обходит 3.1 Pro и конкурирует с GPT-5.5</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-dobavili-novuiu-model-gemini-3-5-flash/</link>
-      <description><![CDATA[Google представила Gemini 3.5 Flash на I/O. Модель показывает 83.6% на агентном бенчмарке MCP Atlas и 76.2% на Terminal-Bench 2.1, обходя предыдущую Pro-версию и конкурируя с GPT-5.5.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Анонсирована новая модель Gemini 3.5 Flash от Google. Презентация состоялась на конференции Google I/O. Модель уже доступна для использования в инструментах разработки Kodacode (VS Code, CLI, JetBrains IDE).</p><h3>Как</h3><p>Модель позиционируется как высокопроизводительная и доступная версия для агентных и кодогенерационных задач. Ключевое архитектурное улучшение не раскрыто, но фокус на бенчмарках указывает на оптимизацию под многошаговое выполнение задач в агентных сценариях (MCP Atlas) и работу в терминале (Terminal-Bench).</p><h3>Цифры</h3><ul><li><strong>MCP Atlas</strong> (агентные задачи): <strong>83.6%</strong></li><li><strong>Terminal-Bench 2.1</strong>: <strong>76.2%</strong></li><li><strong>Finance Agent</strong>: <strong>57.9%</strong></li></ul><p>В агентных задачах (по показателю MCP Atlas) модель превышает результат Gemini 3.1 Pro и находится на уровне, конкурирующем с GPT-5.5.</p><h3>Что перенять</h3><p>Для проектов, где критична производительность в агентных сценариях (многошаговые задачи, взаимодействие с инструментами), Gemini 3.5 Flash стоит рассматривать как вариант с лучшим соотношением цена/производительность по сравнению с Pro-версиями. Бенчмарк MCP Atlas (83.6%) — конкретная цифра для сравнения с другими моделями в вашем стеке.</p>]]></content:encoded>
-      <pubDate>Tue, 26 May 2026 11:26:15 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-dobavili-novuiu-model-gemini-3-5-flash/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>LangGraph Server автоматически поднимает REST API для локальной LLM на 16 ГБ VRAM</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-oblachnaia-llm-na-16-gb-vram-chast-2-langgraph-server-langsm/</link>
-      <description><![CDATA[Selectel опубликовал вторую часть гайда по запуску облачной LLM на 16 ГБ VRAM. В этот раз — построение графовой инфраструктуры LangGraph с автоматическим созданием REST API, трейсингом в LangSmith и SDK для разработки.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Практическое руководство по интеграции локальной LLM (на 16 ГБ VRAM) в продуктивную среду с использованием стека LangGraph Server, LangSmith и LangGraph SDK. Код и конфигурации приводятся для OpenAI-совместимого протокола.</p><h3>Как</h3><p>Архитектура строится вокруг графа состояний (state graph) в LangGraph. Ключевая идея: вы описываете логику агента в виде графа с узлами и переходами, а LangGraph Server автоматически генерирует для него REST API-эндпоинты. Это избавляет от необходимости писать обвязку (FastAPI/Flask) вручную.</p><p>Для локальной модели используется прокси-адаптер, который транслирует запросы в формат, понятный локальному инференс-серверу (например, vLLM или Ollama). LangSmith обеспечивает трейсинг каждого вызова графа: видны промпты, ответы, токены и задержки.</p><h3>Цифры</h3><ul><li><strong>VRAM:</strong> 16 ГБ (ограничение, определяющее выбор модели — например, 7B-модели в квантизации).</li><li><strong>Автоматический API:</strong> LangGraph Server поднимает REST API для каждого скомпилированного графа без дополнительного кода.</li><li><strong>Трейсинг:</strong> LangSmith фиксирует полный вызов графа, включая промежуточные шаги, использование токенов и latency.</li></ul><h3>Что перенять</h3><p>Паттерн «граф состояний как единица логики + автоматический API» позволяет быстро превратить прототип агента в микросервис. Если ваша логика укладывается в DAG (например, классификация → извлечение → генерация), LangGraph избавит от написания boilerplate-кода для API и мониторинга.</p>]]></content:encoded>
-      <pubDate>Tue, 26 May 2026 11:25:09 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-oblachnaia-llm-na-16-gb-vram-chast-2-langgraph-server-langsm/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Google SensorFM: foundation-модель на 1 трлн минут данных с фитнес-браслетов</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-google-skormila-ii-trillion-minut-s-fitnes-brasletov-i-nauch/</link>
-      <description><![CDATA[Google обучила SensorFM на данных от 5 млн человек. Модель сначала выучивает структуру физиологических сигналов, а затем переиспользует представление для предсказаний по кардиологии, метаболизму и сну. На 34 из 35 задач эмбеддинги превзошли ручные признаки.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Google представила SensorFM — foundation-модель для анализа данных с носимых устройств. Обучение проведено на более чем 1 триллионе минут сенсорных данных, собранных у 5 миллионов пользователей фитнес-браслетов.</p><h3>Как</h3><p>Ключевая архитектурная идея — двухэтапный подход. Вместо того чтобы сразу сжимать сырые сигналы (пульс, движение, температура) в грубые усреднённые метрики, модель сначала выучивает внутреннюю структуру и закономерности этих физиологических сигналов. Затем это общее представление переиспользуется для решения конкретных downstream-задач.</p><h3>Цифры</h3><ul><li><strong>Объём данных:</strong> >1 трлн минут сенсорных данных.</li><li><strong>Размер датасета:</strong> данные от 5 млн человек.</li><li><strong>Качество:</strong> выученные эмбеддинги обошли инженерные (рукотворные) признаки на 34 из 35 задач предсказания.</li></ul><h3>Что перенять</h3><p>Паттерн «сначала выучить структуру сырых сигналов, потом дообучать под задачу» применим к любым временным рядам с носимых устройств. Это аргумент против ручного фичеринга: если данных достаточно, эмбеддинги из предобученной модели могут заменить десятки рукотворных признаков.</p>]]></content:encoded>
-      <pubDate>Tue, 26 May 2026 11:23:57 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-google-skormila-ii-trillion-minut-s-fitnes-brasletov-i-nauch/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>BitGN ECOM1: 105 пользователей, 62.8k прогонов агентов, 8.41M Tool Calls за 7 дней</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-bitgn-ecom1-sostoitsia-30-maia-raspisanie-remote-first/</link>
-      <description><![CDATA[30 мая стартует бенчмарк ECOM1 для оценки AI-агентов. Платформа уже показала масштаб: 105 пользователей за 7 дней совершили 62.8k прогонов, сгенерировав 8.41M вызовов инструментов и 1.35 лет агентского времени.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Анонсирован запуск бенчмарка BitGN ECOM1, который состоится 30 мая. Это remote-first событие для оценки производительности AI-агентов в реальных задачах. На платформе уже зарегистрирован 1001 инженер.</p><h3>Как</h3><p>Формат включает соревновательный раунд на 100 задач (ECOM1-PROD) с 10:00 до 13:00 CEST, после чего бенчмарк переходит в открытый режим. Участники могут работать индивидуально или собираться в локальные хабы с отдельными лидербордами. Интерфейс для регистрации хабов обновлён.</p><h3>Цифры</h3><ul><li><strong>105 пользователей</strong> за последние 7 дней.</li><li><strong>62.8k прогонов агентов</strong> на платформе.</li><li><strong>8.41M Tool Calls</strong> (вызовов инструментов).</li><li><strong>1.35 лет</strong> суммарного агентского времени.</li><li><strong>10.8GB логов</strong> сгенерировано.</li><li><strong>1001 зарегистрированный инженер</strong>.</li></ul><h3>Что перенять</h3><p>Подход к сбору данных: платформа фиксирует не только конечные результаты, но и промежуточные метрики — количество вызовов инструментов, суммарное время работы агентов, объём логов. Эти данные критичны для анализа эффективности разных агентских пайплайнов и отладки цепочек рассуждений.</p>]]></content:encoded>
-      <pubDate>Tue, 26 May 2026 11:22:53 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-bitgn-ecom1-sostoitsia-30-maia-raspisanie-remote-first/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Anthropic платит SpaceX $1.25 млрд/мес за compute в COLOSSUS до мая 2029</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-quoting-spacex-s-1/</link>
-      <description><![CDATA[SpaceX раскрыла в S-1 контракт с Anthropic: $1.25 млрд ежемесячно за доступ к compute-мощностям COLOSSUS и COLOSSUS II. Соглашение действует до мая 2029 года с возможностью расторжения за 90 дней.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>SpaceX заключила Cloud Services Agreements с Anthropic на предоставление compute-мощностей. Контракт зафиксирован в S-1 filing перед IPO.</p><h3>Как</h3><p>Anthropic получает доступ к capacity на системах COLOSSUS и COLOSSUS II — кластерах, которые также используются для обучения Grok 5. Модель мультиарендная: собственные AI-нагрузки SpaceX (Grok) и сторонние клиенты работают на одних и тех же системах.</p><h3>Цифры</h3><ul><li><strong>$1.25 млрд/мес</strong> — фиксированная оплата от Anthropic</li><li><strong>Май 2026 — май 2029</strong> — срок контракта (3 года)</li><li><strong>90 дней</strong> — notice period для расторжения любой из сторон</li><li>В мае-июне 2026 — reduced fee с ramping capacity</li></ul><h3>Что перенять</h3><p>Модель «инфраструктура как услуга» для AI-compute: компания строит кластер под собственные нужды (обучение Grok), а избыточную capacity продаёт конкурентам. Это превращает CapEx в revenue stream. Для AI-лабораторий — диверсификация поставщиков compute помимо hyperscalers.</p>]]></content:encoded>
-      <pubDate>Tue, 26 May 2026 11:21:47 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-quoting-spacex-s-1/</guid>
-      <category>Корпоративное</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>GPT-5-mini: 1200 reasoning-токенов за 13.9 секунды, TTFT 249 мс</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-finish-reason-length-polnyi-otvet-id-chatcmpl-dhxmnvfa0m3jak/</link>
-      <description><![CDATA[Лог API-ответа от модели openai/gpt-5-mini показывает конкретные метрики инференса: 1200 completion_tokens (все reasoning), 3188 prompt_tokens (из них 3072 кешированы), latency 13.9 секунд и TTFT 249 мс. Ответ обрезан по лимиту длины.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Опубликован полный JSON-ответ API от модели <code>openai/gpt-5-mini</code> (chat completion). Ответ завершился по <code>finish_reason: length</code>, что означает обрезку по лимиту токенов.</p><h3>Как</h3><p>Модель сгенерировала 1200 токенов reasoning (цепочки рассуждений) и 0 токенов обычного контента. Это указывает на то, что gpt-5-mini, вероятно, использует архитектуру с явным разделением reasoning и ответа, где reasoning-токены учитываются в completion_tokens.</p><h3>Цифры</h3><ul><li><strong>completion_tokens:</strong> 1200 (все reasoning_tokens)</li><li><strong>prompt_tokens:</strong> 3188 (из них 3072 кешированы — 96.4%)</li><li><strong>total_tokens:</strong> 4388</li><li><strong>Latency (total_duration_ms):</strong> 13 905 мс (~13.9 секунд)</li><li><strong>TTFT (user_visible_ttft_ms):</strong> 249 мс</li><li><strong>Engine TTFT:</strong> 38 мс (внутренняя задержка до генерации первого токена)</li><li><strong>Service TTFT:</strong> 413 мс (полная задержка до получения первого токена клиентом)</li></ul><h3>Что перенять</h3><p>Высокий процент кешированных промпт-токенов (96.4%) — это паттерн, который стоит применять: повторяющиеся системные промпты или длинные контексты эффективно кешируются, снижая стоимость и latency. Разница между engine_ttft_ms (38 мс) и user_visible_ttft_ms (249 мс) показывает, что ~211 мс уходит на сетевую инфраструктуру и оркестрацию — это нижняя граница для оптимизации клиентских интеграций.</p>]]></content:encoded>
-      <pubDate>Tue, 26 May 2026 11:20:44 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-finish-reason-length-polnyi-otvet-id-chatcmpl-dhxmnvfa0m3jak/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>NVIDIA релизила Nemotron-Labs Diffusion LMs: генерация текста со скоростью света</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-towards-speed-of-light-text-generation-with-nemotron-labs-di/</link>
-      <description><![CDATA[NVIDIA опубликовала на Hugging Face семейство языковых моделей на основе диффузионной архитектуры (DLM). Ключевое обещание — генерация текста со скоростью, приближенной к скорости света, за счёт параллельного предсказания всех токенов одновременно.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>NVIDIA выпустила семейство моделей Nemotron-Labs Diffusion Language Models (DLM) на Hugging Face. Это языковые модели, построенные не на стандартной авторегрессионной архитектуре (предсказание следующего токена), а на диффузионном процессе, заимствованном из генерации изображений.</p><h3>Как</h3><p>Вместо последовательной генерации токенов один за другим, DLM предсказывают все токены в последовательности параллельно. Модель начинает с «зашумлённой» последовательности (например, из масок или случайных токенов) и постепенно «денойзит» её, уточняя предсказания на каждом шаге. Это позволяет генерировать текст за фиксированное число шагов (например, 10-20), а не за число токенов, что даёт выигрыш в latency для длинных последовательностей.</p><h3>Цифры</h3><p>В блоге обещается значительное ускорение по сравнению с авторегрессионными моделями. Конкретные бенчмарки по throughput и latency на момент публикации поста не приведены — они заявлены как доступные в отдельном техническом отчёте. Упоминается, что архитектура особенно эффективна для задач с длинным контекстом и пакетной генерации.</p><h3>Что перенять</h3><p>Диффузионный подход к генерации текста — это паттерн, который стоит изучить для задач, где критична latency при генерации длинных последовательностей. Вместо оптимизации авторегрессионного декодирования (KV-кэш, speculative decoding) можно рассмотреть смену парадигмы на параллельное предсказание. Это особенно актуально для систем реального времени или высоконагруженных API, где время до получения полного ответа (TTFT и общая генерация) является узким местом.</p>]]></content:encoded>
-      <pubDate>Tue, 26 May 2026 11:19:40 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-towards-speed-of-light-text-generation-with-nemotron-labs-di/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Яндекс: LLM-изация интранет-поиска с A/B-тестами и архитектурой ранжирования</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-llm-bez-poiska-generator-galliutsinatsii-kak-my-s-etim-sprav/</link>
-      <description><![CDATA[Команда Yandex Infrastructure детально разобрала процесс интеграции LLM в корпоративный поиск по интранету. В статье обещаны цифры из реальных A/B-экспериментов и архитектура перехода от классического ранжирования к генеративной Q&A-системе.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Команда ML Laboratory в Yandex Infrastructure описала четырёхлетний опыт создания и LLM-изации внутреннего поиска по корпоративному интранету Яндекса. На базе этого поиска построена генеративная Q&A-система AI Chat.</p><h3>Как</h3><p>Подход строится на эволюции от классического фича-инжиниринга и настроек ранжирования к настройке поискового контекста для LLM. Ключевая идея — поисковые фичи плавно перетекают в фичи генеративной системы, а поиск рассматривается как база для корпоративных процессов обмена знаниями.</p><h3>Цифры</h3><p>В статье обещаны числа из реальных A/B-экспериментов, подтверждающих пользу разработок для компании. Однако в предоставленном фрагменте конкретные метрики (например, uplift по кликабельности, точности ответов или снижению галлюцинаций) не приведены — они находятся в полном тексте статьи по ссылке.</p><h3>Что перенять</h3><p>Модель роста от поиска к агенту позиционируется как самая эффективная для корпоративных знаний. Паттерн: начинать с надёжного классического поиска, затем на его основе строить генеративный слой, используя уже отработанные механизмы ранжирования и контекста.</p>]]></content:encoded>
-      <pubDate>Tue, 26 May 2026 01:07:24 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-llm-bez-poiska-generator-galliutsinatsii-kak-my-s-etim-sprav/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>datasette-agent-charts 0.1a1: тултипы, observable10 и проверки прав</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-datasette-agent-charts-0-1a1/</link>
-      <description><![CDATA[Вышел релиз datasette-agent-charts 0.1a1. Обновление добавляет интерактивные тултипы, палитру observable10 для текстовых значений и проверку прав execute-sql перед инспекцией колонок.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Релиз <code>datasette-agent-charts</code> версии 0.1a1. Инструмент предназначен для генерации графиков внутри Datasette через агентный интерфейс.</p><h3>Как</h3><p>Обновлена логика отображения цветов: если колонка с цветом отсутствует, столбчатые диаграммы (bar) и вафли (waffle) окрашиваются последовательной схемой по величине (magnitude). Для текстовых значений в цветовой колонке применяется категориальная схема <code>observable10</code>.</p><p>В механизм безопасности добавлена проверка разрешения <code>execute-sql</code> перед выполнением служебного запроса для получения имен колонок. Также исправлена передача описания графиков типа <code>waffleY</code> агенту и добавлены интерактивные всплывающие подсказки.</p><h3>Цифры</h3><p>Версия релиза: 0.1a1.</p><h3>Что перенять</h3><p>Используйте палитру <code>observable10</code> для категориальных данных и последовательное закрашивание для отображения величин. Проверяйте права доступа на этапе introspection (получения метаданных), а не только при выполнении основного запроса.</p>]]></content:encoded>
-      <pubDate>Tue, 26 May 2026 01:06:28 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-datasette-agent-charts-0-1a1/</guid>
-      <category>Проекты</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
 

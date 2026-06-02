@@ -3,6 +3,126 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-llamaindex-v0-10/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-02T06:50:23+03:00</news:publication_date>
+      <news:title>LlamaIndex v0.10: новый API для агентов, переезд на Pydantic v2 и breaking changes</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-llamaindex-rag-evaluation-showdown-with-gpt-4-vs-open-source/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-02T06:47:56+03:00</news:publication_date>
+      <news:title>GPT-4 vs Prometheus: бенчмарк judge-моделей для RAG-оценки от LlamaIndex</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-new-models-and-developer-products-announced-at-devday-openai/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-02T06:46:39+03:00</news:publication_date>
+      <news:title>OpenAI DevDay: GPT-4 Turbo с 128K контекстом, Assistants API, Whisper v3</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-an-openai-model-has-disproved-a-central-conjecture-in-discre/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-02T06:45:29+03:00</news:publication_date>
+      <news:title>OpenAI-модель опровергла гипотезу о расстояниях в дискретной геометрии</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-28-1c-code-bench-benchmark-dlia-otsenki-sposobnosti-llm-pisat-k/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-02T06:44:14+03:00</news:publication_date>
+      <news:title>1C Code Bench: бенчмарк для оценки LLM в написании кода на 1С</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-pamiati-u-agenta-chetyre-i-kazhdaia-zakryvaet-svoiu-zadachu/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-02T06:43:05+03:00</news:publication_date>
+      <news:title>4 типа памяти агента: in-context, external, parametric, episodic — архитектуры и trade-off</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-model-release-notes-openai-help-center/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-02T06:41:45+03:00</news:publication_date>
+      <news:title>OpenAI Model Release Notes: хронология от GPT-4o до GPT-5.2 Thinking</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-introducing-gpt-oss-openai/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-02T06:40:23+03:00</news:publication_date>
+      <news:title>OpenAI выпускает gpt-oss-120b и gpt-oss-20b — первые open-weight модели</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-amazon-pomeniala-arkhitekturu-setei-v-data-tsentrakh-aws-i-e/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-02T06:39:15+03:00</news:publication_date>
+      <news:title>Amazon заменила fat-tree на RNG в AWS: −69% железа, +33% throughput</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-analiz-nous-hermes-agent-deepseek-v4-na-bitgn-ecom1/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-02T06:37:43+03:00</news:publication_date>
+      <news:title>Hermes Agent + DeepSeek V4: open-weight агент набрал 81 балл на BitGN ECOM1</news:title>
+    </news:news>
+  </url>
+
+  <url>
     <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-evaluating-multi-modal-retrieval-augmented-generation/</loc>
     <news:news>
       <news:publication>
@@ -83,18 +203,6 @@
       </news:publication>
       <news:publication_date>2026-06-01T05:39:23+03:00</news:publication_date>
       <news:title>Anthropic выпустила Claude Opus 4.8: fast mode 2.5× быстрее, Dynamic Workflows в Claude Code</news:title>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-amazon-pomeniala-arkhitekturu-setei-v-data-tsentrakh-aws-i-e/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Карпов Николай — Новости</news:name>
-        <news:language>ru</news:language>
-      </news:publication>
-      <news:publication_date>2026-06-01T05:38:46+03:00</news:publication_date>
-      <news:title>AWS перешла на RNG: −69% железа в сети, +33% throughput для AI-кластеров</news:title>
     </news:news>
   </url>
 
