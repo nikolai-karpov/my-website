@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="">
+<html lang="en" data-theme="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hermes Agent + DeepSeek V4: open-weights архитектура набрала 81 балл на BitGN ECOM1 — Новости — Карпов Николай</title>
-    <meta name="description" content="Иван Коновалов собрал production-агента на открытых моделях: Nous Hermes Agent для оркестрации, DeepSeek V4 Flash для основных задач и Pro для сложных. Кастомный MCP-сервер и промпт-инженерия позволили поднять результат с 57 до 81 балла на бенчмарке BitGN ECOM1." />
+    <title>DeltaChannel в LangGraph 1.2: checkpointing diff вместо полного состояния для долгоживущих агентов — Новости — Карпов Николай</title>
+    <meta name="description" content="LangGraph 1.2 вводит примитив DeltaChannel, который хранит только diff состояния на каждом шаге, а полные снимки пишет периодически. Это решает проблему O(N²) роста хранилища при чекпоинтинге и включено по умолчанию в Deep Agents v0.6 без миграции." />
     <meta name="author" content="Карпов Николай" />
-    <link rel="canonical" href="https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-analiz-nous-hermes-agent-deepseek-v4-na-bitgn-ecom1/" />
+    <link rel="canonical" href="https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-delta-channels-how-were-evolving-our-runtime-for-long-runnin/" />
 
     
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Hermes Agent + DeepSeek V4: open-weights архитектура набрала 81 балл на BitGN ECOM1" />
-    <meta property="og:description" content="Иван Коновалов собрал production-агента на открытых моделях: Nous Hermes Agent для оркестрации, DeepSeek V4 Flash для основных задач и Pro для сложных. Кастомный MCP-сервер и промпт-инженерия позволили поднять результат с 57 до 81 балла на бенчмарке BitGN ECOM1." />
-    <meta property="og:url" content="https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-analiz-nous-hermes-agent-deepseek-v4-na-bitgn-ecom1/" />
-    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:title" content="DeltaChannel в LangGraph 1.2: checkpointing diff вместо полного состояния для долгоживущих агентов" />
+    <meta property="og:description" content="LangGraph 1.2 вводит примитив DeltaChannel, который хранит только diff состояния на каждом шаге, а полные снимки пишет периодически. Это решает проблему O(N²) роста хранилища при чекпоинтинге и включено по умолчанию в Deep Agents v0.6 без миграции." />
+    <meta property="og:url" content="https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-delta-channels-how-were-evolving-our-runtime-for-long-runnin/" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Карпов Николай" />
-    <meta property="article:published_time" content="2026-06-03T06:51:45+03:00" />
+    <meta property="article:published_time" content="2026-06-03T06:44:57+03:00" />
     
     <meta property="article:author" content="Карпов Николай" />
     <meta property="article:section" content="Проекты" />
 
     
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Hermes Agent + DeepSeek V4: open-weights архитектура набрала 81 балл на BitGN ECOM1" />
-    <meta name="twitter:description" content="Иван Коновалов собрал production-агента на открытых моделях: Nous Hermes Agent для оркестрации, DeepSeek V4 Flash для основных задач и Pro для сложных. Кастомный MCP-сервер и промпт-инженерия позволили поднять результат с 57 до 81 балла на бенчмарке BitGN ECOM1." />
+    <meta name="twitter:title" content="DeltaChannel в LangGraph 1.2: checkpointing diff вместо полного состояния для долгоживущих агентов" />
+    <meta name="twitter:description" content="LangGraph 1.2 вводит примитив DeltaChannel, который хранит только diff состояния на каждом шаге, а полные снимки пишет периодически. Это решает проблему O(N²) роста хранилища при чекпоинтинге и включено по умолчанию в Deep Agents v0.6 без миграции." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,11 +38,11 @@
     <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "NewsArticle",
-  "headline": "Hermes Agent + DeepSeek V4: open-weights архитектура набрала 81 балл на BitGN ECOM1",
-  "description": "Иван Коновалов собрал production-агента на открытых моделях: Nous Hermes Agent для оркестрации, DeepSeek V4 Flash для основных задач и Pro для сложных. Кастомный MCP-сервер и промпт-инженерия позволили поднять результат с 57 до 81 балла на бенчмарке BitGN ECOM1.",
-  "datePublished": "2026-06-03T06:51:45+03:00",
-  "dateModified": "2026-06-03T06:51:45+03:00",
-  "inLanguage": "ru",
+  "headline": "DeltaChannel в LangGraph 1.2: checkpointing diff вместо полного состояния для долгоживущих агентов",
+  "description": "LangGraph 1.2 вводит примитив DeltaChannel, который хранит только diff состояния на каждом шаге, а полные снимки пишет периодически. Это решает проблему O(N²) роста хранилища при чекпоинтинге и включено по умолчанию в Deep Agents v0.6 без миграции.",
+  "datePublished": "2026-06-03T06:44:57+03:00",
+  "dateModified": "2026-06-03T06:44:57+03:00",
+  "inLanguage": "en",
   "author": {
     "@type": "Person",
     "name": "Карпов Николай",
@@ -55,9 +55,9 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-analiz-nous-hermes-agent-deepseek-v4-na-bitgn-ecom1/"
+    "@id": "https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-delta-channels-how-were-evolving-our-runtime-for-long-runnin/"
   },
-  "url": "https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-analiz-nous-hermes-agent-deepseek-v4-na-bitgn-ecom1/",
+  "url": "https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-delta-channels-how-were-evolving-our-runtime-for-long-runnin/",
   "articleSection": "Проекты"
 }</script>
 
@@ -184,39 +184,37 @@
         <div class="news-article__body" style="margin-top: 24px;">
           <div class="news-meta">
             <span class="news-meta__pill">🎯 Проекты</span>
-            <time datetime="2026-06-03T06:51:45+03:00">3 июнь 2026</time>
-            <span>2 мин чтения</span>
+            <time datetime="2026-06-03T06:44:57+03:00">3 июнь 2026</time>
+            <span>1 мин чтения</span>
           </div>
 
-          <h1>Hermes Agent + DeepSeek V4: open-weights архитектура набрала 81 балл на BitGN ECOM1</h1>
+          <h1>DeltaChannel в LangGraph 1.2: checkpointing diff вместо полного состояния для долгоживущих агентов</h1>
 
           <h3>Простым языком</h3>
-          <p>Инженер собрал AI-агента для интернет-магазина на открытых моделях вместо GPT/Claude. Агент умеет находить мошеннические заказы, читать сканы документов и работать с каталогом товаров. Быстрая модель обрабатывает простые задачи, сложные пересылает мощной. Результат — 81 из 100 на специальном тесте.</p>
+          <p>Когда AI-агент работает долго (много шагов), каждое сохранение состояния копирует всё целиком — хранилище растёт квадратично. DeltaChannel сохраняет только изменения (diff), а полные копии пишет периодически. Результат: линейный рост памяти вместо квадратичного, без потери возможности восстановить состояние.</p>
 
           
           <h3>Что нового</h3>
           <ul>
             
-            <li>Nous Hermes Agent как базовый оркестратор с самоулучшением</li>
+            <li>DeltaChannel — новый примитив в LangGraph 1.2 для инкрементального чекпоинтинга состояния агента</li>
             
-            <li>DeepSeek V4 Flash/Pro роутинг: Flash для рутины, Pro для сложных задач</li>
+            <li>Хранит diff (дельту) на каждом шаге вместо полного состояния — рост хранилища O(N) вместо O(N²)</li>
             
-            <li>Кастомный MCP-сервер вместо встроенных скилов Гермеса — полный контроль над инструментами</li>
+            <li>Полные снимки состояния пишутся периодически, а не на каждом шаге</li>
             
-            <li>Отдельные скилы под домен: фрод-детекция, OCR, каталог</li>
-            
-            <li>Аккуратный промпт, заточенный под специфику ecom-задач BitGN</li>
+            <li>Включён по умолчанию в Deep Agents v0.6 — нулевая конфигурация, нулевая миграция</li>
             
           </ul>
           
 
           
           <h3>Вердикт</h3>
-          <p>Рабочая baseline-архитектура для open-weights production-агентов. Применять, если нужен контроль над инструментами и готовность кастомизировать MCP-эндпоинты. Не готово «из коробки» — требует доработки верификатора и grounding-логики для стабильного production.</p>
+          <p>Если вы используете LangGraph для долгоживущих агентов — обновление до v0.6 автоматически включает DeltaChannel. Для кастомных рантаймов паттерн «diff + периодический снимок» стоит реализовать, если хранилище чекпоинтов становится узким местом.</p>
           
 
           
-          <blockquote class="takeaway">Кастомный MCP-сервер с отключенными дефолтными скилами агента + роутинг запросов между Flash и Pro по сложности — рабочий паттерн для open-weights production-агентов на ecom-задачах.</blockquote>
+          <blockquote class="takeaway">O(N²) хранилище чекпоинтов агента решается паттерном «дельта на каждом шаге + полный снимок каждые N шагов» — LangGraph 1.2 делает это примитивом DeltaChannel, включённым по умолчанию в Deep Agents v0.6.</blockquote>
           
 
           
@@ -224,13 +222,7 @@
             <h2>Источники</h2>
             <ul>
               
-              <li><a href="https://www.linkedin.com/posts/abdullin_how-to-build-a-strong-ai-agent-that-can-run-share-7467176388924628992-uMWk" target="_blank" rel="noopener noreferrer">Анализ: Nous Hermes Agent + DeepSeek V4 на BitGN ECOM1</a> — <span style="color: var(--text-muted);">@llm_under_hood</span></li>
-              
-              <li><a href="https://bitgn.com/insights/2026-05-31-ecom1-tuned-hermes-open-weight-agent" target="_blank" rel="noopener noreferrer">bitgn.com</a></li>
-              
-              <li><a href="https://github.com/ohikava" target="_blank" rel="noopener noreferrer">github.com</a></li>
-              
-              <li><a href="https://github.com/bitgn/bitgn-architectures/tree/main/2026-05-30-ecom1" target="_blank" rel="noopener noreferrer">github.com</a></li>
+              <li><a href="https://www.langchain.com/blog/delta-channels-evolving-agent-runtime" target="_blank" rel="noopener noreferrer">Delta Channels: How We’re Evolving our Runtime for Long-Running Agents</a> — <span style="color: var(--text-muted);">LangChain Blog</span></li>
               
             </ul>
           </aside>

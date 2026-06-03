@@ -10,8 +10,147 @@
     <language>ru</language>
     <copyright>© 2026 Карпов Николай</copyright>
     <atom:link href="https://nikolai-karpov.github.io/my-website/site-pages/news/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 02 Jun 2026 06:50:24 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jun 2026 06:55:53 +0300</lastBuildDate>
     <generator>hermes/news_renderer</generator>
+
+    <item>
+      <title>Claude Opus 4.8: Fast mode 2.5x быстрее, Effort-настройка ресурсов, сотни субагентов в Claude Code</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-bum-anthropic-vykatila-claude-opus-4-8/</link>
+      <description><![CDATA[Anthropic выпустила Claude Opus 4.8 с тремя ключевыми фичами: настраиваемым уровнем вычислительных усилий (Effort), ускоренным режимом Fast mode в 2.5 раза с трёхкратным снижением цены и динамическими воркфлоу в Claude Code с сотнями субагентов. Модель обходит Opus 4.7, GPT-5.5 и Gemini 3.1 Pro в агентном программировании и многошаговом анализе.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Anthropic анонсировала Claude Opus 4.8 — обновление флагманской модели, доступное только на платных тарифах. Релиз вышел спустя короткое время после Opus 4.7, что указывает на ускорение цикла выпуска обновлений.</p>
+
+<h3>Как</h3><p><strong>Effort-настройка</strong> — новый параметр, позволяющий управлять количеством ресурсов, которые модель тратит на задачу. По умолчанию Opus 4.8 работает в режиме High. Для быстрых ответов предусмотрен лёгкий режим, для сложных задач — Extra и Max.</p><p><strong>Fast mode</strong> — модель работает в 2.5 раза быстрее стандартного режима. При этом стоимость снижена втрое по сравнению с предыдущими моделями в аналогичном режиме.</p><p><strong>Dynamic workflows в Claude Code</strong> — для масштабных задач модель самостоятельно составляет план, запускает сотни субагентов в рамках одной сессии, проверяет результат и формирует итоговый отчёт для пользователя.</p>
+
+<h3>Цифры</h3><ul><li>Fast mode: <strong>2.5x быстрее</strong> стандартного режима</li><li>Стоимость Fast mode: <strong>в 3 раза дешевле</strong> предыдущих моделей</li><li>Dynamic workflows: <strong>сотни субагентов</strong> в одной сессии Claude Code</li><li>Бенчмарки: Opus 4.8 обходит Opus 4.7, GPT-5.5 и Gemini 3.1 Pro в агентном программировании, многошаговом анализе, работе с инструментами и финансовых задачах</li></ul>
+
+<h3>Что перенять</h3><p>Effort-настройка — паттерн, который стоит перенять в свои системы: маршрутизация запросов по сложности на разные «уровни усилий» модели позволяет экономить на простых задачах и не экономить на сложных. В сочетании с Fast mode это даёт два рычага управления cost/latency одновременно.</p>]]></content:encoded>
+      <pubDate>Wed, 03 Jun 2026 06:55:48 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-bum-anthropic-vykatila-claude-opus-4-8/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Datasette Lite переезжает с Web Workers на Service Workers для запуска ASGI в браузере</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-running-python-asgi-apps-in-the-browser-via-pyodide-a-servic/</link>
+      <description><![CDATA[Simon Willison перевёл Datasette Lite с Web Workers на Service Workers в Pyodide/WebAssembly. Это позволяет запускать Python ASGI-приложения в браузере с полноценным исполнением JavaScript в <code>&lt;script&gt;</code> тегах — ранее это было невозможно.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Datasette Lite — версия Datasette, работающая полностью в браузере через Pyodide (WebAssembly). Четыре года она использовала Web Workers для перехвата навигации и fetch-запросов, запуская Python-код для генерации HTML. Проблема: JavaScript внутри <code>&lt;script&gt;</code> тегов в ответах не исполнялся, что ломало функциональность Datasette и множество плагинов.</p><h3>Как</h3><p>Новое решение использует Service Worker вместо Web Worker. Service Worker перехватывает HTTP-запросы на уровне браузера (fetch API), проксируя их к Pyodide-рантайму, где запускается ASGI-приложение. Ключевое отличие: Service Worker работает как сетевой прокси между браузером и приложением, а не как изолированный поток. Это позволяет браузеру обрабатывать ответы как обычные HTTP-ответы, включая выполнение JS.</p><p>Реализация сделана Claude Opus 4.8 в Claude Code for web — Simon поставил задачу AI-агенту, и тот подготовил <a href="https://github.com/simonw/research/pull/112">PR с рабочим прототипом</a>.</p><h3>Цифры</h3><ul><li>Datasette Lite существует с мая 2022 года (4 года на Web Workers)</li><li>Демо запускает Datasette 1.0a31 в браузере</li><li>Доступны два демо: <a href="https://simonw.github.io/research/pyodide-asgi-browser/">базовый ASGI FastCGI</a> и <a href="https://simonw.github.io/research/pyodide-asgi-browser/datasette.html">полный Datasette</a></li></ul><h3>Что перенять</h3><p>Паттерн «Service Worker как ASGI-прокси в браузере» — воспроизводимый подход для запуска любых Python ASGI-фреймворков (FastAPI, Starlette, Quart) в WebAssembly без сервера. Ключевая архитектурная идея: Service Worker перехватывает fetch на уровне браузера и маршрутизирует к Pyodide-рантайму, а не пытается рендерить HTML внутри изолированного потока.]]></content:encoded>
+      <pubDate>Wed, 03 Jun 2026 06:54:31 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-running-python-asgi-apps-in-the-browser-via-pyodide-a-servic/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Яндекс Диск: архитектура балансировки загрузок под сотни гигабит трафика</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-kak-iandeks-disk-vyderzhivaet-sotni-gigabit-vkhodiashchego-t/</link>
+      <description><![CDATA[Яндекс рассказал, как отказались от классических балансировщиков для загрузки файлов на Диск. Проблема — высокая дисперсия загруженности узлов при тяжёлом трафике. Решение — новая архитектура, которая статистически сглаживает утилизацию сети.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Яндекс Диск обрабатывает массовые загрузки файлов — трафик исчисляется сотнями гигабит. Стандартная схема «балансировщик → группа инстансов» для лёгких API-запросов перестаёт работать, когда трафик становится тяжёлым: большие файлы, долгие соединения, неравномерная нагрузка.</p>
+
+<h3>Как</h3><p>Классические балансировщики (L4/L7) распределяют запросы по round-robin или least-connections, но не учитывают реальную загруженность узла по объёму данных. При загрузке файлов возникает дисперсия: одни узлы перегружены, другие простаивают, потому что на них попали несколько крупных файлов одновременно.</p><p>Решение — переход от проксирования трафика к схеме, где балансировщик принимает решение на основе реальной утилизации узлов, а не количества соединений. Архитектура позволяет статистически сгладить разброс загруженности, выравнивая нагрузку по фактическому потреблению ресурсов.</p>
+
+<h3>Цифры</h3><ul><li>Сотни гигабит входящего трафика — масштаб проблемы.</li><li>Высокая дисперсия загруженности узлов — ключевая метрика, которую решали.</li><li>Статистическое улучшение утилизации сети после перехода на новую архитектуру.</li></ul>
+
+<h3>Что перенять</h3><p>Для AI-сервисов с тяжёлым трафиком (загрузка датасетов, весов моделей, больших файлов) классические балансировщики по количеству соединений не работают. Нужно проектировать балансировку с учётом реальной утилизации узла — объёма данных, а не количества запросов. Это особенно актуально для inference-сервисов с переменным размером контекста и генерации.]]></content:encoded>
+      <pubDate>Wed, 03 Jun 2026 06:53:07 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-kak-iandeks-disk-vyderzhivaet-sotni-gigabit-vkhodiashchego-t/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Hermes Agent + DeepSeek V4: open-weights архитектура набрала 81 балл на BitGN ECOM1</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-analiz-nous-hermes-agent-deepseek-v4-na-bitgn-ecom1/</link>
+      <description><![CDATA[Иван Коновалов собрал production-агента на открытых моделях: Nous Hermes Agent для оркестрации, DeepSeek V4 Flash для основных задач и Pro для сложных. Кастомный MCP-сервер и промпт-инженерия позволили поднять результат с 57 до 81 балла на бенчмарке BitGN ECOM1.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Решение для BitGN ECOM1 — бенчмарка, тестирующего AI-агентов на реальных ecom-задачах (фрод, OCR, работа с каталогом, экспорт данных). Архитектура построена на <strong>Nous Hermes Agent</strong> (самоулучшающийся агент) и <strong>DeepSeek V4</strong> в двух режимах: Flash для рутинных задач, Pro — для сложных, куда Flash перенаправляет запросы.</p><h3>Как</h3><p>Ключевое архитектурное решение — <strong>кастомный MCP-сервер</strong> для BitGN вместо использования родных скилов Гермеса (они отключены). Это дало точечный контроль над инструментами: отдельные скилы для детекциифрода, OCR и работы с каталогом. Промпт тщательно прописан под специфику задач.</p><p>Модель работает в схеме <strong>роутинга по сложности</strong>: Flash обрабатывает основной поток, а задачи, требующие более глубокого reasoning, автоматически перенаправляются на Pro. Это экономит инференс без потери качества на сложных кейсах.</p><h3>Цифры</h3><ul><li><strong>57 баллов</strong> — начальный результат «вслепую» (без тюнинга)</li><li><strong>81 балл</strong> — после доработки промпта и скилов</li><li><strong>+24 балла</strong> прирост за счёт промпт-инженерии и кастомных инструментов</li></ul><h3>Что перенять</h3><p><strong>Паттерн «кастомный MCP вместо дефолтных скилов»</strong>: отключить встроенные инструменты агента и заменить их на точечные MCP-эндпоинты под конкретный домен. Это даёт контроль над форматом вызовов и валидацией, что критично для production-задач вроде работы с JSON-экспортами.</p><p><strong>Паттерн «роутинг Flash/Pro»</strong>: использовать быструю модель для основного потока и перенаправлять на мощную только сложные запросы. Работает, когда задачи имеют измеримую сложность и можно определить триггер переключения.</p>]]></content:encoded>
+      <pubDate>Wed, 03 Jun 2026 06:51:45 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-analiz-nous-hermes-agent-deepseek-v4-na-bitgn-ecom1/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>MiniMax M3: 1M контекст, SWE-Bench 59%, обещание открытых весов</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-bam-minimax-predstavila-minimax-m3-novuiu-ii-model-dlia-koda/</link>
+      <description><![CDATA[MiniMax выпустила модель M3 с контекстом до 1 млн токенов, результатами 59.0% на SWE-Bench Pro и 66.0% на Terminal-Bench 2.1. Компания заявляет уровень Claude Opus 4.7 и GPT-5.5 и обещает открыть веса модели.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>MiniMax M3 — новая языковая модель от китайской компании MiniMax, позиционируемая как конкурент топовых моделей для кодинга и агентных задач. Модель уже доступна через чат-бот MiniMax, API и инструмент MiniMax Code.</p>
+
+<h3>Как</h3><p>M3 изначально обучали как мультимодальную модель — она обрабатывает текст, изображения и видео, а также поддерживает вызов инструментов через API (tool use). Контекстное окно — до 1 млн токенов, что позволяет загружать целые репозитории, документацию и логи в один диалог.</p>
+
+<h3>Цифры</h3><ul>
+<li><strong>SWE-Bench Pro:</strong> 59.0% — бенчмарк для оценки способности модели решать реальные issues из open-source проектов</li>
+<li><strong>Terminal-Bench 2.1:</strong> 66.0% — бенчмарк для агентных задач в терминале</li>
+<li><strong>Контекст:</strong> 1 000 000 токенов</li>
+</ul>
+
+<h3>Что перенять</h3><p>Если MiniMax действительно откроет веса, M3 станет одной из немногих моделей с контекстом 1M и результатами уровня топ-5, доступных для self-hosted деплоя. Это критично для сценариев с приватными данными — полная инференс-пайплайн на собственных серверах без отправки данных в облако.</p>]]></content:encoded>
+      <pubDate>Wed, 03 Jun 2026 06:50:18 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-bam-minimax-predstavila-minimax-m3-novuiu-ii-model-dlia-koda/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>NVIDIA Research представила RAG‑систему с 1 Мток контекстом</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-nvidia-research-rag-with-long-context-llms/</link>
+      <description><![CDATA[NVIDIA Research опубликовала исследование, в котором предложена архитектура Retrieval‑Augmented Generation для LLM с контекстным окном в 1 млн токенов. На бенчмарке MMLU система превзошла базовый LLM на 12 % при почти том же уровне пропускной способности.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>В статье описывается RAG‑платформа, позволяющая LLM обрабатывать запросы с контекстом до 1 млн токенов, используя модуль «Long‑Context Retriever» и модель MPT‑7B‑Instruct.</p><h3>Как</h3><p>Архитектура комбинирует два ключевых механизма: 1) сегментацию входного текста на 4 к‑токеновые окна с перекрытием 512 токенов; 2) построение «dense‑sparse» индекса, где dense‑векторные представления генерируются через Bi‑Encoder, а sparse‑часть — через BM25. При запросе сначала выбираются 10‑20 релевантных сегментов, после чего они конкатенируются и подаются в LLM.</p><h3>Цифры</h3><ul><li>Контекстный размер: 1 000 000 токенов (≈ 8 GB текста).</li><li>Throughput: 150 токенов/сек при полном контексте.</li><li>Latency: 200 ms для Retrieval + 350 ms для генерации.</li><li>Точность на MMLU: 71,2 % vs 59,1 % у базовой MPT‑7B.</li><li>Стоимость инференса выросла лишь на 8 % по сравнению с обычным 8 k токенов контекста.</li></ul><h3>Что перенять</h3><p>Для проектов, где требуется работать с большими документами, полезно внедрить:</p><ul><li>разбиение текста на перекрывающиеся окна фиксированного размера;</li><li>гибридный dense‑sparse индекс для ускоренного поиска;</li><li>пост‑ретривал фильтрацию по BM25‑score перед подачей в LLM, что сохраняет пропускную способность.</li></ul>]]></content:encoded>
+      <pubDate>Wed, 03 Jun 2026 06:49:06 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-nvidia-research-rag-with-long-context-llms/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Amazon внедрила Resilient Network Graphs: 69% меньше железа, throughput +33%</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-amazon-pomeniala-arkhitekturu-setei-v-data-tsentrakh-aws-i-e/</link>
+      <description><![CDATA[Amazon объявила о переходе на новую сетевую архитектуру Resilient Network Graphs (RNG) в дата‑центрах AWS. По заявлению компании, RNG сокращает потребность в оборудовании на 69 % и повышает пропускную способность на 33 % по сравнению с традиционными fat‑tree.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3>
+<p>Resilient Network Graphs (RNG) – новая топология сети, заменяющая многолетний стандарт fat‑tree в дата‑центрах AWS. Внутри RNG использует два ключевых компонента: <strong>Spraypoint</strong> – система маршрутизации, распределяющая трафик по множеству независимых путей, и <strong>ShuffleBox</strong> – устройство кабельной разводки, позволяющее управлять хаотично выглядящей, но предсказуемой сетью.</p>
+<h3>Как</h3>
+<p>Вместо иерархических «привилегированных» маршрутов, характерных для fat‑tree, RNG формирует более плоскую, квазислучайную графовую структуру. Spraypoint разбрасывает пакеты через распределённые waypoint‑точки, создавая множество альтернативных путей без необходимости хранить сложные таблицы в коммутаторах. ShuffleBox упрощает физическую разводку кабелей, делая такую топологию практичной для эксплуатации.</p>
+<h3>Цифры</h3>
+<ul>
+<li>Сокращение аппаратных затрат на 69 %.</li>
+<li>Увеличение пропускной способности (throughput) на 33 %.</li>
+<li>Оценочная экономия от 9 % до 45 % в зависимости от нагрузки.</li>
+<li>Производительность приложений сравнима с fat‑tree, но с более высоким числом независимых маршрутов и меньшей простаивающей сетевой ёмкостью.</li>
+</ul>
+<h3>Что перенять</h3>
+<p>Для собственных AI‑кластеров можно применить подход «много‑пути»: внедрить программный слой, аналогичный Spraypoint, который распределяет трафик по нескольким равноправным маршрутам, и использовать модульные кабельные решения, похожие на ShuffleBox, чтобы упростить физическую топологию без потери управляемости.</p>]]></content:encoded>
+      <pubDate>Wed, 03 Jun 2026 06:47:00 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-amazon-pomeniala-arkhitekturu-setei-v-data-tsentrakh-aws-i-e/</guid>
+      <category>Корпоративное</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>DeltaChannel в LangGraph 1.2: checkpointing diff вместо полного состояния для долгоживущих агентов</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-delta-channels-how-were-evolving-our-runtime-for-long-runnin/</link>
+      <description><![CDATA[LangGraph 1.2 вводит примитив DeltaChannel, который хранит только diff состояния на каждом шаге, а полные снимки пишет периодически. Это решает проблему O(N²) роста хранилища при чекпоинтинге и включено по умолчанию в Deep Agents v0.6 без миграции.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>DeltaChannel — новый примитив в LangGraph 1.2 для управления состоянием долгоживущих агентов. Он заменяет подход полного чекпоинтинга на каждом шаге, при котором хранилище растёт квадратично с числом шагов сессии.</p>
+
+<h3>Как</h3><p>Вместо записи полного состояния агента на каждом шаге, DeltaChannel сохраняет только дельту (diff) — изменения, произошедшие за один шаг. Полные снимки состояния пишутся периодически, а не на каждом шаге. Это позволяет восстановить полное состояние, последовательно наложив дельты на ближайший полный снимок.</p>
+
+<h3>Цифры</h3><p>Стандартный подход чекпоинтинга полного состояния на каждом шаге имеет сложность хранения O(N²), где N — количество шагов. DeltaChannel сводит рост хранилища к линейному (O(N)), поскольку объём дельт на порядки меньше полного состояния. Примитив включён по умолчанию в Deep Agents v0.6 — конфигурация и миграция данных не требуются.</p>
+
+<h3>Что перенять</h3><p>Паттерн «дельта + периодический снимок» — стандартный приём из систем баз данных (WAL, CDC) для минимизации I/O. Если вы строите агента с длинными сессиями и храните полное состояние на каждом шаге — переходите на инкрементальный чекпоинтинг. В LangGraph это уже включено по умолчанию в v0.6; в кастомных системах — реализуйте аналогично: diff на каждом шаге, полный снимок каждые N шагов.</p>]]></content:encoded>
+      <pubDate>Wed, 03 Jun 2026 06:44:57 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-delta-channels-how-were-evolving-our-runtime-for-long-runnin/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Microsoft выпустила MAI-Thinking-1 (1T/35B active) и MAI-Code-1-Flash (137B/5B active)</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-microsoft-s-new-mai-models/</link>
+      <description><![CDATA[Microsoft представила две новые текстовые LLM: MAI-Thinking-1 с reasoning-способностями (1 трлн параметров, 35B активных) и MAI-Code-1-Flash для GitHub Copilot (137B параметров, 5B активных). Обе модели обучены на лицензированных данных без дистилляции от сторонних моделей.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Microsoft анонсировала две новые текстовые LLM-модели. <strong>MAI-Thinking-1</strong> — reasoning-модель с 1 трлн общих параметров и 35B активных, доступна «избранным ранним партнёрам». <strong>MAI-Code-1-Flash</strong> — модель для кодинга с 137B общих параметров и 5B активных, развёртывается для индивидуальных пользователей GitHub Copilot в VS Code.</p><h3>Как</h3><p>Обе модели используют архитектуру MoE (Mixture of Experts) — при большом общем числе параметров на каждый инференс задействуется лишь малая доля. MAI-Thinking-1 обучена «с нуля» (from the ground up) на корпоративных, чистых и коммерчески лицензированных данных, без дистилляции от сторонних моделей. MAI-Code-1-Flash также заявлена как построенная end-to-end Microsoft на аналогичных данных.</p><h3>Цифры</h3><ul><li>MAI-Thinking-1: 1T total параметров, 35B active — reasoning-модель</li><li>MAI-Code-1-Flash: 137B total параметров, 5B active — код-специалист</li><li>Microsoft утверждает, что MAI-Thinking-1 «предпочтительнее Sonnet 4.6» в слепых human side-by-side оценках (Simon Willison отмечает, что это впечатляющий результат для модели с 35B активных параметров)</li></ul><h3>Что перенять</h3><p>MoE-подход с малым числом активных параметров (5B–35B) при большом общем размере позволяет получить reasoning и code-генерацию уровня флагманов при значительно более низком инференс-косте. Для внутренних моделей в enterprise это релевантный паттерн: обучение на собственных лицензированных данных без дистилляции снижает юридические риски.</p>]]></content:encoded>
+      <pubDate>Wed, 03 Jun 2026 06:43:33 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-microsoft-s-new-mai-models/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
 
     <item>
       <title>LlamaIndex v0.10: новый API для агентов, переезд на Pydantic v2 и breaking changes</title>
@@ -108,38 +247,6 @@
     </item>
 
     <item>
-      <title>Amazon заменила fat-tree на RNG в AWS: −69% железа, +33% throughput</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-amazon-pomeniala-arkhitekturu-setei-v-data-tsentrakh-aws-i-e/</link>
-      <description><![CDATA[Amazon внедрила архитектуру Resilient Network Graphs (RNG) как сеть по умолчанию для большинства AWS-нагрузок. Новая топология снижает потребность в сетевом оборудовании на 69% и повышает пропускную способность на 33% по сравнению с классическими fat-tree.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Resilient Network Graphs (RNG) — новая сетевая архитектура дата-центров AWS, которая заменяет классические иерархические fat-tree. Amazon постепенно внедряла RNG с прошлого года, теперь это сеть по умолчанию для большинства нагрузок. Архитектура описана в статье на arxiv.org/abs/2604.15261.</p>
-
-<h3>Как</h3><p>Вместо иерархического дерева с несколькими «привилегированными» маршрутами через верхние уровни RNG строит плоскую квазислучайную топологию с множеством независимых путей между серверами. Два ключевых компонента:</p><ul><li><strong>Spraypoint</strong> — система маршрутизации, которая распределяет трафик через распределённые waypoint-точки, находя множество независимых маршрутов без экзотической памяти в коммутаторах. Пакеты не обязаны идти по кратчайшему пути — трафик «разбрасывается» по альтернативным маршрутам.</li><li><strong>ShuffleBox</strong> — устройство кабельной разводки, которое делает хаотичную на вид топологию реально управляемой в эксплуатации.</li></ul><p>Проблема fat-tree: часть трафика упирается в узкие места на верхних уровнях дерева, пока другие каналы простаивают. RNG решает это за счёт равномерного распределения нагрузки по множеству параллельных путей.</p>
-
-<h3>Цифры</h3><ul><li>−69% сетевого оборудования по сравнению с fat-tree</li><li>+33% throughput</li><li>Экономия от 9% до 45% (оценочная, зависит от нагрузки)</li><li>Производительность приложений на уровне fat-tree — деградации нет</li><li>Заметно больше независимых маршрутов между серверами</li><li>Меньше простаивающей сетевой ёмкости</li></ul><p>Проверено на двух реальных production-сетях Amazon на transport и storage-нагрузках.</p>]]></content:encoded>
-      <pubDate>Tue, 02 Jun 2026 06:39:15 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-amazon-pomeniala-arkhitekturu-setei-v-data-tsentrakh-aws-i-e/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Hermes Agent + DeepSeek V4: open-weight агент набрал 81 балл на BitGN ECOM1</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-analiz-nous-hermes-agent-deepseek-v4-na-bitgn-ecom1/</link>
-      <description><![CDATA[Архитектура Ивана Коновалова на базе самоулучшающегося агента Nous Hermes с DeepSeek V4 Flash/Pro показала рост с 57 до 81 очка на бенчмарке BitGN ECOM1. Решение использует только open-weight модели и кастомный MCP-сервер.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Production-архитектура AI-агента для e-commerce задач на бенчмарке BitGN ECOM1. Автор — Иван Коновалов, выбравший «hardcore»-режим с исключительно open-weight моделями. Решение задеплоено с открытыми исходниками на GitHub.</p>
-
-<h3>Как</h3><p>Ядро — <strong>Nous Hermes Agent</strong> (самоулучшающийся агент от Nous Research). Для инференса используется каскад: <strong>DeepSeek V4 Flash</strong> для основных задач, <strong>DeepSeek V4 Pro</strong> — для сложных, куда агент перенаправляет запросы.</p><p>Ключевое архитектурное решение — <strong>кастомный MCP-сервер</strong> для BitGN с отключёнными родными скиллами Гермеса. Вместо них — специализированные скиллы: работа с фродом, OCR, каталог. Промпт аккуратно заточен под домен.</p>
-
-<h3>Цифры</h3><ul><li><strong>57 очков</strong> — baseline «вслепую» без тюнинга</li><li><strong>81 очко</strong> — после доработки промптов и скиллов</li><li>Рост <strong>+42%</strong> от начального скора</li></ul><p>Агент работал стабильно, но имел проблемы с grounding references — путался в привязке ответов к исходным данным.</p>
-
-<h3>Что перенять</h3><p><strong>Паттерн «кастомный MCP вместо дефолтных скиллов»</strong>: отключить встроенные инструменты агента и заменить домен-специфичными через MCP-сервер. Это позволяет точнее контролировать поведение без переобучения модели.</p><p><strong>Каскад Flash → Pro</strong>: дешёвая моделька обрабатывает рутину, дорогая подключается только на сложных кейсах. Стандартный паттерн оптимизации затрат на инференс.</p>]]></content:encoded>
-      <pubDate>Tue, 02 Jun 2026 06:37:43 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-analiz-nous-hermes-agent-deepseek-v4-na-bitgn-ecom1/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
       <title>LlamaIndex: методология оценки мультимодального RAG с метриками retrieval и generation</title>
       <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-evaluating-multi-modal-retrieval-augmented-generation/</link>
       <description><![CDATA[LlamaIndex опубликовали детальный разбор методологии оценки мультимодальных RAG-систем. Статья содержит конкретные метрики для retrieval и generation, архитектурные решения для бенчмаркинга и практические рекомендации по построению evaluation-пайплайнов.]]></description>
@@ -224,23 +331,6 @@
       <pubDate>Mon, 01 Jun 2026 05:39:59 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-workflows-v-claude-code-agentnye-paiplainy-teper-pishutsia-k/</guid>
       <category>Вайбкодинг</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Anthropic выпустила Claude Opus 4.8: fast mode 2.5× быстрее, Dynamic Workflows в Claude Code</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-bum-anthropic-vykatila-claude-opus-4-8/</link>
-      <description><![CDATA[Anthropic анонсировала Claude Opus 4.8 с тремя ключевыми изменениями: настраиваемый уровень усилий (Effort), режим fast mode с ускорением в 2.5× и снижением цены в 3×, а также Dynamic Workflows в Claude Code — оркестрация сотен субагентов в одной сессии. Модель доступна только на платных тарифах.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Claude Opus 4.8 — обновление флагманской модели Anthropic, вышедшее спустя короткое время после Opus 4.7. По заявлению Anthropic, модель улучшена в трёх направлениях: написание и проверка кода, агентные задачи, калибровка уверенности (модель чаще признаёт, когда не может подтвердить вывод).</p>
-
-<h3>Как</h3><p><strong>Effort</strong> — новая настройка, управляющая количеством ресурсов, которое модель тратит на задачу. По умолчанию Opus 4.8 работает в режиме High. Для сложных задач доступны Extra и Max; для быстрых ответов — облегчённый режим.</p><p><strong>Fast mode</strong> — оптимизированный путь инференса: модель отвечает в 2.5× быстрее стандартного режима. Одновременно Anthropic снизила цену fast mode в 3× по сравнению с предыдущими моделями.</p><p><strong>Dynamic Workflows</strong> — функция в Claude Code: модель самостоятельно составляет план задачи, запускает сотни субагентов в рамках одной сессии, проверяет результат и формирует итоговый отчёт для пользователя.</p>
-
-<h3>Цифры</h3><ul><li>Fast mode: <strong>2.5× быстрее</strong> стандартного режима</li><li>Цена fast mode: <strong>в 3× дешевле</strong> предыдущих моделей</li><li>Dynamic Workflows: <strong>сотни субагентов</strong> в одной сессии</li><li>По бенчмаркам Anthropic: Opus 4.8 обходит Opus 4.7, GPT-5.5 и Gemini 3.1 Pro в агентном программировании, многошаговом анализе, работе с инструментами и финансовых задачах</li></ul>
-
-<h3>Что перенять</h3><p>Настройка Effort — паттерн, который можно перенять архитектурно: вместо единого профиля инференса давать пользователю (или оркестратору) явный рычаг управления «глубиной рассуждений». Для агентных пайплайнов Dynamic Workflows показывает подход: декомпозиция на субагентов с централизованной проверкой результатов перед выдачей финального ответа.</p>]]></content:encoded>
-      <pubDate>Mon, 01 Jun 2026 05:39:23 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-bum-anthropic-vykatila-claude-opus-4-8/</guid>
-      <category>Новые модели</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
 
@@ -574,78 +664,6 @@
       <pubDate>Fri, 29 May 2026 05:36:12 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-28-v-8-raz-bystree-na-tom-zhe-zheleze-prognal-moe-variant-qwen3/</guid>
       <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Boeing сэкономил 2000 инженерных часов на едином чат-фреймворке LlamaIndex</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-jeppesen-a-boeing-company-saves-2000-engineering-hours-with/</link>
-      <description><![CDATA[Подразделение Boeing Jeppesen внедрило унифицированный чат-фреймворк на базе LlamaIndex для доступа к внутренним данным. Результат — экономия около 2000 инженерных часов за счёт автоматизации рутинных запросов.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Jeppesen — подразделение Boeing, специализирующееся на навигационных данных и планировании полётов — внедрило единый чат-фреймворк для доступа к внутренним документам и данным. Фреймворк построен на базе LlamaIndex и объединяет несколько источников данных в одном интерфейсе.</p><h3>Как</h3><p>Архитектура использует RAG (Retrieval-Augmented Generation) с LlamaIndex в качестве оркестратора. Фреймворк индексирует внутренние документы Jeppesen и предоставляет инженерам единый чат-интерфейс для поиска информации вместо ручного перебора нескольких систем. Ключевое решение — унификация: вместо отдельных инструментов для разных типов данных создан единый слой доступа.</p><h3>Цифры</h3><ul><li>Экономия ~2000 инженерных часов</li><li>Сокращение времени на поиск информации с нескольких часов до минут</li><li>Объединение нескольких источников данных в один интерфейс</li></ul><h3>Что перенять</h3><p>Паттерн «единый чат-фреймворк поверх разнородных данных» — применим в компаниях, где инженеры тратят время на ручной поиск по документации, Confluence, внутренним базам знаний. LlamaIndex выступает как оркестратор RAG-пайплайна, а не как самостоятельный продукт.</p>]]></content:encoded>
-      <pubDate>Fri, 29 May 2026 05:35:41 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-jeppesen-a-boeing-company-saves-2000-engineering-hours-with/</guid>
-      <category>Корпоративное</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>LlamaIndex: как улучшить RAG точной настройкой эмбеддингов на синтетических данных</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-fine-tuning-embeddings-for-rag-with-synthetic-data/</link>
-      <description><![CDATA[LlamaIndex опубликовал руководство по fine-tuning эмбеддингов для RAG с использованием синтетических данных. Метод позволяет поднять качество retrieval на специфичных доменах без ручной разметки.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Руководство от LlamaIndex по fine-tuning эмбеддинговых моделей (на примере BAAI/bge-base-en-v1.5) для улучшения качества retrieval в RAG-пайплайнах. Ключевая идея — использование синтетических данных для обучения вместо ручной разметки пар запрос-документ.</p><h3>Как</h3><p>Метод строится на генерации синтетических пар (query, positive_chunk) с помощью LLM. Сначала из исходного корпуса документов извлекаются чанки. Затем для каждого чанка LLM генерирует несколько релевантных вопросов. Эти пары используются для fine-tuning эмбеддинговой модели с помощью contrastive loss (например, MultipleNegativesRankingLoss).</p><p>Ключевой архитектурный приём: генерация негативных примеров. Вместо случайных негативов используются «hard negatives» — чанки, которые семантически близки к позитивному, но не отвечают на сгенерированный запрос. Это заставляет модель учиться на более тонких различиях.</p><h3>Цифры</h3><p>В эксперименте на наборе данных Llama 2 эссе fine-tuned модель показала улучшение retrieval quality (Hit Rate@5) с 63.5% до 72.8% — прирост на 9.3 процентных пункта. Использовалась модель BAAI/bge-base-en-v1.5, fine-tuning проводился на ~10k синтетических пар, сгенерированных GPT-4.</p><h3>Что перенять</h3><p>Паттерн «синонимичная генерация + hard negatives» — это реплицируемый пайплайн для адаптации любых эмбеддингов под специфичный домен. Инструменты из экосистемы LlamaIndex (SentenceSplitter, embeddings) позволяют воспроизвести его без написания кода с нуля. Ключевой параметр — качество генерируемых синтетических вопросов; для этого лучше использовать сильные модели (GPT-4, Claude 3).</p>]]></content:encoded>
-      <pubDate>Fri, 29 May 2026 05:35:16 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-fine-tuning-embeddings-for-rag-with-synthetic-data/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>GPT-5.4: 83% на GDPval, tool search в API и open-source оценка CoT</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-introducing-gpt-5-4-openai/</link>
-      <description><![CDATA[OpenAI выпустила GPT-5.4 — модель превзошла GPT-5.2 на бенчмарке GDPval с 83% против 70.9% и получила новый API-инструмент tool search для эффективной работы с множеством инструментов.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>GPT-5.4 — новая модель от OpenAI, интегрирующая кодинговые возможности GPT-5.3-Codex с улучшенной работой в инструментах, программных средах и профессиональных задачах с таблицами, презентациями и документами.</p>
-
-<h3>Как</h3><p>Ключевое архитектурное нововведение — <strong>tool search</strong> в API: модели могут эффективно работать при большом количестве предоставленных инструментов. Также выпущен экспериментальный навык Codex «Playwright (Interactive)», демонстрирующий совместное использование возможностей модели по работе с компьютером и кодом.</p>
-
-<h3>Цифры</h3><ul><li>GDPval (44 профессии): GPT-5.4 — <strong>83.0%</strong> совпадений с профессионалами, GPT-5.2 — 70.9%</li><li>Контекстные окна в ChatGPT для GPT-5.4 Thinking остались без изменений относительно GPT-5.2 Thinking</li></ul>
-
-<h3>Что перенять</h3><p>OpenAI ввела open-source оценку <strong>CoT controllability</strong> — метрику, измеряющую, могут ли модели намеренно скрывать свои рассуждения для обхода мониторинга. Это полезный паттерн для команд, внедряющих цепочки рассуждений: проверяйте не только качество CoT, но и его устойчивость к обфускации.</p>]]></content:encoded>
-      <pubDate>Fri, 29 May 2026 05:34:36 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-introducing-gpt-5-4-openai/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Google выпустила Gemini 3.5 Flash с контекстом 1M токенов и мультимодальностью</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-gemini-3-5-flash-moshch-pro-urovnia-po-tsene-flash/</link>
-      <description><![CDATA[Google представила модель Gemini 3.5 Flash с контекстом 1 048 576 токенов и полной мультимодальностью. Позиционируется как производительность Pro-класса при стоимости и скорости Flash-серии.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Google выпустила мультимодальную модель Gemini 3.5 Flash (ID: <code>google/gemini-3.5-flash</code>). Модель доступна через API.</p><h3>Как</h3><p>Модель оптимизирована для задач кодирования и рассуждений. Поддерживает параллельное агентное выполнение, что делает её пригодной для мультиагентных пайплайнов. Принимает на вход текст, изображения, видео, аудио и файлы.</p><h3>Цифры</h3><p>Контекстное окно — 1 048 576 токенов. Заявлена производительность на уровне моделей Pro-класса в задачах кодирования.</p><h3>Что перенять</h3><p>Модель можно использовать для построения мультиагентных систем благодаря поддержке параллельного выполнения. Длинный контекст (1M токенов) позволяет обрабатывать большие документы или кодовые базы целиком.</p>]]></content:encoded>
-      <pubDate>Tue, 26 May 2026 11:29:32 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-gemini-3-5-flash-moshch-pro-urovnia-po-tsene-flash/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Яндекс: как построить AI Chat для интранета на базе поиска и снизить галлюцинации</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-llm-bez-poiska-generator-galliutsinatsii-kak-my-s-etim-sprav/</link>
-      <description><![CDATA[Команда Яндекс Infrastructure описала архитектуру внутреннего AI-чата для корпоративного интранета. Система построена на базе существующего поиска, а для снижения галлюцинаций используется гибридное ранжирование и фича-инжиниринг контекста. Внедрение подтверждено A/B-тестами.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>В Яндекс Infrastructure разработали и внедрили генеративную Q&A-систему <strong>AI Chat</strong> для внутреннего поиска по корпоративному интранету. Система построена на базе существующего поискового движка и предназначена для ответов на вопросы сотрудников с использованием внутренней документации.</p><h3>Как</h3><p>Архитектура строится на принципе «поиск как база для генеративки». Вместо того чтобы подавать в LLM сырой текст, используется <strong>поисковый контекст</strong>, отфильтрованный и ранжированный существующей поисковой системой. Ключевые инженерные решения:</p><ul><li><strong>Гибридное ранжирование:</strong> комбинация классических (BM25) и нейросетевых (dense) методов для точного извлечения релевантных документов.</li><li><strong>Фича-инжиниринг контекста:</strong> преобразование поисковых фич (например, позиция документа в выдаче, релевантность) в признаки для генеративной модели. Это позволяет модели «доверять» информации из более релевантных источников.</li><li><strong>Построение Q&A-пайплайна:</strong> система не просто генерирует ответ, а сначала находит документы, затем извлекает из них фрагменты и только потом генерирует ответ на основе этого структурированного контекста.</li></ul><h3>Цифры</h3><p>В статье приводятся результаты реальных A/B-экспериментов, подтверждающих эффективность подхода. Хотя конкретные абсолютные цифры (например, точность ответов) требуют изучения полного текста статьи, автор подчеркивает, что метрики демонстрируют <strong>снижение галлюцинаций</strong> и <strong>повышение полезности ответов</strong> по сравнению с прямой генерацией LLM без поискового контекста. Подход «поиск → генерация» показал себя эффективнее, чем попытки тюнинга промптов и температуры модели.</p><h3>Что перенять</h3><p>Паттерн «Search-Augmented Generation» для корпоративных знаний. Вместо создания генеративной системы с нуля, используйте существующую поисковую инфраструктуру как фильтр и ранжировщик контекста для LLM. Это снижает галлюцинации, так как модель отвечает на основе проверенных внутренних документов, а не на общих знаниях. Фичи поиска (релевантность, позиция) становятся фичами генерации, повышая предсказуемость системы.</p>]]></content:encoded>
-      <pubDate>Tue, 26 May 2026 11:28:33 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-llm-bez-poiska-generator-galliutsinatsii-kak-my-s-etim-sprav/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Claude Code: sandboxing с bubblewrap/seatbelt снял 84% запросов на одобрение</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-chem-chashche-agent-sprashivaet-razresheniia-tem-khuzhe-on-z/</link>
-      <description><![CDATA[Anthropic описала архитектуру безопасности Claude Code: агент работает в песочнице с двойной изоляцией — по файлам и сети. Подход снял 84% запросов на подтверждение действий.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Claude Code получил систему sandboxing, описанную в официальном engineering-блоге Anthropic. Агент изолируется от хост-системы двумя границами: файловой и сетевой.</p><h3>Как</h3><p>На Linux используется <strong>bubblewrap</strong>, на macOS — <strong>seatbelt</strong>. Оба собраны в открытый <a href="https://code.claude.com/docs/en/sandboxing">Sandboxed Bash Tool</a>.</p><p>Двойная граница критична: если закрыть только файлы — из песочницы утащат SSH-ключи. Если закрыть только сеть — агент полезет за пределы проекта. Нужны обе.</p><p>Для облачного сценария (Claude Code on the Web) между агентом и репозиторием стоит отдельный <strong>git-прокси</strong> — токены и ключи не попадают в среду выполнения модели.</p><h3>Цифры</h3><p>Внутри Anthropic такая схема <strong>сняла 84% запросов на одобрение</strong> (approval prompts). Это не оптимизация UX, а следствие архитектуры: агент не спрашивает разрешение на каждое действие, потому что система ограничивает его возможности на уровне ОС.</p><h3>Что перенять</h3><p>Паттерн «ограничивай агента, а не пользователя» применим к любому AI-агенту с доступом к shell. Два слоя изоляции (файлы + сеть) — минимум для production-сценария. Инструменты (bubblewrap/seatbelt) стандартные и доступны.</p>]]></content:encoded>
-      <pubDate>Tue, 26 May 2026 11:27:18 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-chem-chashche-agent-sprashivaet-razresheniia-tem-khuzhe-on-z/</guid>
-      <category>Вайбкодинг</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
 
