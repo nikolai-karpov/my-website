@@ -3,6 +3,126 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-laboratoriia-ii-za-200-000-kak-my-sobrali-lokalnyi-ii-server/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-04T06:51:59+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-bum-vyshel-grok-imagine-video-1-5-preview/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-04T06:51:01+03:00</news:publication_date>
+      <news:title>Grok Imagine Video 1.5 Preview: генерация роликов за $0,14 сек 720p</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-minimax-m3-multimodalnyi-intellekt-s-millionnym-kontekstom/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-04T06:49:41+03:00</news:publication_date>
+      <news:title>MiniMax-M3: мультимодальная модель с контекстом 1 048 576 токенов</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-kak-nmitsk-im-e-i-chazova-otslezhivaet-riski-serdechno-sosud/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-04T06:48:28+03:00</news:publication_date>
+      <news:title>Yandex Cloud обработал более 13 тыс. меддокументов для регистра ОКС</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-anthropic-scales-claude-mythos-to-critical-infrastructure-in/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-04T06:47:16+03:00</news:publication_date>
+      <news:title>Anthropic расширила доступ к Claude Mythos для 150 организаций в 15 странах</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-microsoft-s-new-mai-models/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-04T06:46:08+03:00</news:publication_date>
+      <news:title>Microsoft представила MAI-Thinking-1 (1 Тп, 35 B активных) и MAI-Code-1-Flash (137 B, 5 B активных)</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-delta-channels-how-were-evolving-our-runtime-for-long-runnin/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-04T06:44:49+03:00</news:publication_date>
+      <news:title>DeltaChannel в LangGraph 1.2 устраняет O(N²) рост хранилища у длительных агентов</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-qwen3-7-plus-ekonomichnaia-multimodalnaia-model-ot-alibaba/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-04T06:43:39+03:00</news:publication_date>
+      <news:title>Qwen3.7-Plus: экономичная мультимодальная модель с контекстом 1 000 000 токенов</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-28-zero-trust-dlia-podriadnogo-dostupa-chetyre-sloia-identity-d/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-04T06:42:28+03:00</news:publication_date>
+      <news:title>Zero Trust для подрядного доступа: 4‑слойный контур с готовыми скриптами</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-bam-minimax-predstavila-minimax-m3-novuiu-ii-model-dlia-koda/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-04T06:41:06+03:00</news:publication_date>
+      <news:title>MiniMax M3: 1 млн токенов контекста, 59 % SWE‑Bench Pro, открытые веса</news:title>
+    </news:news>
+  </url>
+
+  <url>
     <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-bum-anthropic-vykatila-claude-opus-4-8/</loc>
     <news:news>
       <news:publication>
@@ -51,18 +171,6 @@
   </url>
 
   <url>
-    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-bam-minimax-predstavila-minimax-m3-novuiu-ii-model-dlia-koda/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Карпов Николай — Новости</news:name>
-        <news:language>ru</news:language>
-      </news:publication>
-      <news:publication_date>2026-06-03T06:50:18+03:00</news:publication_date>
-      <news:title>MiniMax M3: 1M контекст, SWE-Bench 59%, обещание открытых весов</news:title>
-    </news:news>
-  </url>
-
-  <url>
     <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-nvidia-research-rag-with-long-context-llms/</loc>
     <news:news>
       <news:publication>
@@ -95,18 +203,6 @@
       </news:publication>
       <news:publication_date>2026-06-03T06:44:57+03:00</news:publication_date>
       <news:title>DeltaChannel в LangGraph 1.2: checkpointing diff вместо полного состояния для долгоживущих агентов</news:title>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-microsoft-s-new-mai-models/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Карпов Николай — Новости</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-06-03T06:43:33+03:00</news:publication_date>
-      <news:title>Microsoft выпустила MAI-Thinking-1 (1T/35B active) и MAI-Code-1-Flash (137B/5B active)</news:title>
     </news:news>
   </url>
 
