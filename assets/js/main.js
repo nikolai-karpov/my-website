@@ -102,4 +102,41 @@
     if (!goal || typeof window.ym !== 'function') return;
     window.ym(109350250, 'reachGoal', goal);
   });
+
+  // ---------- Lead form submit (Formspree) + Yandex Metrika goal ----------
+  const leadForm = document.getElementById('leadForm');
+  if (leadForm) {
+    const statusEl = leadForm.querySelector('.lead-form__status');
+    leadForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = leadForm.querySelector('button[type="submit"]');
+      if (btn) btn.disabled = true;
+      if (statusEl) statusEl.textContent = 'Отправляем…';
+
+      try {
+        const res = await fetch(leadForm.action, {
+          method: 'POST',
+          body: new FormData(leadForm),
+          headers: { Accept: 'application/json' },
+        });
+
+        if (res.ok) {
+          // ✅ КОНВЕРСИЯ: цель в Яндекс.Метрику
+          if (typeof window.ym === 'function') {
+            window.ym(109350250, 'reachGoal', 'form_submit');
+          }
+          if (statusEl) statusEl.textContent = 'Заявка отправлена. Отвечу в течение 4 часов.';
+          leadForm.reset();
+        } else if (statusEl) {
+          statusEl.textContent = 'Не удалось отправить. Напишите в Telegram или на email.';
+        }
+      } catch (err) {
+        if (statusEl) {
+          statusEl.textContent = 'Ошибка сети. Напишите в Telegram или на email.';
+        }
+      } finally {
+        if (btn) btn.disabled = false;
+      }
+    });
+  }
 })();

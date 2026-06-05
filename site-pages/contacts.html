@@ -121,6 +121,36 @@
           </div>
         </header>
 
+        <form id="leadForm" class="lead-form" action="https://formspree.io/f/xdavaknw" method="POST">
+          <div class="lead-form__row">
+            <label for="lf-name">Имя</label>
+            <input id="lf-name" name="name" type="text" required autocomplete="name"
+                   placeholder="Как к вам обращаться">
+          </div>
+          <div class="lead-form__row">
+            <label for="lf-contact">Email или Telegram</label>
+            <input id="lf-contact" name="contact" type="text" required
+                   placeholder="i@example.com или @username">
+          </div>
+          <div class="lead-form__row">
+            <label for="lf-task">Задача (необязательно)</label>
+            <textarea id="lf-task" name="task" rows="4"
+                      placeholder="Коротко о бизнес-боли"></textarea>
+          </div>
+
+          <!-- honeypot против ботов: скрыт в CSS, Formspree игнорирует заполненное _gotcha -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
+                 class="lead-form__hp" aria-hidden="true">
+
+          <!-- тема письма в Formspree -->
+          <input type="hidden" name="_subject" value="Заявка с сайта Портфолио">
+
+          <button type="submit" class="btn btn--gradient">
+            Отправить заявку <span class="btn__arrow" aria-hidden="true">→</span>
+          </button>
+          <p class="lead-form__status" role="status" aria-live="polite"></p>
+        </form>
+
         <div class="channels">
           <a class="channel" href="mailto:i@nikolai-karpov.ru" data-goal="contact_email">
             <svg class="channel__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
