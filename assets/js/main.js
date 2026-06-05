@@ -104,9 +104,34 @@
   });
 
   // ---------- Lead form submit (Formspree) + Yandex Metrika goal ----------
+  // Site-key Google reCAPTCHA v3 (публичный — можно хранить в JS).
+  // Пустая строка = reCAPTCHA выключена, форма работает как обычно.
+  // Когда заполните: secret-key пропишите в настройках формы Formspree.
+  const RECAPTCHA_SITE_KEY = '6LeB3A4tAAAAAJ971ucifm2UhjWNaFPpibDazjI-';
+
   const leadForm = document.getElementById('leadForm');
   if (leadForm) {
     const statusEl = leadForm.querySelector('.lead-form__status');
+
+    // Ленивая подгрузка reCAPTCHA v3 только на странице с формой
+    if (RECAPTCHA_SITE_KEY && !window.grecaptcha) {
+      const s = document.createElement('script');
+      s.src = 'https://www.google.com/recaptcha/api.js?render=' + RECAPTCHA_SITE_KEY;
+      s.async = true;
+      document.head.appendChild(s);
+    }
+
+    // Получить токен reCAPTCHA v3 (или null, если капча не настроена/не загрузилась)
+    const getRecaptchaToken = () =>
+      new Promise((resolve) => {
+        if (!RECAPTCHA_SITE_KEY || !window.grecaptcha) return resolve(null);
+        window.grecaptcha.ready(() => {
+          window.grecaptcha
+            .execute(RECAPTCHA_SITE_KEY, { action: 'submit' })
+            .then(resolve, () => resolve(null));
+        });
+      });
+
     leadForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = leadForm.querySelector('button[type="submit"]');
@@ -114,9 +139,13 @@
       if (statusEl) statusEl.textContent = 'Отправляем…';
 
       try {
+        const formData = new FormData(leadForm);
+        const token = await getRecaptchaToken();
+        if (token) formData.append('g-recaptcha-response', token);
+
         const res = await fetch(leadForm.action, {
           method: 'POST',
-          body: new FormData(leadForm),
+          body: formData,
           headers: { Accept: 'application/json' },
         });
 
