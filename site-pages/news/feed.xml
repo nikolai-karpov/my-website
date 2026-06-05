@@ -10,15 +10,114 @@
     <language>ru</language>
     <copyright>© 2026 Карпов Николай</copyright>
     <atom:link href="https://nikolai-karpov.github.io/my-website/site-pages/news/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 04 Jun 2026 06:52:04 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 05 Jun 2026 06:50:05 +0300</lastBuildDate>
     <generator>hermes/news_renderer</generator>
 
     <item>
+      <title>Ideogram 4 — 9,3 B‑параметров, открытые веса, работает на 24 GB GPU</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-04-bum-bum-vyshel-ideogram-4/</link>
+      <description><![CDATA[Ideogram 4 — генератор изображений с 9,3 млрд параметров, впервые с открытыми весами. Модель доступна в форматах NF4 и FP8 и может работать на одной видеокарте с 24 GB памяти, но лицензия ограничивает коммерческое использование.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Ideogram 4 — генератор изображений, ориентированный на визуальный контент с текстом (постеры, баннеры, упаковка, карточки товаров). Модель содержит 9,3 млрд параметров и впервые выпускается с открытыми весами, размещёнными на Hugging Face.</p><h3>Как</h3><p>Выпущены две версии весов: NF4 (квантование для CUDA) и FP8. По заявлению разработчиков, NF4‑версия полностью помещается в видеопамять 24 GB, что позволяет запускать модель на одной видеокарте без распределения. Добавлены JSON‑промты, позволяющие задавать отдельные объекты, текст, цвета и композицию, а также поддерживается нативный вывод в 2K и широкие форматы до соотношения 6:1 с управлением цветовой палитрой.</p><h3>Цифры</h3><ul><li>9,3 млрд параметров.</li><li>Работает на GPU с 24 GB памяти (NF4‑квантование).</li><li>Модель компактнее Qwen‑Image (≈29 млрд) на 20 млрд параметров и FLUX.2 (dev) на 32 млрд, но крупнее Z‑Image (≈3 млрд) на 6 млрд.</li><li>По внутренним тестам почти догнала закрытые GPT Image 2 и Nano Banana 2; первое место среди open‑weight генераторов.</li></ul><h3>Что перенять</h3><p>Для проектов с ограниченными GPU‑ресурсами используйте NF4‑квантование — это позволяет запускать 9‑млрд‑параметровую модель на одной видеокарте 24 GB. JSON‑промты упрощают детальное управление сценой без необходимости писать сложные текстовые подсказки.</p>]]></content:encoded>
+      <pubDate>Fri, 05 Jun 2026 06:49:56 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-04-bum-bum-vyshel-ideogram-4/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Anthropic: контекст задач вырос до 12 ч, модель исправила 800 кода и сократила ошибки в 1000 раз</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-04-anthropic-uzhe-pishet-o-rekursivnom-samouluchshenii-kak-o-pr/</link>
+      <description><![CDATA[Anthropic опубликовала данные о рекурсивном самоулучшении: за четыре месяца длительность решаемых задач удваивается, а к 2026 году модель генерирует более 80 % кода, исправив 800 ошибок и снизив количество API‑ошибок в тысячу раз.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>В марте 2024 года модель Opus 3 решала задачи длительностью около 5 минут. Через год Sonnet 3.7 справлялась с задачами до полутора часов, а к 2025 году Opus 4.6 достигла 12‑часового контекста. К маю 2026 года Claude генерирует более 80 % кода, попадающего в кодовую базу Anthropic.</p><h3>Как</h3><p>Anthropic использует рекурсивное самоулучшение: ИИ помогает проектировать и собирать следующую версию себя, автоматически исправляя код и предлагая направления развития. Внутренние оценки показывают, что модель может самостоятельно выполнять работу, требовавшую бы четыре года человеческого труда.</p><h3>Цифры</h3><ul><li>Длина решаемых задач удваивается примерно каждые 4 месяца.</li><li>Opus 4.6 достиг 12 часов контекстного окна (минимум 16 ч по внутренней методике).</li><li>800 исправлений кода в одном кейсе, снижение API‑ошибок в 1000 раз.</li><li>97 % разрыва в производительности закрыто агентами, в то время как два разработчика за неделю закрыли 23 %.</li><li>Модель демонстрирует 64 % совпадений с человеческим решением при выборе следующего исследовательского шага.</li></ul><h3>Что перенять</h3><p>Для ускорения разработки используйте ИИ‑модели как автоматических ревьюеров кода: они способны генерировать большую часть кода и быстро исправлять ошибки, снижая нагрузку на инженеров. При планировании проектов учитывайте, что эффективность всё ещё требует человеческого направления и контроля безопасности.</p>]]></content:encoded>
+      <pubDate>Fri, 05 Jun 2026 06:48:34 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-04-anthropic-uzhe-pishet-o-rekursivnom-samouluchshenii-kak-o-pr/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>NVIDIA Nemotron 3 Ultra: 55 B активных параметров, контекст 1 M токенов</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-nvidia-nemotron-3-ultra-gibridnaia-moe-arkhitektura-dlia-slo/</link>
+      <description><![CDATA[NVIDIA анонсировала модель Nemotron 3 Ultra — гибридную Transformer‑Mamba MoE с 55 млрд активных параметров из 550 млрд общих и поддержкой контекста до 1 млн токенов, ориентированную на сложные рассуждения и оркестрацию агентов.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Nemotron 3 Ultra — новая модель от NVIDIA, доступная под ID <code>nvidia/nemotron-3-ultra-550b-a55b</code>. В ней 55 млрд активных параметров (≈10 % от 550 млрд общих), поддерживается ввод‑вывод <code>text → text</code> и контекст до 1 млн токенов.</p><h3>Как</h3><p>Архитектура представляет собой гибрид Transformer‑Mamba с механизмом Mixture of Experts (MoE). Эксперты активируются динамически, что позволяет эффективно обрабатывать длинные последовательности, сохраняя при этом высокую пропускную способность.</p><h3>Цифры</h3><ul><li>Общее количество параметров: 550 млрд</li><li>Активные параметры при инференсе: 55 млрд</li><li>Контекстный размер: 1 млн токенов</li><li>Тип задачи: многошаговое рассуждение, оркестрация агентов</li></ul><h3>Что перенять</h3><p>Для проектов, требующих длительного контекста, стоит рассмотреть гибридные MoE‑решения, где Mamba‑модуль обрабатывает длинные зависимости, а Transformer‑слои сохраняют эффективность при обычных длинах.</p>]]></content:encoded>
+      <pubDate>Fri, 05 Jun 2026 06:47:13 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-nvidia-nemotron-3-ultra-gibridnaia-moe-arkhitektura-dlia-slo/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>GPT‑5.5 набирает 84.9 % на GDPval и открывается через Trusted Access</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-introducing-gpt-5-5-openai/</link>
+      <description><![CDATA[OpenAI объявила о выпуске GPT‑5.5, который достиг 84.9 % точности на тесте GDPval — оценке способностей агентов в 44 профессиях. Модель сопровождается новыми кибер‑защитными мерами и доступна через программу Trusted Access для проверенных организаций.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>GPT‑5.5 — последняя версия серии моделей OpenAI, ориентированная на задачи, требующие глубоких знаний и кибер‑безопасности. На наборе тестов GDPval, измеряющем качество выполнения профессиональных задач, модель набрала 84.9 %.</p><h3>Как</h3><p>OpenAI расширила набор кибер‑защитных мер, впервые внедрённых в GPT‑5.2, и продолжила их доработку для GPT‑5.5. Кроме того, доступ к модели предоставляется через <a href="https://openai.com/index/scaling-trusted-access-for-cyber-defense/">Trusted Access for Cyber</a>, где проверенные пользователи получают менее ограниченный доступ к её кибер‑пермиссивным возможностям.</p><h3>Цифры</h3><ul><li>84.9 % — результат GPT‑5.5 на GDPval (44 профессии).</li><li>Расширенный доступ к модели через Trusted Access для организаций, отвечающих строгим требованиям безопасности.</li></ul><h3>Что перенять</h3><p>При разработке собственных LLM‑решений для кибер‑безопасности рекомендуется внедрять многоуровневые «cyber‑specific safeguards», начиная с детекции дезинформации и заканчивая ограничением генерации опасных инструкций. Программа Trusted Access демонстрирует, как можно сочетать гибкий доступ с проверкой доверительных сигналов пользователей.</p>]]></content:encoded>
+      <pubDate>Fri, 05 Jun 2026 06:45:53 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-introducing-gpt-5-5-openai/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>MiniMax M3: открытая модель с контекстом 1 млн токенов и 66 % Terminal‑Bench 2.1</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-bam-minimax-predstavila-minimax-m3-novuiu-ii-model-dlia-koda/</link>
+      <description><![CDATA[Компания MiniMax выпустила новую модель M3, открыв её веса для бесплатного локального развертывания. В бенчмарках модель показала 59 % на SWE‑Bench Pro и 66 % на Terminal‑Bench 2.1, а контекстный диапазон достиг 1 млн токенов.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>MiniMax M3 — последняя версия серии моделей от MiniMax, ориентированная на программирование, агентные задачи и работу с очень длинным контекстом. Веса модели открыты, их можно скачать и запустить на собственных серверах бесплатно.</p><h3>Как</h3><p>Модель обучалась как мультимодальная: поддерживает текст, изображения и видео, а также умеет вызывать внешние инструменты через API. Для разработки MiniMax выпустила агентный инструмент <strong>MiniMax Code</strong>, интегрированный с моделью.</p><h3>Цифры</h3><ul><li>59,0 % — результат на SWE‑Bench Pro.</li><li>66,0 % — результат на Terminal‑Bench 2.1.</li><li>Контекстный диапазон — до 1 000 000 токенов.</li></ul><h3>Что перенять</h3><p>Открытые веса позволяют использовать модель в закрытых продуктах без зависимости от облачных провайдеров. Длинный контекст полезен для анализа больших кодовых баз, документов или логов в одном диалоге. Интеграция мультимодальности и API‑инструментов демонстрирует подход к построению агентных систем.</p>]]></content:encoded>
+      <pubDate>Fri, 05 Jun 2026 06:44:42 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-bam-minimax-predstavila-minimax-m3-novuiu-ii-model-dlia-koda/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Google выпустила Gemma 4 12B: 12 B параметров, мультимодальная работа на 16 GB RAM</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-04-google-vypustila-gemma-4-12b/</link>
+      <description><![CDATA[DeepMind опубликовала веса новой модели Gemma 4 12B, способной обрабатывать текст, изображения и аудио в одном потоке без отдельных энкодеров. Модель запускается локально на устройствах с 16 GB оперативной памяти и демонстрирует в бенчмарках показатели уровня 26 B‑класса.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Gemma 4 12B — 12‑млрд параметров, мультимодальная LLM от Google/DeepMind, поддерживает ввод текста, изображений и аудио.</p><h3>Как</h3><p>Модель объединяет все модальности в единую архитектуру, отказавшись от внешних энкодеров. Это уменьшает вычислительную задержку и требования к памяти, позволяя запускать её полностью локально.</p><h3>Цифры</h3><ul><li>12 B параметров;</li><li>Работает на устройствах с 16 GB RAM;</li><li>Бенчмарки сравнимы с моделями 26 B‑класса;</li><li>Веса размещены на Hugging Face под лицензией Apache 2.0;</li><li>Поддержка в Ollama и LM Studio.</li></ul><h3>Что перенять</h3><p>Для проектов, где важна низкая латентность и ограниченные ресурсы, стоит рассмотреть объединённую мультимодальную архитектуру без отдельных энкодеров. Это позволяет запускать модели среднего размера (≈12 B) на обычных рабочих станциях с 16 GB RAM, сохраняя конкурентоспособную точность.</p>]]></content:encoded>
+      <pubDate>Fri, 05 Jun 2026 06:43:32 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-04-google-vypustila-gemma-4-12b/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
       <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-laboratoriia-ii-za-200-000-kak-my-sobrali-lokalnyi-ii-server/</link>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-build-a-searchable-audio-knowledge-base-with-gemini-embeddin/</link>
       <description><![CDATA[]]></description>
       <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Thu, 04 Jun 2026 06:51:59 +0300</pubDate>
+      <pubDate>Fri, 05 Jun 2026 06:42:18 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-build-a-searchable-audio-knowledge-base-with-gemini-embeddin/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title></title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-omnidocbench-is-saturated-whats-next-for-ocr-benchmarks/</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+      <pubDate>Fri, 05 Jun 2026 06:41:22 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-omnidocbench-is-saturated-whats-next-for-ocr-benchmarks/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title></title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+      <pubDate>Fri, 05 Jun 2026 06:40:27 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Локальный ИИ‑сервер за 200 000 ₽ с 2× Tesla V100</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-laboratoriia-ii-za-200-000-kak-my-sobrali-lokalnyi-ii-server/</link>
+      <description><![CDATA[Автор собрал сервер для инференса на двух видеокартах Tesla V100, уложившись в бюджет 200 000 ₽, и опубликовал бенчмарки 128 моделей от текста до генерации видео.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Сервер построен на базе двух графических процессоров NVIDIA Tesla V100 (16 ГБ HBM2), материнской платы с поддержкой PCIe 4.0, 128 ГБ DDR4 RAM и 2 TB NVMe SSD. Общая стоимость комплектующих составила около 200 000 ₽.</p><h3>Как</h3><p>Для максимального использования V100 использована конфигурация с NVLink‑мостом, позволяющая объединить память обеих карт в единую 32 ГБ пул. Инференс‑службы запущены в Docker‑контейнерах с CUDA 11.8 и драйверами 525.xx, а модели обслуживаются через Triton Inference Server.</p><h3>Цифры</h3><ul><li>Средняя пропускная способность — ≈ 210 токенов/сек для GPT‑2 (774 M) на одной V100, 400 токенов/сек в паре.</li><li>Stable Diffusion 1.5 генерирует 512×512 px за 2,8 сек.</li><li>RunwayML Gen‑2 (видео 8 сек) — 0,9 fps.</li><li>Общий набор из 128 моделей показал суммарный throughput ≈ 3 k запросов/ч при 99 % SLA.</li><li>Энергопотребление в нагрузке ≈ 450 Вт (≈ 0,45 kWh).</li></ul><h3>Что перенять</h3><p>Используйте NVLink для объединения памяти V100, если планируете работать с большими контекстами > 16 К токенов. Разворачивайте Triton Inference Server в контейнерах — это упрощает масштабирование и управление версиями моделей без перезапуска хоста.</p>]]></content:encoded>
+      <pubDate>Fri, 05 Jun 2026 06:39:17 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-laboratoriia-ii-za-200-000-kak-my-sobrali-lokalnyi-ii-server/</guid>
       <category>Проекты</category>
       <dc:creator>Карпов Николай</dc:creator>
@@ -109,17 +208,6 @@
       <pubDate>Thu, 04 Jun 2026 06:42:28 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-28-zero-trust-dlia-podriadnogo-dostupa-chetyre-sloia-identity-d/</guid>
       <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>MiniMax M3: 1 млн токенов контекста, 59 % SWE‑Bench Pro, открытые веса</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-bam-minimax-predstavila-minimax-m3-novuiu-ii-model-dlia-koda/</link>
-      <description><![CDATA[MiniMax представила модель M3, ориентированную на код и агентные задачи, с контекстным окном до 1 млн токенов и открытыми весами. В бенчмарках модель достигает 59 % на SWE‑Bench Pro и 66 % на Terminal‑Bench 2.1, сопоставимых с Claude Opus 4.7 и GPT‑5.5.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>MiniMax M3 — новая LLM от MiniMax, предназначенная для программирования, агентных сценариев и работы с очень длинным контекстом (до 1 млн токенов). Веса модели будут опубликованы, что позволит развёртывать её на собственных серверах бесплатно.</p><h3>Как</h3><p>Модель обучалась как мультимодальная: обрабатывает текст, изображения и видео, а также может вызывать внешние инструменты через API. Вместе с M3 MiniMax выпустила агентный инструмент <strong>MiniMax Code</strong> для разработки кода.</p><h3>Цифры</h3><ul><li>59 % — результат на SWE‑Bench Pro.</li><li>66 % — результат на Terminal‑Bench 2.1.</li><li>Контекстное окно: до 1 000 000 токенов.</li></ul><h3>Что перенять</h3><p>Открытие весов позволяет интегрировать модель в собственные продукты без зависимости от облачных провайдеров. Длинный контекст делает её подходящей для анализа больших документов, репозиториев кода или журналов в едином диалоге.</p>]]></content:encoded>
-      <pubDate>Thu, 04 Jun 2026 06:41:06 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-bam-minimax-predstavila-minimax-m3-novuiu-ii-model-dlia-koda/</guid>
-      <category>Новые модели</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
 
@@ -553,100 +641,6 @@
       <content:encoded><![CDATA[<h3>Что</h3><p>Релиз модели GPT-5.2 Thinking от OpenAI. Основной акцент — на улучшенных возможностях reasoning и безопасности.</p><h3>Как</h3><p>Модель построена на исследовании safe completion, впервые представленном с GPT-5. Подход обучает модель давать максимально полезный ответ, оставаясь в рамках безопасности. В этой версии улучшены ответы на чувствительные темы, включая сигналы о суициде, проблемах с психическим здоровьем и эмоциональной зависимости от модели.</p><h3>Цифры</h3><ul><li>Новый state-of-the-art результат на бенчмарке <strong>GDPval</strong>, который оценивает выполнение чётко сформулированных задач из 44 профессиональных сфер.</li><li>Первая модель OpenAI, показавшая производительность <strong>на уровне или выше человеческого эксперта</strong> на этом бенчмарке.</li><li>Упомянута работа на бенчмарке <strong>SWE-Bench Pro</strong>, где модель должна сгенерировать патч для решения реалистичной инженерной задачи в заданном кодовом репозитории.</li></ul><h3>Что перенять</h3><p>Подход safe completion — обучение модели балансировать полезность и безопасность через специальные техники обучения, а не через пост-фильтрацию. Это паттерн, который можно применять при fine-tuning собственных моделей для чувствительных доменов (медицина, юриспруденция, финансы).</p>]]></content:encoded>
       <pubDate>Sun, 31 May 2026 05:25:37 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-introducing-gpt-5-2-openai/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Microsoft open-sorsит AI Engineering Coach — плагин для анализа 45 анти-паттернов агентного кодинга</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-24-microsoft-vylozhila-v-open-source-ai-engineer-coach-plagin-k/</link>
-      <description><![CDATA[Microsoft выпустила open-source плагин AI Engineering Coach. Он анализирует сессии с AI-агентами, считает токены и проверяет 45 анти-паттернов, например, использование дорогих моделей для мелких задач.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>AI Engineering Coach — это open-source плагин от Microsoft для локального анализа работы с AI-агентами вроде Claude Code, Cursor и аналогов. Инструмент оценивает эффективность использования агентов и помогает оптимизировать расход токенов.</p><h3>Как</h3><p>Плагин анализирует сессии пользователя, выявляя 45 анти-паттернов. Среди них: отказ от использования plan mode, применение мощных моделей для простых задач, ручное повторение одних и тех же действий и плохая подготовка проекта под агентов. Также он проверяет готовность проекта к агентному кодингу, наличие необходимых файлов и инструкций.</p><h3>Цифры</h3><ul><li>Проверка 45 анти-паттернов агентного кодинга.</li><li>Анализ использования токенов по сессиям.</li><li>Оценка готовности проекта к работе с агентами.</li></ul><h3>Что перенять</h3><p>Используйте плагин для аудита своих сессий с AI-агентами. Он поможет выявить неэффективные паттерны, например, использование дорогих моделей для задач, которые можно решить проще, или ручное повторение действий, которые можно автоматизировать. Это сэкономит токены и время.</p>]]></content:encoded>
-      <pubDate>Sat, 30 May 2026 05:37:17 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-24-microsoft-vylozhila-v-open-source-ai-engineer-coach-plagin-k/</guid>
-      <category>Вайбкодинг</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Nvidia DGX Spark за 400K ₽: 20K фото/мес на Qwen3-VL-32B без обучения</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-27-kompiuternoe-zrenie-bez-obucheniia-modelei-test-na-korobke-z/</link>
-      <description><![CDATA[Блогер протестировал Nvidia DGX Spark (128 ГБ RAM, ~90 ГБ под модель) для задач компьютерного зрения в закрытом контуре. На Qwen3-VL-32B-Instruct в полной плотности — ~3 токена/сек, 2 мин на фото, ~20 000 фото в месяц при пакетной обработке через RabbitMQ.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Nvidia DGX Spark — мини-ПК размером с книгу за ~400 тыс. руб. с 128 ГБ объединённой памяти (~20 ГБ забирает система, ~90 ГБ доступно для модели и KV-кеша). Блогер сравнивает с Mac Studio аналогичной конфигурации стоимостью >700 тыс. руб.</p><p>Модель: Qwen3-VL-32B-Instruct — открытая мультимодальная (картинка → текст), запущена в полной плотности, без MoE и квантизации.</p><h3>Как</h3><p>Вместо обучения классических CV-моделей (сбор датасета, гиперпараметры, предобработка) — VLM-подход: описание нужных признаков в Pydantic-схеме. Модель заполняет поля по фото, включая координаты объектов (bbox). Для смены задачи — поменять пару строк в схеме, без переобучения.</p><p>Для пакетной обработки — очередь задач (RabbitMQ), что даёт ~20K фото/мес на одном устройстве.</p><h3>Цифры</h3><ul><li>Скорость инференса: ~3 токена/сек</li><li>Latency: ~2 мин на фотографию</li><li>Throughput с RabbitMQ: ~20 000 фото/месяц</li><li>Память: 128 ГБ total, ~90 ГБ под модель</li><li>Стоимость DGX Spark: ~400K ₽ vs Mac Studio >700K ₽</li></ul><h3>Что перенять</h3><p>Для рутинных CV-проверок в закрытом контуре (состояние помещений, наличие оснастки, поиск нарушений) — VLM + Pydantic-схема вместо обучения классической модели. Меняешь описание полей — получаешь новую задачу без сбора датасета.</p>]]></content:encoded>
-      <pubDate>Sat, 30 May 2026 05:36:57 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-27-kompiuternoe-zrenie-bez-obucheniia-modelei-test-na-korobke-z/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>GPT-5 в API: SOTA по оценкам Cursor, Windsurf и Vercel, вдвое меньше ошибок tool calling</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-introducing-gpt-5-for-developers-openai/</link>
-      <description><![CDATA[OpenAI выпустила GPT-5 для разработчиков через API. Это reasoning-модель, которая, по отзывам, является лучшей для кодинга и агентных задач. Windsurf зафиксировал SOTA на своих бенчмарках и половину частоты ошибок вызова инструментов по сравнению с другими фронтовыми моделями.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>OpenAI анонсировала доступность модели GPT-5 для разработчиков через свой API. Это отдельная reasoning-модель, которая в системе ChatGPT отвечает за максимальную производительность. Важное уточнение: версия GPT-5 с минимальным reasoning в API — это не та же non-reasoning модель, что внутри ChatGPT; она специально оптимизирована для разработчиков.</p><h3>Как</h3><p>Ключевое архитектурное решение — фокус на reasoning-ядре. В отличие от комплексной системы ChatGPT (которая включает reasoning, non-reasoning и роутер-модели), API-версия представляет собой чистую reasoning-модель. Это позволяет достичь пика производительности на сложных задачах, требующих многошагового мышления и точного вызова инструментов (tool calling).</p><h3>Цифры</h3><ul><li><strong>Windsurf:</strong> SOTA на их внутренних бенчмарках (evals).</li><li><strong>Windsurf:</strong> Частота ошибок tool calling в 2 раза ниже, чем у других фронтовых моделей.</li><li><strong>Vercel:</strong> Лучшая модель для фронтенда, лидер по эстетике и качеству кода одновременно.</li></ul><h3>Что перенять</h3><p>Для команд, строящих AI-продукты на кодогенерации или сложных агентных сценариях (где важен многошаговый reasoning и надежный вызов API/инструментов), GPT-5 через API — это новый бенчмарк. Стоит провести A/B-тестирование на своих задачах, особенно если текущие модели дают высокую долю ошибок при вызове функций. Отзыв Vercel указывает на потенциал для задач, где важен не только технически правильный код, но и его визуальное качество.</p>]]></content:encoded>
-      <pubDate>Sat, 30 May 2026 05:36:01 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-introducing-gpt-5-for-developers-openai/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Perplexity open-sourced Unigram tokenizer: CPU-нагрузка снижена в 5–6 раз</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-27-perplexity-vylozhili-v-open-source-svoi-unigram-tokenizer-ko/</link>
-      <description><![CDATA[Perplexity опубликовали в open source свой Unigram tokenizer, который снижает нагрузку на CPU в 5–6 раз. Решение адресует узкое место в пайплайнах reranker- и embedding-моделей, где токенизация на CPU становится заметной частью общей задержки.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Perplexity выложили в open source свою реализацию Unigram tokenizer. Код доступен на GitHub: <a href="https://github.com/perplexityai/pplx-garden">github.com/perplexityai/pplx-garden</a>.</p><h3>Как</h3><p>Unigram tokenizer был полностью переписан с акцентом на снижение потребления CPU. Ключевая идея: маленькие reranker- и embedding-модели уже выполняют инференс на GPU за единицы миллисекунд, но пайплайн тормозит на подготовке текста — токенизация на CPU становится узким местом. Переписанный tokenizer решает именно эту проблему.</p><h3>Цифры</h3><ul><li>Снижение CPU utilization в <strong>5–6 раз</strong> по сравнению с предыдущей реализацией.</li><li>Ускорение инференс-пайплайнов для reranker- и embedding-моделей.</li></ul><h3>Что перенять</h3><p>Если в вашем пайплайне используются маленькие модели (embedders, rerankers) с быстрым GPU-инференсом — проверьте профилированием, не является ли токенизация на CPU bottleneck-ом. Замена стандартного tokenizer на оптимизированную реализацию может дать ощутимый прирост общей латентности без изменения модели.</p>]]></content:encoded>
-      <pubDate>Sat, 30 May 2026 05:35:33 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-27-perplexity-vylozhili-v-open-source-svoi-unigram-tokenizer-ko/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Claude Opus 4.8: SWE-Bench Pro 69.2%, Dynamic Workflows и «честный» агент</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-28-anthropic-tolko-chto-vypustila-claude-opus-4-8/</link>
-      <description><![CDATA[Anthropic выпустила Claude Opus 4.8. Главное: SWE-Bench Pro 69.2% (на 4.9 п.п. выше 4.7), OSWorld 83.4%, GDPval-AA 1890. Модель стала точнее в оценке собственного прогресса и дольше держит контекст в автономном режиме.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Anthropic выпустила Claude Opus 4.8 — обновление флагманской модели. Релиз включает три ключевых изменения: точнее судит о ситуации, честнее говорит о собственных ограничениях и дольше держит контекст при самостоятельной работе без подсказок.</p><h3>Как</h3><p>Ключевое архитектурное нововведение — <strong>Dynamic Workflows</strong> для координации субагентов в Claude Code. Это механизм, который позволяет модели динамически распределять задачи между подагентами, адаптируя стратегию выполнения в зависимости от контекста. Также обновлён механизм «честной оценки прогресса» — модель теперь реже сообщает о завершении задачи, если на самом деле застряла.</p><h3>Цифры</h3><ul><li><strong>SWE-Bench Pro (agentic coding):</strong> 69.2% (vs 64.3% у 4.7, vs 58.6% у GPT-5.5)</li><li><strong>OSWorld (computer use):</strong> 83.4%</li><li><strong>GDPval-AA (knowledge work):</strong> 1890 (vs 1753 у предыдущей версии)</li><li><strong>Terminal coding:</strong> 74.6% (GPT-5.5 — 78.2%, разрыв ~3.6 п.п.)</li><li><strong>Цена:</strong> без изменений</li></ul><h3>Что перенять</h3><p>Паттерн «честной оценки собственного прогресса» — прямое решение одной из главных болей агентных систем: модель уверенно сообщает о завершении задачи, хотя на самом деле застряла. Если вы строите агентные пайплайны, стоит внедрить аналогичный механизм самодиагностики: перед финальным ответом агент должен явно проверить, выполнил ли он все подзадачи, а не просто выдать результат.</p>]]></content:encoded>
-      <pubDate>Sat, 30 May 2026 05:35:12 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-28-anthropic-tolko-chto-vypustila-claude-opus-4-8/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>LlamaIndex выпустила ParseBench — первый бенчмарк парсинга документов для AI-агентов</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-introducing-parsebench-the-first-document-parsing-benchmark/</link>
-      <description><![CDATA[LlamaIndex представила ParseBench — бенчмарк для оценки качества парсинга документов в RAG-пайплайнах. Бенчмарк оценивает не просто извлечение текста, а точность ответов агента на основе распарсенных документов.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>ParseBench — открытый бенчмарк от LlamaIndex, предназначенный для измерения качества систем парсинга документов в контексте AI-агентов. В отличие от существующих бенчмарков, которые оценивают парсинг по визуальному сходству или извлечению текста, ParseBench измеряет конечную полезность: насколько точно агент отвечает на вопросы, используя распарсенный документ.</p><h3>Как</h3><p>Бенчмарк состоит из набора документов (PDF, таблицы, изображения) с размеченными вопросами и эталонными ответами. Система парсинга обрабатывает документ, затем LLM-агент отвечает на вопросы на основе полученного контента. Оценка идёт по точности ответов агента — это энд-ту-энд метрика, а не промежуточная.</p><h3>Цифры</h3><p>В блоге приведены результаты сравнения нескольких парсеров: LlamaParse, Unstructured, Adobe PDF Extract и других. LlamaParse показал 85% точность на сложных PDF с таблицами и диаграммами, тогда как базовые парсеры (PyMuPDF, pdfplumber) — около 55%. На простых текстовых PDF разница минимальна.</p><h3>Что перенять</h3><p>Паттерн: при выборе парсера для RAG оценивайте не качество извлечённого текста, а точность ответов агента на вопросах из вашего домена. ParseBench даёт готовый фреймворк для этого — можно прогонять свои документы и вопросы.</p>]]></content:encoded>
-      <pubDate>Sat, 30 May 2026 05:34:47 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-introducing-parsebench-the-first-document-parsing-benchmark/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Fine-tuning Cohere Reranker через LlamaIndex: +5–10% recall@10 на доменном retrieval</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-improving-retrieval-performance-by-fine-tuning-cohere-rerank/</link>
-      <description><![CDATA[LlamaIndex опубликовал руководство по fine-tuning'у реранкера Cohere на собственных данных. На примере финансовых документов удалось поднять recall@10 с 0.72 до 0.79 — без замены эмбеддинговой модели.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Речь о fine-tuning'е <strong>Cohere Rerank v3</strong> — кросс-энкодерной модели, которая переранжирует кандидатов после первичного retrieval. LlamaIndex интегрировал этот процесс в свой пайплайн: можно дообучить реранкер на парах (query, relevant_doc) прямо поверх существующего RAG-конвейера.</p>
-
-<h3>Как</h3><p>Подход строится на <strong>triplet loss</strong>: модель учится отталкивать нерелевантные документы и притягивать релевантные к запросу. Ключевой момент — данные для fine-tuning'а генерируются автоматически: LlamaIndex берёт существующий индекс, извлекает для каждого query top-k кандидатов, а затем размечает пары по релевантности (можно через LLM-as-judge или ручную разметку).</p><p>Формат данных — JSONL с полями <code>query</code>, <code>relevant_passages</code> (массив), <code>hard_negatives</code> (массив). Cohere принимает эти данные напрямую через API <code>co.finetune</code>.</p>
-
-<h3>Цифры</h3><p>На датасете финансовых документов (10k чанков, 500 запросов):<ul><li><strong>Recall@10</strong>: 0.72 → 0.79 (+9.7%)</li><li><strong>MRR@10</strong>: 0.58 → 0.64 (+10.3%)</li><li><strong>NDCG@10</strong>: 0.61 → 0.67 (+9.8%)</li></ul>При этом latency реранкера не изменилась — fine-tuning не увеличивает размер модели, только веса.</p>
-
-<h3>Что перенять</h3><p>Если у вас есть RAG-пайплайн с реранкером и накопленные данные о релевантности (логи кликов, feedback пользователей, LLM-оценки) — fine-tuning реранкера даёт прирост без замены эмбеддинговой модели и без перестройки индекса. Это дешевле и быстрее, чем дообучать bi-encoder.</p>]]></content:encoded>
-      <pubDate>Sat, 30 May 2026 05:34:20 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-improving-retrieval-performance-by-fine-tuning-cohere-rerank/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>GPT-5: сикофантность снижена вдвое, активированы пороги Preparedness Framework v2</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-introducing-gpt-5-openai/</link>
-      <description><![CDATA[OpenAI выпустила GPT-5. Главное улучшение — сокращение сикофантности более чем вдвое без потери удовлетворённости пользователей. Модель доступна Pro, Plus и Team подписчикам, включая интеграцию с Codex CLI.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Релиз GPT-5 — новой флагманской модели от OpenAI. Основной фокус: снижение сикофантности (склонности модели соглашаться с пользователем, даже если он неправ) и повышение общей полезности.</p><h3>Как</h3><p>Команда оптимизировала модель так, чтобы сократить сикофантность, одновременно сохранив или улучшив другие метрики качества диалога. По словам OpenAI, обычно снижение сикофантности приводит к падению удовлетворённости пользователей, но в этот раз удалось достичь обоих улучшений одновременно.</p><p>Для биологических угроз применён превентивный подход: хотя нет «определённых доказательств», что модель может помочь новичку нанести серьёзный биологический вред (порог High по Preparedness Framework v2), защитные механизмы активированы заранее.</p><h3>Цифры</h3><ul><li>Сикофантность снижена <strong>более чем вдвое</strong> (конкретная цифра не указана).</li><li>Пользователи Pro, Plus и Team получают доступ сразу.</li><li>Интеграция с Codex CLI для разработки.</li></ul><h3>Что перенять</h3><p>Подход «превентивной активации safeguards» — когда пороги безопасности включаются до достижения моделью опасных capability, а не после. Это релевантно для команд, которые строят собственные AI-продукты: не ждите, пока модель научится чему-то опасному, — закладывайте защиту заранее по фреймворку вроде Preparedness Framework.</p>]]></content:encoded>
-      <pubDate>Sat, 30 May 2026 05:33:43 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-introducing-gpt-5-openai/</guid>
       <category>Новые модели</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
