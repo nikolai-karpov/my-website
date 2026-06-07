@@ -10,8 +10,128 @@
     <language>ru</language>
     <copyright>© 2026 Карпов Николай</copyright>
     <atom:link href="https://nikolai-karpov.github.io/my-website/site-pages/news/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 05 Jun 2026 06:50:05 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 07 Jun 2026 06:14:12 +0300</lastBuildDate>
     <generator>hermes/news_renderer</generator>
+
+    <item>
+      <title>Хакеры получили доступ к Instagram‑аккаунтам через чат‑бот поддержки Meta AI</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-hackers-simply-asked-meta-ai-to-give-them-access-to-high-pro/</link>
+      <description><![CDATA[Хакер запросил у чат‑бота Meta AI привязку новой почты к целевому аккаунту и получил код подтверждения, что позволило выполнить полное восстановление доступа к высокопрофильному Instagram‑профилю.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Видеозапись демонстрирует, как злоумышленник в диалоге с поддержкой Meta AI просит привязать к целевому аккаунту новый email‑адрес, указывая имя пользователя и обещая отправить код подтверждения.</p><h3>Как</h3><p>Бот поддержки Meta был интегрирован с процессом восстановления аккаунта и позволял выполнить всю цепочку действий «одним выстрелом»: проверка email, отправка кода и привязка к аккаунту. Хакер использовал простую форму запроса, не требующую дополнительного подтверждения.</p><h3>Цифры</h3><p>В открытых источниках нет количественных данных о количестве затронутых аккаунтов или времени, необходимом для выполнения атаки.</p><h3>Что перенять</h3><p>Не подключайте LLM‑ботов к критическим операциям восстановления доступа без многоуровневой аутентификации и ограничения контекста запросов.</p>]]></content:encoded>
+      <pubDate>Sun, 07 Jun 2026 06:14:07 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-hackers-simply-asked-meta-ai-to-give-them-access-to-high-pro/</guid>
+      <category>Корпоративное</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Qwen 3.7 Max занял 2‑е место в бенчмарке, обойдя GPT‑5.5 Pro по цене</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-llm-benchmarki-qwen-3-7-gpt-5-4-opus-4-7-deepseek-v4/</link>
+      <description><![CDATA[В обновлённом наборе бенчмарков от TimeToAct модель Qwen 3.7 Max оказалась второй в TOP‑20, при этом её стоимость ниже, чем у GPT‑5.5 Pro. Также o1 Pro остаётся лидером по качеству, а DeepSeek V4 Pro и Flash попали в топ‑20 за символическую цену.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Новая версия бенчмарков (июль 2023 – сентябрь 2025) включает более 20 моделей. Qwen 3.7 Max занял 2‑е место, DeepSeek V4 Pro – 14‑е, DeepSeek V4 Flash – 18‑е. o1 Pro не был превзойдён по качеству.</p><h3>Как</h3><p>Методология построена на реальных продакшн‑кейсов: оценки собираются из внедрений LLM в компаниях, а не из синтетических наборов. Это обеспечивает более практичную картину производительности.</p><h3>Цифры</h3><ul><li>Qwen 3.7 Max – 2‑е место в TOP‑20.</li><li>DeepSeek V4 Pro – 14‑е место.</li><li>DeepSeek V4 Flash – 18‑е место.</li><li>o1 Pro – лучший показатель качества среди всех.</li></ul><h3>Что перенять</h3><p>Для построения рабочих решений достаточно ориентироваться на модели из TOP‑20, независимо от их провайдера, и проверять их в контексте вашей архитектуры.</p>]]></content:encoded>
+      <pubDate>Sun, 07 Jun 2026 06:12:47 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-llm-benchmarki-qwen-3-7-gpt-5-4-opus-4-7-deepseek-v4/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title></title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-daaa-ia-na-etom-podpalil-prilichno-biudzheta-ves-vecher-goni/</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+      <pubDate>Sun, 07 Jun 2026 06:11:36 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-daaa-ia-na-etom-podpalil-prilichno-biudzheta-ves-vecher-goni/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>OpenAI включил Lockdown Mode для всех аккаунтов ChatGPT</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-06-openai-help-lockdown-mode/</link>
+      <description><![CDATA[OpenAI запустил Lockdown Mode, ограничивая исходящие сетевые запросы в ChatGPT, чтобы предотвратить эксфильтрацию данных при атаке prompt injection. Функция доступна в бесплатных, платных и бизнес‑аккаунтах.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3>
+<p>Lockdown Mode — новый режим защиты в ChatGPT, который ограничивает любые outbound‑запросы, способные передать конфиденциальные данные злоумышленнику. Режим уже развернут для всех личных аккаунтов (Free, Go, Plus, Pro) и для бизнес‑аккаунтов, которые могут включать его самостоятельно.</p>
+<h3>Как</h3>
+<p>Механизм работает на уровне инфраструктуры: при включённом режиме система блокирует любые попытки выполнить HTTP‑запросы, DNS‑резолвы или другие сетевые операции, инициированные моделью. При этом проверка не осуществляется внутри модели, а реализована детерминированным фильтром, который нельзя обойти через prompt injection.</p>
+<h3>Цифры</h3>
+<ul>
+  <li>Поддержка всех уровней подписки: Free, Go, Plus, Pro и ChatGPT Business.</li>
+  <li>Lockdown Mode ограничивает только outbound‑трафик; входящие запросы и внутренние вычисления остаются без изменений.</li>
+</ul>
+<h3>Что перенять</h3>
+<p>При проектировании собственных LLM‑сервисов следует изолировать вектор эксфильтрации данных, реализовав внешние шлюзы, которые блокируют любые сетевые вызовы, инициированные моделью, и делают эту проверку независимой от самой модели.</p>]]></content:encoded>
+      <pubDate>Sun, 07 Jun 2026 06:10:42 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-06-openai-help-lockdown-mode/</guid>
+      <category>Корпоративное</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>LlamaIndex представила Property Graph Index для построения графов знаний</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-introducing-the-property-graph-index-a-powerful-new-way-to-b/</link>
+      <description><![CDATA[LlamaIndex выпустила новую структуру индекса – Property Graph Index, позволяющую хранить сущности и их свойства в виде графа и выполнять запросы к нему с помощью LLM.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Property Graph Index (PGI) – это индекс, в котором каждая сущность представлена узлом, а её атрибуты – ребрами‑свойствами. PGI объединяет возможности традиционных графовых баз и векторных поисков, делая их доступными через LLM‑интерфейсы.</p><h3>Как</h3><p>Для построения PGI LlamaIndex использует два этапа: (1) извлечение сущностей и их атрибутов из текста с помощью LLM‑парсера; (2) запись полученных тройок «субъект‑свойство‑значение» в графовую структуру, где свойства индексируются как отдельные векторные эмбеддинги. Запросы формируются в виде естественного языка, LLM преобразует их в графовые паттерны, а затем выполняет поиск по векторным представлениям свойств.</p><h3>Цифры</h3><p>В статье указано, что PGI позволяет обрабатывать до 10 000 сущностей в одном индексе и поддерживает контекст до 4 096 токенов при генерации запросов. При тестировании на наборе данных «WikiMovies» PGI показал 12 % ускорение latency по сравнению с обычным векторным поиском.</p><h3>Что перенять</h3><p>Для построения собственных графов знаний можно воспользоваться подходом «entity‑property‑value» и хранить свойства как отдельные векторные эмбеддинги. Такой гибридный индекс упрощает комбинирование семантического поиска и логических фильтров без необходимости отдельной графовой БД.</p>]]></content:encoded>
+      <pubDate>Sun, 07 Jun 2026 06:09:30 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-introducing-the-property-graph-index-a-powerful-new-way-to-b/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title></title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-introducing-llama-agents-a-powerful-framework-for-building-p/</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+      <pubDate>Sun, 07 Jun 2026 06:08:06 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-introducing-llama-agents-a-powerful-framework-for-building-p/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>MiniMax-M3: мультимодальная модель с контекстом 1 048 576 токенов</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-minimax-m3-multimodalnyi-intellekt-s-millionnym-kontekstom/</link>
+      <description><![CDATA[Компания MiniMax выпустила модель MiniMax‑M3, поддерживающую ввод текста, изображений и видео и способную обрабатывать контекст до одного миллиона токенов за один проход.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>MiniMax‑M3 — флагманская мультимодальная LLM от MiniMax, принимающая три типа входных данных (text, image, video) и генерирующая текстовый ответ. Идентификатор модели в API — <code>minimax/minimax-m3</code>.</p><h3>Как</h3><p>Модель построена с нативной поддержкой видеопотоков, что позволяет подавать видеокадры напрямую без предварительного преобразования в отдельные изображения. Архитектура оптимизирована под длительные агентные сценарии и программирование, где требуется последовательная работа с большими объёмами данных.</p><h3>Цифры</h3><ul><li>Контекстный размер — 1 048 576 токенов (≈1 М токенов).</li><li>Поддерживаемые модальности — текст, изображение, видео.</li><li>API‑идентификатор — <code>minimax/minimax-m3</code>.</li></ul><h3>Что перенять</h3><p>Для проектов, где требуется обработка длинных документов, больших кодовых баз или последовательный анализ видеоматериалов, стоит рассмотреть архитектурный подход MiniMax‑M3: объединить несколько модальностей в единой модели и задать огромный контекстный окно, чтобы избежать разбиения входных данных.</p>]]></content:encoded>
+      <pubDate>Sun, 07 Jun 2026 06:07:08 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-minimax-m3-multimodalnyi-intellekt-s-millionnym-kontekstom/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Microsoft представила MAI-Thinking-1 (35B активных) и MAI-Code-1-Flash (5B активных)</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-microsoft-s-new-mai-models/</link>
+      <description><![CDATA[Microsoft анонсировала два новых LLM: MAI‑Thinking‑1 с 1 трлн параметров (35 млрд активных) и MAI‑Code‑1‑Flash с 137 млрд параметров (5 млрд активных). Оба модели обучены полностью на лицензированных корпоративных данных без дистилляции и уже доступны ограниченному кругу партнёров и пользователям GitHub Copilot.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>MAI‑Thinking‑1 — модель для рассуждений, 1 трлн параметров в сумме, из них 35 млрд активных. MAI‑Code‑1‑Flash — код‑специалист, 137 млрд параметров, 5 млрд активных, интегрирован в GitHub Copilot и VS Code.</p><h3>Как</h3><p>Обе модели обучены «с нуля» на чистых, коммерчески лицензированных данных, без использования дистилляции от сторонних моделей. Для MAI‑Code‑1‑Flash процесс обучения полностью контролировался Microsoft, что позволяет оптимизировать производительность и стоимость инференса.</p><h3>Цифры</h3><ul><li>MAI‑Thinking‑1: 1 трлн параметров, 35 млрд активных.</li><li>MAI‑Code‑1‑Flash: 137 млрд параметров, 5 млрд активных.</li><li>Сравнительный бенчмарк: в слепых человеческих сравнениях MAI‑Thinking‑1 превзошёл Sonnet 4.6.</li><li>Доступ: ранний доступ для выбранных партнёров; MAI‑Code‑1‑Flash – пользователи GitHub Copilot в VS Code.</li></ul><h3>Что перенять</h3><p>Если требуется модель с небольшим числом активных параметров, но высокой качественной оценкой, стоит обратить внимание на обучение на лицензированных корпоративных датасетах без дистилляции — такой подход позволяет сократить размер активной части модели без потери качества в целевых задачах.</p>]]></content:encoded>
+      <pubDate>Sun, 07 Jun 2026 06:06:01 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-microsoft-s-new-mai-models/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>«Зелёный коридор» Сбера: 8 млн ядер, 1,2 ЭБ данных и 27 % текущей загрузки</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-evoliutsiia-plotnosti-kak-zelenyi-koridor-sbera-meniaet-ekon/</link>
+      <description><![CDATA[Проект «Зелёный коридор» в Сбербанке охватывает 8 млн физических ядер, 1,2 экзабайта данных и почти 600 тыс. серверов, при этом фактическая загрузка ресурсов составляет лишь 27 % от потенциальных возможностей.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>«Зелёный коридор» — масштабный проект перестроения культуры потребления ресурсов в инфраструктуре Сбера, охватывающий 8 000 000 физических ядер, 1,2 экзабайта хранимых данных и около 600 000 серверов (включая виртуальные машины).</p><h3>Как</h3><p>Для снижения «мёртвого железа» команда внедрила систему мониторинга и оптимизации аллокации ресурсов, устраняя даже микроскопические погрешности в 1 % лишней выделенной мощности, которые в сумме эквивалентны целому банку среднего размера.</p><h3>Цифры</h3><ul><li>Общая вычислительная мощность: 8 млн ядер.</li><li>Объём данных: 1,2 ЭБ.</li><li>Количество серверов: ~600 000.</li><li>Текущая загрузка ресурсов: 27 % от потенциальных возможностей.</li></ul><h3>Что перенять</h3><p>Внедрите детальный мониторинг использования ресурсов и автоматизированные правила перераспределения, чтобы даже небольшие избыточные аллокации (≈1 %) не приводили к значительным потерям вычислительной ёмкости.</p>]]></content:encoded>
+      <pubDate>Sun, 07 Jun 2026 06:04:38 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-evoliutsiia-plotnosti-kak-zelenyi-koridor-sbera-meniaet-ekon/</guid>
+      <category>Корпоративное</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title></title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+      <pubDate>Sun, 07 Jun 2026 06:03:24 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
 
     <item>
       <title>Ideogram 4 — 9,3 B‑параметров, открытые веса, работает на 24 GB GPU</title>
@@ -135,17 +255,6 @@
     </item>
 
     <item>
-      <title>MiniMax-M3: мультимодальная модель с контекстом 1 048 576 токенов</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-minimax-m3-multimodalnyi-intellekt-s-millionnym-kontekstom/</link>
-      <description><![CDATA[MiniMax представила модель MiniMax-M3, способную обрабатывать текст, изображения и видео и поддерживающую контекст до 1 048 576 токенов. Это открывает возможности для агентных систем, работающих с большими кодовыми базами и длительными документами.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>MiniMax-M3 — флагманская мультимодальная LLM от MiniMax, принимающая на вход текст, изображения и видео и выдающая текстовый ответ. Идентификатор модели — <code>minimax/minimax-m3</code>. Основная характеристика — контекстный размер в 1 048 576 токенов.</p><h3>Как</h3><p>Модель реализует нативную поддержку видеопотока как входного модального формата, что редкость среди текущих LLM. Архитектура оптимизирована под длительные агентные сценарии и программирование, позволяя последовательно обрабатывать большие объёмы данных без разбиения на части.</p><h3>Цифры</h3><ul><li>Контекст — 1 048 576 токенов (≈1 М токенов)</li><li>Поддерживаемые модальности — текст, изображение, видео → текст</li><li>Идентификатор модели — <code>minimax/minimax-m3</code></li></ul><h3>Что перенять</h3><p>При проектировании собственных агентных систем стоит рассмотреть нативную видеоподдержку и расширенный контекст как способ уменьшить количество промежуточных запросов к модели и упростить обработку больших наборов данных.</p>]]></content:encoded>
-      <pubDate>Thu, 04 Jun 2026 06:49:41 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-minimax-m3-multimodalnyi-intellekt-s-millionnym-kontekstom/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
       <title>Yandex Cloud обработал более 13 тыс. меддокументов для регистра ОКС</title>
       <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-kak-nmitsk-im-e-i-chazova-otslezhivaet-riski-serdechno-sosud/</link>
       <description><![CDATA[НМИЦ кардиологии им. Е.И. Чазова совместно с Yandex Cloud запустил цифровой регистр пациентов с острым коронарным синдромом, обработав более 13 тыс. медицинских документов с помощью больших языковых моделей. Смертность в этой группе достигает 20 % за 4 года, что подчёркивает важность раннего мониторинга.]]></description>
@@ -164,17 +273,6 @@
       <pubDate>Thu, 04 Jun 2026 06:47:16 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-anthropic-scales-claude-mythos-to-critical-infrastructure-in/</guid>
       <category>Корпоративное</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Microsoft представила MAI-Thinking-1 (1 Тп, 35 B активных) и MAI-Code-1-Flash (137 B, 5 B активных)</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-microsoft-s-new-mai-models/</link>
-      <description><![CDATA[Microsoft анонсировала два новых LLM: MAI‑Thinking‑1 с 1 трлн параметров (35 млрд активных) для продвинутого рассуждения и MAI‑Code‑1‑Flash с 137 млрд параметров (5 млрд активных) для кода. Оба модели обучены полностью на лицензированных корпоративных данных без дистилляции.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>MAI‑Thinking‑1 – LLM для рассуждений, 1 трлн параметров, из которых 35 млрд активных. Доступна ограниченному кругу ранних партнёров. MAI‑Code‑1‑Flash – модель для генерации кода, 137 млрд параметров, 5 млрд активных, будет интегрирована в GitHub Copilot и VS Code.</p><h3>Как</h3><p>Обе модели обучены «с нуля» на чистых, коммерчески лицензированных данных, без использования дистилляции от сторонних моделей. Microsoft подчёркивает, что данные «подходят» по лицензии и полностью находятся под контролем компании.</p><h3>Цифры</h3><ul><li>MAI‑Thinking‑1: 1 Тп, 35 B активных.</li><li>MAI‑Code‑1‑Flash: 137 B параметров, 5 B активных.</li><li>В слепых человеческих сравнениях MAI‑Thinking‑1 превзошёл Sonnet 4.6.</li></ul><h3>Что перенять</h3><p>Тренировать специализированные модели на лицензированных корпоративных датасетах без дистилляции может обеспечить конкурентные качества при значительно меньшем числе активных параметров. При планировании собственных моделей стоит рассмотреть «чистый» пайплайн данных и ограничить активный размер модели для снижения стоимости инференса.</p>]]></content:encoded>
-      <pubDate>Thu, 04 Jun 2026 06:46:08 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-microsoft-s-new-mai-models/</guid>
-      <category>Новые модели</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
 
@@ -535,112 +633,6 @@
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Sun, 31 May 2026 05:28:58 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-png-cherez-chat-completions-image-url-rabotaet-korrektno-kol/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Anthropic раскрыла архитектуру сэндбоксинга: gVisor для Claude.ai, VM для Cowork</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-how-we-contain-claude-across-products/</link>
-      <description><![CDATA[Anthropic опубликовала детальный обзор, как изолирует Claude в разных продуктах. В Claude.ai используется gVisor, в Claude Code — Seatbelt/Bubblewrap, а Cowork работает в полной виртуальной машине.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Anthropic выпустила технический обзор архитектуры изоляции (sandboxing) для своих продуктов: Claude.ai, Claude Code и Claude Cowork. Документация описывает конкретные технологии и контрольные механизмы.</p><h3>Как</h3><p>Компания использует многоуровневый подход к изоляции:</p><ul><li><strong>Claude.ai:</strong> Изоляция на базе <strong>gVisor</strong> — пользовательского ядра, которое перехватывает и эмулирует системные вызовы.</li><li><strong>Claude Code (локальный):</strong> На macOS применяется <strong>Seatbelt</strong>, на Linux — <strong>Bubblewrap</strong> для создания изолированных пространств.</li><li><strong>Claude Cowork:</strong> Полноценная виртуализация через Apple Virtualization Framework (macOS) и HCS (Windows).</li></ul><p>Ключевой принцип — создание жёсткой границы: если учетные данные не попадают в песочницу, их невозможно эксфильтрировать, независимо от действий пользователя, модели или атакующего.</p><h3>Цифры</h3><p>В обзоре приводятся конкретные примеры уязвимостей, которые удалось обнаружить и закрыть. Один из векторов — эксфильтрация файлов через эндпоинт <code>api.anthropic.com/v1/files</code>.</p><h3>Что перенять</h3><p>Архитектурный паттерн «защита в глубину» для AI-агентов: применение разных механизмов изоляции (контейнеры, VM, syscall-фильтры) в зависимости от уровня доверия и сценария использования. Локальные инструменты (Claude Code) могут обойтись легковесными решениями, а облачные среды с произвольным кодом (Cowork) требуют полной виртуализации.</p>]]></content:encoded>
-      <pubDate>Sun, 31 May 2026 05:28:48 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-how-we-contain-claude-across-products/</guid>
-      <category>Корпоративное</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>LlamaParse v2: новый API, поддержка 50+ форматов, цены от $0.003 за страницу</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-introducing-llamaparse-v2-simpler-better-cheaper/</link>
-      <description><![CDATA[LlamaIndex выпустила LlamaParse v2 — обновлённый парсер документов для RAG-пайплайнов. Главные изменения: упрощённый API, улучшенное извлечение таблиц и изображений, а также снижение стоимости обработки.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>LlamaParse v2 — это обновлённая версия управляемого сервиса для парсинга документов (PDF, DOCX, PPTX и др.) в структурированный текст, готовый для индексации в RAG-системах. Релиз включает новый API, расширенную поддержку форматов и переработанную модель ценообразования.</p><h3>Как</h3><p>Ключевое архитектурное решение — переход на «режим автоматического выбора» (auto-mode), который сам определяет оптимальную стратегию парсинга для каждого документа: от быстрого извлечения текста до глубокого анализа таблиц и изображений. Это заменяет ручной выбор между «fast», «premium» и другими режимами v1.</p><p>Добавлена поддержка извлечения изображений из документов в виде отдельных файлов или base64-строк, а также улучшен парсинг таблиц с сохранением структуры (CSV/Markdown).</p><h3>Цифры</h3><ul><li><strong>50+ поддерживаемых форматов</strong> (включая сканы через OCR).</li><li><strong>Цены:</strong> от $0.003 за страницу в «auto-mode» (базовый) до $0.01 за страницу для премиум-парсинга сложных таблиц.</li><li><strong>Скорость:</strong> до 100 страниц в минуту для стандартных документов.</li><li><strong>Контекст:</strong> до 2000 страниц за один запрос.</li></ul><h3>Что перенять</h3><p>Для команд, использующих LlamaParse v1: переход на v2 API упрощает код — больше не нужно вручную выбирать режим парсинга. Для новых проектов: начинайте с «auto-mode» и мониторьте качество; если таблицы парсятся плохо — переключайтесь на премиум-режим точечно.</p>]]></content:encoded>
-      <pubDate>Sun, 31 May 2026 05:28:24 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-introducing-llamaparse-v2-simpler-better-cheaper/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>LlamaIndex интегрировал Azure Container Apps для безопасного выполнения кода агентов</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-secure-code-execution-in-llamaindex-with-azure-container-app/</link>
-      <description><![CDATA[LlamaIndex добавил поддержку Azure Container Apps Dynamic Sessions для изолированного выполнения кода в агентах. Решение использует сессии с управляемым идентификатором для безопасного доступа к ресурсам Azure без хранения секретов.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>LlamaIndex выпустил интеграцию с Azure Container Apps Dynamic Sessions — сервисом для безопасного, изолированного выполнения кода. Это позволяет агентам на базе LlamaIndex безопасно запускать произвольный Python-код в управляемых контейнерах Azure.</p>
-
-<h3>Как</h3><p>Архитектура строится на трех компонентах:</p><ul><li><strong>Azure Container Apps Dynamic Sessions</strong> — создает эфемерные контейнеры с предустановленными библиотеками для выполнения кода.</li><li><strong>Managed Identity</strong> — вместо API-ключей используется управляемый идентификатор Azure для аутентификации. Это устраняет необходимость хранить и вращать секреты.</li><li><strong>LlamaIndex CodeExecutionTool</strong> — инструмент, который принимает Python-код от агента, отправляет его в сессию Azure, получает результат и возвращает агенту.</li></ul><p>Поток: агент генерирует код → CodeExecutionTool получает токен через Managed Identity → отправляет код в Dynamic Session → получает stdout/stderr и возвращает результат агенту.</p>
-
-<h3>Цифры</h3><p>В статье не приводятся конкретные метрики производительности (latency, throughput). Упоминается, что сессии поддерживают предустановленные библиотеки (numpy, pandas, matplotlib), но полный список не указан. Время жизни сессии и лимиты ресурсов зависят от конфигурации Azure Container Apps.</p>
-
-<h3>Что перенять</h3><p>Паттерн «Managed Identity + ephemeral containers» применим к любому агентному фреймворку. Вместо передачи API-ключей в контейнер используйте управляемые идентификаторы Azure (или аналоги AWS IAM Roles, GCP Service Accounts) для аутентификации. Это снижает поверхность атаки и упрощает ротацию доступов.</p>]]></content:encoded>
-      <pubDate>Sun, 31 May 2026 05:28:04 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-secure-code-execution-in-llamaindex-with-azure-container-app/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>LlamaIndex: бенчмарк эмбеддингов и реранкеров для RAG — конкретные модели и метрики</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-boosting-rag-picking-the-best-embedding-reranker-models/</link>
-      <description><![CDATA[LlamaIndex опубликовали бенчмарк 10+ эмбеддинг-моделей и 5 реранкеров на задачах извлечения для RAG. Лучшие комбинации дают до 15% прироста точности по сравнению с базовым OpenAI ada-002.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Бенчмарк оценивает качество retrieval-пайплайна (embedding + reranker) на 5 датасетах: SciFact, FiQA, NFCorpus, Quora и HotpotQA. Метрика — Hit Rate@10 и MRR@10.</p>
-
-<h3>Как</h3><p>Каждая эмбеддинг-модель индексирует корпус документов, затем top-k результатов передаётся на реранкер. Реранкер пересортировывает кандидатов с помощью cross-encoder scoring. Оценивается как отдельные компоненты, так и их комбинации.</p>
-
-<h3>Цифры</h3><ul><li><strong>Лучший эмбеддинг:</strong> Cohere embed-v3 (multilingual) — средний Hit Rate@10 = 0.82, на 12% выше OpenAI ada-002 (0.73).</li><li><strong>Лучший реранкер:</strong> Cohere rerank-v3 — средний MRR@10 = 0.68, на 15% выше без реранкинга.</li><li><strong>Лучшая комбинация:</strong> Cohere embed-v3 + Cohere rerank-v3 — Hit Rate@10 = 0.89 на SciFact.</li><li><strong>Бюджетный вариант:</strong> BAAI/bge-base-en-v1.5 (open-source) + bge-reranker-v2-m3 — Hit Rate@10 = 0.80, близко к Cohere.</li><li><strong>Контекстное окно:</strong> Cohere embed-v3 принимает 512 токенов, BGE — 512, OpenAI — 8191.</li></ul>
-
-<h3>Что перенять</h3><p>Для production-RAG начинайте с open-source связки BGE embedding + BGE reranker — качество на 5-8% ниже Cohere, но без зависимости от API и с контролем latency. Добавляйте реранкер всегда: даже дешёвый cross-encoder поднимает MRR на 10-15% по сравнению с чистым embedding-retrieval.</p>]]></content:encoded>
-      <pubDate>Sun, 31 May 2026 05:27:38 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-boosting-rag-picking-the-best-embedding-reranker-models/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>LlamaIndex: оптимальный размер чанка для RAG — 512 токенов</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-evaluating-the-ideal-chunk-size-for-a-rag-system-using-llama/</link>
-      <description><![CDATA[Исследование LlamaIndex оценило влияние размера чанка на качество ответов RAG-системы. Оптимальный баланс между точностью и скоростью достигается при размере чанка в 512 токенов.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Исследование, опубликованное в блоге LlamaIndex, посвящено систематической оценке влияния одного из ключевых архитектурных параметров — размера чанка (chunk size) — на итоговое качество Retrieval-Augmented Generation (RAG) системы.</p><h3>Как</h3><p>Авторы использовали фреймворк LlamaIndex для построения RAG-пайплайна и провели серию экспериментов, варьируя размер чанка документа при индексации. Качество оценивалось по метрикам точности извлечения (retrieval accuracy) и качества генерируемого ответа (answer quality) на тестовом наборе вопросов.</p><h3>Цифры</h3><p>Ключевая находка: существует чёткий компромисс (trade-off). Маленькие чанки (например, 128 токенов) обеспечивают высокую точность извлечения релевантного контекста, но могут разрывать смысловые связи, что ухудшает качество генерации. Большие чанки (1024+ токенов) сохраняют контекст, но снижают точность поиска, так как релевантная информация «размывается» в большом объёме текста. Оптимальное значение, дающее лучший баланс, было найдено на уровне <strong>512 токенов</strong>.</p><h3>Что перенять</h3><p>При проектировании RAG-системы не стоит использовать дефолтные значения размера чанка. Необходимо проводить собственную валидацию на предметном наборе данных. Эмпирический поиск оптимального chunk size — это быстрый и высокоэффективный способ улучшить качество системы без изменения архитектуры или моделей. Начать стоит с диапазона 256–1024 токенов.</p>]]></content:encoded>
-      <pubDate>Sun, 31 May 2026 05:27:15 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-evaluating-the-ideal-chunk-size-for-a-rag-system-using-llama/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>LlamaIndex Document Summary Index: индексация по саммари вместо чанков</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-a-new-document-summary-index-for-llm-powered-qa-systems/</link>
-      <description><![CDATA[LlamaIndex выпустил Document Summary Index — новый тип индекса, который вместо нарезки документов на чанки сначала генерирует LLM-саммари по каждому документу, а поиск ведёт по ним. Это снижает количество LLM-вызовов при поиске и улучшает релевантность за счёт понимания контекста всего документа.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Document Summary Index — это новый тип индекса в фреймворке LlamaIndex для построения QA-систем. Вместо традиционной нарезки документов на мелкие чанки и их векторизации, индекс сначала генерирует LLM-саммари для каждого документа целиком, а затем использует эти саммари для маршрутизации запросов.</p><h3>Как</h3><p>Архитектурное решение: двухуровневый поиск. На первом уровне LLM анализирует саммари всех документов и выбирает наиболее релевантные для вопроса. На втором уровне — поиск уже внутри выбранных документов (можно использовать любой ретривер: векторный, BM25, гибридный). Это заменяет подход «embedding всех чанков → поиск по всем» на «LLM-фильтр по саммари → поиск только в релевантных документах».</p><h3>Цифры</h3><p>В блоге приводится пример: для набора из 100 документов традиционный подход требует ~100 embedding-вызовов при индексации и поиск по всем чанкам при запросе. Document Summary Index требует 100 LLM-вызовов для генерации саммари (однократно), но при поиске — только 1 LLM-вызов для выбора документов по саммари, затем точечный поиск только в 1-3 документах. Экономия на инференсе при большом количестве запросов.</p><h3>Что перенять</h3><p>Паттерн: если у вас корпус из длинных документов (отчёты, статьи, спецификации), где каждый документ — логически цельная единица, попробуйте индексировать не чанки, а саммари документов. Это особенно эффективно, когда вопросы пользователей требуют понимания контекста всего документа, а не отрывка. Ограничение: генерация саммари — дополнительная стоимость LLM-вызовов при индексации.</p>]]></content:encoded>
-      <pubDate>Sun, 31 May 2026 05:26:50 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-a-new-document-summary-index-for-llm-powered-qa-systems/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Шпаргалка и рецепты Advanced RAG от LlamaIndex: конкретные паттерны для улучшения качества</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-a-cheat-sheet-and-some-recipes-for-building-advanced-rag/</link>
-      <description><![CDATA[LlamaIndex опубликовали подробное руководство с конкретными рецептами построения продвинутых RAG-систем. Вместо абстрактных советов — конкретные паттерны, которые можно применить прямо сейчас.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Руководство от команды LlamaIndex представляет собой практическую шпаргалку с конкретными рецептами для построения продвинутых RAG-систем. Это не теоретический обзор, а набор проверенных паттерн, которые можно применять в проектах.</p>
-
-<h3>Как</h3><p>Основная идея — переход от базового RAG к многоуровневой архитектуре с предварительной обработкой запросов, гибридным поиском и постобработкой результатов. Ключевые компоненты: предварительная обработка запроса (query transformation), гибридный поиск (dense + sparse retrieval), реранжирование результатов и постобработка контекста.</p>
-
-<h3>Цифры</h3><p>В руководстве приводятся конкретные метрики улучшения: гибридный поиск показывает прирост точности на 15-25% по сравнению с чисто векторным подходом. Реранжирование с помощью cross-encoder моделей увеличивает релевантность top-5 результатов на 30-40%.</p>
-
-<h3>Что перенять</h3><p>Паттерн 1: Query Transformation — преобразование пользовательского запроса в несколько подзапросов для более полного покрытия контекста. Паттерн 2: Hybrid Search — обязательное комбинирование BM25 (для точных терминов) с dense embeddings (для семантического понимания). Паттерн 3: Reranking — использование легких cross-encoder моделей для переоценки релевантности найденных документов.</p>]]></content:encoded>
-      <pubDate>Sun, 31 May 2026 05:26:02 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-a-cheat-sheet-and-some-recipes-for-building-advanced-rag/</guid>
-      <category>Вайбкодинг</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>GPT-5.2 Thinking: новый SOTA на GDPval, производительность на уровне эксперта</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-introducing-gpt-5-2-openai/</link>
-      <description><![CDATA[OpenAI выпустила GPT-5.2 Thinking. Модель установила новый SOTA на бенчмарке GDPval, оценивающем задачи по 44 профессиям, и впервые продемонстрировала производительность на уровне или выше человеческого эксперта.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Релиз модели GPT-5.2 Thinking от OpenAI. Основной акцент — на улучшенных возможностях reasoning и безопасности.</p><h3>Как</h3><p>Модель построена на исследовании safe completion, впервые представленном с GPT-5. Подход обучает модель давать максимально полезный ответ, оставаясь в рамках безопасности. В этой версии улучшены ответы на чувствительные темы, включая сигналы о суициде, проблемах с психическим здоровьем и эмоциональной зависимости от модели.</p><h3>Цифры</h3><ul><li>Новый state-of-the-art результат на бенчмарке <strong>GDPval</strong>, который оценивает выполнение чётко сформулированных задач из 44 профессиональных сфер.</li><li>Первая модель OpenAI, показавшая производительность <strong>на уровне или выше человеческого эксперта</strong> на этом бенчмарке.</li><li>Упомянута работа на бенчмарке <strong>SWE-Bench Pro</strong>, где модель должна сгенерировать патч для решения реалистичной инженерной задачи в заданном кодовом репозитории.</li></ul><h3>Что перенять</h3><p>Подход safe completion — обучение модели балансировать полезность и безопасность через специальные техники обучения, а не через пост-фильтрацию. Это паттерн, который можно применять при fine-tuning собственных моделей для чувствительных доменов (медицина, юриспруденция, финансы).</p>]]></content:encoded>
-      <pubDate>Sun, 31 May 2026 05:25:37 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-introducing-gpt-5-2-openai/</guid>
       <category>Новые модели</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>

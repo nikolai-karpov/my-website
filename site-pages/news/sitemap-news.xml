@@ -3,6 +3,126 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-hackers-simply-asked-meta-ai-to-give-them-access-to-high-pro/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-07T06:14:07+03:00</news:publication_date>
+      <news:title>Хакеры получили доступ к Instagram‑аккаунтам через чат‑бот поддержки Meta AI</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-llm-benchmarki-qwen-3-7-gpt-5-4-opus-4-7-deepseek-v4/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-07T06:12:47+03:00</news:publication_date>
+      <news:title>Qwen 3.7 Max занял 2‑е место в бенчмарке, обойдя GPT‑5.5 Pro по цене</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-daaa-ia-na-etom-podpalil-prilichno-biudzheta-ves-vecher-goni/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-07T06:11:36+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-06-openai-help-lockdown-mode/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-07T06:10:42+03:00</news:publication_date>
+      <news:title>OpenAI включил Lockdown Mode для всех аккаунтов ChatGPT</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-introducing-the-property-graph-index-a-powerful-new-way-to-b/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-07T06:09:30+03:00</news:publication_date>
+      <news:title>LlamaIndex представила Property Graph Index для построения графов знаний</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-introducing-llama-agents-a-powerful-framework-for-building-p/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-07T06:08:06+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-minimax-m3-multimodalnyi-intellekt-s-millionnym-kontekstom/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-07T06:07:08+03:00</news:publication_date>
+      <news:title>MiniMax-M3: мультимодальная модель с контекстом 1 048 576 токенов</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-microsoft-s-new-mai-models/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-07T06:06:01+03:00</news:publication_date>
+      <news:title>Microsoft представила MAI-Thinking-1 (35B активных) и MAI-Code-1-Flash (5B активных)</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-evoliutsiia-plotnosti-kak-zelenyi-koridor-sbera-meniaet-ekon/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-07T06:04:38+03:00</news:publication_date>
+      <news:title>«Зелёный коридор» Сбера: 8 млн ядер, 1,2 ЭБ данных и 27 % текущей загрузки</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-07T06:03:24+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
     <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-04-bum-bum-vyshel-ideogram-4/</loc>
     <news:news>
       <news:publication>
@@ -135,18 +255,6 @@
   </url>
 
   <url>
-    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-minimax-m3-multimodalnyi-intellekt-s-millionnym-kontekstom/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Карпов Николай — Новости</news:name>
-        <news:language>ru</news:language>
-      </news:publication>
-      <news:publication_date>2026-06-04T06:49:41+03:00</news:publication_date>
-      <news:title>MiniMax-M3: мультимодальная модель с контекстом 1 048 576 токенов</news:title>
-    </news:news>
-  </url>
-
-  <url>
     <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-kak-nmitsk-im-e-i-chazova-otslezhivaet-riski-serdechno-sosud/</loc>
     <news:news>
       <news:publication>
@@ -167,18 +275,6 @@
       </news:publication>
       <news:publication_date>2026-06-04T06:47:16+03:00</news:publication_date>
       <news:title>Anthropic расширила доступ к Claude Mythos для 150 организаций в 15 странах</news:title>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-microsoft-s-new-mai-models/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Карпов Николай — Новости</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-06-04T06:46:08+03:00</news:publication_date>
-      <news:title>Microsoft представила MAI-Thinking-1 (1 Тп, 35 B активных) и MAI-Code-1-Flash (137 B, 5 B активных)</news:title>
     </news:news>
   </url>
 
