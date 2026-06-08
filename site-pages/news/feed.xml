@@ -10,8 +10,118 @@
     <language>ru</language>
     <copyright>© 2026 Карпов Николай</copyright>
     <atom:link href="https://nikolai-karpov.github.io/my-website/site-pages/news/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 07 Jun 2026 06:14:12 +0300</lastBuildDate>
+    <lastBuildDate>Mon, 08 Jun 2026 06:34:54 +0300</lastBuildDate>
     <generator>hermes/news_renderer</generator>
+
+    <item>
+      <title></title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-build-a-chatgpt-with-your-private-data-using-llamaindex-and/</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+      <pubDate>Mon, 08 Jun 2026 06:34:43 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-build-a-chatgpt-with-your-private-data-using-llamaindex-and/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title></title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-kak-iandeks-disk-vyderzhivaet-sotni-gigabit-vkhodiashchego-t/</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+      <pubDate>Mon, 08 Jun 2026 06:33:45 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-kak-iandeks-disk-vyderzhivaet-sotni-gigabit-vkhodiashchego-t/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>LangGraph добавил RetryPolicy, TimeoutPolicy и error_handler для продакшн-агентов</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-fault-tolerance-in-langgraph-retries-timeouts-and-error-hand/</link>
+      <description><![CDATA[В LangGraph появилась встроенная поддержка отказоустойчивости: RetryPolicy с backoff, TimeoutPolicy (wall-clock и idle), и error_handler для cleanup после исчерпания попыток. Материал содержит архитектурные детали и примеры интеграции с SAGA-паттерном.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>LangGraph теперь включает три низкоуровневых примитива отказоустойчивости: <code>RetryPolicy</code>, <code>TimeoutPolicy</code> и <code>error_handler</code>. Они работают на уровне шагов (nodes) и графов целиком, что позволяет декларативно задавать поведение при сбоях без внешних оркестраторов.</p><h3>Как</h3><p><code>RetryPolicy</code> поддерживает экспоненциальную задержку и кастомные backoff-функции, а также фильтрацию по типам исключений (например, retry только на <code>ConnectionError</code>, но не на <code>ValidationError</code>). <code>TimeoutPolicy</code> позволяет задать как общее время выполнения шага (<code>total_timeout</code>), так и таймаут простоя (<code>idle_timeout</code>) — критично для агентов, ожидающих внешних событий. <code>error_handler</code> — это callback, вызываемый после исчерпания ретраев; он может логировать, отправлять алерты, откатывать side-эффекты или сохранять состояние для SAGA-паттерна.</p><p>Ключевая инженерная идея: отказоустойчивость интегрирована в runtime-цикличность LangGraph (через <code>checkpointer</code>), а не навешивается поверх. Это позволяет сохранять промежуточные состояния и корректно продолжать выполнение после восстановления.</p><h3>Цифры</h3><p>В посте приведён продакшен-кейс: при 0.8% rate ошибок на шаге (в основном сетевые таймауты) использование <code>RetryPolicy</code> с 3 попытками и экспоненциальным backoff (base=1s, multiplier=2) снизило финальную failure rate до 0.0005%. <code>idle_timeout=30s</code> предотвратил зависание 12% агентов, ожидавших ответа от внешнего API без таймаута.</p><h3>Что перенять</h3><ul><li>Используйте <code>idle_timeout</code> для всех шагов, взаимодействующих с внешними сервисами — это критично для предотвращения «тихих» зависаний.</li><li>Для SAGA-паттерна: в <code>error_handler</code> вызывайте компенсирующие действия (например, <code>cancel_reservation()</code> после <code>reserve()</code>), сохраняя идемпотентность через <code>checkpointer</code>.</li><li>Фильтруйте ретраи по типу исключения — не все ошибки стоит повторять (например, 4xx HTTP, ValidationError).</li></ul>]]></content:encoded>
+      <pubDate>Mon, 08 Jun 2026 06:32:45 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-fault-tolerance-in-langgraph-retries-timeouts-and-error-hand/</guid>
+      <category>Вайбкодинг</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title></title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-kapibary-na-sluzhbe-ii-naima/</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+      <pubDate>Mon, 08 Jun 2026 06:30:56 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-kapibary-na-sluzhbe-ii-naima/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>TurboVec сжимает векторный индекс до 4 ГБ, ускоряя поиск по сравнению с FAISS</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-06-novyi-algoritm-google-szhal-31-gb-pamiati-do-4-gb/</link>
+      <description><![CDATA[TurboVec — новый open‑source инструмент для хранения векторных индексов, который уменьшает потребление памяти в 16 раз (с 31 ГБ до 4 ГБ) и обеспечивает более быстрый поиск, чем FAISS.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>TurboVec — библиотека для локального хранения и поиска векторных данных, полностью офлайн и с поддержкой Python. Она интегрируется с популярными фреймворками LangChain и LlamaIndex.</p><h3>Как</h3><p>База решения — Google TurboQuant, который устраняет традиционный этап подготовки (pre‑processing) векторных индексов, тем самым сокращая объем требуемой памяти и ускоряя построение индекса.</p><h3>Цифры</h3><ul><li>Память: 31 ГБ → 4 ГБ (сжатие ×16).</li><li>Скорость поиска: быстрее, чем у FAISS (точные метрики в репозитории).</li><li>Поддержка: macOS, обычные CPU‑серверы, без необходимости GPU.</li></ul><h3>Что перенять</h3><p>При построении собственных векторных сервисов можно заменить традиционный pipeline подготовки индекса на TurboQuant‑подобный подход, чтобы избавиться от дорогостоящего этапа pre‑processing и сократить требования к памяти.</p>]]></content:encoded>
+      <pubDate>Mon, 08 Jun 2026 06:29:59 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-06-novyi-algoritm-google-szhal-31-gb-pamiati-do-4-gb/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Nvidia RTX Spark: 20‑ядерный ARM‑CPU, &gt;6000 GPU‑ядер, до 128 ГБ общей памяти</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-tekhnodaidzhest-nedeli/</link>
+      <description><![CDATA[Nvidia анонсировала новый чип RTX Spark на базе ARM для Windows‑устройств. В нём 20‑ядерный процессор, более шести тысяч графических ядер и до 128 ГБ объединённой памяти, которую совместно используют CPU и GPU. Первым ноутбуком на этом чипе станет Surface Laptop Ultra.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>RTX Spark — это систем‑на‑чипе (SoC) от Nvidia, рассчитанный на ноутбуки и мини‑ПК под управлением Windows. Чип объединяет 20‑ядерный ARM‑CPU, более 6000 GPU‑ядер и поддерживает до 128 ГБ общей (unified) памяти.</p><h3>Как</h3><p>Архитектура основана на ARM, что позволяет использовать энерго‑эффективный CPU‑ядра в сочетании с масштабируемой графической подсистемой Nvidia. Память распределяется между процессором и видеокартой без копирования данных, что снижает задержки при работе с графикой и ИИ‑загрузками.</p><h3>Цифры</h3><ul><li>CPU — 20 ядер (ARM‑based)</li><li>GPU — более 6000 ядер</li><li>Объединённая память — до 128 ГБ, совместно используемая CPU и GPU</li><li>Первый коммерческий продукт — Surface Laptop Ultra (анонсирован Microsoft)</li></ul><h3>Что перенять</h3><p>Для разработчиков системных решений стоит обратить внимание на модель unified memory, позволяющую CPU и GPU работать с единой областью данных без копирования. При проектировании ноутбуков или мини‑ПК можно использовать ARM‑CPU в сочетании с мощной графикой Nvidia для снижения энергопотребления без потери производительности.</p>]]></content:encoded>
+      <pubDate>Mon, 08 Jun 2026 06:28:15 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-tekhnodaidzhest-nedeli/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title></title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-extracting-repeating-entities-from-documents-tabular-extract/</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+      <pubDate>Mon, 08 Jun 2026 06:27:03 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-extracting-repeating-entities-from-documents-tabular-extract/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title></title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-beyond-ocr-deepseek-s-new-vision-compression-and-how-it-serv/</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+      <pubDate>Mon, 08 Jun 2026 06:26:07 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-beyond-ocr-deepseek-s-new-vision-compression-and-how-it-serv/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title></title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-olmocr-bench-review-insights-and-pitfalls-on-an-ocr-benchmar/</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+      <pubDate>Mon, 08 Jun 2026 06:25:13 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-olmocr-bench-review-insights-and-pitfalls-on-an-ocr-benchmar/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title></title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-testing-anthropic-claudes-100k-token-window-on-sec-10-k-fili/</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+      <pubDate>Mon, 08 Jun 2026 06:24:19 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-testing-anthropic-claudes-100k-token-window-on-sec-10-k-fili/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
 
     <item>
       <title>Хакеры получили доступ к Instagram‑аккаунтам через чат‑бот поддержки Meta AI</title>
@@ -338,23 +448,6 @@
     </item>
 
     <item>
-      <title>Яндекс Диск: архитектура балансировки загрузок под сотни гигабит трафика</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-kak-iandeks-disk-vyderzhivaet-sotni-gigabit-vkhodiashchego-t/</link>
-      <description><![CDATA[Яндекс рассказал, как отказались от классических балансировщиков для загрузки файлов на Диск. Проблема — высокая дисперсия загруженности узлов при тяжёлом трафике. Решение — новая архитектура, которая статистически сглаживает утилизацию сети.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Яндекс Диск обрабатывает массовые загрузки файлов — трафик исчисляется сотнями гигабит. Стандартная схема «балансировщик → группа инстансов» для лёгких API-запросов перестаёт работать, когда трафик становится тяжёлым: большие файлы, долгие соединения, неравномерная нагрузка.</p>
-
-<h3>Как</h3><p>Классические балансировщики (L4/L7) распределяют запросы по round-robin или least-connections, но не учитывают реальную загруженность узла по объёму данных. При загрузке файлов возникает дисперсия: одни узлы перегружены, другие простаивают, потому что на них попали несколько крупных файлов одновременно.</p><p>Решение — переход от проксирования трафика к схеме, где балансировщик принимает решение на основе реальной утилизации узлов, а не количества соединений. Архитектура позволяет статистически сгладить разброс загруженности, выравнивая нагрузку по фактическому потреблению ресурсов.</p>
-
-<h3>Цифры</h3><ul><li>Сотни гигабит входящего трафика — масштаб проблемы.</li><li>Высокая дисперсия загруженности узлов — ключевая метрика, которую решали.</li><li>Статистическое улучшение утилизации сети после перехода на новую архитектуру.</li></ul>
-
-<h3>Что перенять</h3><p>Для AI-сервисов с тяжёлым трафиком (загрузка датасетов, весов моделей, больших файлов) классические балансировщики по количеству соединений не работают. Нужно проектировать балансировку с учётом реальной утилизации узла — объёма данных, а не количества запросов. Это особенно актуально для inference-сервисов с переменным размером контекста и генерации.]]></content:encoded>
-      <pubDate>Wed, 03 Jun 2026 06:53:07 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-kak-iandeks-disk-vyderzhivaet-sotni-gigabit-vkhodiashchego-t/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
       <title>Hermes Agent + DeepSeek V4: open-weights архитектура набрала 81 балл на BitGN ECOM1</title>
       <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-analiz-nous-hermes-agent-deepseek-v4-na-bitgn-ecom1/</link>
       <description><![CDATA[Иван Коновалов собрал production-агента на открытых моделях: Nous Hermes Agent для оркестрации, DeepSeek V4 Flash для основных задач и Pro для сложных. Кастомный MCP-сервер и промпт-инженерия позволили поднять результат с 57 до 81 балла на бенчмарке BitGN ECOM1.]]></description>
@@ -506,133 +599,6 @@
       <content:encoded><![CDATA[<h3>Что</h3><p>OpenAI выпустила две open-weight модели: <strong>gpt-oss-120b</strong> (120 млрд параметров) и <strong>gpt-oss-20b</strong> (20 млрд параметров). Модели доступны на Hugging Face, сопровождаются model card и исследовательской статьёй.</p><h3>Как</h3><p>Помимо стандартного safety-тренинга и оценок, OpenAI провела дополнительный слой проверки: adversarially fine-tuned версия gpt-oss-120b была протестирована в рамках Preparedness Framework. Это первый случай, когда open-weight релиз OpenAI прошёл полный цикл оценки безопасности с публикацией результатов.</p><h3>Цифры</h3><ul><li><strong>gpt-oss-120b</strong> — 120 млрд параметров</li><li><strong>gpt-oss-20b</strong> — 20 млрд параметров</li><li>Партнёры для тестирования: AI Sweden, Orange, Snowflake</li></ul><h3>Что перенять</h3><p>Модели позиционируются для on-premise развёртывания (data security) и fine-tuning на специализированных датасетах. Партнёры уже тестируют сценарии: хостинг on-premises для чувствительных данных и дообучение на доменных данных.</p>]]></content:encoded>
       <pubDate>Tue, 02 Jun 2026 06:40:23 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-introducing-gpt-oss-openai/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>LlamaIndex: методология оценки мультимодального RAG с метриками retrieval и generation</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-evaluating-multi-modal-retrieval-augmented-generation/</link>
-      <description><![CDATA[LlamaIndex опубликовали детальный разбор методологии оценки мультимодальных RAG-систем. Статья содержит конкретные метрики для retrieval и generation, архитектурные решения для бенчмаркинга и практические рекомендации по построению evaluation-пайплайнов.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Статья описывает комплексную методологию оценки мультимодальных RAG-систем — пайплайнов, которые извлекают и генерируют ответы на основе текста, изображений, таблиц и других типов контента. Основной фокус — на разделении метрик retrieval-качества и generation-качества, поскольку смешивание этих этапов затрудняет отладку.</p>
-
-<h3>Как</h3><p>Авторы предлагают двухуровневую архитектуру оценки:</p><ul><li><strong>Retrieval-оценка:</strong> метрики precision@k, recall@k, MRR и nDCG применяются к извлечённым чанкам (включая мультимодальные — изображения, таблицы). Ключевая идея — оценивать retrieval отдельно от generation, чтобы точно локализовать проблему.</li><li><strong>Generation-оценка:</strong> LLM-as-judge подход с rubric-based scoring. Используется эталонный ответ (ground truth) и автоматическая оценка релевантности, полноты и faithfulness сгенерированного ответа.</li><li><strong>Мультимодальные метрики:</strong> для изображений и таблиц вводятся специфичные метрики — например, оценка корректности интерпретации визуальных данных и точности извлечения структурированных данных из таблиц.</li></ul>
-
-<h3>Цифры</h3><p>Статья приводит конкретные пороговые значения для метрик: precision@5 ≥ 0.7 считается приемлемым для retrieval, faithfulness score ≥ 0.8 — для generation. Для мультимодальных сценариев с таблицами retrieval precision падает на 15-20% по сравнению с текстовыми чанками, что указывает на необходимость специализированных парсеров.</p>
-
-<h3>Что перенять</h3><p>Практический паттерн: разделить evaluation на два независимых этапа — retrieval и generation. Для retrieval использовать стандартные IR-метрики (precision@k, nDCG), для generation — LLM-as-judge с явным rubric. Для мультимодальных данных — отдельно оценивать качество парсинга таблиц и изображений до передачи в retrieval.</p>]]></content:encoded>
-      <pubDate>Mon, 01 Jun 2026 05:44:08 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-evaluating-multi-modal-retrieval-augmented-generation/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>LlamaIndex v0.10: новый API для агентов и RAG-пайплайнов</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-llamaindex-v0-10/</link>
-      <description><![CDATA[LlamaIndex выпустила мажорную версию v0.10 с переработанной архитектурой. Ключевое изменение — унифицированный Workflow API вместо разрозненных классов для построения агентов и RAG-пайплайнов.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>LlamaIndex v0.10 — мажорный релиз фреймворка для построения LLM-приложений поверх пользовательских данных. Релиз включает breaking changes и новую архитектуру.</p><h3>Как</h3><p>Главное архитектурное изменение — <strong>Workflow API</strong>, единый примитив для оркестрации шагов пайплайна. Вместо отдельных классов <code>QueryEngine</code>, <code>ChatEngine</code>, <code>AgentRunner</code> теперь предлагается декларативный подход: разработчик определяет шаги (steps) и события (events), фреймворк управляет потоком выполнения.</p><p>Workflows поддерживают параллелизм, условные переходы и вложенность — можно композировать сложные агентские пайплайны из переиспользуемых блоков.</p><h3>Цифры</h3><ul><li>Полная обратная совместимость с v0.9 через отдельный пакет <code>llama-index-legacy</code></li><li>Модульная структура: ядро <code>llama-index-core</code> + отдельные пакеты для интеграций (до 300+ интеграций)</li><li>Новые базовые классы: <code>Workflow</code>, <code>StepConfig</code>, <code>Event</code></li></ul><h3>Что перенять</h3><p>Паттерн «workflow как граф событий» вместо монолитных цепочек вызовов. Каждый шаг — отдельная функция с явными входными/выходными событиями, что упрощает тестирование и переиспользование компонентов в разных пайплайнах.</p>]]></content:encoded>
-      <pubDate>Mon, 01 Jun 2026 05:42:36 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-llamaindex-v0-10/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>GPT-4V: как формулировка вопроса и CoT влияют на точность ответов</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-gpt4-v-experiments-with-general-specific-questions-and-chain/</link>
-      <description><![CDATA[LlamaIndex провели серию экспериментов с GPT-4V, сравнивая общие и конкретные вопросы, а также влияние Chain-of-Thought prompting на качество ответов. Результаты показали, что точная формулировка запроса может улучшить точность ответа на 20-30%.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Исследовательская команда LlamaIndex провела серию экспериментов с моделью GPT-4V (GPT-4 Vision) для анализа влияния формулировки вопроса и техник промптинга на качество ответов. Эксперименты включали сравнение общих (general) и конкретных (specific) вопросов, а также применение метода Chain-of-Thought (CoT) prompting.</p>
-
-<h3>Как</h3><p>Экспериментальная настройка включала три ключевых переменных:</p><ul><li><strong>Тип вопроса:</strong> общие вопросы (например, «Опиши изображение») против конкретных (например, «Сколько людей на изображении и что они делают?»)</li><li><strong>Техника промптинга:</strong> стандартный промпт против Chain-of-Thought prompting, где модель должна объяснить свои рассуждения шаг за шагом</li><li><strong>Комбинации:</strong> тестирование различных сочетаний этих факторов</li></ul><p>Для оценки использовались как количественные метрики точности, так и качественный анализ ответов модели.</p>
-
-<h3>Цифры</h3><p>Ключевые результаты экспериментов:</p><ul><li>Конкретные вопросы дали прирост точности на <strong>20-30%</strong> по сравнению с общими вопросами</li><li>Применение CoT prompting увеличило точность ответов на <strong>15-25%</strong> в зависимости от типа задачи</li><li>Комбинация конкретных вопросов и CoT показала наилучшие результаты, с общим улучшением до <strong>40%</strong> по сравнению с базовым подходом</li><li>Для задач анализа изображений конкретные вопросы с CoT снизили количество галлюцинаций на <strong>35%</strong></li></ul>
-
-<h3>Что перенять</h3><p>Практические выводы для инженеров:</p><ul><li><strong>Формулируйте конкретные вопросы:</strong> вместо «Опиши изображение» используйте «Перечисли все объекты на изображении и их взаимное расположение»</li><li><strong>Используйте CoT prompting:</strong> добавляйте инструкции вроде «Покажи свои рассуждения шаг за шагу» или «Объясни, как ты пришел к этому выводу»</li><li><strong>Комбинируйте оба подхода:</strong> конкретные вопросы с CoT дают синергетический эффект</li><li><strong>Для анализа изображений:</strong> особенно важно использовать конкретные вопросы, чтобы избежать общих описаний и галлюцинаций</li></ul>]]></content:encoded>
-      <pubDate>Mon, 01 Jun 2026 05:42:06 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-gpt4-v-experiments-with-general-specific-questions-and-chain/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Яндекс Еда: год на Temporal в продакшене — архитектура, тестирование и миграции Workflow на Go</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-ne-nastupaite-na-nashi-grabli-esli-sobiraetes-ispolzovat-tem/</link>
-      <description><![CDATA[Платформа Яндекс Еды перевела процессинг заказов на Temporal и работает так почти год. Разработчик делится практическими советами по детерминизму, тестированию и безопасному развитию Workflow, выведенными из реального опыта миграции.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Процессинг заказов Яндекс Еды полностью работает на Temporal уже почти год. Статья — практическое руководство по миграции на Temporal для распределённой бизнес-логики, написанное разработчиком платформы. Основной стек — Go.</p>
-
-<h3>Как</h3><p>Ключевые архитектурные решения из статьи:</p><ul><li><strong>Детерминизм Workflow</strong> — Temporal требует, чтобы код Workflow был детерминистским: при повторном воспроизведении (replay) те же входные данные должны давать тот же результат. Это главный источник ошибок при миграции.</li><li><strong>Миграция существующей логики</strong> — постепенный перевод бизнес-процессов на Workflow без остановки сервиса. Автор описывает паттерн безопасного перехода.</li><li><strong>Тестирование Workflow</strong> — специфичные подходы к unit- и интеграционному тестированию кода, который исполняется в Temporal-движке.</li><li><strong>Версионирование и миграции Workflow</strong> — как безопасно развивать Workflow в продакшене, когда нельзя одновременно обновить все инстансы.</li></ul>
-
-<h3>Цифры</h3><p>Статья не содержит бенчмарков или метрик производительности. Основная ценность — qualitative: почти год production-эксплуатации, описание реальных проблем и их решений. Автор обещает конкретные примеры кода на Go.</p>
-
-<h3>Что перенять</h3><p>Главный паттерн: перед миграцией на Temporal нужно заранее спроектировать Workflow с учётом детерминизма — не допускать nondeterministic операций (случайные числа, текущее время, внешние вызовы вне Activity). Автор рекомендует выделять такие операции в Activity и изолировать детерминистскую логику Workflow. Также важно предусмотреть версионирование Workflow-кода до первого релиза, чтобы потом не ломать replay.</p>]]></content:encoded>
-      <pubDate>Mon, 01 Jun 2026 05:41:22 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-ne-nastupaite-na-nashi-grabli-esli-sobiraetes-ispolzovat-tem/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>ITBench-AA: frontier-модели набирают ниже 50% на бенчмарке enterprise IT-агентов</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-27-itbench-aa-frontier-models-score-below-50-on-the-first-bench/</link>
-      <description><![CDATA[IBM Research и Artificial Analysis представили ITBench-AA — первый бенчмарк для оценки LLM-агентов в реальных enterprise IT-задачах. Лучшие модели (GPT-4o, Claude 3.5 Sonnet, Gemini 1.5 Pro) набрали менее 50% точности на задачах инцидент-менеджмента и настройки инфраструктуры.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>ITBench-AA — бенчмарк от IBM Research и Artificial Analysis, оценивающий способность LLM-агентов выполнять enterprise IT-задачи: расследование инцидентов, настройку мониторинга, управление конфигурациями. Задачи основаны на реальных сценариях из IT-операций крупных организаций.</p>
-
-<h3>Как</h3><p>Бенчмарк моделирует рабочее окружение enterprise IT: агент взаимодействует с системами мониторинга (Prometheus, Grafana), логами, конфигурационными базами и тикет-системами. Оценка идёт по трём категориям: <strong>Incident Investigation</strong> (поиск root cause по метрикам и логам), <strong>Monitoring Configuration</strong> (настройка алертов и дашбордов), <strong>Configuration Management</strong> (управление инфраструктурными конфигурациями). Каждая задача имеет верифицируемый ground-truth ответ.</p>
-
-<h3>Цифры</h3><ul><li><strong>GPT-4o</strong> — лучший результат среди протестированных моделей, но всё равно ниже 50% на полном наборе задач</li><li><strong>Claude 3.5 Sonnet</strong> и <strong>Gemini 1.5 Pro</strong> — сопоставимые результаты в диапазоне 40–50%</li><li>Модели значительно лучше справляются с задачами на поиск информации, чем с multi-step reasoning и планированием последовательности действий</li><li>Бенчмарк включает задачи разного уровня сложности — от простых запросов к мониторингу до комплексных расследований с несколькими системами</li></ul>]]></content:encoded>
-      <pubDate>Mon, 01 Jun 2026 05:40:38 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-27-itbench-aa-frontier-models-score-below-50-on-the-first-bench/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Claude Code получил workflows: JS-скрипты для оркестрации агентных пайплайнов</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-workflows-v-claude-code-agentnye-paiplainy-teper-pishutsia-k/</link>
-      <description><![CDATA[Anthropic добавила в Claude Code примитивы workflows — JS-скрипты с функциями phase(), agent(), parallel() и pipeline() для построения сложных агентных пайплайнов. Встроенный /deep-research уже использует этот механизм: разбивает вопрос на 5 углов, проверяет утверждения тремя независимыми критиками и выбрасывает факты при расхождении 2:1.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Workflow в Claude Code — это JS-скрипт, запускаемый в фоне. Runtime предоставляет четыре примитива: <code>phase("Search")</code> для разметки фаз в UI, <code>agent(prompt, {schema})</code> для суб-агента со структурированным выводом, <code>parallel([fn1, fn2])</code> для параллельного запуска и <code>pipeline(items, stage1, stage2)</code> для конвейерной обработки.</p><p>Claude может сам сгенерировать workflow-скрипт под задачу — достаточно упомянуть слово «workflow» в промпте. Сохранённый скрипт становится слеш-командой наряду со встроенными.</p><h3>Как</h3><p>Архитектурное решение: workflows — не замена скиллов, а дополнительный слой. Скиллы работают там, где процесс имеет чёткий синтаксис и контролируемый выход (сборка docx, парсинг PDF). Workflows нужны, когда требуется оркестрация десятков агентов с циклами, барьерами, дедупликацией URL, голосованием и ранжированием — markdown-инструкция на такое неспособна.</p><p>Встроенный <code>/deep-research</code> демонстрирует подход: разбивает вопрос на 5 углов поиска, фетчит источники, проверяет каждое утверждение тремя независимыми критиками — если двое из трёх опровергают, утверждение выбрасывается. Финальный отчёт с цитированием.</p><h3>Цифры</h3><ul><li>Claude Code v2.1.154 или новее — минимальная версия</li><li>Max и Team — включено по умолчанию; Pro — через <code>/config</code>, строка «Dynamic workflows»</li><li>Расход токенов кратно выше обычной сессии — блогер сообщает о 70% лимита на одну задачу</li><li>Попутно: Fast mode для Opus 4.8 — ~2,5× быстрее, цены $10/$50 за млн токенов (input/output)</li></ul><h3>Что перенять</h3><p>Паттерн «сгенерировать workflow, затем переупаковать в компактную версию» — попросить Claude создать пайплайн под задачу, проанализировать потребление и оптимизировать количество агентов/фаз. Перед первым запуском Claude Code показывает план выполнения и запрашивает подтверждение — начинать стоит с узкой задачи для калибровки расхода токенов.</p>]]></content:encoded>
-      <pubDate>Mon, 01 Jun 2026 05:39:59 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-workflows-v-claude-code-agentnye-paiplainy-teper-pishutsia-k/</guid>
-      <category>Вайбкодинг</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Python ASGI-приложения в браузере через Pyodide + Service Worker вместо Web Worker</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-running-python-asgi-apps-in-the-browser-via-pyodide-a-servic/</link>
-      <description><![CDATA[Simon Willison переключил Datasette Lite с Web Worker на Service Worker, решив проблему неисполнения <script>-тегов в Pyodide-приложениях. Решение сгенерировано Claude Opus 4.8 в Claude Code, есть рабочие демо и PR.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Datasette Lite — версия Datasette, работающая целиком в браузере через Pyodide (WebAssembly). С 2022 года использовался Web Worker для перехвата навигации и генерации HTML из Python. Проблема: JavaScript внутри <code>&lt;script&gt;</code>-тегов в ответах ASGI-приложения не исполнялся, что ломало функциональность Datasette и его плагинов.</p><h3>Как</h3><p>Вместо Web Worker используется Service Worker, который перехватывает fetch-запросы на уровне браузера. ASGI-приложение (FastAPI/Datasette) выполняется в Pyodide, а Service Worker подменяет ответы на навигационные запросы результатами работы Python-кода. Ключевое отличие: Service Worker работает в контексте origin, поэтому браузер корректно исполняет <code>&lt;script&gt;</code>-теги в сгенерированном HTML — это и было основным ограничением предыдущего подхода с Web Worker.</p><h3>Цифры</h3><ul><li>PR <a href="https://github.com/simonw/research/pull/112">#112</a> в репозитории research — рабочая реализация</li><li>Два демо: <a href="https://simonw.github.io/research/pyodide-asgi-browser/">базовый ASGI FastCGI</a> и <a href="https://simonw.github.io/research/pyodide-asgi-browser/datasette.html">Datasette 1.0a31</a></li><li>Решение сгенерировано Claude Opus 4.8 в Claude Code for web за одну сессию</li></ul><h3>Что перенять</h3><p>Паттерн «Service Worker + Pyodide» для запуска Python ASGI-приложений в браузере — применим к любому фреймворку (FastAPI, Starlette, Litestar). Если нужно, чтобы клиентский JS (виджеты, плагины, analytics) работал в сгенерированном HTML — Service Worker обязателен вместо Web Worker. Подход подходит для AI-инструментов, которые хотят работать полностью офлайн в браузере без бэкенд-сервера.</p>]]></content:encoded>
-      <pubDate>Mon, 01 Jun 2026 05:38:00 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-running-python-asgi-apps-in-the-browser-via-pyodide-a-servic/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>LongLLMLingua: prompt compression для RAG с экономией до 20× токенов и решением middle loss</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</link>
-      <description><![CDATA[LlamaIndex интегрировал LongLLMLingua — алгоритм сжатия промптов, который убирает «middle loss» (потерю информации из середины контекста) и снижает стоимость RAG-запросов. В бенчмарках сжатие достигает 20× при сохранении качества ответов.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>LongLLMLingua — расширение библиотеки LLMLingua от Microsoft Research, адаптированное для длинных RAG-контекстов. Интегрировано в LlamaIndex как компонент пайплайна пост-обработки (node postprocessor). Задача — сжать retrieved-чанки перед отправкой в LLM, убрав информационный шум и сохранив релевантные фрагменты.</p>
-
-<h3>Как</h3><p>Алгоритм работает в три этапа: (1) <strong>question-aware coarse compression</strong> — грубая фильтрация документов по релевантности вопросу с помощью маленькой модели (например, GPT-2 Large); (2) <strong>fine-grained compression</strong> — построчное сжатие оставшихся фрагментов, где каждая строка оценивается по perplexity относительно вопроса; (3) <strong>reorder</strong> — перестановка строк по релевантности, что решает проблему «middle loss» — склонности LLM хуже обрабатывать информацию из середины длинного контекста.</p><p>Ключевая идея: вместо отправки полного контекста в LLM, сначала прогнать текст через дешёвую модель для вычисления perplexity-скоров, отобрать только информативные токены и отправить сжатый промпт в основную LLM.</p>
-
-<h3>Цифры</h3><ul><li>Сжатие контекста: <strong>до 20×</strong> (оставляется ~5% токенов от исходного) при сохранении ~95% качества ответов на NaturalQuestions и HotpotQA.</li><li>Стоимость инференса: снижение на <strong>до 94%</strong> за счёт сокращения input-токенов.</li><li>Latency: ускорение на <strong>до 1.7×</strong> на длинных контекстах (10k+ токенов).</li><li>Для coarse-компрессии используется GPT-2 Large (~774M параметров) — модель дешёвая и быстрая.</li></ul>
-
-<h3>Что перенять</h3><p>Паттерн «cheap model filters → expensive model generates» применим к любому RAG-пайплайну: перед отправкой retrieved-чанков в основную LLM прогнать их через perplexity-scoring на маленькой модели и отсеять нерелевантные строки. Особенно эффективно при большом количестве retrieved-документов (top-k > 5) и длинных чанках.</p>]]></content:encoded>
-      <pubDate>Mon, 01 Jun 2026 05:37:15 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-png-cherez-chat-completions-image-url-rabotaet-korrektno-kol/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Sun, 31 May 2026 05:28:58 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-png-cherez-chat-completions-image-url-rabotaet-korrektno-kol/</guid>
       <category>Новые модели</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>

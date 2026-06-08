@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="">
+<html lang="en" data-theme="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> — Новости — Карпов Николай</title>
-    <meta name="description" content="" />
+    <title>LangGraph добавил RetryPolicy, TimeoutPolicy и error_handler для продакшн-агентов — Новости — Карпов Николай</title>
+    <meta name="description" content="В LangGraph появилась встроенная поддержка отказоустойчивости: RetryPolicy с backoff, TimeoutPolicy (wall-clock и idle), и error_handler для cleanup после исчерпания попыток. Материал содержит архитектурные детали и примеры интеграции с SAGA-паттерном." />
     <meta name="author" content="Карпов Николай" />
-    <link rel="canonical" href="https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-kak-iandeks-disk-vyderzhivaet-sotni-gigabit-vkhodiashchego-t/" />
+    <link rel="canonical" href="https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-fault-tolerance-in-langgraph-retries-timeouts-and-error-hand/" />
 
     
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:url" content="https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-kak-iandeks-disk-vyderzhivaet-sotni-gigabit-vkhodiashchego-t/" />
-    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:title" content="LangGraph добавил RetryPolicy, TimeoutPolicy и error_handler для продакшн-агентов" />
+    <meta property="og:description" content="В LangGraph появилась встроенная поддержка отказоустойчивости: RetryPolicy с backoff, TimeoutPolicy (wall-clock и idle), и error_handler для cleanup после исчерпания попыток. Материал содержит архитектурные детали и примеры интеграции с SAGA-паттерном." />
+    <meta property="og:url" content="https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-fault-tolerance-in-langgraph-retries-timeouts-and-error-hand/" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Карпов Николай" />
-    <meta property="article:published_time" content="2026-06-08T06:33:45+03:00" />
+    <meta property="article:published_time" content="2026-06-08T06:32:45+03:00" />
     
     <meta property="article:author" content="Карпов Николай" />
-    <meta property="article:section" content="Проекты" />
+    <meta property="article:section" content="Вайбкодинг" />
 
     
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:description" content="" />
+    <meta name="twitter:title" content="LangGraph добавил RetryPolicy, TimeoutPolicy и error_handler для продакшн-агентов" />
+    <meta name="twitter:description" content="В LangGraph появилась встроенная поддержка отказоустойчивости: RetryPolicy с backoff, TimeoutPolicy (wall-clock и idle), и error_handler для cleanup после исчерпания попыток. Материал содержит архитектурные детали и примеры интеграции с SAGA-паттерном." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,11 +38,11 @@
     <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "NewsArticle",
-  "headline": "",
-  "description": "",
-  "datePublished": "2026-06-08T06:33:45+03:00",
-  "dateModified": "2026-06-08T06:33:45+03:00",
-  "inLanguage": "ru",
+  "headline": "LangGraph добавил RetryPolicy, TimeoutPolicy и error_handler для продакшн-агентов",
+  "description": "В LangGraph появилась встроенная поддержка отказоустойчивости: RetryPolicy с backoff, TimeoutPolicy (wall-clock и idle), и error_handler для cleanup после исчерпания попыток. Материал содержит архитектурные детали и примеры интеграции с SAGA-паттерном.",
+  "datePublished": "2026-06-08T06:32:45+03:00",
+  "dateModified": "2026-06-08T06:32:45+03:00",
+  "inLanguage": "en",
   "author": {
     "@type": "Person",
     "name": "Карпов Николай",
@@ -55,10 +55,10 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-kak-iandeks-disk-vyderzhivaet-sotni-gigabit-vkhodiashchego-t/"
+    "@id": "https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-fault-tolerance-in-langgraph-retries-timeouts-and-error-hand/"
   },
-  "url": "https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-kak-iandeks-disk-vyderzhivaet-sotni-gigabit-vkhodiashchego-t/",
-  "articleSection": "Проекты"
+  "url": "https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-fault-tolerance-in-langgraph-retries-timeouts-and-error-hand/",
+  "articleSection": "Вайбкодинг"
 }</script>
 
     <style>
@@ -183,21 +183,49 @@
 
         <div class="news-article__body" style="margin-top: 24px;">
           <div class="news-meta">
-            <span class="news-meta__pill">🎯 Проекты</span>
-            <time datetime="2026-06-08T06:33:45+03:00">8 июнь 2026</time>
-            <span>1 мин чтения</span>
+            <span class="news-meta__pill">⚒ Вайбкодинг</span>
+            <time datetime="2026-06-08T06:32:45+03:00">8 июнь 2026</time>
+            <span>2 мин чтения</span>
           </div>
 
-          <h1></h1>
+          <h1>LangGraph добавил RetryPolicy, TimeoutPolicy и error_handler для продакшн-агентов</h1>
+
+          <h3>Простым языком</h3>
+          <p>LangGraph добавил три инструмента для продакшн-агентов: автоматические ретраи с настраиваемым backoff, таймауты по времени выполнения и по простоям, и callback-функции для отката side-эффектов после финального провала. Все работает внутри runtime-цикла, не требуя внешнего оркестратора.</p>
 
           
-          <p class="news-lead"></p>
+          <h3>Что нового</h3>
+          <ul>
+            
+            <li>RetryPolicy с экспоненциальным backoff и фильтрацией по типу исключения</li>
+            
+            <li>TimeoutPolicy с отдельными параметрами total_timeout и idle_timeout</li>
+            
+            <li>error_handler как callback после исчерпания ретраев, интегрированный с checkpointer</li>
+            
+            <li>Поддержка SAGA-паттерна через компенсирующие действия в error_handler</li>
+            
+          </ul>
+          
 
           
+          <h3>Вердикт</h3>
+          <p>Применять в продакшене для агентов с внешними side-эффектами — особенно где важна корректность при сбоях (платежи, бронирования). Для prototype-сценариев без внешних вызовов — не критично.</p>
           
 
           
+          <blockquote class="takeaway">LangGraph теперь поддерживает SAGA-паттерн через встроенный error_handler + checkpointer: при исчерпании ретраев можно вызывать компенсирующие действия, сохраняя идемпотентность через checkpointing.</blockquote>
+          
 
+          
+          <aside class="news-sources">
+            <h2>Источники</h2>
+            <ul>
+              
+              <li><a href="https://www.langchain.com/blog/fault-tolerance-in-langgraph" target="_blank" rel="noopener noreferrer">Fault Tolerance in LangGraph: Retries, Timeouts and Error Handlers</a> — <span style="color: var(--text-muted);">LangChain Blog</span></li>
+              
+            </ul>
+          </aside>
           
         </div>
       </article>
