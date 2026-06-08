@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Будни директолога — как ИИ усиливает маркетолога</title>
+<meta name="description" content="Обзор повседневных задач маркетолога-директолога, боли и точки усиления ИИ-ассистентом.">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #222535;
+    --border: #2a2d3a;
+    --text: #e4e4e7;
+    --text2: #a1a1aa;
+    --red: #ef4444;
+    --red-bg: rgba(239,68,68,0.1);
+    --yellow: #eab308;
+    --yellow-bg: rgba(234,179,8,0.1);
+    --green: #22c55e;
+    --green-bg: rgba(34,197,94,0.1);
+    --blue: #3b82f6;
+    --blue-bg: rgba(59,130,246,0.1);
+    --purple: #a855f7;
+    --purple-bg: rgba(168,85,247,0.1);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f8f9fa;
+      --surface: #ffffff;
+      --surface2: #f1f3f5;
+      --border: #dee2e6;
+      --text: #212529;
+      --text2: #6c757d;
+    }
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height:1.7; }
+  .container { max-width: 960px; margin: 0 auto; padding: 2rem 1.5rem; }
+  h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
+  h2 { font-size: 1.4rem; font-weight: 600; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+  h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 0.75rem; }
+  .subtitle { color: var(--text2); font-size: 1.05rem; margin-bottom: 2rem; }
+  .meta { color: var(--text2); font-size: 0.85rem; margin-bottom: 2rem; }
+
+  /* Task cards */
+  .task-group { margin: 1.5rem 0; }
+  .task-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 0.75rem;
+    transition: border-color 0.2s;
+  }
+  .task-card:hover { border-color: var(--blue); }
+  .task-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+  .task-icon { font-size: 1.3rem; flex-shrink: 0; }
+  .task-title { font-weight: 600; font-size: 1.05rem; }
+  .task-time { margin-left: auto; font-size: 0.8rem; color: var(--text2); white-space: nowrap; }
+  .task-desc { color: var(--text2); font-size: 0.92rem; margin-bottom: 0.75rem; }
+  .task-pain { background: var(--red-bg); border-left: 3px solid var(--red); padding: 0.5rem 0.75rem; border-radius: 0 6px 6px 0; font-size: 0.88rem; margin-bottom: 0.5rem; }
+  .task-ai { background: var(--green-bg); border-left: 3px solid var(--green); padding: 0.5rem 0.75rem; border-radius: 0 6px 6px 0; font-size: 0.88rem; }
+
+  /* Insight cards */
+  .insight-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .insight-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .label-red { background: var(--red-bg); color: var(--red); }
+  .label-yellow { background: var(--yellow-bg); color: var(--yellow); }
+  .label-green { background: var(--green-bg); color: var(--green); }
+  .label-blue { background: var(--blue-bg); color: var(--blue); }
+  .label-purple { background: var(--purple-bg); color: var(--purple); }
+  .insight-title { font-weight: 600; font-size: 1.02rem; margin-bottom: 0.4rem; }
+  .insight-body { color: var(--text2); font-size: 0.9rem; }
+  .insight-body strong { color: var(--text); }
+
+  /* Gap analysis */
+  .gap-card {
+    background: var(--surface);
+    border: 1px solid var(--yellow);
+    border-radius: 12px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  .gap-title { font-weight: 600; color: var(--yellow); margin-bottom: 0.4rem; }
+
+  /* Summary box */
+  .summary-box {
+    background: var(--blue-bg);
+    border: 1px solid var(--blue);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+  }
+  .summary-box h3 { color: var(--blue); margin-top: 0; }
+
+  /* Table-like */
+  .kv-row { display: flex; padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+  .kv-key { width: 220px; flex-shrink: 0; color: var(--text2); }
+  .kv-val { flex: 1; }
+
+  /* Frequency tags */
+  .freq { display: inline-block; font-size: 0.75rem; padding: 0.1rem 0.4rem; border-radius: 3px; margin-left: 0.5rem; }
+  .freq-daily { background: var(--red-bg); color: var(--red); }
+  .freq-weekly { background: var(--yellow-bg); color: var(--yellow); }
+  .freq-monthly { background: var(--green-bg); color: var(--green); }
+
+  /* Source */
+  .source-list { color: var(--text2); font-size: 0.82rem; }
+  .source-list li { margin-bottom: 0.25rem; }
+
+  @media (max-width: 640px) {
+    .kv-row { flex-direction: column; }
+    .kv-key { width: auto; font-weight: 600; }
+    .task-time { margin-left: 0; }
+    h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>Будни маркетолога-директолога</h1>
+<p class="subtitle">Повседневные задачи, боли и 16 точек усиления ИИ-ассистентом</p>
+<p class="meta">Дата сборки: 08.06.2026 &middot; Источники: Deep Research (Tavily API), MemPalace, отраслевой опыт</p>
+
+<!-- ============================================ -->
+<h2>1. Типичный день директолога</h2>
+<!-- ============================================ -->
+
+<p>Директолог (PPC-специалист) работает на стыке аналитики, копирайтинга и стратегии. Типичный набор задач зависит от этапа: <b>запуск кампании</b>, <b>ведение (рутина)</b> или <b>масштабирование</b>.</p>
+
+<div class="task-group">
+<h3>Ежедневно</h3>
+
+<div class="task-card">
+  <div class="task-header">
+    <span class="task-icon">📊</span>
+    <span class="task-title">Проверка расходов и аномалий</span>
+    <span class="task-time">15–30 мин</span>
+  </div>
+  <div class="task-desc">Открыть Директ → проверить, не ушёл ли бюджет в минус. Сравнить вчерашний расход с планом. Если +40% — разбираться почему.</div>
+  <div class="task-pain">🔴 Директ показывает «расход +40%», но не говорит <b>почему</b>. Нужно вручную идти в отчёты, смотреть ставки, конкурентов, поисковые запросы.</div>
+  <div class="task-ai">✅ <b>ИИ:</b> Автоматический диагноз: «CPC вырос с 15₽ до 21₽ — в аукцион вошёл новый конкурент по фразе X. Действие: проверить запросы, отсортировать по "новые".»</div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <span class="task-icon">🔍</span>
+    <span class="task-title">Аудит поисковых запросов</span>
+    <span class="task-time">20–40 мин</span>
+  </div>
+  <div class="task-desc">Просмотреть список поисковых запросов за вчера. Найти нецелевые → добавить минус-фразы. Автотаргетинг обязателен с 2024, может «разгоняться» на мусор.</div>
+  <div class="task-pain">🔴 200+ запросов в списке, нужно читать каждый. Автотаргетинг подбирает «узкие» запросы по своей логике — семантика нейросети может не совпадать с вашей.</div>
+  <div class="task-ai">✅ <b>ИИ:</b> Кластеризация запросов по смыслу (intent). Автофлаг: «50% кликов по фразам вне Wordstat → автотаргетинг разогнан. Предлагаю 10 минус-фраз.»</div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <span class="task-icon">📈</span>
+    <span class="task-title">Мониторинг CTR и ставок</span>
+    <span class="task-time">10–15 мин</span>
+  </div>
+  <div class="task-desc">Проверить CTR по группам. Если падает — это каскад: CTR↓ → Quality Score↓ → CPC↑ → бюджет горит.</div>
+  <div class="task-pain">🔴 Директ показывает CTR и CPC отдельно, <b>но не показывает цепочку</b>. QS-деградация — порочный круг: низкий QS → меньше показов → меньше данных → ещё ниже ожидаемый CTR → QS падает дальше.</div>
+  <div class="task-ai">✅ <b>ИИ:</b> «CTR по группе упал с 2.8% до 1.9% за 2 недели → CPC вырос с 18₽ до 27₽. При текущем бюджете кампания получит на 35% меньше кликов к концу месяца. Действие: обновить текст объявления.»</div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <span class="task-icon">⚖️</span>
+    <span class="task-title">Проверка каннибализации</span>
+    <span class="task-time">5–10 мин</span>
+  </div>
+  <div class="task-desc">Если несколько кампаний — проверить, не пересекаются ли по фразам. Две кампании воюют за один аукцион → двойная оплата.</div>
+  <div class="task-pain">🟡 Директ управляет каждой кампанией отдельно. Не предупредит о пересечениях. Неконтролируемая каннибализация увеличивает TACOS до 30%.</div>
+  <div class="task-ai">✅ <b>ИИ:</b> «Кампания "Ниша-ядро" и "Широкий охват" пересекаются по 12 фразам. При CPA — не критично. Но если переключите на CPC — минусуйте, иначе платите дважды.»</div>
+</div>
+</div>
+
+<div class="task-group">
+<h3>Еженедельно</h3>
+
+<div class="task-card">
+  <div class="task-header">
+    <span class="task-icon">✍️</span>
+    <span class="task-title">Обновление креативов / текстов объявлений</span>
+    <span class="task-time">30–60 мин</span>
+  </div>
+  <div class="task-desc">CTR деградирует неделю за неделей (усталость креативов). Нужно писать новые варианты текстов, запускать A/B.</div>
+  <div class="task-pain">🟡 CTR падает на 20–40% к 7-му дню активного показа. В поиске дольше — 4–6 недель. Ни одна система не предупредит «объявление устарело».</div>
+  <div class="task-ai">✅ <b>ИИ:</b> Предсказывает усталость за 2–3 дня до падения CTR. Автогенерация 2–3 вариантов нового текста с отстройкой от конкурента.</div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <span class="task-icon">🔗</span>
+    <span class="task-title">Аудит связки «объявление → лендинг»</span>
+    <span class="task-time">15–30 мин</span>
+  </div>
+  <div class="task-desc">Высокий CTR + высокий отказ = разрыв (message mismatch). Кликают охотно, но не находят ответ на лендинге.</div>
+  <div class="task-pain">🟡 Директ показывает текст объявления. Метрика показывает отказы. Никто не связывает. Несовпадение заголовка и лендинга — главная причина отказов.</div>
+  <div class="task-ai">✅ <b>ИИ:</b> «Объявление "Обезличивание данных для нейросетей" — CTR 3.2% (хорошо), но отказы 78%, время 4 сек. Лендинг не объясняет продукт. Это проблема посадочной, не кампании.»</div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <span class="task-icon">🎯</span>
+    <span class="task-title">Расширение / очистка семантики</span>
+    <span class="task-time">30–45 мин</span>
+  </div>
+  <div class="task-desc">Проверить Wordstat на новые кластеры. Найти упущенный спрос. Добавить минус-фразы.</div>
+  <div class="task-pain">🟡 Директ оптимизирует то, что есть. Не скажет «тут есть спрос, а ты его не ловишь». Wordstat требует вкладку «Динамика» + 12+ месяцев истории для прогноза.</div>
+  <div class="task-ai">✅ <b>ИИ:</b> «Wordstat: "ai для маркетинга" — ~600 показов/мес в Москве. В кампаниях этой темы нет. Если продукт покрывает — добавить группу. Если нет — зафиксировать как зону роста.»</div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <span class="task-icon">📉</span>
+    <span class="task-title">Проверка потолка спроса (Demand Ceiling)</span>
+    <span class="task-time">5–10 мин</span>
+  </div>
+  <div class="task-desc">Impression Share >90% → аукцион насыщен. Каждый дополнительный рубль даёт всё меньше отдачи.</div>
+  <div class="task-pain">🟡 Модели бюджета без учёта потолка рекомендуют «тратить больше» в насыщенные сегменты — впустую.</div>
+  <div class="task-ai">✅ <b>ИИ:</b> «IS по группе "защита ПДн" >90% при бюджете 1000₽/день. Потолок. Перераспределить бюджет в группы с IS <60%.»</div>
+</div>
+</div>
+
+<div class="task-group">
+<h3>Ежемесячно</h3>
+
+<div class="task-card">
+  <div class="task-header">
+    <span class="task-icon">📐</span>
+    <span class="task-title">Стратегический обзор бюджета</span>
+    <span class="task-time">60–120 мин</span>
+  </div>
+  <div class="task-desc">Анализ структуры бюджета по воронке (upper/middle/lower funnel). What-if моделирование. Бизнес-контекст (CPA vs средний чек).</div>
+  <div class="task-pain">🟢 Директ не знает что такое «воронка». Не знает размер сделки. CPA 500₽ выглядит высоко, но при чеке 300 000₽ это 0.17% — отлично для B2B.</div>
+  <div class="task-ai">✅ <b>ИИ:</b> «60% бюджета — upper-funnel. Для CPA нормально. При CPC — перераспределить 40% вниз воронки. What-if: +30% бюджета → +18 конверсий при стабильном CPA.»</div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <span class="task-icon">🔄</span>
+    <span class="task-title">Подготовка к сезонности</span>
+    <span class="task-time">30–60 мин</span>
+  </div>
+  <div class="task-desc">Wordstat «Динамика» → прогноз роста/спада спроса. Подготовка кампаний до пика.</div>
+  <div class="task-pain">🟢 Директ не прогнозирует, он реагирует. Сезонный рост спроса на 40–60% нужно готовить за 2 недели.</div>
+  <div class="task-ai">✅ <b>ИИ:</b> «По Wordstat за 3 года: в июле спрос по теме "защита ПДн" +40–60% (перед сезоном аудитов ИБ). До пика 2 недели → увеличить ставки, обновить тексты.»</div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <span class="task-icon">📝</span>
+    <span class="task-title">Отчёт для клиента / руководства</span>
+    <span class="task-time">60–90 мин</span>
+  </div>
+  <div class="task-desc">Свести данные из Директ + Метрика + CRM. Показать не только «что произошло», а «почему и что делать».</div>
+  <div class="task-pain">🟢 Три системы не общаются друг с другом. Сведение данных — ручная работа. Отчёт превращается в дашборд без выводов.</div>
+  <div class="task-ai">✅ <b>ИИ:</b> Склейка трёх систем в один вывод. Отчёт с инсайтами вместо голых метрик. Формула: Директ (ЧТО) + Метрика (ГДЕ) + Ассистент (ПОЧЕМУ + ЧТО ДЕЛАТЬ).</div>
+</div>
+</div>
+
+<!-- ============================================ -->
+<h2>2. 16 инсайтов — что ИИ видит, а Директ нет</h2>
+<!-- ============================================ -->
+
+<p>Директ показывает <b>ЧТО</b> произошло. Метрика показывает <b>ГДЕ</b> потеряли. Ни одна система не говорит <b>ПОЧЕМУ</b> и <b>ЧТО ДЕЛАТЬ</b>.</p>
+
+<div class="insight-card">
+  <span class="insight-label label-red">Ежедневно</span><span class="freq freq-daily">критично</span>
+  <div class="insight-title">1. Каскадные эффекты</div>
+  <div class="insight-body">CTR↓ → Quality Score↓ → CPC↑ → бюджет горит. <b>QS 8–10 снижает CPC на 40–60%</b> (с $2.50 до $1.50). Порочный круг: низкий QS → меньше показов → меньше данных → QS падает дальше. ИИ видит цепочку, Директ — нет.</div>
+</div>
+
+<div class="insight-card">
+  <span class="insight-label label-red">Ежедневно</span>
+  <div class="insight-title">2. Диагноз причины аномалий</div>
+  <div class="insight-body">Расход +40% за день → почему и что делать. ИИ: «CPC вырос — в аукцион вошёл новый рекламодатель по фразе X. Действие: проверить запросы, отсортировать по "новые".»</div>
+</div>
+
+<div class="insight-card">
+  <span class="insight-label label-red">Ежедневно</span>
+  <div class="insight-title">3. Разрыв «объявление ↔ лендинг»</div>
+  <div class="insight-body">Высокий CTR + высокий отказ = message mismatch. <b>Каждая секунда задержки загрузки снижает конверсию.</b> Несовпадение заголовка — главная причина отказов. Платформы штрафуют за mismatch качеством объявления.</div>
+</div>
+
+<div class="insight-card">
+  <span class="insight-label label-red">Ежедневно</span>
+  <div class="insight-title">4. Каннибализация между кампаниями</div>
+  <div class="insight-body">Две кампании пересекаются по фразам → двойная оплата за клик. <b>Неконтролируемая увеличивает стоимость целевого действия до +30%.</b> Индикаторы: ACOS/CPA spikes без роста конверсий.</div>
+</div>
+
+<div class="insight-card">
+  <span class="insight-label label-yellow">Еженедельно</span>
+  <div class="insight-title">5. Разгон автотаргетинга</div>
+  <div class="insight-body">50%+ кликов по фразам вне Wordstat. Автотаргетинг обязателен с 15.01.2024, три категории запросов. «Узкие» подбирают нецелевой трафик — <b>логика нейросети отличается от вашей</b>. Стратегия учится на мусоре → качество обучения деградирует.</div>
+</div>
+
+<div class="insight-card">
+  <span class="insight-label label-yellow">Еженедельно</span>
+  <div class="insight-title">6. Усталость креативов</div>
+  <div class="insight-body"><b>CTR падает на 20–40% к 7-му дню.</b> В поиске дольше — 4–6 недель. ИИ предсказывает усталость за 2–3 дня (анализ глубины вовлечения). Порог: CTR ↓>20% от 7-дневной средней, частота >3.5.</div>
+</div>
+
+<div class="insight-card">
+  <span class="insight-label label-yellow">Еженедельно</span>
+  <div class="insight-title">7. Demand Ceiling — потолок спроса</div>
+  <div class="insight-body">IS >90% → аукцион насыщен, каждый доп. рубль даёт меньше отдачи. ИИ перераспределяет бюджет в группы с IS <60% — туда, где есть рост. <b>Предотвращает слив в насыщенные сегменты.</b></div>
+</div>
+
+<div class="insight-card">
+  <span class="insight-label label-yellow">Еженедельно</span>
+  <div class="insight-title">8. Упущенный спрос</div>
+  <div class="insight-body">Wordstat показывает спрос, а кампании его не ловят. Директ оптимизирует то, что есть — <b>не скажет «тут есть спрос, а ты его не ловишь»</b>. ИИ проактивно сканирует Wordstat.</div>
+</div>
+
+<div class="insight-card">
+  <span class="insight-label label-yellow">Еженедельно</span>
+  <div class="insight-title">9. Intent-структура бюджета</div>
+  <div class="insight-body">Разбивка бюджета по воронке: upper-funnel (что такое, статьи) / middle (сравнение) / lower (купить, цена). «60% бюджета на upper-funnel, а вы продаёте B2B-услугу.»</div>
+</div>
+
+<div class="insight-card">
+  <span class="insight-label label-yellow">Еженедельно</span>
+  <div class="insight-title">10. Кросс-канальные сигналы усталости</div>
+  <div class="insight-body">РСЯ/сети как ранний индикатор для поиска. Частота в РСЯ >3.5 → через 1–2 недели усталость перекинется на поиск. <b>Предупреждает до того, как проблема станет видна в основных кампаниях.</b></div>
+</div>
+
+<div class="insight-card">
+  <span class="insight-label label-green">Ежемесячно</span>
+  <div class="insight-title">11. Предиктивная сезонность</div>
+  <div class="insight-body">Wordstat «Динамика» + 12+ месяцев истории → прогноз роста/спада за 2 недели до пика. Директ не прогнозирует, он реагирует.</div>
+</div>
+
+<div class="insight-card">
+  <span class="insight-label label-green">Ежемесячно</span>
+  <div class="insight-title">12. What-if сценарии бюджета</div>
+  <div class="insight-body">Моделирование: «При CPA ~500₽ и бюджете 30 000₽/мес → ~60 конверсий. +30% бюджета → +18 конверсий. Перераспределить из "охвата" в "ядро" → CPA улучшится на 15–20%.»</div>
+</div>
+
+<div class="insight-card">
+  <span class="insight-label label-green">Ежемесячно</span>
+  <div class="insight-title">13. Бизнес-контекст вместо голых метрик</div>
+  <div class="insight-body">«CPA 500₽ — это 0.17% от чека 300 000₽. Для B2B с длинным циклом — отлично. Оптимизировать CPA вниз не стоит — лучше наращивать объём.»</div>
+</div>
+
+<div class="insight-card">
+  <span class="insight-label label-green">Ежемесячно</span>
+  <div class="insight-title">14. Эффект минус-фраз — ретроспектива</div>
+  <div class="insight-body">«После добавления 30 минус-фраз: показы −25%, но CTR +18% и клики +5%. Минус-фразы отсекают мусор, не трогая целевое. Сработали корректно.» Директ этого не расскажет.</div>
+</div>
+
+<div class="insight-card">
+  <span class="insight-label label-purple">Новые (Deep Research)</span>
+  <div class="insight-title">15. Склейка трёх систем в один вывод</div>
+  <div class="insight-body">Директ видит рекламу. Метрика видит сайт. Wordstat видит спрос. Они не общаются. ИИ склеивает данные из всех трёх и выдаёт вывод, который ни одна система по отдельности не даст.</div>
+</div>
+
+<div class="insight-card">
+  <span class="insight-label label-purple">Новые (Deep Research)</span>
+  <div class="insight-title">16. Автокоррекция — от тревоги к действию</div>
+  <div class="insight-body">Расход > лимит × 1.5 → ⚡ пауза кампании. CTR < baseline −30% → 📝 генерация новых текстов. Нецелевые >30% → 📝 предложение минус-фраз. Отказы >70% → 📝 отчёт о mismatch. Всё — с запросом на ручное подтверждение.</div>
+</div>
+
+<!-- ============================================ -->
+<h2>3. Анализ пробелов — чего НЕ хватает в Deep Research</h2>
+<!-- ============================================ -->
+
+<p>Имеющийся Deep Research сфокусирован на <b>мониторинге и оптимизации</b> запущенных кампаний. Вот что в нём отсутствует:</p>
+
+<div class="gap-card">
+  <div class="gap-title">🕐 Оценка временных затрат по задачам</div>
+  <div class="task-desc">В исследовании нет данных о том, сколько времени директолог тратит на каждую задачу. Для позиционирования ИИ-ассистента нужно знать: что занимает больше всего часов и где автоматизация даёт максимальный выигрыш.</div>
+</div>
+
+<div class="gap-card">
+  <div class="gap-title">🛠 Инструментарий директолога за пределами Директа</div>
+  <div class="task-desc">Не исследовано: Roistat (сквозная аналитика), коллтрекинг, CRM-интеграции, оптимизаторы ставок (Aori, Click.ru), сервисы парсинга (SpyWords, Advse). Директолог работает в экосистеме из 5–8 инструментов.</div>
+</div>
+
+<div class="gap-card">
+  <div class="gap-title">📋 Процесс запуска новой кампании (Pre-launch)</div>
+  <div class="task-desc">Deep Research хорошо описывает мониторинг, но слабо покрывает подготовку: сбор семантики, анализ конкурентов, минус-фразы, выбор модели оплаты, настройка UTM. Это 60–70% работы нового проекта.</div>
+</div>
+
+<div class="gap-card">
+  <div class="gap-title">💰 Экономика: стоимость часа директолога vs ИИ</div>
+  <div class="task-desc">Нет данных о зарплатах/ставках директологов и потенциальной экономии от автоматизации. Для бизнес-кейса нужно: «специалист тратит X часов/неделю на задачу Y → ИИ делает за N секунд → экономия Z₽/мес».</div>
+</div>
+
+<div class="gap-card">
+  <div class="gap-title">🤖 Конкретные AI-инструменты конкурентов на рынке РФ</div>
+  <div class="task-desc">Упомянуты зарубежные (Ryze AI, Ivy™ от StackAdapt, Aprimo), но нет обзора российских решений: Aori, Click.ru оптимизаторы, встроенный AI Яндекса. Для позиционирования нужно понимать ландшафт.</div>
+</div>
+
+<div class="gap-card">
+  <div class="gap-title">👥 Различия по сегментам: фрилансер vs агентство vs in-house</div>
+  <div class="task-desc">Боли и задачи отличаются: фрилансер ведёт 5–10 клиентов параллельно, агентство — стандартизирует процессы, in-house — глубже погружается в один продукт. Deep Research не сегментирует.</div>
+</div>
+
+<div class="gap-card">
+  <div class="gap-title">📊 Результативность: кейсы «до/после» внедрения AI</div>
+  <div class="task-desc">Нет подтверждённых кейсов: «внедрили AI-ассистента → время на отчётность сократилось с 3 часов до 15 мин → CPA улучшился на X%». Без этого продающий кейс неполный.</div>
+</div>
+
+<!-- ============================================ -->
+<h2>4. Итого — сводка</h2>
+<!-- ============================================ -->
+
+<div class="summary-box">
+  <h3>Формула ценности ИИ-ассистента</h3>
+  <div class="kv-row"><div class="kv-key">Директ</div><div class="kv-val">ЧТО произошло (метрики, расходы, показы)</div></div>
+  <div class="kv-row"><div class="kv-key">Метрика</div><div class="kv-val">ГДЕ потеряли (отказы, время, глубина)</div></div>
+  <div class="kv-row"><div class="kv-key">Wordstat</div><div class="kv-val">КАКОЙ спрос (частотности, тренды)</div></div>
+  <div class="kv-row"><div class="kv-key"><b>ИИ-ассистент</b></div><div class="kv-val"><b>ПОЧЕМУ + ЧТО ДЕЛАТЬ + СКОЛЬКО СТОИТ БЕЗДЕЙСТВИЕ</b></div></div>
+</div>
+
+<div class="summary-box" style="background: var(--green-bg); border-color: var(--green);">
+  <h3 style="color: var(--green);">Рыночный контекст</h3>
+  <div class="kv-row"><div class="kv-key">Digital-реклама 2026</div><div class="kv-val">>$700 млрд глобально (StackAdapt, Landingi)</div></div>
+  <div class="kv-row"><div class="kv-key">Тренд</div><div class="kv-val">От дашбордов к действиям — «что делать», а не «что видно»</div></div>
+  <div class="kv-row"><div class="kv-key">AI-ассистенты</div><div class="kv-val">Ivy™ (StackAdapt), Vibe (Vendasta), Ryze AI — становятся стандартом</div></div>
+  <div class="kv-row"><div class="kv-key">Автономные бюджетные агенты</div><div class="kv-val">2–3 года до кросс-платформенной зрелости</div></div>
+</div>
+
+<!-- ============================================ -->
+<h2>5. Источники</h2>
+<!-- ============================================ -->
+
+<ul class="source-list">
+  <li>stackadapt.com — AI in advertising 2026, Ivy™ assistant</li>
+  <li>get-ryze.ai — Meta Ads creative fatigue thresholds</li>
+  <li>revenuecat.com — Detecting ad fatigue in 2025</li>
+  <li>singular.net — Creative fatigue optimization</li>
+  <li>logarithmic.com — Diminishing returns trap in AI budget models</li>
+  <li>aprimo.com — AI scenario modeling for budget optimization</li>
+  <li>improvado.io — PPC Budget Guide 2026</li>
+  <li>hubspot.com / swipepages.com / ranked.ai — Landing page mismatch fixes</li>
+  <li>ppc.co / segwise.ai — Keyword cannibalization prevention</li>
+  <li>countryfriedcreative.com / adalysis.com — Quality Score research</li>
+  <li>dataslayer.ai / funnel.io — Hidden data patterns in marketing</li>
+  <li>habr.com — Автотаргетинг в Яндекс.Директ (конец 2025)</li>
+  <li>andata.ru — Как приручить обязательный автотаргетинг</li>
+  <li>rush-analytics.ru / blog.click.ru — Wordstat сезонность</li>
+  <li>yandex.ru/support/direct — Официальная документация автотаргетинга</li>
+  <li>blog.oy-li.ru — Директолог: задачи, обязанности и контроль</li>
+  <li>yagla.ru — Нейросети для директолога: 4 задачи</li>
+</ul>
+
+<br>
+<p style="color: var(--text2); font-size: 0.82rem;">Собрано: 08.06.2026 &middot; Deep Research через Tavily API + MemPalace + отраслевой анализ пробелов</p>
+
+</div>
+</body>
+</html>
