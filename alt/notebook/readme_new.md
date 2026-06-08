@@ -1,6 +1,6 @@
 # Портфолио Николая Карпова
 
-[![Deployed via GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-deployed-blue?logo=github)](https://nikolai-karpov.github.io)
+[![Deployed via GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-deployed-blue?logo=github)](https://nikolai-pir-s-ru.sourcecraft.site/portfolio)
 
 Простое, но продуманное портфолио, построенное на чистом HTML и CSS, с использованием современных подходов к структуре и поддержке контента. Основная цель — показать методологию работы и реальные кейсы с акцентом на ясность и удобство восприятия.
 
@@ -185,7 +185,7 @@ fetch(`${basePath}site-components/header.html`)
 ## 🌐 Деплой
 
 Сайт доступен по адресу:  
-[https://nikolai-karpov.github.io](https://nikolai-karpov.github.io)
+[https://nikolai-pir-s-ru.sourcecraft.site/portfolio](https://nikolai-pir-s-ru.sourcecraft.site/portfolio)
 
 ---
 

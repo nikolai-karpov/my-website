@@ -1,6 +1,6 @@
 # ТЗ для маркетолога — конверсии в Яндекс.Метрике и Директе
 
-**Боевой адрес:** `https://nikolai-karpov.github.io/my-website/` (собственный домен `nikolai-karpov.ru` пока не подключён — CNAME нет)
+**Боевой адрес:** `https://nikolai-pir-s-ru.sourcecraft.site/portfolio/` (собственный домен `nikolai-karpov.ru` пока не подключён — CNAME нет)
 **Счётчик Яндекс.Метрики:** `109350250` (webvisor, clickmap, trackLinks включены)
 **Дата обновления:** 2026-06-05
 **Связанное ТЗ:** [TZ-programmist-formspree.md](TZ-programmist-formspree.md)

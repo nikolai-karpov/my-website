@@ -12,7 +12,7 @@ Use this skill as the project scope guard for Yandex-related work in this reposi
 - Project name: `Portfolio / Николай Карпов`
 - Repository slug: `my-website`
 - Product: personal B2B portfolio and lead-generation site for AI architecture, business analysis, and AI systems integration services.
-- Main site / landing: `https://nikolai-karpov.github.io/my-website/`
+- Main site / landing: `https://nikolai-pir-s-ru.sourcecraft.site/portfolio/`
 - Primary topic: внедрение ИИ в бизнес, проектирование ИИ-систем, RAG, multi-agent systems, safe LLM adoption, pseudonymization, automation with n8n.
 - Brand / identity tokens:
   - `Николай Карпов`
@@ -39,7 +39,7 @@ Rules:
 
 ## Yandex Metrika Counters
 
-- `109350250` — primary site / landing counter for `https://nikolai-karpov.github.io/my-website/`
+- `109350250` — primary site / landing counter for `https://nikolai-pir-s-ru.sourcecraft.site/portfolio/`
 
 Counter policy:
 

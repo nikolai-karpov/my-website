@@ -4,7 +4,7 @@
 
 This repository is `my-website`: a static portfolio and lead-generation site for Nikolai Karpov.
 
-- Main site: `https://nikolai-karpov.github.io/my-website/`
+- Main site: `https://nikolai-pir-s-ru.sourcecraft.site/portfolio/`
 - Primary local project path: `/Users/nik/projects/my-website`
 - Do not copy project IDs, counters, goals, domains, or marketing artifacts from other repositories.
 

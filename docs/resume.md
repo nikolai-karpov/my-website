@@ -10,7 +10,7 @@
 - Email: [nikolai@pir-s.ru](mailto:nikolai@pir-s.ru)  
 - Telegram: @Nikolai_999  
 - Max: [https://max.ru/u/f9LHodD0cOIoc8HxohWAoTzqKeQAqeCrh6iV928vorfEnFajKIQrYM7Rio8](https://max.ru/u/f9LHodD0cOIoc8HxohWAoTzqKeQAqeCrh6iV928vorfEnFajKIQrYM7Rio8)  
-- Сайт-визитка: [https://nikolai-karpov.github.io/my-website/](https://nikolai-karpov.github.io/my-website/)  
+- Сайт-визитка: [https://nikolai-pir-s-ru.sourcecraft.site/portfolio/](https://nikolai-pir-s-ru.sourcecraft.site/portfolio/)  
 
 ---
 

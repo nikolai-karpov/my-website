@@ -10,7 +10,7 @@
     "display_name": "Портфолио",
     "campaign_id": 710165227,
     "counter_id": 109350250,
-    "landing": "https://nikolai-karpov.github.io/my-website"
+    "landing": "https://nikolai-pir-s-ru.sourcecraft.site/portfolio/my-website"
   },
   "status": "RED",
   "status_reason": "API connectivity failure — DNS resolution error on all Yandex Direct and Metrika endpoints",
