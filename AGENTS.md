@@ -14,6 +14,14 @@ For implementation and build details, also read:
 - `README.md`
 - `package.json`
 
+## Design References
+
+For mockup/design/prototype work on `Дашборд Маркетолога - Ai-CoPilot`, read this first:
+
+- `cases/ai-copilot_marketolog/dashboard.md`
+
+Treat it as the canonical guide for the dashboard narrative and structure. It was created to answer the operator question: where to look right now so the business grows instead of merely reporting.
+
 ## Yandex Performance Marketing
 
 For any task about Yandex Direct, Yandex Metrika, Wordstat, paid traffic, CPA, campaign monitoring, search queries, UTM, landing analytics, weekly ad reports, or advertising optimization:

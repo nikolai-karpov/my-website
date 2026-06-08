@@ -28,6 +28,8 @@ my-website/
 │       └── main.js        # Основной JavaScript
 ├── cases/                  # Исходные материалы кейсов (НЕ HTML-страницы)
 │   ├── Кейс_*.md          # Исследовательские заметки по 34 мировым ИИ-кейсам
+│   ├── ai-copilot_marketolog/
+│   │   └── dashboard.md   # Каноническое руководство для мокапа "Дашборд Маркетолога - Ai-CoPilot"
 │   ├── Обзоры/            # Самостоятельные HTML-отчёты-обзоры (research artifact)
 │   ├── publications/      # Публикации и материалы
 │   └── warehouse_logistic/# Прототип и материалы по складской логистике
@@ -174,6 +176,8 @@ HTML-страницы кейсов лежат в [`site-pages/`](site-pages/) (�
 - [`contacts.html`](site-pages/contacts.html) — Полная форма заявки
 
 Исходные материалы и заметки по кейсам — в [`cases/`](cases/) (markdown-исследования, обзоры в [`cases/Обзоры/`](cases/Обзоры/), публикации в [`cases/publications/`](cases/publications/)). **В папке `cases/` не должно быть HTML-страниц сайта** — они принадлежат `site-pages/`.
+
+Для мокапа [`Дашборд Маркетолога - Ai-CoPilot`](cases/ai-copilot_marketolog/dashboard.md) каноническим reference-файлом считается [`cases/ai-copilot_marketolog/dashboard.md`](cases/ai-copilot_marketolog/dashboard.md): он задаёт вопрос, на который должен отвечать интерфейс, и структуру управленческого дашборда.
 
 ---
 
