@@ -40,12 +40,7 @@
         a.parentNode.insertBefore(k, a);
       })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-      ym(109350250, "init", {
-        clickmap: true,
-        trackLinks: true,
-        accurateTrackBounce: true,
-        webvisor: true,
-      });
+      ym(109350250, "init", {ssr:true, webvisor:true, clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
     </script>
     <noscript>
       <div>
