@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>direct-api-placement-monitor-spec</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<h1
+id="спецификация-приложения-для-заявки-на-доступ-к-api-яндекс.директ">Спецификация
+приложения для заявки на доступ к API Яндекс.Директ</h1>
+<p><strong>Название приложения:</strong> Yandex Placement Monitor для
+проекта nikolai-karpov.ru<br />
+<strong>Назначение:</strong> внутренний read-only мониторинг площадок и
+статистики рекламных кампаний Яндекс.Директа<br />
+<strong>Тип использования:</strong> один владелец рекламного аккаунта,
+собственные кампании, без обслуживания сторонних клиентов<br />
+<strong>Язык программирования:</strong> Python 3<br />
+<strong>Среда выполнения:</strong> локальный CLI/cron-скрипт на macOS,
+без веб-сервера и без многопоточности<br />
+<strong>Сайт:</strong> https://nikolai-karpov.ru<br />
+<strong>Счетчик Яндекс.Метрики:</strong> 109350250<br />
+<strong>Целевая конверсия:</strong> <code>form_submit</code>, цель
+Метрики 566497705, “Отправка заявки (форма)”<br />
+<strong>Дата документа:</strong> 2026-06-06</p>
+<h2 id="краткое-описание">1. Краткое описание</h2>
+<p>Приложение является локальным внутренним инструментом для анализа
+рекламных кампаний Яндекс.Директа по собственному сайту
+nikolai-karpov.ru. Оно запускается на машине владельца аккаунта и
+работает в режиме только чтения.</p>
+<p>Основная задача приложения - один раз в сутки получать отчет по
+рекламным площадкам РСЯ и эффективности рекламы, сопоставлять площадки с
+достижением цели Метрики <code>form_submit</code> и формировать
+локальный отчет с рекомендациями для ручной оптимизации.</p>
+<p>Приложение не изменяет кампании, ставки, объявления, ключевые фразы,
+минус-фразы или запрещенные площадки. Все изменения в рекламном кабинете
+выполняются вручную пользователем в интерфейсе Яндекс.Директа после
+просмотра отчета.</p>
+<h2 id="сценарий-взаимодействия-с-api-директа">2. Сценарий
+взаимодействия с API Директа</h2>
+<h3 id="плановый-сценарий">2.1. Плановый сценарий</h3>
+<pre class="text"><code>cron, 1 раз в сутки, 09:20
+  |
+  v
+локальный скрипт marketing/monitor_yandex_placements.py
+  |
+  |-- читает конфигурацию:
+  |   - counter_id = 109350250
+  |   - goal_id = 566497705
+  |   - период анализа = последние 7 дней с лагом 1 день
+  |   - пороги watch/exclude_candidate
+  |
+  |-- проверяет цель Метрики через Management API Метрики:
+  |   GET /management/v1/counter/109350250/goals
+  |   цель: form_submit / 566497705
+  |
+  |-- отправляет read-only запрос в Reports API Директа:
+  |   POST /json/v5/reports
+  |   ReportType = CUSTOM_REPORT
+  |   DateRangeType = CUSTOM_DATE
+  |   Goals = [&quot;566497705&quot;]
+  |   AttributionModels = [&quot;AUTO&quot;]
+  |   FieldNames = CampaignId, CampaignName, AdGroupId, AdGroupName,
+  |                AdNetworkType, Placement, Impressions, Clicks, Cost,
+  |                Conversions, ConversionRate, CostPerConversion
+  |
+  |-- если отчет еще не готов:
+  |   HTTP 201/202/502 -&gt; ожидание retryIn или 5 секунд, затем повтор
+  |
+  |-- если отчет готов:
+  |   HTTP 200 TSV -&gt; локальный парсинг и агрегирование по Placement
+  |
+  v
+локальные файлы отчета:
+  - marketing/placement_monitor/latest_status.json
+  - marketing/placement_monitor/latest_recommendations.tsv
+  - marketing/placement_monitor/latest_recommendations.md
+  - marketing/placement_monitor/history/*</code></pre>
+<h3 id="частота-вызовов-и-одновременные-соединения">2.2. Частота вызовов
+и одновременные соединения</h3>
+<p>Плановая частота вызовов:</p>
+<table>
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 30%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr>
+<th>Операция</th>
+<th>Метод</th>
+<th style="text-align: right;">Частота</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Проверка цели Метрики</td>
+<td>Metrika Management API, goals</td>
+<td style="text-align: right;">1 раз в сутки</td>
+</tr>
+<tr>
+<td>Получение статистики площадок</td>
+<td>Direct Reports API, <code>CUSTOM_REPORT</code></td>
+<td style="text-align: right;">1 раз в сутки</td>
+</tr>
+<tr>
+<td>Polling готовности отчета</td>
+<td>повтор <code>POST /json/v5/reports</code> при HTTP 201/202/502</td>
+<td style="text-align: right;">только до готовности отчета</td>
+</tr>
+</tbody>
+</table>
+<p>Текущие ограничения по нагрузке:</p>
+<ul>
+<li>Одновременных соединений к API Директа: 1.</li>
+<li>Параллельных потоков: 0.</li>
+<li>Массовые выгрузки не выполняются.</li>
+<li>Скрипт запускается по cron один раз в сутки.</li>
+<li>Обычный период анализа - 7 дней.</li>
+<li>Время ожидания одного отчета ограничено 180 секундами.</li>
+</ul>
+<h2 id="используемые-методы-api-директа">3. Используемые методы API
+Директа</h2>
+<h3 id="post-jsonv5reports">3.1. <code>POST /json/v5/reports</code></h3>
+<p>Основной метод. Используется для получения статистики по площадкам и
+кампаниям.</p>
+<p>Параметры запроса:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;SelectionCriteria&quot;</span><span class="fu">:</span> <span class="fu">{</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;DateFrom&quot;</span><span class="fu">:</span> <span class="st">&quot;YYYY-MM-DD&quot;</span><span class="fu">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&quot;DateTo&quot;</span><span class="fu">:</span> <span class="st">&quot;YYYY-MM-DD&quot;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">},</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;Goals&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;566497705&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;AttributionModels&quot;</span><span class="fu">:</span> <span class="ot">[</span><span class="st">&quot;AUTO&quot;</span><span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;FieldNames&quot;</span><span class="fu">:</span> <span class="ot">[</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;CampaignId&quot;</span><span class="ot">,</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;CampaignName&quot;</span><span class="ot">,</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;AdGroupId&quot;</span><span class="ot">,</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;AdGroupName&quot;</span><span class="ot">,</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;AdNetworkType&quot;</span><span class="ot">,</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Placement&quot;</span><span class="ot">,</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Impressions&quot;</span><span class="ot">,</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Clicks&quot;</span><span class="ot">,</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Cost&quot;</span><span class="ot">,</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Conversions&quot;</span><span class="ot">,</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;ConversionRate&quot;</span><span class="ot">,</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;CostPerConversion&quot;</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="ot">]</span><span class="fu">,</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;ReportType&quot;</span><span class="fu">:</span> <span class="st">&quot;CUSTOM_REPORT&quot;</span><span class="fu">,</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;DateRangeType&quot;</span><span class="fu">:</span> <span class="st">&quot;CUSTOM_DATE&quot;</span><span class="fu">,</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;Format&quot;</span><span class="fu">:</span> <span class="st">&quot;TSV&quot;</span><span class="fu">,</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;IncludeVAT&quot;</span><span class="fu">:</span> <span class="st">&quot;NO&quot;</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<p>HTTP-заголовки:</p>
+<pre class="text"><code>Authorization: Bearer &lt;OAuth token&gt;
+Client-Login: &lt;login&gt;
+Accept-Language: ru
+Content-Type: application/json; charset=utf-8
+processingMode: offline
+returnMoneyInMicros: false
+skipReportHeader: true
+skipColumnHeader: false
+skipReportSummary: true</code></pre>
+<p>Цель использования:</p>
+<ul>
+<li>получить список площадок <code>Placement</code>, на которых были
+показы;</li>
+<li>увидеть клики, расход, конверсии и CPA по цели
+<code>form_submit</code>;</li>
+<li>найти площадки, которые дают клики/расход без заявок;</li>
+<li>сформировать рекомендацию <code>ok</code>, <code>watch</code> или
+<code>exclude_candidate</code>.</li>
+</ul>
+<h3 id="планируемый-дополнительный-метод-campaigns.get">3.2. Планируемый
+дополнительный метод <code>campaigns.get</code></h3>
+<p>Метод может использоваться позднее только в режиме чтения для
+получения списка активных кампаний, их идентификаторов и статусов. Это
+позволит фильтровать отчет только по нужным кампаниям.</p>
+<p>Планируемые поля:</p>
+<pre class="text"><code>Id, Name, Type, Status, State, StartDate, DailyBudget, Currency</code></pre>
+<p>Write-методы <code>add</code>, <code>update</code>,
+<code>delete</code>, <code>archive</code>, <code>suspend</code>,
+<code>resume</code>, управление ставками, фразами, объявлениями и
+запрещенными площадками не используются.</p>
+<h2 id="как-формируется-рекомендация-по-площадке">4. Как формируется
+рекомендация по площадке</h2>
+<p>Скрипт агрегирует строки отчета по нормализованному домену
+<code>Placement</code>.</p>
+<p>Для каждой площадки сохраняются:</p>
+<ul>
+<li>домен площадки;</li>
+<li>кампании, где были показы;</li>
+<li>тип рекламной сети <code>AdNetworkType</code>;</li>
+<li>показы;</li>
+<li>клики;</li>
+<li>расход;</li>
+<li>количество достижений цели <code>form_submit</code>;</li>
+<li>CPA;</li>
+<li>CR;</li>
+<li>известная политика из локального risk-list.</li>
+</ul>
+<p>Рекомендации:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Рекомендация</th>
+<th>Значение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ok</code></td>
+<td>действий не требуется</td>
+</tr>
+<tr>
+<td><code>watch</code></td>
+<td>оставить под наблюдением, проверить еще раз после накопления
+статистики</td>
+</tr>
+<tr>
+<td><code>exclude_candidate</code></td>
+<td>кандидат на ручное добавление в запрещенные площадки</td>
+</tr>
+</tbody>
+</table>
+<p>Автоматического исключения площадок нет. Даже при статусе
+<code>exclude_candidate</code> пользователь вручную проверяет домен и
+сам добавляет его в запрещенные площадки в веб-интерфейсе Директа.</p>
+<h2 id="объем-данных">5. Объем данных</h2>
+<h3 id="текущий-объем">5.1. Текущий объем</h3>
+<p>Приложение сейчас используется для одного сайта и одного рекламного
+аккаунта.</p>
+<p>Оценка текущего объема:</p>
+<table>
+<thead>
+<tr>
+<th>Объект</th>
+<th style="text-align: right;">Количество</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Клиентов</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Сайтов</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Счетчиков Метрики</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Целей Метрики для оптимизации</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr>
+<td>Кампаний</td>
+<td style="text-align: right;">до 5</td>
+</tr>
+<tr>
+<td>Групп объявлений</td>
+<td style="text-align: right;">до 100</td>
+</tr>
+<tr>
+<td>Объявлений</td>
+<td style="text-align: right;">до 300</td>
+</tr>
+<tr>
+<td>Ключевых фраз / таргетингов</td>
+<td style="text-align: right;">до 1000</td>
+</tr>
+<tr>
+<td>Строк отчета по площадкам за 7 дней</td>
+<td style="text-align: right;">до нескольких тысяч</td>
+</tr>
+</tbody>
+</table>
+<h3 id="планируемый-будущий-объем">5.2. Планируемый будущий объем</h3>
+<table>
+<thead>
+<tr>
+<th>Объект</th>
+<th style="text-align: right;">Количество</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Клиентов</td>
+<td style="text-align: right;">1-3</td>
+</tr>
+<tr>
+<td>Кампаний</td>
+<td style="text-align: right;">до 20</td>
+</tr>
+<tr>
+<td>Групп объявлений</td>
+<td style="text-align: right;">до 500</td>
+</tr>
+<tr>
+<td>Объявлений</td>
+<td style="text-align: right;">до 1500</td>
+</tr>
+<tr>
+<td>Ключевых фраз / таргетингов</td>
+<td style="text-align: right;">до 5000</td>
+</tr>
+<tr>
+<td>Строк отчета по площадкам за период</td>
+<td style="text-align: right;">до 50000</td>
+</tr>
+</tbody>
+</table>
+<p>Даже при будущем объеме приложение останется read-only и будет
+работать последовательно, без параллельных потоков.</p>
+<h2 id="учет-технических-и-бальных-ограничений">6. Учет технических и
+бальных ограничений</h2>
+<p>Приложение снижает нагрузку на API следующими способами:</p>
+<ul>
+<li>один плановый запуск в сутки;</li>
+<li>один основной отчет за запуск;</li>
+<li>ограниченный период анализа 7 дней;</li>
+<li><code>processingMode: offline</code> для Reports API;</li>
+<li>отсутствие параллельных запросов;</li>
+<li>отсутствие фонового краулинга;</li>
+<li>отсутствие write-методов;</li>
+<li>polling только при статусах генерации отчета;</li>
+<li>учет заголовка <code>retryIn</code>;</li>
+<li>максимальное время ожидания отчета - 180 секунд;</li>
+<li>при ошибке текущий запуск завершается, следующий повтор только по
+cron.</li>
+</ul>
+<p>При появлении необходимости анализировать несколько кампаний
+приложение будет сначала фильтровать кампании локально, а затем
+запрашивать один агрегированный отчет, а не делать отдельный запрос на
+каждую кампанию.</p>
+<h2 id="обработка-ошибок">7. Обработка ошибок</h2>
+<p>Ошибки API не приводят к изменениям в рекламном аккаунте. Приложение
+только записывает диагностический статус в локальные файлы.</p>
+<p>Обрабатываемые ситуации:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Ситуация</th>
+<th>Поведение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Direct API вернул HTTP 201/202</td>
+<td>ожидание <code>retryIn</code> или 5 секунд, затем повтор</td>
+</tr>
+<tr>
+<td>Direct API вернул HTTP 502</td>
+<td>повтор ожидания отчета в рамках лимита 180 секунд</td>
+</tr>
+<tr>
+<td>Direct API вернул ошибку авторизации или регистрации</td>
+<td>запись ошибки в <code>latest_status.json</code>, без частых
+повторов</td>
+</tr>
+<tr>
+<td>Direct API вернул лимит/недоступность</td>
+<td>завершение текущего запуска, следующий запуск по cron</td>
+</tr>
+<tr>
+<td>Метрика-цель не найдена</td>
+<td>запись статуса проблемы, отчет по площадкам не используется для
+решений</td>
+</tr>
+<tr>
+<td>Отчет пустой</td>
+<td>создается пустой отчет, рекомендаций нет</td>
+</tr>
+<tr>
+<td>Неполные данные по площадке</td>
+<td>автоматического исключения нет, только ручная проверка</td>
+</tr>
+</tbody>
+</table>
+<p>OAuth-токены не выводятся в отчеты и логи. При записи ошибки строка
+авторизации не сохраняется.</p>
+<h2 id="локальный-интерфейс-и-файлы-результата">8. Локальный интерфейс и
+файлы результата</h2>
+<p>У приложения нет публичного веб-интерфейса. Это внутренний
+CLI/cron-инструмент. Пользователь взаимодействует с ним через файлы
+отчета и, при необходимости, запуск команды в терминале.</p>
+<p>Основные файлы:</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Файл</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>marketing/monitor_yandex_placements.py</code></td>
+<td>read-only скрипт мониторинга</td>
+</tr>
+<tr>
+<td><code>marketing/placement_monitor_config.json</code></td>
+<td>конфигурация цели, периода и порогов</td>
+</tr>
+<tr>
+<td><code>marketing/placement_monitor/latest_status.json</code></td>
+<td>статус последнего запуска</td>
+</tr>
+<tr>
+<td><code>marketing/placement_monitor/latest_recommendations.tsv</code></td>
+<td>таблица рекомендаций по площадкам</td>
+</tr>
+<tr>
+<td><code>marketing/placement_monitor/latest_recommendations.md</code></td>
+<td>человекочитаемый отчет</td>
+</tr>
+<tr>
+<td><code>marketing/placement_monitor/history/</code></td>
+<td>история запусков</td>
+</tr>
+<tr>
+<td><code>marketing/placement_monitor/logs/cron.log</code></td>
+<td>лог планового запуска</td>
+</tr>
+</tbody>
+</table>
+<p>Плановая cron-задача:</p>
+<pre class="cron"><code>20 9 * * * cd /Users/nik/projects/my-website &amp;&amp; /usr/bin/python3 marketing/monitor_yandex_placements.py --days 7 &gt;&gt; marketing/placement_monitor/logs/cron.log 2&gt;&amp;1</code></pre>
+<h2 id="текущее-состояние-до-одобрения-api">9. Текущее состояние до
+одобрения API</h2>
+<p>На момент подготовки спецификации цель Метрики
+<code>form_submit</code> успешно проверяется:</p>
+<pre class="text"><code>counter_id: 109350250
+goal_id: 566497705
+goal name: Отправка заявки (форма)
+goal macro: form_submit
+status: ok</code></pre>
+<p>Direct API возвращает ожидаемую ошибку до подтверждения заявки:</p>
+<pre class="text"><code>error_code: 58
+error_string: Незавершенная регистрация
+error_detail: Необходимо заполнить для приложения заявку на доступ в интерфейсе Директа и дождаться её подтверждения</code></pre>
+<p>После одобрения доступа к API тот же cron-скрипт начнет получать
+реальные строки отчета по <code>Placement</code> и формировать
+рекомендации.</p>
+<h2 id="приложенные-экранные-состояния">10. Приложенные экранные
+состояния</h2>
+<p>Ниже приведены скриншоты локального интерфейса и рабочих файлов
+приложения.</p>
+<h3 id="конфигурация-мониторинга">10.1. Конфигурация мониторинга</h3>
+<figure>
+<img src="screenshots/01_config.png" alt="Конфигурация мониторинга" />
+<figcaption aria-hidden="true">Конфигурация мониторинга</figcaption>
+</figure>
+<h3 id="последний-человекочитаемый-отчет">10.2. Последний
+человекочитаемый отчет</h3>
+<figure>
+<img src="screenshots/02_latest_report.png" alt="Последний отчет" />
+<figcaption aria-hidden="true">Последний отчет</figcaption>
+</figure>
+<h3 id="технический-статус-последнего-запуска">10.3. Технический статус
+последнего запуска</h3>
+<figure>
+<img src="screenshots/03_status_json.png" alt="Технический статус" />
+<figcaption aria-hidden="true">Технический статус</figcaption>
+</figure>
+<h3 id="cron-задача">10.4. Cron-задача</h3>
+<figure>
+<img src="screenshots/04_cron.png" alt="Cron-задача" />
+<figcaption aria-hidden="true">Cron-задача</figcaption>
+</figure>
+<h3 id="фрагмент-кода-read-only-reports-api">10.5. Фрагмент кода
+read-only Reports API</h3>
+<figure>
+<img src="screenshots/05_code_readonly.png" alt="Фрагмент кода" />
+<figcaption aria-hidden="true">Фрагмент кода</figcaption>
+</figure>
+<h2 id="итог">11. Итог</h2>
+<p>Приложение использует API Директа только для чтения статистики. Оно
+не выполняет автоматических изменений в рекламном аккаунте, работает с
+одним владельцем аккаунта, запускается не чаще одного раза в сутки,
+использует один поток и формирует локальные рекомендации для ручной
+оптимизации кампаний.</p>
+</body>
+</html>

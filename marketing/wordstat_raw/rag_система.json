@@ -1,0 +1,170 @@
+{
+  "success": true,
+  "cached_hit": true,
+  "phrase": "rag система",
+  "regions": [
+    "213",
+    "2"
+  ],
+  "total_count": 747,
+  "results": [
+    {
+      "phrase": "rag система",
+      "count": 747
+    },
+    {
+      "phrase": "разработка rag систем",
+      "count": 31
+    },
+    {
+      "phrase": "создание rag системы",
+      "count": 30
+    },
+    {
+      "phrase": "rag системы от теории к практике",
+      "count": 25
+    },
+    {
+      "phrase": "rag система ии",
+      "count": 21
+    },
+    {
+      "phrase": "система retrieval augmented generation rag",
+      "count": 18
+    },
+    {
+      "phrase": "безопасны ли rag системы",
+      "count": 16
+    },
+    {
+      "phrase": "rag система ai",
+      "count": 14
+    },
+    {
+      "phrase": "построение rag системы",
+      "count": 10
+    },
+    {
+      "phrase": "rag системы от теории к практике скачать",
+      "count": 7
+    },
+    {
+      "phrase": "как сделать rag систему",
+      "count": 7
+    },
+    {
+      "phrase": "rag система ai агент",
+      "count": 6
+    },
+    {
+      "phrase": "архитектура rag системы",
+      "count": 5
+    },
+    {
+      "phrase": "какие онлайн rag системы недавно появились",
+      "count": 5
+    },
+    {
+      "phrase": "локальная rag система",
+      "count": 4
+    },
+    {
+      "phrase": "схема rag системы",
+      "count": 3
+    },
+    {
+      "phrase": "rag система python",
+      "count": 2
+    },
+    {
+      "phrase": "готовая rag система",
+      "count": 2
+    },
+    {
+      "phrase": "rag системы методы реализации практическое руководство",
+      "count": 1
+    }
+  ],
+  "associations": [
+    {
+      "phrase": "рпд",
+      "count": 11548
+    },
+    {
+      "phrase": "faq что это",
+      "count": 599
+    },
+    {
+      "phrase": "федеративное устройство",
+      "count": 6410
+    },
+    {
+      "phrase": "агс это",
+      "count": 573
+    },
+    {
+      "phrase": "чдд это",
+      "count": 502
+    },
+    {
+      "phrase": "агрегат это",
+      "count": 1538
+    },
+    {
+      "phrase": "him i",
+      "count": 119447
+    },
+    {
+      "phrase": "роп это",
+      "count": 861
+    },
+    {
+      "phrase": "федеративное устройство это",
+      "count": 521
+    },
+    {
+      "phrase": "f doc что это",
+      "count": 228
+    },
+    {
+      "phrase": "оив это",
+      "count": 750
+    },
+    {
+      "phrase": "механизм это",
+      "count": 17926
+    },
+    {
+      "phrase": "раг",
+      "count": 1364
+    },
+    {
+      "phrase": "y2k это",
+      "count": 1202
+    },
+    {
+      "phrase": "fbw что это",
+      "count": 374
+    },
+    {
+      "phrase": "репер это",
+      "count": 762
+    },
+    {
+      "phrase": "qsr что это",
+      "count": 441
+    },
+    {
+      "phrase": "ram что это",
+      "count": 553
+    },
+    {
+      "phrase": "рокки все части по порядку",
+      "count": 96
+    },
+    {
+      "phrase": "vrr что это",
+      "count": 121
+    }
+  ]
+}

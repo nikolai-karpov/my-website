@@ -1,0 +1,41 @@
+minus	category	rationale	scope
+курс	education	Студенты/обучение, не B2B-покупатель	CPA_and_CPC
+курсы	education	Студенты/обучение	CPA_and_CPC
+обучение	education	Риск каннибализации: машинное обучение; использовать аккуратно	CPC_only_or_phrase
+обучиться	education	Учебный intent	CPA_and_CPC
+урок	education	Учебный intent	CPA_and_CPC
+уроки	education	Учебный intent	CPA_and_CPC
+реферат	education	Студенческие работы	CPA_and_CPC
+диплом	education	Студенческие работы	CPA_and_CPC
+вакансия	jobs	Соискатели	CPA_and_CPC
+вакансии	jobs	Соискатели	CPA_and_CPC
+резюме	jobs	Соискатели	CPA_and_CPC
+зарплата	jobs	Соискатели	CPA_and_CPC
+стажировка	jobs	Соискатели	CPA_and_CPC
+бесплатно	freebie	Халявный intent	CPA_and_CPC
+бесплатный	freebie	Халявный intent	CPA_and_CPC
+бесплатные	freebie	Халявный intent	CPA_and_CPC
+скачать	freebie	Скачать/DIY, не услуга	CPA_and_CPC
+скач	freebie	Скачать/DIY, не услуга	CPA_and_CPC
+торрент	freebie	Пиратский intent	CPA_and_CPC
+crack	freebie	Пиратский intent	CPA_and_CPC
+кряк	freebie	Пиратский intent	CPA_and_CPC
+картинки	consumer_ai	Генерация картинок, не B2B внедрение	CPA_and_CPC
+рисует	consumer_ai	Развлекательная нейросеть	CPA_and_CPC
+музыка	consumer_ai	Consumer creative AI	CPA_and_CPC
+песня	consumer_ai	Consumer creative AI	CPA_and_CPC
+алиса	device	Голосовой consumer-ассистент	CPA_and_CPC
+колонка	device	Умная колонка	CPA_and_CPC
+салют	device	Consumer assistant	CPA_and_CPC
+самсунг	device	Consumer devices	CPA_and_CPC
+игра	gaming	Gaming intent	CPA_and_CPC
+играть	gaming	Gaming intent	CPA_and_CPC
+что такое	info	Инфо intent; для CPA можно не минусовать, для CPC минусовать	CPC_only
+как создать	diy	DIY intent; для CPA обычно отсекать	CPA_and_CPC
+как сделать	diy	DIY intent; для CPA обычно отсекать	CPA_and_CPC
+лучшие	review	Обзорный intent; лучше в РСЯ/контент, не в узкий CPC	CPC_only
+работа с	jobs_or_diy	Часто учебный/соискательский intent; проверять фразово	CPC_only_or_phrase
+использовать	info	Инфо intent, не заявочный спрос	CPC_only
+закон	info_legal	Нормативный шум; для security-кластера осторожно	CPC_only
+гост	info_legal	Нормативный шум	CPC_only
+фз	info_legal	152-ФЗ может быть целевым для ИБ; не минусовать широко в CPA	CPC_only_or_group

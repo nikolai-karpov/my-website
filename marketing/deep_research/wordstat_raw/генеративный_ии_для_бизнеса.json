@@ -1,0 +1,86 @@
+{
+  "success": true,
+  "cached_hit": true,
+  "phrase": "генеративный ии для бизнеса",
+  "regions": [
+    "213",
+    "2"
+  ],
+  "total_count": 6,
+  "results": [
+    {
+      "phrase": "генеративный ии для бизнеса",
+      "count": 6
+    }
+  ],
+  "associations": [
+    {
+      "phrase": "gemini business",
+      "count": 214
+    },
+    {
+      "phrase": "ai generated",
+      "count": 5452
+    },
+    {
+      "phrase": "генератор конфигурации для amneziawg",
+      "count": 218
+    },
+    {
+      "phrase": "агентство креативных индустрий",
+      "count": 582
+    },
+    {
+      "phrase": "мбизнес",
+      "count": 78
+    },
+    {
+      "phrase": "business max ru",
+      "count": 137
+    },
+    {
+      "phrase": "бизнесчейн гуу",
+      "count": 170
+    },
+    {
+      "phrase": "cafe business manager",
+      "count": 83
+    },
+    {
+      "phrase": "business gazeta",
+      "count": 179
+    },
+    {
+      "phrase": "обычаи делового оборота",
+      "count": 1136
+    },
+    {
+      "phrase": "business chain",
+      "count": 286
+    },
+    {
+      "phrase": "google business",
+      "count": 340
+    },
+    {
+      "phrase": "нейросеть для генерации рассказов",
+      "count": 145
+    },
+    {
+      "phrase": "risky business",
+      "count": 110
+    },
+    {
+      "phrase": "gemini enterprise business",
+      "count": 16
+    },
+    {
+      "phrase": "remove bg нейросеть",
+      "count": 23
+    },
+    {
+      "phrase": "business development manager",
+      "count": 198
+    }
+  ]
+}

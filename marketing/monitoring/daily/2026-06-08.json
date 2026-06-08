@@ -1,0 +1,70 @@
+{
+  "run_date_msk": "2026-06-08",
+  "primary_day": "2026-06-07",
+  "last_7_full_days": {
+    "from": "2026-06-01",
+    "to": "2026-06-07"
+  },
+  "project": {
+    "slug": "portfolio",
+    "display_name": "Портфолио",
+    "campaign_id": 710165227,
+    "counter_id": 109350250,
+    "landing": "https://nikolai-karpov.github.io/my-website"
+  },
+  "status": "RED",
+  "status_reason": "API connectivity failure — DNS resolution error on all Yandex Direct and Metrika endpoints",
+  "data_collection": {
+    "attempted": 7,
+    "succeeded": 0,
+    "failed": 7,
+    "error": "[Errno 8] nodename nor servname provided, or not known",
+    "affected_apis": [
+      "yandex_direct_campaigns",
+      "yandex_direct_report (CAMPAIGN_PERFORMANCE_REPORT, primary_day)",
+      "yandex_direct_report (CAMPAIGN_PERFORMANCE_REPORT, 7 days)",
+      "yandex_direct_report (SEARCH_QUERY_PERFORMANCE_REPORT, 7 days)",
+      "yandex_direct_keywords",
+      "yandex_metrika_traffic",
+      "yandex_metrika_conversions"
+    ]
+  },
+  "direct": {
+    "campaign_id": 710165227,
+    "campaign_status": "unknown (API unreachable)",
+    "primary_day": null,
+    "last_7_days": null,
+    "keywords": null
+
+  },
+  "metrika": {
+    "counter_id": 109350250,
+    "ad_traffic": null,
+    "conversions": null,
+    "goal_status": "NEEDS_GOAL_MAPPING"
+  },
+  "search_queries": null,
+  "alerts": [
+    {
+      "type": "api_connectivity_failure",
+      "severity": "critical",
+      "detail": "All Yandex API calls failed with DNS resolution error"
+    },
+    {
+      "type": "data_collection_failed",
+      "severity": "critical",
+      "detail": "0 of 7 API calls succeeded"
+    }
+  ],
+  "cpa": "insufficient data",
+  "facts": ["No data collected due to network failure"],
+  "assumptions": ["DNS resolution failure is network-level, not credential-level"],
+  "hypotheses": [],
+  "risks": ["Campaign may be running without monitoring coverage"],
+  "recommendations": [
+    "Check network connectivity (ping api.direct.yandex.ru)",
+    "Check DNS resolution (nslookup api.direct.yandex.ru)",
+    "If VPN, verify VPN status",
+    "Rerun cron job after network is restored"
+  ]
+}

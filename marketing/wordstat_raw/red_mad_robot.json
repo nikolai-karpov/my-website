@@ -1,0 +1,4 @@
+{
+  "error": "HTTP 429: {\n \"code\": 8,\n \"message\": \"search-api.wordstatRequestsPerHour.rate rate quota limit exceed: allowed 100 requests\",\n \"details\": [\n  {\n   \"@type\": \"type.googleapis.com/google.rpc.RequestInfo\",\n   \"requestId\": \"077df56b-df19-40a2-9f36-4b6055a26cbd\"\n  }\n ]\n}\n",
+  "status": 429
+}

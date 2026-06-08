@@ -1,0 +1,90 @@
+{
+  "success": true,
+  "cached_hit": true,
+  "phrase": "интеграция ии в бизнес",
+  "regions": [
+    "213",
+    "2"
+  ],
+  "total_count": 31,
+  "results": [
+    {
+      "phrase": "интеграция ии в бизнес",
+      "count": 31
+    },
+    {
+      "phrase": "интеграция ии в бизнес процессы",
+      "count": 13
+    }
+  ],
+  "associations": [
+    {
+      "phrase": "bcc business",
+      "count": 59
+    },
+    {
+      "phrase": "dikidi business",
+      "count": 411
+    },
+    {
+      "phrase": "интегратор",
+      "count": 10969
+    },
+    {
+      "phrase": "ооо интеграл",
+      "count": 1139
+    },
+    {
+      "phrase": "business studio",
+      "count": 1406
+    },
+    {
+      "phrase": "создание систем искусственного интеллекта взаимодействие с разработчиками",
+      "count": 179
+    },
+    {
+      "phrase": "интегративный подход",
+      "count": 1424
+    },
+    {
+      "phrase": "ооо интегра",
+      "count": 649
+    },
+    {
+      "phrase": "business max ru",
+      "count": 138
+    },
+    {
+      "phrase": "business chain",
+      "count": 281
+    },
+    {
+      "phrase": "ain t nobody s business",
+      "count": 187
+    },
+    {
+      "phrase": "интегрированное занятие",
+      "count": 819
+    },
+    {
+      "phrase": "integration",
+      "count": 6691
+    },
+    {
+      "phrase": "бц интеграл",
+      "count": 368
+    },
+    {
+      "phrase": "интегратор на оу",
+      "count": 94
+    },
+    {
+      "phrase": "интеграционные объединения",
+      "count": 1150
+    },
+    {
+      "phrase": "интегрированная система менеджмента",
+      "count": 305
+    }
+  ]
+}

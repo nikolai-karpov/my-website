@@ -1,0 +1,43 @@
+{
+  "run_date_msk": "2026-06-08",
+  "status": "NETWORK_UNAVAILABLE",
+  "project": {
+    "slug": "portfolio",
+    "display_name": "Портфолио",
+    "campaign_id": 710165227,
+    "campaign_role": "master_campaign",
+    "counter_id": 109350250
+  },
+  "periods": {
+    "main": {"from": "2026-06-01", "to": "2026-06-07"},
+    "previous": {"from": "2026-05-25", "to": "2026-05-31"},
+    "last_30_days": {"from": "2026-05-09", "to": "2026-06-07"}
+  },
+  "direct": {
+    "campaign_snapshot": null,
+    "campaign_performance_main": null,
+    "campaign_performance_previous": null,
+    "campaign_performance_30d": null,
+    "keywords": null,
+    "search_query_report": null,
+    "error": "DNS resolution failure [Errno 8] nodename nor servname provided"
+  },
+  "metrika": {
+    "traffic_ad": null,
+    "conversions_ad": null,
+    "error": "DNS resolution failure [Errno 8] nodename nor servname provided"
+  },
+  "goal_mapping": {
+    "status": "NEEDS_GOAL_MAPPING",
+    "primary_lead_confirmed": false,
+    "discovered_goals": [
+      {"id": 566497705, "name": "Отправка заявки (форма) ⭐", "role": "candidate_primary_lead"},
+      {"id": 566492899, "name": "Автоцель: отправил контактные данные", "role": "diagnostic"}
+    ],
+    "source": "cached from metrika-goals-2026-06-08.json"
+  },
+  "alerts": [
+    {"severity": "CRITICAL", "alert": "Network unavailable — all Yandex API calls failed with DNS error"},
+    {"severity": "WARNING", "alert": "Primary lead goal not confirmed — NEEDS_GOAL_MAPPING"}
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "success": true,
+  "cached_hit": true,
+  "phrase": "gigachat для бизнеса",
+  "regions": [
+    "213",
+    "2"
+  ],
+  "total_count": 12,
+  "results": [
+    {
+      "phrase": "gigachat для бизнеса",
+      "count": 12
+    },
+    {
+      "phrase": "gigachat enterprise для бизнеса",
+      "count": 3
+    }
+  ],
+  "associations": [
+    {
+      "phrase": "gemini business",
+      "count": 220
+    },
+    {
+      "phrase": "business fm",
+      "count": 1747
+    },
+    {
+      "phrase": "chatgpt business",
+      "count": 437
+    },
+    {
+      "phrase": "cafe business manager",
+      "count": 89
+    },
+    {
+      "phrase": "business gazeta",
+      "count": 181
+    },
+    {
+      "phrase": "google business",
+      "count": 336
+    },
+    {
+      "phrase": "business development manager",
+      "count": 189
+    },
+    {
+      "phrase": "witchy business",
+      "count": 37
+    },
+    {
+      "phrase": "business bitch",
+      "count": 92
+    },
+    {
+      "phrase": "nobody business",
+      "count": 546
+    },
+    {
+      "phrase": "даичи бизнесс",
+      "count": 8
+    },
+    {
+      "phrase": "business magnate",
+      "count": 19
+    },
+    {
+      "phrase": "business result",
+      "count": 553
+    }
+  ]
+}

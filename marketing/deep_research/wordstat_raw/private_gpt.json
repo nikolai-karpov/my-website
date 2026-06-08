@@ -1,0 +1,82 @@
+{
+  "success": true,
+  "cached_hit": true,
+  "phrase": "private gpt",
+  "regions": [
+    "213",
+    "2"
+  ],
+  "total_count": 3,
+  "results": [
+    {
+      "phrase": "private gpt",
+      "count": 3
+    }
+  ],
+  "associations": [
+    {
+      "phrase": "gpt",
+      "count": 711339
+    },
+    {
+      "phrase": "chat gpt com",
+      "count": 29248
+    },
+    {
+      "phrase": "чат gpt com",
+      "count": 4513
+    },
+    {
+      "phrase": "gpt com",
+      "count": 37790
+    },
+    {
+      "phrase": "чпт gpt",
+      "count": 1594
+    },
+    {
+      "phrase": "gpt image 2",
+      "count": 2578
+    },
+    {
+      "phrase": "cheat gpt",
+      "count": 2811
+    },
+    {
+      "phrase": "чат gpt бесплатно",
+      "count": 24567
+    },
+    {
+      "phrase": "chart gpt",
+      "count": 561
+    },
+    {
+      "phrase": "чат gpt гига",
+      "count": 399
+    },
+    {
+      "phrase": "яат gpt",
+      "count": 315
+    },
+    {
+      "phrase": "ghat gpt",
+      "count": 269
+    },
+    {
+      "phrase": "маша gpt",
+      "count": 506
+    },
+    {
+      "phrase": "чвт gpt",
+      "count": 22
+    },
+    {
+      "phrase": "часть gpt",
+      "count": 158
+    },
+    {
+      "phrase": "gat gpt",
+      "count": 233
+    }
+  ]
+}

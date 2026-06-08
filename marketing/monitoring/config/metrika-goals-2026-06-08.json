@@ -1,0 +1,30 @@
+{
+  "run_date_msk": "2026-06-08",
+  "counter_id": 109350250,
+  "counter_name": "Портфолио",
+  "counter_site": "nikolai-karpov.github.io/my-website/",
+  "counter_status": "Active",
+  "goal_mapping_status": "NEEDS_GOAL_MAPPING",
+  "primary_lead_goal_confirmed": false,
+  "discovered_goals": [
+    {
+      "goal_id": 566497705,
+      "name": "Отправка заявки (форма) ⭐",
+      "type": "action",
+      "role": "candidate_primary_lead",
+      "confirmed": false,
+      "note": "Звёздочка ⭐ обычно означает приоритетную цель. Требует ручного подтверждения."
+    },
+    {
+      "goal_id": 566492899,
+      "name": "Автоцель: отправил контактные данные",
+      "type": "auto",
+      "role": "diagnostic",
+      "confirmed": false,
+      "note": "Автоцель Метрики. Диагностическая, не primary."
+    }
+  ],
+  "goals_not_from_api": true,
+  "goals_source": "Discovered from yandex_metrika_conversions response field names; no dedicated goals-list API available in current toolset.",
+  "action_required": "Подтвердить goal 566497705 как primary lead goal или указать правильный ID."
+}

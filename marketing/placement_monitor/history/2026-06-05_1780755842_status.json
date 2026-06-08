@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-06-06T17:24:00",
+  "date_from": "2026-05-30",
+  "date_to": "2026-06-05",
+  "counter_id": 109350250,
+  "goal_id": 566497705,
+  "goal_macro": "form_submit",
+  "direct_status": "error",
+  "rows": 0,
+  "recommendations": 0,
+  "metrika_goal": {
+    "ok": false,
+    "reason": "YANDEX_METRIKA_TOKEN is not configured"
+  },
+  "direct_error": "Direct API HTTP 400: {\"error\":{\"error_detail\":\"Необходимо заполнить для приложения заявку на доступ в интерфейсе Директа и дождаться её подтверждения\",\"error_code\":\"58\",\"error_string\":\"Незавершенная регистрация\",\"request_id\":\"5273071799799792372\"}}"
+}

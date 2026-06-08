@@ -1,0 +1,82 @@
+{
+  "success": true,
+  "cached_hit": true,
+  "phrase": "корпоративный чат бот",
+  "regions": [
+    "213",
+    "2"
+  ],
+  "total_count": 53,
+  "results": [
+    {
+      "phrase": "корпоративный чат бот",
+      "count": 53
+    }
+  ],
+  "associations": [
+    {
+      "phrase": "чатбот",
+      "count": 1138
+    },
+    {
+      "phrase": "chatbot",
+      "count": 2043
+    },
+    {
+      "phrase": "переписываться с ботом",
+      "count": 643
+    },
+    {
+      "phrase": "корпоратив как пишется",
+      "count": 293
+    },
+    {
+      "phrase": "ai chatbot",
+      "count": 561
+    },
+    {
+      "phrase": "как кикнуть ботов",
+      "count": 310
+    },
+    {
+      "phrase": "chat bot",
+      "count": 3204
+    },
+    {
+      "phrase": "лучший корпоративный мессенджер",
+      "count": 58
+    },
+    {
+      "phrase": "бот для переписки с персонажами",
+      "count": 143
+    },
+    {
+      "phrase": "боты для общения",
+      "count": 3314
+    },
+    {
+      "phrase": "чатбот нейросеть",
+      "count": 19
+    },
+    {
+      "phrase": "ии чатботы",
+      "count": 157
+    },
+    {
+      "phrase": "chatbot chat app",
+      "count": 35
+    },
+    {
+      "phrase": "среда мессенджер корпоративный",
+      "count": 24
+    },
+    {
+      "phrase": "vore chat bot",
+      "count": 91
+    },
+    {
+      "phrase": "gbt chat bot",
+      "count": 57
+    }
+  ]
+}

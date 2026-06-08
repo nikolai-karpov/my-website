@@ -1,0 +1,126 @@
+{
+  "success": true,
+  "cached_hit": true,
+  "phrase": "gpt для бизнеса",
+  "regions": [
+    "213",
+    "2"
+  ],
+  "total_count": 95,
+  "results": [
+    {
+      "phrase": "gpt для бизнеса",
+      "count": 95
+    },
+    {
+      "phrase": "яндекс gpt для бизнеса",
+      "count": 35
+    },
+    {
+      "phrase": "gpt чат для бизнеса",
+      "count": 22
+    },
+    {
+      "phrase": "промты для gpt бизнес",
+      "count": 16
+    },
+    {
+      "phrase": "chat gpt для бизнеса",
+      "count": 13
+    },
+    {
+      "phrase": "чат gpt промты для бизнеса",
+      "count": 6
+    },
+    {
+      "phrase": "gpt для бизнес плана",
+      "count": 5
+    },
+    {
+      "phrase": "yandex gpt для бизнеса",
+      "count": 4
+    },
+    {
+      "phrase": "лучший чат gpt для бизнеса",
+      "count": 3
+    },
+    {
+      "phrase": "чат gpt для бизнес плана",
+      "count": 3
+    },
+    {
+      "phrase": "чат gpt бесплатный для бизнеса",
+      "count": 2
+    },
+    {
+      "phrase": "чат gpt для создания бизнеса",
+      "count": 2
+    }
+  ],
+  "associations": [
+    {
+      "phrase": "ип это юр лицо или нет",
+      "count": 146
+    },
+    {
+      "phrase": "t business",
+      "count": 2445
+    },
+    {
+      "phrase": "бц это",
+      "count": 878
+    },
+    {
+      "phrase": "ain t nobody s business",
+      "count": 187
+    },
+    {
+      "phrase": "тсж это коммерческая или некоммерческая организация",
+      "count": 3
+    },
+    {
+      "phrase": "the business",
+      "count": 11907
+    },
+    {
+      "phrase": "wa business",
+      "count": 133
+    },
+    {
+      "phrase": "т бизес",
+      "count": 40
+    },
+    {
+      "phrase": "тбизнес войти",
+      "count": 89
+    },
+    {
+      "phrase": "t biznes",
+      "count": 49
+    },
+    {
+      "phrase": "buisness или business",
+      "count": 32
+    },
+    {
+      "phrase": "ип это коммерческая организация или нет",
+      "count": 8
+    },
+    {
+      "phrase": "муп это коммерческая организация или нет",
+      "count": 8
+    },
+    {
+      "phrase": "чем отличается огрн от огрнип",
+      "count": 25
+    },
+    {
+      "phrase": "doing business",
+      "count": 2310
+    },
+    {
+      "phrase": "чем отличается бизнесмен от предпринимателя",
+      "count": 61
+    }
+  ]
+}

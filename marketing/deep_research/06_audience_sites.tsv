@@ -1,0 +1,31 @@
+domain	segment	priority	rationale
+r77.ai	competitor	high	Посетители изучают AI-трансформацию и внедрение ИИ
+zebrains.ru	competitor	high	Тёплая аудитория заказной разработки/ИИ
+secret-agents.ru	competitor	high	Тёплая аудитория ИИ-агентов
+just-ai.com	competitor_platform	high	Платформа AI-агентов и GenAI-консалтинг
+genai-lab.ru	competitor	medium	Интерес к GenAI-внедрению
+ai-teams.ru	competitor	medium	Интерес к внедрению ИИ командами
+aiagency.ru	competitor	medium	Интерес к AI-агентствам
+redmadrobot.ru	enterprise_integrator	medium	Интерес к цифровым продуктам и AI-сервисам
+korusconsulting.ru	enterprise_integrator	medium	ЛПР enterprise IT/data
+ibs.ru	enterprise_integrator	medium	ЛПР enterprise IT
+croc.ru	enterprise_integrator	medium	Корпоративный ИТ/инфраструктура
+glowbyteconsulting.com	data_ai_integrator	medium	Data/AI decision makers
+neoflex.ru	data_ai_integrator	medium	Data platform/enterprise development
+crafttalk.ru	adjacent	low	Смежный спрос на чат-боты и conversational AI
+pix.ru	adjacent	low	Смежный спрос на RPA/роботизацию
+directum.ru	business_systems	medium	ЛПР по ЭДО/BPM/документам
+elma365.com	business_systems	medium	ЛПР по BPM/low-code
+naumen.ru	business_systems	medium	Корпоративная автоматизация
+cloud.ru	platform_vendor	medium	Интерес к облаку/AI-инфраструктуре
+yandex.cloud	platform_vendor	medium	Интерес к YandexGPT/Search API/облаку
+gigachat.ru	platform_vendor	medium	Интерес к российским LLM
+mts.ai	platform_vendor	medium	Интерес к AI-платформам
+vc.ru	media	medium	Бизнес-аудитория стартапов/ИИ
+habr.com	media	medium	Техническая аудитория и IT-ЛПР
+tadviser.ru	media	high	Enterprise IT аудитория
+cnews.ru	media	medium	Enterprise IT новости
+rb.ru	media	low	Бизнес/предприниматели
+forbes.ru	media	medium	Руководители/собственники
+kommersant.ru	media	medium	Business audience
+vedomosti.ru	media	medium	Business audience

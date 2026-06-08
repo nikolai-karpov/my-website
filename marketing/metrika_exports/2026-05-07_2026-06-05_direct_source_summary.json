@@ -1,0 +1,435 @@
+{
+  "query": {
+    "ids": [
+      109350250
+    ],
+    "dimensions": [
+      "ym:s:date",
+      "ym:s:lastSignTrafficSource"
+    ],
+    "metrics": [
+      "ym:s:visits",
+      "ym:s:goal566497705reaches"
+    ],
+    "sort": [
+      "-ym:s:visits"
+    ],
+    "date1": "2026-05-07",
+    "date2": "2026-06-05",
+    "limit": 100000,
+    "offset": 1,
+    "group": "Week",
+    "benchmarks_version": "1779667200000",
+    "benchmarks_sub_industry": "false",
+    "auto_group_size": "1",
+    "exp_bucket_size": "100",
+    "attr_name": "",
+    "funnel_window": "",
+    "benchmarks_quantile": "50",
+    "time_interval": "1SECOND",
+    "intervals": "1",
+    "quantile": "50",
+    "offline_window": "21",
+    "attribution": "CROSS_DEVICE_LAST_SIGNIFICANT",
+    "currency": "RUB",
+    "benchmarks_attribution": "Automatic",
+    "adfox_event_id": "0",
+    "funnel_pattern": ""
+  },
+  "data": [
+    {
+      "dimensions": [
+        {
+          "name": "2026-05-25"
+        },
+        {
+          "icon_id": "3",
+          "icon_type": "traffic-source",
+          "name": "Ad traffic",
+          "id": "ad"
+        }
+      ],
+      "metrics": [
+        74.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-05-26"
+        },
+        {
+          "icon_id": "0",
+          "icon_type": "traffic-source",
+          "name": "Direct traffic",
+          "id": "direct"
+        }
+      ],
+      "metrics": [
+        8.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-05-26"
+        },
+        {
+          "icon_id": "3",
+          "icon_type": "traffic-source",
+          "name": "Ad traffic",
+          "id": "ad"
+        }
+      ],
+      "metrics": [
+        7.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-05-23"
+        },
+        {
+          "icon_id": "0",
+          "icon_type": "traffic-source",
+          "name": "Direct traffic",
+          "id": "direct"
+        }
+      ],
+      "metrics": [
+        6.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-06-05"
+        },
+        {
+          "icon_id": "1",
+          "icon_type": "traffic-source",
+          "name": "Link traffic",
+          "id": "referral"
+        }
+      ],
+      "metrics": [
+        5.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-05-25"
+        },
+        {
+          "icon_id": "0",
+          "icon_type": "traffic-source",
+          "name": "Direct traffic",
+          "id": "direct"
+        }
+      ],
+      "metrics": [
+        4.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-06-01"
+        },
+        {
+          "icon_id": "0",
+          "icon_type": "traffic-source",
+          "name": "Direct traffic",
+          "id": "direct"
+        }
+      ],
+      "metrics": [
+        3.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-05-23"
+        },
+        {
+          "icon_id": "-1",
+          "icon_type": "traffic-source",
+          "name": "Internal traffic",
+          "id": "internal"
+        }
+      ],
+      "metrics": [
+        2.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-05-29"
+        },
+        {
+          "icon_id": "0",
+          "icon_type": "traffic-source",
+          "name": "Direct traffic",
+          "id": "direct"
+        }
+      ],
+      "metrics": [
+        2.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-06-03"
+        },
+        {
+          "icon_id": "0",
+          "icon_type": "traffic-source",
+          "name": "Direct traffic",
+          "id": "direct"
+        }
+      ],
+      "metrics": [
+        2.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-06-05"
+        },
+        {
+          "icon_id": "0",
+          "icon_type": "traffic-source",
+          "name": "Direct traffic",
+          "id": "direct"
+        }
+      ],
+      "metrics": [
+        2.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-05-23"
+        },
+        {
+          "icon_id": "1",
+          "icon_type": "traffic-source",
+          "name": "Link traffic",
+          "id": "referral"
+        }
+      ],
+      "metrics": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-05-24"
+        },
+        {
+          "icon_id": "0",
+          "icon_type": "traffic-source",
+          "name": "Direct traffic",
+          "id": "direct"
+        }
+      ],
+      "metrics": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-05-25"
+        },
+        {
+          "icon_id": "-1",
+          "icon_type": "traffic-source",
+          "name": "Internal traffic",
+          "id": "internal"
+        }
+      ],
+      "metrics": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-05-25"
+        },
+        {
+          "icon_id": "1",
+          "icon_type": "traffic-source",
+          "name": "Link traffic",
+          "id": "referral"
+        }
+      ],
+      "metrics": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-05-26"
+        },
+        {
+          "icon_id": "-1",
+          "icon_type": "traffic-source",
+          "name": "Internal traffic",
+          "id": "internal"
+        }
+      ],
+      "metrics": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-05-26"
+        },
+        {
+          "icon_id": "1",
+          "icon_type": "traffic-source",
+          "name": "Link traffic",
+          "id": "referral"
+        }
+      ],
+      "metrics": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-05-28"
+        },
+        {
+          "icon_id": "3",
+          "icon_type": "traffic-source",
+          "name": "Ad traffic",
+          "id": "ad"
+        }
+      ],
+      "metrics": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-05-29"
+        },
+        {
+          "icon_id": "3",
+          "icon_type": "traffic-source",
+          "name": "Ad traffic",
+          "id": "ad"
+        }
+      ],
+      "metrics": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-05-30"
+        },
+        {
+          "icon_id": "0",
+          "icon_type": "traffic-source",
+          "name": "Direct traffic",
+          "id": "direct"
+        }
+      ],
+      "metrics": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-05-30"
+        },
+        {
+          "icon_id": "1",
+          "icon_type": "traffic-source",
+          "name": "Link traffic",
+          "id": "referral"
+        }
+      ],
+      "metrics": [
+        1.0,
+        0.0
+      ]
+    },
+    {
+      "dimensions": [
+        {
+          "name": "2026-05-31"
+        },
+        {
+          "icon_id": "0",
+          "icon_type": "traffic-source",
+          "name": "Direct traffic",
+          "id": "direct"
+        }
+      ],
+      "metrics": [
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "total_rows": 22,
+  "total_rows_rounded": false,
+  "sampled": false,
+  "contains_sensitive_data": false,
+  "sample_share": 1.0,
+  "sample_size": 195,
+  "sample_space": 195,
+  "data_lag": 0,
+  "totals": [
+    126.0,
+    0.0
+  ],
+  "min": [
+    1.0,
+    0.0
+  ],
+  "max": [
+    74.0,
+    0.0
+  ]
+}

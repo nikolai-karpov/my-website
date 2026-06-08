@@ -1,0 +1,1206 @@
+cluster	priority	recommended_action	volume_band	phrase	frequency_msk_spb	seed	source
+AI_SYSTEMS	P1	search_keyword_cluster	high	ai агенты	3764	ai агент	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	high	внедрение искусственного интеллекта	2315	внедрение искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	high	ии для бизнеса	1763	ии для бизнеса	wordstat_existing
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	high	цифровая трансформация бизнеса	1680	цифровая трансформация бизнеса	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	high	разработка искусственного интеллекта	1408	разработка искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	high	ии сотрудники	1364	ии сотрудник	wordstat_extra
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	high	автоматизация бизнес процессов	1353	автоматизация бизнес процессов	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	high	локальные llm	1225	локальная llm	wordstat_extra
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	high	цифровой сотрудник	1104	цифровой сотрудник	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	high	just ai	1020	just ai	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	high	промпт инжиниринг	966	промпт инжиниринг	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	high	обезличивание данных	872	обезличивание данных	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	high	внедрение технологий искусственного интеллекта	829	внедрение искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	high	нейросеть для документов	772	нейросеть для документов	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	high	мультиагентные системы	749	мультиагентные системы	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	high	rag система	747	rag система	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	high	создание ии агента	729	ии агент	wordstat_extra
+INFO	P3	content_or_cpc_minus	high	как создать ии агента	679	ии агент	wordstat_extra
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	high	нейросети для бизнеса	652	нейросети для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	high	что такое ии агент	553	ии агент	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	mid	разработка нейросетей	472	разработка нейросетей	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	mid	разработка технологий искусственного интеллекта	443	разработка искусственного интеллекта	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	mid	автоматизация документооборота	420	автоматизация документооборота	wordstat_existing
+NEGATIVE	P0	minus_candidate	mid	бесплатные ии агенты	419	ии агент	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	mid	внедрение систем искусственного интеллекта	377	внедрение искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	цифровая трансформация бизнес процессов	366	цифровая трансформация бизнеса	wordstat_existing
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	искусственный интеллект для бизнеса	364	искусственный интеллект для бизнеса	wordstat_existing
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	цифровой ассистент	347	цифровой ассистент	wordstat_extra
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	mid	разработка чат ботов	332	разработка чат ботов	wordstat_existing
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	автоматизация процессов компании	321	автоматизация компании	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	mid	внедрение ии в бизнес	310	внедрение ии в бизнес	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	mid	разработка ии агентов	296	разработка ии агентов	wordstat_existing
+INFO	P3	content_or_cpc_minus	mid	лучшие ии агенты	285	ии агент	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	mid	разработка системы искусственного интеллекта	279	разработка искусственного интеллекта	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	mid	разработка систем ии	276	разработка ии систем	wordstat_existing
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	компании по автоматизации	267	автоматизация компании	wordstat_existing
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	ии для руководителей	257	ии для руководителя	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	mid	ии агенты для бизнеса	255	ии для бизнеса	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	mid	разработка и внедрение искусственного интеллекта	254	внедрение искусственного интеллекта	wordstat_existing
+INFO	P3	content_or_cpc_minus	mid	модели цифровой трансформации бизнеса	254	цифровая трансформация бизнеса	wordstat_existing
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	системы автоматизации компания	254	автоматизация компании	wordstat_existing
+INFO	P3	content_or_cpc_minus	mid	как сделать ии агента	243	ии агент	wordstat_extra
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	цифровая трансформация экономики бизнеса	241	цифровая трансформация бизнеса	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	mid	локальный ии агент	238	ии агент	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	mid	внедрение ии в компании	235	внедрение ии в компанию	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	mid	создание и внедрение в искусственный интеллект	228	внедрение искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	цифровая трансформация управления бизнесом	228	цифровая трансформация бизнеса	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	mid	создание ai агентов	225	ai агент	wordstat_extra
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	mid	яндекс ии агент	221	ии агент	wordstat_extra
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	mid	чат бот для бизнеса	217	чат бот для бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	mid	ии агенты обучение	217	ии агент	wordstat_extra
+INFO	P3	content_or_cpc_minus	mid	бизнес в условиях цифровой трансформации	215	цифровая трансформация бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	mid	российские разработки искусственного интеллекта	214	разработка искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	mid	технологии цифровой трансформации бизнеса	213	цифровая трансформация бизнеса	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	mid	ai ии агент	213	ии агент	wordstat_extra
+INFO	P3	content_or_cpc_minus	mid	цель внедрения искусственного интеллекта	212	внедрение искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	система автоматизации бизнес процессов	207	автоматизация бизнес процессов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	mid	агент модели ии	200	ии агент	wordstat_extra
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	компания автоматизация бизнеса	198	автоматизация компании	wordstat_existing
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	ai трансформация	197	ai трансформация	wordstat_extra
+NEGATIVE	P0	minus_candidate	mid	работа с ии агентами	188	ии агент	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	mid	москва внедрение искусственного интеллекта	186	внедрение искусственного интеллекта	wordstat_existing
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	mid	ии для производства	184	ии для производства	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	mid	чат ии агентов	181	ии агент	wordstat_extra
+NEGATIVE	P0	minus_candidate	mid	курс по ии агентам	178	ии агент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	mid	сотрудники ии компаний	177	ии сотрудник	wordstat_extra
+NEGATIVE	P0	minus_candidate	mid	ии агент алиса	175	ии агент	wordstat_extra
+INFO	P3	content_or_cpc_minus	mid	ии агент использовать	171	ии агент	wordstat_extra
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	нейросеть для компании	168	нейросеть для компании	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	mid	ии агент claude	166	ии агент	wordstat_extra
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	цифровая трансформация бизнеса компании	164	цифровая трансформация бизнеса	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	mid	внедрение технологий искусственного интеллекта в москве	163	внедрение искусственного интеллекта	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	mid	разработка искусственного интеллекта москва	162	разработка искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	mid	компании автоматизация решения	156	автоматизация компании	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	mid	система ии агентов	155	ии агент	wordstat_extra
+INFO	P3	content_or_cpc_minus	mid	использование ии агентов	155	ии агент	wordstat_extra
+INFO	P3	content_or_cpc_minus	mid	закон о внедрении искусственного интеллекта	154	внедрение искусственного интеллекта	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	mid	локальные llm модели	153	локальная llm	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	mid	внедрение искусственного интеллекта в бизнес	148	внедрение искусственного интеллекта	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	mid	внедрение ии агентов	148	внедрение ии агентов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	mid	ий под ключ	144	ии под ключ	wordstat_existing
+INFO	P3	content_or_cpc_minus	mid	ии агент исследовать	144	ии агент	wordstat_extra
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	нейросеть для работы с документами	142	нейросеть для документов	wordstat_existing
+INFO	P3	content_or_cpc_minus	mid	ии агенты примеры	141	ии агент	wordstat_extra
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	автоматизация управления компанией	138	автоматизация компании	wordstat_existing
+INFO	P3	content_or_cpc_minus	mid	ии агенты 2026	131	ии агент	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	mid	ии консалтинг	130	ии консалтинг	wordstat_existing
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	автоматизация бизнес процессов управления	129	автоматизация бизнес процессов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	mid	транскрибация встречи	128	транскрибация встреч	wordstat_existing
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	искусственный интеллект внедрение и управление	127	внедрение искусственного интеллекта	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	mid	разработка искусственного интеллекта ии	122	разработка искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	автоматизация бизнес процессов компании	120	автоматизация бизнес процессов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	mid	система автоматизации документооборота	119	автоматизация документооборота	wordstat_existing
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	нейросеть для создания документов	119	нейросеть для документов	wordstat_existing
+NEGATIVE	P0	minus_candidate	mid	алиса ai агент	119	ai агент	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	mid	внедрение искусственного интеллекта в россии	118	внедрение искусственного интеллекта	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	mid	автономные ии агенты	116	ии агент	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	mid	разработка ai агентов	115	ai агент	wordstat_extra
+NEGATIVE	P0	minus_candidate	mid	разработка искусственного интеллекта обучение	114	разработка искусственного интеллекта	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	mid	автоматизация электронного документооборота	114	автоматизация документооборота	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	mid	внедрение искусственного интеллекта сферы	112	внедрение искусственного интеллекта	wordstat_existing
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	mid	автоматизация производства компании	112	автоматизация компании	wordstat_existing
+INFO	P3	content_or_cpc_minus	mid	ии агенты где	112	ии агент	wordstat_extra
+INFO	P3	content_or_cpc_minus	mid	методы обезличивания данных	111	обезличивание данных	wordstat_existing
+OTHER_REVIEW	P3	manual_review	mid	цифровой отзывы сотрудников	110	цифровой сотрудник	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	mid	платформа для ии агентов	109	ии агент	wordstat_extra
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	mid	ии агент сбер	109	ии агент	wordstat_extra
+INFO	P3	content_or_cpc_minus	mid	как создать ai агента	109	ai агент	wordstat_extra
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	ии для бизнес процессов	107	ии для бизнеса	wordstat_existing
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	автоматизации бизнес процессов предприятия	107	автоматизация бизнес процессов	wordstat_existing
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	автоматизация бизнес процессов решения	106	автоматизация бизнес процессов	wordstat_existing
+INFO	P3	content_or_cpc_minus	mid	цифровая трансформация бизнеса изменение	105	цифровая трансформация бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	mid	разработки в сфере искусственного интеллекта	105	разработка искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	mid	автоматизация работы компании	105	автоматизация компании	wordstat_existing
+INFO	P3	content_or_cpc_minus	mid	чем отличаются ии агенты	105	ии агент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	mid	ии для создания бизнеса	104	ии для бизнеса	wordstat_existing
+WARM_CATEGORY	P1	search_keyword_broad_or_rsya	mid	цифровая трансформация современного бизнеса	104	цифровая трансформация бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	mid	обезличивание персональных данных это	104	обезличивание данных	wordstat_existing
+INFO	P3	content_or_cpc_minus	mid	лучшие локальные llm	104	локальная llm	wordstat_extra
+NEGATIVE	P0	minus_candidate	mid	курс нейросети для бизнеса	103	нейросети для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	mid	какие есть ии агенты	103	ии агент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	mid	кодекс агент ии	103	ии агент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	mid	цифровые трансформации развития бизнеса	102	цифровая трансформация бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	mid	ии финансовый агент	102	ии агент	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	mid	написание ии агентов	102	ии агент	wordstat_extra
+AI_SYSTEMS	P1	search_keyword_cluster	mid	управление ии агентами	102	ии агент	wordstat_extra
+INFO	P3	content_or_cpc_minus	low	искусственный интеллект практика внедрения	99	внедрение искусственного интеллекта	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	курс ии для бизнеса	99	ии для бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	ии агент скачать	99	ии агент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	внедрение автоматизации бизнес процессов	98	автоматизация бизнес процессов	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	low	just ai platform	98	just ai	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	внедрение искусственного интеллекта компании	97	внедрение искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для документов ворд	97	нейросеть для документов	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	ии агент инструмент	96	ии агент	wordstat_extra
+AI_SYSTEMS	P1	search_keyword_cluster	low	gpt для бизнеса	95	gpt для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	цифровая трансформация бизнеса 2024	95	цифровая трансформация бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	специалист по внедрению искусственного интеллекта	94	внедрение искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	цифровая трансформация российского бизнеса	94	цифровая трансформация бизнеса	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	ии агенты в россии	93	ии агент	wordstat_extra
+AI_SYSTEMS	P1	search_keyword_cluster	low	ии агенты и автоматизация	93	ии агент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	сотрудник использует ии	93	ии сотрудник	wordstat_extra
+AI_SYSTEMS	P1	search_keyword_cluster	low	ии агент для поиска	92	ии агент	wordstat_extra
+AI_SYSTEMS	P1	search_keyword_cluster	low	новый ии агент	92	ии агент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	программа внедрения искусственного интеллекта	91	внедрение искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	цифровизация цифровая трансформация бизнеса	91	цифровая трансформация бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	разработка в области искусственного интеллекта	91	разработка искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	оптимизация бизнес процессов автоматизация	91	автоматизация бизнес процессов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	анализ автоматизации бизнес процессов	91	автоматизация бизнес процессов	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	как работают ии агенты	91	ии агент	wordstat_extra
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	low	ии для промышленности	90	ии для промышленности	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	обезличивание персональных данных обработка	90	обезличивание данных	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	трансформация бизнеса в условиях цифровой экономики	89	цифровая трансформация бизнеса	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	разработка искусственного интеллекта в россии	89	разработка искусственного интеллекта	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	low	agent platform just ai	89	just ai	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	ии агенты для анализа	89	ии агент	wordstat_extra
+INFO	P3	content_or_cpc_minus	low	лучший ии для бизнеса	88	ии для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	направления цифровой трансформации бизнеса	88	цифровая трансформация бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	методы обезличивания персональных данных	88	обезличивание данных	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ai сайт агенты	88	ai агент	wordstat_extra
+INFO	P3	content_or_cpc_minus	low	как сделать ai агента	88	ai агент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	новые разработки искусственного интеллекта	87	разработка искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	технологии автоматизации бизнес процессов	87	автоматизация бизнес процессов	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	low	ии агент клод	87	ии агент	wordstat_extra
+INFO	P3	content_or_cpc_minus	low	риски внедрения искусственного интеллекта	86	внедрение искусственного интеллекта	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	готовые ии агенты	86	ии агент	wordstat_extra
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	протокол встречи ии	86	протокол встречи ии	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	разработка автоматизации бизнес процессов	85	автоматизация бизнес процессов	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	какой ии агент лучше	85	ии агент	wordstat_extra
+NEGATIVE	P0	minus_candidate	low	обучение сотрудников ии	84	ии сотрудник	wordstat_extra
+NEGATIVE	P0	minus_candidate	low	обучение внедрение искусственного интеллекта	83	внедрение искусственного интеллекта	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	автоматизация и внедрение искусственного интеллекта	83	внедрение искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	ии ассистент для бизнеса	83	ии для бизнеса	wordstat_existing
+INDUSTRY_OTHER	P2	separate_vertical_test	low	внедрение искусственного интеллекта здравоохранения	82	внедрение искусственного интеллекта	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	настройка ии агента	82	ии агент	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	low	настрой ии агента	82	ии агент	wordstat_extra
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	внедрение rpa	81	внедрение rpa	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	бесплатная нейросеть для документов	81	нейросеть для документов	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	ии агент в компанию	81	ии агент	wordstat_extra
+NEGATIVE	P0	minus_candidate	low	бесплатный ai агент	81	ai агент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	стратегии цифровой трансформации бизнеса	80	цифровая трансформация бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	голосовой ассистент ии	80	голосовой ии ассистент	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	цифровые компетенции сотрудников	80	цифровой сотрудник	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	ии агенты сервис	80	ии агент	wordstat_extra
+AI_SYSTEMS	P1	search_keyword_cluster	low	ai агенты для бизнеса	80	ai агент	wordstat_extra
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	процесс автоматизации документооборот	78	автоматизация документооборота	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	chatgpt для бизнеса	77	chatgpt для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	нейросети для разработчиков	77	разработчик нейросетей	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	проект автоматизации компании	77	автоматизация компании	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	лучшие ai агенты	77	ai агент	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	low	внедрение искусственного интеллекта проект	75	внедрение искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	цифровая трансформация малого бизнеса	75	цифровая трансформация бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для анализа документов	75	нейросеть для документов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	перспективы внедрения искусственного интеллекта	74	внедрение искусственного интеллекта	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	внедрение ии для бизнеса	74	ии для бизнеса	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	управление мультиагентным системами	74	мультиагентные системы	wordstat_existing
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	low	искусственный интеллект на производстве	74	искусственный интеллект на производстве	wordstat_existing
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	low	компания промышленная автоматизация	74	автоматизация компании	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	компания автоматизация и технологии	73	автоматизация компании	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	предиктивное обслуживание это	73	предиктивное обслуживание	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	компании автоматизации 1с	72	автоматизация компании	wordstat_existing
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	low	системы предиктивного обслуживания	71	предиктивное обслуживание	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	low	внедрение ии в бизнес процессы	70	внедрение ии в бизнес	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	цифровая трансформация бизнеса изменение бизнес модели	70	цифровая трансформация бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	цифровая трансформация бизнеса в россии	70	цифровая трансформация бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	компания занимающаяся автоматизацией	70	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ии для бизнес плана	69	ии для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ии трансформация бизнеса	69	ии трансформация бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	эксперты по искусственному интеллекту	69	эксперт по искусственному интеллекту	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	внедрение искусственного интеллекта рф	68	внедрение искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	задачи цифровой трансформации бизнеса	68	цифровая трансформация бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	инструменты цифровой трансформации бизнеса	68	цифровая трансформация бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	ai агенты обучение	68	ai агент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	ии решения для бизнеса	67	ии для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	направления разработки искусственного интеллекта	67	разработка искусственного интеллекта	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	ии агент алисы ai	67	ai агент	wordstat_extra
+INFO	P3	content_or_cpc_minus	low	внедрение искусственного интеллекта правительство	66	внедрение искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	применение ии в бизнесе	66	применение ии в бизнесе	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	low	just ai компания	66	just ai	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	работа с ai агентами	66	ai агент	wordstat_extra
+INFO	P3	content_or_cpc_minus	low	внедрение искусственного интеллекта в государственное управление	65	внедрение искусственного интеллекта	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	ии для бизнеса обучение	65	ии для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	цель цифровой трансформации бизнеса	65	цифровая трансформация бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	информационные системы автоматизации бизнес процессов	65	автоматизация бизнес процессов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация систем управления компания	65	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	внедрение автоматизации в компании	65	автоматизация компании	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	ии для бизнеса бесплатно	64	ии для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	лучшие нейросети для бизнеса	64	нейросети для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	специалист по внедрению ии	64	специалист по внедрению ии	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	локальный запуск llm	64	локальная llm	wordstat_extra
+INDUSTRY_OTHER	P2	separate_vertical_test	low	внедрение искусственного интеллекта в образование	63	внедрение искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	автоматизация бизнес процессов организации	63	автоматизация бизнес процессов	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	обезличивание персональных данных 2025	63	обезличивание данных	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	стратегия внедрения ии	63	стратегия внедрения ии	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	проблемы внедрения искусственного интеллекта	62	внедрение искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	ооо компания автоматизация	62	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	технологии и процесс цифровой трансформации бизнеса	61	цифровая трансформация бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	исследование и разработка искусственного интеллекта	61	разработка искусственного интеллекта	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	как внедрить искусственный интеллект	61	внедрить искусственный интеллект	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	no stress just vibes ai irie	61	just ai	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	план внедрения искусственного интеллекта	60	внедрение искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	внедрение технологии искусственного интеллекта ии	60	внедрение искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ии для бизнес анализа	60	ии для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	внедрение генеративного ии	60	внедрение генеративного ии	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация предприятий компания	59	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	сотрудники цифровой экономики	59	цифровой сотрудник	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	цифровое обучение сотрудников	59	цифровой сотрудник	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	курсы по ai агентам	59	ai агент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	ии анализ сотрудников	59	ии сотрудник	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	влияние цифровой трансформации на бизнес	58	цифровая трансформация бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	автоматизация бизнес процессов задачи	58	автоматизация бизнес процессов	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	low	яндекс ai агенты	58	ai агент	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	low	внедрение искусственного интеллекта в бизнес процессы	57	внедрение искусственного интеллекта	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	обезличивание персональных данных изменения	57	обезличивание данных	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	платформа ai агентов	57	ai агент	wordstat_extra
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	цифровая трансформация бизнеса услуги	56	цифровая трансформация бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация продаж компания	56	автоматизация компании	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	yandex ai агент	56	ai агент	wordstat_extra
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	создание нейросети для бизнеса	55	нейросети для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	основы цифровой трансформации бизнеса	55	цифровая трансформация бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	автоматизация бизнес процессов проект	55	автоматизация бизнес процессов	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	low	just ai com	55	just ai	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	локальные ai агенты	55	ai агент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	ии помощник для бизнеса	54	ии для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	модель автоматизации бизнес процессов	54	автоматизация бизнес процессов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	эффективность автоматизации бизнес процессов	54	автоматизация бизнес процессов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	компания комплексная автоматизация	54	автоматизация компании	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	low	ai агент claude	54	ai агент	wordstat_extra
+INFO	P3	content_or_cpc_minus	low	методы внедрения искусственного интеллекта	53	внедрение искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	цифровая трансформация бизнес процессов предприятия	53	цифровая трансформация бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	цифровая трансформация финансового бизнеса	53	цифровая трансформация бизнеса	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	корпоративный чат бот	53	корпоративный чат бот	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	разработка связанная с искусственным интеллектом	52	разработка искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	1 автоматизация бизнес процессов	52	автоматизация бизнес процессов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	автоматизация бизнес процессов 1с	52	автоматизация бизнес процессов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	автоматизации управления документооборотом	52	автоматизация документооборота	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	обучение ии для руководителей	52	ии для руководителя	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	no stress just vibes ai irie fm	52	just ai	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	автоматизация систем электронного документооборота	51	автоматизация документооборота	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	требования и методы обезличивания персональных данных	51	обезличивание данных	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	ии сотрудник года	51	ии сотрудник	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	компании внедряющие искусственный интеллект	50	внедрить искусственный интеллект	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	llm ai агент	50	ai агент	wordstat_extra
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	low	предиктивное техническое обслуживание	50	предиктивное обслуживание	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	эффекты внедрения искусственного интеллекта	49	внедрение искусственного интеллекта	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	low	яндекс ии для бизнеса	49	ии для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	цифровая трансформация бизнеса москва	49	цифровая трансформация бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	автоматизация бизнес процессов с помощью	49	автоматизация бизнес процессов	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	обезличивание персональных данных приказ	49	обезличивание данных	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	центр цифровых сотрудников	49	цифровой сотрудник	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	разработка искусственного интеллекта компании	48	разработка искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	инструменты автоматизации бизнес процессов	48	автоматизация бизнес процессов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	цель автоматизация бизнес процессов	48	автоматизация бизнес процессов	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	ии для бизнеса 2026	47	ии для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	перспективы цифровой трансформации бизнеса	47	цифровая трансформация бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	методы разработки искусственного интеллекта	47	разработка искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	искусственный интеллект первые разработки	47	разработка искусственного интеллекта	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	внедрение llm	47	внедрение llm	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	обезличивание блокирование персональных данных	47	обезличивание данных	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для word документов	47	нейросеть для документов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	разработка чат ботов работа	47	разработка чат ботов	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	low	нейросети для бизнеса яндекс	46	нейросети для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	принципы разработки искусственного интеллекта	46	разработка искусственного интеллекта	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	ии для протокола совещания	46	ии протокол совещания	wordstat_extra
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	автоматизация бизнеса с помощью ии	45	автоматизация бизнеса с помощью ии	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация и цифровизация бизнес процессов	45	автоматизация бизнес процессов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	платформы автоматизации бизнес процессов	45	автоматизация бизнес процессов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	ии промпт инжиниринг	45	промпт инжиниринг	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	требования к обезличиванию персональных данных	45	обезличивание данных	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	специалист по внедрению систем искусственного интеллекта	44	внедрение искусственного интеллекта	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	внедрение искусственного интеллекта и машинного обучения	44	внедрение искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросети для бизнес процессов	44	нейросети для бизнеса	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	промты для бизнеса chatgpt	44	chatgpt для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	автоматизация и цифровая трансформация бизнеса	44	цифровая трансформация бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	современные разработки искусственного интеллекта	44	разработка искусственного интеллекта	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	обезличивание блокирование уничтожение персональных данных	44	обезличивание данных	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	внедрение ai в бизнес	44	ai внедрение в бизнес	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	low	внедрение ии в промышленность	43	внедрение ии в промышленность	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	ии для бизнеса и работы	43	ии для бизнеса	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	внедрение ии под ключ	43	ии под ключ	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация моделирования бизнес процессов	43	автоматизация бизнес процессов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	внедрение автоматизации документооборота	43	автоматизация документооборота	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	мультиагентные системы искусственного интеллекта	42	мультиагентные системы	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	разработка программы искусственного интеллекта	42	разработка искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	технологии разработки систем искусственного интеллекта	42	разработка искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	приложение разработки искусственного интеллекта	42	разработка искусственного интеллекта	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	1с документооборот автоматизация	42	автоматизация документооборота	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	в результате обезличивания персональных данных	42	обезличивание данных	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	обезличивание персональных данных действия	42	обезличивание данных	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	обезличивание персональных данных закон	42	обезличивание данных	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	проектирование систем ии	42	проектирование ии систем	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	внедрение ai агентов	42	ai агент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	стратегия внедрения искусственного интеллекта	41	внедрение искусственного интеллекта	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	разработка и обучение систем искусственного интеллекта	41	разработка искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	системы автоматизации бизнес процессов предприятия	41	автоматизация бизнес процессов	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	что такое автоматизация бизнес процессов rpa	41	автоматизация бизнес процессов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для оформления документов	41	нейросеть для документов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	проект цифровой сотрудник	41	цифровой сотрудник	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	электронный цифровой сотрудник	41	цифровой сотрудник	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	ai агенты 2026	41	ai агент	wordstat_extra
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	автоматизация ии сотрудник	41	ии сотрудник	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	ai нативная трансформация процесса создания программного обеспечения	41	ai трансформация	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	ии для бизнес аналитика	40	ии для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ии для бизнес аналитики	40	ии для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	инструменты ии для бизнеса	40	ии для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ии автоматизация для бизнеса	40	ии для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	этапы цифровой трансформации бизнеса	40	цифровая трансформация бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	цифровой трансформации бизнеса создать	40	цифровая трансформация бизнеса	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	цифровая трансформация бизнеса безопасность	40	цифровая трансформация бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	обезличивание персональных данных роскомнадзор	40	обезличивание данных	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	разработка чат бота приложение	40	разработка чат ботов	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	цели автоматизации компании	40	автоматизация компании	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	использование ai агентов	40	ai агент	wordstat_extra
+AI_SYSTEMS	P1	search_keyword_cluster	low	python ai агент	40	ai агент	wordstat_extra
+AI_SYSTEMS	P1	search_keyword_cluster	low	мультиагентная система ии	39	мультиагентные системы	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	направления автоматизации бизнес процессов	39	автоматизация бизнес процессов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	технология автоматизации документооборота	39	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	промпт инжиниринг ответы	39	промпт инжиниринг	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	база знаний чат бота	39	база знаний чат бот	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	результаты внедрения искусственного интеллекта	38	внедрение искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	искусственный интеллект для бизнес процессов	38	искусственный интеллект для бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	нейросети для бизнеса обучение	38	нейросети для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	методы цифровой трансформации бизнеса	38	цифровая трансформация бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	цифровая трансформация бизнес процессов организации	38	цифровая трансформация бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация основных бизнес процессов	38	автоматизация бизнес процессов	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	промпт инжиниринг обучение	38	промпт инжиниринг	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для генерации документов	38	нейросеть для документов	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	внедрение искусственного интеллекта в производство	37	внедрение искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ии бот для бизнеса	37	ии для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ии для малого бизнеса	37	ии для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	искусственный интеллект и цифровая трансформация бизнеса	37	цифровая трансформация бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	преимущества цифровой трансформации бизнеса	37	цифровая трансформация бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	трансформация бизнес моделей цифровой экономики	37	цифровая трансформация бизнеса	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	агент в мультиагентной системе	37	мультиагентные системы	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	разработка создания нейросеть под ключ	37	разработка нейросетей	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	автоматизация бизнес процессов производства	37	автоматизация бизнес процессов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	автоматизация процессов электронного документооборота	37	автоматизация документооборота	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	цифровой ассистент ии	37	цифровой ассистент	wordstat_extra
+INDUSTRY_OTHER	P2	separate_vertical_test	low	внедрение технологий искусственного интеллекта в здравоохранении	36	внедрение искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросети для работы и бизнеса	36	нейросети для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	цифровая трансформация бизнес информатики	36	цифровая трансформация бизнеса	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	проектирование и разработка искусственного интеллекта	36	разработка искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	crm автоматизация бизнес процессов	36	автоматизация бизнес процессов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	промпт инжиниринг работа	36	промпт инжиниринг	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	случаи обезличивания персональных данных	36	обезличивание данных	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	складская автоматизация компания	36	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация деятельности компании	36	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	группа компаний автоматизация	36	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	цифровой офис сотрудника	36	цифровой сотрудник	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	национальный план внедрения искусственного интеллекта	35	внедрение искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	искусственный интеллект для бизнеса внедрение	35	искусственный интеллект для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для бизнес презентации	35	нейросети для бизнеса	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	low	яндекс gpt для бизнеса	35	gpt для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	вайл цифровая трансформация бизнеса	35	цифровая трансформация бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	методы обезличивания персональных данных роскомнадзор	35	обезличивание данных	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для написания документов	35	нейросеть для документов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для редактирования документов	35	нейросеть для документов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	лига цифровой экономики сотрудники	35	цифровой сотрудник	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	примеры цифровой трансформации бизнеса	34	цифровая трансформация бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	цифровая трансформация малого и среднего бизнеса	34	цифровая трансформация бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	промпт инжиниринг бесплатно	34	промпт инжиниринг	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	техника промпт инжиниринга	34	промпт инжиниринг	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	курс по промпт инжинирингу	34	промпт инжиниринг	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	обезличивание блокирование удаление уничтожение персональных данных	34	обезличивание данных	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	цели обезличивания персональных данных	34	обезличивание данных	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	основы разработки чат ботов	34	разработка чат ботов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	платформа ии для бизнеса	33	ии для бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	цифровая трансформация бизнеса обучение	33	цифровая трансформация бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	цифровая трансформация бизнеса статья	33	цифровая трансформация бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	разработка нейросетей обучение	33	разработка нейросетей	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация внутренних бизнес процессов	33	автоматизация бизнес процессов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	интеграция и автоматизация бизнес процессов	33	автоматизация бизнес процессов	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	методы обезличивания персональных данных 2025	33	обезличивание данных	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	цифровая подпись сотрудники	33	цифровой сотрудник	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	память ai агентов	33	ai агент	wordstat_extra
+INFO	P3	content_or_cpc_minus	low	как работает ai агент	33	ai агент	wordstat_extra
+NEGATIVE	P0	minus_candidate	low	курс по созданию ai агентов	33	ai агент	wordstat_extra
+INFO	P3	content_or_cpc_minus	low	исследование цифровая трансформация бизнеса	32	цифровая трансформация бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	цифровой трансформации бизнеса создать более	32	цифровая трансформация бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	цифровой трансформации бизнеса создать более эффективные	32	цифровая трансформация бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	разработка систем автоматизации бизнес процессов	32	автоматизация бизнес процессов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	автоматизация бизнес процесса клиента	32	автоматизация бизнес процессов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для юридических документов	32	нейросеть для документов	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	чат бот для бизнеса макс	32	чат бот для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация россией компании	32	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	лига цифровой экономики отзывы сотрудников	32	цифровой сотрудник	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	цифровая лига отзывы сотрудников	32	цифровой сотрудник	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	low	https just ai com	32	just ai	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	разработчик ai агентов	32	ai агент	wordstat_extra
+AI_SYSTEMS	P1	search_keyword_cluster	low	автономные ai агенты	32	ai агент	wordstat_extra
+AI_SYSTEMS	P1	search_keyword_cluster	low	битрикс24 ai агенты	32	ai агент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	нейросотрудник	32	нейросотрудник	wordstat_extra
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	ai трансформация бизнеса	32	ai трансформация	wordstat_extra
+INDUSTRY_OTHER	P2	separate_vertical_test	low	внедрение искусственного интеллекта в медицине	31	внедрение искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	индекс внедрения искусственного интеллекта	31	внедрение искусственного интеллекта	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	интеграция ии в бизнес	31	интеграция ии в бизнес	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	модели и технологии цифровой трансформации бизнеса	31	цифровая трансформация бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ai разработка искусственный интеллект	31	разработка искусственного интеллекта	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	разработка rag систем	31	rag система	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	комплексная автоматизация бизнес процессов	31	автоматизация бизнес процессов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	ит автоматизация бизнес процессов	31	автоматизация бизнес процессов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	варианты автоматизации бизнес процессов	31	автоматизация бизнес процессов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	электронный документ автоматизация документооборота	31	автоматизация документооборота	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	как внедрить нейросеть	31	внедрить нейросеть	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	уничтожение и обезличивание персональных данных	31	обезличивание данных	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	компания на рынке автоматизации	31	автоматизация компании	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	корпоративный chatgpt	31	корпоративный chatgpt	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	алиса ai агент исследовать	31	ai агент	wordstat_extra
+NEGATIVE	P0	minus_candidate	low	создание ai агентов обучение	31	ai агент	wordstat_extra
+INFO	P3	content_or_cpc_minus	low	примеры внедрения искусственного интеллекта	30	внедрение искусственного интеллекта	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	нейросеть для бизнеса бесплатно	30	нейросети для бизнеса	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	мультиагентные интеллектуальные системы	30	мультиагентные системы	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	создание rag системы	30	rag система	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	система автоматизации управления документооборотом	30	автоматизация документооборота	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	промпт инжиниринг скачать	30	промпт инжиниринг	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	персональные данные полученные в результате обезличивания	30	обезличивание данных	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для текстовых документов	30	нейросеть для документов	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	автоматизация компании пример	30	автоматизация компании	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	ai агенты какие есть	30	ai агент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	цифровой трансформации ai	30	ai трансформация	wordstat_extra
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	ии для бизнеса программа	29	ии для бизнеса	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	разработка ии для бизнеса	29	ии для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	использование ии для бизнеса	29	ии для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	разработка создания искусственный интеллект под ключ	29	разработка искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация процесса бизнес планирования	29	автоматизация бизнес процессов	wordstat_existing
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	low	системы автоматизация производства компании	29	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация процесса работы в компании	29	автоматизация компании	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	цифровой ассистент москва	29	цифровой ассистент	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	low	внедрение искусственного интеллекта в системы автоматизации	28	внедрение искусственного интеллекта	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для бизнеса онлайн	28	нейросети для бизнеса	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	ии агент под ключ	28	ии под ключ	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	разработка мультиагентных систем	28	мультиагентные системы	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	проектирование и разработка систем искусственного интеллекта	28	разработка искусственного интеллекта	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	автоматизация бизнес процессов основы	28	автоматизация бизнес процессов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	руководитель автоматизации бизнес процессов	28	автоматизация бизнес процессов	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	автоматизация бизнес процессы курсы	28	автоматизация бизнес процессов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	программное обеспечение автоматизации бизнес процессов	28	автоматизация бизнес процессов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	crm системы автоматизация бизнес процессов	28	автоматизация бизнес процессов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для оформления документов в ворд	28	нейросеть для документов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	цифровой двойник сотрудника	28	цифровой сотрудник	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	цифровой профиль сотрудника	28	цифровой сотрудник	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	цифровой след сотрудника	28	цифровой сотрудник	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	just me ai	28	just ai	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	создаем ии сотрудников	28	ии сотрудник	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	low	внедрение ии в бизнес под ключ	27	внедрение ии в бизнес	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	внедрение ии агентов в бизнес	27	внедрение ии в бизнес	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	преимущества внедрения искусственного интеллекта	27	внедрение искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	оценка эффективности внедрения искусственного интеллекта	27	внедрение искусственного интеллекта	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	внедрение искусственного интеллекта в бизнес практику	27	внедрение искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ии чаты для бизнеса	27	ии для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	автоматизация бизнес процессов управления предприятием	27	автоматизация бизнес процессов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	описание бизнес процесс автоматизация	27	автоматизация бизнес процессов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	эффективность автоматизации документооборота	27	автоматизация документооборота	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	обработка персональных данных обезличивание блокирование уничтожение	27	обезличивание данных	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	компании автоматизация складов	27	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация внутренних процессов компании	27	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация строительной компании	27	автоматизация компании	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	как внедрить ии в компании	27	как внедрить ии в компанию	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	примеры ai агентов	27	ai агент	wordstat_extra
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	low	ai агенты сбера	27	ai агент	wordstat_extra
+AI_SYSTEMS	P1	search_keyword_cluster	low	n8n ai агент	27	ai агент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	промты для ии бизнес	26	ии для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ии сервисы для бизнеса	26	ии для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ии для развития бизнеса	26	ии для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для бизнес плана	26	нейросети для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросети для бизнеса и управленцев	26	нейросети для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	искусственный интеллект и автоматизация бизнес процессов	26	автоматизация бизнес процессов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	автоматизация бизнес процессов продаж	26	автоматизация бизнес процессов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	автоматизация бизнес процессов предназначена для	26	автоматизация бизнес процессов	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	требования автоматизации бизнес процессов	26	автоматизация бизнес процессов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	лучшая нейросеть для работы с документами	26	нейросеть для документов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	компания центр автоматизации	26	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	цифровой офис сотрудника рсхб	26	цифровой сотрудник	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	для видео агенты ai	26	ai агент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	агенты open ai	26	ai агент	wordstat_extra
+AI_SYSTEMS	P1	search_keyword_cluster	low	ai агент cloud	26	ai агент	wordstat_extra
+AI_SYSTEMS	P1	search_keyword_cluster	low	корпоративный ии ассистент	26	корпоративный ии ассистент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	ии сокращение сотрудников	26	ии сотрудник	wordstat_extra
+INFO	P3	content_or_cpc_minus	low	этапы внедрения искусственного интеллекта	25	внедрение искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ии для создания бизнес плана	25	ии для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	создать ии для бизнеса	25	ии для бизнеса	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	rag системы от теории к практике	25	rag система	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	интеллект промпт инжиниринг	25	промпт инжиниринг	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	искусственный интеллект промпт инжиниринг	25	промпт инжиниринг	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	промпт инжиниринг пример	25	промпт инжиниринг	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	промпт инжиниринг примеры промптов	25	промпт инжиниринг	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация erp компании	25	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	информационные системы для автоматизации компании	25	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация компаний москва	25	автоматизация компании	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	купить ai агента	25	ai агент	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	low	настройка ai агентов	25	ai агент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	ии дороже сотрудников	25	ии сотрудник	wordstat_extra
+INDUSTRY_OTHER	P2	separate_vertical_test	low	внедрение искусственного интеллекта в банки	24	внедрение искусственного интеллекта	wordstat_existing
+INDUSTRY_OTHER	P2	separate_vertical_test	low	внедрение технологий искусственного интеллекта в образование	24	внедрение искусственного интеллекта	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	ии чат бот для бизнеса	24	ии для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ии контент для бизнеса	24	ии для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	ии для бизнеса 2025	24	ии для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	лучшие нейросети для разработки	24	разработка нейросетей	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	средства разработки искусственного интеллекта	24	разработка искусственного интеллекта	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	порядок обезличивания персональных данных	24	обезличивание данных	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	стоимость разработки чат бота	24	разработка чат ботов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	первая компания автоматизации	24	автоматизация компании	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	цифровой сотрудник скачать	24	цифровой сотрудник	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	цифровые навыки сотрудника	24	цифровой сотрудник	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	ai агенты для автоматизации	24	ai агент	wordstat_extra
+INFO	P3	content_or_cpc_minus	low	топ ai агентов	24	ai агент	wordstat_extra
+AI_SYSTEMS	P1	search_keyword_cluster	low	ai агенты продаж	24	ai агент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	внедрение ai в бизнес процессы	24	ai внедрение в бизнес	wordstat_extra
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	локальная установка llm	24	локальная llm	wordstat_extra
+NEGATIVE	P0	minus_candidate	low	нейросети для бизнеса скачать	23	нейросети для бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	искусственный интеллект разработка и обучение интеллектуальных систем	23	разработка искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	подходы к разработке искусственного интеллекта	23	разработка искусственного интеллекта	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	автоматизация делопроизводства и документооборота	23	автоматизация документооборота	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	логотипы для компаний нейросеть	23	нейросеть для компании	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для работы с документами word	23	нейросеть для документов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	чат бот для малого бизнеса	23	чат бот для бизнеса	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	внедрение искусственного интеллекта на предприятии	23	внедрение искусственного интеллекта на предприятии	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	цифровой сотрудник приложение	23	цифровой сотрудник	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	ai агенты для программирования	23	ai агент	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	low	внедрение ии в процессы компании	22	внедрение ии в компанию	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ии для бизнес проектов	22	ии для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ии услуги для бизнеса	22	ии для бизнеса	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	gpt чат для бизнеса	22	gpt для бизнеса	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	мультиагентные системы llm	22	мультиагентные системы	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	разработка и внедрение систем искусственного интеллекта	22	разработка искусственного интеллекта	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	обеспечение автоматизации документооборота	22	автоматизация документооборота	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	обучение разработчиков нейросетей	22	разработчик нейросетей	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	обезличивание персональных данных постановление правительства	22	обезличивание данных	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	псевдонимизация данных	22	псевдонимизация данных	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	нейросеть для работы с документами бесплатно	22	нейросеть для документов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	цифровая платформа для сотрудников	22	цифровой сотрудник	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	цифровой опыт сотрудника	22	цифровой сотрудник	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	сравнение локальных llm	22	локальная llm	wordstat_extra
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	русская llm локально	22	локальная llm	wordstat_extra
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	возможности ии для бизнеса	21	ии для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	нейросети для бизнеса 2026	21	нейросети для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	промты для нейросети для бизнеса	21	нейросети для бизнеса	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	rag система ии	21	rag система	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	автоматизация документооборота компании	21	автоматизация документооборота	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация с помощью искусственного интеллекта	21	автоматизация с искусственным интеллектом	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	обезличивание персональных данных статья	21	обезличивание данных	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	чат боты маркетинг для малого бизнеса	21	чат бот для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	программы для автоматизации компании	21	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация управляющих компаний	21	автоматизация компании	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	цифровой офис сотрудника рсхб скачать	21	цифровой сотрудник	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ии бот сотрудник	21	ии сотрудник	wordstat_extra
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	создание ии сотрудника	21	ии сотрудник	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	low	разработка ии сотрудников	21	ии сотрудник	wordstat_extra
+INFO	P3	content_or_cpc_minus	low	как запустить llm локально	21	локальная llm	wordstat_extra
+INFO	P3	content_or_cpc_minus	low	ии для бизнеса какой лучше	20	ии для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ии для бизнес идей	20	ии для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	искусственный интеллект в разработке программного обеспечения	20	разработка искусственного интеллекта	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	автоматизация документооборота в организации	20	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	автоматизация анализа документооборота	20	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	автоматизация документооборота предприятия	20	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	задачи автоматизации документооборота	20	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	промпт инжиниринг для llm	20	промпт инжиниринг	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для обработки документов	20	нейросеть для документов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	лучшая компания по ии автоматизации в стоматологии	20	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	внедрить цифрового сотрудника	20	цифровой сотрудник	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	ai агент gpt	20	ai агент	wordstat_extra
+INFO	P3	content_or_cpc_minus	low	ии сотрудники как создавался	20	ии сотрудник	wordstat_extra
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	технологии для бизнеса с ии	19	ии для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ии для оптимизации бизнес процессов	19	ии для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ии маркетинг для бизнеса	19	ии для бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	искусственный интеллект для бизнеса обучение	19	искусственный интеллект для бизнеса	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	проблемы мультиагентных систем	19	мультиагентные системы	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	разработка искусственного интеллекта и когнитивных систем	19	разработка искусственного интеллекта	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	основы промпт инжиниринга	19	промпт инжиниринг	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	водолазский промпт инжиниринг	19	промпт инжиниринг	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	внедрение искусственного интеллекта на производстве	19	искусственный интеллект на производстве	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	закон о обезличивании данных	19	обезличивание данных	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	обезличивание данных в 1с	19	обезличивание данных	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	системы обезличивания данных	19	обезличивание данных	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для создания ворд документов	19	нейросеть для документов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	лучшая нейросеть для анализа документов	19	нейросеть для документов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для заполнения документов	19	нейросеть для документов	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	нейросеть для презентаций по документу	19	нейросеть для документов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	ии для руководителя проектов	19	ии для руководителя	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	z ai агент	19	ai агент	wordstat_extra
+NEGATIVE	P0	minus_candidate	low	ai агент скачать	19	ai агент	wordstat_extra
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для производства	19	нейросеть для производства	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	low	создание ии агентов для бизнеса	18	ии для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	база ии для бизнеса	18	ии для бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	искусственный интеллект для бизнеса бесплатно	18	искусственный интеллект для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	разработка дизайна нейросетью	18	разработка нейросетей	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть разработка проекта	18	разработка нейросетей	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	платформы для разработки искусственного интеллекта	18	разработка искусственного интеллекта	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	агенты искусственного интеллекта руководство по разработке	18	разработка искусственного интеллекта	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	система retrieval augmented generation rag	18	rag система	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	автоматизация бумажного документооборота	18	автоматизация документооборота	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	промпт инжиниринг книги	18	промпт инжиниринг	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	согласие на обезличивание персональных данных	18	обезличивание данных	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	обезличивание персональных данных фз	18	обезличивание данных	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	ии для документооборота	18	ии для документооборота	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация торговых компаний	18	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	компания газпром автоматизация	18	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация внедрение технологии компания	18	автоматизация компании	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	какой ai агент лучше	18	ai агент	wordstat_extra
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	локальное развертывание llm	18	локальная llm	wordstat_extra
+INFO	P3	content_or_cpc_minus	low	локальные llm 2026	18	локальная llm	wordstat_extra
+NEGATIVE	P0	minus_candidate	low	ии для бизнес плана бесплатно	17	ии для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	как использовать ии для бизнеса	17	ии для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	ии сотрудники для бизнеса	17	ии для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросети для бизнеса практикум	17	нейросети для бизнеса	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	low	нейросети для бизнеса яндекс практикум	17	нейросети для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	методы промпт инжиниринг	17	промпт инжиниринг	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	промпт инжиниринг zero shot	17	промпт инжиниринг	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	специалист по внедрению ии вакансии	17	специалист по внедрению ии	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	обязательное обезличивание персональных данных	17	обезличивание данных	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	средства обезличивания персональных данных	17	обезличивание данных	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	правила обезличивания персональных данных	17	обезличивание данных	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	что значит обезличивание данных	17	обезличивание данных	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	что значит обезличивание персональных данных	17	обезличивание данных	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для перевода документов	17	нейросеть для документов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	технологии автоматизация бизнес компания	17	автоматизация компании	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	использование нейросетей в бизнесе	17	использование нейросетей в бизнесе	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	on premise llm	17	on premise llm	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	low	just ai платформа	17	just ai	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	low	just ai copilot	17	just ai	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	цифровые виртуальные ассистенты	17	цифровой ассистент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	платформа цифровых ассистентов	17	цифровой ассистент	wordstat_extra
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	локальная llm для программирования	17	локальная llm	wordstat_extra
+INFO	P3	content_or_cpc_minus	low	как развернуть llm локально	17	локальная llm	wordstat_extra
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	чат бот по документам	17	чат бот по документам	wordstat_extra
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	ии для бизнеса в россии	16	ии для бизнеса	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	промты для gpt бизнес	16	gpt для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	ии ассистент для руководителя	16	ии ассистент руководителя	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	разработка федерального закона об искусственном интеллекте	16	разработка искусственного интеллекта	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	безопасны ли rag системы	16	rag система	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	автоматизация документооборот бизнес процессы	16	автоматизация документооборота	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	обезличивание персональных данных в 2026	16	обезличивание данных	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	положение об обезличивании персональных данных	16	обезличивание данных	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	нейросеть для создания презентаций по документу	16	нейросеть для документов	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	разработка чат ботов в макс	16	разработка чат ботов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	применение ии в бизнес процессах	16	применение ии в бизнесе	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	ии агенты новые сотрудники	16	ии сотрудник	wordstat_extra
+INFO	P3	content_or_cpc_minus	low	лучшие локальные llm модели	16	локальная llm	wordstat_extra
+INFO	P3	content_or_cpc_minus	low	топ локальных llm	16	локальная llm	wordstat_extra
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	внедрение нейросетей в бизнес	15	внедрение нейросетей в бизнес	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	внедрение ии на производстве	15	внедрение ии на производстве	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	автоматизация с помощью нейросетей	15	автоматизация с помощью нейросетей	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	искусственный интеллект для создания бизнеса	15	искусственный интеллект для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросети для бизнес аналитика	15	нейросети для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для бизнес аналитики	15	нейросети для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	нейросети для бизнеса книга	15	нейросети для бизнеса	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	применение мультиагентных систем	15	мультиагентные системы	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	этапы разработки искусственного интеллекта	15	разработка искусственного интеллекта	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	средства автоматизации документооборота	15	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	автоматизация делопроизводства электронный документооборот	15	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	системы автоматизации делопроизводства и документооборота	15	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	цифры промпт инжиниринг	15	промпт инжиниринг	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	разработчик искусственного интеллекта и нейросетей	15	разработчик нейросетей	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация процессов с помощью искусственного интеллекта	15	автоматизация с искусственным интеллектом	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	акт обезличивания персональных данных	15	обезличивание данных	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	обезличивание перс данных	15	обезличивание данных	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	сфера обезличивание данных	15	обезличивание данных	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	обезличивание персональных данных документы	15	обезличивание данных	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для создания документов word	15	нейросеть для документов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросети для пересказа документов	15	нейросеть для документов	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	разработка ии агентов для бизнеса	15	ии агенты для бизнеса	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	чат бот создать для бизнеса	15	чат бот для бизнеса	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	разработка и внедрение чат ботов	15	разработка чат ботов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация технологических процессов компании	15	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ооо компания системы автоматизации	15	автоматизация компании	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	курсы ии для руководителей	15	ии для руководителя	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	генеративный ии для руководителей	15	ии для руководителя	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	агент ии разработка курс	15	разработка ии агентов	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	rag внедрение	15	внедрение rag	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	руководитель цифровых сотрудников	15	цифровой сотрудник	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	just done ai	15	just ai	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	цифровой ассистент преподавателя	15	цифровой ассистент	wordstat_extra
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	цифровой ассистент помощник	15	цифровой ассистент	wordstat_extra
+NEGATIVE	P0	minus_candidate	low	обучение ии уволили сотрудников	15	ии сотрудник	wordstat_extra
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	компьютер для локальной llm	15	локальная llm	wordstat_extra
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	локальная llm для генерации изображений	15	локальная llm	wordstat_extra
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	ии для ведения протокола совещания	15	ии протокол совещания	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	искусственный интеллект для автоматизации бизнес процессов	14	искусственный интеллект для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросети для бизнеса отзывы	14	нейросети для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нетология нейросети для бизнеса	14	нейросети для бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	ии обучение внедрение ai под ключ	14	ии под ключ	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	создание ии ассистента для бизнеса	14	ии ассистент для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	ии нейросеть разработка	14	разработка нейросетей	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	разработка нейросетей компания	14	разработка нейросетей	wordstat_existing
+INDUSTRY_OTHER	P2	separate_vertical_test	low	разработки искусственного интеллекта в медицине	14	разработка искусственного интеллекта	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	курсы разработки искусственного интеллекта	14	разработка искусственного интеллекта	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	методы разработки систем искусственного интеллекта	14	разработка искусственного интеллекта	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	rag система ai	14	rag система	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	скачать промпт инжиниринг практическое руководство владимир водолазский	14	промпт инжиниринг	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	процедура обезличивания персональных данных	14	обезличивание данных	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	обезличивание персональных данных 996	14	обезличивание данных	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	система обезличивания персональных данных	14	обезличивание данных	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для составления документов	14	нейросеть для документов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для фото на документы	14	нейросеть для документов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для форматирования документов	14	нейросеть для документов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	max для бизнеса чат бот	14	чат бот для бизнеса	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	чат боты для тг бизнес	14	чат бот для бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	разработка чат ботов обучение	14	разработка чат ботов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация маркетинга компании	14	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	компании занимающиеся автоматизацией процессов	14	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	автоматизация логистических компаний	14	автоматизация компании	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	цифровая грамотность сотрудников	14	цифровой сотрудник	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	цифровое рабочее место сотрудника	14	цифровой сотрудник	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	запуск llm моделей локально	14	локальная llm	wordstat_extra
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	локальные llm mac mini	14	локальная llm	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	low	внедрение ии в бизнес решения	13	внедрение ии в бизнес	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	интеграция ии в бизнес процессы	13	интеграция ии в бизнес	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	автоматизация бизнес процессов с помощью ии	13	автоматизация бизнеса с помощью ии	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	chat gpt для бизнеса	13	gpt для бизнеса	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	лаборатория мультиагентных систем	13	мультиагентные системы	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	архитектура мультиагентной системы	13	мультиагентные системы	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть новые разработки	13	разработка нейросетей	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	кто занимается разработкой искусственного интеллекта	13	разработка искусственного интеллекта	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	разработка искусственного интеллекта на python	13	разработка искусственного интеллекта	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	комплексная автоматизация документооборот	13	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	системы автоматизации документооборота организации	13	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	автоматизация внутреннего документооборота	13	автоматизация документооборота	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	компания внедрила нейросеть	13	внедрить нейросеть	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	фз 152 обезличивание персональных данных	13	обезличивание данных	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	согласие на обработку персональных данных обезличивание	13	обезличивание данных	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для оформления документов по госту	13	нейросеть для документов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	мах для бизнеса чат бот	13	чат бот для бизнеса	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	готовые ии агенты для разработки	13	разработка ии агентов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	нейросеть протокол совещаний	13	протокол совещания нейросеть	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	электронная цифровая подпись сотрудника	13	цифровой сотрудник	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ооо цифровые отзывы сотрудников	13	цифровой сотрудник	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	бки через цифрового ассистента	13	цифровой ассистент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	искусственный интеллект для среднего бизнеса	12	искусственный интеллект для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	искусственный интеллект для вашего бизнеса	12	искусственный интеллект для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	инструменты для разработки искусственного интеллекта	12	разработка искусственного интеллекта	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	история разработки искусственного интеллекта	12	разработка искусственного интеллекта	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	цель автоматизации документооборота	12	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	автоматизация технического документооборота	12	автоматизация документооборота	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	введение в промпт инжиниринг	12	промпт инжиниринг	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	low	промпт инжиниринг яндекс	12	промпт инжиниринг	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	нейросети разработчик работа	12	разработчик нейросетей	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть название для компании	12	нейросеть для компании	wordstat_existing
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	low	применение искусственного интеллекта на производстве	12	искусственный интеллект на производстве	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	обезличивание персональных данных приказ 996	12	обезличивание данных	wordstat_existing
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	образцы обезличивания данных	12	обезличивание данных	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	бесплатная нейросеть для создания документов	12	нейросеть для документов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для проверки документов	12	нейросеть для документов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	цифровой мониторинг сотрудников	12	цифровой сотрудник	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	low	gigachat для бизнеса	12	gigachat для бизнеса	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	low	just ai conversations	12	just ai	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	ии для поиска сотрудников	12	ии сотрудник	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	витрина ии сервисов для сотрудников правительства москвы	12	ии сотрудник	wordstat_extra
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	локальная llm на андроид	12	локальная llm	wordstat_extra
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	llm без цензуры локально	12	локальная llm	wordstat_extra
+NEGATIVE	P0	minus_candidate	low	бесплатные локальные llm	12	локальная llm	wordstat_extra
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	видеокарта для локальной llm	12	локальная llm	wordstat_extra
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	low	предиктивное обслуживание ии	12	предиктивное обслуживание	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	искусственный интеллект для малого бизнеса	11	искусственный интеллект для бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	искусственный интеллект для бизнеса курсы	11	искусственный интеллект для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	искусственный интеллект для бизнес аналитики	11	искусственный интеллект для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	искусственный интеллект для бизнес плана	11	искусственный интеллект для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	топ нейросетей для бизнеса	11	нейросети для бизнеса	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	эмерджентные мультиагентные системы	11	мультиагентные системы	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	проект автоматизации документооборота	11	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	система электронного документооборота автоматизации делопроизводства	11	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	1с документооборот комплексная автоматизация	11	автоматизация документооборота	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	пример задачи промпт инжиниринга	11	промпт инжиниринг	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	навыки промпт инжиниринга	11	промпт инжиниринг	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	промпт инжиниринг вакансии	11	промпт инжиниринг	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	создание нейросети для компании	11	нейросеть для компании	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	голосовой ии ассистент на пк	11	голосовой ии ассистент	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	чат боты телеграм для бизнеса	11	чат бот для бизнеса	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	разработка чат бота python	11	разработка чат ботов	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	ии агент для руководителя	11	ии для руководителя	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	цифровое обучение сотрудников компании	11	цифровой сотрудник	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	цифровой домовой отзывы сотрудников	11	цифровой сотрудник	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	цифровой ассистент макс	11	цифровой ассистент	wordstat_extra
+INFO	P3	content_or_cpc_minus	low	как поменять цифрового ассистента	11	цифровой ассистент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	low	ии для анализа работы сотрудников	11	ии сотрудник	wordstat_extra
+SECURITY_PRIVACY	P1	keyword_and_ad_message	low	рейтинг локальных llm	11	локальная llm	wordstat_extra
+NEGATIVE	P0	minus_candidate	low	внедрение ии в бизнес обучение	10	внедрение ии в бизнес	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	кейс внедрения ии в бизнес	10	внедрение ии в бизнес	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	low	разработка искусственного интеллекта для бизнеса	10	искусственный интеллект для бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	искусственный интеллект для бизнеса скачать	10	искусственный интеллект для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для генерации бизнеса	10	нейросети для бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	курс нейросети для бизнеса отзывы	10	нейросети для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросети для бизнеса маркетинга	10	нейросети для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросети для бизнеса и управленцев нетология	10	нейросети для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для бизнес анализа	10	нейросети для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросети для автоматизации бизнеса	10	нейросети для бизнеса	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	почему мультиагентные системы называются мультиагентными системами	10	мультиагентные системы	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	бесплатные нейросети для разработки	10	разработка нейросетей	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	low	нейросеть для разработки кода	10	разработка нейросетей	wordstat_existing
+AI_SYSTEMS	P1	search_keyword_cluster	low	построение rag системы	10	rag система	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	автоматизация процессов документооборота в организации	10	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	автоматизация документооборота в логистике	10	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	автоматизации кадрового документооборота	10	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	преимущество автоматизации документооборота	10	автоматизация документооборота	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	промпт инжиниринг статьи	10	промпт инжиниринг	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	разработчик создал нейросеть	10	разработчик нейросетей	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	курс разработчик нейросетей	10	разработчик нейросетей	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	как внедрить искусственный интеллект в свой бизнес	10	внедрить искусственный интеллект	wordstat_existing
+INFO	P3	content_or_cpc_minus	low	нейросеть для изменения документов	10	нейросеть для документов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	чат боты для бизнеса в телеграмм	10	чат бот для бизнеса	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	услуга разработки чат бота	10	разработка чат ботов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	проект разработка чат бота	10	разработка чат ботов	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	chatgpt разработка компании openai чат бот бесплатно	10	разработка чат ботов	wordstat_existing
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	low	ии решения для производства	10	ии для производства	wordstat_existing
+OTHER_REVIEW	P3	manual_review	low	цифровые технологии обеспечивающие мобильность работы сотрудников организации	10	цифровой сотрудник	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	low	just ai agent platform cloud	10	just ai	wordstat_existing
+NEGATIVE	P0	minus_candidate	low	узнать свое бки через цифрового ассистента	10	цифровой ассистент	wordstat_extra
+INFO	P3	content_or_cpc_minus	low	как использовать llm локально	10	локальная llm	wordstat_extra
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	low	протокол совещания с помощью ии	10	ии протокол совещания	wordstat_extra
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	low	внедрение системы предиктивного обслуживания	10	предиктивное обслуживание	wordstat_extra
+NEGATIVE	P0	minus_candidate	near_zero	использование нейросетей для бизнеса обучение очно москва	9	нейросети для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросети и ии для бизнеса и маркетинга	9	нейросети для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для разработки сайтов	9	разработка нейросетей	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	near_zero	разработка нейросети с помощью нейросети	9	разработка нейросетей	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть разработки кода на виндовс гитхаб	9	разработка нейросетей	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	подходы к разработке систем искусственного интеллекта	9	разработка искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	искусственный интеллект разработка игр	9	разработка искусственного интеллекта	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	этапы разработки систем искусственного интеллекта	9	разработка искусственного интеллекта	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	искусственный интеллект разработки в мире	9	разработка искусственного интеллекта	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	системы автоматизации документооборота предприятия	9	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	ии автоматизация документооборота	9	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	автоматизация документооборота в маркировке	9	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	автоматизация электронного документооборота с самозанятыми	9	автоматизация документооборота	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	бесплатные курсы по промпт инжинирингу	9	промпт инжиниринг	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	урок цифр промпт инжиниринг	9	промпт инжиниринг	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	создать логотип для компании нейросеть	9	нейросеть для компании	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	astra голосовой ии ассистент	9	голосовой ии ассистент	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для больших документов	9	нейросеть для документов	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	топ нейросетей для документов	9	нейросеть для документов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для подготовки документов	9	нейросеть для документов	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	создать ии агента для бизнеса	9	ии агенты для бизнеса	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	разработка чат ботов telegram	9	разработка чат ботов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	разработка чат бота в телеграм	9	разработка чат ботов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	ии помощник для руководителя	9	ии для руководителя	wordstat_existing
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	near_zero	применение ии для производства	9	ии для производства	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	цифровые технологии отзывы сотрудников	9	цифровой сотрудник	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	цифровой ассистент робот макс	9	цифровой ассистент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	near_zero	увольнение сотрудников из за ии	9	ии сотрудник	wordstat_extra
+INFO	P3	content_or_cpc_minus	near_zero	лучшие локальные llm для кодинга	9	локальная llm	wordstat_extra
+SECURITY_PRIVACY	P2	keyword_and_ad_message	near_zero	openclaw с локальной llm	9	локальная llm	wordstat_extra
+SECURITY_PRIVACY	P2	keyword_and_ad_message	near_zero	llm локально на телефон	9	локальная llm	wordstat_extra
+INFO	P3	content_or_cpc_minus	near_zero	как установить llm локально	9	локальная llm	wordstat_extra
+INFO	P3	content_or_cpc_minus	near_zero	предиктивное обслуживание оборудования это	9	предиктивное обслуживание	wordstat_extra
+NEGATIVE	P0	minus_candidate	near_zero	курс по внедрению ии в бизнес	8	внедрение ии в бизнес	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть искусственный интеллект для бизнеса	8	искусственный интеллект для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	инструменты искусственного интеллекта для бизнеса	8	искусственный интеллект для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	лучшая нейросеть для бизнес плана	8	нейросети для бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	курсы ии и нейросетям для бизнеса	8	нейросети для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	нейросети для бизнеса книга вконтакте	8	нейросети для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	ии решения для бизнеса разработка	8	ии решения для бизнеса	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	near_zero	разработка нейросетей python	8	разработка нейросетей	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для разработки визитки	8	разработка нейросетей	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросети для разработки игр	8	разработка нейросетей	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	подготовка к автоматизации документооборота	8	автоматизация документооборота	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	промпт инжиниринг книга скачать	8	промпт инжиниринг	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	разработчик нейросетей вакансии	8	разработчик нейросетей	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	консультант по искусственному интеллекту	8	консультант по искусственному интеллекту	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для анализа компании	8	нейросеть для компании	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	ищем компании с разметкой для нейросети	8	нейросеть для компании	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	псевдонимизация персональных данных это	8	псевдонимизация данных	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	нейросеть для работы с документами word бесплатно	8	нейросеть для документов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для написания юридических документов	8	нейросеть для документов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для документов онлайн	8	нейросеть для документов	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	бесплатная нейросеть для анализа документов	8	нейросеть для документов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для составления юридических документов	8	нейросеть для документов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	анализ документов с помощью нейросети	8	анализ документов нейросетью	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	ии агенты для бизнеса обучение	8	ии агенты для бизнеса	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	разработка чат ботов с искусственным интеллектом	8	разработка чат ботов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	технологии разработки чат ботов	8	разработка чат ботов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	автоматизация бизнеса n8n	8	n8n автоматизация бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	книга цифровые сотрудники	8	цифровой сотрудник	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	near_zero	just ai jaicp	8	just ai	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	just ai вакансии	8	just ai	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	цифровой ассистент xiaomi	8	цифровой ассистент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	near_zero	ооо цифровые ассистенты	8	цифровой ассистент	wordstat_extra
+INFO	P3	content_or_cpc_minus	near_zero	лучшие локальные llm 2026	8	локальная llm	wordstat_extra
+SECURITY_PRIVACY	P2	keyword_and_ad_message	near_zero	локальная llm какую выбрать	8	локальная llm	wordstat_extra
+SECURITY_PRIVACY	P2	keyword_and_ad_message	near_zero	сервер для локальной llm	8	локальная llm	wordstat_extra
+SECURITY_PRIVACY	P2	keyword_and_ad_message	near_zero	локальная llm для 1с	8	локальная llm	wordstat_extra
+OTHER_REVIEW	P3	manual_review	near_zero	компании по внедрению ии в бизнес	7	внедрение ии в бизнес	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	искусственный интеллект для бизнеса онлайн	7	искусственный интеллект для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для бизнес проектов	7	нейросети для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для продвижения бизнеса	7	нейросети для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	skillbox нейросети для бизнеса	7	нейросети для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для рекламы бизнеса	7	нейросети для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	ии для решения бизнес задач	7	ии решения для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для разработки приложений	7	разработка нейросетей	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	rag системы от теории к практике скачать	7	rag система	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	как сделать rag систему	7	rag система	wordstat_existing
+SECURITY_PRIVACY	P2	keyword_and_ad_message	near_zero	автоматизация документооборота по пожарной безопасности на складе	7	автоматизация документооборота	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	урок цифры интеллект промпт инжиниринг	7	промпт инжиниринг	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	урок цифры искусственный интеллект промпт инжиниринг	7	промпт инжиниринг	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	обучение промпт инжинирингу бесплатно	7	промпт инжиниринг	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	лучшие нейросети для разработчика	7	разработчик нейросетей	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	разработчик нейросетей профессия	7	разработчик нейросетей	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	специалист по внедрению ии обучение	7	специалист по внедрению ии	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	топ нейросетей для работы с документами	7	нейросеть для документов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	разработка чат бота цены	7	разработка чат ботов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	голосовые роботы для бизнеса	7	голосовой робот для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	ии для классного руководителя	7	ии для руководителя	wordstat_existing
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	near_zero	ии для планирования производства	7	ии для производства	wordstat_existing
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	near_zero	ии для производства мебели	7	ии для производства	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	ано цифровая трансформация отзывы сотрудников	7	цифровой сотрудник	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	как настроить цифровое ассистента на gemini	7	цифровой ассистент	wordstat_extra
+INFO	P3	content_or_cpc_minus	near_zero	как отключить цифровой ассистент	7	цифровой ассистент	wordstat_extra
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	ии сотрудник в продажах	7	ии сотрудник	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	near_zero	нейросотрудник купить	7	нейросотрудник	wordstat_extra
+INFO	P3	content_or_cpc_minus	near_zero	лучшие локальные llm для программирования	7	локальная llm	wordstat_extra
+NEGATIVE	P0	minus_candidate	near_zero	как обучать локальную llm	7	локальная llm	wordstat_extra
+INFO	P3	content_or_cpc_minus	near_zero	требования для локальной llm	7	локальная llm	wordstat_extra
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	rag для бизнеса	7	rag для бизнеса	wordstat_extra
+INFO	P3	content_or_cpc_minus	near_zero	предиктивное обслуживание это простыми словами	7	предиктивное обслуживание	wordstat_extra
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	искусственный интеллект для бизнеса среднего и мелкого	6	искусственный интеллект для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	топ нейросетей для автоматизации бизнеса	6	нейросети для бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	обучение ии и нейросетям для бизнеса	6	нейросети для бизнеса	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	чат gpt промты для бизнеса	6	gpt для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	ии решения для бизнеса компании	6	ии решения для бизнеса	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	near_zero	внедрение ии решения для бизнеса	6	ии решения для бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	ии ассистент для бизнеса обучение	6	ии ассистент для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	как называется основной элемент мультиагентной системы	6	мультиагентные системы	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	rag система ai агент	6	rag система	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	дело система автоматизации документооборота	6	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	система автоматизации делопроизводства и документооборота дело	6	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	промпт инжиниринг для начинающих	6	промпт инжиниринг	wordstat_existing
+INDUSTRY_OTHER	P2	separate_vertical_test	near_zero	промпт инжиниринг в образовании	6	промпт инжиниринг	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	придумать название для компании нейросеть	6	нейросеть для компании	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	astra голосовой ии ассистент для пк	6	голосовой ии ассистент	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	астра голосовой ии ассистент	6	голосовой ии ассистент	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для генерации ворд документа	6	нейросеть для документов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	сделать фото для документов нейросеть	6	нейросеть для документов	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	ии агенты для производства	6	ии для производства	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	архитектор ии систем	6	архитектор ии систем	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	готовые ии агенты для разработки opencode	6	разработка ии агентов	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	что такое ии агенты подключение и разработка	6	разработка ии агентов	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	near_zero	just ai агенты	6	just ai	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	ai mori just tonight	6	just ai	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	генеративный ии для бизнеса	6	генеративный ии для бизнеса	wordstat_extra
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	near_zero	предиктивное обслуживание синоним	6	предиктивное обслуживание	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	near_zero	услуги внедрение ии в бизнес	5	внедрение ии в бизнес	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	книга внедрение ии в бизнес	5	внедрение ии в бизнес	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	автоматизация бизнеса с помощью ии курсы	5	автоматизация бизнеса с помощью ии	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	near_zero	купить искусственный интеллект для бизнеса	5	искусственный интеллект для бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	алиса нейросеть для бизнеса	5	нейросети для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросети для бизнеса сервисы	5	нейросети для бизнеса	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	gpt для бизнес плана	5	gpt для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	пример мультиагентной системы	5	мультиагентные системы	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	мультиагентная система имитирует	5	мультиагентные системы	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	разработка логотипа нейросеть бесплатно	5	разработка нейросетей	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для генерации разработок	5	разработка нейросетей	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	near_zero	разработка нейросетей внедрение	5	разработка нейросетей	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросети для разработки изображения	5	разработка нейросетей	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	near_zero	разработка нейросетей в россии	5	разработка нейросетей	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для разработки программ	5	разработка нейросетей	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	архитектура rag системы	5	rag система	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	какие онлайн rag системы недавно появились	5	rag система	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	автоматизация документооборота и учета	5	автоматизация документооборота	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	курсы яндекс по ии промпт инжиниринг	5	промпт инжиниринг	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	промпт инжиниринг pdf	5	промпт инжиниринг	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	интегратор искусственного интеллекта	5	интегратор искусственного интеллекта	wordstat_existing
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	near_zero	ии для легкой промышленности	5	ии для промышленности	wordstat_existing
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	near_zero	использование искусственного интеллекта на производстве	5	искусственный интеллект на производстве	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для анализа текста документа	5	нейросеть для документов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для редактирования документа ворд	5	нейросеть для документов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросети для нормативных документов	5	нейросеть для документов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для документов эксель	5	нейросеть для документов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для работы с документами эксель	5	нейросеть для документов	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	near_zero	яндекс нейросеть для документов	5	нейросеть для документов	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	ии агенты для бизнеса и ритейла конференция	5	ии агенты для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	какие чат боты для бизнеса	5	чат бот для бизнеса	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	разработка чат бота для сайта	5	разработка чат ботов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	сколько стоит разработка чат бота	5	разработка чат ботов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	диаграмма компонентов для разработки чат бота	5	разработка чат ботов	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	near_zero	разработка чат бота в телеграм стоимость	5	разработка чат ботов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	центр развития цифровой экосистемы сотрудники	5	цифровой сотрудник	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	интеллектуальные цифровые сотрудники	5	цифровой сотрудник	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	near_zero	just ai aimylogic	5	just ai	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	near_zero	just ai отзывы	5	just ai	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	near_zero	just ai бот	5	just ai	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	near_zero	just ai чат бот	5	just ai	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	just s c ai	5	just ai	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	just think ai	5	just ai	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	ai агенты для бизнеса курсы	5	ai агент для бизнеса	wordstat_extra
+OTHER_REVIEW	P3	manual_review	near_zero	цифровой бизнес ассистент	5	цифровой ассистент	wordstat_extra
+INFO	P3	content_or_cpc_minus	near_zero	как сделать ии сотрудника	5	ии сотрудник	wordstat_extra
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	ии сотрудники год создания	5	ии сотрудник	wordstat_extra
+OTHER_REVIEW	P3	manual_review	near_zero	сотрудники используют ии тайком	5	ии сотрудник	wordstat_extra
+SECURITY_PRIVACY	P2	keyword_and_ad_message	near_zero	услуга по установке локальной llm	5	локальная llm	wordstat_extra
+INFO	P3	content_or_cpc_minus	near_zero	opencode как пользоваться с локальной llm	5	локальная llm	wordstat_extra
+SECURITY_PRIVACY	P2	keyword_and_ad_message	near_zero	бюджетный ноут для локальных llm	5	локальная llm	wordstat_extra
+NEGATIVE	P0	minus_candidate	near_zero	локальная llm и ее обучение	5	локальная llm	wordstat_extra
+INFO	P3	content_or_cpc_minus	near_zero	локальные llm и ssd как уживаются	5	локальная llm	wordstat_extra
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	ии для автоматического ведения протокола совещания	5	ии протокол совещания	wordstat_extra
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	протокол совещания по легализации денежных средств ии	5	ии протокол совещания	wordstat_extra
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	near_zero	система предиктивного технического обслуживания оборудования	5	предиктивное обслуживание	wordstat_extra
+HOT_SERVICE	P1	search_keyword_core	near_zero	сколько стоит внедрение ии в компанию	4	внедрение ии в компанию	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	искусственный интеллект для создания бизнес плана	4	искусственный интеллект для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для создания бизнес плана	4	нейросети для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть идеи для бизнеса	4	нейросети для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для написания бизнес плана	4	нейросети для бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	нейросеть для бизнес плана бесплатно	4	нейросети для бизнеса	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	yandex gpt для бизнеса	4	gpt для бизнеса	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	создание мультиагентной системы	4	мультиагентные системы	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	near_zero	сбер мультиагентные системы	4	мультиагентные системы	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	near_zero	нейросеть разработка сценария	4	разработка нейросетей	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросети чья разработка	4	разработка нейросетей	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	разработка логотипа с помощью нейросети	4	разработка нейросетей	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть методическая разработка	4	разработка нейросетей	wordstat_existing
+SECURITY_PRIVACY	P2	keyword_and_ad_message	near_zero	локальная rag система	4	rag система	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	какие преимущества дает автоматизация антикоррупционного документооборота	4	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	система автоматизации делопроизводства и электронного документооборота дело	4	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	возможности автоматизации документооборота	4	автоматизация документооборота	wordstat_existing
+INDUSTRY_OTHER	P2	separate_vertical_test	near_zero	промпт инжиниринг от ит школы ростелеком	4	промпт инжиниринг	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	python разработчик нейросети	4	разработчик нейросетей	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	deep seek нейросеть кто разработчик	4	разработчик нейросетей	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	автоматизация проектирования с искусственным интеллектом	4	автоматизация с искусственным интеллектом	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	логотип для компании нейросеть онлайн бесплатно	4	нейросеть для компании	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	нейросеть для логотипа компании бесплатно	4	нейросеть для компании	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	придумать логотип для компании нейросеть	4	нейросеть для компании	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	как внедрить искусственный интеллект в работу	4	внедрить искусственный интеллект	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для анализа юридических документов	4	анализ документов нейросетью	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	риски внедрения ии агентов	4	внедрение ии агентов	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	near_zero	разработка ai чат ботов	4	разработка чат ботов	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	near_zero	чат боты разработка заказать	4	разработка чат ботов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	разработка интеллектуального чат бота	4	разработка чат ботов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	техническое задание разработка чат бота	4	разработка чат ботов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	разработка чат бота телеграмм	4	разработка чат ботов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	разработка чат бота с ии	4	разработка чат ботов	wordstat_existing
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	near_zero	ии для работы производство	4	ии для производства	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	примеры применения ии в бизнесе	4	применение ии в бизнесе	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	цифровые сервисы для сотрудников	4	цифровой сотрудник	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	цифровая гигиена сотрудников	4	цифровой сотрудник	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	ai just 3	4	just ai	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	just models ai	4	just ai	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	внедрение ai агентов в бизнес процессы	4	ai внедрение в бизнес	wordstat_extra
+INFO	P3	content_or_cpc_minus	near_zero	какие llm можно развернуть локально	4	локальная llm	wordstat_extra
+SECURITY_PRIVACY	P2	keyword_and_ad_message	near_zero	python локальная llm	4	локальная llm	wordstat_extra
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	near_zero	предиктивное обслуживание человека	4	предиктивное обслуживание	wordstat_extra
+INFO	P3	content_or_cpc_minus	near_zero	лучшие нейросети для бизнес идей	3	нейросети для бизнеса	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для генерации бизнес идей	3	нейросети для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	лучший чат gpt для бизнеса	3	gpt для бизнеса	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	чат gpt для бизнес плана	3	gpt для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	ии видео под ключ	3	ии под ключ	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросети российской разработки	3	разработка нейросетей	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для разработки презентаций	3	разработка нейросетей	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	схема rag системы	3	rag система	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	классы систем автоматизации документооборота	3	автоматизация документооборота	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	основная цель промпт инжиниринга	3	промпт инжиниринг	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	промпт инжиниринг для genai	3	промпт инжиниринг	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	нейросеть курсы обучение для бизнеса	3	обучение нейросетям для бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	алиса нейросеть разработчик	3	разработчик нейросетей	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	нейросеть для разработчиков бесплатно	3	разработчик нейросетей	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для описания компании	3	нейросеть для компании	wordstat_existing
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	near_zero	цифровые технологии на производстве искусственный интеллект	3	искусственный интеллект на производстве	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	ии агенты для малого бизнеса	3	ии агенты для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	лучшие ии агенты для бизнеса	3	ии агенты для бизнеса	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	чат боты для бизнеса и автоматизации	3	чат бот для бизнеса	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	создание чат ботов для бизнеса	3	чат бот для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	чат боты для бизнеса примеры	3	чат бот для бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	курсы по разработке чат ботов	3	разработка чат ботов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	разработка чат бот для мессенджера	3	разработка чат ботов	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	near_zero	сколько стоит разработка ии агентов	3	разработка ии агентов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	никита рогачев цифровые сотрудники	3	цифровой сотрудник	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	цифровые решения отзывы сотрудников	3	цифровой сотрудник	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	near_zero	gigachat enterprise для бизнеса	3	gigachat для бизнеса	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	near_zero	just ai conversational platform	3	just ai	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	near_zero	support just ai com	3	just ai	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	near_zero	just ai blog	3	just ai	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	ассистент цифрового архива	3	цифровой ассистент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	near_zero	нейросотрудник для бизнеса	3	нейросотрудник	wordstat_extra
+SECURITY_PRIVACY	P2	keyword_and_ad_message	near_zero	рейтинг локальных llm для программирования	3	локальная llm	wordstat_extra
+SECURITY_PRIVACY	P2	keyword_and_ad_message	near_zero	локальные llm для генерации видео	3	локальная llm	wordstat_extra
+SECURITY_PRIVACY	P2	keyword_and_ad_message	near_zero	локальные llm для hermes	3	локальная llm	wordstat_extra
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	private gpt	3	private gpt	wordstat_extra
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	создать искусственный интеллект для бизнеса	2	искусственный интеллект для бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	чат gpt бесплатный для бизнеса	2	gpt для бизнеса	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	чат gpt для создания бизнеса	2	gpt для бизнеса	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	провайдеры ии решений для бизнеса	2	ии решения для бизнеса	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	как называется основной элемент мультиагентной системы ответ	2	мультиагентные системы	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	курсы по разработке нейросетей	2	разработка нейросетей	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для разработки схем	2	разработка нейросетей	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросети для веб разработки	2	разработка нейросетей	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросети для разработки логотипа	2	разработка нейросетей	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	разработка и машинное обучение нейросетей	2	разработка нейросетей	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	rag система python	2	rag система	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	готовая rag система	2	rag система	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	вшэ промпт инжиниринг	2	промпт инжиниринг	wordstat_existing
+INDUSTRY_OTHER	P2	separate_vertical_test	near_zero	промпт инжиниринг в биомедицине	2	промпт инжиниринг	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	основные принципы промпт инжиниринга	2	промпт инжиниринг	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	промпт инжиниринг для llm книга	2	промпт инжиниринг	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	промпт инжиниринг для llm скачать	2	промпт инжиниринг	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	gptml справочник по промпт инжинирингу	2	промпт инжиниринг	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	разработчик нейросетей зарплаты	2	разработчик нейросетей	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	придумать название для компании нейросеть бесплатно	2	нейросеть для компании	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для создания логотипа компании	2	нейросеть для компании	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросети для бизнеса компании	2	нейросеть для компании	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	near_zero	разработка ии для промышленности	2	ии для промышленности	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	искусственный интеллект на производстве примеры	2	искусственный интеллект на производстве	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	ии агент для бизнеса leoagent ru	2	ии агенты для бизнеса	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	near_zero	ии агенты для бизнеса купить	2	ии агенты для бизнеса	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	разработка чат ботов для бизнеса	2	чат бот для бизнеса	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	чат боты для бизнеса telegram	2	чат бот для бизнеса	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	разработка чат ботов заказы	2	разработка чат ботов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	платформы для разработки чат ботов	2	разработка чат ботов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	вкр разработка чат бота	2	разработка чат ботов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	разработка чат бота в max	2	разработка чат ботов	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	дипломная работа разработка чат бота	2	разработка чат ботов	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	этапы разработки чат бота	2	разработка чат ботов	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	разработка чат ботов обучение с нуля	2	разработка чат ботов	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	ии для музыкального руководителя	2	ии для руководителя	wordstat_existing
+SECURITY_PRIVACY	P2	keyword_and_ad_message	near_zero	разработка локального ии агента	2	разработка ии агентов	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	первый цифровой отзывы сотрудников	2	цифровой сотрудник	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	ано цифровой аудит отзывы сотрудников	2	цифровой сотрудник	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	just tonight ai mori текст	2	just ai	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	near_zero	just ai инн	2	just ai	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	near_zero	just ai кейсы	2	just ai	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	just chat ai	2	just ai	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	цифровой ассистент учителя	2	цифровой ассистент	wordstat_extra
+SECURITY_PRIVACY	P2	keyword_and_ad_message	near_zero	персональные цифровые ассистенты	2	цифровой ассистент	wordstat_extra
+INDUSTRY_OTHER	P2	separate_vertical_test	near_zero	цифровые медицинские ассистенты и чат боты	2	цифровой ассистент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	near_zero	характеристика на сотрудника ии	2	ии сотрудник	wordstat_extra
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	ии в адаптации сотрудников	2	ии сотрудник	wordstat_extra
+OTHER_REVIEW	P3	manual_review	near_zero	создать нейросотрудника	2	нейросотрудник	wordstat_extra
+SECURITY_PRIVACY	P2	keyword_and_ad_message	near_zero	open claw и локальная llm	2	локальная llm	wordstat_extra
+SECURITY_PRIVACY	P2	keyword_and_ad_message	near_zero	выбор локальной llm	2	локальная llm	wordstat_extra
+INFO	P3	content_or_cpc_minus	near_zero	минимальные требования для локальной llm	2	локальная llm	wordstat_extra
+OTHER_REVIEW	P3	manual_review	near_zero	специалист по внедрению ии в бизнес	1	внедрение ии в бизнес	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	статья искусственный интеллект для бизнеса	1	искусственный интеллект для бизнеса	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	создаем мультиагентную систему	1	мультиагентные системы	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	мультиагентная система mas имитирует	1	мультиагентные системы	wordstat_existing
+HOT_SERVICE	P1	search_keyword_core	near_zero	разработка и внедрение ии системы вкр	1	разработка ии систем	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	разработка логотипа и фирменного стиля нейросеть	1	разработка нейросетей	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	алиса нейросеть чья разработка	1	разработка нейросетей	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для создания методических разработок	1	разработка нейросетей	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть разработки заданий	1	разработка нейросетей	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	rag системы методы реализации практическое руководство	1	rag система	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	промпт инжиниринг как пишется	1	промпт инжиниринг	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	промпт инжиниринг язык будущего	1	промпт инжиниринг	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	zerocoder интенсив по промпт инжинирингу	1	промпт инжиниринг	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	qwen нейросеть кто разработчик	1	разработчик нейросетей	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	сколько зарабатывают разработчики нейросетей	1	разработчик нейросетей	wordstat_existing
+INFO	P3	content_or_cpc_minus	near_zero	нейросети для разработчиков игр	1	разработчик нейросетей	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для генерации названий компаний	1	нейросеть для компании	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	слоган для компании нейросеть	1	нейросеть для компании	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	внедрить нейросеть в бизнес	1	внедрить нейросеть	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	голосовой ии ассистент на андроид	1	голосовой ии ассистент	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	астра голосовой ии ассистент для пк	1	голосовой ии ассистент	wordstat_existing
+AI_SYSTEMS	P2	search_keyword_cluster	near_zero	ии агенты для бизнеса сколково	1	ии агенты для бизнеса	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	ai чат бот для бизнеса	1	чат бот для бизнеса	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	бесплатные чат боты для бизнеса	1	чат бот для бизнеса	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	чат бот для ватсап бизнес	1	чат бот для бизнеса	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	голосовой чат бот разработка	1	разработка чат ботов	wordstat_existing
+ADJACENT_CASE	P2	separate_adjacent_or_rsya	near_zero	разработка чат бота для сайта образовательной организации	1	разработка чат ботов	wordstat_existing
+INDUSTRY_PRODUCTION	P2	search_keyword_industry	near_zero	ии для прогнозирования производства	1	ии для производства	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	нейросеть для промышленности	1	нейросети для промышленности	wordstat_existing
+SECURITY_PRIVACY	P2	keyword_and_ad_message	near_zero	безопасная разработка по с ии агентами	1	разработка ии агентов	wordstat_existing
+WARM_CATEGORY	P2	search_keyword_broad_or_rsya	near_zero	цифровой отдел продаж и цифровой сотрудник	1	цифровой сотрудник	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	цифровые пространственные технологии отзывы сотрудников	1	цифровой сотрудник	wordstat_existing
+OTHER_REVIEW	P3	manual_review	near_zero	цифровое рабочее место сотрудника vk teams	1	цифровой сотрудник	wordstat_existing
+BRAND_COMPETITOR	P2	separate_competitor_or_audience	near_zero	just ai отзывы сотрудников	1	just ai	wordstat_existing
+NEGATIVE	P0	minus_candidate	near_zero	цифровой сервис ассистент преподавателя	1	цифровой ассистент	wordstat_extra
+INFO	P3	content_or_cpc_minus	near_zero	цифровые ассистенты примеры	1	цифровой ассистент	wordstat_extra
+NEGATIVE	P0	minus_candidate	near_zero	портативные компьютеры и персональные цифровые ассистенты	1	цифровой ассистент	wordstat_extra
+OTHER_REVIEW	P3	manual_review	near_zero	написать характеристику сотруднику ии	1	ии сотрудник	wordstat_extra
+INFO	P3	content_or_cpc_minus	near_zero	ai в условиях цифровой трансформации	1	ai трансформация	wordstat_extra
+INFO	P3	content_or_cpc_minus	near_zero	какие llm можно установить локально	1	локальная llm	wordstat_extra
+SECURITY_PRIVACY	P2	keyword_and_ad_message	near_zero	новости локальных llm	1	локальная llm	wordstat_extra
+INFO	P3	content_or_cpc_minus	near_zero	как сделать протокол совещания через ии	1	ии протокол совещания	wordstat_extra

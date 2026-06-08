@@ -1,0 +1,182 @@
+seed	total_count	n_results	source
+ии агент	15208	50	wordstat_extra
+ai агент	3764	50	wordstat_extra
+внедрение искусственного интеллекта	2315	50	wordstat_existing
+ии для бизнеса	1763	50	wordstat_existing
+цифровая трансформация бизнеса	1680	50	wordstat_existing
+разработка искусственного интеллекта	1408	50	wordstat_existing
+ии сотрудник	1364	28	wordstat_extra
+автоматизация бизнес процессов	1353	50	wordstat_existing
+автоматизация компании	1320	50	wordstat_existing
+локальная llm	1225	50	wordstat_extra
+цифровой сотрудник	1104	47	wordstat_existing
+just ai	1020	34	wordstat_existing
+промпт инжиниринг	966	49	wordstat_existing
+обезличивание данных	872	50	wordstat_existing
+нейросеть для документов	772	50	wordstat_existing
+мультиагентные системы	749	22	wordstat_existing
+rag система	747	19	wordstat_existing
+нейросети для бизнеса	652	50	wordstat_existing
+разработка нейросетей	472	39	wordstat_existing
+автоматизация документооборота	420	50	wordstat_existing
+искусственный интеллект для бизнеса	364	23	wordstat_existing
+цифровой ассистент	347	24	wordstat_extra
+предиктивное обслуживание	338	10	wordstat_extra
+разработка чат ботов	332	39	wordstat_existing
+внедрить искусственный интеллект	329	4	wordstat_existing
+внедрение ии в бизнес	310	12	wordstat_existing
+разработка ии агентов	296	9	wordstat_existing
+разработка ии систем	276	2	wordstat_existing
+ии для руководителя	257	10	wordstat_existing
+ии агенты для бизнеса	255	11	wordstat_existing
+внедрение ии в компанию	235	4	wordstat_existing
+разработчик нейросетей	235	17	wordstat_existing
+чат бот для бизнеса	217	20	wordstat_existing
+ai трансформация	197	5	wordstat_extra
+автоматизация с искусственным интеллектом	196	3	wordstat_existing
+ии для производства	184	8	wordstat_existing
+нейросеть для компании	168	17	wordstat_existing
+внедрение ии агентов	148	3	wordstat_existing
+ии под ключ	144	6	wordstat_existing
+ии консалтинг	130	1	wordstat_existing
+транскрибация встреч	128	1	wordstat_existing
+внедрить нейросеть	107	3	wordstat_existing
+анализ документов нейросетью	103	6	wordstat_existing
+gpt для бизнеса	95	12	wordstat_existing
+ии протокол совещания	95	6	wordstat_extra
+ии для промышленности	90	3	wordstat_existing
+протокол встречи ии	86	1	wordstat_extra
+ии ассистент для бизнеса	83	3	wordstat_existing
+внедрение rpa	81	1	wordstat_existing
+голосовой ии ассистент	80	7	wordstat_existing
+ai агент для бизнеса	80	2	wordstat_extra
+chatgpt для бизнеса	77	2	wordstat_existing
+искусственный интеллект на производстве	74	6	wordstat_existing
+внедрение ии в бизнес процессы	70	1	wordstat_existing
+ии трансформация бизнеса	69	1	wordstat_existing
+эксперт по искусственному интеллекту	69	1	wordstat_existing
+ии решения для бизнеса	67	6	wordstat_existing
+применение ии в бизнесе	66	3	wordstat_existing
+специалист по внедрению ии	64	4	wordstat_existing
+стратегия внедрения ии	63	1	wordstat_existing
+внедрение генеративного ии	60	1	wordstat_existing
+корпоративный чат бот	53	1	wordstat_existing
+внедрение llm	47	1	wordstat_existing
+автоматизация бизнеса с помощью ии	45	3	wordstat_existing
+ai внедрение в бизнес	44	3	wordstat_extra
+внедрение ии в промышленность	43	1	wordstat_existing
+проектирование ии систем	42	1	wordstat_existing
+база знаний чат бот	39	1	wordstat_extra
+обучение нейросетям для бизнеса	38	4	wordstat_existing
+ии для малого бизнеса	37	2	wordstat_existing
+нейросотрудник	32	4	wordstat_extra
+ai трансформация бизнеса	32	1	wordstat_extra
+интеграция ии в бизнес	31	2	wordstat_existing
+корпоративный chatgpt	31	1	wordstat_existing
+частная нейросеть	30	0	wordstat_extra
+ии ассистент руководителя	29	1	wordstat_existing
+разработка мультиагентных систем	28	1	wordstat_existing
+ии агенты под ключ	28	1	wordstat_extra
+как внедрить ии в компанию	27	1	wordstat_existing
+корпоративный ии ассистент	26	1	wordstat_extra
+внедрение искусственного интеллекта на предприятии	23	1	wordstat_existing
+псевдонимизация данных	22	2	wordstat_existing
+ии для корпораций	22	0	wordstat_existing
+ии стратегия для бизнеса	21	0	wordstat_existing
+rag по документам	20	0	wordstat_extra
+внедрение языковых моделей	19	0	wordstat_existing
+нейросеть для производства	19	1	wordstat_extra
+ии для документооборота	18	1	wordstat_existing
+использование нейросетей в бизнесе	17	1	wordstat_existing
+on premise llm	17	1	wordstat_existing
+llm on premise	17	1	wordstat_extra
+чат бот по документам	17	1	wordstat_extra
+rag по базе знаний	16	0	wordstat_extra
+внедрение нейросетей в бизнес	15	1	wordstat_existing
+внедрение ии на производстве	15	1	wordstat_existing
+автоматизация с помощью нейросетей	15	1	wordstat_existing
+внедрение rag	15	1	wordstat_existing
+протокол совещания нейросеть	13	1	wordstat_existing
+нейросеть для предприятия	12	0	wordstat_existing
+gigachat для бизнеса	12	2	wordstat_existing
+корпоративный ии помощник	12	0	wordstat_extra
+корпоративная база знаний ии	9	0	wordstat_extra
+консультант по искусственному интеллекту	8	1	wordstat_existing
+ai трансформация компании	8	0	wordstat_existing
+n8n автоматизация бизнеса	8	1	wordstat_existing
+голосовой робот для бизнеса	7	1	wordstat_existing
+нейросети для оптимизации бизнеса	7	0	wordstat_existing
+промпт инжиниринг для бизнеса	7	0	wordstat_existing
+rag для бизнеса	7	1	wordstat_extra
+ии для оптимизации производства	7	0	wordstat_extra
+архитектор ии систем	6	1	wordstat_existing
+генеративный ии для бизнеса	6	1	wordstat_extra
+интегратор искусственного интеллекта	5	1	wordstat_existing
+умная автоматизация бизнеса	5	0	wordstat_existing
+заказать внедрение ии	5	0	wordstat_existing
+genai трансформация	4	0	wordstat_extra
+ии контроль поручений	4	0	wordstat_extra
+внедрение llm в компании	3	0	wordstat_existing
+чат бот по базе знаний	3	0	wordstat_existing
+llm в закрытом контуре	3	0	wordstat_existing
+private gpt	3	1	wordstat_extra
+консалтинг по внедрению ии	2	0	wordstat_existing
+ии агенты для бизнеса под ключ	2	0	wordstat_existing
+ии агенты для бизнеса под ключ	2	0	wordstat_extra
+консалтинг по искусственному интеллекту	1	0	wordstat_existing
+автоматизация бизнес процессов нейросетью	1	0	wordstat_existing
+нейросети для промышленности	1	1	wordstat_existing
+ии аудит бизнес процессов	1	0	wordstat_existing
+rag система для компании	1	0	wordstat_existing
+локальная нейросеть для бизнеса	1	0	wordstat_extra
+безопасный chatgpt для бизнеса	1	0	wordstat_extra
+прогнозирование отказов ии	1	0	wordstat_extra
+внедрение chatgpt в бизнес	0	0	wordstat_existing
+аудит готовности к ии	0	0	wordstat_existing
+защита данных при работе с нейросетями	0	0	wordstat_existing
+автоматизация продаж нейросети	0	0	wordstat_existing
+искусственный интеллект внедрение цена	0	0	wordstat_existing
+заказать внедрение нейросети	0	0	wordstat_existing
+транскрибация встреч нейросеть	0	0	wordstat_existing
+интеграция нейросетей в бизнес процессы	0	0	wordstat_existing
+как внедрить нейросети в бизнес	0	0	wordstat_existing
+своя gpt на данных компании	0	0	wordstat_existing
+обезличивание данных для llm	0	0	wordstat_existing
+безопасное внедрение llm	0	0	wordstat_existing
+genai для бизнеса	0	0	wordstat_extra
+нейросеть по базе знаний	0	0	wordstat_extra
+автоматизация совещаний ии	0	0	wordstat_extra
+dlp для нейросетей	0	0	wordstat_extra
+анонимизация данных для chatgpt	0	0	wordstat_extra
+защита данных llm	0	0	wordstat_extra
+разработка нейросети на заказ	-1	0	wordstat_existing
+нейросеть под ключ	-1	0	wordstat_existing
+нейросеть на заказ	-1	0	wordstat_existing
+сколько стоит внедрение ии	-1	0	wordstat_existing
+купить ии для бизнеса	-1	0	wordstat_existing
+услуги внедрения нейросетей	-1	0	wordstat_existing
+интегратор ии для бизнеса	-1	0	wordstat_existing
+агентство внедрения нейросетей	-1	0	wordstat_existing
+ии чат бот для бизнеса	-1	0	wordstat_existing
+голосовой ии ассистент для бизнеса	-1	0	wordstat_existing
+саммари созвонов	-1	0	wordstat_existing
+rpa автоматизация	-1	0	wordstat_existing
+роботизация бизнес процессов	-1	0	wordstat_existing
+распознавание документов ии	-1	0	wordstat_existing
+предиктивная аналитика	-1	0	wordstat_existing
+предиктивная аналитика для производства	-1	0	wordstat_existing
+компьютерное зрение на производстве	-1	0	wordstat_existing
+документооборот с ии	-1	0	wordstat_existing
+корпоративный gpt	-1	0	wordstat_existing
+ии под ключ цена	-1	0	wordstat_existing
+secret agents	-1	0	wordstat_existing
+zebrains	-1	0	wordstat_existing
+red mad robot	-1	0	wordstat_existing
+yandexgpt	-1	0	wordstat_existing
+pix rpa	-1	0	wordstat_existing
+корус консалтинг	-1	0	wordstat_existing
+машинное обучение	-1	0	wordstat_existing
+нейросеть для создания картинок	-1	0	wordstat_existing
+нейросеть для текста	-1	0	wordstat_existing
+нейросеть для музыки	-1	0	wordstat_existing
+нейросеть рисует	-1	0	wordstat_existing

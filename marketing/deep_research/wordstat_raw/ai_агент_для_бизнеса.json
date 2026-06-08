@@ -1,0 +1,90 @@
+{
+  "success": true,
+  "cached_hit": true,
+  "phrase": "ai агент для бизнеса",
+  "regions": [
+    "213",
+    "2"
+  ],
+  "total_count": 80,
+  "results": [
+    {
+      "phrase": "ai агенты для бизнеса",
+      "count": 80
+    },
+    {
+      "phrase": "ai агенты для бизнеса курсы",
+      "count": 5
+    }
+  ],
+  "associations": [
+    {
+      "phrase": "business cats",
+      "count": 328
+    },
+    {
+      "phrase": "лидс медиа агентство что это",
+      "count": 159
+    },
+    {
+      "phrase": "ип бабаков агентство что это",
+      "count": 34
+    },
+    {
+      "phrase": "ип васильев агентство",
+      "count": 153
+    },
+    {
+      "phrase": "cafe business manager",
+      "count": 83
+    },
+    {
+      "phrase": "ip babakov агентство что это",
+      "count": 32
+    },
+    {
+      "phrase": "мегафон корпоративная связь для юридических лиц",
+      "count": 39
+    },
+    {
+      "phrase": "gemini enterprise business",
+      "count": 16
+    },
+    {
+      "phrase": "кто такой принципал в агентском договоре",
+      "count": 42
+    },
+    {
+      "phrase": "ип бабаков агентство",
+      "count": 64
+    },
+    {
+      "phrase": "корпоративное такси для организаций",
+      "count": 57
+    },
+    {
+      "phrase": "ardis ain t nobody s business",
+      "count": 81
+    },
+    {
+      "phrase": "мтс корпоративная связь для юридических лиц",
+      "count": 28
+    },
+    {
+      "phrase": "оквэд агентские услуги",
+      "count": 303
+    },
+    {
+      "phrase": "точка роста маркетинговое агентство",
+      "count": 49
+    },
+    {
+      "phrase": "pro business",
+      "count": 455
+    },
+    {
+      "phrase": "оквэд агентская деятельность",
+      "count": 136
+    }
+  ]
+}

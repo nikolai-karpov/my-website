@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-06-06T19:26:26",
+  "date_from": "2026-05-30",
+  "date_to": "2026-06-05",
+  "counter_id": 109350250,
+  "goal_id": 566497705,
+  "goal_macro": "form_submit",
+  "campaign_ids": [
+    710165227
+  ],
+  "direct_status": "ok",
+  "rows": 0,
+  "recommendations": 0,
+  "metrika_goal": {
+    "ok": true,
+    "id": 566497705,
+    "name": "Отправка заявки (форма) ⭐",
+    "type": "action",
+    "macro_found": true
+  },
+  "raw_rows": 0
+}

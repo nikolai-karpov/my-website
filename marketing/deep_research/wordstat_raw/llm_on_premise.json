@@ -1,0 +1,90 @@
+{
+  "success": true,
+  "cached_hit": true,
+  "phrase": "llm on premise",
+  "regions": [
+    "213",
+    "2"
+  ],
+  "total_count": 17,
+  "results": [
+    {
+      "phrase": "on premise llm",
+      "count": 17
+    }
+  ],
+  "associations": [
+    {
+      "phrase": "re premium",
+      "count": 5978
+    },
+    {
+      "phrase": "made in prc",
+      "count": 1355
+    },
+    {
+      "phrase": "nope your too late i already died",
+      "count": 913
+    },
+    {
+      "phrase": "premid",
+      "count": 208
+    },
+    {
+      "phrase": "премьер оне",
+      "count": 990
+    },
+    {
+      "phrase": "https cloud armgs team public wdet fqtygg4bs",
+      "count": 7
+    },
+    {
+      "phrase": "премьер войти",
+      "count": 986
+    },
+    {
+      "phrase": "дэву poizon что это",
+      "count": 319
+    },
+    {
+      "phrase": "эль ниньо что это",
+      "count": 4260
+    },
+    {
+      "phrase": "el pimpi",
+      "count": 1839
+    },
+    {
+      "phrase": "re premium москва",
+      "count": 618
+    },
+    {
+      "phrase": "v5 philippines corp что это",
+      "count": 98
+    },
+    {
+      "phrase": "maddy may",
+      "count": 322
+    },
+    {
+      "phrase": "pursuit of jade",
+      "count": 603
+    },
+    {
+      "phrase": "amy macdonald this is the life",
+      "count": 370
+    },
+    {
+      "phrase": "y m premier",
+      "count": 250
+    },
+    {
+      "phrase": "y m premier что это",
+      "count": 72
+    },
+    {
+      "phrase": "help premier one",
+      "count": 40
+    }
+  ]
+}

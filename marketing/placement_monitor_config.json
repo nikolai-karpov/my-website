@@ -1,0 +1,37 @@
+{
+  "counter_id": 109350250,
+  "goal_id": 566497705,
+  "conversion_goal_ids": [
+    566497705,
+    566492899
+  ],
+  "additional_goal_ids": [
+    566492899
+  ],
+  "goal_macro": "form_submit",
+  "campaign_ids": [
+    710165227
+  ],
+  "campaigns": [
+    {
+      "id": 710165227,
+      "name": "Портфолио",
+      "type": "master_campaign",
+      "api_visibility": "campaigns_get_limited"
+    }
+  ],
+  "attribution_model": "AUTO",
+  "lookback_days": 7,
+  "date_lag_days": 1,
+  "min_clicks_watch": 5,
+  "min_clicks_exclude": 12,
+  "min_cost_watch_rub": 3000,
+  "target_cpa_rub": 1000,
+  "notes": [
+    "Campaign 710165227 is a master campaign. Direct API campaigns.get may not return it; do not replace it with another visible regular campaign.",
+    "CPA strategy business rule: ad spend is calculated as form_submit conversions * 1000 RUB.",
+    "Goal 566497705 remains the current primary form_submit goal in repo artifacts.",
+    "Goal 566492899 is an additional conversion goal provided by the project owner; verify its event name and deduplication before combining it with 566497705 in CPA.",
+    "The script reads watch/exclude candidates from marketing/deep_research/07_excluded_placements.tsv."
+  ]
+}

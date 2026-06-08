@@ -1,0 +1,98 @@
+{
+  "success": true,
+  "cached_hit": true,
+  "phrase": "ии ассистент для бизнеса",
+  "regions": [
+    "213",
+    "2"
+  ],
+  "total_count": 83,
+  "results": [
+    {
+      "phrase": "ии ассистент для бизнеса",
+      "count": 83
+    },
+    {
+      "phrase": "создание ии ассистента для бизнеса",
+      "count": 14
+    },
+    {
+      "phrase": "ии ассистент для бизнеса обучение",
+      "count": 6
+    }
+  ],
+  "associations": [
+    {
+      "phrase": "помощник эрудита",
+      "count": 282
+    },
+    {
+      "phrase": "savefrom net помощник",
+      "count": 142
+    },
+    {
+      "phrase": "башня помощника",
+      "count": 1099
+    },
+    {
+      "phrase": "эрудит помощник",
+      "count": 282
+    },
+    {
+      "phrase": "сп помощник",
+      "count": 144
+    },
+    {
+      "phrase": "аи помощник",
+      "count": 230
+    },
+    {
+      "phrase": "шеди помощник",
+      "count": 319
+    },
+    {
+      "phrase": "amocrm что это такое",
+      "count": 43
+    },
+    {
+      "phrase": "помощник по уходу",
+      "count": 1451
+    },
+    {
+      "phrase": "ai помощник",
+      "count": 696
+    },
+    {
+      "phrase": "сп помощник органайзер",
+      "count": 34
+    },
+    {
+      "phrase": "1с предприятие это",
+      "count": 572
+    },
+    {
+      "phrase": "мой робот помощник",
+      "count": 81
+    },
+    {
+      "phrase": "ain t nobody s business",
+      "count": 187
+    },
+    {
+      "phrase": "корпоративное такси для организаций",
+      "count": 53
+    },
+    {
+      "phrase": "ardis ain t nobody s business",
+      "count": 88
+    },
+    {
+      "phrase": "помощник москвы приложение",
+      "count": 281
+    },
+    {
+      "phrase": "личный помощник",
+      "count": 1392
+    }
+  ]
+}

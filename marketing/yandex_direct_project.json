@@ -1,0 +1,31 @@
+{
+  "direct_account_model": "shared_account",
+  "project": {
+    "slug": "my-website",
+    "name": "Portfolio / Николай Карпов",
+    "site": "https://nikolai-karpov.github.io/my-website/"
+  },
+  "campaigns": [
+    {
+      "id": 710165227,
+      "name": "Портфолио",
+      "role": "primary",
+      "type": "master_campaign",
+      "api_visibility": "campaigns_get_limited",
+      "source": "user-confirmed 2026-06-06",
+      "notes": [
+        "Master campaigns may be absent from Direct API campaigns.get even when they belong to the same Direct login.",
+        "Do not substitute this campaign with regular campaigns 710220828 or 710496114."
+      ]
+    }
+  ],
+  "campaign_ids": [
+    710165227
+  ],
+  "name_contains": [
+    "Портфолио",
+    "portfolio",
+    "my-website",
+    "Николай Карпов"
+  ]
+}

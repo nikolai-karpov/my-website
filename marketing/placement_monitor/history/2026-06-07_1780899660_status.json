@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-06-08T09:20:00",
+  "date_from": "2026-06-01",
+  "date_to": "2026-06-07",
+  "counter_id": 109350250,
+  "goal_id": 566497705,
+  "goal_macro": "form_submit",
+  "campaign_ids": [
+    710165227
+  ],
+  "direct_status": "error",
+  "rows": 0,
+  "recommendations": 0,
+  "metrika_goal": {
+    "ok": false,
+    "reason": "URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>"
+  },
+  "direct_error": "<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+}

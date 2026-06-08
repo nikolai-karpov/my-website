@@ -1,0 +1,30 @@
+{
+  "run_date_msk": "2026-06-08",
+  "project": "Портфолио",
+  "campaign_id": 710165227,
+  "alerts": [
+    {
+      "id": "alert-001",
+      "type": "api_connectivity_failure",
+      "severity": "critical",
+      "timestamp_msk": "2026-06-08T00:00:00+03:00",
+      "detail": "All 7 Yandex API calls failed with DNS resolution error: [Errno 8] nodename nor servname provided, or not known.",
+      "affected_endpoints": [
+        "api.direct.yandex.ru (campaigns, reports, keywords)",
+        "api-metrika.yandex.net (traffic, conversions)"
+      ],
+      "action_required": "Check network/DNS/VPN connectivity. Rerun monitoring after restoration.",
+      "automated": false
+    },
+    {
+      "id": "alert-002",
+      "type": "monitoring_gap",
+      "severity": "high",
+      "timestamp_msk": "2026-06-08T00:00:00+03:00",
+      "detail": "No monitoring data for primary_day 2026-06-07 and period 2026-06-01–2026-06-07. Campaign 710165227 is unmonitored.",
+      "action_required": "Manual check of campaign status in Direct UI recommended until monitoring is restored.",
+      "automated": false
+    }
+  ],
+  "resolved": false
+}

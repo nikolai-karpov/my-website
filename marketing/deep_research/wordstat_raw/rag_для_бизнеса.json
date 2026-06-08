@@ -1,0 +1,86 @@
+{
+  "success": true,
+  "cached_hit": true,
+  "phrase": "rag для бизнеса",
+  "regions": [
+    "213",
+    "2"
+  ],
+  "total_count": 7,
+  "results": [
+    {
+      "phrase": "rag для бизнеса",
+      "count": 7
+    }
+  ],
+  "associations": [
+    {
+      "phrase": "business",
+      "count": 87025
+    },
+    {
+      "phrase": "бизнесмен",
+      "count": 52998
+    },
+    {
+      "phrase": "business gazeta ru",
+      "count": 131
+    },
+    {
+      "phrase": "business studio",
+      "count": 1436
+    },
+    {
+      "phrase": "автобизнес",
+      "count": 1265
+    },
+    {
+      "phrase": "business fm",
+      "count": 1748
+    },
+    {
+      "phrase": "про бизнесмена фому",
+      "count": 517
+    },
+    {
+      "phrase": "business max ru",
+      "count": 137
+    },
+    {
+      "phrase": "business tbank ru",
+      "count": 307
+    },
+    {
+      "phrase": "business gazeta",
+      "count": 179
+    },
+    {
+      "phrase": "бизнесмен это",
+      "count": 915
+    },
+    {
+      "phrase": "risky business",
+      "count": 110
+    },
+    {
+      "phrase": "кто такой бизнесмен",
+      "count": 331
+    },
+    {
+      "phrase": "как стать бизнесменом",
+      "count": 282
+    },
+    {
+      "phrase": "chat gpt business",
+      "count": 196
+    },
+    {
+      "phrase": "the business",
+      "count": 11909
+    },
+    {
+      "phrase": "wa business",
+      "count": 136
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+domain	category	rationale	recommendation
+znanija.com	education_homework	Школьные/студенческие ответы, не B2B intent	prelaunch_exclude
+otvet.mail.ru	qna_low_intent	Q&A с низким B2B intent	prelaunch_exclude
+studfile.net	student_work	Рефераты/учебные материалы	prelaunch_exclude
+studopedia.ru	student_work	Учебные материалы	prelaunch_exclude
+infourok.ru	school_education	Школьное образование	prelaunch_exclude
+multiurok.ru	school_education	Школьное образование	prelaunch_exclude
+nsportal.ru	school_education	Школьное образование	prelaunch_exclude
+spravochnick.ru	student_work	Студенческие/учебные материалы	prelaunch_exclude
+allbest.ru	student_work	Рефераты	prelaunch_exclude
+bibliofond.ru	student_work	Рефераты	prelaunch_exclude
+referat.ru	student_work	Рефераты	prelaunch_exclude
+reshaem.net	school_education	ГДЗ/учебные ответы	prelaunch_exclude
+gdz.ru	school_education	ГДЗ	prelaunch_exclude
+hh.ru	jobs	Соискатели/вакансии, не покупатели	test_or_exclude
+superjob.ru	jobs	Соискатели/вакансии	test_or_exclude
+rabota.ru	jobs	Соискатели/вакансии	test_or_exclude
+zarplata.ru	jobs	Соискатели/вакансии	test_or_exclude
+trudvsem.ru	jobs	Соискатели/вакансии	test_or_exclude
+career.habr.com	jobs	IT-вакансии	test_or_exclude
+avito.ru	classifieds	Широкая classified-аудитория, слабый B2B intent	monitor_first
+pikabu.ru	entertainment	Развлекательный трафик	monitor_first
+fishki.net	entertainment	Развлекательный трафик	monitor_first
+yaplakal.com	entertainment	Развлекательный трафик	monitor_first
+joyreactor.cc	entertainment	Развлекательный трафик	monitor_first
+stopgame.ru	gaming	Игровой трафик	prelaunch_exclude
+igromania.ru	gaming	Игровой трафик	prelaunch_exclude
+dtf.ru	gaming_media	Смешанный tech/gaming; исключать только при мусорных кликах	monitor_first
+woman.ru	lifestyle	Lifestyle-аудитория	monitor_first
+babyblog.ru	lifestyle	Parenting/lifestyle	monitor_first
+irecommend.ru	reviews	Обзорный consumer-трафик	monitor_first
+otzovik.com	reviews	Обзорный consumer-трафик	monitor_first
+rutube.ru	video_broad	Широкий видеотрафик; контролировать по отчёту площадок	monitor_first
+ok.ru	social_broad	Широкая соцсеть; контролировать по отчёту площадок	monitor_first

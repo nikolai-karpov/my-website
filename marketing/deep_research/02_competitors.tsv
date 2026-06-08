@@ -1,0 +1,24 @@
+brand	domain	type	positioning	lexicon_to_mine	direct_use	priority
+R77 AI	r77.ai	direct	AI transformation for corporations	ИИ-трансформация, закрытый контур, enterprise	competitor_campaign_or_audience	high
+ZeBrains	zebrains.ru	direct	Custom development / AI implementation	управляемое внедрение ИИ, разработка	competitor_campaign_or_audience	high
+Secret Agents	secret-agents.ru	direct	AI agents and automation agency	ИИ-агенты, автоматизация, агентство	competitor_campaign_or_audience	high
+Just AI	just-ai.com	platform	GenAI platform, AI agents, consulting	GenAI-трансформация, AI Agent Platform, Jay Guard	competitor_campaign_or_audience	high
+red_mad_robot	redmadrobot.ru	integrator	Digital products and AI services	AI-сервисы, цифровые продукты	audience_and_competitor_research	medium
+GenAI Lab	genai-lab.ru	direct	GenAI consulting / implementation	генеративный ИИ, внедрение	competitor_campaign_or_audience	medium
+AI Teams	ai-teams.ru	agency	AI implementation agency	команды ИИ, внедрение	competitor_campaign_or_audience	medium
+AiAgency	aiagency.ru	agency	AI agency	ИИ-агентство, внедрение	competitor_campaign_or_audience	medium
+CraftTalk	crafttalk.ru	adjacent	Conversational AI / contact-center automation	чат-боты, customer service AI	audience_adjacent	medium
+PIX RPA	pix.ru	adjacent	RPA / process robotization	RPA, роботизация процессов	audience_adjacent	medium
+KORUS Consulting	korusconsulting.ru	integrator	Enterprise IT / data consulting	корпоративный интегратор, данные	audience_enterprise	medium
+IBS	ibs.ru	integrator	Large enterprise systems integrator	системный интегратор, enterprise	audience_enterprise	medium
+SimbirSoft	simbirsoft.com	integrator	Custom software development	разработка ПО, AI projects	audience_enterprise	medium
+KT.Team	kt.team	integrator	Automation and low-code integration	автоматизация, low-code, n8n-like	audience_adjacent	medium
+CROC	croc.ru	integrator	Large IT integrator	корпоративный ИТ, инфраструктура	audience_enterprise	medium
+GlowByte	glowbyteconsulting.com	integrator	Data/analytics/AI consulting	данные, аналитика, ML	audience_enterprise	medium
+Neoflex	neoflex.ru	integrator	Data platforms / enterprise development	data platform, ML	audience_enterprise	medium
+Directum	directum.ru	adjacent_platform	ECM/BPM/document processes	ЭДО, BPM, документы	audience_adjacent	medium
+ELMA365	elma365.com	adjacent_platform	BPM/low-code automation	BPM, автоматизация процессов	audience_adjacent	medium
+Naumen	naumen.ru	adjacent_platform	Enterprise automation platform	контакт-центры, BPM, service management	audience_adjacent	medium
+MyMeet.ai	mymeet.ai	adjacent	Meeting transcription/summaries	протоколы встреч, саммари	separate_adjacent_campaign	low
+MeetScribe	meetscribe.ru	adjacent	Meeting transcription	расшифровка встреч	separate_adjacent_campaign	low
+TimeList	timelist.ru	adjacent	Meeting protocol automation	протоколы совещаний	separate_adjacent_campaign	low

@@ -1,0 +1,11 @@
+{
+  "date_from": "2026-05-07",
+  "date_to": "2026-06-05",
+  "campaign_id": 710165227,
+  "campaign_name": "Портфолио",
+  "source": "Yandex Metrika stat/v1/data, dimensions ym:s:date + ym:s:lastSignDirectClickOrder",
+  "visits": 78.0,
+  "form_submit": 0.0,
+  "visit_to_form_submit_cr_pct": 0.0,
+  "csv": "marketing/metrika_exports/2026-05-07_2026-06-05_portfolio_campaign_metrika.csv"
+}
