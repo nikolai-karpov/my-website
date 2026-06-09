@@ -1,0 +1,51 @@
+{
+  "run_date_msk": "2026-06-07",
+  "primary_day": "2026-06-07",
+  "period_7d": {
+    "from": "2026-06-01",
+    "to": "2026-06-07"
+  },
+  "project": "portfolio",
+  "campaign_id": 710165227,
+  "campaign_name": "Портфолио",
+  "direct_primary_day": {
+    "date": "2026-06-07",
+    "impressions": 0,
+    "clicks": 0,
+    "cost": 0,
+    "ctr": 0,
+    "avg_cpc": 0,
+    "conversions": 0,
+    "cost_per_conversion": null,
+    "note": "No Direct data for this date"
+  },
+  "direct_7d": {
+    "date_from": "2026-06-01",
+    "date_to": "2026-06-07",
+    "days_with_data": 0,
+    "totals": {
+      "impressions": 0,
+      "clicks": 0,
+      "cost": 0,
+      "ctr": 0,
+      "avg_cpc": 0,
+      "conversions": 0,
+      "cost_per_conversion": null
+    },
+    "daily": []
+  },
+  "metrika": {
+    "counter_id": 109350250,
+    "traffic_ad_primary_day": {
+      "sessions": 0,
+      "users": 0,
+      "pageviews": 0,
+      "bounce_rate": 0.0,
+      "avg_time": "00:00:00",
+      "page_depth": 0.0
+    },
+    "click_to_visit_ratio": null
+  },
+  "backfill": true,
+  "backfill_note": "Data collected retroactively on 2026-06-09 to fill gap from network outage"
+}
