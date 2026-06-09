@@ -3,7 +3,127 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-08-build-a-chatgpt-with-your-private-data-using-llamaindex-and/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-new-in-llamaparse-multi-page-tables-beta-and-excel-spreadshe/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-09T07:04:02+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-nvidia-research-rag-with-long-context-llms/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-09T07:02:53+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-testing-anthropic-claudes-100k-token-window-on-sec-10-k-fili/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-09T07:01:59+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-researcher-frontier-cybersecurity-risks/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-09T07:01:01+03:00</news:publication_date>
+      <news:title>OpenAI ищет исследователя по киберрискам для разработки mitigation‑stack</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-06-running-python-code-in-a-sandbox-with-micropython-and-wasm/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-09T06:59:26+03:00</news:publication_date>
+      <news:title>Alpha‑пакет micropython-wasm: sandbox Python в WebAssembly</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-researcher-robustness-safety-training-openai/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-09T06:58:07+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-introducing-gpt-oss-openai/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-09T06:57:26+03:00</news:publication_date>
+      <news:title>OpenAI выпустила открытые модели gpt-oss-120b и gpt-oss-20b</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-06-openai-help-lockdown-mode/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-09T06:56:09+03:00</news:publication_date>
+      <news:title>OpenAI запустил Lockdown Mode для защиты от exfiltration</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-building-blocks-of-llm-report-generation-beyond-basic-rag/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-09T06:54:49+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-new-models-and-developer-products-announced-at-devday-openai/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-09T06:53:36+03:00</news:publication_date>
+      <news:title>OpenAI анонсировала GPT‑4 Turbo с контекстом 128 К и новые API для ассистентов</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-build-a-chatgpt-with-your-private-data-using-llamaindex-and/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -15,7 +135,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-01-kak-iandeks-disk-vyderzhivaet-sotni-gigabit-vkhodiashchego-t/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-kak-iandeks-disk-vyderzhivaet-sotni-gigabit-vkhodiashchego-t/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -27,7 +147,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-05-fault-tolerance-in-langgraph-retries-timeouts-and-error-hand/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-fault-tolerance-in-langgraph-retries-timeouts-and-error-hand/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -39,7 +159,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-07-kapibary-na-sluzhbe-ii-naima/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-kapibary-na-sluzhbe-ii-naima/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -51,7 +171,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-06-novyi-algoritm-google-szhal-31-gb-pamiati-do-4-gb/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-06-novyi-algoritm-google-szhal-31-gb-pamiati-do-4-gb/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -63,7 +183,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-07-tekhnodaidzhest-nedeli/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-tekhnodaidzhest-nedeli/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -75,7 +195,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-08-extracting-repeating-entities-from-documents-tabular-extract/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-extracting-repeating-entities-from-documents-tabular-extract/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -87,7 +207,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-08-beyond-ocr-deepseek-s-new-vision-compression-and-how-it-serv/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-beyond-ocr-deepseek-s-new-vision-compression-and-how-it-serv/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -99,7 +219,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-08-olmocr-bench-review-insights-and-pitfalls-on-an-ocr-benchmar/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-olmocr-bench-review-insights-and-pitfalls-on-an-ocr-benchmar/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -111,7 +231,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-08-testing-anthropic-claudes-100k-token-window-on-sec-10-k-fili/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-testing-anthropic-claudes-100k-token-window-on-sec-10-k-fili/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -123,7 +243,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-02-hackers-simply-asked-meta-ai-to-give-them-access-to-high-pro/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-hackers-simply-asked-meta-ai-to-give-them-access-to-high-pro/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -135,7 +255,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-03-llm-benchmarki-qwen-3-7-gpt-5-4-opus-4-7-deepseek-v4/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-llm-benchmarki-qwen-3-7-gpt-5-4-opus-4-7-deepseek-v4/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -147,7 +267,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-03-daaa-ia-na-etom-podpalil-prilichno-biudzheta-ves-vecher-goni/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-daaa-ia-na-etom-podpalil-prilichno-biudzheta-ves-vecher-goni/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -159,19 +279,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-06-openai-help-lockdown-mode/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Карпов Николай — Новости</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-06-07T06:10:42+03:00</news:publication_date>
-      <news:title>OpenAI включил Lockdown Mode для всех аккаунтов ChatGPT</news:title>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-07-introducing-the-property-graph-index-a-powerful-new-way-to-b/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-introducing-the-property-graph-index-a-powerful-new-way-to-b/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -183,7 +291,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-07-introducing-llama-agents-a-powerful-framework-for-building-p/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-introducing-llama-agents-a-powerful-framework-for-building-p/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -195,7 +303,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-01-minimax-m3-multimodalnyi-intellekt-s-millionnym-kontekstom/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-minimax-m3-multimodalnyi-intellekt-s-millionnym-kontekstom/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -207,7 +315,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-03-microsoft-s-new-mai-models/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-microsoft-s-new-mai-models/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -219,7 +327,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-03-evoliutsiia-plotnosti-kak-zelenyi-koridor-sbera-meniaet-ekon/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-evoliutsiia-plotnosti-kak-zelenyi-koridor-sbera-meniaet-ekon/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -231,7 +339,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-07-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -243,7 +351,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-04-bum-bum-vyshel-ideogram-4/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-04-bum-bum-vyshel-ideogram-4/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -255,7 +363,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-04-anthropic-uzhe-pishet-o-rekursivnom-samouluchshenii-kak-o-pr/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-04-anthropic-uzhe-pishet-o-rekursivnom-samouluchshenii-kak-o-pr/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -267,7 +375,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-05-nvidia-nemotron-3-ultra-gibridnaia-moe-arkhitektura-dlia-slo/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-nvidia-nemotron-3-ultra-gibridnaia-moe-arkhitektura-dlia-slo/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -279,7 +387,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-05-introducing-gpt-5-5-openai/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-introducing-gpt-5-5-openai/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -291,7 +399,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-02-bam-minimax-predstavila-minimax-m3-novuiu-ii-model-dlia-koda/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-bam-minimax-predstavila-minimax-m3-novuiu-ii-model-dlia-koda/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -303,7 +411,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-04-google-vypustila-gemma-4-12b/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-04-google-vypustila-gemma-4-12b/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -315,7 +423,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-05-build-a-searchable-audio-knowledge-base-with-gemini-embeddin/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-build-a-searchable-audio-knowledge-base-with-gemini-embeddin/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -327,7 +435,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-05-omnidocbench-is-saturated-whats-next-for-ocr-benchmarks/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-omnidocbench-is-saturated-whats-next-for-ocr-benchmarks/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -339,7 +447,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-05-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -351,7 +459,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-30-laboratoriia-ii-za-200-000-kak-my-sobrali-lokalnyi-ii-server/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-laboratoriia-ii-za-200-000-kak-my-sobrali-lokalnyi-ii-server/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -363,7 +471,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-31-bum-vyshel-grok-imagine-video-1-5-preview/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-bum-vyshel-grok-imagine-video-1-5-preview/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -375,7 +483,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-02-kak-nmitsk-im-e-i-chazova-otslezhivaet-riski-serdechno-sosud/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-kak-nmitsk-im-e-i-chazova-otslezhivaet-riski-serdechno-sosud/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -387,7 +495,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-02-anthropic-scales-claude-mythos-to-critical-infrastructure-in/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-anthropic-scales-claude-mythos-to-critical-infrastructure-in/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -399,7 +507,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-03-delta-channels-how-were-evolving-our-runtime-for-long-runnin/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-delta-channels-how-were-evolving-our-runtime-for-long-runnin/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -411,7 +519,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-03-qwen3-7-plus-ekonomichnaia-multimodalnaia-model-ot-alibaba/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-qwen3-7-plus-ekonomichnaia-multimodalnaia-model-ot-alibaba/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -423,7 +531,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-28-zero-trust-dlia-podriadnogo-dostupa-chetyre-sloia-identity-d/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-28-zero-trust-dlia-podriadnogo-dostupa-chetyre-sloia-identity-d/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -435,7 +543,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-29-bum-anthropic-vykatila-claude-opus-4-8/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-bum-anthropic-vykatila-claude-opus-4-8/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -447,7 +555,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-30-running-python-asgi-apps-in-the-browser-via-pyodide-a-servic/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-running-python-asgi-apps-in-the-browser-via-pyodide-a-servic/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -459,7 +567,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-01-analiz-nous-hermes-agent-deepseek-v4-na-bitgn-ecom1/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-analiz-nous-hermes-agent-deepseek-v4-na-bitgn-ecom1/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -471,7 +579,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-03-nvidia-research-rag-with-long-context-llms/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-nvidia-research-rag-with-long-context-llms/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -483,7 +591,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-30-amazon-pomeniala-arkhitekturu-setei-v-data-tsentrakh-aws-i-e/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-amazon-pomeniala-arkhitekturu-setei-v-data-tsentrakh-aws-i-e/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -495,7 +603,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-02-delta-channels-how-were-evolving-our-runtime-for-long-runnin/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-delta-channels-how-were-evolving-our-runtime-for-long-runnin/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -507,7 +615,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-02-llamaindex-v0-10/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-llamaindex-v0-10/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -519,7 +627,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-02-llamaindex-rag-evaluation-showdown-with-gpt-4-vs-open-source/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-llamaindex-rag-evaluation-showdown-with-gpt-4-vs-open-source/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -531,7 +639,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-02-new-models-and-developer-products-announced-at-devday-openai/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-new-models-and-developer-products-announced-at-devday-openai/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -543,7 +651,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-02-an-openai-model-has-disproved-a-central-conjecture-in-discre/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-an-openai-model-has-disproved-a-central-conjecture-in-discre/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -555,7 +663,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-28-1c-code-bench-benchmark-dlia-otsenki-sposobnosti-llm-pisat-k/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-28-1c-code-bench-benchmark-dlia-otsenki-sposobnosti-llm-pisat-k/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -567,7 +675,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-26-pamiati-u-agenta-chetyre-i-kazhdaia-zakryvaet-svoiu-zadachu/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-pamiati-u-agenta-chetyre-i-kazhdaia-zakryvaet-svoiu-zadachu/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -579,7 +687,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-02-model-release-notes-openai-help-center/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-model-release-notes-openai-help-center/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -591,7 +699,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-02-introducing-gpt-oss-openai/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-introducing-gpt-oss-openai/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -603,7 +711,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-01-evaluating-multi-modal-retrieval-augmented-generation/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-evaluating-multi-modal-retrieval-augmented-generation/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -615,7 +723,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-01-llamaindex-v0-10/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-llamaindex-v0-10/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -627,7 +735,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-01-gpt4-v-experiments-with-general-specific-questions-and-chain/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-gpt4-v-experiments-with-general-specific-questions-and-chain/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -639,7 +747,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-26-ne-nastupaite-na-nashi-grabli-esli-sobiraetes-ispolzovat-tem/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-ne-nastupaite-na-nashi-grabli-esli-sobiraetes-ispolzovat-tem/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -651,7 +759,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-27-itbench-aa-frontier-models-score-below-50-on-the-first-bench/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-27-itbench-aa-frontier-models-score-below-50-on-the-first-bench/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -663,7 +771,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-29-workflows-v-claude-code-agentnye-paiplainy-teper-pishutsia-k/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-workflows-v-claude-code-agentnye-paiplainy-teper-pishutsia-k/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -675,7 +783,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-31-running-python-asgi-apps-in-the-browser-via-pyodide-a-servic/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-running-python-asgi-apps-in-the-browser-via-pyodide-a-servic/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -687,7 +795,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-01-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -699,7 +807,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-29-png-cherez-chat-completions-image-url-rabotaet-korrektno-kol/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-png-cherez-chat-completions-image-url-rabotaet-korrektno-kol/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -711,7 +819,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-31-how-we-contain-claude-across-products/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-how-we-contain-claude-across-products/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -723,7 +831,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-31-introducing-llamaparse-v2-simpler-better-cheaper/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-introducing-llamaparse-v2-simpler-better-cheaper/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -735,7 +843,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-31-secure-code-execution-in-llamaindex-with-azure-container-app/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-secure-code-execution-in-llamaindex-with-azure-container-app/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -747,7 +855,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-31-boosting-rag-picking-the-best-embedding-reranker-models/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-boosting-rag-picking-the-best-embedding-reranker-models/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -759,7 +867,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-31-evaluating-the-ideal-chunk-size-for-a-rag-system-using-llama/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-evaluating-the-ideal-chunk-size-for-a-rag-system-using-llama/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -771,7 +879,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-31-a-new-document-summary-index-for-llm-powered-qa-systems/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-a-new-document-summary-index-for-llm-powered-qa-systems/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -783,7 +891,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-31-a-cheat-sheet-and-some-recipes-for-building-advanced-rag/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-a-cheat-sheet-and-some-recipes-for-building-advanced-rag/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -795,7 +903,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-31-introducing-gpt-5-2-openai/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-31-introducing-gpt-5-2-openai/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -807,7 +915,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-24-microsoft-vylozhila-v-open-source-ai-engineer-coach-plagin-k/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-24-microsoft-vylozhila-v-open-source-ai-engineer-coach-plagin-k/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -819,7 +927,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-27-kompiuternoe-zrenie-bez-obucheniia-modelei-test-na-korobke-z/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-27-kompiuternoe-zrenie-bez-obucheniia-modelei-test-na-korobke-z/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -831,7 +939,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-30-introducing-gpt-5-for-developers-openai/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-introducing-gpt-5-for-developers-openai/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -843,7 +951,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-27-perplexity-vylozhili-v-open-source-svoi-unigram-tokenizer-ko/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-27-perplexity-vylozhili-v-open-source-svoi-unigram-tokenizer-ko/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -855,7 +963,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-28-anthropic-tolko-chto-vypustila-claude-opus-4-8/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-28-anthropic-tolko-chto-vypustila-claude-opus-4-8/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -867,7 +975,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-30-introducing-parsebench-the-first-document-parsing-benchmark/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-introducing-parsebench-the-first-document-parsing-benchmark/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -879,7 +987,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-30-improving-retrieval-performance-by-fine-tuning-cohere-rerank/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-improving-retrieval-performance-by-fine-tuning-cohere-rerank/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -891,7 +999,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-30-introducing-gpt-5-openai/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-introducing-gpt-5-openai/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -903,7 +1011,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-30-gpt-5-is-here-openai/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-30-gpt-5-is-here-openai/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -915,7 +1023,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-29-improving-vector-search-reranking-with-postgresml-and-llamai/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-improving-vector-search-reranking-with-postgresml-and-llamai/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -927,7 +1035,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-29-improving-rag-effectiveness-with-retrieval-augmented-dual-in/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-improving-rag-effectiveness-with-retrieval-augmented-dual-in/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -939,7 +1047,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-29-fine-tuning-a-linear-adapter-for-any-embedding-model/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-fine-tuning-a-linear-adapter-for-any-embedding-model/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -951,7 +1059,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-29-building-and-evaluating-a-qa-system-with-llamaindex/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-building-and-evaluating-a-qa-system-with-llamaindex/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -963,7 +1071,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-27-shipping-a-trillion-parameters-with-a-hub-bucket-delta-weigh/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-27-shipping-a-trillion-parameters-with-a-hub-bucket-delta-weigh/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -975,7 +1083,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-28-vazhnye-izmeneniia-dlia-tekh-kto-ispolzuet-ili-planiruet-vne/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-28-vazhnye-izmeneniia-dlia-tekh-kto-ispolzuet-ili-planiruet-vne/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -987,7 +1095,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-28-v-8-raz-bystree-na-tom-zhe-zheleze-prognal-moe-variant-qwen3/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-28-v-8-raz-bystree-na-tom-zhe-zheleze-prognal-moe-variant-qwen3/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -999,7 +1107,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-29-jeppesen-a-boeing-company-saves-2000-engineering-hours-with/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-jeppesen-a-boeing-company-saves-2000-engineering-hours-with/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1011,7 +1119,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-29-fine-tuning-embeddings-for-rag-with-synthetic-data/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-fine-tuning-embeddings-for-rag-with-synthetic-data/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1023,7 +1131,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-29-introducing-gpt-5-4-openai/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-29-introducing-gpt-5-4-openai/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1035,7 +1143,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-26-gemini-3-5-flash-moshch-pro-urovnia-po-tsene-flash/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-gemini-3-5-flash-moshch-pro-urovnia-po-tsene-flash/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1047,7 +1155,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-26-llm-bez-poiska-generator-galliutsinatsii-kak-my-s-etim-sprav/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-llm-bez-poiska-generator-galliutsinatsii-kak-my-s-etim-sprav/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1059,7 +1167,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-26-chem-chashche-agent-sprashivaet-razresheniia-tem-khuzhe-on-z/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-chem-chashche-agent-sprashivaet-razresheniia-tem-khuzhe-on-z/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1071,7 +1179,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-26-dobavili-novuiu-model-gemini-3-5-flash/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-dobavili-novuiu-model-gemini-3-5-flash/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1083,7 +1191,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-26-oblachnaia-llm-na-16-gb-vram-chast-2-langgraph-server-langsm/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-oblachnaia-llm-na-16-gb-vram-chast-2-langgraph-server-langsm/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1095,7 +1203,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-26-google-skormila-ii-trillion-minut-s-fitnes-brasletov-i-nauch/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-google-skormila-ii-trillion-minut-s-fitnes-brasletov-i-nauch/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1107,7 +1215,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-26-bitgn-ecom1-sostoitsia-30-maia-raspisanie-remote-first/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-bitgn-ecom1-sostoitsia-30-maia-raspisanie-remote-first/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1119,7 +1227,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-26-quoting-spacex-s-1/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-quoting-spacex-s-1/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1131,7 +1239,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-26-finish-reason-length-polnyi-otvet-id-chatcmpl-dhxmnvfa0m3jak/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-finish-reason-length-polnyi-otvet-id-chatcmpl-dhxmnvfa0m3jak/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1143,7 +1251,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-26-towards-speed-of-light-text-generation-with-nemotron-labs-di/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-26-towards-speed-of-light-text-generation-with-nemotron-labs-di/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1155,7 +1263,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-25-llm-bez-poiska-generator-galliutsinatsii-kak-my-s-etim-sprav/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-llm-bez-poiska-generator-galliutsinatsii-kak-my-s-etim-sprav/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1167,7 +1275,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-25-datasette-agent-charts-0-1a1/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-datasette-agent-charts-0-1a1/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1179,7 +1287,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-25-anthropic-platit-spacex-125-mlrd-v-mesiats-za-vychisleniia-v/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-anthropic-platit-spacex-125-mlrd-v-mesiats-za-vychisleniia-v/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1191,7 +1299,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-25-dobavili-novuiu-model-gemini-3-5-flash/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-dobavili-novuiu-model-gemini-3-5-flash/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1203,7 +1311,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-25-wordstat-api-instrument-dlia-polucheniia-statistiki-poiskovy/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-wordstat-api-instrument-dlia-polucheniia-statistiki-poiskovy/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1215,7 +1323,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-25-delta-channels-how-were-evolving-our-runtime-for-long-runnin/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-delta-channels-how-were-evolving-our-runtime-for-long-runnin/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1227,7 +1335,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-25-google-skormila-ii-trillion-minut-s-fitnes-brasletov-i-nauch/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-google-skormila-ii-trillion-minut-s-fitnes-brasletov-i-nauch/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1239,7 +1347,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-25-prosba-proverit-sovmestimost-modeli-openai-gpt-5-3-codex-s-v/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-prosba-proverit-sovmestimost-modeli-openai-gpt-5-3-codex-s-v/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1251,7 +1359,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-25-quoting-spacex-s-1/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-quoting-spacex-s-1/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1263,7 +1371,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-25-2-novaia-model-budet-v-srednem-v-15-raza-deshevle-deepseek-v/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-25-2-novaia-model-budet-v-srednem-v-15-raza-deshevle-deepseek-v/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1275,7 +1383,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-23-v-chate-nedavno-obsuzhdali-na-chto-ispolzovat-ostavshiesia-s/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-23-v-chate-nedavno-obsuzhdali-na-chto-ispolzovat-ostavshiesia-s/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1287,7 +1395,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-23-produktovyi-inzhener-vibe-coder/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-23-produktovyi-inzhener-vibe-coder/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1299,7 +1407,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-23-zapilil-mini-igru-za-chas-zakinul-v-github-actions-prokinul/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-23-zapilil-mini-igru-za-chas-zakinul-v-github-actions-prokinul/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1311,7 +1419,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-23-5-promtov-chtoby-zabit-otlozhku-na-nedeliu-mesiats-vpered/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-23-5-promtov-chtoby-zabit-otlozhku-na-nedeliu-mesiats-vpered/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1323,7 +1431,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-23-google-search-an-agent/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-23-google-search-an-agent/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1335,7 +1443,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-23-bitgn-live-liderbordy-teper-uchityvaiut-vremia-progona/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-23-bitgn-live-liderbordy-teper-uchityvaiut-vremia-progona/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1347,7 +1455,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-23-pishete-prompt-poluchaete-plokhoi-otvet-rugaetes-s-neiroseti/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-23-pishete-prompt-poluchaete-plokhoi-otvet-rugaetes-s-neiroseti/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1359,7 +1467,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-23-ecom1-poluchil-prodolzhenie-na-vtoroi-sezon/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-23-ecom1-poluchil-prodolzhenie-na-vtoroi-sezon/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1371,7 +1479,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-23-were-announcing-new-community-investments-in-missouri/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-23-were-announcing-new-community-investments-in-missouri/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
@@ -1383,7 +1491,7 @@
   </url>
 
   <url>
-    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-23-100-things-we-announced-at-i-o-2026/</loc>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-05-23-100-things-we-announced-at-i-o-2026/</loc>
     <news:news>
       <news:publication>
         <news:name>Карпов Николай — Новости</news:name>
