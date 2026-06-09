@@ -1,0 +1,86 @@
+{
+  "run_date_msk": "2026-06-09",
+  "primary_day": "2026-06-09",
+  "period_7d": {
+    "from": "2026-06-03",
+    "to": "2026-06-09"
+  },
+  "project": "portfolio",
+  "campaign_id": 710165227,
+  "campaign_name": "Портфолио",
+  "backfill": true,
+  "backfill_note": "Recovered from cron output 4f49d32d43b6/2026-06-09_16-55-14.md — original file lost due to git autostash",
+  "direct_primary_day": {
+    "date": "2026-06-09",
+    "impressions": 5,
+    "clicks": 1,
+    "cost": 2.27,
+    "ctr": 20.0,
+    "avg_cpc": 2.27,
+    "conversions": 0,
+    "cost_per_conversion": null,
+    "note": "Campaign nearly stopped: 825 clicks yesterday → 1 click today"
+  },
+  "direct_7d": {
+    "date_from": "2026-06-03",
+    "date_to": "2026-06-09",
+    "days_with_data": 2,
+    "totals": {
+      "impressions": 5186,
+      "clicks": 826,
+      "cost": 2545.27,
+      "ctr": 15.93,
+      "avg_cpc": 3.08,
+      "conversions": 0,
+      "cost_per_conversion": null
+    },
+    "note": "02-07 data in separate daily files; only 08-09 in this 7d window"
+  },
+  "metrika": {
+    "counter_id": 109350250,
+    "traffic_ad_primary_day": {
+      "sessions": 0,
+      "users": 0,
+      "pageviews": 0
+    },
+    "click_to_visit_ratio": null,
+    "goal_mapping_status": "NEEDS_GOAL_MAPPING",
+    "goals": {
+      "566497705": {
+        "name": "form_submit",
+        "role": "primary_lead",
+        "reaches": 0
+      },
+      "566492899": {
+        "name": "auto-goal contact data",
+        "role": "diagnostic",
+        "reaches": 0
+      }
+    },
+    "note": "Трекинг сломан — 0 визитов из рекламы при 826 кликах за 2 дня. Счётчик не подключён к Direct."
+  },
+  "alerts": [
+    {
+      "type": "tracking_broken",
+      "severity": "critical",
+      "detail": "0 визитов в Метрике при 826 кликах в Директе за 08-09.06. Счётчик 109350250 не получает данные."
+    },
+    {
+      "type": "campaign_stopped",
+      "severity": "high",
+      "detail": "Кампания 710165227: 825 кликов 08.06 → 1 клик 09.06. Вероятно, бюджет исчерпан или пауза."
+    },
+    {
+      "type": "direct_not_linked",
+      "severity": "high",
+      "detail": "Direct-аккаунт не подключён к счётчику 109350250 (data cost bridge недоступен)."
+    }
+  ],
+  "anomalies": {
+    "flagged_count": 2,
+    "items": [
+      "CTR 20% за 09.06 при 1 клике — неинформативно (n=1)",
+      "CTR 15.9% за 08.06 — аномально высокий, 818 кликов без привязки к поисковым запросам"
+    ]
+  }
+}
