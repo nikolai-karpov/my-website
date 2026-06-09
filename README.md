@@ -39,6 +39,8 @@ my-website/
 │   ├── contacts.html
 │   ├── holding-audit.html
 │   ├── hr-n8n-agent.html
+│   ├── marketing-insights.html  # Публикационный dashboard page: cockpit AI-CoPilot маркетолога
+│   ├── marketing-workbench.html # Публикационный dashboard page: workbench/evidence AI-CoPilot маркетолога
 │   ├── pir-s.html
 │   ├── prompt_generator.html
 │   ├── pseudonymizer.html
@@ -174,6 +176,11 @@ HTML-страницы кейсов лежат в [`site-pages/`](site-pages/) (�
 - [`hr-n8n-agent.html`](site-pages/hr-n8n-agent.html) — HR-агент на n8n
 - [`prompt_generator.html`](site-pages/prompt_generator.html) — Генератор стратегий продаж
 - [`contacts.html`](site-pages/contacts.html) — Полная форма заявки
+
+Публикационные dashboard pages для AI-CoPilot маркетолога:
+
+- [`marketing-insights.html`](site-pages/marketing-insights.html) — управленческий cockpit регулярного маркетингового отчёта
+- [`marketing-workbench.html`](site-pages/marketing-workbench.html) — рабочий стол доказательств, запросов, креативов и ручного подтверждения
 
 Исходные материалы и заметки по кейсам — в [`cases/`](cases/) (markdown-исследования, обзоры в [`cases/Обзоры/`](cases/Обзоры/), публикации в [`cases/publications/`](cases/publications/)). **В папке `cases/` не должно быть HTML-страниц сайта** — они принадлежат `site-pages/`.
 

@@ -1,0 +1,6 @@
+{
+  "version": 1,
+  "description": "Optional manual dashboard variable overrides. Keep empty unless a human has verified the value.",
+  "variables": {},
+  "ignored_variables": {}
+}

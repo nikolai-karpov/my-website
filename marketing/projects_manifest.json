@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "mode": "consolidated_portfolio_dashboard",
+  "description": "Registry of project artifact sources for the consolidated AI-CoPilot dashboard. Campaign, counter, goal and TurboPage IDs belong to project-level cron tasks and their artifacts, not to universal skills.",
+  "identity_policy": "Do not infer missing IDs here. Read them from each project's cron prompt/output or project artifacts. Missing IDs must become manual_required.",
+  "primary_demo_project_id": "portfolio",
+  "projects": [
+    {
+      "project_id": "pir_system",
+      "display_name": "PIR System",
+      "workspace_path": "/Users/nik/projects/pir-s.ru",
+      "cron_jobs": {
+        "daily": "022851db6e5f",
+        "weekly": "a70f6095cd21"
+      },
+      "artifact_paths": {
+        "placement_config": "marketing/placement_monitor_config.json",
+        "direct_project": "marketing/yandex_direct_project.json",
+        "daily_dir": "marketing/monitoring/daily",
+        "weekly_dir": "marketing/monitoring/weekly"
+      }
+    },
+    {
+      "project_id": "anonymizer",
+      "display_name": "Anonymizer / Pseudonymizer",
+      "workspace_path": "/Users/nik/projects/ai_data_cleaner",
+      "cron_jobs": {
+        "daily": "3ca0cf7765fe",
+        "weekly": "2893aa6c9935"
+      },
+      "artifact_paths": {
+        "placement_config": "marketing/placement_monitor_config.json",
+        "direct_project": "marketing/yandex_direct_project.json",
+        "daily_dir": "marketing/monitoring/daily",
+        "weekly_dir": "marketing/monitoring/weekly"
+      }
+    },
+    {
+      "project_id": "ai_assistant",
+      "display_name": "AI Assistant",
+      "workspace_path": "/Users/nik/projects/hermes-agent",
+      "cron_jobs": {
+        "daily": "9629ee71ea2e",
+        "weekly": "7aa9a4146593"
+      },
+      "artifact_paths": {
+        "placement_config": "marketing/placement_monitor_config.json",
+        "direct_project": "marketing/yandex_direct_project.json",
+        "daily_dir": "marketing/monitoring/daily",
+        "weekly_dir": "marketing/monitoring/weekly"
+      }
+    },
+    {
+      "project_id": "investor_search",
+      "display_name": "Investor Search",
+      "workspace_path": "/Users/nik/projects/im",
+      "cron_jobs": {
+        "daily": "98662b0900de",
+        "weekly": "5ac48fcf936a"
+      },
+      "artifact_paths": {
+        "placement_config": "marketing/placement_monitor_config.json",
+        "direct_project": "marketing/yandex_direct_project.json",
+        "daily_dir": "marketing/monitoring/daily",
+        "weekly_dir": "marketing/monitoring/weekly"
+      }
+    },
+    {
+      "project_id": "portfolio",
+      "display_name": "Portfolio / Николай Карпов",
+      "workspace_path": "/Users/nik/projects/my-website",
+      "cron_jobs": {
+        "daily": "4f49d32d43b6",
+        "weekly": "29c02d5a5892",
+        "summary": "5af5983da0bd",
+        "wordstat": "6270056a6c56"
+      },
+      "artifact_paths": {
+        "placement_config": "marketing/placement_monitor_config.json",
+        "direct_project": "marketing/yandex_direct_project.json",
+        "daily_dir": "marketing/monitoring/daily",
+        "weekly_dir": "marketing/monitoring/weekly"
+      }
+    }
+  ]
+}

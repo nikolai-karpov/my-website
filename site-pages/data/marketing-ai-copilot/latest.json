@@ -1,0 +1,3152 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-06-09T16:38:54",
+  "project": "my-website",
+  "scope": {
+    "mode": "consolidated_portfolio_dashboard",
+    "primary_demo_project_id": "portfolio",
+    "project_count": 5,
+    "configured_project_count": 2,
+    "verified_project_count": 2,
+    "campaign_ids": [
+      707287188,
+      710165227,
+      710220828,
+      710380437,
+      710496114
+    ],
+    "counter_ids": [
+      106746847,
+      109330246,
+      109350250,
+      109426601,
+      109570304
+    ],
+    "conversion_goal_ids": [
+      566492899,
+      566497705,
+      566701253
+    ],
+    "scope_warning": "Collectors must stay project-scoped; dashboard aggregation must not merge CPA across projects unless goals are explicitly compatible."
+  },
+  "projects": [
+    {
+      "project_id": "pir_system",
+      "display_name": "PIR System",
+      "landing_url": null,
+      "campaign_ids": [
+        710380437
+      ],
+      "counter_id": 109570304,
+      "conversion_goal_ids": [
+        566701253
+      ],
+      "turbo_page_ids": [],
+      "status": "ok",
+      "missing_fields": [],
+      "lead_api_status": "manual_required",
+      "lead_api_note": "Direct Leads.get requires TurboPageIds / landing IDs; absence is not proof of no leads.",
+      "identity_sources": [
+        "project_artifacts"
+      ],
+      "cron_jobs": {
+        "daily": "022851db6e5f",
+        "weekly": "a70f6095cd21"
+      }
+    },
+    {
+      "project_id": "anonymizer",
+      "display_name": "Anonymizer / Pseudonymizer",
+      "landing_url": null,
+      "campaign_ids": [
+        710496114
+      ],
+      "counter_id": 109330246,
+      "conversion_goal_ids": [],
+      "turbo_page_ids": [],
+      "status": "manual_required",
+      "missing_fields": [
+        "conversion_goal_ids"
+      ],
+      "lead_api_status": "manual_required",
+      "lead_api_note": "Direct Leads.get requires TurboPageIds / landing IDs; absence is not proof of no leads.",
+      "identity_sources": [
+        "project_artifacts"
+      ],
+      "cron_jobs": {
+        "daily": "3ca0cf7765fe",
+        "weekly": "2893aa6c9935"
+      }
+    },
+    {
+      "project_id": "ai_assistant",
+      "display_name": "AI Assistant",
+      "landing_url": "https://ai-assistant.clients.site/",
+      "campaign_ids": [
+        710220828
+      ],
+      "counter_id": 109426601,
+      "conversion_goal_ids": [],
+      "turbo_page_ids": [],
+      "status": "manual_required",
+      "missing_fields": [
+        "conversion_goal_ids"
+      ],
+      "lead_api_status": "manual_required",
+      "lead_api_note": "Direct Leads.get requires TurboPageIds / landing IDs; absence is not proof of no leads.",
+      "identity_sources": [
+        "project_artifacts"
+      ],
+      "cron_jobs": {
+        "daily": "9629ee71ea2e",
+        "weekly": "7aa9a4146593"
+      }
+    },
+    {
+      "project_id": "investor_search",
+      "display_name": "Investor Search",
+      "landing_url": null,
+      "campaign_ids": [
+        707287188
+      ],
+      "counter_id": 106746847,
+      "conversion_goal_ids": [],
+      "turbo_page_ids": [],
+      "status": "manual_required",
+      "missing_fields": [
+        "conversion_goal_ids"
+      ],
+      "lead_api_status": "manual_required",
+      "lead_api_note": "Direct Leads.get requires TurboPageIds / landing IDs; absence is not proof of no leads.",
+      "identity_sources": [
+        "project_artifacts"
+      ],
+      "cron_jobs": {
+        "daily": "98662b0900de",
+        "weekly": "5ac48fcf936a"
+      }
+    },
+    {
+      "project_id": "portfolio",
+      "display_name": "Portfolio / Николай Карпов",
+      "landing_url": "https://nikolai-pir-s-ru.sourcecraft.site/portfolio/",
+      "campaign_ids": [
+        710165227
+      ],
+      "counter_id": 109350250,
+      "conversion_goal_ids": [
+        566497705,
+        566492899
+      ],
+      "turbo_page_ids": [],
+      "status": "ok",
+      "missing_fields": [],
+      "lead_api_status": "manual_required",
+      "lead_api_note": "Direct Leads.get requires TurboPageIds / landing IDs; absence is not proof of no leads.",
+      "identity_sources": [
+        "project_artifacts"
+      ],
+      "cron_jobs": {
+        "daily": "4f49d32d43b6",
+        "weekly": "29c02d5a5892",
+        "summary": "5af5983da0bd",
+        "wordstat": "6270056a6c56"
+      }
+    }
+  ],
+  "summary": {
+    "variables_total": 111,
+    "status_counts": {
+      "api_error": 1,
+      "manual_required": 31,
+      "not_configured": 43,
+      "ok": 36
+    },
+    "projects_total": 5,
+    "projects_configured": 2,
+    "projects_verified": 2,
+    "public_file": "site-pages/data/marketing-ai-copilot/latest.json",
+    "internal_file": "marketing/dashboard_state/latest.json"
+  },
+  "variables": [
+    {
+      "key": "ad_promise",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "DR (Ad API)",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "alert_body",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "unknown",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "alert_title",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "unknown",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "alert_type",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "unknown",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "auto_ad_drafts",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "auto_minus_candidates",
+      "dashboard": "marketing-insights",
+      "value": {
+        "MISSED_BID": 1,
+        "IRRELEVANT": 33,
+        "LOW_QUALITY": 52,
+        "RELEVANT_POSSIBLE": 1,
+        "SPAM": 1,
+        "HIGH_CPC_SINGLE_CLICK": 2,
+        "RELEVANT": 2,
+        "GARBAGE": 4,
+        "SELF_BRAND": 3,
+        "LOW_QUALITY_CLICK": 2,
+        "BROAD_MATCH": 1,
+        "RELEVANT_CLICK": 1
+      },
+      "status": "ok",
+      "source_type": "DR",
+      "source_ref": "marketing/monitoring/search-queries/2026-06-09.csv",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 2
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/search-queries/2026-06-09.csv",
+          "status": "ok",
+          "fields": [
+            "Quality_Flag"
+          ]
+        }
+      ],
+      "formula": "Counts by Quality_Flag in latest Search Query CSV.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "behavior_metrika",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "MT (отказы, глубина + наличие событий)",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "budget_cpa",
+      "dashboard": "marketing-insights",
+      "value": "CPA не рассчитывается: нет ad-трафика в Метрике и нет подтверждённой цели лида.",
+      "status": "manual_required",
+      "source_type": "MT",
+      "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 2
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+          "status": "ok",
+          "fields": [
+            "analysis.real_cpa_rub",
+            "analysis.real_cpa_note"
+          ]
+        }
+      ],
+      "formula": "CPA requires verified goal reaches; note copied from daily artifact.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "medium"
+    },
+    {
+      "key": "budget_decision",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "budget_spend_pct",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "CF",
+      "source_ref": "marketing/placement_monitor_config.json",
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/placement_monitor_config.json",
+          "status": "ok",
+          "fields": [
+            "budget_limit"
+          ]
+        }
+      ],
+      "formula": "Budget limit is not configured; spend percent is not calculated.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "budget_spend_trend",
+      "dashboard": "marketing-insights",
+      "value": "Нет данных за 01-07.06.2026 — кампания, вероятно, была на паузе, в модерации или бюджет исчерпан.",
+      "status": "manual_required",
+      "source_type": "DR",
+      "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 2
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+          "status": "ok",
+          "fields": [
+            "direct.seven_days_note"
+          ]
+        }
+      ],
+      "formula": "Trend cannot be calculated when seven_days_stats is null.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "low"
+    },
+    {
+      "key": "cadence_daily",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "DR anomalies",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "cadence_monthly",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "WS history + deep research",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "cadence_weekly",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "DR CTR trend + MT behavior",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "campaign_id",
+      "dashboard": "marketing-insights",
+      "value": [
+        707287188,
+        710165227,
+        710220828,
+        710380437,
+        710496114
+      ],
+      "status": "ok",
+      "source_type": "project_artifacts",
+      "source_ref": "marketing/projects_manifest.json",
+      "freshness": {
+        "status": "ok",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/projects_manifest.json",
+          "status": "ok",
+          "fields": [
+            "projects[].cron_jobs",
+            "project artifacts: placement_config/direct_project/daily"
+          ],
+          "note": "Campaign/counter/goal IDs are read from project-level cron artifacts, not from universal skills."
+        }
+      ],
+      "formula": "All known project campaign IDs from project-level artifacts.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "medium"
+    },
+    {
+      "key": "conf_crm",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "CR",
+      "source_ref": "marketing/placement_monitor_config.json",
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/placement_monitor_config.json",
+          "status": "ok",
+          "fields": [
+            "crm"
+          ]
+        }
+      ],
+      "formula": "CRM source is not connected.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "conf_direct",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "сверка API и интерфейса",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "conf_metrika",
+      "dashboard": "marketing-insights",
+      "value": "NEEDS_GOAL_MAPPING",
+      "status": "manual_required",
+      "source_type": "MT",
+      "source_ref": "marketing/monitoring/config/metrika-goals-2026-06-09.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 14
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/config/metrika-goals-2026-06-09.json",
+          "status": "ok",
+          "fields": [
+            "inventory_status"
+          ]
+        }
+      ],
+      "formula": "Goal inventory status from latest Metrika goals config.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "medium"
+    },
+    {
+      "key": "conf_wordstat",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "даёт спрос, не доказывает покупку",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "counter_id",
+      "dashboard": "marketing-insights",
+      "value": [
+        106746847,
+        109330246,
+        109350250,
+        109426601,
+        109570304
+      ],
+      "status": "ok",
+      "source_type": "project_artifacts",
+      "source_ref": "marketing/projects_manifest.json",
+      "freshness": {
+        "status": "ok",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/projects_manifest.json",
+          "status": "ok",
+          "fields": [
+            "projects[].cron_jobs",
+            "project artifacts: placement_config/direct_project/daily"
+          ],
+          "note": "Campaign/counter/goal IDs are read from project-level cron artifacts, not from universal skills."
+        }
+      ],
+      "formula": "All known Metrika counters from project-level artifacts.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "medium"
+    },
+    {
+      "key": "creative_angle",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "creative_body",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "creative_control",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "CF",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "creative_headline",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "creative_risk",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "creative_variant",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "data_freshness",
+      "dashboard": "marketing-workbench",
+      "value": "T+1 day",
+      "status": "ok",
+      "source_type": "CF",
+      "source_ref": "marketing/placement_monitor_config.json",
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/placement_monitor_config.json",
+          "status": "ok",
+          "fields": [
+            "date_lag_days"
+          ]
+        }
+      ],
+      "formula": "Configured reporting lag.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "data_type_note",
+      "dashboard": "marketing-insights",
+      "value": "Consolidated portfolio state; IDs are supplied by project-level cron tasks and artifacts.",
+      "status": "ok",
+      "source_type": "project_artifacts",
+      "source_ref": "marketing/projects_manifest.json",
+      "freshness": {
+        "status": "ok",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/projects_manifest.json",
+          "status": "ok",
+          "fields": [
+            "projects[].cron_jobs",
+            "project artifacts: placement_config/direct_project/daily"
+          ],
+          "note": "Campaign/counter/goal IDs are read from project-level cron artifacts, not from universal skills."
+        }
+      ],
+      "formula": "Static dashboard guardrail.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "medium"
+    },
+    {
+      "key": "decision_body",
+      "dashboard": "marketing-insights",
+      "value": "Починить трекинг: убедиться, что на лендинге nikolai-karpov.github.io установлен тег Метрики счётчика 109350250 (или что счётчик настроен на правильный домен). Проверить прямой UTM-разведённый URL в браузере и убедиться, что при загрузке страницы пинг отправляется на hitmetrika.com.",
+      "status": "ok",
+      "source_type": "AI",
+      "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 2
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+          "status": "ok",
+          "fields": [
+            "recommendations[0].action"
+          ]
+        }
+      ],
+      "formula": "Copied from generated daily artifact; not newly inferred.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "medium"
+    },
+    {
+      "key": "decision_confidence",
+      "dashboard": "marketing-insights",
+      "value": "medium",
+      "status": "ok",
+      "source_type": "AI",
+      "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 2
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+          "status": "ok",
+          "fields": [
+            "recommendations"
+          ]
+        }
+      ],
+      "formula": "Presence of daily recommendation artifact; no extra model call.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "medium"
+    },
+    {
+      "key": "decision_priority",
+      "dashboard": "marketing-insights",
+      "value": "P1",
+      "status": "ok",
+      "source_type": "AI",
+      "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 2
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+          "status": "ok",
+          "fields": [
+            "recommendations[0].priority"
+          ]
+        }
+      ],
+      "formula": "Copied from generated daily artifact; not newly inferred.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "medium"
+    },
+    {
+      "key": "decision_title",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "direct_metrika_sync",
+      "dashboard": "marketing-workbench",
+      "value": "HTTP 404 — нет связанных Direct-клиентов для счётчика 109350250",
+      "status": "api_error",
+      "source_type": "MT",
+      "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 2
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+          "status": "ok",
+          "fields": [
+            "metrika.direct_costs_bridge"
+          ]
+        }
+      ],
+      "formula": "Bridge status copied from daily artifact.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "medium"
+    },
+    {
+      "key": "draft_approval",
+      "dashboard": "marketing-workbench",
+      "value": "только после ручного подтверждения",
+      "status": "ok",
+      "source_type": "CF",
+      "source_ref": "marketing/placement_monitor_config.json",
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/placement_monitor_config.json",
+          "status": "ok",
+          "fields": [
+            "manual_review.approval"
+          ]
+        }
+      ],
+      "formula": "Manual dashboard threshold config.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "draft_change",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "draft_review_period",
+      "dashboard": "marketing-workbench",
+      "value": "3 дня на клики, 7 дней на диагностику",
+      "status": "ok",
+      "source_type": "CF",
+      "source_ref": "marketing/placement_monitor_config.json",
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/placement_monitor_config.json",
+          "status": "ok",
+          "fields": [
+            "manual_review.review_period"
+          ]
+        }
+      ],
+      "formula": "Manual dashboard threshold config.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "draft_risk",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "evidence_formula",
+      "dashboard": "marketing-workbench",
+      "value": "CPA is project-specific and goal-specific. Cross-project CPA aggregation is blocked unless goal compatibility is explicitly verified.",
+      "status": "ok",
+      "source_type": "project_artifacts",
+      "source_ref": "marketing/projects_manifest.json",
+      "freshness": {
+        "status": "ok",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/projects_manifest.json",
+          "status": "ok",
+          "fields": [
+            "projects[].cron_jobs",
+            "project artifacts: placement_config/direct_project/daily"
+          ],
+          "note": "Campaign/counter/goal IDs are read from project-level cron artifacts, not from universal skills."
+        }
+      ],
+      "formula": "Portfolio-level CPA guardrail.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "evidence_limitation",
+      "dashboard": "marketing-workbench",
+      "value": "Direct API limited for master campaign: campaigns.get does not return the campaign. Reports API was queried with the configured CampaignId; use Metrika/manual UI export if rows are empty.",
+      "status": "ok",
+      "source_type": "DR",
+      "source_ref": "marketing/placement_monitor/latest_status.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 3
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/placement_monitor/latest_status.json",
+          "status": "ok",
+          "fields": [
+            "direct_message",
+            "direct_status"
+          ]
+        }
+      ],
+      "formula": "Direct API limitation copied from placement status.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "evidence_source_direct",
+      "dashboard": "marketing-workbench",
+      "value": {
+        "clicks": 825,
+        "cost_rub": 2543.43,
+        "status": "master_campaign_api_limited"
+      },
+      "status": "ok",
+      "source_type": "DR",
+      "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 2
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+          "status": "ok",
+          "fields": [
+            "direct.primary_day_stats",
+            "placement.direct_status"
+          ]
+        }
+      ],
+      "formula": "Direct facts from daily artifact and placement status.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "evidence_source_metrika",
+      "dashboard": "marketing-workbench",
+      "value": {
+        "ad_sessions": 0,
+        "counter_active": true,
+        "goal_id": 566497705
+      },
+      "status": "ok",
+      "source_type": "MT",
+      "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 2
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+          "status": "ok",
+          "fields": [
+            "metrika.primary_day_traffic",
+            "metrika.counter_active"
+          ]
+        }
+      ],
+      "formula": "Metrika facts from daily artifact.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "filter_campaign",
+      "dashboard": "marketing-insights",
+      "value": "all_configured_project_campaigns",
+      "status": "ok",
+      "source_type": "project_artifacts",
+      "source_ref": "marketing/projects_manifest.json",
+      "freshness": {
+        "status": "ok",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/projects_manifest.json",
+          "status": "ok",
+          "fields": [
+            "projects[].cron_jobs",
+            "project artifacts: placement_config/direct_project/daily"
+          ],
+          "note": "Campaign/counter/goal IDs are read from project-level cron artifacts, not from universal skills."
+        }
+      ],
+      "formula": "Dashboard-level filter across configured project collectors.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "medium"
+    },
+    {
+      "key": "filter_channel",
+      "dashboard": "marketing-insights",
+      "value": "Платный поиск + РСЯ",
+      "status": "ok",
+      "source_type": "CF",
+      "source_ref": "marketing/placement_monitor_config.json",
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/placement_monitor_config.json",
+          "status": "ok",
+          "fields": [
+            "thresholds.filters.channel"
+          ]
+        }
+      ],
+      "formula": "Manual dashboard threshold config.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "filter_comparison",
+      "dashboard": "marketing-insights",
+      "value": "к прошлой неделе",
+      "status": "ok",
+      "source_type": "CF",
+      "source_ref": "marketing/placement_monitor_config.json",
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/placement_monitor_config.json",
+          "status": "ok",
+          "fields": [
+            "thresholds.filters.comparison"
+          ]
+        }
+      ],
+      "formula": "Manual dashboard threshold config.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "filter_period",
+      "dashboard": "marketing-insights",
+      "value": "Последние 7 дней",
+      "status": "ok",
+      "source_type": "CF",
+      "source_ref": "marketing/placement_monitor_config.json",
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/placement_monitor_config.json",
+          "status": "ok",
+          "fields": [
+            "thresholds.filters.period_label"
+          ]
+        }
+      ],
+      "formula": "Manual dashboard threshold config.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "filter_region",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "CF",
+      "source_ref": "marketing/placement_monitor_config.json",
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/placement_monitor_config.json",
+          "status": "ok",
+          "fields": [
+            "thresholds.filters.region"
+          ]
+        }
+      ],
+      "formula": "Manual dashboard threshold config.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "low"
+    },
+    {
+      "key": "filter_segment",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "CF",
+      "source_ref": "marketing/placement_monitor_config.json",
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/placement_monitor_config.json",
+          "status": "ok",
+          "fields": [
+            "thresholds.filters.segment"
+          ]
+        }
+      ],
+      "formula": "Manual dashboard threshold config.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "low"
+    },
+    {
+      "key": "funnel_clicks",
+      "dashboard": "marketing-insights",
+      "value": 825,
+      "status": "ok",
+      "source_type": "DR",
+      "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 2
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+          "status": "ok",
+          "fields": [
+            "direct.primary_day_stats.clicks"
+          ]
+        }
+      ],
+      "formula": "Direct campaign clicks for primary day.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "funnel_crm",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "CR",
+      "source_ref": "marketing/placement_monitor_config.json",
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/placement_monitor_config.json",
+          "status": "ok",
+          "fields": [
+            "crm"
+          ]
+        }
+      ],
+      "formula": "CRM source is not connected.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "funnel_form_start",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "MT",
+      "source_ref": "marketing/monitoring/config/metrika-goals-2026-06-09.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 14
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/config/metrika-goals-2026-06-09.json",
+          "status": "ok",
+          "fields": [
+            "goals"
+          ]
+        }
+      ],
+      "formula": "Form-start goal is not configured in current artifacts.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "funnel_form_view",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "MT",
+      "source_ref": "marketing/monitoring/config/metrika-goals-2026-06-09.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 14
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/config/metrika-goals-2026-06-09.json",
+          "status": "ok",
+          "fields": [
+            "goals"
+          ]
+        }
+      ],
+      "formula": "Form-view goal is not configured in current artifacts.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "funnel_leads",
+      "dashboard": "marketing-insights",
+      "value": 0,
+      "status": "ok",
+      "source_type": "MT",
+      "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 2
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+          "status": "ok",
+          "fields": [
+            "metrika.goals.ad_source_conversions_06_08.goal_566497705"
+          ]
+        }
+      ],
+      "formula": "Explicit Metrika primary goal count.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "funnel_visits",
+      "dashboard": "marketing-insights",
+      "value": 0,
+      "status": "ok",
+      "source_type": "MT",
+      "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 2
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+          "status": "ok",
+          "fields": [
+            "metrika.primary_day_traffic.ad_sessions"
+          ]
+        }
+      ],
+      "formula": "Metrika ad sessions for primary day.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "goal_id",
+      "dashboard": "marketing-workbench",
+      "value": [
+        566492899,
+        566497705,
+        566701253
+      ],
+      "status": "ok",
+      "source_type": "project_artifacts",
+      "source_ref": "marketing/projects_manifest.json",
+      "freshness": {
+        "status": "ok",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/projects_manifest.json",
+          "status": "ok",
+          "fields": [
+            "projects[].cron_jobs",
+            "project artifacts: placement_config/direct_project/daily"
+          ],
+          "note": "Campaign/counter/goal IDs are read from project-level cron artifacts, not from universal skills."
+        }
+      ],
+      "formula": "All known conversion goal IDs by project; do not combine CPA across projects by default.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "medium"
+    },
+    {
+      "key": "hist_body",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI / человек",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "hist_status",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "человек",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "hist_title",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "insight_auto",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "unknown",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "insight_baseline",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "CF",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "insight_current_value",
+      "dashboard": "marketing-workbench",
+      "value": "CPA не рассчитывается: нет ad-трафика в Метрике и нет подтверждённой цели лида.",
+      "status": "manual_required",
+      "source_type": "MT",
+      "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 2
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+          "status": "ok",
+          "fields": [
+            "analysis.real_cpa_note"
+          ]
+        }
+      ],
+      "formula": "CPA note copied from daily artifact.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "medium"
+    },
+    {
+      "key": "insight_do",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "unknown",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "insight_evidence_src",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "перечисление",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "insight_label",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "unknown",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "insight_last_updated",
+      "dashboard": "marketing-workbench",
+      "value": "2026-06-09",
+      "status": "ok",
+      "source_type": "HR",
+      "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 2
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+          "status": "ok",
+          "fields": [
+            "report_date"
+          ]
+        }
+      ],
+      "formula": "Copied from latest daily monitoring artifact.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "insight_likely_cause",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "insight_rollback",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "CF",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "insight_signal",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "DR (Search Clicks)",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "insight_threshold",
+      "dashboard": "marketing-workbench",
+      "value": "отсутствие поисковых кликов за 3 дня",
+      "status": "ok",
+      "source_type": "CF",
+      "source_ref": "marketing/placement_monitor_config.json",
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/placement_monitor_config.json",
+          "status": "ok",
+          "fields": [
+            "manual_review.stop_threshold"
+          ]
+        }
+      ],
+      "formula": "Manual dashboard threshold config.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "insight_what",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "unknown",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "insight_why",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "unknown",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "intent_action",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "intent_category",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "intent_risk",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "intent_signal",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "DR (Search Query) + WS",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "kpi_data_confidence",
+      "dashboard": "marketing-insights",
+      "value": "Требуется ручное вмешательство: починка трекинга, проверка паузы кампании, настройка целей.",
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 2
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+          "status": "ok",
+          "fields": [
+            "manual_actions_required",
+            "manual_actions_summary"
+          ]
+        }
+      ],
+      "formula": "Daily artifact states whether manual action is required.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "medium"
+    },
+    {
+      "key": "kpi_demand",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "WS + DR query volume",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "kpi_leads",
+      "dashboard": "marketing-insights",
+      "value": 0,
+      "status": "ok",
+      "source_type": "MT",
+      "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 2
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+          "status": "ok",
+          "fields": [
+            "metrika.goals.ad_source_conversions_06_08.goal_566497705"
+          ]
+        }
+      ],
+      "formula": "Explicit Metrika goal count for primary goal.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "kpi_prelaunch_status",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "kpi_search_vs_network",
+      "dashboard": "marketing-insights",
+      "value": "Поисковые запросы дают 7 кликов / 225.55 ₽, но campaign report показывает 825 кликов / 2543.43 ₽. Разница ~818 кликов не объяснена — вероятно, автотаргетинг / smart-баннеры / невалидный трафик.",
+      "status": "ok",
+      "source_type": "DR",
+      "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 2
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+          "status": "ok",
+          "fields": [
+            "direct.click_discrepancy_note"
+          ]
+        }
+      ],
+      "formula": "Copied diagnostic note from daily artifact.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "medium"
+    },
+    {
+      "key": "kpi_spend_rate",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "CF",
+      "source_ref": "marketing/placement_monitor_config.json",
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/placement_monitor_config.json",
+          "status": "ok",
+          "fields": [
+            "budget_limit"
+          ]
+        }
+      ],
+      "formula": "Budget limit is not configured; spend rate is not calculated.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "landing_first_screen",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "LP (парсинг)",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "lane_check_*",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "unknown",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "lane_now_body",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "unknown",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "lane_now_control",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "unknown",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "lane_now_rollback",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "unknown",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "lane_now_title",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "unknown",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "lane_watch_*",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "unknown",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "ops_action",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "ops_funnel",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "MT",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "ops_proven",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "ops_segment_name",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "DR AdGroups + AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "ops_spend",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "DR (Cost по AdGroup)",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "ops_status",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "ops_traffic",
+      "dashboard": "marketing-insights",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "DR (Clicks + Impressions)",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "period_label",
+      "dashboard": "marketing-insights",
+      "value": "Последние 7 дней",
+      "status": "ok",
+      "source_type": "CF",
+      "source_ref": "marketing/placement_monitor_config.json",
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/placement_monitor_config.json",
+          "status": "ok",
+          "fields": [
+            "thresholds.filters.period_label"
+          ]
+        }
+      ],
+      "formula": "Manual dashboard threshold config.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "recommended_action",
+      "dashboard": "marketing-insights",
+      "value": "Починить трекинг: убедиться, что на лендинге nikolai-karpov.github.io установлен тег Метрики счётчика 109350250 (или что счётчик настроен на правильный домен). Проверить прямой UTM-разведённый URL в браузере и убедиться, что при загрузке страницы пинг отправляется на hitmetrika.com.",
+      "status": "ok",
+      "source_type": "AI",
+      "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 2
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+          "status": "ok",
+          "fields": [
+            "recommendations[0].action"
+          ]
+        }
+      ],
+      "formula": "Copied from generated daily artifact; not newly inferred.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "medium"
+    },
+    {
+      "key": "report_date",
+      "dashboard": "marketing-insights",
+      "value": "2026-06-09",
+      "status": "ok",
+      "source_type": "HR",
+      "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 2
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/daily/2026-06-09.json",
+          "status": "ok",
+          "fields": [
+            "report_date"
+          ]
+        }
+      ],
+      "formula": "Copied from latest daily monitoring artifact.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "roadmap_description",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "CF",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "roadmap_item",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "CF",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "sq_copilot_action",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "sq_intent",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "sq_query",
+      "dashboard": "marketing-workbench",
+      "value": [
+        {
+          "query": "какой ии может проанализировать выручку по точкам неделя к неделе",
+          "clicks": 1,
+          "cost_rub": 77.68,
+          "quality_flag": "HIGH_CPC_SINGLE_CLICK"
+        },
+        {
+          "query": "цифровая трансформация это",
+          "clicks": 1,
+          "cost_rub": 51.89,
+          "quality_flag": "RELEVANT"
+        },
+        {
+          "query": "ии для химического анализа данных и построения графиков зависимости сигналов сенсоров от диэлектрической проницаемости",
+          "clicks": 1,
+          "cost_rub": 38.19,
+          "quality_flag": "LOW_QUALITY_CLICK"
+        },
+        {
+          "query": "llm",
+          "clicks": 1,
+          "cost_rub": 22.45,
+          "quality_flag": "HIGH_CPC_SINGLE_CLICK"
+        },
+        {
+          "query": "llm безопасность",
+          "clicks": 1,
+          "cost_rub": 17.62,
+          "quality_flag": "RELEVANT"
+        },
+        {
+          "query": "ии для составления плана магазина в селе",
+          "clicks": 1,
+          "cost_rub": 14.76,
+          "quality_flag": "LOW_QUALITY_CLICK"
+        },
+        {
+          "query": "искусственный интеллект для работы службы безопасности",
+          "clicks": 1,
+          "cost_rub": 4.86,
+          "quality_flag": "RELEVANT_CLICK"
+        }
+      ],
+      "status": "ok",
+      "source_type": "DR",
+      "source_ref": "marketing/monitoring/search-queries/2026-06-09.csv",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 2
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/search-queries/2026-06-09.csv",
+          "status": "ok",
+          "fields": [
+            "Query",
+            "Clicks",
+            "Cost",
+            "Quality_Flag"
+          ]
+        }
+      ],
+      "formula": "Top clicked queries from latest Search Query CSV.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "sq_risk",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "AI",
+      "source_ref": null,
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "manual_required",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "sq_source",
+      "dashboard": "marketing-workbench",
+      "value": "latest Search Query CSV",
+      "status": "ok",
+      "source_type": "DR",
+      "source_ref": "marketing/monitoring/search-queries/2026-06-09.csv",
+      "freshness": {
+        "status": "fresh",
+        "source_date": "2026-06-09",
+        "age_days": 0,
+        "max_age_days": 2
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/monitoring/search-queries/2026-06-09.csv",
+          "status": "ok",
+          "fields": [
+            "search-queries/*.csv"
+          ]
+        }
+      ],
+      "formula": "Latest local CSV artifact.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "sq_status",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "manual_required",
+      "source_type": "человек",
+      "source_ref": "marketing/placement_monitor_config.json",
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/placement_monitor_config.json",
+          "status": "ok",
+          "fields": [
+            "decision storage"
+          ]
+        }
+      ],
+      "formula": "No persistent human decision storage exists yet.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "stop_threshold",
+      "dashboard": "marketing-insights",
+      "value": "отсутствие поисковых кликов за 3 дня",
+      "status": "ok",
+      "source_type": "CF",
+      "source_ref": "marketing/placement_monitor_config.json",
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/placement_monitor_config.json",
+          "status": "ok",
+          "fields": [
+            "manual_review.stop_threshold"
+          ]
+        }
+      ],
+      "formula": "Manual dashboard threshold config.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "utm_hygiene",
+      "dashboard": "marketing-workbench",
+      "value": null,
+      "status": "not_configured",
+      "source_type": "MT (audit UTM)",
+      "source_ref": null,
+      "freshness": {
+        "status": "not_configured",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": null
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/VARIABLES_MAP.md",
+          "status": "not_configured",
+          "note": "No mapped local source for this variable."
+        }
+      ],
+      "formula": null,
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "none"
+    },
+    {
+      "key": "wb_limitation",
+      "dashboard": "marketing-workbench",
+      "value": "Без CRM-фактов и без автоизменений",
+      "status": "ok",
+      "source_type": "CF",
+      "source_ref": "marketing/placement_monitor_config.json",
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/placement_monitor_config.json",
+          "status": "ok",
+          "fields": [
+            "quality_rules"
+          ]
+        }
+      ],
+      "formula": "Static guardrail.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "wb_mode",
+      "dashboard": "marketing-workbench",
+      "value": "Ручное подтверждение",
+      "status": "ok",
+      "source_type": "CF",
+      "source_ref": "marketing/placement_monitor_config.json",
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/placement_monitor_config.json",
+          "status": "ok",
+          "fields": [
+            "manual_review.approval"
+          ]
+        }
+      ],
+      "formula": "Static dashboard operating mode.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "high"
+    },
+    {
+      "key": "wb_scope",
+      "dashboard": "marketing-workbench",
+      "value": "5 projects · 5 known campaign IDs · 5 known counters",
+      "status": "ok",
+      "source_type": "project_artifacts",
+      "source_ref": "marketing/projects_manifest.json",
+      "freshness": {
+        "status": "ok",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/projects_manifest.json",
+          "status": "ok",
+          "fields": [
+            "projects[].cron_jobs",
+            "project artifacts: placement_config/direct_project/daily"
+          ],
+          "note": "Campaign/counter/goal IDs are read from project-level cron artifacts, not from universal skills."
+        }
+      ],
+      "formula": "Portfolio dashboard scope summary from project artifact registry.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "medium"
+    },
+    {
+      "key": "wb_sources",
+      "dashboard": "marketing-workbench",
+      "value": "Директ + Метрика + Search Query CSV + placement monitor",
+      "status": "ok",
+      "source_type": "CF",
+      "source_ref": "marketing/placement_monitor_config.json",
+      "freshness": {
+        "status": "manual_required",
+        "source_date": null,
+        "age_days": null,
+        "max_age_days": 365
+      },
+      "evidence": [
+        {
+          "source_ref": "marketing/placement_monitor_config.json",
+          "status": "ok",
+          "fields": [
+            "dashboard sources"
+          ]
+        }
+      ],
+      "formula": "Static list of currently used local sources.",
+      "manual_value": null,
+      "ignore_reason": null,
+      "confidence": "medium"
+    }
+  ]
+}

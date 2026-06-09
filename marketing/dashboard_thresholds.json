@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "freshness_days": {
+    "daily": 2,
+    "placement": 3,
+    "goals": 14,
+    "search_queries": 2,
+    "config": 365
+  },
+  "filters": {
+    "period_label": "Последние 7 дней",
+    "comparison": "к прошлой неделе",
+    "channel": "Платный поиск + РСЯ",
+    "region": null,
+    "segment": null
+  },
+  "manual_review": {
+    "stop_threshold": "отсутствие поисковых кликов за 3 дня",
+    "review_period": "3 дня на клики, 7 дней на диагностику",
+    "approval": "только после ручного подтверждения"
+  },
+  "quality_rules": [
+    "Direct Conversions не считаются доказательством лида.",
+    "CPA считается только по явному goal_id, без all_goals.",
+    "Wordstat-частотности не придумываются.",
+    "CRM-качество не подключено и не используется как факт."
+  ]
+}

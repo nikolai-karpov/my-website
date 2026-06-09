@@ -1,0 +1,676 @@
+{
+  "version": 1,
+  "description": "Dashboard variable manifest for marketing AI co-pilot state generation.",
+  "dashboards": {
+    "marketing-insights": "marketing-insights.html",
+    "marketing-workbench": "marketing-workbench.html"
+  },
+  "variables": [
+    {
+      "key": "ad_promise",
+      "dashboard": "marketing-workbench",
+      "declared_source": "DR (Ad API)",
+      "note": ""
+    },
+    {
+      "key": "alert_body",
+      "dashboard": "marketing-insights",
+      "declared_source": "",
+      "note": ""
+    },
+    {
+      "key": "alert_title",
+      "dashboard": "marketing-insights",
+      "declared_source": "",
+      "note": ""
+    },
+    {
+      "key": "alert_type",
+      "dashboard": "marketing-insights",
+      "declared_source": "",
+      "note": ""
+    },
+    {
+      "key": "auto_ad_drafts",
+      "dashboard": "marketing-insights",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "auto_minus_candidates",
+      "dashboard": "marketing-insights",
+      "declared_source": "DR (Search Query Report) + AI",
+      "note": ""
+    },
+    {
+      "key": "behavior_metrika",
+      "dashboard": "marketing-workbench",
+      "declared_source": "MT (отказы, глубина + наличие событий)",
+      "note": ""
+    },
+    {
+      "key": "budget_cpa",
+      "dashboard": "marketing-insights",
+      "declared_source": "DR Cost / MT conversions",
+      "note": ""
+    },
+    {
+      "key": "budget_decision",
+      "dashboard": "marketing-insights",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "budget_spend_pct",
+      "dashboard": "marketing-insights",
+      "declared_source": "DR (Cost / Budget)",
+      "note": ""
+    },
+    {
+      "key": "budget_spend_trend",
+      "dashboard": "marketing-insights",
+      "declared_source": "AI (тренд расхода)",
+      "note": ""
+    },
+    {
+      "key": "cadence_daily",
+      "dashboard": "marketing-insights",
+      "declared_source": "DR anomalies",
+      "note": ""
+    },
+    {
+      "key": "cadence_monthly",
+      "dashboard": "marketing-insights",
+      "declared_source": "WS history + deep research",
+      "note": ""
+    },
+    {
+      "key": "cadence_weekly",
+      "dashboard": "marketing-insights",
+      "declared_source": "DR CTR trend + MT behavior",
+      "note": ""
+    },
+    {
+      "key": "campaign_id",
+      "dashboard": "marketing-insights",
+      "declared_source": "cron artifacts",
+      "note": "dashboard-level список; per-project ID задается в cron job"
+    },
+    {
+      "key": "conf_crm",
+      "dashboard": "marketing-insights",
+      "declared_source": "перспективный, не факт",
+      "note": ""
+    },
+    {
+      "key": "conf_direct",
+      "dashboard": "marketing-insights",
+      "declared_source": "сверка API и интерфейса",
+      "note": ""
+    },
+    {
+      "key": "conf_metrika",
+      "dashboard": "marketing-insights",
+      "declared_source": "наличие form-view, form-start",
+      "note": ""
+    },
+    {
+      "key": "conf_wordstat",
+      "dashboard": "marketing-insights",
+      "declared_source": "даёт спрос, не доказывает покупку",
+      "note": ""
+    },
+    {
+      "key": "counter_id",
+      "dashboard": "marketing-insights",
+      "declared_source": "cron artifacts",
+      "note": "dashboard-level список; не означает одинаковые цели"
+    },
+    {
+      "key": "creative_angle",
+      "dashboard": "marketing-workbench",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "creative_body",
+      "dashboard": "marketing-workbench",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "creative_control",
+      "dashboard": "marketing-workbench",
+      "declared_source": "CF",
+      "note": ""
+    },
+    {
+      "key": "creative_headline",
+      "dashboard": "marketing-workbench",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "creative_risk",
+      "dashboard": "marketing-workbench",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "creative_variant",
+      "dashboard": "marketing-workbench",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "data_freshness",
+      "dashboard": "marketing-workbench",
+      "declared_source": "CF (API-лаги)",
+      "note": ""
+    },
+    {
+      "key": "data_type_note",
+      "dashboard": "marketing-insights",
+      "declared_source": "AI/CF",
+      "note": "факты только из project-level artifacts"
+    },
+    {
+      "key": "decision_body",
+      "dashboard": "marketing-insights",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "decision_confidence",
+      "dashboard": "marketing-insights",
+      "declared_source": "AI",
+      "note": "оценка по объёму данных"
+    },
+    {
+      "key": "decision_priority",
+      "dashboard": "marketing-insights",
+      "declared_source": "AI",
+      "note": "по правилам порогов"
+    },
+    {
+      "key": "decision_title",
+      "dashboard": "marketing-insights",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "direct_metrika_sync",
+      "dashboard": "marketing-workbench",
+      "declared_source": "кросс-проверка DR cost vs MT cost",
+      "note": ""
+    },
+    {
+      "key": "draft_approval",
+      "dashboard": "marketing-workbench",
+      "declared_source": "CF",
+      "note": ""
+    },
+    {
+      "key": "draft_change",
+      "dashboard": "marketing-workbench",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "draft_review_period",
+      "dashboard": "marketing-workbench",
+      "declared_source": "CF",
+      "note": ""
+    },
+    {
+      "key": "draft_risk",
+      "dashboard": "marketing-workbench",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "evidence_formula",
+      "dashboard": "marketing-workbench",
+      "declared_source": "CF",
+      "note": ""
+    },
+    {
+      "key": "evidence_limitation",
+      "dashboard": "marketing-workbench",
+      "declared_source": "документация",
+      "note": ""
+    },
+    {
+      "key": "evidence_source_direct",
+      "dashboard": "marketing-workbench",
+      "declared_source": "DR",
+      "note": ""
+    },
+    {
+      "key": "evidence_source_metrika",
+      "dashboard": "marketing-workbench",
+      "declared_source": "MT",
+      "note": ""
+    },
+    {
+      "key": "filter_campaign",
+      "dashboard": "marketing-insights",
+      "declared_source": "cron artifacts",
+      "note": ""
+    },
+    {
+      "key": "filter_channel",
+      "dashboard": "marketing-insights",
+      "declared_source": "CF",
+      "note": ""
+    },
+    {
+      "key": "filter_comparison",
+      "dashboard": "marketing-insights",
+      "declared_source": "CF",
+      "note": ""
+    },
+    {
+      "key": "filter_period",
+      "dashboard": "marketing-insights",
+      "declared_source": "CF",
+      "note": ""
+    },
+    {
+      "key": "filter_region",
+      "dashboard": "marketing-insights",
+      "declared_source": "DR (геотаргетинг)",
+      "note": ""
+    },
+    {
+      "key": "filter_segment",
+      "dashboard": "marketing-insights",
+      "declared_source": "CF",
+      "note": ""
+    },
+    {
+      "key": "funnel_clicks",
+      "dashboard": "marketing-insights",
+      "declared_source": "DR (Clicks)",
+      "note": ""
+    },
+    {
+      "key": "funnel_crm",
+      "dashboard": "marketing-insights",
+      "declared_source": "CR",
+      "note": "не подключено"
+    },
+    {
+      "key": "funnel_form_start",
+      "dashboard": "marketing-insights",
+      "declared_source": "MT (событие)",
+      "note": "не настроено"
+    },
+    {
+      "key": "funnel_form_view",
+      "dashboard": "marketing-insights",
+      "declared_source": "MT (событие)",
+      "note": "не настроено"
+    },
+    {
+      "key": "funnel_leads",
+      "dashboard": "marketing-insights",
+      "declared_source": "MT (goal 566497705)",
+      "note": ""
+    },
+    {
+      "key": "funnel_visits",
+      "dashboard": "marketing-insights",
+      "declared_source": "MT (визиты с utm_source=direct)",
+      "note": "может быть > кликов (повторные визиты)"
+    },
+    {
+      "key": "goal_id",
+      "dashboard": "marketing-workbench",
+      "declared_source": "MT goals API",
+      "note": ""
+    },
+    {
+      "key": "hist_body",
+      "dashboard": "marketing-workbench",
+      "declared_source": "AI / человек",
+      "note": ""
+    },
+    {
+      "key": "hist_status",
+      "dashboard": "marketing-workbench",
+      "declared_source": "человек",
+      "note": ""
+    },
+    {
+      "key": "hist_title",
+      "dashboard": "marketing-workbench",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "insight_auto",
+      "dashboard": "marketing-insights",
+      "declared_source": "",
+      "note": ""
+    },
+    {
+      "key": "insight_baseline",
+      "dashboard": "marketing-workbench",
+      "declared_source": "CF",
+      "note": ""
+    },
+    {
+      "key": "insight_current_value",
+      "dashboard": "marketing-workbench",
+      "declared_source": "MT conversions",
+      "note": ""
+    },
+    {
+      "key": "insight_do",
+      "dashboard": "marketing-insights",
+      "declared_source": "",
+      "note": ""
+    },
+    {
+      "key": "insight_evidence_src",
+      "dashboard": "marketing-workbench",
+      "declared_source": "перечисление",
+      "note": ""
+    },
+    {
+      "key": "insight_label",
+      "dashboard": "marketing-insights",
+      "declared_source": "",
+      "note": ""
+    },
+    {
+      "key": "insight_last_updated",
+      "dashboard": "marketing-workbench",
+      "declared_source": "HR",
+      "note": ""
+    },
+    {
+      "key": "insight_likely_cause",
+      "dashboard": "marketing-workbench",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "insight_rollback",
+      "dashboard": "marketing-workbench",
+      "declared_source": "CF",
+      "note": ""
+    },
+    {
+      "key": "insight_signal",
+      "dashboard": "marketing-workbench",
+      "declared_source": "DR (Search Clicks)",
+      "note": ""
+    },
+    {
+      "key": "insight_threshold",
+      "dashboard": "marketing-workbench",
+      "declared_source": "CF",
+      "note": ""
+    },
+    {
+      "key": "insight_what",
+      "dashboard": "marketing-insights",
+      "declared_source": "",
+      "note": ""
+    },
+    {
+      "key": "insight_why",
+      "dashboard": "marketing-insights",
+      "declared_source": "",
+      "note": ""
+    },
+    {
+      "key": "intent_action",
+      "dashboard": "marketing-insights",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "intent_category",
+      "dashboard": "marketing-insights",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "intent_risk",
+      "dashboard": "marketing-insights",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "intent_signal",
+      "dashboard": "marketing-insights",
+      "declared_source": "DR (Search Query) + WS",
+      "note": ""
+    },
+    {
+      "key": "kpi_data_confidence",
+      "dashboard": "marketing-insights",
+      "declared_source": "AI",
+      "note": "покрытие × свежесть × API-видимость"
+    },
+    {
+      "key": "kpi_demand",
+      "dashboard": "marketing-insights",
+      "declared_source": "WS + DR query volume",
+      "note": ""
+    },
+    {
+      "key": "kpi_leads",
+      "dashboard": "marketing-insights",
+      "declared_source": "MT (goal 566497705)",
+      "note": ""
+    },
+    {
+      "key": "kpi_prelaunch_status",
+      "dashboard": "marketing-insights",
+      "declared_source": "AI",
+      "note": "по pre-launch чеклисту"
+    },
+    {
+      "key": "kpi_search_vs_network",
+      "dashboard": "marketing-insights",
+      "declared_source": "DR (клики поиска vs РСЯ)",
+      "note": ""
+    },
+    {
+      "key": "kpi_spend_rate",
+      "dashboard": "marketing-insights",
+      "declared_source": "DR (Cost / Budget)",
+      "note": ""
+    },
+    {
+      "key": "landing_first_screen",
+      "dashboard": "marketing-workbench",
+      "declared_source": "LP (парсинг)",
+      "note": ""
+    },
+    {
+      "key": "lane_check_*",
+      "dashboard": "marketing-insights",
+      "declared_source": "",
+      "note": ""
+    },
+    {
+      "key": "lane_now_body",
+      "dashboard": "marketing-insights",
+      "declared_source": "",
+      "note": ""
+    },
+    {
+      "key": "lane_now_control",
+      "dashboard": "marketing-insights",
+      "declared_source": "",
+      "note": ""
+    },
+    {
+      "key": "lane_now_rollback",
+      "dashboard": "marketing-insights",
+      "declared_source": "",
+      "note": ""
+    },
+    {
+      "key": "lane_now_title",
+      "dashboard": "marketing-insights",
+      "declared_source": "",
+      "note": ""
+    },
+    {
+      "key": "lane_watch_*",
+      "dashboard": "marketing-insights",
+      "declared_source": "",
+      "note": ""
+    },
+    {
+      "key": "ops_action",
+      "dashboard": "marketing-insights",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "ops_funnel",
+      "dashboard": "marketing-insights",
+      "declared_source": "MT",
+      "note": ""
+    },
+    {
+      "key": "ops_proven",
+      "dashboard": "marketing-insights",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "ops_segment_name",
+      "dashboard": "marketing-insights",
+      "declared_source": "DR AdGroups + AI",
+      "note": ""
+    },
+    {
+      "key": "ops_spend",
+      "dashboard": "marketing-insights",
+      "declared_source": "DR (Cost по AdGroup)",
+      "note": ""
+    },
+    {
+      "key": "ops_status",
+      "dashboard": "marketing-insights",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "ops_traffic",
+      "dashboard": "marketing-insights",
+      "declared_source": "DR (Clicks + Impressions)",
+      "note": ""
+    },
+    {
+      "key": "period_label",
+      "dashboard": "marketing-insights",
+      "declared_source": "CF",
+      "note": ""
+    },
+    {
+      "key": "recommended_action",
+      "dashboard": "marketing-insights",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "report_date",
+      "dashboard": "marketing-insights",
+      "declared_source": "HR",
+      "note": "timestamp последнего cron-прогона"
+    },
+    {
+      "key": "roadmap_description",
+      "dashboard": "marketing-workbench",
+      "declared_source": "CF",
+      "note": ""
+    },
+    {
+      "key": "roadmap_item",
+      "dashboard": "marketing-workbench",
+      "declared_source": "CF",
+      "note": ""
+    },
+    {
+      "key": "sq_copilot_action",
+      "dashboard": "marketing-workbench",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "sq_intent",
+      "dashboard": "marketing-workbench",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "sq_query",
+      "dashboard": "marketing-workbench",
+      "declared_source": "DR (Search Query Performance Report)",
+      "note": ""
+    },
+    {
+      "key": "sq_risk",
+      "dashboard": "marketing-workbench",
+      "declared_source": "AI",
+      "note": ""
+    },
+    {
+      "key": "sq_source",
+      "dashboard": "marketing-workbench",
+      "declared_source": "метка источника",
+      "note": ""
+    },
+    {
+      "key": "sq_status",
+      "dashboard": "marketing-workbench",
+      "declared_source": "человек",
+      "note": ""
+    },
+    {
+      "key": "stop_threshold",
+      "dashboard": "marketing-insights",
+      "declared_source": "CF",
+      "note": ""
+    },
+    {
+      "key": "utm_hygiene",
+      "dashboard": "marketing-workbench",
+      "declared_source": "MT (audit UTM)",
+      "note": ""
+    },
+    {
+      "key": "wb_limitation",
+      "dashboard": "marketing-workbench",
+      "declared_source": "CF",
+      "note": ""
+    },
+    {
+      "key": "wb_mode",
+      "dashboard": "marketing-workbench",
+      "declared_source": "CF",
+      "note": ""
+    },
+    {
+      "key": "wb_scope",
+      "dashboard": "marketing-workbench",
+      "declared_source": "CF",
+      "note": ""
+    },
+    {
+      "key": "wb_sources",
+      "dashboard": "marketing-workbench",
+      "declared_source": "CF",
+      "note": ""
+    }
+  ]
+}
