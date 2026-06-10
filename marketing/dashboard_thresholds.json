@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "freshness": {
+    "daily_artifact_max_age_days": 2,
+    "wordstat_weekly_max_age_days": 10,
+    "wordstat_monthly_max_age_days": 40
+  },
+  "quality": {
+    "minimum_projects_for_consolidated_dashboard": 1,
+    "required_identity_fields": [
+      "campaign_ids",
+      "counter_ids"
+    ],
+    "required_for_cpa": [
+      "campaign_cost",
+      "explicit_metrika_goal_id",
+      "explicit_metrika_goal_reaches"
+    ]
+  }
+}

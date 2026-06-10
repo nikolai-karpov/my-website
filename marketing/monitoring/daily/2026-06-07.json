@@ -1,0 +1,63 @@
+{
+  "run_date_msk": "2026-06-07",
+  "primary_day": "2026-06-07",
+  "period_7d": { "from": "2026-06-01", "to": "2026-06-07" },
+  "project": "portfolio",
+  "campaign_id": 710165227,
+  "campaign_name": "Портфолио",
+  "backfill": true,
+  "backfill_note": "Recovered 2026-06-09: original cron run hit DNS outage [Errno 8]. Direct API returned 0 rows for 01-07 period — campaign likely not yet active or budget not set.",
+  "status": "RED",
+  "status_reason": "No Direct API data for campaign 710165227 in 01-07 period (empty response from yandex_direct_report). Campaign may have been paused, in moderation, or budget not configured.",
+  "direct_primary_day": {
+    "date": "2026-06-07",
+    "impressions": 0,
+    "clicks": 0,
+    "cost": 0,
+    "ctr": null,
+    "avg_cpc": null,
+    "conversions": 0,
+    "cost_per_conversion": null,
+    "note": "Empty API response — 0 rows returned for period 2026-06-01..2026-06-07"
+  },
+  "direct_7d": {
+    "date_from": "2026-06-01",
+    "date_to": "2026-06-07",
+    "days_with_data": 0,
+    "totals": {
+      "impressions": 0,
+      "clicks": 0,
+      "cost": 0,
+      "ctr": null,
+      "avg_cpc": null,
+      "conversions": 0,
+      "cost_per_conversion": null
+    },
+    "note": "Campaign 710165227 (master) returned zero rows via CAMPAIGN_PERFORMANCE_REPORT for full 01-07 window. Compare with 08-09 data (825+ clicks/day) — campaign was likely not yet active or budget was zero."
+  },
+  "metrika": {
+    "counter_id": 109350250,
+    "traffic_ad_primary_day": {
+      "sessions": 0,
+      "users": 0,
+      "pageviews": 0,
+      "bounce_rate": null,
+      "avg_time": "00:00:00",
+      "page_depth": 0
+    },
+    "click_to_visit_ratio": null,
+    "goal_mapping_status": "NEEDS_GOAL_MAPPING"
+  },
+  "alerts": [
+    {
+      "type": "no_data",
+      "severity": "info",
+      "detail": "Direct API returned empty for campaign 710165227 over 01-07 period. Cross-check with 08.06 data (825 clicks) — campaign probably started or budget activated around June 7-8."
+    },
+    {
+      "type": "tracking_unverified",
+      "severity": "high",
+      "detail": "Even for 08-09 (826 clicks), Metrika shows 0 ad sessions — counter 109350250 likely not linked to Direct account or tag missing on landing page."
+    }
+  ]
+}

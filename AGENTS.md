@@ -39,8 +39,7 @@ For any task about Yandex Direct, Yandex Metrika, Wordstat, paid traffic, CPA, c
 
 5. Never run account-wide Yandex Direct reports for this repository.
 
-6. Always scope Yandex Direct to campaign:
-   `710165227`
+6. Всегда скопируйте кампанию: `710568666`
 
 7. Always scope primary paid traffic Metrika analysis to counter:
    `109350250`

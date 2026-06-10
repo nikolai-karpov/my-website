@@ -1,0 +1,896 @@
+{
+  "schema_version": "1.0",
+  "collector": "marketing_project_collect.py",
+  "run_date_msk": "2026-06-09",
+  "generated_at": "2026-06-09T21:15:53.912636+03:00",
+  "status": "api_error",
+  "status_reason": {
+    "missing_identity_fields": [],
+    "api_failed_sources": 1,
+    "manual_required_sources": 0
+  },
+  "period": {
+    "primary_day": "2026-06-08",
+    "last_7_full_days": {
+      "from": "2026-06-02",
+      "to": "2026-06-08"
+    }
+  },
+  "project": {
+    "slug": "portfolio",
+    "display_name": "Portfolio",
+    "workspace": "/Users/nik/projects/my-website",
+    "campaign_ids": [
+      710568666
+    ],
+    "counter_ids": [
+      109350250
+    ],
+    "conversion_goal_ids": [
+      566497705,
+      566492899
+    ],
+    "turbo_page_ids": [
+      10000154536
+    ],
+    "landing": "https://nikolai-pir-s-ru.sourcecraft.site/portfolio/",
+    "identity_sources": {
+      "central_manifest": true,
+      "direct_project": true,
+      "placement_config": true,
+      "latest_daily": "marketing/monitoring/daily/2026-06-09_plan1.json"
+    }
+  },
+  "campaign_id": 710568666,
+  "direct": {
+    "campaign_id": 710568666,
+    "campaign_ids": [
+      710568666
+    ],
+    "primary_day": {
+      "impressions": 0,
+      "clicks": 0,
+      "cost_rub": 0.0,
+      "ctr_pct": null,
+      "avg_cpc_rub": null,
+      "conversions": 0,
+      "cost_per_conversion": null
+    },
+    "last_7_days": {
+      "impressions": 0,
+      "clicks": 0,
+      "cost_rub": 0.0,
+      "ctr_pct": null,
+      "avg_cpc_rub": null,
+      "conversions": 0,
+      "cost_per_conversion": null
+    },
+    "reports": {
+      "campaign_daily": {
+        "status": "ok",
+        "tool": "yandex_direct_report",
+        "args": {
+          "date_from": "2026-06-08",
+          "date_to": "2026-06-08",
+          "report_type": "CAMPAIGN_PERFORMANCE_REPORT",
+          "field_names": [
+            "CampaignId",
+            "CampaignName",
+            "Date",
+            "Impressions",
+            "Clicks",
+            "Cost",
+            "Ctr",
+            "AvgCpc",
+            "Conversions",
+            "CostPerConversion"
+          ],
+          "campaign_ids": [
+            710568666
+          ],
+          "include_vat": "NO"
+        },
+        "success": true,
+        "report_type": "CAMPAIGN_PERFORMANCE_REPORT",
+        "date_from": "2026-06-08",
+        "date_to": "2026-06-08",
+        "fields": [
+          "CampaignId",
+          "CampaignName",
+          "Date",
+          "Impressions",
+          "Clicks",
+          "Cost",
+          "Ctr",
+          "AvgCpc",
+          "Conversions",
+          "CostPerConversion"
+        ],
+        "rows": [],
+        "row_count": 0,
+        "truncated": false,
+        "sample_rows": []
+      },
+      "campaign_weekly": {
+        "status": "ok",
+        "tool": "yandex_direct_report",
+        "args": {
+          "date_from": "2026-06-02",
+          "date_to": "2026-06-08",
+          "report_type": "CAMPAIGN_PERFORMANCE_REPORT",
+          "field_names": [
+            "CampaignId",
+            "CampaignName",
+            "Date",
+            "Impressions",
+            "Clicks",
+            "Cost",
+            "Ctr",
+            "AvgCpc",
+            "Conversions",
+            "CostPerConversion"
+          ],
+          "campaign_ids": [
+            710568666
+          ],
+          "include_vat": "NO"
+        },
+        "success": true,
+        "report_type": "CAMPAIGN_PERFORMANCE_REPORT",
+        "date_from": "2026-06-02",
+        "date_to": "2026-06-08",
+        "fields": [
+          "CampaignId",
+          "CampaignName",
+          "Date",
+          "Impressions",
+          "Clicks",
+          "Cost",
+          "Ctr",
+          "AvgCpc",
+          "Conversions",
+          "CostPerConversion"
+        ],
+        "rows": [],
+        "row_count": 0,
+        "truncated": false,
+        "sample_rows": []
+      },
+      "search_query": {
+        "status": "ok",
+        "tool": "yandex_direct_report",
+        "args": {
+          "date_from": "2026-06-02",
+          "date_to": "2026-06-08",
+          "report_type": "SEARCH_QUERY_PERFORMANCE_REPORT",
+          "field_names": [
+            "CampaignId",
+            "CampaignName",
+            "AdGroupId",
+            "AdGroupName",
+            "CriterionId",
+            "Criterion",
+            "Query",
+            "Date",
+            "Impressions",
+            "Clicks",
+            "Cost",
+            "Ctr",
+            "AvgCpc",
+            "Conversions",
+            "CostPerConversion"
+          ],
+          "campaign_ids": [
+            710568666
+          ],
+          "include_vat": "NO"
+        },
+        "success": true,
+        "report_type": "SEARCH_QUERY_PERFORMANCE_REPORT",
+        "date_from": "2026-06-02",
+        "date_to": "2026-06-08",
+        "fields": [
+          "CampaignId",
+          "CampaignName",
+          "AdGroupId",
+          "AdGroupName",
+          "CriterionId",
+          "Criterion",
+          "Query",
+          "Date",
+          "Impressions",
+          "Clicks",
+          "Cost",
+          "Ctr",
+          "AvgCpc",
+          "Conversions",
+          "CostPerConversion"
+        ],
+        "rows": [],
+        "row_count": 0,
+        "truncated": false,
+        "sample_rows": []
+      },
+      "geo": {
+        "status": "ok",
+        "tool": "yandex_direct_report",
+        "args": {
+          "date_from": "2026-06-02",
+          "date_to": "2026-06-08",
+          "report_type": "CUSTOM_REPORT",
+          "field_names": [
+            "CampaignId",
+            "CampaignName",
+            "LocationOfPresenceId",
+            "LocationOfPresenceName",
+            "Date",
+            "Impressions",
+            "Clicks",
+            "Cost",
+            "Ctr",
+            "AvgCpc",
+            "Conversions",
+            "CostPerConversion"
+          ],
+          "campaign_ids": [
+            710568666
+          ],
+          "include_vat": "NO"
+        },
+        "success": true,
+        "report_type": "CUSTOM_REPORT",
+        "date_from": "2026-06-02",
+        "date_to": "2026-06-08",
+        "fields": [
+          "CampaignId",
+          "CampaignName",
+          "LocationOfPresenceId",
+          "LocationOfPresenceName",
+          "Date",
+          "Impressions",
+          "Clicks",
+          "Cost",
+          "Ctr",
+          "AvgCpc",
+          "Conversions",
+          "CostPerConversion"
+        ],
+        "rows": [],
+        "row_count": 0,
+        "truncated": false,
+        "sample_rows": []
+      },
+      "ad": {
+        "status": "ok",
+        "tool": "yandex_direct_report",
+        "args": {
+          "date_from": "2026-06-02",
+          "date_to": "2026-06-08",
+          "report_type": "AD_PERFORMANCE_REPORT",
+          "field_names": [
+            "CampaignId",
+            "CampaignName",
+            "AdGroupId",
+            "AdGroupName",
+            "AdId",
+            "Date",
+            "Impressions",
+            "Clicks",
+            "Cost",
+            "Ctr",
+            "AvgCpc",
+            "Conversions",
+            "CostPerConversion"
+          ],
+          "campaign_ids": [
+            710568666
+          ],
+          "include_vat": "NO"
+        },
+        "success": true,
+        "report_type": "AD_PERFORMANCE_REPORT",
+        "date_from": "2026-06-02",
+        "date_to": "2026-06-08",
+        "fields": [
+          "CampaignId",
+          "CampaignName",
+          "AdGroupId",
+          "AdGroupName",
+          "AdId",
+          "Date",
+          "Impressions",
+          "Clicks",
+          "Cost",
+          "Ctr",
+          "AvgCpc",
+          "Conversions",
+          "CostPerConversion"
+        ],
+        "rows": [],
+        "row_count": 0,
+        "truncated": false,
+        "sample_rows": []
+      },
+      "adgroup": {
+        "status": "ok",
+        "tool": "yandex_direct_report",
+        "args": {
+          "date_from": "2026-06-02",
+          "date_to": "2026-06-08",
+          "report_type": "ADGROUP_PERFORMANCE_REPORT",
+          "field_names": [
+            "CampaignId",
+            "CampaignName",
+            "AdGroupId",
+            "AdGroupName",
+            "Date",
+            "Impressions",
+            "Clicks",
+            "Cost",
+            "Ctr",
+            "AvgCpc",
+            "Conversions",
+            "CostPerConversion"
+          ],
+          "campaign_ids": [
+            710568666
+          ],
+          "include_vat": "NO"
+        },
+        "success": true,
+        "report_type": "ADGROUP_PERFORMANCE_REPORT",
+        "date_from": "2026-06-02",
+        "date_to": "2026-06-08",
+        "fields": [
+          "CampaignId",
+          "CampaignName",
+          "AdGroupId",
+          "AdGroupName",
+          "Date",
+          "Impressions",
+          "Clicks",
+          "Cost",
+          "Ctr",
+          "AvgCpc",
+          "Conversions",
+          "CostPerConversion"
+        ],
+        "rows": [],
+        "row_count": 0,
+        "truncated": false,
+        "sample_rows": []
+      }
+    }
+  },
+  "metrika": {
+    "status": "api_error",
+    "counter_id": 109350250,
+    "goal_ids": [
+      566497705,
+      566492899
+    ],
+    "goals": {
+      "status": "ok",
+      "tool": "yandex_metrika_goals",
+      "args": {
+        "counter_id": 109350250,
+        "refresh": false
+      },
+      "success": true,
+      "counter_id": 109350250,
+      "goals": [
+        {
+          "id": 566497705,
+          "name": "Отправка заявки (форма) ⭐",
+          "type": "action",
+          "default_price": 0.0,
+          "is_retargeting": 0,
+          "goal_source": "user",
+          "is_favorite": 1,
+          "status": "Active",
+          "labels": [],
+          "conditions": [
+            {
+              "type": "exact",
+              "url": "form_submit"
+            }
+          ]
+        },
+        {
+          "id": 566492898,
+          "name": "Автоцель: заполнил контактные данные",
+          "type": "contact_data",
+          "default_price": 0.0,
+          "is_retargeting": 0,
+          "goal_source": "auto",
+          "is_favorite": 0,
+          "status": "Active",
+          "labels": []
+        },
+        {
+          "id": 566492899,
+          "name": "Автоцель: отправил контактные данные",
+          "type": "contact_data_sent",
+          "default_price": 0.0,
+          "is_retargeting": 0,
+          "goal_source": "auto",
+          "is_favorite": 0,
+          "status": "Active",
+          "labels": []
+        },
+        {
+          "id": 566497706,
+          "name": "Клик по Email",
+          "type": "action",
+          "default_price": 0.0,
+          "is_retargeting": 0,
+          "goal_source": "user",
+          "is_favorite": 0,
+          "status": "Active",
+          "labels": [],
+          "conditions": [
+            {
+              "type": "exact",
+              "url": "contact_email"
+            }
+          ]
+        },
+        {
+          "id": 566497739,
+          "name": "Клик по Telegram",
+          "type": "action",
+          "default_price": 0.0,
+          "is_retargeting": 0,
+          "goal_source": "user",
+          "is_favorite": 0,
+          "status": "Active",
+          "labels": [],
+          "conditions": [
+            {
+              "type": "exact",
+              "url": "contact_telegram"
+            }
+          ]
+        },
+        {
+          "id": 566497742,
+          "name": "Клик по MAX",
+          "type": "action",
+          "default_price": 0.0,
+          "is_retargeting": 0,
+          "goal_source": "user",
+          "is_favorite": 0,
+          "status": "Active",
+          "labels": [],
+          "conditions": [
+            {
+              "type": "exact",
+              "url": "contact_max"
+            }
+          ]
+        },
+        {
+          "id": 566497761,
+          "name": "CTA на странице кейса",
+          "type": "action",
+          "default_price": 0.0,
+          "is_retargeting": 0,
+          "goal_source": "user",
+          "is_favorite": 0,
+          "status": "Active",
+          "labels": [],
+          "conditions": [
+            {
+              "type": "exact",
+              "url": "case_contact"
+            }
+          ]
+        },
+        {
+          "id": 566497832,
+          "name": "Кейс: ИИ-ассистент маркетолога",
+          "type": "action",
+          "default_price": 0.0,
+          "is_retargeting": 0,
+          "goal_source": "user",
+          "is_favorite": 0,
+          "status": "Active",
+          "labels": [],
+          "conditions": [
+            {
+              "type": "exact",
+              "url": "view_case_ai_marketing_assistant"
+            }
+          ]
+        },
+        {
+          "id": 566497853,
+          "name": "Кейс: ПИР-Система",
+          "type": "action",
+          "default_price": 0.0,
+          "is_retargeting": 0,
+          "goal_source": "user",
+          "is_favorite": 0,
+          "status": "Active",
+          "labels": [],
+          "conditions": [
+            {
+              "type": "exact",
+              "url": "view_case_pir_s"
+            }
+          ]
+        },
+        {
+          "id": 566497854,
+          "name": "Кейс: Псевдонимайзер",
+          "type": "action",
+          "default_price": 0.0,
+          "is_retargeting": 0,
+          "goal_source": "user",
+          "is_favorite": 0,
+          "status": "Active",
+          "labels": [],
+          "conditions": [
+            {
+              "type": "exact",
+              "url": "view_case_pseudonymizer"
+            }
+          ]
+        },
+        {
+          "id": 566497873,
+          "name": "Кейс: Аудит холдинга",
+          "type": "action",
+          "default_price": 0.0,
+          "is_retargeting": 0,
+          "goal_source": "user",
+          "is_favorite": 0,
+          "status": "Active",
+          "labels": [],
+          "conditions": [
+            {
+              "type": "exact",
+              "url": "view_case_holding_audit"
+            }
+          ]
+        },
+        {
+          "id": 566497994,
+          "name": "Кейс: AI-ассистент",
+          "type": "action",
+          "default_price": 0.0,
+          "is_retargeting": 0,
+          "goal_source": "user",
+          "is_favorite": 0,
+          "status": "Active",
+          "labels": [],
+          "conditions": [
+            {
+              "type": "exact",
+              "url": "view_case_ai_assistant"
+            }
+          ]
+        },
+        {
+          "id": 566497995,
+          "name": "Кейс: HR n8n-агент",
+          "type": "action",
+          "default_price": 0.0,
+          "is_retargeting": 0,
+          "goal_source": "user",
+          "is_favorite": 0,
+          "status": "Active",
+          "labels": [],
+          "conditions": [
+            {
+              "type": "exact",
+              "url": "view_case_hr_n8n_agent"
+            }
+          ]
+        },
+        {
+          "id": 566497996,
+          "name": "Кейс: Векторное хранилище",
+          "type": "action",
+          "default_price": 0.0,
+          "is_retargeting": 0,
+          "goal_source": "user",
+          "is_favorite": 0,
+          "status": "Active",
+          "labels": [],
+          "conditions": [
+            {
+              "type": "exact",
+              "url": "view_case_vector_store"
+            }
+          ]
+        },
+        {
+          "id": 566498014,
+          "name": "Кейс: Промпт-инженер R&D",
+          "type": "action",
+          "default_price": 0.0,
+          "is_retargeting": 0,
+          "goal_source": "user",
+          "is_favorite": 0,
+          "status": "Active",
+          "labels": [],
+          "conditions": [
+            {
+              "type": "exact",
+              "url": "view_case_rd_prompt"
+            }
+          ]
+        },
+        {
+          "id": 566498049,
+          "name": "Кейс: Платформа перевозчиков",
+          "type": "action",
+          "default_price": 0.0,
+          "is_retargeting": 0,
+          "goal_source": "user",
+          "is_favorite": 0,
+          "status": "Active",
+          "labels": [],
+          "conditions": [
+            {
+              "type": "exact",
+              "url": "view_case_carriers"
+            }
+          ]
+        },
+        {
+          "id": 566498120,
+          "name": "Кейс: Генератор стратегий",
+          "type": "action",
+          "default_price": 0.0,
+          "is_retargeting": 0,
+          "goal_source": "user",
+          "is_favorite": 0,
+          "status": "Active",
+          "labels": [],
+          "conditions": [
+            {
+              "type": "exact",
+              "url": "view_case_prompt_generator"
+            }
+          ]
+        },
+        {
+          "id": 566498145,
+          "name": "Кейс: Курс AI для инженера",
+          "type": "action",
+          "default_price": 0.0,
+          "is_retargeting": 0,
+          "goal_source": "user",
+          "is_favorite": 0,
+          "status": "Active",
+          "labels": [],
+          "conditions": [
+            {
+              "type": "exact",
+              "url": "view_case_course"
+            }
+          ]
+        },
+        {
+          "id": 566522695,
+          "name": "Автоцель: клик по email",
+          "type": "email",
+          "default_price": 0.0,
+          "is_retargeting": 0,
+          "goal_source": "auto",
+          "is_favorite": 0,
+          "status": "Active",
+          "labels": [],
+          "conditions": []
+        },
+        {
+          "id": 566901370,
+          "name": "Автоцель: переход в мессенджер",
+          "type": "messenger",
+          "default_price": 0.0,
+          "is_retargeting": 0,
+          "goal_source": "auto",
+          "is_favorite": 0,
+          "status": "Active",
+          "labels": [],
+          "conditions": [
+            {
+              "type": "messenger",
+              "url": "all_messengers"
+            }
+          ],
+          "flag": ""
+        }
+      ],
+      "count": 20,
+      "cached_hit": true,
+      "source": "cache",
+      "cache": {
+        "path": "/Users/nik/.hermes/cache/yandex_metrika/counter_109350250/goals.json",
+        "ttl_seconds": 86400,
+        "exists": true,
+        "age_seconds": 4133.647,
+        "fresh": true,
+        "hit": true,
+        "source": "cache",
+        "refreshed": false
+      },
+      "note": "Goals are cached per counter for 24h. For CPA, choose specific goal_ids from this inventory and avoid all_goals=true."
+    },
+    "traffic_ad_weekly": {
+      "status": "ok",
+      "tool": "yandex_metrika_traffic",
+      "args": {
+        "counter_id": 109350250,
+        "date_from": "2026-06-02",
+        "date_to": "2026-06-08",
+        "source": "ad",
+        "attribution": "lastsign",
+        "limit": 100
+      },
+      "cached_hit": true,
+      "success": true,
+      "counter_id": 109350250,
+      "date_from": "2026-06-02",
+      "date_to": "2026-06-08",
+      "fields": [
+        "Traffic source",
+        "Sessions",
+        "Users",
+        "Pageviews",
+        "Bounce rate",
+        "Time on site",
+        "Page depth"
+      ],
+      "rows": [],
+      "row_count": 0
+    },
+    "conversions": {
+      "status": "ok",
+      "tool": "yandex_metrika_conversions",
+      "args": {
+        "counter_id": 109350250,
+        "date_from": "2026-06-02",
+        "date_to": "2026-06-08",
+        "goal_ids": [
+          566497705,
+          566492899
+        ],
+        "source": "ad",
+        "attribution": "lastsign",
+        "limit": 100
+      },
+      "cached_hit": true,
+      "success": true,
+      "counter_id": 109350250,
+      "date_from": "2026-06-02",
+      "date_to": "2026-06-08",
+      "goal_ids": [
+        566497705,
+        566492899
+      ],
+      "fields": [
+        "Traffic source",
+        "Conversions (Отправка заявки (форма) ⭐)",
+        "Goals reached (Отправка заявки (форма) ⭐)",
+        "Conversion rate (Отправка заявки (форма) ⭐)",
+        "Conversions (Автоцель: отправил контактные данные)",
+        "Goals reached (Автоцель: отправил контактные данные)",
+        "Conversion rate (Автоцель: отправил контактные данные)"
+      ],
+      "rows": [],
+      "row_count": 0
+    },
+    "direct_costs": {
+      "error": "HTTP 404: <html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\"/>\n<title>Error 404 Not Found</title>\n</head>\n<body>\n<h2>HTTP ERROR 404 Not Found</h2>\n<table>\n<tr><th>URI:</th><td>http://api-metrika.yandex.net/management/v1/counter/109350250/direct_clients</td></tr>\n<tr><th>STATUS:</t",
+      "status": "api_error",
+      "tool": "yandex_metrika_direct_costs",
+      "args": {
+        "counter_id": 109350250,
+        "date_from": "2026-06-02",
+        "date_to": "2026-06-08",
+        "limit": 200
+      },
+      "available": false
+    }
+  },
+  "goals": {
+    "goal_ids": [
+      566497705,
+      566492899
+    ],
+    "mapping_status": "ok",
+    "inventory_status": "ok"
+  },
+  "search_queries": {
+    "status": "ok",
+    "rows": 0,
+    "sample_rows": []
+  },
+  "landing": {
+    "status": "ok",
+    "url": "https://nikolai-pir-s-ru.sourcecraft.site/portfolio/",
+    "turbo_page_ids": [
+      10000154536
+    ]
+  },
+  "data_collection": {
+    "attempted": 10,
+    "succeeded": 9,
+    "failed": 1,
+    "manual_required": 0,
+    "status_by_source": {
+      "direct.campaign_daily": {
+        "status": "ok",
+        "success": true,
+        "tool": "yandex_direct_report",
+        "row_count": 0
+      },
+      "direct.campaign_weekly": {
+        "status": "ok",
+        "success": true,
+        "tool": "yandex_direct_report",
+        "row_count": 0
+      },
+      "direct.search_query": {
+        "status": "ok",
+        "success": true,
+        "tool": "yandex_direct_report",
+        "row_count": 0
+      },
+      "direct.geo": {
+        "status": "ok",
+        "success": true,
+        "tool": "yandex_direct_report",
+        "row_count": 0
+      },
+      "direct.ad": {
+        "status": "ok",
+        "success": true,
+        "tool": "yandex_direct_report",
+        "row_count": 0
+      },
+      "direct.adgroup": {
+        "status": "ok",
+        "success": true,
+        "tool": "yandex_direct_report",
+        "row_count": 0
+      },
+      "metrika.goals": {
+        "status": "ok",
+        "success": true,
+        "tool": "yandex_metrika_goals",
+        "cached_hit": true
+      },
+      "metrika.traffic_ad_weekly": {
+        "status": "ok",
+        "success": true,
+        "tool": "yandex_metrika_traffic",
+        "row_count": 0,
+        "cached_hit": true
+      },
+      "metrika.conversions": {
+        "status": "ok",
+        "success": true,
+        "tool": "yandex_metrika_conversions",
+        "row_count": 0,
+        "cached_hit": true
+      },
+      "metrika.direct_costs": {
+        "status": "api_error",
+        "success": false,
+        "tool": "yandex_metrika_direct_costs",
+        "error": "HTTP 404: <html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html;charset=UTF-8\"/>\n<title>Error 404 Not Found</title>\n</head>\n<body>\n<h2>HTTP ERROR 404 Not Found</h2>\n<table>\n<tr><th>URI:</th><td>http://api-metrika.yandex.net/management/v1/counter/109350250/direct_clients</td></tr>\n<tr><th>STATUS:</t"
+      }
+    }
+  },
+  "safety": {
+    "read_only": true,
+    "project_scoped": true,
+    "direct_conversions_are_lead_truth": false,
+    "missing_values_default_to_zero": false,
+    "all_goals_used_for_cpa": false
+  }
+}

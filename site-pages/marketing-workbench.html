@@ -18,6 +18,10 @@
 
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="alternate" type="application/json" href="data/marketing-ai-copilot/latest.json" />
+    <meta name="dashboard:variables-map" content="../marketing/VARIABLES_MAP.md" />
+    <meta name="dashboard:manifest" content="../marketing/dashboard_manifest.json" />
+    <meta name="dashboard:state" content="data/marketing-ai-copilot/latest.json" />
 
     <script type="application/ld+json">
       {
@@ -110,11 +114,11 @@
             </div>
             <div class="mi-meta-panel__row">
               <span>Источник</span>
-              <strong>Директ + Метрика + Wordstat + research</strong>
+              <strong id="marketingDataSource">Директ + Метрика + Wordstat + research</strong>
             </div>
             <div class="mi-meta-panel__row">
               <span>Scope</span>
-              <strong>Кампания 710165227 · счетчик 109350250</strong>
+              <strong id="marketingDataScope">Кампания 710568666 · счетчик 109350250</strong>
             </div>
             <div class="mi-meta-panel__row">
               <span>Ограничение</span>
@@ -132,22 +136,22 @@
         </div>
         <div class="mw-status-cell mw-status-cell--warn">
           <span>Явная цель</span>
-          <strong>566497705</strong>
-          <small>CPA только по goal ID, не по all goals</small>
+          <strong id="marketingGoalStatus">проверка</strong>
+          <small id="marketingGoalStatusNote">CPA только по goal ID, не по all goals</small>
         </div>
         <div class="mw-status-cell mw-status-cell--warn">
           <span>Direct ↔ Метрика</span>
-          <strong>требует сверки</strong>
-          <small>master-campaign может иметь ограниченную API-видимость</small>
+          <strong id="marketingDirectMetrikaStatus">проверка</strong>
+          <small id="marketingDirectMetrikaStatusNote">стоимость и цели сверяются по проектным артефактам</small>
         </div>
         <div class="mw-status-cell mw-status-cell--info">
           <span>Свежесть</span>
-          <strong>Hourly + T+1</strong>
+          <strong id="marketingDataFreshness">Hourly + T+1</strong>
           <small>расход свежий, поведение и цели с лагом</small>
         </div>
       </section>
 
-      <section class="mw-workspace container" aria-label="Основное рабочее пространство">
+      <section class="mw-workspace container" aria-label="Основное рабочее пространство" data-dashboard-demo="workbench-main-insight">
         <article class="mw-insight-card">
           <div class="mw-insight-card__head">
             <span class="mi-badge mi-badge--danger">P1 · открыть в работу</span>
@@ -171,7 +175,7 @@
             </div>
             <div class="mw-field">
               <span>Current value / сейчас</span>
-              <strong>0 макроцелей · CPA не считаем</strong>
+              <strong id="marketingCurrentValueStatus">CPA manual_required</strong>
             </div>
             <div class="mw-field">
               <span>Baseline / база</span>
@@ -219,7 +223,7 @@
         </aside>
       </section>
 
-      <section class="mi-section container" id="queries">
+      <section class="mi-section container" id="queries" data-dashboard-demo="query-workbench">
         <div class="mi-section__head">
           <span class="kicker">Рабочий стол поисковых запросов (search query workbench)</span>
           <h2>Запросы превращаются в решения, а не в длинный список строк</h2>
@@ -272,7 +276,7 @@
         </div>
       </section>
 
-      <section class="mi-section mi-section--band" id="creative">
+      <section class="mi-section mi-section--band" id="creative" data-dashboard-demo="creative-drafts">
         <div class="container">
           <div class="mi-section__head">
             <span class="kicker">Креативный рабочий стол (creative workbench)</span>
@@ -322,7 +326,7 @@
         </div>
       </section>
 
-      <section class="mi-section container" id="landing-match">
+      <section class="mi-section container" id="landing-match" data-dashboard-demo="landing-match">
         <div class="mi-section__head">
           <span class="kicker">Связка объявление → лендинг / ad-to-landing match</span>
           <h2>Проверка обещания, первого экрана и поведения</h2>
@@ -403,7 +407,7 @@
         </div>
       </section>
 
-      <section class="mi-section container" id="history">
+      <section class="mi-section container" id="history" data-dashboard-demo="recommendation-history">
         <div class="mi-section__head">
           <span class="kicker">История рекомендаций</span>
           <h2>CoPilot учится на решениях маркетолога</h2>
@@ -498,6 +502,7 @@
       </svg>
     </button>
 
+    <script src="../assets/js/marketing-dashboard-state.js" defer></script>
     <script src="../assets/js/main.js" defer></script>
   </body>
 </html>

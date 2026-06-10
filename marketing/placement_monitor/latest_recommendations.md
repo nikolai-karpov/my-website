@@ -1,16 +1,11 @@
 # Yandex placement monitor
 
-Generated: 2026-06-08T09:20:00
-Period: 2026-06-01..2026-06-07
+Generated: 2026-06-10T09:20:00
+Period: 2026-06-03..2026-06-09
 Goal: 566497705 (form_submit)
-Campaign IDs: 710165227
-Direct status: error
-Metrika goal status: problem
-
-## Action Required
-
-Direct API did not return placement rows. Check Direct API access in the Yandex Direct UI.
-The cron job is installed anyway and will start producing placement recommendations after API access is approved.
+Campaign IDs: 710568666
+Direct status: ok
+Metrika goal status: ok
 
 ## Manual Use
 

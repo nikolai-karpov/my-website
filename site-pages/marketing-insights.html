@@ -18,6 +18,10 @@
 
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+    <link rel="alternate" type="application/json" href="data/marketing-ai-copilot/latest.json" />
+    <meta name="dashboard:variables-map" content="../marketing/VARIABLES_MAP.md" />
+    <meta name="dashboard:manifest" content="../marketing/dashboard_manifest.json" />
+    <meta name="dashboard:state" content="data/marketing-ai-copilot/latest.json" />
 
     <script type="application/ld+json">
       {
@@ -108,7 +112,7 @@
           <aside class="mi-meta-panel" aria-label="Параметры отчета">
             <div class="mi-meta-panel__row">
               <span>Актуальность</span>
-              <strong>08.06.2026, 22:00</strong>
+              <strong id="marketingDataUpdatedAt">08.06.2026, 22:00</strong>
             </div>
             <div class="mi-meta-panel__row">
               <span>Период</span>
@@ -116,11 +120,11 @@
             </div>
             <div class="mi-meta-panel__row">
               <span>Область</span>
-              <strong>Кампания 710165227 · счетчик 109350250</strong>
+              <strong id="marketingDataScope">Кампания 710568666 · счетчик 109350250</strong>
             </div>
             <div class="mi-meta-panel__row">
               <span>Тип данных</span>
-              <strong>Демо-шаблон с округленными сигналами</strong>
+              <strong id="marketingDataType">Демо-шаблон с округленными сигналами</strong>
             </div>
           </aside>
         </div>
@@ -141,7 +145,7 @@
         </div>
         <div class="mi-filter">
           <span class="mi-filter__label">Кампания</span>
-          <strong>710165227</strong>
+          <strong>710568666</strong>
         </div>
         <div class="mi-filter">
           <span class="mi-filter__label">Регион</span>
@@ -153,7 +157,15 @@
         </div>
       </section>
 
-      <section class="mi-cockpit container" aria-label="Панель решений">
+      <section class="mi-alert-feed container" aria-label="Состояние данных дашборда">
+        <article class="mi-alert mi-alert--warn" id="marketingDataQualityNotice">
+          <span>Проверка dataset</span>
+          <strong class="mi-alert__title">Загружается состояние источников</strong>
+          <p>До загрузки JSON статические блоки ниже считаются демонстрационными гипотезами, а не текущими метриками кампаний.</p>
+        </article>
+      </section>
+
+      <section class="mi-cockpit container" aria-label="Панель решений" data-dashboard-demo="cockpit-main-insight">
         <div class="mi-decision">
           <div class="mi-decision__top">
             <span class="mi-badge mi-badge--danger">P1 · требуется решение</span>
@@ -197,13 +209,13 @@
         </article>
         <article class="mi-kpi-card">
           <span class="mi-kpi-card__label">Заявки</span>
-          <strong class="mi-kpi-card__value">0 макро</strong>
-          <span class="mi-kpi-card__note">CPA не считаем без подтвержденной цели</span>
+          <strong class="mi-kpi-card__value" id="marketingLeadsKpiValue">manual</strong>
+          <span class="mi-kpi-card__note" id="marketingLeadsKpiNote">CPA не считаем без подтвержденной цели и источника лидов</span>
         </article>
         <article class="mi-kpi-card mi-kpi-card--warn">
           <span class="mi-kpi-card__label">Темп расхода</span>
-          <strong class="mi-kpi-card__value">34%</strong>
-          <span class="mi-kpi-card__note">Темп расхода допустим, масштабирование преждевременно</span>
+          <strong class="mi-kpi-card__value" id="marketingSpendKpiValue">manual</strong>
+          <span class="mi-kpi-card__note" id="marketingSpendKpiNote">Темп расхода выводится только из собранных проектных артефактов</span>
         </article>
         <article class="mi-kpi-card">
           <span class="mi-kpi-card__label">Поиск / сети</span>
@@ -212,8 +224,8 @@
         </article>
         <article class="mi-kpi-card mi-kpi-card--info">
           <span class="mi-kpi-card__label">Доверие к данным</span>
-          <strong class="mi-kpi-card__value">72%</strong>
-          <span class="mi-kpi-card__note">Текущий стек достаточен для диагностики, не для CRM-вывода</span>
+          <strong class="mi-kpi-card__value" id="marketingTrustKpiValue">проверка</strong>
+          <span class="mi-kpi-card__note" id="marketingTrustKpiNote">Текущий стек достаточен для диагностики, не для CRM-вывода</span>
         </article>
         <article class="mi-kpi-card mi-kpi-card--info">
           <span class="mi-kpi-card__label">Спрос</span>
@@ -222,7 +234,7 @@
         </article>
       </section>
 
-      <section class="mi-section container">
+      <section class="mi-section container" data-dashboard-demo="budget-unit-economics">
         <div class="mi-section__head">
           <span class="kicker">Режимы CoPilot</span>
           <h2>Один экран для подготовки, запуска и мониторинга</h2>
@@ -327,7 +339,7 @@
         </div>
       </section>
 
-      <section class="mi-section mi-section--band">
+      <section class="mi-section mi-section--band" data-dashboard-demo="conversion-funnel">
         <div class="container">
           <div class="mi-section__head">
             <span class="kicker">Путь конверсии (conversion path)</span>
@@ -373,7 +385,7 @@
         </div>
       </section>
 
-      <section class="mi-section container">
+      <section class="mi-section container" data-dashboard-demo="action-queue">
         <div class="mi-section__head">
           <span class="kicker">Сначала решения</span>
           <h2>Очередь действий</h2>
@@ -488,7 +500,7 @@
         </div>
       </section>
 
-      <section class="mi-section container">
+      <section class="mi-section container" data-dashboard-demo="operations-table">
         <div class="mi-section__head">
           <span class="kicker">Автокоррекция</span>
           <h2>Что CoPilot может делать без риска для бюджета</h2>
@@ -598,7 +610,7 @@
         </div>
       </section>
 
-      <section class="mi-section mi-section--band">
+      <section class="mi-section mi-section--band" data-dashboard-demo="insight-cards">
         <div class="container">
           <div class="mi-section__head">
             <span class="kicker">Что подсвечивает мониторинг</span>
@@ -830,6 +842,7 @@
       </svg>
     </button>
 
+    <script src="../assets/js/marketing-dashboard-state.js" defer></script>
     <script src="../assets/js/main.js" defer></script>
   </body>
 </html>

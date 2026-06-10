@@ -10,11 +10,11 @@
   ],
   "goal_macro": "form_submit",
   "campaign_ids": [
-    710165227
+    710568666
   ],
   "campaigns": [
     {
-      "id": 710165227,
+      "id": 710568666,
       "name": "Портфолио",
       "type": "master_campaign",
       "api_visibility": "campaigns_get_limited"

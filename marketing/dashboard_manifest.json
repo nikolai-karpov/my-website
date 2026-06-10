@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "name": "marketing-ai-copilot-dashboard",
+  "purpose": "Deterministic consolidated dataset for public portfolio dashboard. Missing facts must be marked manual_required, ignored, not_configured, or api_error.",
+  "inputs": [
+    "marketing/projects_manifest.json",
+    "<project>/marketing/yandex_direct_project.json",
+    "<project>/marketing/monitoring/daily/*.json",
+    "marketing/dashboard_overrides.json",
+    "marketing/connectors_manifest.json",
+    "marketing/connectors/CRM_IMPORT_CONTRACT.md",
+    "marketing/deep_research/08_wordstat_seeds.tsv"
+  ],
+  "outputs": [
+    "marketing/dashboard_state/latest.json",
+    "site-pages/data/marketing-ai-copilot/latest.json"
+  ],
+  "status_vocabulary": [
+    "ok",
+    "manual_required",
+    "ignored",
+    "not_configured",
+    "api_error"
+  ],
+  "rules": [
+    "Project identity belongs to project configs and cron jobs, not universal skill prompts.",
+    "The consolidated dashboard may compare projects, but CPA is project-specific and goal-specific.",
+    "Direct Conversions are diagnostic only and are never treated as lead truth.",
+    "Metrika goals inventory is collected through yandex_metrika_goals when a project counter is known.",
+    "If TurboPageIds or Metrika goal ids are missing, lead count is not reported as zero.",
+    "Plan 2 connector gaps are tracked in marketing/connectors_manifest.json and must not be inferred from current API data.",
+    "Public pages should consume view_model and status-wrapped variables instead of raw API blocks.",
+    "Any unavailable variable remains manual_required or ignored so analysis cannot hallucinate it."
+  ]
+}

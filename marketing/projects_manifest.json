@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "description": "Project registry for consolidated AI marketing copilot dashboard. Advertising identity is read from each project artifact/config, not from universal skill prompts.",
+  "dashboard": {
+    "mode": "consolidated_portfolio_dashboard",
+    "public_dataset": "site-pages/data/marketing-ai-copilot/latest.json",
+    "internal_state": "marketing/dashboard_state/latest.json"
+  },
+  "projects": [
+    {
+      "slug": "pir-system",
+      "display_name": "PIR-System",
+      "workspace": "/Users/nik/projects/pir-s.ru",
+      "daily_glob": "marketing/monitoring/daily/*.json",
+      "config_files": [
+        "marketing/yandex_direct_project.json"
+      ],
+      "cron_jobs": {
+        "daily": "022851db6e5f",
+        "weekly": "a70f6095cd21"
+      }
+    },
+    {
+      "slug": "anonymizer",
+      "display_name": "Anonymizer",
+      "workspace": "/Users/nik/projects/ai_data_cleaner",
+      "daily_glob": "marketing/monitoring/daily/*.json",
+      "config_files": [
+        "marketing/yandex_direct_project.json"
+      ],
+      "cron_jobs": {
+        "daily": "3ca0cf7765fe",
+        "weekly": "2893aa6c9935"
+      }
+    },
+    {
+      "slug": "ai-assistant",
+      "display_name": "AI Assistant",
+      "workspace": "/Users/nik/projects/hermes-agent",
+      "daily_glob": "marketing/monitoring/daily/*.json",
+      "config_files": [
+        "marketing/yandex_direct_project.json"
+      ],
+      "cron_jobs": {
+        "daily": "9629ee71ea2e",
+        "weekly": "7aa9a4146593"
+      }
+    },
+    {
+      "slug": "investor-search",
+      "display_name": "Investor Search",
+      "workspace": "/Users/nik/projects/im",
+      "daily_glob": "marketing/monitoring/daily/*.json",
+      "config_files": [
+        "marketing/yandex_direct_project.json"
+      ],
+      "cron_jobs": {
+        "daily": "98662b0900de",
+        "weekly": "5ac48fcf936a"
+      }
+    },
+    {
+      "slug": "portfolio",
+      "display_name": "Portfolio",
+      "workspace": "/Users/nik/projects/my-website",
+      "daily_glob": "marketing/monitoring/daily/*.json",
+      "config_files": [
+        "marketing/yandex_direct_project.json",
+        "marketing/placement_monitor_config.json"
+      ],
+      "cron_jobs": {
+        "daily": "4f49d32d43b6",
+        "weekly": "29c02d5a5892",
+        "summary": "5af5983da0bd",
+        "wordstat": "6270056a6c56"
+      }
+    }
+  ]
+}
