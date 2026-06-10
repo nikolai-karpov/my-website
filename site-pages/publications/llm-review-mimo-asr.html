@@ -160,11 +160,16 @@
           <span class="brand__dot" aria-hidden="true"></span>
           <span>Внедрение нейросетей</span>
         </a>
-        <nav class="site-nav" aria-label="Основная навигация">
-          <a href="../../#approach">Подход</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Открыть меню">
+          <span class="nav-toggle__icon" aria-hidden="true"></span>
+        </button>
+        <nav class="site-nav" id="siteNav" aria-label="Основная навигация">
+          <a href="../../">Главная</a>
           <a href="../../#cases">Кейсы</a>
-          <a href="../methodology.html">Методология</a>
-          <a href="index.html" class="is-active">Обзоры</a>
+          <a href="../../site-pages/methodology.html">Методология</a>
+          <a href="../../site-pages/ai-marketing-assistant.html">AI-Маркетинг</a>
+          <a href="../../site-pages/publications/index.html" class="is-active">Обзоры</a>
+          <a href="../../site-pages/news/">Новости</a>
           <a href="../../#security">ИБ</a>
           <a href="../../#contact">Контакт</a>
           <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">
@@ -471,7 +476,7 @@
               <a href="index.html">Все обзоры</a>
               <a href="llm-research.html">LLM и транскрибация</a>
               <a href="commercial-ai.html">Коммерческий AI</a>
-              <a href="finance-ai.html">Финансовый AI</a>
+              <a href="finance/index.html">Финансовый AI</a>
             </nav>
           </div>
           <div class="site-footer__section">
@@ -487,35 +492,6 @@
       </div>
     </footer>
 
-    <script>
-      // Theme toggle
-      const themeToggle = document.getElementById('themeToggle');
-      const html = document.documentElement;
-      
-      themeToggle.addEventListener('click', () => {
-        const currentTheme = html.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        html.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-      });
-      
-      // Load saved theme
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      html.setAttribute('data-theme', savedTheme);
-      
-      // Smooth scroll for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
-        });
-      });
-    </script>
+    <script src="../../assets/js/main.js" defer></script>
   </body>
 </html>

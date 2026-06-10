@@ -13,40 +13,7 @@
     <lastBuildDate>Tue, 09 Jun 2026 07:04:07 +0300</lastBuildDate>
     <generator>hermes/news_renderer</generator>
 
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-new-in-llamaparse-multi-page-tables-beta-and-excel-spreadshe/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Tue, 09 Jun 2026 07:04:02 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-new-in-llamaparse-multi-page-tables-beta-and-excel-spreadshe/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-nvidia-research-rag-with-long-context-llms/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Tue, 09 Jun 2026 07:02:53 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-nvidia-research-rag-with-long-context-llms/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-testing-anthropic-claudes-100k-token-window-on-sec-10-k-fili/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Tue, 09 Jun 2026 07:01:59 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-testing-anthropic-claudes-100k-token-window-on-sec-10-k-fili/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
+<item>
       <title>OpenAI ищет исследователя по киберрискам для разработки mitigation‑stack</title>
       <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-researcher-frontier-cybersecurity-risks/</link>
       <description><![CDATA[OpenAI открыла вакансию Researcher, Frontier Cybersecurity Risks. Кандидат будет проектировать сквозную систему защиты, интегрировать её в продукты с низкой задержкой и масштабировать под рост нагрузки и новые модели.]]></description>
@@ -68,16 +35,7 @@
       <dc:creator>Карпов Николай</dc:creator>
     </item>
 
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-researcher-robustness-safety-training-openai/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Tue, 09 Jun 2026 06:58:07 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-researcher-robustness-safety-training-openai/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
+
 
     <item>
       <title>OpenAI выпустила открытые модели gpt-oss-120b и gpt-oss-20b</title>
@@ -100,19 +58,7 @@
       <category>Новые модели</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
-
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-building-blocks-of-llm-report-generation-beyond-basic-rag/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Tue, 09 Jun 2026 06:54:49 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-building-blocks-of-llm-report-generation-beyond-basic-rag/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
+<item>
       <title>OpenAI анонсировала GPT‑4 Turbo с контекстом 128 К и новые API для ассистентов</title>
       <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-new-models-and-developer-products-announced-at-devday-openai/</link>
       <description><![CDATA[OpenAI представила GPT‑4 Turbo с увеличенным контекстным окном до 128 000 токенов, а также запустила Assistants API, Retrieval и Code Interpreter, добавив поддержку JSON‑режима и функции вызова функций.]]></description>
@@ -134,27 +80,6 @@
       <dc:creator>Карпов Николай</dc:creator>
     </item>
 
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-build-a-chatgpt-with-your-private-data-using-llamaindex-and/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Mon, 08 Jun 2026 06:34:43 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-build-a-chatgpt-with-your-private-data-using-llamaindex-and/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-kak-iandeks-disk-vyderzhivaet-sotni-gigabit-vkhodiashchego-t/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Mon, 08 Jun 2026 06:33:45 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-kak-iandeks-disk-vyderzhivaet-sotni-gigabit-vkhodiashchego-t/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
 
     <item>
       <title>LangGraph добавил RetryPolicy, TimeoutPolicy и error_handler для продакшн-агентов</title>
@@ -167,16 +92,7 @@
       <dc:creator>Карпов Николай</dc:creator>
     </item>
 
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-kapibary-na-sluzhbe-ii-naima/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Mon, 08 Jun 2026 06:30:56 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-kapibary-na-sluzhbe-ii-naima/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
+
 
     <item>
       <title>TurboVec сжимает векторный индекс до 4 ГБ, ускоряя поиск по сравнению с FAISS</title>
@@ -200,49 +116,7 @@
       <dc:creator>Карпов Николай</dc:creator>
     </item>
 
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-extracting-repeating-entities-from-documents-tabular-extract/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Mon, 08 Jun 2026 06:27:03 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-extracting-repeating-entities-from-documents-tabular-extract/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
 
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-beyond-ocr-deepseek-s-new-vision-compression-and-how-it-serv/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Mon, 08 Jun 2026 06:26:07 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-beyond-ocr-deepseek-s-new-vision-compression-and-how-it-serv/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-olmocr-bench-review-insights-and-pitfalls-on-an-ocr-benchmar/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Mon, 08 Jun 2026 06:25:13 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-olmocr-bench-review-insights-and-pitfalls-on-an-ocr-benchmar/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-testing-anthropic-claudes-100k-token-window-on-sec-10-k-fili/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Mon, 08 Jun 2026 06:24:19 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-testing-anthropic-claudes-100k-token-window-on-sec-10-k-fili/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
 
     <item>
       <title>Хакеры получили доступ к Instagram‑аккаунтам через чат‑бот поддержки Meta AI</title>
@@ -265,19 +139,7 @@
       <category>Новые модели</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
-
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-daaa-ia-na-etom-podpalil-prilichno-biudzheta-ves-vecher-goni/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Sun, 07 Jun 2026 06:11:36 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-daaa-ia-na-etom-podpalil-prilichno-biudzheta-ves-vecher-goni/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
+<item>
       <title>LlamaIndex представила Property Graph Index для построения графов знаний</title>
       <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-introducing-the-property-graph-index-a-powerful-new-way-to-b/</link>
       <description><![CDATA[LlamaIndex выпустила новую структуру индекса – Property Graph Index, позволяющую хранить сущности и их свойства в виде графа и выполнять запросы к нему с помощью LLM.]]></description>
@@ -287,19 +149,7 @@
       <category>Проекты</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
-
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-introducing-llama-agents-a-powerful-framework-for-building-p/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Sun, 07 Jun 2026 06:08:06 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-introducing-llama-agents-a-powerful-framework-for-building-p/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
+<item>
       <title>MiniMax-M3: мультимодальная модель с контекстом 1 048 576 токенов</title>
       <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-minimax-m3-multimodalnyi-intellekt-s-millionnym-kontekstom/</link>
       <description><![CDATA[Компания MiniMax выпустила модель MiniMax‑M3, поддерживающую ввод текста, изображений и видео и способную обрабатывать контекст до одного миллиона токенов за один проход.]]></description>
@@ -331,19 +181,7 @@
       <category>Корпоративное</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
-
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Sun, 07 Jun 2026 06:03:24 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
+<item>
       <title>Ideogram 4 — 9,3 B‑параметров, открытые веса, работает на 24 GB GPU</title>
       <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-04-bum-bum-vyshel-ideogram-4/</link>
       <description><![CDATA[Ideogram 4 — генератор изображений с 9,3 млрд параметров, впервые с открытыми весами. Модель доступна в форматах NF4 и FP8 и может работать на одной видеокарте с 24 GB памяти, но лицензия ограничивает коммерческое использование.]]></description>
@@ -409,38 +247,8 @@
       <dc:creator>Карпов Николай</dc:creator>
     </item>
 
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-build-a-searchable-audio-knowledge-base-with-gemini-embeddin/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Fri, 05 Jun 2026 06:42:18 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-build-a-searchable-audio-knowledge-base-with-gemini-embeddin/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
 
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-omnidocbench-is-saturated-whats-next-for-ocr-benchmarks/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Fri, 05 Jun 2026 06:41:22 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-omnidocbench-is-saturated-whats-next-for-ocr-benchmarks/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
 
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Fri, 05 Jun 2026 06:40:27 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
 
     <item>
       <title>Локальный ИИ‑сервер за 200 000 ₽ с 2× Tesla V100</title>

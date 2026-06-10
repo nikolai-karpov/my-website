@@ -22,6 +22,37 @@
     });
   }
 
+  // ---------- Mobile navigation ----------
+  const navToggle = document.querySelector('.nav-toggle');
+  const siteNav = document.querySelector('.site-nav');
+  const closeNav = () => {
+    if (!navToggle || !siteNav) return;
+    navToggle.setAttribute('aria-expanded', 'false');
+    siteNav.classList.remove('is-open');
+  };
+
+  if (navToggle && siteNav) {
+    navToggle.addEventListener('click', () => {
+      const open = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+      siteNav.classList.toggle('is-open', !open);
+    });
+
+    siteNav.addEventListener('click', (e) => {
+      if (e.target.closest('a')) closeNav();
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!siteNav.classList.contains('is-open')) return;
+      if (e.target.closest('.site-nav') || e.target.closest('.nav-toggle')) return;
+      closeNav();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeNav();
+    });
+  }
+
   // ---------- Sticky header shadow ----------
   const header = document.querySelector('.site-header');
   const onScrollHeader = () => {

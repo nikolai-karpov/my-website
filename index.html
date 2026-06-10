@@ -52,15 +52,18 @@
           <span class="brand__dot" aria-hidden="true"></span>
           <span>Внедрение нейросетей</span>
         </a>
-
-        <nav class="site-nav" aria-label="Основная навигация">
-          <a href="./">Главная</a>
-          <a href="#cases">Кейсы</a>
-          <a href="site-pages/methodology.html">Методология</a>
-          <a href="site-pages/publications/index.html">Обзоры</a>
-          <a href="site-pages/ai-marketing-assistant.html">AI-Маркетинг</a>
-          <a href="#security">ИБ</a>
-          <a href="#contact">Контакт</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Открыть меню">
+          <span class="nav-toggle__icon" aria-hidden="true"></span>
+        </button>
+        <nav class="site-nav" id="siteNav" aria-label="Основная навигация">
+          <a href="./" class="is-active">Главная</a>
+          <a href="./#cases">Кейсы</a>
+          <a href="./site-pages/methodology.html">Методология</a>
+          <a href="./site-pages/ai-marketing-assistant.html">AI-Маркетинг</a>
+          <a href="./site-pages/publications/index.html">Обзоры</a>
+          <a href="./site-pages/news/">Новости</a>
+          <a href="./#security">ИБ</a>
+          <a href="./#contact">Контакт</a>
           <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">
             <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
               <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" stroke-linejoin="round" />

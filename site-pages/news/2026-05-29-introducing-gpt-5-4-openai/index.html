@@ -31,8 +31,8 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/my-website/assets/css/style.css" />
-    <link rel="icon" href="/my-website/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+    <link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
 
     
     <script type="application/ld+json">{
@@ -149,17 +149,22 @@
   <body>
     <header class="site-header" role="banner">
       <div class="container site-header__inner">
-        <a href="/my-website/" class="brand" aria-label="На главную">
+        <a href="../../../" class="brand" aria-label="На главную">
           <span class="brand__dot" aria-hidden="true"></span>
           <span>Внедрение нейросетей</span>
         </a>
-        <nav class="site-nav" aria-label="Основная навигация">
-          <a href="/my-website/#approach">Подход</a>
-          <a href="/my-website/#cases">Кейсы</a>
-          <a href="/my-website/site-pages/methodology.html">Методология</a>
-          <a href="/my-website/site-pages/publications/index.html">Обзоры</a>
-          <a href="/my-website/site-pages/news/" class="is-active">Новости</a>
-          <a href="/my-website/#contact">Контакт</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Открыть меню">
+          <span class="nav-toggle__icon" aria-hidden="true"></span>
+        </button>
+        <nav class="site-nav" id="siteNav" aria-label="Основная навигация">
+          <a href="../../../">Главная</a>
+          <a href="../../../#cases">Кейсы</a>
+          <a href="../../../site-pages/methodology.html">Методология</a>
+          <a href="../../../site-pages/ai-marketing-assistant.html">AI-Маркетинг</a>
+          <a href="../../../site-pages/publications/index.html">Обзоры</a>
+          <a href="../../../site-pages/news/" class="is-active">Новости</a>
+          <a href="../../../#security">ИБ</a>
+          <a href="../../../#contact">Контакт</a>
           <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">
             <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
               <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" stroke-linejoin="round" />
@@ -176,7 +181,7 @@
     <main role="main">
       <article class="news-article">
         <div class="container">
-          <a href="/my-website/site-pages/news/" class="back-link" style="margin-top: clamp(60px, 8vh, 100px); display: inline-block;">
+          <a href="../../../site-pages/news/" class="back-link" style="margin-top: clamp(60px, 8vh, 100px); display: inline-block;">
             <span aria-hidden="true">←</span> Все новости
           </a>
         </div>
@@ -251,7 +256,7 @@
         <div>
           <a href="https://github.com/nikolai-karpov" target="_blank" rel="noopener">GitHub</a>
           ·
-          <a href="/my-website/site-pages/news/feed.xml">RSS</a>
+          <a href="../../../site-pages/news/feed.xml">RSS</a>
         </div>
       </div>
     </footer>
@@ -262,6 +267,6 @@
       </svg>
     </button>
 
-    <script src="/my-website/assets/js/main.js" defer></script>
+    <script src="../../../assets/js/main.js" defer></script>
   </body>
 </html>

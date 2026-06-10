@@ -57,23 +57,25 @@
           <span class="brand__dot" aria-hidden="true"></span>
           <span>Внедрение нейросетей</span>
         </a>
-        <nav class="site-nav" aria-label="Основная навигация">
-          <a href="../#approach">Подход</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Открыть меню">
+          <span class="nav-toggle__icon" aria-hidden="true"></span>
+        </button>
+        <nav class="site-nav" id="siteNav" aria-label="Основная навигация">
+          <a href="../">Главная</a>
           <a href="../#cases">Кейсы</a>
-          <a href="methodology.html">Методология</a>
-          <a href="publications/index.html">Обзоры</a>
+          <a href="../site-pages/methodology.html">Методология</a>
+          <a href="../site-pages/ai-marketing-assistant.html">AI-Маркетинг</a>
+          <a href="../site-pages/publications/index.html">Обзоры</a>
+          <a href="../site-pages/news/">Новости</a>
           <a href="../#security">ИБ</a>
-          <a href="contacts.html" class="is-active">Контакт</a>
+          <a href="../#contact" class="is-active">Контакт</a>
           <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">
             <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
               <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" stroke-linejoin="round" />
             </svg>
             <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
               <circle cx="12" cy="12" r="4" />
-              <path
-                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-                stroke-linecap="round"
-              />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"/>
             </svg>
           </button>
         </nav>

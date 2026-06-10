@@ -56,11 +56,16 @@
           <span class="brand__dot" aria-hidden="true"></span>
           <span>Внедрение нейросетей</span>
         </a>
-        <nav class="site-nav" aria-label="Основная навигация">
-          <a href="../#approach">Подход</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Открыть меню">
+          <span class="nav-toggle__icon" aria-hidden="true"></span>
+        </button>
+        <nav class="site-nav" id="siteNav" aria-label="Основная навигация">
+          <a href="../">Главная</a>
           <a href="../#cases">Кейсы</a>
-          <a href="methodology.html">Методология</a>
-          <a href="publications/index.html">Обзоры</a>
+          <a href="../site-pages/methodology.html">Методология</a>
+          <a href="../site-pages/ai-marketing-assistant.html" class="is-active">AI-Маркетинг</a>
+          <a href="../site-pages/publications/index.html">Обзоры</a>
+          <a href="../site-pages/news/">Новости</a>
           <a href="../#security">ИБ</a>
           <a href="../#contact">Контакт</a>
           <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">

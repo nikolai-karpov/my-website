@@ -46,11 +46,16 @@
           <span class="brand__dot" aria-hidden="true"></span>
           <span>Внедрение нейросетей</span>
         </a>
-        <nav class="site-nav" aria-label="Основная навигация">
-          <a href="../#approach">Подход</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Открыть меню">
+          <span class="nav-toggle__icon" aria-hidden="true"></span>
+        </button>
+        <nav class="site-nav" id="siteNav" aria-label="Основная навигация">
+          <a href="../">Главная</a>
           <a href="../#cases">Кейсы</a>
-          <a href="methodology.html">Методология</a>
-          <a href="publications/index.html">Обзоры</a>
+          <a href="../site-pages/methodology.html">Методология</a>
+          <a href="../site-pages/ai-marketing-assistant.html" class="is-active">AI-Маркетинг</a>
+          <a href="../site-pages/publications/index.html">Обзоры</a>
+          <a href="../site-pages/news/">Новости</a>
           <a href="../#security">ИБ</a>
           <a href="../#contact">Контакт</a>
           <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">
@@ -333,6 +338,29 @@
             <a href="marketing-insights.html">ежедневная панель управления</a> и
             <a href="marketing-workbench.html">рабочее пространство доказательств</a>.
           </div>
+
+          <h2 data-num="06">Связанные маркетинговые поверхности</h2>
+          <div class="cases-list">
+            <a href="directologist-daily-report.html" class="case-row">
+              <div class="case-row__tag">Аудит задач</div>
+              <div class="case-row__title">Будни директолога — где ИИ реально усиливает маркетолога</div>
+              <div class="case-row__desc">Карта ежедневных задач: семантика, минус-фразы, ставки, отчеты, площадки и точки, где агент снимает ручную работу.</div>
+              <div class="case-row__arrow" aria-hidden="true">→</div>
+            </a>
+            <a href="marketing-insights.html" class="case-row">
+              <div class="case-row__tag">Ежедневный cockpit</div>
+              <div class="case-row__title">Панель маркетинговых инсайтов</div>
+              <div class="case-row__desc">Сводка, которая отвечает на вопрос оператора: куда смотреть сегодня, чтобы реклама росла, а не просто отчитывалась.</div>
+              <div class="case-row__arrow" aria-hidden="true">→</div>
+            </a>
+            <a href="marketing-workbench.html" class="case-row">
+              <div class="case-row__tag">Workbench</div>
+              <div class="case-row__title">Рабочее пространство доказательств и правок</div>
+              <div class="case-row__desc">Подробный слой для проверки причин, черновиков изменений, доказательств, ручного подтверждения и последующего запуска гипотез.</div>
+              <div class="case-row__arrow" aria-hidden="true">→</div>
+            </a>
+          </div>
+
           <!-- ПЛЕЙСХОЛДЕР: при наличии — добавить метрики открута/эффективности после запуска (CTR, число заявок, CPA в рублях, бюджет, ROI). На текущем этапе данных нет — это подготовительный прогон. -->
         </div>
       </section>
