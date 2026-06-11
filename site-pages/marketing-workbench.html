@@ -152,6 +152,35 @@
         </div>
       </section>
 
+      <section class="mi-section container mw-manual-overrides" data-manual-drawer aria-label="Ручные значения и исключения">
+        <div class="mi-section__head">
+          <span class="kicker">Manual overrides</span>
+          <h2>Переменные, которые требуют решения оператора</h2>
+          <p>
+            Ручные значения и исключения фиксируются отдельно от API-фактов,
+            чтобы dashboard оставался проверяемым и обратимым.
+          </p>
+        </div>
+
+        <div class="mw-override-layout">
+          <div class="mw-override-list" data-md-manual-vars>
+            <article class="mw-override-item">
+              <strong>Dataset загружается…</strong>
+              <span>После загрузки появятся переменные, требующие ручного решения.</span>
+            </article>
+          </div>
+          <aside class="mw-override-draft">
+            <span class="mi-panel__eyebrow">Черновик overrides</span>
+            <textarea data-md-override-json readonly spellcheck="false">{
+  "schema_version": "1.0",
+  "variables": {}
+}</textarea>
+            <button type="button" data-md-copy-overrides>Скопировать JSON</button>
+            <small data-md-copy-status></small>
+          </aside>
+        </div>
+      </section>
+
       <section class="mw-workspace container" aria-label="Основное рабочее пространство">
         <article class="mw-insight-card">
           <div class="mw-insight-card__head">
@@ -504,5 +533,6 @@
     </button>
 
     <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/marketing-dashboard.js" defer></script>
   </body>
 </html>

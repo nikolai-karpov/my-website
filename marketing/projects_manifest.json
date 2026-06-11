@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "projects": [
+    {
+      "slug": "pir-system",
+      "display_name": "ПИР-Система",
+      "workspace": "/Users/nik/projects/pir-s.ru",
+      "daily_glob": "marketing/monitoring/daily/*_plan1.json"
+    },
+    {
+      "slug": "anonymizer",
+      "display_name": "Анонимайзер",
+      "workspace": "/Users/nik/projects/ai_data_cleaner",
+      "daily_glob": "marketing/monitoring/daily/*_plan1.json"
+    },
+    {
+      "slug": "ai-assistant",
+      "display_name": "ИИ-ассистент",
+      "workspace": "/Users/nik/projects/hermes-agent",
+      "daily_glob": "marketing/monitoring/daily/*_plan1.json"
+    },
+    {
+      "slug": "investor-search",
+      "display_name": "Поиск инвестора",
+      "workspace": "/Users/nik/projects/im",
+      "daily_glob": "marketing/monitoring/daily/*_plan1.json"
+    },
+    {
+      "slug": "portfolio",
+      "display_name": "Portfolio / Николай Карпов",
+      "workspace": "/Users/nik/projects/my-website",
+      "daily_glob": "marketing/monitoring/daily/*_plan1.json"
+    }
+  ]
+}

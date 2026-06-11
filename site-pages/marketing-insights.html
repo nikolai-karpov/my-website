@@ -158,6 +158,66 @@
         </div>
       </section>
 
+      <section class="mi-section container mi-live-dashboard" data-marketing-dashboard aria-label="Фактический статус кампаний">
+        <div class="mi-section__head">
+          <span class="kicker">Фактический dataset</span>
+          <h2>Портфель рекламных кампаний</h2>
+          <p>
+            Факты по всем рекламным проектам: свежесть сбора, заявки, расход,
+            CPA и качество переменных без подстановки нулей вместо отсутствующих данных.
+          </p>
+        </div>
+
+        <div class="mi-live-grid" aria-label="Сводка сбора">
+          <article class="mi-live-card">
+            <span>Проекты</span>
+            <strong data-md-projects-total>—</strong>
+            <small><span data-md-projects-verified>—</span> verified</small>
+          </article>
+          <article class="mi-live-card">
+            <span>Заявки</span>
+            <strong data-md-leads>—</strong>
+            <small>цель Метрики “Отправка формы”</small>
+          </article>
+          <article class="mi-live-card">
+            <span>Расход</span>
+            <strong data-md-spend>—</strong>
+            <small>по связанным Direct campaigns</small>
+          </article>
+          <article class="mi-live-card">
+            <span>CPA</span>
+            <strong data-md-cpa>—</strong>
+            <small>не считается при 0 заявок</small>
+          </article>
+          <article class="mi-live-card">
+            <span>Качество данных</span>
+            <strong data-md-status-summary>—</strong>
+            <small data-md-generated>ожидаем dataset</small>
+          </article>
+        </div>
+
+        <div class="mi-table-wrap">
+          <table class="mi-table mi-table--wide">
+            <thead>
+              <tr>
+                <th>Проект</th>
+                <th>Статус</th>
+                <th>Источники</th>
+                <th>Заявки</th>
+                <th>Расход</th>
+                <th>CPA</th>
+                <th>Что требует внимания</th>
+              </tr>
+            </thead>
+            <tbody data-md-projects>
+              <tr>
+                <td colspan="7">Dataset загружается…</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       <section class="mi-cockpit container" aria-label="Панель решений">
         <div class="mi-decision">
           <div class="mi-decision__top">
@@ -836,5 +896,6 @@
     </button>
 
     <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/marketing-dashboard.js" defer></script>
   </body>
 </html>

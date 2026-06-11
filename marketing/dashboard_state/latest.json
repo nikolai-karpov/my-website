@@ -1,0 +1,1936 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-06-11T09:43:07.429834+03:00",
+  "dashboard": "marketing-ai-copilot",
+  "scope": {
+    "mode": "consolidated",
+    "projects": [
+      "pir-system",
+      "anonymizer",
+      "ai-assistant",
+      "investor-search",
+      "portfolio"
+    ]
+  },
+  "projects_total": 5,
+  "projects_configured": 5,
+  "projects_verified": 5,
+  "status_counts": {
+    "api_error": 0,
+    "ignored": 0,
+    "manual_required": 0,
+    "not_configured": 2,
+    "ok": 83
+  },
+  "projects": [
+    {
+      "slug": "pir-system",
+      "display_name": "ПИР-Система",
+      "status": "ok",
+      "artifact": {
+        "available": true,
+        "date": "2026-06-11",
+        "source": "marketing/monitoring/daily/2026-06-11_plan1.json"
+      },
+      "identity": {
+        "campaign_ids": [
+          710380437
+        ],
+        "counter_ids": [
+          109570304
+        ],
+        "conversion_goal_ids": [
+          566701253
+        ],
+        "turbo_page_ids": [
+          10000150167
+        ],
+        "landing": null,
+        "missing_fields": []
+      },
+      "collector_coverage": {
+        "attempted": 11,
+        "succeeded": 11,
+        "failed": 0,
+        "ignored": 0,
+        "blocking_failed": 0,
+        "manual_required": 0
+      },
+      "metrics": {
+        "direct_weekly": {
+          "impressions": 7279,
+          "clicks": 169,
+          "cost_rub": 19.5,
+          "ctr_pct": 2.32,
+          "avg_cpc_rub": 0.12,
+          "conversions": 35,
+          "cost_per_conversion": 0.56
+        },
+        "goal_costs": {
+          "status": "ok",
+          "tool": "yandex_metrika_goal_costs",
+          "args": {
+            "counter_id": 109570304,
+            "date_from": "2026-06-04",
+            "date_to": "2026-06-10",
+            "goal_ids": [
+              566701253
+            ],
+            "campaign_ids": [
+              710380437
+            ],
+            "direct_client_logins": [
+              "befooz@yandex.ru"
+            ],
+            "attribution": "last",
+            "limit": 500
+          },
+          "success": true,
+          "counter_id": 109570304,
+          "date_from": "2026-06-04",
+          "date_to": "2026-06-10",
+          "goal_ids": [
+            566701253
+          ],
+          "campaign_ids": [
+            710380437
+          ],
+          "direct_client_logins": [
+            "befooz@yandex.ru"
+          ],
+          "attribution": "last",
+          "dimensions": [
+            "ym:ad:lastDirectOrder"
+          ],
+          "filters": "ym:ad:lastDirectOrder=='710380437'",
+          "metrics": [
+            "ym:ad:RUBConvertedAdCost",
+            "ym:ad:goal566701253reaches"
+          ],
+          "rows": [
+            {
+              "campaign_id": 710380437,
+              "campaign_name": "Лендинг ПИР-Система",
+              "direct_id": "N-710380437",
+              "spend_rub": 19.5,
+              "goal_reaches": {
+                "566701253": 0.0
+              },
+              "total_goal_reaches": 0.0,
+              "cpa_rub": null
+            }
+          ],
+          "row_count": 1,
+          "raw_row_count": 1,
+          "summary": {
+            "spend_rub": 19.5,
+            "goal_reaches": {
+              "566701253": 0.0
+            },
+            "total_goal_reaches": 0.0,
+            "cpa_rub": null
+          },
+          "filtered_out_campaign_ids": [],
+          "total_rows": 1
+        },
+        "cpa": {
+          "spend_rub": 19.5,
+          "goal_reaches": {
+            "566701253": 0.0
+          },
+          "total_goal_reaches": 0.0,
+          "cpa_rub": null
+        }
+      },
+      "generated_at": "2026-06-11T09:43:07.429834+03:00"
+    },
+    {
+      "slug": "anonymizer",
+      "display_name": "Анонимайзер",
+      "status": "ok",
+      "artifact": {
+        "available": true,
+        "date": "2026-06-11",
+        "source": "marketing/monitoring/daily/2026-06-11_plan1.json"
+      },
+      "identity": {
+        "campaign_ids": [
+          710496114
+        ],
+        "counter_ids": [
+          109330246
+        ],
+        "conversion_goal_ids": [
+          566702215
+        ],
+        "turbo_page_ids": [
+          10000141047
+        ],
+        "landing": "https://pseudonimazer.clients.site",
+        "missing_fields": []
+      },
+      "collector_coverage": {
+        "attempted": 11,
+        "succeeded": 11,
+        "failed": 0,
+        "ignored": 0,
+        "blocking_failed": 0,
+        "manual_required": 0
+      },
+      "metrics": {
+        "direct_weekly": {
+          "impressions": 3391,
+          "clicks": 310,
+          "cost_rub": 75.0,
+          "ctr_pct": 9.14,
+          "avg_cpc_rub": 0.24,
+          "conversions": 2,
+          "cost_per_conversion": 37.5
+        },
+        "goal_costs": {
+          "status": "ok",
+          "tool": "yandex_metrika_goal_costs",
+          "args": {
+            "counter_id": 109330246,
+            "date_from": "2026-06-04",
+            "date_to": "2026-06-10",
+            "goal_ids": [
+              566702215
+            ],
+            "campaign_ids": [
+              710496114
+            ],
+            "direct_client_logins": [
+              "befooz@yandex.ru"
+            ],
+            "attribution": "last",
+            "limit": 500
+          },
+          "success": true,
+          "counter_id": 109330246,
+          "date_from": "2026-06-04",
+          "date_to": "2026-06-10",
+          "goal_ids": [
+            566702215
+          ],
+          "campaign_ids": [
+            710496114
+          ],
+          "direct_client_logins": [
+            "befooz@yandex.ru"
+          ],
+          "attribution": "last",
+          "dimensions": [
+            "ym:ad:lastDirectOrder"
+          ],
+          "filters": "ym:ad:lastDirectOrder=='710496114'",
+          "metrics": [
+            "ym:ad:RUBConvertedAdCost",
+            "ym:ad:goal566702215reaches"
+          ],
+          "rows": [
+            {
+              "campaign_id": 710496114,
+              "campaign_name": "Анонимайзер",
+              "direct_id": "N-710496114",
+              "spend_rub": 75.0,
+              "goal_reaches": {
+                "566702215": 0.0
+              },
+              "total_goal_reaches": 0.0,
+              "cpa_rub": null
+            }
+          ],
+          "row_count": 1,
+          "raw_row_count": 1,
+          "summary": {
+            "spend_rub": 75.0,
+            "goal_reaches": {
+              "566702215": 0.0
+            },
+            "total_goal_reaches": 0.0,
+            "cpa_rub": null
+          },
+          "filtered_out_campaign_ids": [],
+          "total_rows": 1
+        },
+        "cpa": {
+          "spend_rub": 75.0,
+          "goal_reaches": {
+            "566702215": 0.0
+          },
+          "total_goal_reaches": 0.0,
+          "cpa_rub": null
+        }
+      },
+      "generated_at": "2026-06-11T09:43:07.429834+03:00"
+    },
+    {
+      "slug": "ai-assistant",
+      "display_name": "ИИ-ассистент",
+      "status": "ok",
+      "artifact": {
+        "available": true,
+        "date": "2026-06-11",
+        "source": "marketing/monitoring/daily/2026-06-11_plan1.json"
+      },
+      "identity": {
+        "campaign_ids": [
+          710220828
+        ],
+        "counter_ids": [
+          109426601
+        ],
+        "conversion_goal_ids": [
+          566701756
+        ],
+        "turbo_page_ids": [
+          10000146135
+        ],
+        "landing": "https://ai-assistant.clients.site/",
+        "missing_fields": []
+      },
+      "collector_coverage": {
+        "attempted": 11,
+        "succeeded": 11,
+        "failed": 0,
+        "ignored": 0,
+        "blocking_failed": 0,
+        "manual_required": 0
+      },
+      "metrics": {
+        "direct_weekly": {
+          "impressions": 1896,
+          "clicks": 41,
+          "cost_rub": 80.0,
+          "ctr_pct": 2.16,
+          "avg_cpc_rub": 1.95,
+          "conversions": 2,
+          "cost_per_conversion": 40.0
+        },
+        "goal_costs": {
+          "status": "ok",
+          "tool": "yandex_metrika_goal_costs",
+          "args": {
+            "counter_id": 109426601,
+            "date_from": "2026-06-04",
+            "date_to": "2026-06-10",
+            "goal_ids": [
+              566701756
+            ],
+            "campaign_ids": [
+              710220828
+            ],
+            "direct_client_logins": [
+              "befooz@yandex.ru"
+            ],
+            "attribution": "last",
+            "limit": 500
+          },
+          "success": true,
+          "counter_id": 109426601,
+          "date_from": "2026-06-04",
+          "date_to": "2026-06-10",
+          "goal_ids": [
+            566701756
+          ],
+          "campaign_ids": [
+            710220828
+          ],
+          "direct_client_logins": [
+            "befooz@yandex.ru"
+          ],
+          "attribution": "last",
+          "dimensions": [
+            "ym:ad:lastDirectOrder"
+          ],
+          "filters": "ym:ad:lastDirectOrder=='710220828'",
+          "metrics": [
+            "ym:ad:RUBConvertedAdCost",
+            "ym:ad:goal566701756reaches"
+          ],
+          "rows": [
+            {
+              "campaign_id": 710220828,
+              "campaign_name": "ИИ-ассистент",
+              "direct_id": "N-710220828",
+              "spend_rub": 80.0,
+              "goal_reaches": {
+                "566701756": 0.0
+              },
+              "total_goal_reaches": 0.0,
+              "cpa_rub": null
+            }
+          ],
+          "row_count": 1,
+          "raw_row_count": 1,
+          "summary": {
+            "spend_rub": 80.0,
+            "goal_reaches": {
+              "566701756": 0.0
+            },
+            "total_goal_reaches": 0.0,
+            "cpa_rub": null
+          },
+          "filtered_out_campaign_ids": [],
+          "total_rows": 1
+        },
+        "cpa": {
+          "spend_rub": 80.0,
+          "goal_reaches": {
+            "566701756": 0.0
+          },
+          "total_goal_reaches": 0.0,
+          "cpa_rub": null
+        }
+      },
+      "generated_at": "2026-06-11T09:43:07.429834+03:00"
+    },
+    {
+      "slug": "investor-search",
+      "display_name": "Поиск инвестора",
+      "status": "ok",
+      "artifact": {
+        "available": true,
+        "date": "2026-06-11",
+        "source": "marketing/monitoring/daily/2026-06-11_plan1.json"
+      },
+      "identity": {
+        "campaign_ids": [
+          707287188
+        ],
+        "counter_ids": [
+          106746847
+        ],
+        "conversion_goal_ids": [
+          512701825,
+          566523754
+        ],
+        "turbo_page_ids": [],
+        "landing": "https://pir-system.sourcecraft.site/im/",
+        "missing_fields": []
+      },
+      "collector_coverage": {
+        "attempted": 11,
+        "succeeded": 11,
+        "failed": 0,
+        "ignored": 0,
+        "blocking_failed": 0,
+        "manual_required": 0
+      },
+      "metrics": {
+        "direct_weekly": {
+          "impressions": 911,
+          "clicks": 28,
+          "cost_rub": 0.0,
+          "ctr_pct": 3.07,
+          "avg_cpc_rub": 0.0,
+          "conversions": 0,
+          "cost_per_conversion": null
+        },
+        "goal_costs": {
+          "status": "ok",
+          "tool": "yandex_metrika_goal_costs",
+          "args": {
+            "counter_id": 106746847,
+            "date_from": "2026-06-04",
+            "date_to": "2026-06-10",
+            "goal_ids": [
+              512701825,
+              566523754
+            ],
+            "campaign_ids": [
+              707287188
+            ],
+            "direct_client_logins": [
+              "befooz@yandex.ru"
+            ],
+            "attribution": "last",
+            "limit": 500
+          },
+          "success": true,
+          "counter_id": 106746847,
+          "date_from": "2026-06-04",
+          "date_to": "2026-06-10",
+          "goal_ids": [
+            512701825,
+            566523754
+          ],
+          "campaign_ids": [
+            707287188
+          ],
+          "direct_client_logins": [
+            "befooz@yandex.ru"
+          ],
+          "attribution": "last",
+          "dimensions": [
+            "ym:ad:lastDirectOrder"
+          ],
+          "filters": "ym:ad:lastDirectOrder=='707287188'",
+          "metrics": [
+            "ym:ad:RUBConvertedAdCost",
+            "ym:ad:goal512701825reaches",
+            "ym:ad:goal566523754reaches"
+          ],
+          "rows": [
+            {
+              "campaign_id": 707287188,
+              "campaign_name": "Поиск инвестора",
+              "direct_id": "N-707287188",
+              "spend_rub": 0.0,
+              "goal_reaches": {
+                "512701825": 0.0,
+                "566523754": 0.0
+              },
+              "total_goal_reaches": 0.0,
+              "cpa_rub": null
+            }
+          ],
+          "row_count": 1,
+          "raw_row_count": 1,
+          "summary": {
+            "spend_rub": 0.0,
+            "goal_reaches": {
+              "512701825": 0.0,
+              "566523754": 0.0
+            },
+            "total_goal_reaches": 0.0,
+            "cpa_rub": null
+          },
+          "filtered_out_campaign_ids": [],
+          "total_rows": 1
+        },
+        "cpa": {
+          "spend_rub": 0.0,
+          "goal_reaches": {
+            "512701825": 0.0,
+            "566523754": 0.0
+          },
+          "total_goal_reaches": 0.0,
+          "cpa_rub": null
+        }
+      },
+      "generated_at": "2026-06-11T09:43:07.429834+03:00"
+    },
+    {
+      "slug": "portfolio",
+      "display_name": "Portfolio / Николай Карпов",
+      "status": "ok",
+      "artifact": {
+        "available": true,
+        "date": "2026-06-11",
+        "source": "marketing/monitoring/daily/2026-06-11_plan1.json"
+      },
+      "identity": {
+        "campaign_ids": [
+          710165227
+        ],
+        "counter_ids": [
+          109350250
+        ],
+        "conversion_goal_ids": [
+          566497705,
+          566492899
+        ],
+        "turbo_page_ids": [
+          10000154536
+        ],
+        "landing": "https://nikolai-pir-s-ru.sourcecraft.site/portfolio/",
+        "missing_fields": []
+      },
+      "collector_coverage": {
+        "attempted": 11,
+        "succeeded": 11,
+        "failed": 0,
+        "ignored": 0,
+        "blocking_failed": 0,
+        "manual_required": 0
+      },
+      "metrics": {
+        "direct_weekly": {
+          "impressions": 5186,
+          "clicks": 826,
+          "cost_rub": 2545.7,
+          "ctr_pct": 15.93,
+          "avg_cpc_rub": 3.08,
+          "conversions": 0,
+          "cost_per_conversion": null
+        },
+        "goal_costs": {
+          "status": "ok",
+          "tool": "yandex_metrika_goal_costs",
+          "args": {
+            "counter_id": 109350250,
+            "date_from": "2026-06-04",
+            "date_to": "2026-06-10",
+            "goal_ids": [
+              566497705,
+              566492899
+            ],
+            "campaign_ids": [
+              710165227
+            ],
+            "direct_client_logins": [
+              "befooz@yandex.ru"
+            ],
+            "attribution": "last",
+            "limit": 500
+          },
+          "success": true,
+          "counter_id": 109350250,
+          "date_from": "2026-06-04",
+          "date_to": "2026-06-10",
+          "goal_ids": [
+            566497705,
+            566492899
+          ],
+          "campaign_ids": [
+            710165227
+          ],
+          "direct_client_logins": [
+            "befooz@yandex.ru"
+          ],
+          "attribution": "last",
+          "dimensions": [
+            "ym:ad:lastDirectOrder"
+          ],
+          "filters": "ym:ad:lastDirectOrder=='710165227'",
+          "metrics": [
+            "ym:ad:RUBConvertedAdCost",
+            "ym:ad:goal566497705reaches",
+            "ym:ad:goal566492899reaches"
+          ],
+          "rows": [
+            {
+              "campaign_id": 710165227,
+              "campaign_name": "Портфолио",
+              "direct_id": "N-710165227",
+              "spend_rub": 2545.7074,
+              "goal_reaches": {
+                "566497705": 0.0,
+                "566492899": 0.0
+              },
+              "total_goal_reaches": 0.0,
+              "cpa_rub": null
+            }
+          ],
+          "row_count": 1,
+          "raw_row_count": 1,
+          "summary": {
+            "spend_rub": 2545.7074,
+            "goal_reaches": {
+              "566497705": 0.0,
+              "566492899": 0.0
+            },
+            "total_goal_reaches": 0.0,
+            "cpa_rub": null
+          },
+          "filtered_out_campaign_ids": [],
+          "total_rows": 1
+        },
+        "cpa": {
+          "spend_rub": 2545.7074,
+          "goal_reaches": {
+            "566497705": 0.0,
+            "566492899": 0.0
+          },
+          "total_goal_reaches": 0.0,
+          "cpa_rub": null
+        }
+      },
+      "generated_at": "2026-06-11T09:43:07.429834+03:00"
+    }
+  ],
+  "view_model": {
+    "leads": {
+      "status": "ok",
+      "lead_count": 0,
+      "spend_rub": 2720.21,
+      "cpa_rub": null,
+      "cpa_defined": false,
+      "source_variable_ids": [
+        "pir-system.cpa.goal_specific",
+        "anonymizer.cpa.goal_specific",
+        "ai-assistant.cpa.goal_specific",
+        "investor-search.cpa.goal_specific",
+        "portfolio.cpa.goal_specific"
+      ],
+      "note": "Metrika form-submit goal reaches are the lead source of truth."
+    }
+  },
+  "variables": [
+    {
+      "id": "pir-system.identity.campaign_ids",
+      "label": "campaign_ids",
+      "project": "pir-system",
+      "group": "identity",
+      "status": "ok",
+      "value": [
+        710380437
+      ],
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "pir-system.identity.counter_ids",
+      "label": "counter_ids",
+      "project": "pir-system",
+      "group": "identity",
+      "status": "ok",
+      "value": [
+        109570304
+      ],
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "pir-system.identity.conversion_goal_ids",
+      "label": "conversion_goal_ids",
+      "project": "pir-system",
+      "group": "identity",
+      "status": "ok",
+      "value": [
+        566701253
+      ],
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "pir-system.identity.turbo_page_ids",
+      "label": "turbo_page_ids",
+      "project": "pir-system",
+      "group": "identity",
+      "status": "ok",
+      "value": [
+        10000150167
+      ],
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "pir-system.identity.landing",
+      "label": "landing",
+      "project": "pir-system",
+      "group": "identity",
+      "status": "not_configured",
+      "value": null,
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "pir-system.source.direct.campaign_daily",
+      "label": "direct.campaign_daily",
+      "project": "pir-system",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 1
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "pir-system.source.direct.campaign_weekly",
+      "label": "direct.campaign_weekly",
+      "project": "pir-system",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 7
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "pir-system.source.direct.search_query",
+      "label": "direct.search_query",
+      "project": "pir-system",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 71
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "pir-system.source.direct.geo",
+      "label": "direct.geo",
+      "project": "pir-system",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 500
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "pir-system.source.direct.ad",
+      "label": "direct.ad",
+      "project": "pir-system",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 7
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "pir-system.source.direct.adgroup",
+      "label": "direct.adgroup",
+      "project": "pir-system",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 7
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "pir-system.source.metrika.goals",
+      "label": "metrika.goals",
+      "project": "pir-system",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": null
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "pir-system.source.metrika.traffic_ad_weekly",
+      "label": "metrika.traffic_ad_weekly",
+      "project": "pir-system",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 2
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "pir-system.source.metrika.conversions",
+      "label": "metrika.conversions",
+      "project": "pir-system",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 0
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "pir-system.source.metrika.goal_costs",
+      "label": "metrika.goal_costs",
+      "project": "pir-system",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 1
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "pir-system.source.metrika.direct_costs",
+      "label": "metrika.direct_costs",
+      "project": "pir-system",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 27
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "pir-system.cpa.goal_specific",
+      "label": "Goal-specific CPA",
+      "project": "pir-system",
+      "group": "cpa",
+      "status": "ok",
+      "value": {
+        "spend_rub": 19.5,
+        "goal_reaches": {
+          "566701253": 0.0
+        },
+        "total_goal_reaches": 0.0,
+        "cpa_rub": null
+      },
+      "source": "metrika.goal_costs",
+      "note": "CPA is null when form-submit reaches are zero.",
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "anonymizer.identity.campaign_ids",
+      "label": "campaign_ids",
+      "project": "anonymizer",
+      "group": "identity",
+      "status": "ok",
+      "value": [
+        710496114
+      ],
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "anonymizer.identity.counter_ids",
+      "label": "counter_ids",
+      "project": "anonymizer",
+      "group": "identity",
+      "status": "ok",
+      "value": [
+        109330246
+      ],
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "anonymizer.identity.conversion_goal_ids",
+      "label": "conversion_goal_ids",
+      "project": "anonymizer",
+      "group": "identity",
+      "status": "ok",
+      "value": [
+        566702215
+      ],
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "anonymizer.identity.turbo_page_ids",
+      "label": "turbo_page_ids",
+      "project": "anonymizer",
+      "group": "identity",
+      "status": "ok",
+      "value": [
+        10000141047
+      ],
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "anonymizer.identity.landing",
+      "label": "landing",
+      "project": "anonymizer",
+      "group": "identity",
+      "status": "ok",
+      "value": "https://pseudonimazer.clients.site",
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "anonymizer.source.direct.campaign_daily",
+      "label": "direct.campaign_daily",
+      "project": "anonymizer",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 1
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "anonymizer.source.direct.campaign_weekly",
+      "label": "direct.campaign_weekly",
+      "project": "anonymizer",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 4
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "anonymizer.source.direct.search_query",
+      "label": "direct.search_query",
+      "project": "anonymizer",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 0
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "anonymizer.source.direct.geo",
+      "label": "direct.geo",
+      "project": "anonymizer",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 500
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "anonymizer.source.direct.ad",
+      "label": "direct.ad",
+      "project": "anonymizer",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 4
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "anonymizer.source.direct.adgroup",
+      "label": "direct.adgroup",
+      "project": "anonymizer",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 4
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "anonymizer.source.metrika.goals",
+      "label": "metrika.goals",
+      "project": "anonymizer",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": null
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "anonymizer.source.metrika.traffic_ad_weekly",
+      "label": "metrika.traffic_ad_weekly",
+      "project": "anonymizer",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 2
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "anonymizer.source.metrika.conversions",
+      "label": "metrika.conversions",
+      "project": "anonymizer",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 0
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "anonymizer.source.metrika.goal_costs",
+      "label": "metrika.goal_costs",
+      "project": "anonymizer",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 1
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "anonymizer.source.metrika.direct_costs",
+      "label": "metrika.direct_costs",
+      "project": "anonymizer",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 28
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "anonymizer.cpa.goal_specific",
+      "label": "Goal-specific CPA",
+      "project": "anonymizer",
+      "group": "cpa",
+      "status": "ok",
+      "value": {
+        "spend_rub": 75.0,
+        "goal_reaches": {
+          "566702215": 0.0
+        },
+        "total_goal_reaches": 0.0,
+        "cpa_rub": null
+      },
+      "source": "metrika.goal_costs",
+      "note": "CPA is null when form-submit reaches are zero.",
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "ai-assistant.identity.campaign_ids",
+      "label": "campaign_ids",
+      "project": "ai-assistant",
+      "group": "identity",
+      "status": "ok",
+      "value": [
+        710220828
+      ],
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "ai-assistant.identity.counter_ids",
+      "label": "counter_ids",
+      "project": "ai-assistant",
+      "group": "identity",
+      "status": "ok",
+      "value": [
+        109426601
+      ],
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "ai-assistant.identity.conversion_goal_ids",
+      "label": "conversion_goal_ids",
+      "project": "ai-assistant",
+      "group": "identity",
+      "status": "ok",
+      "value": [
+        566701756
+      ],
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "ai-assistant.identity.turbo_page_ids",
+      "label": "turbo_page_ids",
+      "project": "ai-assistant",
+      "group": "identity",
+      "status": "ok",
+      "value": [
+        10000146135
+      ],
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "ai-assistant.identity.landing",
+      "label": "landing",
+      "project": "ai-assistant",
+      "group": "identity",
+      "status": "ok",
+      "value": "https://ai-assistant.clients.site/",
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "ai-assistant.source.direct.campaign_daily",
+      "label": "direct.campaign_daily",
+      "project": "ai-assistant",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 1
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "ai-assistant.source.direct.campaign_weekly",
+      "label": "direct.campaign_weekly",
+      "project": "ai-assistant",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 6
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "ai-assistant.source.direct.search_query",
+      "label": "direct.search_query",
+      "project": "ai-assistant",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 88
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "ai-assistant.source.direct.geo",
+      "label": "direct.geo",
+      "project": "ai-assistant",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 494
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "ai-assistant.source.direct.ad",
+      "label": "direct.ad",
+      "project": "ai-assistant",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 6
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "ai-assistant.source.direct.adgroup",
+      "label": "direct.adgroup",
+      "project": "ai-assistant",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 6
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "ai-assistant.source.metrika.goals",
+      "label": "metrika.goals",
+      "project": "ai-assistant",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": null
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "ai-assistant.source.metrika.traffic_ad_weekly",
+      "label": "metrika.traffic_ad_weekly",
+      "project": "ai-assistant",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 2
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "ai-assistant.source.metrika.conversions",
+      "label": "metrika.conversions",
+      "project": "ai-assistant",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 0
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "ai-assistant.source.metrika.goal_costs",
+      "label": "metrika.goal_costs",
+      "project": "ai-assistant",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 1
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "ai-assistant.source.metrika.direct_costs",
+      "label": "metrika.direct_costs",
+      "project": "ai-assistant",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 24
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "ai-assistant.cpa.goal_specific",
+      "label": "Goal-specific CPA",
+      "project": "ai-assistant",
+      "group": "cpa",
+      "status": "ok",
+      "value": {
+        "spend_rub": 80.0,
+        "goal_reaches": {
+          "566701756": 0.0
+        },
+        "total_goal_reaches": 0.0,
+        "cpa_rub": null
+      },
+      "source": "metrika.goal_costs",
+      "note": "CPA is null when form-submit reaches are zero.",
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "investor-search.identity.campaign_ids",
+      "label": "campaign_ids",
+      "project": "investor-search",
+      "group": "identity",
+      "status": "ok",
+      "value": [
+        707287188
+      ],
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "investor-search.identity.counter_ids",
+      "label": "counter_ids",
+      "project": "investor-search",
+      "group": "identity",
+      "status": "ok",
+      "value": [
+        106746847
+      ],
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "investor-search.identity.conversion_goal_ids",
+      "label": "conversion_goal_ids",
+      "project": "investor-search",
+      "group": "identity",
+      "status": "ok",
+      "value": [
+        512701825,
+        566523754
+      ],
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "investor-search.identity.turbo_page_ids",
+      "label": "turbo_page_ids",
+      "project": "investor-search",
+      "group": "identity",
+      "status": "not_configured",
+      "value": [],
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "investor-search.identity.landing",
+      "label": "landing",
+      "project": "investor-search",
+      "group": "identity",
+      "status": "ok",
+      "value": "https://pir-system.sourcecraft.site/im/",
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "investor-search.source.direct.campaign_daily",
+      "label": "direct.campaign_daily",
+      "project": "investor-search",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 0
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "investor-search.source.direct.campaign_weekly",
+      "label": "direct.campaign_weekly",
+      "project": "investor-search",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 3
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "investor-search.source.direct.search_query",
+      "label": "direct.search_query",
+      "project": "investor-search",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 0
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "investor-search.source.direct.geo",
+      "label": "direct.geo",
+      "project": "investor-search",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 227
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "investor-search.source.direct.ad",
+      "label": "direct.ad",
+      "project": "investor-search",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 3
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "investor-search.source.direct.adgroup",
+      "label": "direct.adgroup",
+      "project": "investor-search",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 3
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "investor-search.source.metrika.goals",
+      "label": "metrika.goals",
+      "project": "investor-search",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": null
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "investor-search.source.metrika.traffic_ad_weekly",
+      "label": "metrika.traffic_ad_weekly",
+      "project": "investor-search",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 2
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "investor-search.source.metrika.conversions",
+      "label": "metrika.conversions",
+      "project": "investor-search",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 0
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "investor-search.source.metrika.goal_costs",
+      "label": "metrika.goal_costs",
+      "project": "investor-search",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 1
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "investor-search.source.metrika.direct_costs",
+      "label": "metrika.direct_costs",
+      "project": "investor-search",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 24
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "investor-search.cpa.goal_specific",
+      "label": "Goal-specific CPA",
+      "project": "investor-search",
+      "group": "cpa",
+      "status": "ok",
+      "value": {
+        "spend_rub": 0.0,
+        "goal_reaches": {
+          "512701825": 0.0,
+          "566523754": 0.0
+        },
+        "total_goal_reaches": 0.0,
+        "cpa_rub": null
+      },
+      "source": "metrika.goal_costs",
+      "note": "CPA is null when form-submit reaches are zero.",
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "portfolio.identity.campaign_ids",
+      "label": "campaign_ids",
+      "project": "portfolio",
+      "group": "identity",
+      "status": "ok",
+      "value": [
+        710165227
+      ],
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "portfolio.identity.counter_ids",
+      "label": "counter_ids",
+      "project": "portfolio",
+      "group": "identity",
+      "status": "ok",
+      "value": [
+        109350250
+      ],
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "portfolio.identity.conversion_goal_ids",
+      "label": "conversion_goal_ids",
+      "project": "portfolio",
+      "group": "identity",
+      "status": "ok",
+      "value": [
+        566497705,
+        566492899
+      ],
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "portfolio.identity.turbo_page_ids",
+      "label": "turbo_page_ids",
+      "project": "portfolio",
+      "group": "identity",
+      "status": "ok",
+      "value": [
+        10000154536
+      ],
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "portfolio.identity.landing",
+      "label": "landing",
+      "project": "portfolio",
+      "group": "identity",
+      "status": "ok",
+      "value": "https://nikolai-pir-s-ru.sourcecraft.site/portfolio/",
+      "source": "daily_artifact",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "portfolio.source.direct.campaign_daily",
+      "label": "direct.campaign_daily",
+      "project": "portfolio",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 0
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "portfolio.source.direct.campaign_weekly",
+      "label": "direct.campaign_weekly",
+      "project": "portfolio",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 2
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "portfolio.source.direct.search_query",
+      "label": "direct.search_query",
+      "project": "portfolio",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 104
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "portfolio.source.direct.geo",
+      "label": "direct.geo",
+      "project": "portfolio",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 500
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "portfolio.source.direct.ad",
+      "label": "direct.ad",
+      "project": "portfolio",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 2
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "portfolio.source.direct.adgroup",
+      "label": "direct.adgroup",
+      "project": "portfolio",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 2
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "portfolio.source.metrika.goals",
+      "label": "metrika.goals",
+      "project": "portfolio",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": null
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "portfolio.source.metrika.traffic_ad_weekly",
+      "label": "metrika.traffic_ad_weekly",
+      "project": "portfolio",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 2
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "portfolio.source.metrika.conversions",
+      "label": "metrika.conversions",
+      "project": "portfolio",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 0
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "portfolio.source.metrika.goal_costs",
+      "label": "metrika.goal_costs",
+      "project": "portfolio",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 1
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "portfolio.source.metrika.direct_costs",
+      "label": "metrika.direct_costs",
+      "project": "portfolio",
+      "group": "source",
+      "status": "ok",
+      "value": {
+        "success": true,
+        "row_count": 23
+      },
+      "source": "data_collection",
+      "note": null,
+      "manual_allowed": true,
+      "can_ignore": true
+    },
+    {
+      "id": "portfolio.cpa.goal_specific",
+      "label": "Goal-specific CPA",
+      "project": "portfolio",
+      "group": "cpa",
+      "status": "ok",
+      "value": {
+        "spend_rub": 2545.7074,
+        "goal_reaches": {
+          "566497705": 0.0,
+          "566492899": 0.0
+        },
+        "total_goal_reaches": 0.0,
+        "cpa_rub": null
+      },
+      "source": "metrika.goal_costs",
+      "note": "CPA is null when form-submit reaches are zero.",
+      "manual_allowed": true,
+      "can_ignore": true
+    }
+  ],
+  "overrides": {
+    "path": "marketing/manual_overrides.json",
+    "configured": 0,
+    "applied": 0
+  },
+  "anti_hallucination": {
+    "missing_values_default_to_zero": false,
+    "manual_or_ignored_allowed": true,
+    "direct_conversions_are_lead_truth": false,
+    "all_goals_used_for_cpa": false
+  }
+}
