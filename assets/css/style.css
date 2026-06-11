@@ -1562,6 +1562,13 @@ img { max-width: 100%; height: auto; display: block; }
   margin: 32px 0;
 }
 
+.figure--wide {
+  width: min(1180px, calc(100vw - var(--gutter) * 2));
+  margin: 42px 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
 .figure__frame {
   position: relative;
   border: 1px solid var(--line);
@@ -1574,6 +1581,16 @@ img { max-width: 100%; height: auto; display: block; }
   display: block;
   width: 100%;
   height: auto;
+}
+
+@media (max-width: 700px) {
+  .figure--wide .figure__frame {
+    overflow: auto hidden;
+  }
+
+  .figure--wide .figure__frame img {
+    min-width: 720px;
+  }
 }
 
 .figure__placeholder {
