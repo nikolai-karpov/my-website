@@ -3,6 +3,126 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-agentnaia-ekonomika/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-11T07:04:05+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-codex-za-23-protiv-cursor-za-200/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-11T07:03:29+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-reliz-plaginov-0-9-8-i-koda-cli-0-3-6-mnogo-bagov-pofiksili/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-11T07:02:59+03:00</news:publication_date>
+      <news:title>Koda CLI 0.3.6 и плагины 0.9.8: автоотмена зависших стримов и звуковые уведомления</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-perevod-kak-ia-ustanovil-v-svoi-igrovoi-pk-servernyi-gpu-za/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-11T07:01:31+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-kod-eto-nastolko-moshchnaia-abstraktsiia-dlia-myshleniia-mod/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-11T07:00:36+03:00</news:publication_date>
+      <news:title>Open‑Weights агент на 1T MoE (42 B) занял TOP‑20 в ECOM1 с 72 баллами</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-v-system-card-claude-fable-5-nashli-neskolko-ochen-interesny/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-11T06:59:13+03:00</news:publication_date>
+      <news:title>Claude Fable 5 превзошёл Opus 4.8 в тесте уязвимостей: 88,4% vs 8,8%</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-10-setting-a-custom-price-for-a-model-in-agentsview/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-11T06:57:42+03:00</news:publication_date>
+      <news:title>Как задать кастомную цену модели Claude Fable 5 в AgentsView</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-anthropic-vypustila-claude-fable-5/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-11T06:56:21+03:00</news:publication_date>
+      <news:title>Claude Fable 5 от Anthropic: 80.3 % SWE‑Bench‑Pro, память на миллионы токенов</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-10-claude-fable-5-avtonomnyi-agent-klassa-mythos-ot-anthropic/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-11T06:54:48+03:00</news:publication_date>
+      <news:title>Claude Fable 5: мультимодальная модель с контекстом 1 000 000 токенов</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-10-diffusiongemma/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-11T06:53:12+03:00</news:publication_date>
+      <news:title>DiffusionGemma: новая модель генерации текста</news:title>
+    </news:news>
+  </url>
+
+  <url>
     <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-new-in-llamaparse-multi-page-tables-beta-and-excel-spreadshe/</loc>
     <news:news>
       <news:publication>
