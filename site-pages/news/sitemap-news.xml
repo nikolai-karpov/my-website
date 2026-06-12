@@ -3,6 +3,126 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-perevod-kak-ia-ustanovil-v-svoi-igrovoi-pk-servernyi-gpu-za/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-12T05:39:44+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-kitai-vkladyvaet-295-mlrd-chtoby-zamenit-nvidia-na-huawei-vo/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-12T05:39:30+03:00</news:publication_date>
+      <news:title>Китай инвестирует $295 млрд в замену Nvidia на Huawei Ascend 950PR</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-kod-eto-nastolko-moshchnaia-abstraktsiia-dlia-myshleniia-mod/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-12T05:38:43+03:00</news:publication_date>
+      <news:title>Open‑Weights агент на mimo‑v2.5‑pro занял TOP‑20 в ECOM1 с 72 баллами</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-10-setting-a-custom-price-for-a-model-in-agentsview/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-12T05:38:03+03:00</news:publication_date>
+      <news:title>Как задать собственную цену Claude Fable 5 в AgentsView</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-10-meta-signs-first-ai-data-center-deal-in-india-with-reliance/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-12T05:37:26+03:00</news:publication_date>
+      <news:title>Meta и Reliance открывают 168 MW AI‑дата‑центр в Индии</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-11-datasette-agent-0-2a0/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-12T05:36:46+03:00</news:publication_date>
+      <news:title>datasette-agent 0.2a0: интерактивные запросы и сохранение SQL</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-12-new-models-and-developer-products-announced-at-devday/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-12T05:36:02+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-12-introducing-gpt-5-5-openai/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-12T05:35:50+03:00</news:publication_date>
+      <news:title>GPT‑5.5 набирает 84.9 % на тесте GDPval и получает расширенные кибер‑защиты</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-anthropic-vypustila-claude-fable-5/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-12T05:34:56+03:00</news:publication_date>
+      <news:title>Anthropic представила Claude Fable 5 с миллионом токенов контекста и новыми бенчмарк‑результатами</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-10-iclr-2026-v-rio-de-zhaneiro-glavnye-ml-trendy-matematika-i-i/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-12T05:34:08+03:00</news:publication_date>
+      <news:title>ICLR‑2026 в Рио: 19 000 заявок, 26 % Acceptance Rate, 6 статей Yandex в Main Track</news:title>
+    </news:news>
+  </url>
+
+  <url>
     <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-agentnaia-ekonomika/</loc>
     <news:news>
       <news:publication>
@@ -39,30 +159,6 @@
   </url>
 
   <url>
-    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-perevod-kak-ia-ustanovil-v-svoi-igrovoi-pk-servernyi-gpu-za/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Карпов Николай — Новости</news:name>
-        <news:language>ru</news:language>
-      </news:publication>
-      <news:publication_date>2026-06-11T07:01:31+03:00</news:publication_date>
-      <news:title></news:title>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-kod-eto-nastolko-moshchnaia-abstraktsiia-dlia-myshleniia-mod/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Карпов Николай — Новости</news:name>
-        <news:language>ru</news:language>
-      </news:publication>
-      <news:publication_date>2026-06-11T07:00:36+03:00</news:publication_date>
-      <news:title>Open‑Weights агент на 1T MoE (42 B) занял TOP‑20 в ECOM1 с 72 баллами</news:title>
-    </news:news>
-  </url>
-
-  <url>
     <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-v-system-card-claude-fable-5-nashli-neskolko-ochen-interesny/</loc>
     <news:news>
       <news:publication>
@@ -71,30 +167,6 @@
       </news:publication>
       <news:publication_date>2026-06-11T06:59:13+03:00</news:publication_date>
       <news:title>Claude Fable 5 превзошёл Opus 4.8 в тесте уязвимостей: 88,4% vs 8,8%</news:title>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-10-setting-a-custom-price-for-a-model-in-agentsview/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Карпов Николай — Новости</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-06-11T06:57:42+03:00</news:publication_date>
-      <news:title>Как задать кастомную цену модели Claude Fable 5 в AgentsView</news:title>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-anthropic-vypustila-claude-fable-5/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Карпов Николай — Новости</news:name>
-        <news:language>ru</news:language>
-      </news:publication>
-      <news:publication_date>2026-06-11T06:56:21+03:00</news:publication_date>
-      <news:title>Claude Fable 5 от Anthropic: 80.3 % SWE‑Bench‑Pro, память на миллионы токенов</news:title>
     </news:news>
   </url>
 
