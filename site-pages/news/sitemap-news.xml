@@ -3,6 +3,126 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-kod-eto-nastolko-moshchnaia-abstraktsiia-dlia-myshleniia-mod/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-13T05:39:38+03:00</news:publication_date>
+      <news:title>Open‑weights агент на 1T‑sparse MoE (42B) набрал 72 балла в Ultimate Leaderboard</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-kak-my-perepridumali-golosovuiu-aktivatsiiu-dlia-iandeks-dro/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-13T05:38:57+03:00</news:publication_date>
+      <news:title>Яндекс Дропс: споттер‑модель помещена в 200 KB</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-11-asyncinject-0-7/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-13T05:38:20+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-13-new-models-and-developer-products-announced-at-devday-openai/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-13T05:38:10+03:00</news:publication_date>
+      <news:title>OpenAI анонсировала GPT‑4 Turbo с 128 К контекстом и новые API</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-novye-modeli-ot-apple-vygliadiat-interesno/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-13T05:37:32+03:00</news:publication_date>
+      <news:title>Apple выпустила AFM 3 Core Advanced — 20 млрд параметров на iPhone 17 Pro</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-10-setting-a-custom-price-for-a-model-in-agentsview/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-13T05:36:55+03:00</news:publication_date>
+      <news:title>Настройка кастомной цены для модели в AgentsView</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-perevoz-dannykh-po-kusochkam-inzhenernaia-kukhnia-spqr/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-13T05:36:34+03:00</news:publication_date>
+      <news:title>SPQR от Яндекса: шардирование PostgreSQL для петабайтов и сотен тысяч запросов в секунду</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-12-minimax-m3-vylozhili-na-hugging-face/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-13T05:36:00+03:00</news:publication_date>
+      <news:title>MiniMax M3: 428 B параметров, 23 B активных на токен</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-anthropic-vypustila-claude-fable-5/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-13T05:35:24+03:00</news:publication_date>
+      <news:title>Anthropic представила Claude Fable 5 с миллионами токенов контекста</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-datasette-agent-edit-0-1a0/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-13T05:34:49+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
     <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-perevod-kak-ia-ustanovil-v-svoi-igrovoi-pk-servernyi-gpu-za/</loc>
     <news:news>
       <news:publication>
@@ -23,30 +143,6 @@
       </news:publication>
       <news:publication_date>2026-06-12T05:39:30+03:00</news:publication_date>
       <news:title>Китай инвестирует $295 млрд в замену Nvidia на Huawei Ascend 950PR</news:title>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-kod-eto-nastolko-moshchnaia-abstraktsiia-dlia-myshleniia-mod/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Карпов Николай — Новости</news:name>
-        <news:language>ru</news:language>
-      </news:publication>
-      <news:publication_date>2026-06-12T05:38:43+03:00</news:publication_date>
-      <news:title>Open‑Weights агент на mimo‑v2.5‑pro занял TOP‑20 в ECOM1 с 72 баллами</news:title>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-10-setting-a-custom-price-for-a-model-in-agentsview/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Карпов Николай — Новости</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-06-12T05:38:03+03:00</news:publication_date>
-      <news:title>Как задать собственную цену Claude Fable 5 в AgentsView</news:title>
     </news:news>
   </url>
 
@@ -95,18 +191,6 @@
       </news:publication>
       <news:publication_date>2026-06-12T05:35:50+03:00</news:publication_date>
       <news:title>GPT‑5.5 набирает 84.9 % на тесте GDPval и получает расширенные кибер‑защиты</news:title>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-anthropic-vypustila-claude-fable-5/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Карпов Николай — Новости</news:name>
-        <news:language>ru</news:language>
-      </news:publication>
-      <news:publication_date>2026-06-12T05:34:56+03:00</news:publication_date>
-      <news:title>Anthropic представила Claude Fable 5 с миллионом токенов контекста и новыми бенчмарк‑результатами</news:title>
     </news:news>
   </url>
 

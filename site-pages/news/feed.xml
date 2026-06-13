@@ -10,8 +10,118 @@
     <language>ru</language>
     <copyright>© 2026 Карпов Николай</copyright>
     <atom:link href="https://nikolai-karpov.github.io/my-website/site-pages/news/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 12 Jun 2026 05:39:44 +0300</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jun 2026 05:39:39 +0300</lastBuildDate>
     <generator>hermes/news_renderer</generator>
+
+    <item>
+      <title>Open‑weights агент на 1T‑sparse MoE (42B) набрал 72 балла в Ultimate Leaderboard</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-kod-eto-nastolko-moshchnaia-abstraktsiia-dlia-myshleniia-mod/</link>
+      <description><![CDATA[В рамках ECOM1 участник Farid Temuri использовал модель mimo‑v2.5‑pro — 1 трлн‑параметровый sparse MoE с 42 млрд активных параметров, REPL‑цикл до 35 шагов и чеклист‑обратную связь. Агент занял TOP‑20 и набрал 72 балла, выполнив задачу за 233 минуты.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Архитектура построена вокруг модели <a href="https://mimo.xiaomi.com/mimo-v2-5-pro/">mimo‑v2.5‑pro</a> — 1 трлн‑параметровый sparse MoE с 42 млрд активных параметров, доступный в Open Weights. На вход подаётся кодовая песочница, а агент работает в REPL‑цикле до 35 итераций.</p><h3>Как</h3><p>После каждого шага агент проверяется чеклистом; ошибочные ответы автоматически возвращаются в цикл с обратной связью, что повышает надёжность генерации. Интеграция с TypeScript позволяет использовать Claude в качестве «мозга» агента.</p><h3>Цифры</h3><ul><li>Время выполнения полного сценария ≈ 233 минуты.</li><li>Результат — 72 балла в Ultimate Leaderboard (TOP‑20 в ECOM1).</li><li>REPL‑цикл ограничен 35 шагами.</li></ul><h3>Что перенять</h3><p>Комбинация sparse MoE‑модели с небольшим числом активных параметров и REPL‑циклом с чеклист‑обратной связью позволяет достичь конкурентных результатов даже без масштабных вычислительных ресурсов. Такой подход можно адаптировать к более лёгким моделям, заменив 1 трлн‑параметровый MoE на 100‑200 млрд‑параметровый вариант, сохранив структуру обратной связи.</p>]]></content:encoded>
+      <pubDate>Sat, 13 Jun 2026 05:39:38 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-kod-eto-nastolko-moshchnaia-abstraktsiia-dlia-myshleniia-mod/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Яндекс Дропс: споттер‑модель помещена в 200 KB</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-kak-my-perepridumali-golosovuiu-aktivatsiiu-dlia-iandeks-dro/</link>
+      <description><![CDATA[Яндекс представил первую носимую колонку с Алисой AI, где модель споттера (распознавание «Алиса») весит всего 200 KB — рекордный размер для on‑device активации.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Новая модель споттера для Яндекс Дропс занимает 200 KB памяти, что позволяет разместить её на микрочипе наушников с ограниченным объёмом флеш‑памяти.</p><h3>Как</h3><p>Для достижения минимума использованы агрессивные техники компрессии: 8‑битный квантизационный слой, структурное обрезание (pruning) почти всех слоёв, а также переобучение на небольшом наборе данных, специфичных для шумов в наушниках. Архитектура была упрощена до двух‑три сверточных блоков, заменив тяжёлый трансформерный бекенд.</p><h3>Цифры</h3><ul><li>Размер модели — 200 KB (≈ 0,2 МБ).</li><li>Потребляемая частота процессора — ≤ 150 MHz, что укладывается в ограничения чипа.</li><li>Время отклика на команду «Алиса» — ≈ 120 ms при полном заряде батареи.</li></ul><h3>Что перенять</h3><p>При переносе моделей на устройства с жёсткими ограничениями памяти следует сочетать сильный pruning с квантизацией до 8 бит и переобучать на целевых акустических данных, чтобы сохранить точность в условиях шумных микрофонов.</p>]]></content:encoded>
+      <pubDate>Sat, 13 Jun 2026 05:38:57 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-kak-my-perepridumali-golosovuiu-aktivatsiiu-dlia-iandeks-dro/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title></title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-11-asyncinject-0-7/</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+      <pubDate>Sat, 13 Jun 2026 05:38:20 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-11-asyncinject-0-7/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>OpenAI анонсировала GPT‑4 Turbo с 128 К контекстом и новые API</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-13-new-models-and-developer-products-announced-at-devday-openai/</link>
+      <description><![CDATA[OpenAI представила новую модель GPT‑4 Turbo, поддерживающую контекст до 128 000 токенов и обещающую более низкие цены. Также вышла версия GPT‑3.5 Turbo с контекстным окном 16 000 токенов, новые возможности Vision и DALL·E 3 API, а также Assistants API.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>OpenAI запустила предварительный доступ к модели <strong>GPT‑4 Turbo</strong> (идентификатор <code>gpt-4-1106-preview</code>) и объявила о выпуске <strong>GPT‑3.5 Turbo</strong> с контекстом 16 K токенов. Кроме того, представлена <strong>Assistants API</strong>, поддержка <strong>Vision</strong> в GPT‑4 Turbo и публичный <strong>DALL·E 3 API</strong>.</p><h3>Как</h3><p>Модель GPT‑4 Turbo построена как более «производительная» версия базовой GPT‑4: оптимизированные вычислительные графы и более эффективное управление памятью позволяют увеличить окно контекста без роста стоимости. Доступ к preview‑версии осуществляется через обычный API‑запрос, а стабильная версия будет выпущена в ближайшие недели.</p><h3>Цифры</h3><ul><li>Контекстное окно GPT‑4 Turbo — 128 000 токенов.</li><li>Контекстное окно GPT‑3.5 Turbo — 16 000 токенов (по умолчанию).</li><li>OpenAI заявила о «более низких ценах», хотя точные тарифы пока не опубликованы.</li></ul><h3>Что перенять</h3><p>Для проектов, требующих длинных диалогов или больших объёмов входных данных, стоит переключиться на GPT‑4 Turbo и указать <code>gpt-4-1106-preview</code> в запросах. При ограниченном бюджете и умеренных требованиях к контексту предпочтительнее использовать GPT‑3.5 Turbo 16K.</p>]]></content:encoded>
+      <pubDate>Sat, 13 Jun 2026 05:38:10 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-13-new-models-and-developer-products-announced-at-devday-openai/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Apple выпустила AFM 3 Core Advanced — 20 млрд параметров на iPhone 17 Pro</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-novye-modeli-ot-apple-vygliadiat-interesno/</link>
+      <description><![CDATA[Apple представила третье поколение Foundation Models. Главная модель AFM 3 Core Advanced содержит 20 млрд параметров и полностью работает на устройстве iPhone 17 Pro, а серверный вариант запускается на NVIDIA GPU.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>AFM 3 Core Advanced – модель с 20 млрд параметров, полностью исполняемая on‑device. В линейке Apple представила пять моделей, от мобильных до облачных, совместно с Google.</p><h3>Как</h3><p>Модель хранится в flash‑памяти устройства, а в оперативную память под каждый запрос загружается лишь часть «экспертов» — от 1 до 4 млрд параметров. Такой «дробный» доступ к параметрам позволяет обойти ограничение DRAM и использовать большую модель на мобильных чипах.</p><h3>Цифры</h3><ul><li>Объём модели: 20 млрд параметров.</li><li>Размер загружаемой части: 1‑4 млрд параметров за запрос.</li><li>Устройства: iPhone 17 Pro (on‑device) и серверы с NVIDIA GPU (cloud).</li></ul><h3>Что перенять</h3><p>Техника «загрузки экспертов» из flash в DRAM может быть применена к другим мобильным и edge‑устройствам, позволяя запускать крупные LLM без увеличения DRAM‑памяти.</p>]]></content:encoded>
+      <pubDate>Sat, 13 Jun 2026 05:37:32 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-novye-modeli-ot-apple-vygliadiat-interesno/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Настройка кастомной цены для модели в AgentsView</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-10-setting-a-custom-price-for-a-model-in-agentsview/</link>
+      <description><![CDATA[Simon Willison поделился рецептом добавления кастомных тарифов в AgentsView. Например, для модели Claude Fable 5 можно указать цену $74.06.]]></description>
+      <content:encoded><![CDATA[<p>AgentsView — инструмент для анализа использования токенов в разных агентах. Однако иногда в базе данных AgentsView отсутствуют цены для новых моделей, как Claude Fable 5.</p><p>Simon Willison разобрал AgentsView и нашёл способ настройки кастомных цен. Например, для модели Claude Fable 5 можно указать цену $74.06, а для модели cloud — $3.98.</p><h3>Что</h3><p>AgentsView позволяет анализировать использование токенов в разных агентах и проектах.</p><h3>Как</h3><p>Для настройки кастомной цены необходимо обратиться к базе данных AgentsView и внести необходимые изменения.</p><h3>Цифры</h3><p>Примеры цен для разных моделей: $74.06 для Claude Fable 5, $3.98 для cloud, $2.81 для datasette.</p><h3>Что перенять</h3><p>Можно использовать AgentsView для анализа использования токенов в разных агентах и проектах, а также настраивать кастомные цены для новых моделей.</p>]]></content:encoded>
+      <pubDate>Sat, 13 Jun 2026 05:36:55 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-10-setting-a-custom-price-for-a-model-in-agentsview/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>SPQR от Яндекса: шардирование PostgreSQL для петабайтов и сотен тысяч запросов в секунду</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-perevoz-dannykh-po-kusochkam-inzhenernaia-kukhnia-spqr/</link>
+      <description><![CDATA[Yandex Cloud представила систему SPQR — решение для горизонтального масштабирования PostgreSQL через шардирование. SPQR уже хранит петабайты данных и выдерживает сотни тысяч запросов в секунду, что делает её пригодной для крупных облачных сервисов.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>SPQR — платформа, позволяющая масштабировать PostgreSQL горизонтально, распределяя таблицы по шартам. Система поддерживает два типа таблиц: распределённые (distributed) и справочные (reference), а также механизмы создания распределений и диапазонов ключей.</p><h3>Как</h3><p>Масштабирование достигается за счёт шардирования данных по ключу, что позволяет добавить новые шарды без простоев. Архитектура включает слой‑метаданных, отвечающий за маршрутизацию запросов к нужному шару, и механизм репликации для обеспечения отказоустойчивости.</p><h3>Цифры</h3><ul><li>Объём хранимых данных — петабайты.</li><li>Пропускная способность — сотни тысяч запросов в секунду.</li><li>Поддержка горизонтального масштабирования без ограничения количества шардов.</li></ul><h3>Что перенять</h3><p>При построении распределённой СУБД полезно отделять справочные таблицы от распределённых, использовать метаданные‑слой для динамической маршрутизации и планировать репликацию на уровне шардов, чтобы обеспечить отказоустойчивость при масштабировании.</p>]]></content:encoded>
+      <pubDate>Sat, 13 Jun 2026 05:36:34 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-perevoz-dannykh-po-kusochkam-inzhenernaia-kukhnia-spqr/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>MiniMax M3: 428 B параметров, 23 B активных на токен</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-12-minimax-m3-vylozhili-na-hugging-face/</link>
+      <description><![CDATA[MiniMax выпустила модель M3 с MoE‑архитектурой: общий размер ≈ 428 млрд параметров, но при инференсе активируется лишь ~23 млрд параметров на токен благодаря разреженной активации.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>MiniMax M3 — модель с MoE‑архитектурой, опубликованная на Hugging Face. Общий объём параметров ≈ 428 млрд, из которых активными на каждый токен являются ~23 млрд.</p><h3>Как</h3><p>Для инференса используется разреженная активация: только часть экспертов‑модулей включается для обработки конкретного токена. Это реализовано через <strong>MiniMax Sparse Attention</strong>, позволяющую сохранять «запас знаний» без полной вычислительной нагрузки плотной модели.</p><h3>Цифры</h3><ul><li>Общий размер модели: ~428 B параметров.</li><li>Активные параметры на токен: ~23 B.</li><li>Архитектура: Mixture‑of‑Experts (MoE) с Sparse Attention.</li></ul><h3>Что перенять</h3><p>При построении собственных LLM‑систем можно применить MoE‑подход с разреженной активацией, чтобы уменьшить инференс‑стоимость при сохранении масштабных знаний модели.</p>]]></content:encoded>
+      <pubDate>Sat, 13 Jun 2026 05:36:00 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-12-minimax-m3-vylozhili-na-hugging-face/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Anthropic представила Claude Fable 5 с миллионами токенов контекста</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-anthropic-vypustila-claude-fable-5/</link>
+      <description><![CDATA[Anthropic выпустила Claude Fable 5 — первую модель класса Mythos, доступную без специального допуска. На бенчмарках модель достигла 80.3 % на SWE‑Bench‑Pro, 94.1 % на GPQA и 64.5 % на HLE.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Claude Fable 5 — новая LLM от Anthropic, относящаяся к линейке Mythos и доступная для публичного использования без ограничений.</p><h3>Как</h3><p>Модель поддерживает контекст до нескольких миллионов токенов, позволяя вести длительные автономные задачи и хранить собственные заметки. Безопасность реализована через фильтры: запросы в чувствительные области (кибербезопасность, биология, химия) автоматически перенаправляются к модели Opus 4.8.</p><h3>Цифры</h3><ul><li>80.3 % — результат на SWE‑Bench‑Pro.</li><li>94.1 % — результат на GPQA.</li><li>64.5 % — результат на HLE.</li><li>Контекст «миллионы токенов» позволяет модели работать над кодом и аналитикой в течение дней без вмешательства.</li></ul><h3>Что перенять</h3><p>Для проектов, требующих длительного контекстного окна, стоит рассмотреть архитектуру «много‑мегатокенный контекст» и фильтры‑перенаправления для рискованных запросов, как реализовано в Fable 5.</p>]]></content:encoded>
+      <pubDate>Sat, 13 Jun 2026 05:35:24 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-anthropic-vypustila-claude-fable-5/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title></title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-datasette-agent-edit-0-1a0/</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+      <pubDate>Sat, 13 Jun 2026 05:34:49 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-datasette-agent-edit-0-1a0/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
 
     <item>
       <title></title>
@@ -32,45 +142,6 @@
       <pubDate>Fri, 12 Jun 2026 05:39:30 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-kitai-vkladyvaet-295-mlrd-chtoby-zamenit-nvidia-na-huawei-vo/</guid>
       <category>Корпоративное</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Open‑Weights агент на mimo‑v2.5‑pro занял TOP‑20 в ECOM1 с 72 баллами</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-kod-eto-nastolko-moshchnaia-abstraktsiia-dlia-myshleniia-mod/</link>
-      <description><![CDATA[Агент, построенный на 1 трлн‑параметровой sparse MoE‑модели mimo‑v2.5‑pro (42 B активных параметров), прошёл 233 минуты инференса, выполнил до 35 шагов в REPL‑цикле и получил 72 балла в Ultimate Leaderboard ECOM1, заняв слепое TOP‑20.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>В рамках соревнования ECOM1 был запущен открытый агент, использующий модель <a href="https://mimo.xiaomi.com/mimo-v2-5-pro/">mimo‑v2.5‑pro</a> — 1 трлн‑параметровый sparse MoE с 42 B активных параметров.</p><h3>Как</h3><p>Архитектура построена как кодовая песочница: агент работает в REPL‑цикле до 35 шагов, каждый шаг генерирует код, который исполняется в изолированном окружении. По завершении цикл передаёт «чеклист», который проверяет ответ и при необходимости возвращает его в обратную связь для коррекции.</p><h3>Цифры</h3><ul><li>Объём модели: 1 трлн параметров, 42 B активных.</li><li>Время выполнения: 233 минуты на полном инференсе.</li><li>Результат: 72 балла в Ultimate Leaderboard, позиция TOP‑20 (слепой рейтинг).</li><li>Количество шагов REPL‑цикла: до 35.</li></ul><h3>Что перенять</h3><p>Комбинация «код‑песочница + REPL‑цикл + чеклист‑обратная связь» позволяет использовать открытые модели без дообучения и всё‑равно достигать конкурентных результатов в RAG‑сценариях.</p>]]></content:encoded>
-      <pubDate>Fri, 12 Jun 2026 05:38:43 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-kod-eto-nastolko-moshchnaia-abstraktsiia-dlia-myshleniia-mod/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Как задать собственную цену Claude Fable 5 в AgentsView</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-10-setting-a-custom-price-for-a-model-in-agentsview/</link>
-      <description><![CDATA[Simon Willison показал, как добавить пользовательскую стоимость модели Claude Fable 5 в AgentsView, где за один день использования он потратил $74.06. В статье описан пошаговый рецепт изменения ценового реестра.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3>
-<p>AgentsView – инструмент от Wes McKinney для мониторинга токен‑использования LLM‑агентов. После выхода Claude Fable 5 модель не была включена в встроенную базу цен, поэтому пользователь добавил её вручную.</p>
-<h3>Как</h3>
-<p>Willison проанализировал структуру локального файла цен AgentsView, нашёл запись модели и заменил её на собственную стоимость. Процесс включает:</p>
-<ul>
-<li>Открыть файл <code>pricing.json</code> (или аналогичный) в каталоге конфигурации AgentsView.</li>
-<li>Скопировать шаблон записи существующей модели.</li>
-<li>Заменить название модели на <code>Claude Fable 5</code> и указать желаемую цену за 1 M токенов (в примере $74.06 за весь день).</li>
-<li>Перезапустить AgentsView, чтобы изменения подхватились.</li>
-</ul>
-<h3>Цифры</h3>
-<ul>
-<li>Общая стоимость использования Claude Fable 5 за день: <strong>$74.06</strong>.</li>
-<li>Самый затратный проект – <em>prod_datasette_agent</em> (89.3% от расходов).</li>
-<li>Мелкие расходы: <em>cloud</em> $3.98, <em>datasette</em> $2.81, <em>money</em> $1.92.</li>
-</ul>
-<h3>Что перенять</h3>
-<p>Если ваш LLM‑агент использует модели, отсутствующие в базе цен AgentsView, вы можете быстро добавить их, отредактировав файл цен. Это позволяет получать точную аналитику расходов без ожидания официального обновления.</p>]]></content:encoded>
-      <pubDate>Fri, 12 Jun 2026 05:38:03 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-10-setting-a-custom-price-for-a-model-in-agentsview/</guid>
-      <category>Вайбкодинг</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
 
@@ -114,17 +185,6 @@
       <content:encoded><![CDATA[<h3>Что</h3><p>GPT‑5.5 — последняя версия крупномасштабной языковой модели OpenAI, ориентированная на задачи, требующие глубоких знаний и кибер‑безопасности. На тесте GDPval, измеряющем качество выполнения профессиональных задач, модель набрала 84.9 %.</p><h3>Как</h3><p>OpenAI расширила набор «cyber‑permissive»‑моделей, включив в них GPT‑5.5, и предоставила их через программу Trusted Access for Cyber. Доступ получают только верифицированные пользователи, прошедшие проверку по набору «trust signals». Для организаций, защищающих критическую инфраструктуру, доступ к моделям типа GPT‑5.4‑Cyber открывается после выполнения строгих требований безопасности.</p><h3>Цифры</h3><ul><li>84.9 % — результат GPT‑5.5 на GDPval (44 профессий).</li><li>Расширенный набор кибер‑защищённых функций, построенных на опыте GPT‑5.2.</li><li>Доступ к модели через Trusted Access for Cyber доступен сразу после запуска.</li></ul><h3>Что перенять</h3><p>При построении собственных сервисов, требующих кибер‑безопасности, используйте проверенный процесс верификации пользователей и интегрируйте «cyber‑permissive» модели через контролируемый доступ, как это делает OpenAI.</p>]]></content:encoded>
       <pubDate>Fri, 12 Jun 2026 05:35:50 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-12-introducing-gpt-5-5-openai/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Anthropic представила Claude Fable 5 с миллионом токенов контекста и новыми бенчмарк‑результатами</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-anthropic-vypustila-claude-fable-5/</link>
-      <description><![CDATA[Anthropic выпустила Claude Fable 5 — первую модель класса Mythos, доступную без специального допуска. На ключевых бенчмарках модель достигла 80.3 % SWE‑Bench‑Pro, 94.1 % GPQA и 64.5 % HLE.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Claude Fable 5 — новая LLM от Anthropic, входящая в линейку Mythos и доступная публично без ограничений. Модель поддерживает контекст в миллионы токенов и обладает встроенными возможностями vision.</p><h3>Как</h3><p>Для обеспечения длительной автономной работы модель хранит собственные заметки и использует их для улучшения вывода. Безопасность реализована через фильтры: запросы в чувствительные области (кибербезопасность, биология, химия) автоматически перенаправляются к модели Opus 4.8.</p><h3>Цифры</h3><ul><li>80.3 % на SWE‑Bench‑Pro</li><li>94.1 % на GPQA</li><li>64.5 % на HLE</li><li>Контекст — миллионы токенов, позволяет вести длительные диалоги и вести собственные заметки</li><li>В тесте Stripe модель завершила миграцию всей кодовой базы за один рабочий день</li></ul><h3>Что перенять</h3><p>Используйте миллион‑токенный контекст для задач, требующих длительной памяти (например, пошаговый кодинг или аналитика). Для защиты от опасных запросов внедрите фильтры‑перенаправления к более безопасной модели, как делает Anthropic с Opus 4.8.</p>]]></content:encoded>
-      <pubDate>Fri, 12 Jun 2026 05:34:56 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-anthropic-vypustila-claude-fable-5/</guid>
       <category>Новые модели</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
@@ -510,83 +570,6 @@
       <content:encoded><![CDATA[<h3>Что</h3><p>MAI‑Thinking‑1 — модель для рассуждений, 1 трлн параметров в сумме, из них 35 млрд активных. MAI‑Code‑1‑Flash — код‑специалист, 137 млрд параметров, 5 млрд активных, интегрирован в GitHub Copilot и VS Code.</p><h3>Как</h3><p>Обе модели обучены «с нуля» на чистых, коммерчески лицензированных данных, без использования дистилляции от сторонних моделей. Для MAI‑Code‑1‑Flash процесс обучения полностью контролировался Microsoft, что позволяет оптимизировать производительность и стоимость инференса.</p><h3>Цифры</h3><ul><li>MAI‑Thinking‑1: 1 трлн параметров, 35 млрд активных.</li><li>MAI‑Code‑1‑Flash: 137 млрд параметров, 5 млрд активных.</li><li>Сравнительный бенчмарк: в слепых человеческих сравнениях MAI‑Thinking‑1 превзошёл Sonnet 4.6.</li><li>Доступ: ранний доступ для выбранных партнёров; MAI‑Code‑1‑Flash – пользователи GitHub Copilot в VS Code.</li></ul><h3>Что перенять</h3><p>Если требуется модель с небольшим числом активных параметров, но высокой качественной оценкой, стоит обратить внимание на обучение на лицензированных корпоративных датасетах без дистилляции — такой подход позволяет сократить размер активной части модели без потери качества в целевых задачах.</p>]]></content:encoded>
       <pubDate>Sun, 07 Jun 2026 06:06:01 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-microsoft-s-new-mai-models/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>«Зелёный коридор» Сбера: 8 млн ядер, 1,2 ЭБ данных и 27 % текущей загрузки</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-evoliutsiia-plotnosti-kak-zelenyi-koridor-sbera-meniaet-ekon/</link>
-      <description><![CDATA[Проект «Зелёный коридор» в Сбербанке охватывает 8 млн физических ядер, 1,2 экзабайта данных и почти 600 тыс. серверов, при этом фактическая загрузка ресурсов составляет лишь 27 % от потенциальных возможностей.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>«Зелёный коридор» — масштабный проект перестроения культуры потребления ресурсов в инфраструктуре Сбера, охватывающий 8 000 000 физических ядер, 1,2 экзабайта хранимых данных и около 600 000 серверов (включая виртуальные машины).</p><h3>Как</h3><p>Для снижения «мёртвого железа» команда внедрила систему мониторинга и оптимизации аллокации ресурсов, устраняя даже микроскопические погрешности в 1 % лишней выделенной мощности, которые в сумме эквивалентны целому банку среднего размера.</p><h3>Цифры</h3><ul><li>Общая вычислительная мощность: 8 млн ядер.</li><li>Объём данных: 1,2 ЭБ.</li><li>Количество серверов: ~600 000.</li><li>Текущая загрузка ресурсов: 27 % от потенциальных возможностей.</li></ul><h3>Что перенять</h3><p>Внедрите детальный мониторинг использования ресурсов и автоматизированные правила перераспределения, чтобы даже небольшие избыточные аллокации (≈1 %) не приводили к значительным потерям вычислительной ёмкости.</p>]]></content:encoded>
-      <pubDate>Sun, 07 Jun 2026 06:04:38 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-evoliutsiia-plotnosti-kak-zelenyi-koridor-sbera-meniaet-ekon/</guid>
-      <category>Корпоративное</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Sun, 07 Jun 2026 06:03:24 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Ideogram 4 — 9,3 B‑параметров, открытые веса, работает на 24 GB GPU</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-04-bum-bum-vyshel-ideogram-4/</link>
-      <description><![CDATA[Ideogram 4 — генератор изображений с 9,3 млрд параметров, впервые с открытыми весами. Модель доступна в форматах NF4 и FP8 и может работать на одной видеокарте с 24 GB памяти, но лицензия ограничивает коммерческое использование.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Ideogram 4 — генератор изображений, ориентированный на визуальный контент с текстом (постеры, баннеры, упаковка, карточки товаров). Модель содержит 9,3 млрд параметров и впервые выпускается с открытыми весами, размещёнными на Hugging Face.</p><h3>Как</h3><p>Выпущены две версии весов: NF4 (квантование для CUDA) и FP8. По заявлению разработчиков, NF4‑версия полностью помещается в видеопамять 24 GB, что позволяет запускать модель на одной видеокарте без распределения. Добавлены JSON‑промты, позволяющие задавать отдельные объекты, текст, цвета и композицию, а также поддерживается нативный вывод в 2K и широкие форматы до соотношения 6:1 с управлением цветовой палитрой.</p><h3>Цифры</h3><ul><li>9,3 млрд параметров.</li><li>Работает на GPU с 24 GB памяти (NF4‑квантование).</li><li>Модель компактнее Qwen‑Image (≈29 млрд) на 20 млрд параметров и FLUX.2 (dev) на 32 млрд, но крупнее Z‑Image (≈3 млрд) на 6 млрд.</li><li>По внутренним тестам почти догнала закрытые GPT Image 2 и Nano Banana 2; первое место среди open‑weight генераторов.</li></ul><h3>Что перенять</h3><p>Для проектов с ограниченными GPU‑ресурсами используйте NF4‑квантование — это позволяет запускать 9‑млрд‑параметровую модель на одной видеокарте 24 GB. JSON‑промты упрощают детальное управление сценой без необходимости писать сложные текстовые подсказки.</p>]]></content:encoded>
-      <pubDate>Fri, 05 Jun 2026 06:49:56 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-04-bum-bum-vyshel-ideogram-4/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Anthropic: контекст задач вырос до 12 ч, модель исправила 800 кода и сократила ошибки в 1000 раз</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-04-anthropic-uzhe-pishet-o-rekursivnom-samouluchshenii-kak-o-pr/</link>
-      <description><![CDATA[Anthropic опубликовала данные о рекурсивном самоулучшении: за четыре месяца длительность решаемых задач удваивается, а к 2026 году модель генерирует более 80 % кода, исправив 800 ошибок и снизив количество API‑ошибок в тысячу раз.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>В марте 2024 года модель Opus 3 решала задачи длительностью около 5 минут. Через год Sonnet 3.7 справлялась с задачами до полутора часов, а к 2025 году Opus 4.6 достигла 12‑часового контекста. К маю 2026 года Claude генерирует более 80 % кода, попадающего в кодовую базу Anthropic.</p><h3>Как</h3><p>Anthropic использует рекурсивное самоулучшение: ИИ помогает проектировать и собирать следующую версию себя, автоматически исправляя код и предлагая направления развития. Внутренние оценки показывают, что модель может самостоятельно выполнять работу, требовавшую бы четыре года человеческого труда.</p><h3>Цифры</h3><ul><li>Длина решаемых задач удваивается примерно каждые 4 месяца.</li><li>Opus 4.6 достиг 12 часов контекстного окна (минимум 16 ч по внутренней методике).</li><li>800 исправлений кода в одном кейсе, снижение API‑ошибок в 1000 раз.</li><li>97 % разрыва в производительности закрыто агентами, в то время как два разработчика за неделю закрыли 23 %.</li><li>Модель демонстрирует 64 % совпадений с человеческим решением при выборе следующего исследовательского шага.</li></ul><h3>Что перенять</h3><p>Для ускорения разработки используйте ИИ‑модели как автоматических ревьюеров кода: они способны генерировать большую часть кода и быстро исправлять ошибки, снижая нагрузку на инженеров. При планировании проектов учитывайте, что эффективность всё ещё требует человеческого направления и контроля безопасности.</p>]]></content:encoded>
-      <pubDate>Fri, 05 Jun 2026 06:48:34 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-04-anthropic-uzhe-pishet-o-rekursivnom-samouluchshenii-kak-o-pr/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>NVIDIA Nemotron 3 Ultra: 55 B активных параметров, контекст 1 M токенов</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-nvidia-nemotron-3-ultra-gibridnaia-moe-arkhitektura-dlia-slo/</link>
-      <description><![CDATA[NVIDIA анонсировала модель Nemotron 3 Ultra — гибридную Transformer‑Mamba MoE с 55 млрд активных параметров из 550 млрд общих и поддержкой контекста до 1 млн токенов, ориентированную на сложные рассуждения и оркестрацию агентов.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Nemotron 3 Ultra — новая модель от NVIDIA, доступная под ID <code>nvidia/nemotron-3-ultra-550b-a55b</code>. В ней 55 млрд активных параметров (≈10 % от 550 млрд общих), поддерживается ввод‑вывод <code>text → text</code> и контекст до 1 млн токенов.</p><h3>Как</h3><p>Архитектура представляет собой гибрид Transformer‑Mamba с механизмом Mixture of Experts (MoE). Эксперты активируются динамически, что позволяет эффективно обрабатывать длинные последовательности, сохраняя при этом высокую пропускную способность.</p><h3>Цифры</h3><ul><li>Общее количество параметров: 550 млрд</li><li>Активные параметры при инференсе: 55 млрд</li><li>Контекстный размер: 1 млн токенов</li><li>Тип задачи: многошаговое рассуждение, оркестрация агентов</li></ul><h3>Что перенять</h3><p>Для проектов, требующих длительного контекста, стоит рассмотреть гибридные MoE‑решения, где Mamba‑модуль обрабатывает длинные зависимости, а Transformer‑слои сохраняют эффективность при обычных длинах.</p>]]></content:encoded>
-      <pubDate>Fri, 05 Jun 2026 06:47:13 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-nvidia-nemotron-3-ultra-gibridnaia-moe-arkhitektura-dlia-slo/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>GPT‑5.5 набирает 84.9 % на GDPval и открывается через Trusted Access</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-introducing-gpt-5-5-openai/</link>
-      <description><![CDATA[OpenAI объявила о выпуске GPT‑5.5, который достиг 84.9 % точности на тесте GDPval — оценке способностей агентов в 44 профессиях. Модель сопровождается новыми кибер‑защитными мерами и доступна через программу Trusted Access для проверенных организаций.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>GPT‑5.5 — последняя версия серии моделей OpenAI, ориентированная на задачи, требующие глубоких знаний и кибер‑безопасности. На наборе тестов GDPval, измеряющем качество выполнения профессиональных задач, модель набрала 84.9 %.</p><h3>Как</h3><p>OpenAI расширила набор кибер‑защитных мер, впервые внедрённых в GPT‑5.2, и продолжила их доработку для GPT‑5.5. Кроме того, доступ к модели предоставляется через <a href="https://openai.com/index/scaling-trusted-access-for-cyber-defense/">Trusted Access for Cyber</a>, где проверенные пользователи получают менее ограниченный доступ к её кибер‑пермиссивным возможностям.</p><h3>Цифры</h3><ul><li>84.9 % — результат GPT‑5.5 на GDPval (44 профессии).</li><li>Расширенный доступ к модели через Trusted Access для организаций, отвечающих строгим требованиям безопасности.</li></ul><h3>Что перенять</h3><p>При разработке собственных LLM‑решений для кибер‑безопасности рекомендуется внедрять многоуровневые «cyber‑specific safeguards», начиная с детекции дезинформации и заканчивая ограничением генерации опасных инструкций. Программа Trusted Access демонстрирует, как можно сочетать гибкий доступ с проверкой доверительных сигналов пользователей.</p>]]></content:encoded>
-      <pubDate>Fri, 05 Jun 2026 06:45:53 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-05-introducing-gpt-5-5-openai/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>MiniMax M3: открытая модель с контекстом 1 млн токенов и 66 % Terminal‑Bench 2.1</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-bam-minimax-predstavila-minimax-m3-novuiu-ii-model-dlia-koda/</link>
-      <description><![CDATA[Компания MiniMax выпустила новую модель M3, открыв её веса для бесплатного локального развертывания. В бенчмарках модель показала 59 % на SWE‑Bench Pro и 66 % на Terminal‑Bench 2.1, а контекстный диапазон достиг 1 млн токенов.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>MiniMax M3 — последняя версия серии моделей от MiniMax, ориентированная на программирование, агентные задачи и работу с очень длинным контекстом. Веса модели открыты, их можно скачать и запустить на собственных серверах бесплатно.</p><h3>Как</h3><p>Модель обучалась как мультимодальная: поддерживает текст, изображения и видео, а также умеет вызывать внешние инструменты через API. Для разработки MiniMax выпустила агентный инструмент <strong>MiniMax Code</strong>, интегрированный с моделью.</p><h3>Цифры</h3><ul><li>59,0 % — результат на SWE‑Bench Pro.</li><li>66,0 % — результат на Terminal‑Bench 2.1.</li><li>Контекстный диапазон — до 1 000 000 токенов.</li></ul><h3>Что перенять</h3><p>Открытые веса позволяют использовать модель в закрытых продуктах без зависимости от облачных провайдеров. Длинный контекст полезен для анализа больших кодовых баз, документов или логов в одном диалоге. Интеграция мультимодальности и API‑инструментов демонстрирует подход к построению агентных систем.</p>]]></content:encoded>
-      <pubDate>Fri, 05 Jun 2026 06:44:42 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-bam-minimax-predstavila-minimax-m3-novuiu-ii-model-dlia-koda/</guid>
       <category>Новые модели</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
