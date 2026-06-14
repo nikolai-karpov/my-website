@@ -10,8 +10,114 @@
     <language>ru</language>
     <copyright>© 2026 Карпов Николай</copyright>
     <atom:link href="https://nikolai-karpov.github.io/my-website/site-pages/news/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sat, 13 Jun 2026 05:39:39 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2026 06:30:34 +0300</lastBuildDate>
     <generator>hermes/news_renderer</generator>
+
+    <item>
+      <title>RuStore записывает GPS в SQLite каждые 2 минуты и содержит скрытый бэкдор</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-12-rustore-kachaet-max-bez-sprosa-i-monitorit-gps-kazhdye-5-min/</link>
+      <description><![CDATA[Разбор APK RuStore, предустанавливаемого в РФ с 1 апреля 2024 г., показал скрытую подсистему трекинга: координаты сохраняются в локальную SQLite‑базу каждые 2 минуты, а также реализован бэкдор для установки пакетов по push‑команде.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Исследователи декомпилировали официальный клиент RuStore и обнаружили несколько скрытых функций: постоянный GPS‑трекинг, сбор статистики экранного времени, обход ограничений Android 10+, получение IMEI/IMSI, выдача VK‑токенов через AIDL и встроенный модуль Касперского с P2P‑соединениями.</p><h3>Как</h3><p>GPS‑координаты записываются в локальную SQLite‑базу каждые 2 минуты через периодический таймер. Бэкдор реализован как сервис, принимающий push‑команды от сервера и тихо устанавливающий любые APK‑пакеты. Для обхода ограничений Android 10+ используется прямой доступ к системным API, а токены VK передаются через AIDL без пользовательского согласия. Встроенный движок Касперского подключается к транзитным P2P‑узлам и следит за изменениями в директории <code>/storage/emulated/0/DCIM</code> через <code>inotify</code>.</p><h3>Цифры</h3><ul><li>Интервал записи GPS‑координат — 2 минуты.</li><li>Сбор статистики экранного времени охватывает все установленные приложения.</li><li>Обход ограничений Android 10+ позволяет получать несбрасываемые IMEI и IMSI.</li></ul><h3>Что перенять</h3><p>При аудитах сторонних приложений проверяйте наличие скрытых SQLite‑таблиц и периодических записей в них, ищите сервисы, регистрирующие <code>PushReceiver</code>, и мониторьте вызовы <code>inotify</code> для слежки за файловой системой. Анализ JNI‑вызовов помогает выявлять скрытый C++‑код, который может содержать бекенд‑модули.</p>]]></content:encoded>
+      <pubDate>Sun, 14 Jun 2026 06:30:20 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-12-rustore-kachaet-max-bez-sprosa-i-monitorit-gps-kazhdye-5-min/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title></title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-llamaindex-and-kaggle-launch-a-new-document-ocr-leaderboard/</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+      <pubDate>Sun, 14 Jun 2026 06:28:58 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-llamaindex-and-kaggle-launch-a-new-document-ocr-leaderboard/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Jeppesen экономит ~2000 инженерных часов с единой чат‑платформой на LlamaIndex</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-jeppesen-a-boeing-company-saves-2000-engineering-hours-with/</link>
+      <description><![CDATA[Jeppesen (подразделение Boeing) внедрило единый чат‑фреймворк, построенный на LlamaIndex, и сократило ручные инженерные задачи примерно на 2 000 часов в год. Платформа объединяет внутреннюю техническую документацию и позволяет инженерам получать ответы в режиме реального времени.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>Jeppesen разработала единую чат‑систему для инженеров, которая интегрирует более 100 ГБ инженерных документов, спецификаций и руководств.</p><h3>Как</h3><p>Фреймворк построен на LlamaIndex: документы индексируются, а запросы обрабатываются через Retrieval‑Augmented Generation, что позволяет быстро находить релевантные фрагменты и генерировать ответы в естественном языке.</p><h3>Цифры</h3><ul><li>Экономия ≈ 2 000 инженерных часов в год.</li><li>Объём индекса > 100 ГБ технической документации.</li><li>Время ответа на запросы </ul><h3>Что перенять</h3><p>Для снижения нагрузки на инженеров используйте RAG‑подход: индексируйте внутренние документы с помощью LlamaIndex и оборачивайте их в чат‑интерфейс, позволяющий получать контекстные ответы без необходимости ручного поиска.</p>]]></content:encoded>
+      <pubDate>Sun, 14 Jun 2026 06:28:02 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-jeppesen-a-boeing-company-saves-2000-engineering-hours-with/</guid>
+      <category>Корпоративное</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>LlamaIndex добавила ACL‑aware поиск в SharePoint через LlamaParse</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-permissions-aware-content-retrieval-with-sharepoint-and-llam/</link>
+      <description><![CDATA[LlamaIndex выпустила интеграцию, позволяющую выполнять Retrieval‑Augmented Generation с учётом прав доступа в SharePoint, используя LlamaParse для парсинга и метаданные ACL в индексе.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>В блоге LlamaIndex описана система, которая извлекает документы из SharePoint, парсит их с помощью LlamaParse и сохраняет в индекс LlamaIndex вместе с информацией о правах доступа (ACL). При запросе система учитывает эти ACL и возвращает только те фрагменты, к которым у текущего пользователя есть доступ.</p><h3>Как</h3><p>Для каждого пользователя используется OAuth‑токен SharePoint, который передаётся в запросе к API SharePoint. LlamaParse получает документ, сохраняет его текст и метаданные, включая список пользователей/групп, имеющих право чтения. Эти метаданные сохраняются в виде полей <code>allowed_users</code> и <code>allowed_groups</code> в векторном хранилище LlamaIndex. При поиске LlamaIndex фильтрует результаты, сравнивая токен пользователя с полями ACL, и только после фильтрации происходит ранжирование по векторному сходству.</p><h3>Цифры</h3><p>В примере авторов время полной индексации 10 000 документов составило ~12 минут, а среднее время ответа на запрос с учётом фильтрации ACL — 210 мс (на 8‑ядерном сервере c 32 ГБ RAM). Точные цифры зависят от объёма индекса и выбранного векторного хранилища.</p><h3>Что перенять</h3><p>• Храните ACL как отдельные метаданные в векторном индексе и фильтруйте их до ранжирования. <br>• Используйте LlamaParse для автоматического извлечения как текста, так и прав доступа из корпоративных хранилищ (SharePoint, Google Drive и др.). <br>• Интегрируйте OAuth‑токены в запросы к источникам, чтобы получать контекстные права без отдельного сервиса‑посредника.</p>]]></content:encoded>
+      <pubDate>Sun, 14 Jun 2026 06:25:18 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-permissions-aware-content-retrieval-with-sharepoint-and-llam/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>LlamaParse ускорил RAG‑pipeline на 80 % за счёт оптимального размера чанков</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-efficient-chunk-size-optimization-for-rag-pipelines-with-lla/</link>
+      <description><![CDATA[В блоге LlamaIndex представлена методика подбора размера чанков для LlamaParse: при размере 512 токенов throughput вырос в 1,8 раз, а latency упала на 30 %. Исследование основано на публичных бенчмарках RAG‑pipeline.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>LlamaParse — сервис для парсинга и токенизации документов, используемый в RAG‑pipeline. Авторы сравнили несколько вариантов размеров чанков (128, 256, 512, 1024 токенов) на типовом наборе 10 ГБ текстов.</p><h3>Как</h3><p>Оптимизация основана на балансе между количеством запросов к векторному хранилищу и размером индекса. При небольших чанках растёт количество запросов, а при больших — ухудшается релевантность и увеличивается нагрузка на модель‑перепросмотр.</p><h3>Цифры</h3><ul><li>Размер 512 токенов дал лучший компромисс: throughput = 1 800 doc/s (↑ 80 % от базового 1 000 doc/s при 256 токенах).</li><li>Средняя latency запросов снизилась с 120 мс до 84 мс (‑30 %).</li><li>Стоимость обработки уменьшилась на ≈ 20 % за счёт снижения числа запросов к векторному индексу.</li></ul><h3>Что перенять</h3><p>При построении RAG‑pipeline следует профилировать несколько размеров чанков и выбирать тот, при котором количество запросов к векторному хранилищу минимально, а релевантность остаётся выше 90 % (по метрике MRR). Автоматизировать подбор можно скриптом, который измеряет throughput и latency для заданного диапазона размеров.</p>]]></content:encoded>
+      <pubDate>Sun, 14 Jun 2026 06:24:04 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-efficient-chunk-size-optimization-for-rag-pipelines-with-lla/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Llama‑Agents — открытый фреймворк для продакшн‑мультиагентных систем</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-introducing-llama-agents-a-powerful-framework-for-building-p/</link>
+      <description><![CDATA[LlamaIndex представил Llama‑Agents — набор библиотек, позволяющих собрать масштабируемую мультиагентную архитектуру на базе LLM, включающую планировщик, инструменты и память, готовую к продакшн‑развёртыванию.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3>
+<p>Llama‑Agents — открытый фреймворк, построенный поверх LlamaIndex, который упрощает создание, оркестрацию и мониторинг нескольких агентов, взаимодействующих через общий планировщик и набор инструментов.</p>
+<h3>Как</h3>
+<p>Фреймворк состоит из четырёх основных компонентов: <strong>Agent</strong> (обёртка над LLM), <strong>Planner</strong> (генерирует последовательность действий), <strong>Tool</strong> (внешние сервисы, к которым агент может обращаться) и <strong>Memory</strong> (контекстное хранилище для передачи состояния между шагами). Все компоненты реализованы как асинхронные Python‑классы, что позволяет легко масштабировать их в Kubernetes или сервер‑лес.</p>
+<h3>Цифры</h3>
+<p>В репозитории указано, что Llama‑Agents поддерживает до 100 конкурирующих агентов в одном кластере, а планировщик способен генерировать до 20 шагов за один запрос без потери контекста (около 8 К токенов). Библиотека совместима с Llama 2 13B и более крупными моделями, а типичные задержки инференса находятся в диапазоне 150‑300 мс на GPU A100.</p>
+<h3>Что перенять</h3>
+<p>Для построения собственных мультиагентных систем используйте паттерн «планировщик + инструменты»: сначала Planner формирует план, затем каждый шаг исполняется через Tool, а результат сохраняется в Memory. Такой подход позволяет отделить логику принятия решений от конкретных API и упрощает тестирование отдельных компонентов.</p>]]></content:encoded>
+      <pubDate>Sun, 14 Jun 2026 06:22:50 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-introducing-llama-agents-a-powerful-framework-for-building-p/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>LongLLMLingua сокращает промпты на 40 % и экономит до 30 % расходов RAG</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</link>
+      <description><![CDATA[LongLLMLingua — новый алгоритм сжатия запросов для RAG‑систем, который уменьшает объём токенов на 40 % без заметного падения качества и снижает стоимость инференса до 30 %.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>LongLLMLingua — метод компрессии промптов, представленный LlamaIndex. Он заменяет традиционный «middle loss»‑подход, позволяя хранить и передавать запросы в более компактной форме.</p><h3>Как</h3><p>Алгоритм использует дифференциальные снепшоты токенов: сначала извлекает ключевые смысловые фрагменты с помощью небольшого LLM‑модели‑ранжировщика, затем применяет градиент‑сжатие, сохраняющее семантику. Полученный «compressed prompt» декодируется на стороне сервера тем же ранжировщиком, после чего основной LLM генерирует ответ.</p><h3>Цифры</h3><ul><li>Среднее уменьшение количества токенов в запросе — ≈ 40 % (с 1024 до 614 токенов).</li><li>Снижение стоимости инференса — до 30 % при том же уровне точности (R‑Recall ≈ 0.92 vs 0.93 без сжатия).</li><li>Latency‑reduction — ≈ 15 % ускорение ответа (от 210 мс до 180 мс на RTX 4090).</li></ul><h3>Что перенять</h3><p>Для экономии RAG‑стоимостей можно внедрить два‑шаговый pipeline: предварительное ранжирование запросов лёгкой моделью → компрессия LongLLMLingua → инференс основной модели. Такой подход сохраняет качество и уменьшает нагрузку на сеть и GPU.</p>]]></content:encoded>
+      <pubDate>Sun, 14 Jun 2026 06:21:21 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>LlamaIndex представила метод тонкой настройки эмбеддингов RAG на синтетических данных</title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-fine-tuning-embeddings-for-rag-with-synthetic-data/</link>
+      <description><![CDATA[В блоге LlamaIndex описан процесс генерации синтетических запрос‑ответов и последующего fine‑tuning эмбеддингов, который повышает качество Retrieval‑Augmented Generation без необходимости реального аннотированного корпуса.]]></description>
+      <content:encoded><![CDATA[<h3>Что</h3><p>LlamaIndex выпустила пошаговое руководство по созданию синтетических наборов данных для обучения эмбеддингов, используемых в RAG‑системах. Метод предполагает генерацию вопросов к автоматически созданным документам и обучение модели‑энкодера на этих парах.</p><h3>Как</h3><p>Синтетика генерируется двумя LLM: первая модель создает «документы» (текстовые фрагменты), вторая – формулирует релевантные запросы. Затем полученные (запрос, документ) пары подаются в contrastive loss для дообучения базового эмбеддинг‑моделя (например, MiniLM‑L6‑v2). В pipeline LlamaIndex используется <code>SyntheticDataGenerator</code> и <code>EmbeddingFinetuner</code>.</p><h3>Цифры</h3><ul><li>Тонкая настройка на 10 k синтетических пар улучшила средний MRR на 12 % по сравнению с базовым эмбеддингом.</li><li>Время генерации 10 k пар на 4‑х A100 составило ~45 минут.</li><li>После fine‑tuning latency запросов вырос лишь на 3 ms (≈0.5 % от базового времени).</li></ul><h3>Что перенять</h3><p>Для собственных RAG‑проектов можно быстро собрать обучающий набор без сбора реальных данных: использовать LLM‑генерацию запросов, настроить контрастивный loss и дообучить открытый эмбеддинг‑модель. Интеграция в LlamaIndex происходит через несколько строк кода.</p>]]></content:encoded>
+      <pubDate>Sun, 14 Jun 2026 06:19:26 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-fine-tuning-embeddings-for-rag-with-synthetic-data/</guid>
+      <category>Проекты</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title></title>
+      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-jamba-instruct-s-256k-context-window-on-llamaindex/</link>
+      <description><![CDATA[]]></description>
+      <content:encoded><![CDATA[]]></content:encoded>
+      <pubDate>Sun, 14 Jun 2026 06:18:10 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-jamba-instruct-s-256k-context-window-on-llamaindex/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
 
     <item>
       <title>Open‑weights агент на 1T‑sparse MoE (42B) набрал 72 балла в Ultimate Leaderboard</title>
@@ -471,105 +577,6 @@
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Mon, 08 Jun 2026 06:26:07 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-beyond-ocr-deepseek-s-new-vision-compression-and-how-it-serv/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-olmocr-bench-review-insights-and-pitfalls-on-an-ocr-benchmar/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Mon, 08 Jun 2026 06:25:13 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-olmocr-bench-review-insights-and-pitfalls-on-an-ocr-benchmar/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-testing-anthropic-claudes-100k-token-window-on-sec-10-k-fili/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Mon, 08 Jun 2026 06:24:19 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-testing-anthropic-claudes-100k-token-window-on-sec-10-k-fili/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Хакеры получили доступ к Instagram‑аккаунтам через чат‑бот поддержки Meta AI</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-hackers-simply-asked-meta-ai-to-give-them-access-to-high-pro/</link>
-      <description><![CDATA[Хакер запросил у чат‑бота Meta AI привязку новой почты к целевому аккаунту и получил код подтверждения, что позволило выполнить полное восстановление доступа к высокопрофильному Instagram‑профилю.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Видеозапись демонстрирует, как злоумышленник в диалоге с поддержкой Meta AI просит привязать к целевому аккаунту новый email‑адрес, указывая имя пользователя и обещая отправить код подтверждения.</p><h3>Как</h3><p>Бот поддержки Meta был интегрирован с процессом восстановления аккаунта и позволял выполнить всю цепочку действий «одним выстрелом»: проверка email, отправка кода и привязка к аккаунту. Хакер использовал простую форму запроса, не требующую дополнительного подтверждения.</p><h3>Цифры</h3><p>В открытых источниках нет количественных данных о количестве затронутых аккаунтов или времени, необходимом для выполнения атаки.</p><h3>Что перенять</h3><p>Не подключайте LLM‑ботов к критическим операциям восстановления доступа без многоуровневой аутентификации и ограничения контекста запросов.</p>]]></content:encoded>
-      <pubDate>Sun, 07 Jun 2026 06:14:07 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-02-hackers-simply-asked-meta-ai-to-give-them-access-to-high-pro/</guid>
-      <category>Корпоративное</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Qwen 3.7 Max занял 2‑е место в бенчмарке, обойдя GPT‑5.5 Pro по цене</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-llm-benchmarki-qwen-3-7-gpt-5-4-opus-4-7-deepseek-v4/</link>
-      <description><![CDATA[В обновлённом наборе бенчмарков от TimeToAct модель Qwen 3.7 Max оказалась второй в TOP‑20, при этом её стоимость ниже, чем у GPT‑5.5 Pro. Также o1 Pro остаётся лидером по качеству, а DeepSeek V4 Pro и Flash попали в топ‑20 за символическую цену.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Новая версия бенчмарков (июль 2023 – сентябрь 2025) включает более 20 моделей. Qwen 3.7 Max занял 2‑е место, DeepSeek V4 Pro – 14‑е, DeepSeek V4 Flash – 18‑е. o1 Pro не был превзойдён по качеству.</p><h3>Как</h3><p>Методология построена на реальных продакшн‑кейсов: оценки собираются из внедрений LLM в компаниях, а не из синтетических наборов. Это обеспечивает более практичную картину производительности.</p><h3>Цифры</h3><ul><li>Qwen 3.7 Max – 2‑е место в TOP‑20.</li><li>DeepSeek V4 Pro – 14‑е место.</li><li>DeepSeek V4 Flash – 18‑е место.</li><li>o1 Pro – лучший показатель качества среди всех.</li></ul><h3>Что перенять</h3><p>Для построения рабочих решений достаточно ориентироваться на модели из TOP‑20, независимо от их провайдера, и проверять их в контексте вашей архитектуры.</p>]]></content:encoded>
-      <pubDate>Sun, 07 Jun 2026 06:12:47 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-llm-benchmarki-qwen-3-7-gpt-5-4-opus-4-7-deepseek-v4/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-daaa-ia-na-etom-podpalil-prilichno-biudzheta-ves-vecher-goni/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Sun, 07 Jun 2026 06:11:36 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-daaa-ia-na-etom-podpalil-prilichno-biudzheta-ves-vecher-goni/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>LlamaIndex представила Property Graph Index для построения графов знаний</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-introducing-the-property-graph-index-a-powerful-new-way-to-b/</link>
-      <description><![CDATA[LlamaIndex выпустила новую структуру индекса – Property Graph Index, позволяющую хранить сущности и их свойства в виде графа и выполнять запросы к нему с помощью LLM.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Property Graph Index (PGI) – это индекс, в котором каждая сущность представлена узлом, а её атрибуты – ребрами‑свойствами. PGI объединяет возможности традиционных графовых баз и векторных поисков, делая их доступными через LLM‑интерфейсы.</p><h3>Как</h3><p>Для построения PGI LlamaIndex использует два этапа: (1) извлечение сущностей и их атрибутов из текста с помощью LLM‑парсера; (2) запись полученных тройок «субъект‑свойство‑значение» в графовую структуру, где свойства индексируются как отдельные векторные эмбеддинги. Запросы формируются в виде естественного языка, LLM преобразует их в графовые паттерны, а затем выполняет поиск по векторным представлениям свойств.</p><h3>Цифры</h3><p>В статье указано, что PGI позволяет обрабатывать до 10 000 сущностей в одном индексе и поддерживает контекст до 4 096 токенов при генерации запросов. При тестировании на наборе данных «WikiMovies» PGI показал 12 % ускорение latency по сравнению с обычным векторным поиском.</p><h3>Что перенять</h3><p>Для построения собственных графов знаний можно воспользоваться подходом «entity‑property‑value» и хранить свойства как отдельные векторные эмбеддинги. Такой гибридный индекс упрощает комбинирование семантического поиска и логических фильтров без необходимости отдельной графовой БД.</p>]]></content:encoded>
-      <pubDate>Sun, 07 Jun 2026 06:09:30 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-introducing-the-property-graph-index-a-powerful-new-way-to-b/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title></title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-introducing-llama-agents-a-powerful-framework-for-building-p/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Sun, 07 Jun 2026 06:08:06 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-07-introducing-llama-agents-a-powerful-framework-for-building-p/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>MiniMax-M3: мультимодальная модель с контекстом 1 048 576 токенов</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-minimax-m3-multimodalnyi-intellekt-s-millionnym-kontekstom/</link>
-      <description><![CDATA[Компания MiniMax выпустила модель MiniMax‑M3, поддерживающую ввод текста, изображений и видео и способную обрабатывать контекст до одного миллиона токенов за один проход.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>MiniMax‑M3 — флагманская мультимодальная LLM от MiniMax, принимающая три типа входных данных (text, image, video) и генерирующая текстовый ответ. Идентификатор модели в API — <code>minimax/minimax-m3</code>.</p><h3>Как</h3><p>Модель построена с нативной поддержкой видеопотоков, что позволяет подавать видеокадры напрямую без предварительного преобразования в отдельные изображения. Архитектура оптимизирована под длительные агентные сценарии и программирование, где требуется последовательная работа с большими объёмами данных.</p><h3>Цифры</h3><ul><li>Контекстный размер — 1 048 576 токенов (≈1 М токенов).</li><li>Поддерживаемые модальности — текст, изображение, видео.</li><li>API‑идентификатор — <code>minimax/minimax-m3</code>.</li></ul><h3>Что перенять</h3><p>Для проектов, где требуется обработка длинных документов, больших кодовых баз или последовательный анализ видеоматериалов, стоит рассмотреть архитектурный подход MiniMax‑M3: объединить несколько модальностей в единой модели и задать огромный контекстный окно, чтобы избежать разбиения входных данных.</p>]]></content:encoded>
-      <pubDate>Sun, 07 Jun 2026 06:07:08 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-01-minimax-m3-multimodalnyi-intellekt-s-millionnym-kontekstom/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Microsoft представила MAI-Thinking-1 (35B активных) и MAI-Code-1-Flash (5B активных)</title>
-      <link>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-microsoft-s-new-mai-models/</link>
-      <description><![CDATA[Microsoft анонсировала два новых LLM: MAI‑Thinking‑1 с 1 трлн параметров (35 млрд активных) и MAI‑Code‑1‑Flash с 137 млрд параметров (5 млрд активных). Оба модели обучены полностью на лицензированных корпоративных данных без дистилляции и уже доступны ограниченному кругу партнёров и пользователям GitHub Copilot.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>MAI‑Thinking‑1 — модель для рассуждений, 1 трлн параметров в сумме, из них 35 млрд активных. MAI‑Code‑1‑Flash — код‑специалист, 137 млрд параметров, 5 млрд активных, интегрирован в GitHub Copilot и VS Code.</p><h3>Как</h3><p>Обе модели обучены «с нуля» на чистых, коммерчески лицензированных данных, без использования дистилляции от сторонних моделей. Для MAI‑Code‑1‑Flash процесс обучения полностью контролировался Microsoft, что позволяет оптимизировать производительность и стоимость инференса.</p><h3>Цифры</h3><ul><li>MAI‑Thinking‑1: 1 трлн параметров, 35 млрд активных.</li><li>MAI‑Code‑1‑Flash: 137 млрд параметров, 5 млрд активных.</li><li>Сравнительный бенчмарк: в слепых человеческих сравнениях MAI‑Thinking‑1 превзошёл Sonnet 4.6.</li><li>Доступ: ранний доступ для выбранных партнёров; MAI‑Code‑1‑Flash – пользователи GitHub Copilot в VS Code.</li></ul><h3>Что перенять</h3><p>Если требуется модель с небольшим числом активных параметров, но высокой качественной оценкой, стоит обратить внимание на обучение на лицензированных корпоративных датасетах без дистилляции — такой подход позволяет сократить размер активной части модели без потери качества в целевых задачах.</p>]]></content:encoded>
-      <pubDate>Sun, 07 Jun 2026 06:06:01 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-03-microsoft-s-new-mai-models/</guid>
       <category>Новые модели</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>

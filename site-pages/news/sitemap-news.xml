@@ -3,6 +3,114 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-12-rustore-kachaet-max-bez-sprosa-i-monitorit-gps-kazhdye-5-min/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-14T06:30:20+03:00</news:publication_date>
+      <news:title>RuStore записывает GPS в SQLite каждые 2 минуты и содержит скрытый бэкдор</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-llamaindex-and-kaggle-launch-a-new-document-ocr-leaderboard/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-14T06:28:58+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-jeppesen-a-boeing-company-saves-2000-engineering-hours-with/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-14T06:28:02+03:00</news:publication_date>
+      <news:title>Jeppesen экономит ~2000 инженерных часов с единой чат‑платформой на LlamaIndex</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-permissions-aware-content-retrieval-with-sharepoint-and-llam/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-14T06:25:18+03:00</news:publication_date>
+      <news:title>LlamaIndex добавила ACL‑aware поиск в SharePoint через LlamaParse</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-efficient-chunk-size-optimization-for-rag-pipelines-with-lla/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-14T06:24:04+03:00</news:publication_date>
+      <news:title>LlamaParse ускорил RAG‑pipeline на 80 % за счёт оптимального размера чанков</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-introducing-llama-agents-a-powerful-framework-for-building-p/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-14T06:22:50+03:00</news:publication_date>
+      <news:title>Llama‑Agents — открытый фреймворк для продакшн‑мультиагентных систем</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-longllmlingua-bye-bye-to-middle-loss-and-save-on-your-rag-co/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-14T06:21:21+03:00</news:publication_date>
+      <news:title>LongLLMLingua сокращает промпты на 40 % и экономит до 30 % расходов RAG</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-fine-tuning-embeddings-for-rag-with-synthetic-data/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-14T06:19:26+03:00</news:publication_date>
+      <news:title>LlamaIndex представила метод тонкой настройки эмбеддингов RAG на синтетических данных</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-14-jamba-instruct-s-256k-context-window-on-llamaindex/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-14T06:18:10+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
     <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-kod-eto-nastolko-moshchnaia-abstraktsiia-dlia-myshleniia-mod/</loc>
     <news:news>
       <news:publication>
