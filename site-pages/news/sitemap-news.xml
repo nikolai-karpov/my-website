@@ -3,6 +3,126 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-10-raspoznat-alisa-ne-tak-prosto-kak-kazhetsia/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-15T05:21:36+03:00</news:publication_date>
+      <news:title>Yandex споттер‑модель «Алиса» сжата до 200 KB и потребляет в 10 раз меньше энергии</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-reliz-plaginov-0-9-8-i-koda-cli-0-3-6-mnogo-bagov-pofiksili/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-15T05:20:59+03:00</news:publication_date>
+      <news:title>Релиз плагинов Koda 0.9.8 и CLI 0.3.6: автоотмена зависших стримов и новые команды skills</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-kak-my-stroili-bezopasnuiu-mikroservisnuiu-arkhitekturu-s-se/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-15T05:20:27+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-bum-notebooklm-nauchilsia-generirovat-pdf-prezentatsii-i-tab/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-15T05:20:14+03:00</news:publication_date>
+      <news:title>NotebookLM теперь работает на Gemini 3.5 и поддерживает генерацию PDF, PPTX и таблиц</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-primenenie-kotlin-dsl-v-teamcity-dlia-avtomatizatsii-paiplai/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-15T05:19:45+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-kod-eto-nastolko-moshchnaia-abstraktsiia-dlia-myshleniia-mod/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-15T05:19:36+03:00</news:publication_date>
+      <news:title>Open‑Weights агент на mimo‑v2.5‑pro занял TOP‑20 в ECOM1 с 72 баллами</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-12-jeff-bezoss-prometheus-raises-12b-to-build-an-artificial-gen/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-15T05:18:58+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-12-cheaper-faster-and-culturally-aware-avataars-video-ai-is-bui/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-15T05:18:47+03:00</news:publication_date>
+      <news:title></news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-10-setting-a-custom-price-for-a-model-in-agentsview/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>en</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-15T05:18:30+03:00</news:publication_date>
+      <news:title>Как задать собственную цену модели Claude Fable 5 в AgentsView</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-anthropic-vypustila-claude-fable-5/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-06-15T05:17:56+03:00</news:publication_date>
+      <news:title>Anthropic представила Claude Fable 5 с миллионом‑токенной памятью и новыми бенчмарк‑результатами</news:title>
+    </news:news>
+  </url>
+
+  <url>
     <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-12-rustore-kachaet-max-bez-sprosa-i-monitorit-gps-kazhdye-5-min/</loc>
     <news:news>
       <news:publication>
@@ -111,18 +231,6 @@
   </url>
 
   <url>
-    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-kod-eto-nastolko-moshchnaia-abstraktsiia-dlia-myshleniia-mod/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Карпов Николай — Новости</news:name>
-        <news:language>ru</news:language>
-      </news:publication>
-      <news:publication_date>2026-06-13T05:39:38+03:00</news:publication_date>
-      <news:title>Open‑weights агент на 1T‑sparse MoE (42B) набрал 72 балла в Ultimate Leaderboard</news:title>
-    </news:news>
-  </url>
-
-  <url>
     <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-kak-my-perepridumali-golosovuiu-aktivatsiiu-dlia-iandeks-dro/</loc>
     <news:news>
       <news:publication>
@@ -171,18 +279,6 @@
   </url>
 
   <url>
-    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-10-setting-a-custom-price-for-a-model-in-agentsview/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Карпов Николай — Новости</news:name>
-        <news:language>en</news:language>
-      </news:publication>
-      <news:publication_date>2026-06-13T05:36:55+03:00</news:publication_date>
-      <news:title>Настройка кастомной цены для модели в AgentsView</news:title>
-    </news:news>
-  </url>
-
-  <url>
     <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-08-perevoz-dannykh-po-kusochkam-inzhenernaia-kukhnia-spqr/</loc>
     <news:news>
       <news:publication>
@@ -203,18 +299,6 @@
       </news:publication>
       <news:publication_date>2026-06-13T05:36:00+03:00</news:publication_date>
       <news:title>MiniMax M3: 428 B параметров, 23 B активных на токен</news:title>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-anthropic-vypustila-claude-fable-5/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Карпов Николай — Новости</news:name>
-        <news:language>ru</news:language>
-      </news:publication>
-      <news:publication_date>2026-06-13T05:35:24+03:00</news:publication_date>
-      <news:title>Anthropic представила Claude Fable 5 с миллионами токенов контекста</news:title>
     </news:news>
   </url>
 
@@ -335,18 +419,6 @@
       </news:publication>
       <news:publication_date>2026-06-11T07:03:29+03:00</news:publication_date>
       <news:title></news:title>
-    </news:news>
-  </url>
-
-  <url>
-    <loc>https://nikolai-karpov.github.io/my-website/site-pages/news/2026-06-09-reliz-plaginov-0-9-8-i-koda-cli-0-3-6-mnogo-bagov-pofiksili/</loc>
-    <news:news>
-      <news:publication>
-        <news:name>Карпов Николай — Новости</news:name>
-        <news:language>ru</news:language>
-      </news:publication>
-      <news:publication_date>2026-06-11T07:02:59+03:00</news:publication_date>
-      <news:title>Koda CLI 0.3.6 и плагины 0.9.8: автоотмена зависших стримов и звуковые уведомления</news:title>
     </news:news>
   </url>
 
