@@ -804,6 +804,22 @@ img { max-width: 100%; height: auto; display: block; }
 /* ---------- Other Cases List ---------- */
 .cases-list { display: grid; gap: 0; }
 
+.cases-other {
+  margin-top: clamp(60px, 8vw, 90px);
+  padding-left: clamp(16px, 3vw, 48px);
+}
+
+.cases-other .case-row {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: clamp(16px, 2vw, 28px);
+  padding-right: clamp(16px, 2vw, 28px);
+}
+
+@media (max-width: 600px) {
+  .cases-other { padding-left: 8px; }
+}
+
 .case-row {
   display: grid;
   grid-template-columns: 1fr;
