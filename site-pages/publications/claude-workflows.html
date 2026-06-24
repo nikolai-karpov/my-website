@@ -194,47 +194,49 @@
 
           <p>Claude Code предлагает несколько способов распараллелить работу. Разница — кто держит план и где живут промежуточные результаты.</p>
 
-          <table class="comparison-table">
-            <thead>
-              <tr>
-                <th>Подход</th>
-                <th>Что это</th>
-                <th>Кто решает, что дальше</th>
-                <th>Где промежуточные результаты</th>
-                <th>Масштаб</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Subagents</strong></td>
-                <td>Рабочие агенты, которых запускает Claude</td>
-                <td>Claude, от хода к ходу</td>
-                <td>Контекстное окно сессии</td>
-                <td>Несколько за ход</td>
-              </tr>
-              <tr>
-                <td><strong>Agent view</strong></td>
-                <td>Панель управления фоновыми сессиями</td>
-                <td>Вы: отправляете, проверяете статус, вмешиваетесь</td>
-                <td>Каждая сессия сама по себе</td>
-                <td>Несколько независимых задач</td>
-              </tr>
-              <tr>
-                <td><strong>Agent teams</strong></td>
-                <td>Несколько сессий с общим списком задач</td>
-                <td>Ведущий агент планирует, назначает, синхронизирует</td>
-                <td>Общий список задач</td>
-                <td>Горстка координирующихся агентов</td>
-              </tr>
-              <tr>
-                <td><strong>Dynamic workflows</strong></td>
-                <td>Скрипт, который запускает субагентов</td>
-                <td>Скрипт</td>
-                <td>Переменные JavaScript</td>
-                <td>Десятки-сотни агентов за прогон</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="scrollable">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Подход</th>
+                  <th>Что это</th>
+                  <th>Кто решает, что дальше</th>
+                  <th>Где промежуточные результаты</th>
+                  <th>Масштаб</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Subagents</strong></td>
+                  <td>Рабочие агенты, которых запускает Claude</td>
+                  <td>Claude, от хода к ходу</td>
+                  <td>Контекстное окно сессии</td>
+                  <td>Несколько за ход</td>
+                </tr>
+                <tr>
+                  <td><strong>Agent view</strong></td>
+                  <td>Панель управления фоновыми сессиями</td>
+                  <td>Вы: отправляете, проверяете статус, вмешиваетесь</td>
+                  <td>Каждая сессия сама по себе</td>
+                  <td>Несколько независимых задач</td>
+                </tr>
+                <tr>
+                  <td><strong>Agent teams</strong></td>
+                  <td>Несколько сессий с общим списком задач</td>
+                  <td>Ведущий агент планирует, назначает, синхронизирует</td>
+                  <td>Общий список задач</td>
+                  <td>Горстка координирующихся агентов</td>
+                </tr>
+                <tr>
+                  <td><strong>Dynamic workflows</strong></td>
+                  <td>Скрипт, который запускает субагентов</td>
+                  <td>Скрипт</td>
+                  <td>Переменные JavaScript</td>
+                  <td>Десятки-сотни агентов за прогон</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <h2 data-num="03">Ключевые отличия workflow</h2>
 
@@ -304,52 +306,54 @@
 
           <h2 data-num="06">Управление workflow</h2>
 
-          <table class="comparison-table">
-            <thead>
-              <tr>
-                <th>Команда / Клавиша</th>
-                <th>Действие</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><code>/workflows</code></td>
-                <td>Список запущенных и завершённых workflow, вид прогресса</td>
-              </tr>
-              <tr>
-                <td><code>↑↓</code></td>
-                <td>Выбор фазы или агента</td>
-              </tr>
-              <tr>
-                <td><code>Enter</code> или <code>→</code></td>
-                <td>Пройти внутрь фазы, затем агента — посмотреть промпт, вызовы инструментов, результат</td>
-              </tr>
-              <tr>
-                <td><code>Esc</code></td>
-                <td>Вернуться на уровень вверх</td>
-              </tr>
-              <tr>
-                <td><code>j/k</code></td>
-                <td>Скролл внутри детализации агента</td>
-              </tr>
-              <tr>
-                <td><code>p</code></td>
-                <td>Пауза / продолжение прогона</td>
-              </tr>
-              <tr>
-                <td><code>x</code></td>
-                <td>Остановить выбранного агента или весь workflow</td>
-              </tr>
-              <tr>
-                <td><code>r</code></td>
-                <td>Перезапустить выбранного агента</td>
-              </tr>
-              <tr>
-                <td><code>s</code></td>
-                <td>Сохранить скрипт workflow как команду</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="scrollable">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Команда / Клавиша</th>
+                  <th>Действие</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>/workflows</code></td>
+                  <td>Список запущенных и завершённых workflow, вид прогресса</td>
+                </tr>
+                <tr>
+                  <td><code>↑↓</code></td>
+                  <td>Выбор фазы или агента</td>
+                </tr>
+                <tr>
+                  <td><code>Enter</code> или <code>→</code></td>
+                  <td>Пройти внутрь фазы, затем агента — посмотреть промпт, вызовы инструментов, результат</td>
+                </tr>
+                <tr>
+                  <td><code>Esc</code></td>
+                  <td>Вернуться на уровень вверх</td>
+                </tr>
+                <tr>
+                  <td><code>j/k</code></td>
+                  <td>Скролл внутри детализации агента</td>
+                </tr>
+                <tr>
+                  <td><code>p</code></td>
+                  <td>Пауза / продолжение прогона</td>
+                </tr>
+                <tr>
+                  <td><code>x</code></td>
+                  <td>Остановить выбранного агента или весь workflow</td>
+                </tr>
+                <tr>
+                  <td><code>r</code></td>
+                  <td>Перезапустить выбранного агента</td>
+                </tr>
+                <tr>
+                  <td><code>s</code></td>
+                  <td>Сохранить скрипт workflow как команду</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <h3>Сохранение workflow</h3>
           <p>Запустите <code>/workflows</code>, выберите прогон, нажмите <code>s</code>. Выберите место:</p>
@@ -361,32 +365,34 @@
 
           <h2 data-num="07">Ограничения и поведение</h2>
 
-          <table class="comparison-table">
-            <thead>
-              <tr>
-                <th>Ограничение</th>
-                <th>Почему</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Нет пользовательского ввода во время прогона</td>
-                <td>Только запросы разрешений инструментов могут паузу. Для подписи между этапами — запускайте каждый этап как отдельный workflow</td>
-              </tr>
-              <tr>
-                <td>Нет прямого доступа скрипта к файловой системе или shell</td>
-                <td>Агенты читают, пишут, запускают команды. Скрипт координирует агентов</td>
-              </tr>
-              <tr>
-                <td>До 16 одновременных агентов</td>
-                <td>Ограничивает локальные ресурсы</td>
-              </tr>
-              <tr>
-                <td>1000 агентов за прогон</td>
-                <td>Предотвращает бесконечные циклы</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="scrollable">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Ограничение</th>
+                  <th>Почему</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Нет пользовательского ввода во время прогона</td>
+                  <td>Только запросы разрешений инструментов могут паузу. Для подписи между этапами — запускайте каждый этап как отдельный workflow</td>
+                </tr>
+                <tr>
+                  <td>Нет прямого доступа скрипта к файловой системе или shell</td>
+                  <td>Агенты читают, пишут, запускают команды. Скрипт координирует агентов</td>
+                </tr>
+                <tr>
+                  <td>До 16 одновременных агентов</td>
+                  <td>Ограничивает локальные ресурсы</td>
+                </tr>
+                <tr>
+                  <td>1000 агентов за прогон</td>
+                  <td>Предотвращает бесконечные циклы</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <h2 data-num="08">Стоимость</h2>
 
@@ -425,32 +431,34 @@
 
           <h2 data-num="10">Для кого это</h2>
 
-          <table class="comparison-table">
-            <thead>
-              <tr>
-                <th>Роль</th>
-                <th>Зачем</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Senior Engineer</strong></td>
-                <td>Крупные рефакторинги, миграции, аудиты безопасности</td>
-              </tr>
-              <tr>
-                <td><strong>Tech Lead</strong></td>
-                <td>Анализ архитектуры на масштабном уровне</td>
-              </tr>
-              <tr>
-                <td><strong>Architect</strong></td>
-                <td>Сравнительный анализ решений, перекрёстная проверка</td>
-              </tr>
-              <tr>
-                <td><strong>Product Owner</strong></td>
-                <td>Обзоры по продуктам, конкурентный анализ</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="scrollable">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Роль</th>
+                  <th>Зачем</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Senior Engineer</strong></td>
+                  <td>Крупные рефакторинги, миграции, аудиты безопасности</td>
+                </tr>
+                <tr>
+                  <td><strong>Tech Lead</strong></td>
+                  <td>Анализ архитектуры на масштабном уровне</td>
+                </tr>
+                <tr>
+                  <td><strong>Architect</strong></td>
+                  <td>Сравнительный анализ решений, перекрёстная проверка</td>
+                </tr>
+                <tr>
+                  <td><strong>Product Owner</strong></td>
+                  <td>Обзоры по продуктам, конкурентный анализ</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <h2 data-num="11">Резюме для практики</h2>
 

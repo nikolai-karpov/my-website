@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yard Management — Бронирование окон загрузки/выгрузки</title>
+  <title>Управление двором (Yard Management) — Бронирование окон загрузки/выгрузки</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -45,6 +45,8 @@
       padding: 0;
     }
 
+    /* Mobile fallback: this is a desktop dashboard. Clip horizontal overflow
+       without breaking the sticky topbar (clip does not create a scroll container). */
     html,
     body {
       background: var(--bg);
@@ -52,6 +54,26 @@
       font-family: 'Manrope', -apple-system, sans-serif;
       font-size: 13px;
       -webkit-font-smoothing: antialiased;
+      max-width: 100%;
+      overflow-x: clip;
+    }
+
+    /* Mobile-only notice banner */
+    .desktop-notice {
+      display: none;
+      margin: 0;
+      padding: 10px 16px;
+      background: #1f2937;
+      color: #fbbf24;
+      font-size: 13px;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .desktop-notice {
+        display: block;
+      }
     }
 
     /* ============ TOP BAR ============ */
@@ -1025,6 +1047,8 @@
 
 <body>
 
+  <div class="desktop-notice">Интерактивный дашборд оптимизирован для десктопа. На телефоне возможны неудобства — откройте на компьютере.</div>
+
   <!-- ============ TOP BAR ============ -->
   <div class="topbar">
     <div class="brand">
@@ -1589,7 +1613,7 @@
       <li><b>Подсказки нейросети</b> (раздел 4 протокола): блок «Конфликты и подсказки» — система предупреждает о
         превышении машин, отсутствующих телефонах, риске коллапса склада.</li>
       <li><b>Связь с 1С / WMS / BI:</b> блок «Связанные системы» в сайдбаре — фундамент для предложенного в протоколе
-        решения «Yard Management на системном уровне».</li>
+        решения «Управление двором (Yard Management) на системном уровне».</li>
       <li><b>Готовность к интерфейсу 1С:Такси</b> (стенограмма 05:15) — макет можно встроить как iframe или сделать
         веб-версию, подтягивающую данные через API из УПП.</li>
     </ul>

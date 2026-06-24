@@ -249,57 +249,59 @@
             Ниже представлен полный модельный ряд с фокусом на возможностях транскрибации:
           </p>
 
-          <table class="mimo-models-table">
-            <thead>
-              <tr>
-                <th>Модель</th>
-                <th>Транскрипция</th>
-                <th>Назначение</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>MiMo-V2.5-Pro</strong></td>
-                <td>❌</td>
-                <td>Флагман для агентских задач и кода</td>
-              </tr>
-              <tr>
-                <td><strong>MiMo-V2.5</strong></td>
-                <td>✅ (ASR)</td>
-                <td>Мультимодальная, версия MiMo-V2.5-ASR транскрибирует аудио</td>
-              </tr>
-              <tr>
-                <td><strong>MiMo-V2.5-TTS-VoiceClone</strong></td>
-                <td>❌</td>
-                <td>Клонирование голоса по образцу</td>
-              </tr>
-              <tr>
-                <td><strong>MiMo-V2.5-TTS-VoiceDesign</strong></td>
-                <td>❌</td>
-                <td>Создание голоса с нуля по описанию</td>
-              </tr>
-              <tr>
-                <td><strong>MiMo-V2.5-TTS</strong></td>
-                <td>❌</td>
-                <td>Синтез речи из текста</td>
-              </tr>
-              <tr>
-                <td><strong>MiMo-V2-Pro</strong></td>
-                <td>❌</td>
-                <td>Предыдущий флагман, текст и код</td>
-              </tr>
-              <tr>
-                <td><strong>MiMo-V2-Omni</strong></td>
-                <td>частично</td>
-                <td>Мультимодальная, обрабатывает аудио, но не для транскрипции</td>
-              </tr>
-              <tr>
-                <td><strong>MiMo-V2-TTS</strong></td>
-                <td>❌</td>
-                <td>Синтез речи с настройкой стиля</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="scrollable">
+            <table class="mimo-models-table">
+              <thead>
+                <tr>
+                  <th>Модель</th>
+                  <th>Транскрипция</th>
+                  <th>Назначение</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>MiMo-V2.5-Pro</strong></td>
+                  <td>❌</td>
+                  <td>Флагман для агентских задач и кода</td>
+                </tr>
+                <tr>
+                  <td><strong>MiMo-V2.5</strong></td>
+                  <td>✅ (ASR)</td>
+                  <td>Мультимодальная, версия MiMo-V2.5-ASR транскрибирует аудио</td>
+                </tr>
+                <tr>
+                  <td><strong>MiMo-V2.5-TTS-VoiceClone</strong></td>
+                  <td>❌</td>
+                  <td>Клонирование голоса по образцу</td>
+                </tr>
+                <tr>
+                  <td><strong>MiMo-V2.5-TTS-VoiceDesign</strong></td>
+                  <td>❌</td>
+                  <td>Создание голоса с нуля по описанию</td>
+                </tr>
+                <tr>
+                  <td><strong>MiMo-V2.5-TTS</strong></td>
+                  <td>❌</td>
+                  <td>Синтез речи из текста</td>
+                </tr>
+                <tr>
+                  <td><strong>MiMo-V2-Pro</strong></td>
+                  <td>❌</td>
+                  <td>Предыдущий флагман, текст и код</td>
+                </tr>
+                <tr>
+                  <td><strong>MiMo-V2-Omni</strong></td>
+                  <td>частично</td>
+                  <td>Мультимодальная, обрабатывает аудио, но не для транскрипции</td>
+                </tr>
+                <tr>
+                  <td><strong>MiMo-V2-TTS</strong></td>
+                  <td>❌</td>
+                  <td>Синтез речи с настройкой стиля</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <p>
             <em>Примечание: только MiMo-V2.5 и ее версия MiMo-V2.5-ASR предназначены 
@@ -324,57 +326,59 @@
             и диалектами:
           </p>
 
-          <table class="benchmark-table">
-            <thead>
-              <tr>
-                <th>Датасет</th>
-                <th>WER (%)</th>
-                <th>Описание</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>AiShell-2</td>
-                <td><span class="benchmark-value">2.52</span></td>
-                <td>Китайская речь в авиационной отрасли</td>
-              </tr>
-              <tr>
-                <td>Fleurs-Zh</td>
-                <td><span class="benchmark-value">2.41</span></td>
-                <td>Мультиязычный, китайский</td>
-              </tr>
-              <tr>
-                <td>Wenet Meeting</td>
-                <td><span class="benchmark-value">5.92</span></td>
-                <td>Совещания (китайский)</td>
-              </tr>
-              <tr>
-                <td>AMI (English)</td>
-                <td><span class="benchmark-value">10.63</span></td>
-                <td>Английские совещания</td>
-              </tr>
-              <tr>
-                <td>Gigaspeech</td>
-                <td><span class="benchmark-value">8.87</span></td>
-                <td>Большой китайский датасет</td>
-              </tr>
-              <tr>
-                <td>CommonVoice-Taiwan</td>
-                <td><span class="benchmark-value">3.65</span></td>
-                <td>Тайваньский диалект китайского</td>
-              </tr>
-              <tr>
-                <td>WeNet-Yue (Cantonese)</td>
-                <td><span class="benchmark-value">7.21</span></td>
-                <td>Кантонский диалект</td>
-              </tr>
-              <tr>
-                <td>m4singer (lyrics)</td>
-                <td><span class="benchmark-value">3.95</span></td>
-                <td>Тексты песен с аккомпанементом</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="scrollable">
+            <table class="benchmark-table">
+              <thead>
+                <tr>
+                  <th>Датасет</th>
+                  <th>WER (%)</th>
+                  <th>Описание</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>AiShell-2</td>
+                  <td><span class="benchmark-value">2.52</span></td>
+                  <td>Китайская речь в авиационной отрасли</td>
+                </tr>
+                <tr>
+                  <td>Fleurs-Zh</td>
+                  <td><span class="benchmark-value">2.41</span></td>
+                  <td>Мультиязычный, китайский</td>
+                </tr>
+                <tr>
+                  <td>Wenet Meeting</td>
+                  <td><span class="benchmark-value">5.92</span></td>
+                  <td>Совещания (китайский)</td>
+                </tr>
+                <tr>
+                  <td>AMI (English)</td>
+                  <td><span class="benchmark-value">10.63</span></td>
+                  <td>Английские совещания</td>
+                </tr>
+                <tr>
+                  <td>Gigaspeech</td>
+                  <td><span class="benchmark-value">8.87</span></td>
+                  <td>Большой китайский датасет</td>
+                </tr>
+                <tr>
+                  <td>CommonVoice-Taiwan</td>
+                  <td><span class="benchmark-value">3.65</span></td>
+                  <td>Тайваньский диалект китайского</td>
+                </tr>
+                <tr>
+                  <td>WeNet-Yue (Cantonese)</td>
+                  <td><span class="benchmark-value">7.21</span></td>
+                  <td>Кантонский диалект</td>
+                </tr>
+                <tr>
+                  <td>m4singer (lyrics)</td>
+                  <td><span class="benchmark-value">3.95</span></td>
+                  <td>Тексты песен с аккомпанементом</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <div class="info-box">
             <strong>Примечание:</strong> WER (Word Error Rate) — процент ошибочных слов. 
@@ -390,42 +394,44 @@
             тарифными планами:
           </p>
 
-          <table class="pricing-table">
-            <thead>
-              <tr>
-                <th>Тариф</th>
-                <th>Цена</th>
-                <th>Кредиты</th>
-                <th>Особенности</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Lite</strong></td>
-                <td>¥39/мес</td>
-                <td>60M credits</td>
-                <td>Для небольших проектов</td>
-              </tr>
-              <tr>
-                <td><strong>Standard</strong></td>
-                <td>¥99/мес</td>
-                <td>200M credits</td>
-                <td>Оптимальный выбор</td>
-              </tr>
-              <tr>
-                <td><strong>Pro</strong></td>
-                <td>¥329/мес</td>
-                <td>700M credits</td>
-                <td>Для среднего бизнеса</td>
-              </tr>
-              <tr>
-                <td><strong>Max</strong></td>
-                <td>¥659/мес</td>
-                <td>1.6B credits</td>
-                <td>Для крупных проектов</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="scrollable">
+            <table class="pricing-table">
+              <thead>
+                <tr>
+                  <th>Тариф</th>
+                  <th>Цена</th>
+                  <th>Кредиты</th>
+                  <th>Особенности</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Lite</strong></td>
+                  <td>¥39/мес</td>
+                  <td>60M credits</td>
+                  <td>Для небольших проектов</td>
+                </tr>
+                <tr>
+                  <td><strong>Standard</strong></td>
+                  <td>¥99/мес</td>
+                  <td>200M credits</td>
+                  <td>Оптимальный выбор</td>
+                </tr>
+                <tr>
+                  <td><strong>Pro</strong></td>
+                  <td>¥329/мес</td>
+                  <td>700M credits</td>
+                  <td>Для среднего бизнеса</td>
+                </tr>
+                <tr>
+                  <td><strong>Max</strong></td>
+                  <td>¥659/мес</td>
+                  <td>1.6B credits</td>
+                  <td>Для крупных проектов</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <p>
             <strong>Специальные условия:</strong><br>

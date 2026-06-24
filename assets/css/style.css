@@ -33,6 +33,7 @@
   --container: 1440px;
   --reading: 920px;
   --gutter: clamp(20px, 4vw, 56px);
+  --hero-inset: clamp(14px, 3.5vw, 72px);
   --radius: 4px;
 }
 
@@ -114,6 +115,16 @@ h2 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; }
 h3 { font-size: clamp(1.4rem, 2.2vw, 1.75rem); line-height: 1.2; font-weight: 600; }
 h4 { font-size: 1.1rem; line-height: 1.3; font-weight: 600; }
 
+/* Prevent long/unbreakable tokens (URLs, joined words) from overflowing the viewport on mobile */
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: anywhere;
+}
+
+.news-article__body,
+.news-article__body * {
+  overflow-wrap: anywhere;
+}
+
 p { margin: 0 0 1em 0; }
 p:last-child { margin-bottom: 0; }
 
@@ -149,6 +160,19 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .section:first-of-type { border-top: 0; }
+
+.hero.container,
+.article-hero.container,
+.mi-hero.container {
+  padding-left: calc(var(--gutter) + var(--hero-inset));
+  padding-right: calc(var(--gutter) + var(--hero-inset));
+}
+
+/* Horizontal-scroll wrapper for wide tables (mobile overflow containment) */
+.scrollable {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
 
 /* ---------- Header ---------- */
 .site-header {

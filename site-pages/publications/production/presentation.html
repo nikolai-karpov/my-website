@@ -45,6 +45,32 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* Mobile fallback: A4 print deck. Allow horizontal scrolling within the deck
+       so wide sheets stay reachable, and prevent page-level horizontal scroll. */
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: clip;
+    }
+
+    .desktop-notice {
+      display: none;
+      margin: 0 0 16px;
+      padding: 10px 16px;
+      background: #111827;
+      color: #fbbf24;
+      font-size: 13px;
+      line-height: 1.4;
+      text-align: center;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 768px) {
+      .desktop-notice {
+        display: block;
+      }
+    }
+
     /* Титульный лист */
     .page-trim.page--title {
       padding: 0;
@@ -219,6 +245,8 @@
       flex-direction: column;
       align-items: center;
       box-sizing: border-box;
+      max-width: 100%;
+      overflow-x: auto;
     }
     .page-trim {
       width: 297mm;
@@ -773,6 +801,7 @@
 <!-- /Yandex.Metrika counter -->
 </head>
 <body>
+  <div class="desktop-notice">Это A4-презентация для печати/десктопа. На телефоне листы рассчитаны под альбомный формат — удобнее смотреть на компьютере.</div>
   <div class="page-root">
     <div id="deck-title" class="page-trim page--title" role="document" aria-label="Титульный лист: обзор ИИ на производстве">
       <article class="sheet" aria-label="Обзор: ИИ на производстве">

@@ -45,6 +45,8 @@
       padding: 0;
     }
 
+    /* Mobile fallback: this is a desktop dashboard. Clip horizontal overflow
+       without breaking the sticky topbar (clip does not create a scroll container). */
     html,
     body {
       background: var(--bg);
@@ -52,6 +54,26 @@
       font-family: 'Manrope', -apple-system, sans-serif;
       font-size: 13px;
       -webkit-font-smoothing: antialiased;
+      max-width: 100%;
+      overflow-x: clip;
+    }
+
+    /* Mobile-only notice banner */
+    .desktop-notice {
+      display: none;
+      margin: 0;
+      padding: 10px 16px;
+      background: #1f2937;
+      color: #fbbf24;
+      font-size: 13px;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .desktop-notice {
+        display: block;
+      }
     }
 
     /* ============ TOP BAR ============ */
@@ -1024,6 +1046,8 @@
 </head>
 
 <body>
+
+  <div class="desktop-notice">Интерактивный дашборд оптимизирован для десктопа. На телефоне возможны неудобства — откройте на компьютере.</div>
 
   <!-- ============ TOP BAR ============ -->
   <div class="topbar">

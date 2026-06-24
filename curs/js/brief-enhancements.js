@@ -411,7 +411,7 @@ export class BriefEnhancements {
                               placeholder="Что еще важно нам знать?"></textarea>
                 </div>
                 
-                <div class="flex items-center space-x-4">
+                <div class="flex flex-col sm:flex-row gap-3">
                     <button id="send-brief-btn" class="btn-primary flex-1">
                         <i class="fas fa-paper-plane mr-2"></i>Отправить бриф на консультацию
                     </button>
