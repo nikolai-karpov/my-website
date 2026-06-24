@@ -35,6 +35,7 @@
     "serve": "live-server --port=8080 --open=/index.html",
     "alt:rebuild": "rm -rf alt/notebook alt/qwen && mkdir -p alt/notebook alt/qwen && git archive origin/notebook | tar -x -C alt/notebook && git archive origin/qwen-code-be4f133a-9ccd-47aa-84f7-9e809dfd111e | tar -x -C alt/qwen && node scripts/patch-alt-snapshots.mjs",
     "precommit": "lint-staged",
+    "check:responsive": "node scripts/check-overflow.mjs",
     "test": "echo 'Tests are not configured for this project'"
   },
   "devDependencies": {
@@ -42,6 +43,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^16.2.6",
     "live-server": "^1.2.2",
+    "playwright": "^1.40.0",
     "postcss-scss": "^4.0.9",
     "purgecss": "^7.0.2",
     "sass": "^1.94.1",

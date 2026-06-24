@@ -1,2 +1,5 @@
 # Запускаем линтинг SCSS файлов перед коммитом
 npm run lint:css
+# Проверка адаптива: отсутствие горизонтального overflow на мобильных
+# Требует одноразовой установки браузера: npx playwright install chromium
+npm run check:responsive
