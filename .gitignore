@@ -58,6 +58,7 @@ htmlcov/
 *.bmp
 *.gif
 *.webm
+!assets/images/cases/blockchain-lab/*.jpg
 alt/
 alt/site-pages/case-studies/_*
 

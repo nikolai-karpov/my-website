@@ -35,6 +35,7 @@ my-website/
 │   └── warehouse_logistic/# Прототип и материалы по складской логистике
 ├── site-pages/             # Все страницы, доступные с главной (index.html)
 │   ├── ai-assistant.html
+│   ├── blockchain-lab.html
 │   ├── carriers-platform.html
 │   ├── contacts.html
 │   ├── holding-audit.html
@@ -166,6 +167,7 @@ npm run build
 HTML-страницы кейсов лежат в [`site-pages/`](site-pages/) (все они доступны с главной [`index.html`](index.html)):
 
 - [`ai-assistant.html`](site-pages/ai-assistant.html) — Персональный ИИ-ассистент руководителя
+- [`blockchain-lab.html`](site-pages/blockchain-lab.html) — Блокчейн-лаборатория для промышленной телеметрии
 - [`carriers-platform.html`](site-pages/carriers-platform.html) — Платформа перевозчиков
 - [`holding-audit.html`](site-pages/holding-audit.html) — Аудит холдинга
 - [`pir-s.html`](site-pages/pir-s.html) — ПИР-Система
