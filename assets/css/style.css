@@ -138,11 +138,15 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .section {
-  padding: clamp(80px, 12vh, 140px) 0;
+  padding-top: clamp(80px, 12vh, 140px);
+  padding-bottom: clamp(80px, 12vh, 140px);
   border-top: 1px solid var(--line);
 }
 
-.section--tight { padding: clamp(60px, 8vh, 90px) 0; }
+.section--tight {
+  padding-top: clamp(60px, 8vh, 90px);
+  padding-bottom: clamp(60px, 8vh, 90px);
+}
 
 .section:first-of-type { border-top: 0; }
 
