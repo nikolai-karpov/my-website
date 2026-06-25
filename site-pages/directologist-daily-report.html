@@ -127,7 +127,9 @@
   @media (max-width: 640px) {
     .kv-row { flex-direction: column; }
     .kv-key { width: auto; font-weight: 600; }
-    .task-time { margin-left: 0; }
+    .task-header { flex-wrap: wrap; align-items: flex-start; gap: 0.5rem 0.75rem; }
+    .task-title { flex: 1 1 12rem; min-width: 0; overflow-wrap: anywhere; }
+    .task-time { flex: 0 0 100%; margin-left: 0; }
     h1 { font-size: 1.5rem; }
   }
 </style>
