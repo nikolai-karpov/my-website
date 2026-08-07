@@ -2795,6 +2795,17 @@ img { max-width: 100%; height: auto; display: block; }
   line-height: 1.45;
 }
 
+.mi-demo-note {
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  border: 1px dashed color-mix(in srgb, var(--mi-warn) 65%, var(--line));
+  border-radius: 8px;
+  background: var(--mi-warn-soft);
+  color: var(--text-muted);
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
 @media (min-width: 760px) {
   .mi-control-bar {
     grid-template-columns: repeat(6, minmax(0, 1fr));

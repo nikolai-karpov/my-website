@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0",
+  "project_id": "portfolio",
+  "regions": [
+    "213",
+    "2"
+  ],
+  "seed_source": "marketing/deep_research/08_wordstat_seeds.tsv",
+  "max_seed_phrases": 3,
+  "seed_phrases": []
+}

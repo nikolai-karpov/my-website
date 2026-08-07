@@ -1,0 +1,40 @@
+{
+  "generated_at": "2026-06-10T09:20:00",
+  "date_from": "2026-06-03",
+  "date_to": "2026-06-09",
+  "counter_id": 109350250,
+  "goal_id": 566497705,
+  "goal_macro": "form_submit",
+  "campaign_ids": [
+    710568666
+  ],
+  "direct_status": "ok",
+  "rows": 83,
+  "recommendations": 0,
+  "metrika_goal": {
+    "ok": true,
+    "id": 566497705,
+    "name": "Отправка заявки (форма) ⭐",
+    "type": "action",
+    "macro_found": true
+  },
+  "direct_campaigns": {
+    "ok": true,
+    "configured_ids": [
+      710568666
+    ],
+    "visible": [
+      {
+        "id": 710568666,
+        "name": "Портфолио",
+        "state": "ON",
+        "status": "ACCEPTED",
+        "type": "TEXT_CAMPAIGN"
+      }
+    ],
+    "missing_ids": [],
+    "master_campaign_limited_ids": [],
+    "regular_missing_ids": []
+  },
+  "raw_rows": 84
+}

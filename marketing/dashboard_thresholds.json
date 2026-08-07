@@ -1,28 +1,20 @@
 {
-  "version": 1,
-  "freshness_days": {
-    "daily": 2,
-    "placement": 3,
-    "goals": 14,
-    "search_queries": 2,
-    "config": 365
+  "schema_version": "1.0",
+  "freshness": {
+    "daily_artifact_max_age_days": 2,
+    "wordstat_weekly_max_age_days": 10,
+    "wordstat_monthly_max_age_days": 40
   },
-  "filters": {
-    "period_label": "Последние 7 дней",
-    "comparison": "к прошлой неделе",
-    "channel": "Платный поиск + РСЯ",
-    "region": null,
-    "segment": null
-  },
-  "manual_review": {
-    "stop_threshold": "отсутствие поисковых кликов за 3 дня",
-    "review_period": "3 дня на клики, 7 дней на диагностику",
-    "approval": "только после ручного подтверждения"
-  },
-  "quality_rules": [
-    "Direct Conversions не считаются доказательством лида.",
-    "CPA считается только по явному goal_id, без all_goals.",
-    "Wordstat-частотности не придумываются.",
-    "CRM-качество не подключено и не используется как факт."
-  ]
+  "quality": {
+    "minimum_projects_for_consolidated_dashboard": 1,
+    "required_identity_fields": [
+      "campaign_ids",
+      "counter_ids"
+    ],
+    "required_for_cpa": [
+      "campaign_cost",
+      "explicit_metrika_goal_id",
+      "explicit_metrika_goal_reaches"
+    ]
+  }
 }

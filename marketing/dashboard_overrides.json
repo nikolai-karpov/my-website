@@ -1,6 +1,18 @@
 {
-  "version": 1,
-  "description": "Optional manual dashboard variable overrides. Keep empty unless a human has verified the value.",
-  "variables": {},
-  "ignored_variables": {}
+  "schema_version": "1.0",
+  "description": "Manual dashboard values and ignored variables. Use this file to prevent missing variables from being guessed by the assistant.",
+  "allowed_statuses": [
+    "ok",
+    "manual_required",
+    "ignored",
+    "not_configured",
+    "api_error"
+  ],
+  "overrides": {},
+  "ignored": [],
+  "notes": [
+    "Use overrides.<variable_id>.value with status=ok for manually confirmed values.",
+    "Use overrides.<variable_id>.status=ignored or add the variable id to ignored[] when the variable should not participate in analysis.",
+    "Do not use Direct Conversions as lead truth. Confirm leads through explicit Metrika goal ids."
+  ]
 }

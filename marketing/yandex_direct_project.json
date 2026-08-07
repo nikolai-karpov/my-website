@@ -7,25 +7,25 @@
   },
   "campaigns": [
     {
-      "id": 710165227,
+      "id": 710568666,
       "name": "Портфолио",
       "role": "primary",
       "type": "master_campaign",
       "api_visibility": "campaigns_get_limited",
-      "source": "user-confirmed 2026-06-06",
+      "source": "user-confirmed 2026-06-09",
       "notes": [
+        "Кампания пересоздана 09.06 (бывшая 710165227 обнулена)",
         "Master campaigns may be absent from Direct API campaigns.get even when they belong to the same Direct login.",
         "Do not substitute this campaign with regular campaigns 710220828 or 710496114."
       ]
     }
   ],
-  "campaign_ids": [
-    710165227
-  ],
+  "campaign_ids": [710568666],
   "name_contains": [
     "Портфолио",
     "portfolio",
     "my-website",
     "Николай Карпов"
-  ]
+  ],
+  "turbo_page_ids": [10000154536]
 }

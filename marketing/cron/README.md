@@ -1,134 +1,183 @@
-# Marketing AI-CoPilot cron prompts
+# Marketing AI Copilot Cron Plan
 
-Этот каталог хранит prompt-шаблоны для read-only cron-задач AI-CoPilot маркетолога.
-Они не являются активным расписанием и не должны автоматически менять
-`~/.hermes/cron/jobs.json`.
+This directory documents the active cron setup for the consolidated marketing
+dashboard. The active schedule itself is stored in Hermes:
 
-## Рекомендуемый порядок
+- `/Users/nik/.hermes/cron/jobs.json`
 
-1. `marketing-ai-copilot-wordstat.prompt.md` - weekly/monthly сбор спроса через
-   существующий Hermes toolset `yandex_wordstat`.
-2. `marketing-ai-copilot-daily.prompt.md` - ежедневная проверка Direct/Metrika,
-   качества данных и коротких operational-сигналов.
-3. `marketing-ai-copilot-weekly.prompt.md` - недельный baseline, тренды и
-   осторожные гипотезы на основе накопленных daily/wordstat артефактов.
-4. `marketing-ai-copilot-dashboard.prompt.md` - консолидированная сборка
-   dashboard по project-level артефактам без прямых Yandex API вызовов.
+Latest backup before Plan 1 prompt updates:
 
-Если weekly запускается до daily за текущую неделю, он должен использовать
-последний доступный daily snapshot и явно отметить свежесть данных.
+- `/Users/nik/.hermes/cron/jobs.json.backup-marketing-plan1-20260609-183647`
 
-## Разделение ответственности
+Latest backup before switching daily collectors to deterministic `no_agent`
+scripts:
 
-- Prompt-шаблоны в этом каталоге универсальные и не являются источником
-  campaign/counter/goal/TurboPage идентификаторов.
-- Конкретная cron-задача обязана содержать identity-блок проекта: `project_id`,
-  workspace, campaign IDs, counter ID, conversion goal IDs, landing/TurboPage IDs
-  или явный `manual_required`.
-- Project-level collectors собирают данные персонально по одному проекту.
-- Consolidated dashboard job читает только project-level артефакты и собирает
-  управленческую картину по всем проектам.
-- `marketing/projects_manifest.json` хранит project/workspace/cron-job registry,
-  но не является источником рекламных ID.
+- `/Users/nik/.hermes/cron/jobs.json.backup-marketing-noagent-plan1-20260609-201603`
 
-## Общая конфигурация jobs
+Latest backup before switching Wordstat to deterministic `no_agent` script:
 
-Рекомендуемый `workdir` для всех трех задач:
+- `/Users/nik/.hermes/cron/jobs.json.backup-marketing-wordstat-noagent-20260609-201917`
+
+## Architecture
+
+- Project cron jobs collect data per project.
+- Universal skills stay generic and ID-free.
+- Project identity lives in each concrete cron prompt and project artifacts:
+  - campaign IDs
+  - Metrika counter IDs
+  - conversion goal IDs
+  - TurboPage IDs
+  - landing URLs
+- The portfolio summary job builds a consolidated dashboard from artifacts.
+- The dashboard builder does not call Yandex APIs.
+
+## Active Jobs
+
+| Project | Daily | Weekly | Workdir |
+|---|---|---|---|
+| PIR-System | `022851db6e5f` (`no_agent`, `marketing_project_collect.py`) | `a70f6095cd21` | `/Users/nik/projects/pir-s.ru` |
+| Anonymizer | `3ca0cf7765fe` (`no_agent`, `marketing_project_collect.py`) | `2893aa6c9935` | `/Users/nik/projects/ai_data_cleaner` |
+| AI Assistant | `9629ee71ea2e` (`no_agent`, `marketing_project_collect.py`) | `7aa9a4146593` | `/Users/nik/projects/hermes-agent` |
+| Investor Search | `98662b0900de` (`no_agent`, `marketing_project_collect.py`) | `5ac48fcf936a` | `/Users/nik/projects/im` |
+| Portfolio | `4f49d32d43b6` (`no_agent`, `marketing_project_collect.py`) | `29c02d5a5892` | `/Users/nik/projects/my-website` |
+| Consolidated dashboard | `5af5983da0bd` | - | `/Users/nik/projects/my-website` |
+| Wordstat | `6270056a6c56` (`no_agent`, `marketing_wordstat_collect.py`) | weekly schedule | `/Users/nik/projects/my-website` |
+
+## Plan 1 Daily Collector
+
+Daily project jobs now run without an LLM:
+
+- script: `/Users/nik/.hermes/scripts/marketing_project_collect.py`
+- mode: `no_agent=true`
+- timeout: `300` seconds per project
+- identity source: each job's `workdir` project files and latest project
+  artifacts
+
+The script writes:
+
+- `<project>/marketing/monitoring/daily/<YYYY-MM-DD>_plan1.json`
+
+It contains no hardcoded project IDs. Campaign, counter, goal, TurboPage and
+landing identities must come from project-level configs or artifacts. If a
+source is missing it writes `manual_required`; if an API fails it writes
+`api_error`.
+
+## Plan 1 Contract For Daily Jobs
+
+Each daily project job must now write machine-readable status for:
+
+- Direct `CAMPAIGN_PERFORMANCE_REPORT`
+- Direct `SEARCH_QUERY_PERFORMANCE_REPORT`
+- Direct GEO slice through `CUSTOM_REPORT` with `LocationOfPresence*` fields
+- Direct `AD_PERFORMANCE_REPORT`
+- Direct `ADGROUP_PERFORMANCE_REPORT`
+- Metrika paid traffic
+- Metrika explicit-goal conversions
+- Metrika direct costs
+- Metrika goals inventory/status through `yandex_metrika_goals`
+- landing parse / ad-to-landing match status
+
+If a slice is not collected, the job must write `manual_required`.
+If an API fails, the job must write `api_error`.
+Missing values must not be written as zero.
+
+Legacy daily prompts still explicitly require:
 
 ```text
-/Users/nik/projects/my-website
+yandex_metrika_goals(counter_id=<project_counter>, refresh=false)
 ```
 
-Рекомендуемые `enabled_toolsets`:
+The returned goal ids/names/types should be saved under
+`marketing/monitoring/config/` or inside the daily JSON `goals_inventory` block.
 
-| Prompt | enabled_toolsets |
-|---|---|
-| daily | `file`, `web`, `yandex_direct`, `yandex_metrika` |
-| weekly | `file`, `web`, `yandex_direct`, `yandex_metrika` |
-| wordstat | `file`, `yandex_wordstat` |
-| dashboard | `file` |
+## Wordstat Contract
 
-Daily/weekly могут читать локальные Wordstat-артефакты через `file`, но не должны
-требовать нового Wordstat-коннектора. Wordstat-сбор выполняется отдельной задачей.
+Wordstat now runs without an LLM:
 
-## context_from
+- script: `/Users/nik/.hermes/scripts/marketing_wordstat_collect.py`
+- mode: `no_agent=true`
+- project config: `marketing/wordstat_config.json`
 
-Рекомендуемая цепочка:
+The Wordstat job must save normalized output to:
 
-```yaml
-wordstat:
-  context_from: []
+- `<workspace>/marketing/monitoring/wordstat/<run_date_msk>.json`
 
-project_daily:
-  context_from:
-    - marketing-ai-copilot-wordstat
+Required slices:
 
-project_weekly:
-  context_from:
-    - marketing-ai-copilot-wordstat
-    - <same-project-daily-job>
+- top phrases
+- regional split
+- weekly dynamics for the last completed 12 weeks
+- monthly dynamics for the last completed 6 months
 
-dashboard:
-  context_from:
-    - <all-project-daily-jobs>
-    - <all-project-weekly-jobs>
-    - marketing-ai-copilot-wordstat
+Dashboard validation:
+
+- `weekly` is `ok` only when a fresh normalized snapshot contains at least 12
+  valid weekly points.
+- `monthly` is `ok` only when a fresh normalized snapshot contains at least 6
+  valid monthly points.
+- missing/stale/incomplete slices and explicit `manual_required` /
+  `not_configured` collector statuses are `manual_required`;
+- invalid JSON or collector error payloads are `api_error`.
+
+Accepted slice fields are `weekly`, `weekly_dynamics`, `monthly`,
+`monthly_dynamics`, or nested equivalents under `dynamics`, `time_series`,
+`series`, or `slices`. A point must include a period field and a demand/count
+field. Raw Wordstat files under `marketing/wordstat_raw/` or
+`marketing/deep_research/wordstat_raw/` are not enough for weekly/monthly
+dashboard `ok`.
+
+## Dashboard Build
+
+Build and validate:
+
+```bash
+python3 marketing/dashboard_variables.py --build --check --summary
 ```
 
-`context_from` используется только как дополнительный контекст. Каждая задача обязана
-сначала проверить hard scope проекта и fail closed, если scope отсутствует или
-подменен.
+Outputs:
 
-## no_agent / script separation
+- `marketing/dashboard_state/latest.json`
+- `site-pages/data/marketing-ai-copilot/latest.json`
 
-Разделяй сбор фактов и интерпретацию:
+The public dataset must not contain local absolute paths.
 
-- `no_agent` script jobs подходят для детерминированной выгрузки API/локальных
-  файлов и записи JSON/CSV без LLM.
-- agent jobs подходят для классификации уже собранных фактов, формулирования
-  рисков, гипотез и operator actions.
-- LLM не должен придумывать значения переменных, частотности, CPA, лиды или
-  статус интеграции. Если данных нет, ставь `manual_required`, `not_configured`,
-  `api_error`, `stale`, `limited` или `insufficient_data`.
+Active summary cron job `5af5983da0bd` also has a deterministic pre-run script:
 
-## Project scope guard
+- `/Users/nik/.hermes/scripts/marketing_dashboard_build.py`
 
-Каждый project-level cron prompt должен fail closed, если его identity-блок не
-содержит campaign IDs, counter ID или explicit conversion goal IDs. Для
-TurboPage IDs допускается `manual_required`, но нельзя делать вывод `no leads`
-только потому, что Direct Leads API нельзя вызвать без TurboPageIds.
+The script rebuilds and validates `latest.json` before the agent summary step and
+prints a compact JSON summary into the cron prompt.
 
-## Связь с dashboard variables
+## Plan 2 Connector Contract
 
-Эти prompts питают слой переменных дашборда через
-`marketing/dashboard_variables.py`. Генератор собирает внутренний
-`marketing/dashboard_state/latest.json` и публичный
-`site-pages/data/marketing-ai-copilot/latest.json`; отсутствующие значения
-остаются в явных статусах и не заменяются догадками.
+New connectors are tracked separately from current Yandex API work in:
 
-Минимальный контракт для каждой переменной:
+- `marketing/connectors_manifest.json`
+- `marketing/CONNECTORS_PLAN.md`
 
-```json
-{
-  "key": "budget_cpa_goal_<goal_id>",
-  "value": null,
-  "status": "insufficient_data",
-  "source_type": "MT",
-  "source_ref": "marketing/monitoring/daily/YYYY-MM-DD.json",
-  "freshness": "T+1",
-  "evidence": [],
-  "confidence": "none"
-}
-```
+Connector artifacts are project-scoped and should be written to:
 
-Ожидаемая связь:
+- `<project>/marketing/monitoring/connectors/<connector>/<YYYY-MM-DD>.json`
 
-- project daily обновляет Direct/Metrika переменные своего проекта: spend,
-  clicks, visits, explicit goal reaches, CPA per goal, tracking health, data
-  quality flags.
-- project weekly обновляет baseline/trend переменные своего проекта.
-- wordstat обновляет demand variables раздельно по project_id.
-- dashboard собирает consolidated view по всем project-level artifacts и не
-  объединяет CPA между проектами без явной совместимости целей.
+The dashboard builder reads connector artifacts when present and otherwise uses
+the manifest fallback status. Missing connector data is never treated as zero.
+The public dataset exposes:
 
-Prompt-шаблоны не меняют `VARIABLES_MAP.md`, generator, HTML или публичные данные.
+- `connectors.status_counts`
+- `{project}.connector.{connector}` variables for each project and connector
+- `view_model` for public UI blocks with status-gated budget/leads/funnel states
+
+P1 connectors to implement first:
+
+- `form_backend_submissions` - local wiring diagnostics are implemented; real
+  submissions still require Formspree export/API and remain `manual_required`
+- `direct_leads_turbopage_resolver`
+- `crm_lead_qualification`
+
+Public dataset safety:
+
+- raw connector `records` / contact fields are redacted from public JSON;
+- raw Direct `Conversions`, `CostPerConversion`, `ConversionRate` fields are
+  redacted from public project metrics;
+- demo/static dashboard sections are marked in the public UI unless they are
+  backed by `view_model`.

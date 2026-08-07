@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "description": "Connector backlog for sources not covered by current Yandex Direct/Metrika/Wordstat APIs.",
+  "connectors": [
+    {
+      "id": "form_backend_submissions",
+      "priority": "P1",
+      "status": "ignored",
+      "source_type": "new_connector",
+      "reason": "No separate local form backend or CRM pipeline is used; Direct-hosted forms are measured by Metrika form_submit goals.",
+      "current_implementation": "metrika_form_goal_conversions",
+      "public_detail_policy": "redact_records_and_contacts",
+      "default_dashboard_status": "ignored"
+    },
+    {
+      "id": "direct_leads_turbopage_resolver",
+      "priority": "P1",
+      "status": "manual_required",
+      "source_type": "new_connector",
+      "reason": "Optional actual Yandex/TurboPage contact-card export. Lead count and CPA use Metrika form-submit goal reaches; this connector is not required for zero/positive lead counting.",
+      "default_dashboard_status": "manual_required"
+    },
+    {
+      "id": "crm_lead_qualification",
+      "priority": "P1",
+      "status": "ignored",
+      "source_type": "new_connector",
+      "reason": "CRM is intentionally out of scope: expensive product, manual lead handling, no CRM system.",
+      "artifact_contract": "marketing/connectors/CRM_IMPORT_CONTRACT.md",
+      "public_detail_policy": "redact_records_and_contacts",
+      "default_dashboard_status": "ignored"
+    },
+    {
+      "id": "call_tracking",
+      "priority": "P2",
+      "status": "ignored",
+      "source_type": "new_connector",
+      "reason": "Call tracking is intentionally out of scope: no phone lead workflow.",
+      "default_dashboard_status": "ignored"
+    },
+    {
+      "id": "remote_landing_parser",
+      "priority": "P2",
+      "status": "manual_required",
+      "source_type": "new_connector",
+      "reason": "Direct-hosted TurboPages/client-site landing content cannot be parsed from this repository without a Direct artifact, saved snapshot, or dedicated read-only landing fetcher.",
+      "default_dashboard_status": "manual_required"
+    },
+    {
+      "id": "yandex_webmaster_indexing",
+      "priority": "P2",
+      "status": "ignored",
+      "source_type": "new_connector",
+      "reason": "Yandex Webmaster is not technically applicable to Direct-hosted TurboPages/client landing pages.",
+      "default_dashboard_status": "ignored"
+    },
+    {
+      "id": "serp_intent_verifier",
+      "priority": "P3",
+      "status": "manual_required",
+      "source_type": "new_connector",
+      "reason": "Wordstat volume does not prove buyer intent; SERP validation is needed for new clusters.",
+      "default_dashboard_status": "manual_required"
+    },
+    {
+      "id": "placement_quality_enrichment",
+      "priority": "P3",
+      "status": "not_configured",
+      "source_type": "new_connector",
+      "reason": "RСЯ placement quality needs external categorization beyond raw Direct/Metrika metrics.",
+      "default_dashboard_status": "not_configured"
+    }
+  ]
+}
