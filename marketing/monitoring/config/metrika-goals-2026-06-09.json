@@ -1,0 +1,33 @@
+{
+  "inventory_date": "2026-06-09",
+  "counter_id": 109350250,
+  "counter_name": "Портфолио",
+  "counter_site": "nikolai-pir-s-ru.sourcecraft.site/portfolio/",
+  "counter_status": "Active",
+  "goals": [
+    {
+      "id": 566497705,
+      "name": "Отправка заявки (форма)",
+      "type": "starred",
+      "description": "Отмечена ⭐ в API. В AGENTS.md указана как form_submit — кандидат на primary lead goal.",
+      "status": "candidate",
+      "confirmed_as_lead_goal": false,
+      "verification_needed": true,
+      "verification_steps": "Открыть Метрику → Счётчик 109350250 → Цели → проверить, что цель срабатывает именно на отправку формы заявки с лендинга. Убедиться, что это не дубликат автоцели 566492899."
+    },
+    {
+      "id": 566492899,
+      "name": "Автоцель: отправил контактные данные",
+      "type": "auto",
+      "description": "Автоматически созданная цель Метрики. Срабатывает при передаче контактных данных (телефон, email) через yaCounterXXXXXX.reachGoal().",
+      "status": "diagnostic",
+      "confirmed_as_lead_goal": false,
+      "verification_needed": true,
+      "verification_steps": "Проверить в UI Метрики: может перекрываться с goal 566497705. Если оба фиксируют одно и то же действие, использовать только один для CPA. Если 566492899 фиксирует дополнительные каналы (звонки, чат), он может быть самостоятельной diagnostic-целью.",
+      "warning": "НЕ использовать для CPA до подтверждения роли — может задвоить конверсии."
+    }
+  ],
+  "inventory_status": "NEEDS_GOAL_MAPPING",
+  "notes": "Требуется ручное подтверждение в UI Метрики. До подтверждения CPA не рассчитывается.",
+  "related_direct_campaign": 710165227
+}

@@ -1,0 +1,494 @@
+{
+  "project_id": "portfolio",
+  "workspace_path": "/Users/nik/projects/my-website",
+  "collection_date": "2025-06-09T00:00:00Z",
+  "regions": [213, 2],
+  "seed_source": ".agents/skills/yandex-project-context/SKILL.md",
+  "status": "complete",
+  "summary": {
+    "total_phrases": 14,
+    "phrases_with_data": 13,
+    "phrases_no_data": 1,
+    "region_coverage": {
+      "213": "Москва",
+      "2": "Санкт-Петербург"
+    }
+  },
+  "seed_phrases_results": [
+    {
+      "phrase": "внедрение ИИ в бизнес",
+      "region_id": "213",
+      "frequency": 238,
+      "status": "ok",
+      "top_similar": ["внедрение ии в бизнес процессы", "внедрение ии в бизнес под ключ", "внедрение ии в бизнес решения"]
+    },
+    {
+      "phrase": "внедрение ИИ в бизнес",
+      "region_id": "2",
+      "frequency": 86,
+      "status": "ok",
+      "top_similar": ["внедрение ии в бизнес процессы", "внедрение ии агентов в бизнес", "внедрение ии в бизнес под ключ"]
+    },
+    {
+      "phrase": "искусственный интеллект для бизнеса",
+      "region_id": "213",
+      "frequency": 281,
+      "status": "ok",
+      "top_similar": ["искусственный интеллект для бизнес процессов", "искусственный интеллект для бизнеса внедрение", "искусственный интеллект для бизнеса обучение"]
+    },
+    {
+      "phrase": "искусственный интеллект для бизнеса",
+      "region_id": "2",
+      "frequency": 100,
+      "status": "ok",
+      "top_similar": ["искусственный интеллект для бизнеса внедрение", "искусственный интеллект для бизнеса бесплатно", "искусственный интеллект для бизнес процессов"]
+    },
+    {
+      "phrase": "ии для бизнеса",
+      "region_id": "213",
+      "frequency": 1364,
+      "status": "ok",
+      "top_similar": ["ии агенты для бизнеса", "ии для бизнес процессов", "ии ассистент для бизнеса"],
+      "dynamics_available": true,
+      "dynamics_summary": "Peak in May 2025 (5587), stable Q1 2026 (~1700)"
+    },
+    {
+      "phrase": "ии для бизнеса",
+      "region_id": "2",
+      "frequency": 432,
+      "status": "ok",
+      "top_similar": ["ии агенты для бизнеса", "внедрение ии для бизнеса", "курс ии для бизнеса"],
+      "dynamics_available": true,
+      "dynamics_summary": "Peak in Apr 2026 (611), stable growth 2025-2026"
+    },
+    {
+      "phrase": "автоматизация бизнес процессов",
+      "region_id": "213",
+      "frequency": 1010,
+      "status": "ok",
+      "top_similar": ["система автоматизации бизнес процессов", "автоматизация бизнес процессов компания", "автоматизация бизнес процессов управления"],
+      "dynamics_available": true,
+      "dynamics_summary": "Declining trend 2025-2026, peak Q1 2025 (~1874)"
+    },
+    {
+      "phrase": "автоматизация бизнес процессов",
+      "region_id": "2",
+      "frequency": 350,
+      "status": "ok",
+      "top_similar": ["система автоматизации бизнес процессов", "автоматизация бизнес процессов управления", "автоматизация информационных систем бизнес процессов"],
+      "dynamics_available": true,
+      "dynamics_summary": "Stable with slight decline, peak Apr 2026 (688)"
+    },
+    {
+      "phrase": "нейросети для бизнеса",
+      "region_id": "213",
+      "frequency": 461,
+      "status": "ok",
+      "top_similar": ["курс нейросети для бизнеса", "создание нейросети для бизнеса", "нейросеть для бизнес презентации"]
+    },
+    {
+      "phrase": "нейросети для бизнеса",
+      "region_id": "2",
+      "frequency": 149,
+      "status": "ok",
+      "top_similar": ["курс нейросети для бизнеса", "нейросети для бизнеса книга", "лучшие нейросети для бизнеса"]
+    },
+    {
+      "phrase": "интеграция ИИ в бизнес",
+      "region_id": "213",
+      "frequency": 23,
+      "status": "weak_signal",
+      "top_similar": ["интеграция ии в бизнес процессы", "интеграция ии агентов в ядро бизнеса"]
+    },
+    {
+      "phrase": "интеграция ИИ в бизнес",
+      "region_id": "2",
+      "frequency": 6,
+      "status": "weak_signal",
+      "top_similar": ["интеграция ии в бизнес процессы"]
+    },
+    {
+      "phrase": "ИИ под ключ",
+      "region_id": "213",
+      "frequency": 114,
+      "status": "ok",
+      "top_similar": ["внедрение ии под ключ", "внедрение ии в бизнес под ключ", "ии агент под ключ"]
+    },
+    {
+      "phrase": "ИИ под ключ",
+      "region_id": "2",
+      "frequency": 44,
+      "status": "ok",
+      "top_similar": ["внедрение ии под ключ", "ии обучение внедрение ai под ключ", "внедрение ии в бизнес под ключ"]
+    },
+    {
+      "phrase": "нейросеть под ключ",
+      "region_id": "213",
+      "frequency": 46,
+      "status": "ok",
+      "top_similar": ["разработка создания нейросеть под ключ"]
+    },
+    {
+      "phrase": "нейросеть под ключ",
+      "region_id": "2",
+      "frequency": 6,
+      "status": "weak_signal",
+      "top_similar": ["нейросети под ключ"]
+    },
+    {
+      "phrase": "RAG система",
+      "region_id": "213",
+      "frequency": 544,
+      "status": "ok",
+      "top_similar": ["создание rag системы", "rag система ии", "разработка rag систем"]
+    },
+    {
+      "phrase": "RAG система",
+      "region_id": "2",
+      "frequency": 200,
+      "status": "ok",
+      "top_similar": ["безопасны ли rag системы", "разработка rag систем", "создание rag системы"]
+    },
+    {
+      "phrase": "мультиагентные системы",
+      "region_id": "213",
+      "frequency": 356,
+      "status": "ok",
+      "top_similar": ["мультиагентная система ии", "управление мультиагентным системами", "мультиагентные системы llm"]
+    },
+    {
+      "phrase": "мультиагентные системы",
+      "region_id": "2",
+      "frequency": 334,
+      "status": "ok",
+      "top_similar": ["управление мультиагентным системами", "мультиагентные системы искусственного интеллекта", "мультиагентные интеллектуальные системы"]
+    },
+    {
+      "phrase": "корпоративный ChatGPT",
+      "region_id": "213",
+      "frequency": 28,
+      "status": "weak_signal",
+      "top_similar": []
+    },
+    {
+      "phrase": "корпоративный ChatGPT",
+      "region_id": "2",
+      "frequency": 2,
+      "status": "weak_signal",
+      "top_similar": []
+    },
+    {
+      "phrase": "обезличивание данных",
+      "region_id": "213",
+      "frequency": 632,
+      "status": "ok",
+      "top_similar": ["методы обезличивания данных", "обезличивание персональных данных это", "методы обезличивания персональных данных"]
+    },
+    {
+      "phrase": "обезличивание данных",
+      "region_id": "2",
+      "frequency": 176,
+      "status": "ok",
+      "top_similar": ["обезличивание персональных данных обработка", "обезличивание персональных данных это", "обезличивание блокирование персональных данных"]
+    },
+    {
+      "phrase": "безопасное внедрение LLM",
+      "region_id": "213",
+      "frequency": 0,
+      "status": "insufficient_data",
+      "top_similar": []
+    },
+    {
+      "phrase": "безопасное внедрение LLM",
+      "region_id": "2",
+      "frequency": 0,
+      "status": "insufficient_data",
+      "top_similar": []
+    },
+    {
+      "phrase": "ИИ ассистент руководителя",
+      "region_id": "213",
+      "frequency": 14,
+      "status": "weak_signal",
+      "top_similar": ["ии ассистент для руководителя"]
+    },
+    {
+      "phrase": "ИИ ассистент руководителя",
+      "region_id": "2",
+      "frequency": 5,
+      "status": "weak_signal",
+      "top_similar": ["ии ассистент для руководителя"]
+    },
+    {
+      "phrase": "n8n автоматизация бизнеса",
+      "region_id": "213",
+      "frequency": 3,
+      "status": "weak_signal",
+      "top_similar": ["автоматизация бизнеса n8n"]
+    },
+    {
+      "phrase": "n8n автоматизация бизнеса",
+      "region_id": "2",
+      "frequency": 6,
+      "status": "weak_signal",
+      "top_similar": ["автоматизация бизнеса n8n"]
+    }
+  ],
+  "dynamics_data": {
+    "ии для бизнеса": {
+      "213": [
+        {"period": "2025-01-01T00:00:00Z", "count": 672},
+        {"period": "2025-02-01T00:00:00Z", "count": 884},
+        {"period": "2025-03-01T00:00:00Z", "count": 1425},
+        {"period": "2025-04-01T00:00:00Z", "count": 1520},
+        {"period": "2025-05-01T00:00:00Z", "count": 5587},
+        {"period": "2025-06-01T00:00:00Z", "count": 4381},
+        {"period": "2025-07-01T00:00:00Z", "count": 1978},
+        {"period": "2025-08-01T00:00:00Z", "count": 1603},
+        {"period": "2025-09-01T00:00:00Z", "count": 1539},
+        {"period": "2025-10-01T00:00:00Z", "count": 1594},
+        {"period": "2025-11-01T00:00:00Z", "count": 1348},
+        {"period": "2025-12-01T00:00:00Z", "count": 1161},
+        {"period": "2026-01-01T00:00:00Z", "count": 1125},
+        {"period": "2026-02-01T00:00:00Z", "count": 1254},
+        {"period": "2026-03-01T00:00:00Z", "count": 1715},
+        {"period": "2026-04-01T00:00:00Z", "count": 1772},
+        {"period": "2026-05-01T00:00:00Z", "count": 1310}
+      ],
+      "2": [
+        {"period": "2025-01-01T00:00:00Z", "count": 211},
+        {"period": "2025-02-01T00:00:00Z", "count": 220},
+        {"period": "2025-03-01T00:00:00Z", "count": 234},
+        {"period": "2025-04-01T00:00:00Z", "count": 296},
+        {"period": "2025-05-01T00:00:00Z", "count": 354},
+        {"period": "2025-06-01T00:00:00Z", "count": 399},
+        {"period": "2025-07-01T00:00:00Z", "count": 376},
+        {"period": "2025-08-01T00:00:00Z", "count": 406},
+        {"period": "2025-09-01T00:00:00Z", "count": 503},
+        {"period": "2025-10-01T00:00:00Z", "count": 490},
+        {"period": "2025-11-01T00:00:00Z", "count": 423},
+        {"period": "2025-12-01T00:00:00Z", "count": 387},
+        {"period": "2026-01-01T00:00:00Z", "count": 408},
+        {"period": "2026-02-01T00:00:00Z", "count": 492},
+        {"period": "2026-03-01T00:00:00Z", "count": 504},
+        {"period": "2026-04-01T00:00:00Z", "count": 611},
+        {"period": "2026-05-01T00:00:00Z", "count": 448}
+      ]
+    },
+    "автоматизация бизнес процессов": {
+      "213": [
+        {"period": "2025-01-01T00:00:00Z", "count": 1550},
+        {"period": "2025-02-01T00:00:00Z", "count": 1626},
+        {"period": "2025-03-01T00:00:00Z", "count": 1874},
+        {"period": "2025-04-01T00:00:00Z", "count": 1757},
+        {"period": "2025-05-01T00:00:00Z", "count": 1785},
+        {"period": "2025-06-01T00:00:00Z", "count": 1613},
+        {"period": "2025-07-01T00:00:00Z", "count": 1324},
+        {"period": "2025-08-01T00:00:00Z", "count": 1232},
+        {"period": "2025-09-01T00:00:00Z", "count": 1714},
+        {"period": "2025-10-01T00:00:00Z", "count": 1768},
+        {"period": "2025-11-01T00:00:00Z", "count": 1617},
+        {"period": "2025-12-01T00:00:00Z", "count": 1348},
+        {"period": "2026-01-01T00:00:00Z", "count": 973},
+        {"period": "2026-02-01T00:00:00Z", "count": 961},
+        {"period": "2026-03-01T00:00:00Z", "count": 1096},
+        {"period": "2026-04-01T00:00:00Z", "count": 1265},
+        {"period": "2026-05-01T00:00:00Z", "count": 956}
+      ],
+      "2": [
+        {"period": "2025-01-01T00:00:00Z", "count": 574},
+        {"period": "2025-02-01T00:00:00Z", "count": 515},
+        {"period": "2025-03-01T00:00:00Z", "count": 636},
+        {"period": "2025-04-01T00:00:00Z", "count": 688},
+        {"period": "2025-05-01T00:00:00Z", "count": 651},
+        {"period": "2025-06-01T00:00:00Z", "count": 602},
+        {"period": "2025-07-01T00:00:00Z", "count": 439},
+        {"period": "2025-08-01T00:00:00Z", "count": 478},
+        {"period": "2025-09-01T00:00:00Z", "count": 627},
+        {"period": "2025-10-01T00:00:00Z", "count": 639},
+        {"period": "2025-11-01T00:00:00Z", "count": 568},
+        {"period": "2025-12-01T00:00:00Z", "count": 603},
+        {"period": "2026-01-01T00:00:00Z", "count": 380},
+        {"period": "2026-02-01T00:00:00Z", "count": 435},
+        {"period": "2026-03-01T00:00:00Z", "count": 457},
+        {"period": "2026-04-01T00:00:00Z", "count": 422},
+        {"period": "2026-05-01T00:00:00Z", "count": 360}
+      ]
+    }
+  },
+  "clusters": [
+    {
+      "cluster": "AI внедрение и интеграция",
+      "phrases": ["внедрение ИИ в бизнес", "интеграция ИИ в бизнес", "ИИ под ключ", "нейросеть под ключ"],
+      "demand_signal": "moderate_to_high",
+      "confidence": "high"
+    },
+    {
+      "cluster": "AI для бизнеса (общий)",
+      "phrases": ["ии для бизнеса", "искусственный интеллект для бизнеса", "нейросети для бизнеса"],
+      "demand_signal": "high",
+      "confidence": "high"
+    },
+    {
+      "cluster": "Автоматизация бизнес-процессов",
+      "phrases": ["автоматизация бизнес процессов", "n8n автоматизация бизнеса"],
+      "demand_signal": "high_general_low_specific",
+      "confidence": "high"
+    },
+    {
+      "cluster": "Технические AI-системы",
+      "phrases": ["RAG система", "мультиагентные системы"],
+      "demand_signal": "moderate",
+      "confidence": "high"
+    },
+    {
+      "cluster": "Безопасность и данные",
+      "phrases": ["обезличивание данных", "безопасное внедрение LLM"],
+      "demand_signal": "high_general_no_specific",
+      "confidence": "medium"
+    },
+    {
+      "cluster": "AI-ассистенты",
+      "phrases": ["корпоративный ChatGPT", "ИИ ассистент руководителя"],
+      "demand_signal": "weak",
+      "confidence": "medium"
+    }
+  ],
+  "dashboard_variable_updates": [
+    {
+      "project_id": "portfolio",
+      "key": "demand_ai_business_msk",
+      "value": 1364,
+      "status": "ready",
+      "source_ref": "wordstat_ии_для_бизнеса_213",
+      "confidence": "high"
+    },
+    {
+      "project_id": "portfolio",
+      "key": "demand_ai_business_spb",
+      "value": 432,
+      "status": "ready",
+      "source_ref": "wordstat_ии_для_бизнеса_2",
+      "confidence": "high"
+    },
+    {
+      "project_id": "portfolio",
+      "key": "demand_automation_msk",
+      "value": 1010,
+      "status": "ready",
+      "source_ref": "wordstat_автоматизация_бизнес_процессов_213",
+      "confidence": "high"
+    },
+    {
+      "project_id": "portfolio",
+      "key": "demand_automation_spb",
+      "value": 350,
+      "status": "ready",
+      "source_ref": "wordstat_автоматизация_бизнес_процессов_2",
+      "confidence": "high"
+    },
+    {
+      "project_id": "portfolio",
+      "key": "demand_rag_msk",
+      "value": 544,
+      "status": "ready",
+      "source_ref": "wordstat_rag_система_213",
+      "confidence": "high"
+    },
+    {
+      "project_id": "portfolio",
+      "key": "demand_rag_spb",
+      "value": 200,
+      "status": "ready",
+      "source_ref": "wordstat_rag_система_2",
+      "confidence": "high"
+    },
+    {
+      "project_id": "portfolio",
+      "key": "demand_multiserver_msk",
+      "value": 356,
+      "status": "ready",
+      "source_ref": "wordstat_мультиагентные_системы_213",
+      "confidence": "high"
+    },
+    {
+      "project_id": "portfolio",
+      "key": "demand_multiserver_spb",
+      "value": 334,
+      "status": "ready",
+      "source_ref": "wordstat_мультиагентные_системы_2",
+      "confidence": "high"
+    },
+    {
+      "project_id": "portfolio",
+      "key": "demand_anonymization_msk",
+      "value": 632,
+      "status": "ready",
+      "source_ref": "wordstat_обезличивание_данных_213",
+      "confidence": "high"
+    },
+    {
+      "project_id": "portfolio",
+      "key": "demand_anonymization_spb",
+      "value": 176,
+      "status": "ready",
+      "source_ref": "wordstat_обезличивание_данных_2",
+      "confidence": "high"
+    },
+    {
+      "project_id": "portfolio",
+      "key": "trend_ai_business_msk",
+      "value": "stable_growth_peak_spring",
+      "status": "ready",
+      "source_ref": "wordstat_dynamics_ии_для_бизнеса_213",
+      "confidence": "high"
+    },
+    {
+      "project_id": "portfolio",
+      "key": "trend_ai_business_spb",
+      "value": "stable_growth",
+      "status": "ready",
+      "source_ref": "wordstat_dynamics_ии_для_бизнеса_2",
+      "confidence": "high"
+    },
+    {
+      "project_id": "portfolio",
+      "key": "trend_automation_msk",
+      "value": "slight_decline",
+      "status": "ready",
+      "source_ref": "wordstat_dynamics_автоматизация_бизнес_процессов_213",
+      "confidence": "high"
+    },
+    {
+      "project_id": "portfolio",
+      "key": "trend_automation_spb",
+      "value": "stable_with_fluctuations",
+      "status": "ready",
+      "source_ref": "wordstat_dynamics_автоматизация_бизнес_процессов_2",
+      "confidence": "high"
+    }
+  ],
+  "risks": {
+    "data_volume": [
+      "phrase_safe_llm_no_data: 'безопасное внедрение LLM' returned 0 results in both regions - consider rephrasing or checking if term exists in Russian search patterns",
+      "phrase_assistant_weak_signal: 'ИИ ассистент руководителя' and 'корпоративный ChatGPT' have very low search volume (<30 in Moscow, <10 in SPb) - may be niche or not common search term",
+      "phrase_n8n_specific: 'n8n автоматизация бизнеса' has minimal direct search - users likely search broader 'автоматизация бизнес процессов' without specifying tool"
+    ],
+    "regional_bias": [
+      "msk_dominance: Moscow region (213) shows significantly higher search volumes than Saint Petersburg (2) for most phrases (2-3x difference)",
+      "limit_to_major_cities: Data only covers Moscow and Saint Petersburg - demand may differ significantly in other Russian regions",
+      "data_collection_date_mismatch: JSON filename shows 2025-06-09, but current date is 2026-06-09 - archive date may be incorrect or not updated"
+    ],
+    "competitor_legal": [
+      "brand_use: No competitor brand phrases included in seed - safe from legal perspective",
+      "generic_terms: All seed phrases use generic descriptive terms (ИИ, нейросети, автоматизация) - no trademark issues"
+    ]
+  },
+  "metadata": {
+    "collection_timestamp": "2025-06-09T00:00:00Z",
+    "collection_type": "cron_job",
+    "wordstat_api_cache": "7_days",
+    "period": "monthly",
+    "dynamics_range": "2025-01-01 to 2026-05-31"
+  }
+}

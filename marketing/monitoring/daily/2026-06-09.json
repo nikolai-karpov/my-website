@@ -1,0 +1,121 @@
+{
+  "report_date": "2026-06-09",
+  "run_date_msk": "2026-06-09",
+  "run_note": "Evening cron update — added 09.06 data",
+  "project": {
+    "slug": "portfolio",
+    "display_name": "Портфолио",
+    "campaign_id": 710165227,
+    "campaign_name": "Портфолио",
+    "landing": "https://nikolai-pir-s-ru.sourcecraft.site/portfolio/",
+    "metrika_counter_id": 109350250,
+    "metrika_counter_site": "nikolai-pir-s-ru.sourcecraft.site/portfolio/",
+    "status": "RED",
+    "status_flags": ["TRACKING_BROKEN", "GOAL_566492899_DIAGNOSTIC", "ZERO_AD_TRAFFIC_IN_METRIKA", "CAMPAIGN_NEAR_ZERO_09_06"]
+  },
+  "direct": {
+    "today": {
+      "date": "2026-06-09",
+      "impressions": 5,
+      "clicks": 1,
+      "cost_rub": 2.27,
+      "ctr_pct": 20.0,
+      "avg_cpc_rub": 2.27
+    },
+    "yesterday": {
+      "date": "2026-06-08",
+      "impressions": 5181,
+      "clicks": 825,
+      "cost_rub": 2543.43,
+      "ctr_pct": 15.92,
+      "avg_cpc_rub": 3.08,
+      "direct_conversions": 0
+    },
+    "previous_active_day": {
+      "date": "2026-05-26",
+      "impressions": 40,
+      "clicks": 2,
+      "cost_rub": 3.83,
+      "ctr_pct": 5.0,
+      "avg_cpc_rub": 1.91
+    },
+    "week_02_08": {
+      "impressions": 5181,
+      "clicks": 825,
+      "cost_rub": 2543.43,
+      "ctr_pct": 15.92,
+      "avg_cpc_rub": 3.08
+    },
+    "keywords_count": 0,
+    "keywords_note": "Master campaign — keywords not visible via API",
+    "campaign_state": null,
+    "campaign_state_note": "campaigns.get вернул 0 результатов по ID 710165227 — master campaign, API-visibility limited"
+  },
+  "metrika": {
+    "counter_id": 109350250,
+    "counter_active": true,
+    "ad_traffic_today": { "sessions": 0 },
+    "ad_traffic_week_02_08": { "sessions": 0 },
+    "total_traffic_week_02_08": {
+      "sessions": 40,
+      "users": 35,
+      "pageviews": 90,
+      "bounce_rate": 0.125,
+      "avg_time": "00:01:54",
+      "page_depth": 2.25,
+      "direct_traffic": 33,
+      "referral_traffic": 7,
+      "ad_traffic": 0
+    },
+    "direct_costs_bridge": {
+      "available": false,
+      "error": "HTTP 404 — direct_clients endpoint not found for counter 109350250",
+      "note": "Счётчик не привязан к Direct-аккаунту. Мост Direct↔Метрика не работает."
+    },
+    "goals": {
+      "566497705": {
+        "name": "Отправка заявки (форма) ⭐",
+        "role": "primary_candidate",
+        "role_source": "AGENTS.md local artifacts",
+        "reaches_ad_week_02_08": 0,
+        "cpa_status": "insufficient_data"
+      },
+      "566492899": {
+        "name": "Автоцель: отправил контактные данные",
+        "role": "diagnostic",
+        "role_source": "Metrika API label — auto-goal, not confirmed as primary lead",
+        "reaches_ad_week_02_08": 0,
+        "cpa_status": "insufficient_data",
+        "combine_with_566497705": false,
+        "combine_note": "Не объединять с 566497705 в CPA denominator — роль не подтверждена"
+      }
+    }
+  },
+  "anomalies": {
+    "tracking": "CRITICAL — 826 Direct clicks → 0 Metrika ad visits over 08-09.06",
+    "campaign_activity": "825 clicks on 08.06 → 1 click on 09.06. Near-zero after burst.",
+    "ctr": "15.92% on 08.06 — anomalously high, suggests autotargeting or invalid clicks"
+  },
+  "recommendations": [
+    {
+      "priority": 1,
+      "action": "Подключить Direct-аккаунт к счётчику 109350250 в Метрике → Настройки → Direct",
+      "impact": "Без этого Метрика не видит ad-трафик — весь расход «вслепую»"
+    },
+    {
+      "priority": 2,
+      "action": "Проверить тег Метрики на лендинге: DevTools → Network → запросы к mc.yandex.ru",
+      "impact": "Тег может отсутствовать или стоять на другом счётчике"
+    },
+    {
+      "priority": 3,
+      "action": "Проверить домен в настройках счётчика — должен совпадать с реальным URL",
+      "impact": "Несовпадение доменов = невидимый трафик"
+    },
+    {
+      "priority": 4,
+      "action": "Проверить статус и бюджет кампании 710165227 в UI Директа",
+      "impact": "Резкая остановка после 825 кликов — возможен исчерпанный бюджет"
+    }
+  ]
+}
