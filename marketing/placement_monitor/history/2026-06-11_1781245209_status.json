@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-06-12T09:20:00",
+  "date_from": "2026-06-05",
+  "date_to": "2026-06-11",
+  "counter_id": 109350250,
+  "goal_id": 566497705,
+  "goal_macro": "form_submit",
+  "campaign_ids": [
+    710165227
+  ],
+  "direct_status": "master_campaign_api_limited",
+  "rows": 352,
+  "recommendations": 1,
+  "metrika_goal": {
+    "ok": true,
+    "id": 566497705,
+    "name": "Отправка заявки (форма) ⭐",
+    "type": "action",
+    "macro_found": true
+  },
+  "direct_campaigns": {
+    "ok": true,
+    "configured_ids": [
+      710165227
+    ],
+    "visible": [],
+    "missing_ids": [
+      710165227
+    ],
+    "master_campaign_limited_ids": [
+      710165227
+    ],
+    "regular_missing_ids": []
+  },
+  "direct_message": "Direct API limited for master campaign: campaigns.get does not return the campaign. Reports API was queried with the configured CampaignId; use Metrika/manual UI export if rows are empty.",
+  "raw_rows": 356
+}
