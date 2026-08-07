@@ -24,6 +24,10 @@ Use this skill as the project scope guard for Yandex-related work in this reposi
 
 ## Yandex Direct Scope
 
+Two scope modes apply (mirrors `AGENTS.md` → "Scope modes"). Default is project-scoped; account-wide is opt-in only.
+
+**Default — project-scoped (`my-website`):**
+
 Allowed campaign IDs:
 
 - `710165227`
@@ -31,11 +35,16 @@ Allowed campaign IDs:
 Rules:
 
 - Always pass explicit `campaign_ids` or `ids`.
-- Never run account-wide Direct analysis for the shared account.
 - Never substitute a similar campaign by name.
 - Campaign `710165227` is a master campaign; Direct API `campaigns.get` can have limited visibility for it.
 - Do not replace campaign `710165227` with visible regular campaigns `710220828` or `710496114`.
-- If the user asks for "all campaigns", stop and ask them to confirm the project scope.
+
+**Account-wide mode (explicit opt-in):**
+
+- ALLOWED when the user explicitly requests it: new campaign creation, cross-project analysis, auditing all campaigns in the shared account, or work with a campaign outside the `my-website` set.
+- Any campaign in the shared Yandex account may be analyzed; the `710165227` default no longer restricts the run.
+- Must be confirmed interactively. Never start account-wide reports on your own initiative and never in cron/non-interactive contexts.
+- If the user asks for "all campaigns" without confirming the mode, stop and ask whether this is a project-scoped or account-wide run.
 
 ## Yandex Metrika Counters
 
@@ -128,7 +137,7 @@ Wordstat rules:
 - Treat all Yandex actions as read-only.
 - Do not create or edit campaigns.
 - Do not change bids, budgets, ads, strategies, goals, or counters.
-- Do not analyze unrelated campaigns from the shared Direct account.
+- Do not analyze unrelated campaigns from the shared Direct account unless account-wide mode is explicitly confirmed (see "Yandex Direct Scope").
 - If scope is ambiguous, stop and ask for clarification.
 - Always narrow reports by campaign, counter, domain, and date range.
 - Do not print secrets from `.env` files or other credential stores.

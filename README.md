@@ -138,6 +138,7 @@ npm run build
 
 - [`README.md`](docs/README.md) — полная документация проекта
 - [`AGENTS.md`](docs/AGENTS.md) — документация по агентам
+- [`career-profile.md`](docs/career-profile.md) — карьерное позиционирование, проверенные опорные кейсы и backlog усиления портфолио
 - [`CURSOR_COMMANDS.md`](docs/CURSOR_COMMANDS.md) — команды Cursor
 - [`CURSOR_SETUP.md`](docs/CURSOR_SETUP.md) — настройка Cursor
 - [`GIT_CREDENTIAL_MANAGER.md`](docs/GIT_CREDENTIAL_MANAGER.md) — менеджер учетных данных Git
@@ -168,7 +169,7 @@ HTML-страницы кейсов лежат в [`site-pages/`](site-pages/) (�
 
 - [`ai-assistant.html`](site-pages/ai-assistant.html) — Персональный ИИ-ассистент руководителя
 - [`blockchain-lab.html`](site-pages/blockchain-lab.html) — Блокчейн-лаборатория для промышленной телеметрии
-- [`carriers-platform.html`](site-pages/carriers-platform.html) — Платформа перевозчиков
+- [`carriers-platform.html`](site-pages/carriers-platform.html) — Слой автоматизации складской и транспортной логистики
 - [`holding-audit.html`](site-pages/holding-audit.html) — Аудит холдинга
 - [`pir-s.html`](site-pages/pir-s.html) — ПИР-Система
 - [`pseudonymizer.html`](site-pages/pseudonymizer.html) — Pseudonymizer MVP

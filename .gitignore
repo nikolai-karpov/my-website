@@ -58,7 +58,6 @@ htmlcov/
 *.bmp
 *.gif
 *.webm
-!assets/images/cases/blockchain-lab/*.jpg
 alt/
 alt/site-pages/case-studies/_*
 
@@ -68,3 +67,7 @@ alt/site-pages/case-studies/_*
 # Local drafts of AI-assistant case (manual deploy only)
 site-pages/case-studies/_draft-*.md
 site-pages/case-studies/_plan-*.md
+
+# Локальные рабочие директории инструментов и приватные заметки
+.kilo/
+networking/
