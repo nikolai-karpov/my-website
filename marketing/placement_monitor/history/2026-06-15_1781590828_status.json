@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-08-04T09:20:19",
-  "date_from": "2026-07-28",
-  "date_to": "2026-08-03",
+  "generated_at": "2026-06-16T09:20:17",
+  "date_from": "2026-06-09",
+  "date_to": "2026-06-15",
   "counter_id": 109350250,
   "goal_id": 566497705,
   "goal_macro": "form_submit",
   "campaign_ids": [
     710165227
   ],
-  "direct_status": "master_campaign_api_limited_no_report_rows",
-  "rows": 0,
+  "direct_status": "master_campaign_api_limited",
+  "rows": 3,
   "recommendations": 0,
   "metrika_goal": {
     "ok": true,
@@ -33,5 +33,5 @@
     "regular_missing_ids": []
   },
   "direct_message": "Direct API limited for master campaign: campaigns.get does not return the campaign. Reports API was queried with the configured CampaignId; use Metrika/manual UI export if rows are empty.",
-  "raw_rows": 0
+  "raw_rows": 3
 }
