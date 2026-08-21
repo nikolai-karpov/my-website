@@ -52,7 +52,6 @@ htmlcov/
 *.tar.bz2
 *.tar.xz
 *.tar.zst
-*.png
 *.jpg
 *.jpeg
 *.bmp
