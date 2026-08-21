@@ -1,4 +1,9 @@
 node_modules/
-assets/css/
+
+# Мёртвая SCSS-сборка и архивные снимки: код не участвует в сайте.
+legacy/
+alt/
+curs/
+
 dist/
 build/

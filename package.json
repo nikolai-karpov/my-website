@@ -28,8 +28,8 @@
     "build": "npm run sass:build && npm run purge:css",
     "prebuild": "echo '🚀 Запуск сборки...' && mkdir -p assets/css",
     "postbuild": "echo '✅ Сборка завершена. Проверьте assets/css/main.css'",
-    "lint:css": "stylelint legacy/assets/scss/**/*.scss",
-    "lint:css:fix": "stylelint legacy/assets/scss/**/*.scss --fix",
+    "lint:css": "stylelint \"assets/css/**/*.css\"",
+    "lint:css:fix": "stylelint \"assets/css/**/*.css\" --fix",
     "prepare": "husky",
     "dev": "concurrently \"npm run sass:watch\" \"live-server --port=8080 --open=/index.html\"",
     "serve": "live-server --port=8080 --open=/index.html",
@@ -57,9 +57,6 @@
   },
   "private": true,
   "lint-staged": {
-    "*.scss": [
-      "stylelint --fix"
-    ],
     "*.css": [
       "stylelint --fix"
     ]
