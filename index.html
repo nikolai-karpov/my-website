@@ -201,22 +201,32 @@
                 с React-клиентом, BFF на Node/TypeScript, GraphQL-слоем
                 Hasura и Docker-сборкой; интеграции по REST/GraphQL без
                 файлового обмена и без прямых SQL к чужим базам;
-                документация как часть продукта.
+                документация как часть продукта. Стек выбираю под контур, а
+                не под привычку: там, где систему разворачивают в закрытом
+                периметре без интернета, это серверный рендеринг на Python
+                и FastAPI, шесть зависимостей и образ, собираемый офлайн, —
+                вместо SPA, которую туда просто не донести.
               </p>
               <div class="pillar__tags">
                 <span class="tag">React</span>
                 <span class="tag">Node / BFF</span>
                 <span class="tag">Hasura · GraphQL</span>
+                <span class="tag">Python · FastAPI</span>
+                <span class="tag">SQLite</span>
                 <span class="tag">Docker</span>
                 <span class="tag">REST · контракты</span>
                 <span class="tag">1С API</span>
               </div>
             </div>
             <p class="pillar__anchor">
-              Опорный кейс — <a href="site-pages/pir-s.html">ПИР-Система
-              (pir-s.ru)</a> — продукт, который я придумал и довёл до
-              промышленной эксплуатации; страница про ИИ —
-              <a href="https://pir-s.ru/ai" target="_blank" rel="noopener">pir-s.ru/ai</a>.
+              Опорные кейсы — два продукта, которые я придумал и довёл до
+              внедрения на разных стеках:
+              <a href="site-pages/pir-s.html">ПИР-Система (pir-s.ru)</a> —
+              React + BFF + Hasura, в промышленной эксплуатации (страница про
+              ИИ — <a href="https://pir-s.ru/ai" target="_blank" rel="noopener">pir-s.ru/ai</a>),
+              и <a href="site-pages/devledger.html">DevLedger</a> — Python +
+              FastAPI + SQLite, MVP в пилоте: 38 тысяч строк и 1191 тест за
+              две недели, образ собирается офлайн под закрытый контур.
             </p>
           </article>
 
