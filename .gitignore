@@ -58,6 +58,10 @@ htmlcov/
 *.gif
 *.webm
 alt/
+
+# Legacy: мёртвая SCSS-сборка и архивные страницы. Всё, что реально
+# публиковалось, перенесено в site-pages/ — каталог можно удалять.
+legacy/
 alt/site-pages/case-studies/_*
 
 # Claude Code local state (worktrees, settings) — must not leak as gitlinks
