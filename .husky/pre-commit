@@ -1,5 +1,8 @@
-# Запускаем линтинг SCSS файлов перед коммитом
+# Линтинг живого CSS перед коммитом (assets/css/**/*.css).
 npm run lint:css
-# Проверка адаптива: отсутствие горизонтального overflow на мобильных
-# Требует одноразовой установки браузера: npx playwright install chromium
-npm run check:responsive
+
+# Проверка адаптива (check:responsive) намеренно НЕ запускается здесь:
+# она гоняет Playwright по 200+ страницам и добавляет ~6 минут к каждому
+# коммиту. Тот же прогон выполняется в CI —
+# .github/workflows/responsive-check.yml на push и pull_request в main.
+# Прогнать локально: npm run check:responsive
