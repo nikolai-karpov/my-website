@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f7f6f2"/>
+  <rect x="0" y="0" width="14" height="630" fill="#8a5a12"/>
+
+  <text x="86" y="92" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" letter-spacing="3" fill="#8a5a12">ОБЗОР · СЕНТЯБРЬ 2026</text>
+
+  <text x="86" y="196" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="62" font-weight="bold" fill="#1a1a16">Открытые модели</text>
+  <text x="86" y="268" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="62" font-weight="bold" fill="#1a1a16">догнали закрытые</text>
+
+  <text x="86" y="324" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="30" fill="#46453d">Что это значит для бизнеса</text>
+
+  <line x1="86" y1="382" x2="1114" y2="382" stroke="#e2e0d6" stroke-width="1"/>
+
+  <text x="86" y="452" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="46" font-weight="bold" fill="#6d4709">8 из 10</text>
+  <text x="86" y="486" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" fill="#74736a">моделей по нагрузке</text>
+  <text x="86" y="512" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" fill="#74736a">уже открытые</text>
+
+  <text x="452" y="452" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="46" font-weight="bold" fill="#6d4709">96%</text>
+  <text x="452" y="486" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" fill="#74736a">денег рынка</text>
+  <text x="452" y="512" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" fill="#74736a">у закрытых</text>
+
+  <text x="818" y="452" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="46" font-weight="bold" fill="#6d4709">60%</text>
+  <text x="818" y="486" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" fill="#74736a">цены закрытого</text>
+  <text x="818" y="512" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" fill="#74736a">лидера</text>
+
+  <text x="86" y="582" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="21" font-weight="bold" fill="#1a1a16">Николай Карпов</text>
+  <text x="290" y="582" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="19" fill="#74736a">архитектор ИИ-решений</text>
+</svg>
