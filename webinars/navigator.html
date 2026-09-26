@@ -860,7 +860,7 @@
         <tr><td>Где задаются модели</td><td>Глобальный конфиг хоста: <code>%USERPROFILE%\.config\kilo\kilo.jsonc</code>, ключи <code>model</code>, <code>small_model</code>, <code>subagent_model</code>, значение вида <code>&lt;провайдер&gt;/&lt;модель&gt;</code> — из списка моделей своего клиента, не угадывать<small>host-setup-windows.md, § 1</small> Путь на macOS — <code>~/.config/kilo/kilo.jsonc</code><small>документация Kilo, «Settings»; сверено 26.09.2026</small></td></tr>
         <tr><td>Ключ</td><td>Личный: не пересылают коллегам, не кладут в рабочую папку, не вставляют в промпты и на скриншоты<small>webinar-01, разд. 6, шаг 3</small></td></tr>
         <tr><td>Изображения</td><td>Нужна модель с поддержкой image input — её использует роль <a href="#role-vision">vision</a>. Без неё разбор PDF/DOCX останавливается в <code>WAITING_FOR_VISION</code> там, где vision обязателен<small>INSTALL-PARSER-WINDOWS.md; .kilo/agents/vision.md</small></td></tr>
-        <tr><td>Подписка и модели у коллег</td><td>[ПОСЛЕ ВЫБОРА ПОДПИСКИ] — открытый вопрос OQ-43<small>Webinars/open-questions.md</small></td></tr>
+        <tr><td>Подписка и модели у коллег</td><td>Пакет Alibaba: Qwen, DeepSeek, GLM, Kimi, есть модели для изображений. Ключ выдаёт Игорь, заявка через Алёну. Личная подписка Claude или GPT остаётся — роли подключаются и к ней<small>решение 23.09.2026 с Игорем; канон вебинара 1, блок 3.1 и «Ожидаемые вопросы»</small></td></tr>
       </tbody>
     </table>
     </div>
@@ -951,7 +951,7 @@
   <ol class="steps timeline">
     <li>
       <div class="step-title">Получите свою рабочую область и посмотрите, что в ней</div>
-      <p>Рабочая область — ваш репозиторий: его история начинается с <a href="#gold">Золотого стандарта</a>, сверху лежат ваши проекты. Репозиторий — источник истины: документы, правила, роли и навыки лежат здесь, а не в переписке и не в голове у агента.<small>kilo-canon/README.md</small></p>
+      <p>Рабочее место — каталог, корень которого — клон <a href="#gold">Золотого стандарта</a> только для чтения; ваши проекты и рефлексия подключены отдельными репозиториями в <code>projects/</code>. Репозитории — источник истины: документы, правила, роли и навыки лежат здесь, а не в переписке и не в голове у агента.<small>kilo-canon/README.md</small></p>
       <p>Начните с <a href="README.md">README.md</a> (из чего собрана область) и <a href="AGENTS.md">AGENTS.md</a> (правила помощника). Эта страница — навигация по ним, а не замена.</p>
     </li>
     <li>
@@ -1075,8 +1075,8 @@
     </article>
 
     <article class="tile">
-      <div class="tile-head"><svg class="ico"><use href="#i-folder"/></svg><h4>Что своё — рабочая область</h4></div>
-      <p><code>projects/&lt;проект&gt;/</code> — ваши проекты; <code>decisions/</code> — решения о размещении новых типов файлов; <code>Plans/</code> — планы; <code>reflection/</code> — установка рефлексии и записи об ошибках; <code>MEMORY.md</code> — память области.</p>
+      <div class="tile-head"><svg class="ico"><use href="#i-folder"/></svg><h4>Что своё — проекты и рефлексия</h4></div>
+      <p><code>projects/&lt;проект&gt;/</code> — репозиторий проекта: работа по проекту, его память <code>MEMORY.md</code> и решения <code>decisions/</code> в корне проекта, планы и промпты в <code>90-work-items/</code>. <code>projects/reflection/</code> — репозиторий рефлексии специалиста по всем его проектам, с памятью <code>MEMORY.md</code> для того, что относится ко всем проектам.</p>
       <p><code>CLAUDE.md</code> не хранится нигде: это инструкции конкретного хоста.<small>kilo-canon/README.md</small></p>
     </article>
 
@@ -1088,7 +1088,7 @@
 
     <article class="tile">
       <div class="tile-head"><svg class="ico"><use href="#i-pointer"/></svg><h4>Как используется</h4></div>
-      <p>Фраза «Работаем с <code>&lt;проект&gt;</code>» — помощник читает <code>MEMORY.md</code> и <code>README.md</code> области, README и паспорт проекта <code>99-governance/layout.json</code>, <code>findings.md</code>, <code>open-questions.md</code>, последние записи <code>reflection/</code> и первой строкой говорит, что прочитал.</p>
+      <p>Фраза «Работаем с <code>&lt;проект&gt;</code>» — помощник открывает проект, читает его память <code>MEMORY.md</code> и решения, паспорт <code>99-governance/layout.json</code>, <code>findings.md</code>, <code>open-questions.md</code> и первой строкой говорит, что прочитал.</p>
       <p>Без фразы: проект в <code>projects/</code> один — работает с ним; несколько — один вопрос со списком.<small>AGENTS.md, § 3</small></p>
     </article>
 
@@ -1214,8 +1214,8 @@
     <table class="flow">
       <thead><tr><th>Слово</th><th>Что это в проекте</th></tr></thead>
       <tbody>
-        <tr id="term-1"><td><b>Золотой стандарт</b></td><td>Репозиторий <code>kilo-canon</code>: общий для всех специалистов набор ролей, навыков, правил и инструментов в <code>.kilo/</code> и корневых файлах. Меняется только у владельца, в область приходит слиянием — <a href="#gold">подробнее</a></td></tr>
-        <tr id="term-2"><td><b>Рабочая область</b></td><td>Свой репозиторий специалиста: история начинается с Золотого стандарта, сверху — свои проекты, <code>decisions/</code>, <code>Plans/</code>, <code>reflection/</code>, <code>MEMORY.md</code></td></tr>
+        <tr id="term-1"><td><b>Золотой стандарт</b></td><td>Репозиторий <code>kilo-canon</code>: общий для всех специалистов набор ролей, навыков, правил и инструментов в <code>.kilo/</code> и корневых файлах. Меняется только у владельца; на рабочее место приходит обновлением <code>git pull --ff-only</code> — <a href="#gold">подробнее</a></td></tr>
+        <tr id="term-2"><td><b>Рабочее место</b></td><td>Каталог специалиста: корень — клон Золотого стандарта только для чтения, в <code>projects/</code> — репозитории своих проектов и рефлексии <code>projects/reflection/</code></td></tr>
         <tr id="term-3"><td><b>Паспорт проекта</b></td><td>Файл <code>projects/&lt;проект&gt;/99-governance/layout.json</code>: адреса разделов, исследования, шаблонов, релиза. Роли и навыки берут адреса из него</td></tr>
         <tr id="term-4"><td><b>Роль</b></td><td>Кто выполняет задачу и что ему позволено. Файл <code>.kilo/agents/&lt;имя&gt;.md</code>. Выбирается в начале работы</td></tr>
         <tr id="term-5"><td><b>Навык</b></td><td>Как делается задача такого типа: порядок, проверки, формат. Файл <code>.kilo/skills/&lt;имя&gt;/SKILL.md</code>. Подключается сам</td></tr>
@@ -1296,12 +1296,12 @@
   <dl class="msg-notes msg-dl"><dt>Когда применять</dt><dd>Пришёл PDF, DOCX, XML или картинка, и нужен машиночитаемый текст: новый документ регулятора или вендора, скан, схема, таблица из презентации. Путь к файлу обязателен — команда не ищет файл по названию</dd><dt>Что на выходе</dt><dd>Каталог прогона с файлом-кандидатом и отчётом проверок. Готовый результат вы затем размещаете рядом с оригиналом — <a href="#howto-digitize">разбор ниже</a></dd></dl>
 </article>
 <article class="msg cmd-card" id="cmd-package-review">
-  <div class="msg-to"><span class="msg-label">Кому · Исполнитель:</span> <span class="msg-exec"><a href="#role-business-analyst">business-analyst</a><small>команда проекта-примера, переносится в Золотой стандарт</small></span></div>
+  <div class="msg-to"><span class="msg-label">Кому · Исполнитель:</span> <span class="msg-exec"><a href="#role-business-analyst">business-analyst</a>, tz-writer, ft-writer<small>команда Золотого стандарта, <code>.kilo/command/package-review.md</code></small></span></div>
   <div class="msg-body"><code class="msg-text">/package-review &lt;комплект&gt;</code><button type="button" class="copy">Копировать</button></div>
   <dl class="msg-notes msg-dl"><dt>Когда применять</dt><dd>Старт нового проекта или новая порция материалов: надо понять, полон ли комплект, прежде чем по нему писать документ. Не для проверки готовой спецификации — для этого есть ревью БТ</dd><dt>Что на выходе</dt><dd>Перечень того, что есть, чего не хватает и что друг другу противоречит; находки записываются в файлы знаний</dd></dl>
 </article>
 <article class="msg cmd-card" id="cmd-source-analysis">
-  <div class="msg-to"><span class="msg-label">Кому · Исполнитель:</span> <span class="msg-exec"><a href="#role-business-analyst">business-analyst</a><small>команда проекта-примера, переносится в Золотой стандарт</small></span></div>
+  <div class="msg-to"><span class="msg-label">Кому · Исполнитель:</span> <span class="msg-exec"><a href="#role-business-analyst">business-analyst</a>, tz-writer, ft-writer, bt-writer, instruction-writer<small>команда Золотого стандарта, <code>.kilo/command/source-analysis.md</code></small></span></div>
   <div class="msg-body"><code class="msg-text">/source-analysis &lt;вопрос&gt;</code><button type="button" class="copy">Копировать</button></div>
   <dl class="msg-notes msg-dl"><dt>Когда применять</dt><dd>По ходу работы возник вопрос «а что говорит источник»: как устроена операция, есть ли требование, чем отличаются версии. Вопрос формулируйте своими словами, одной темой за раз</dd><dt>Что на выходе</dt><dd>Ответ со ссылками на файлы и строки, отдельно — что источник не говорит; факты и открытые вопросы уходят в файлы знаний</dd></dl>
 </article>
@@ -1720,7 +1720,7 @@ function skillLink(id) { return '<a href="#skill-' + id + '">' + id + '</a>'; }
 /* ---------- Группы (презентационные) ---------- */
 const ROLE_GROUPS = [
   { id: "docs",      title: "Документы проекта: ТЗ, ФТ, UC, UI, API", icon: "i-doc" },
-  { id: "analysis",  title: "Методика бизнес-требований",     icon: "i-compass" },
+  { id: "analysis",  title: "Бизнес-требования и инструкции к документам", icon: "i-compass" },
   { id: "review",    title: "Независимая проверка",          icon: "i-shield" },
   { id: "knowledge", title: "Знания и трассируемость",        icon: "i-graph" },
   { id: "documents", title: "Оцифровка, изображения, публикация", icon: "i-scan" },
@@ -1749,9 +1749,8 @@ const ROLES = [
     id: "business-analyst",
     group: "docs",
     mode: "primary",
-    desc: "Основной аналитик проекта ДБО: Use Case, описания UI, API и интеграции по навыкам use-case-preparation, ui-description, api-integration. Главный помощник и распорядитель работ: сам ведёт Use Case, UI, API и макеты проектов ДБО, подготовку БТ поручает роли bt-writer и принимает результат.",
+    desc: "Главный помощник аналитика: сам готовит Use Case, описания UI, API и интеграции (навыки use-case-preparation, ui-description, api-integration, figma), а остальную работу ведёт распорядителем — ставит задачу нужной роли (БТ — <a href=\"#role-bt-writer\">bt-writer</a>, инструкция к документу — <a href=\"#role-instruction-writer\">instruction-writer</a>, оцифровка, трассируемость, публикация, порядок репозитория, выгрузка) и принимает результат.",
     perms: "Порученные правки вносит сразу, без отдельного согласования diff, кроме <code>00-sources/</code> и <code>.kilo/</code>. Команды в терминале — с вашего подтверждения. Commit, push и публикация в Confluence — только по отдельному явному поручению. После создания документа сама зовёт reviewer.",
-    status: "в Золотом стандарте — главный помощник и распорядитель работ; редакция проекта-примера с подготовкой БТ в канон не перенесена: методика БТ Генбанка вошла 26.09.2026 ролью bt-writer",
     path: ".kilo/agents/business-analyst.md"
   },
   {
@@ -1771,12 +1770,22 @@ const ROLES = [
     path: ".kilo/agents/ft-writer.md"
   },
   {
-    id: "bt-instruction-writer",
+    id: "bt-writer",
     group: "analysis",
-    mode: "primary",
-    desc: "Методолог бизнес-анализа и проектировщик инструкций для ИИ-агентов — готовит и обновляет индивидуальные инструкции формирования БТ.",
-    status: MOVING,
-    path: ".kilo/agents/bt-instruction-writer.md"
+    mode: "all",
+    desc: "Готовит бизнес-требования (БТ) по одной за цикл: по шаблону проекта, утверждённой инструкции к документу и навыку bt-preparation, с обязательной проверкой reviewer по навыку bt-review до предъявления. Не для ТЗ, ФТ, Use Case и технического разбора API/XSD.",
+    calledBy: "вы — напрямую (тогда reviewer она зовёт сама) или business-analyst — поручением; в этом случае готовит черновик и возвращает вопросы распорядителю",
+    perms: "Правит файлы проекта, кроме <code>00-sources/</code> и <code>.kilo/</code>; команды — с вашего подтверждения. Недостающее не проектирует — пробел становится вопросом.",
+    path: ".kilo/agents/bt-writer.md"
+  },
+  {
+    id: "instruction-writer",
+    group: "analysis",
+    mode: "all",
+    desc: "Методист инструкций: пишет и актуализирует индивидуальную инструкцию подготовки одного документа по шаблону проекта (БТ, ФТ, ТЗ, UC и любой другой артефакт с шаблоном). Сам документ не пишет.",
+    calledBy: "вы — напрямую (тогда reviewer она зовёт сама) или business-analyst — поручением",
+    perms: "Правит файлы проекта, кроме <code>00-sources/</code> и <code>.kilo/</code>; одна инструкция за итерацию. Инструкция не разрешает создавать сам документ или менять его статус.",
+    path: ".kilo/agents/instruction-writer.md"
   },
   {
     id: "confluence",
@@ -1804,7 +1813,7 @@ const ROLES = [
     calledBy: "команда <code>/document-process</code> или роль с правом делегирования",
     warn: "Роль проекта-примера; в Золотом стандарте её нет (PACKAGE-MANIFEST.md: «отсутствуют в каноне»). В каноне оцифровку ведёт <a href=\"#role-parser_doc\">parser_doc</a>.",
     perms: "Пишет только в каталог прогона. Источники и принятые артефакты не меняет. Из других ролей может позвать только vlm.",
-    status: MOVING,
+    status: "роль проекта-примера; в Золотом стандарте её нет",
     path: ".kilo/agents/document-processor.md"
   },
   {
@@ -1823,7 +1832,7 @@ const ROLES = [
     desc: "Единственный канал записи знаний: факты, вопросы к источникам и к проекту, противоречия, память и ошибки в выделенных областях проекта.",
     calledBy: "рабочая роль по ходу задачи — отдельно запускать не нужно",
     perms: "Единственная роль, которой разрешено писать в файлы знаний — факты, вопросы, противоречия, память, ошибки. Больше ничего не трогает.",
-    status: MOVING,
+    status: "роль проекта-примера; в Золотом стандарте её нет",
     path: ".kilo/agents/knowledge-curator.md"
   },
   {
@@ -1846,17 +1855,16 @@ const ROLES = [
     id: "reflector",
     group: "reflection",
     mode: "all",
-    desc: "Рефлектор проекта: фиксирует события, формирует итоги сессии, дня, недели или месяца и накопительный план улучшений среды и методики.",
-    perms: "Пишет только в <code>reflection/</code>, <code>journal/</code> и план улучшений в <code>Plans/</code>; терминал не запускает. При старте сессии роли-исполнители зовут её для догона пропущенных периодов.",
+    desc: "Рефлектор специалиста: фиксирует события, формирует итоги сессии, дня, недели или месяца, управленческие инсайты и накопительный план улучшений среды и методики. Рефлексия — одна на все проекты специалиста.",
+    perms: "Пишет только в свой репозиторий рефлексии <code>projects/reflection/</code> (события, итоги, журнал, память специалиста <code>MEMORY.md</code>). При старте сессии роли-исполнители зовут её для догона пропущенных периодов.",
     path: ".kilo/agents/reflector.md"
   },
   {
     id: "repo-keeper",
     group: "env",
     mode: "all",
-    desc: "Смотритель репозитория: проверяет порядок в файлах, каталогах, индексах и ветках, докладывает расхождения и чинит только явно разрешённое. Ничего не додумывает.",
+    desc: "Смотритель репозитория проекта: проверяет порядок в файлах, каталогах, README, ветках и рабочих копиях по правилам репозитория и паспорту раскладки, докладывает расхождения с доказательствами и предлагает починку. Не для переноса памяти и рефлексии к канону (это canon-migrator) и не для раскладки каталогов (это layout-builder).",
     perms: "Состояние репозитория смотрит свободно, любое изменение — только с вашего подтверждения. Содержание документов не оценивает.",
-    status: MOVING,
     path: ".kilo/agents/repo-keeper.md"
   },
   {
@@ -1874,7 +1882,6 @@ const ROLES = [
     mode: "all",
     desc: "Хранитель трассируемости: собирает матрицы связей между артефактами по навыку и конфигурации проекта, проверяет целостность связей и докладывает расхождения. Ничего не додумывает и не чинит без поручения.",
     perms: "Пишет только в каталог трассируемости и с подтверждением. Найденные расхождения докладывает, но не чинит.",
-    status: MOVING,
     path: ".kilo/agents/traceability.md"
   },
   {
@@ -1883,7 +1890,7 @@ const ROLES = [
     mode: "subagent",
     desc: "Разбор одного локального изображения или отрендеренной страницы PDF моделью, подключённой сейчас в Kilo; провайдер и модель в проекте не закреплены.",
     calledBy: "parser_doc по навыку document-digitize",
-    warn: "Роль Золотого стандарта — единственный канал чтения изображений для parser_doc; vlm проекта-примера в канон не переносится. Нужна модель с поддержкой изображений: без неё роль возвращает только <code>WAITING_FOR_VISION</code>.",
+    warn: "Роль Золотого стандарта — канал чтения изображений для parser_doc; <a href=\"#role-vlm\">vlm</a> взаимозаменяема с ней. Нужна модель с поддержкой изображений: без неё роль возвращает только <code>WAITING_FOR_VISION</code>.",
     perms: "Ничего не правит, не запускает и файлов не пишет. Нечитаемое помечает <code>[НЕЧИТАЕМО]</code>, сомнение — <code>UNCERTAIN</code>.",
     path: ".kilo/agents/vision.md"
   },
@@ -1891,12 +1898,27 @@ const ROLES = [
     id: "vlm",
     group: "documents",
     mode: "subagent",
-    desc: "Узкоспециализированный разбор изображений: смотрит картинку и возвращает машиночитаемое описание. Сам по себе документ не оцифровывает.",
-    calledBy: "document-processor по контракту document-digitize, отдельными вызовами STRUCTURE и TRANSCRIBE",
-    warn: "Роль проекта-примера; в Золотом стандарте её нет — там <a href=\"#role-vision\">vision</a>. Не вызывайте напрямую: при прямом обращении теряется весь порядок оцифровки — выбор формата, конвертация, проверки и запись в каталог прогона. Нужен разбор документа или схемы — запускайте <code>/document-process</code>.",
+    desc: "Визуальная роль, взаимозаменяемая с vision: те же правила, модель другого вендора (выбирается на хосте). Вызывается вместо vision или при её отказе по модели или провайдеру.",
+    calledBy: "parser_doc и другие роли — вместо vision или при её отказе",
     perms: "Ничего не правит и не запускает: только смотрит изображение и возвращает разбор.",
-    status: MOVING,
     path: ".kilo/agents/vlm.md"
+  },
+  {
+    id: "canon-migrator",
+    group: "env",
+    mode: "all",
+    desc: "Приводит рабочее место к канону: находит в репозитории проекта или рефлексии расхождения (память не в <code>MEMORY.md</code>, <code>92-reflection/</code> в проекте, установка рефлексии старой схемы) и переносит найденное на место. Одна цель за запуск.",
+    perms: "Пишет только в <code>projects/</code>, не в <code>00-sources/</code> и не в <code>.kilo/</code>; перенос — только по вашему «да». Не коммитит и не выгружает.",
+    path: ".kilo/agents/canon-migrator.md"
+  },
+  {
+    id: "workspace-migrator",
+    group: "env",
+    mode: "subagent",
+    desc: "Разовая техническая роль: переводит прежнюю рабочую область (форк канона с <code>upstream</code>) на новое рабочее место копированием — проекты, память, решения, планы, промпты, рефлексия. Исходная область не меняется.",
+    calledBy: "только по поручению владельца канона",
+    perms: "Пишет только в <code>projects/</code>; commit, push, удаление и перенос файлов запрещены.",
+    path: ".kilo/agents/workspace-migrator.md"
   }
 ];
 
@@ -1904,8 +1926,8 @@ const ROLES = [
 const SKILLS = [
   { id: "analysis-review", group: "review", desc: "Независимая проверка документов и доказательной базы.", path: ".kilo/skills/analysis-review/SKILL.md" },
   { id: "api-integration", group: "docs", desc: "Описание методов API и объектов, проверка соответствия параметров UI, backend и БФТ. Для API проектов ДБО; внешние форматы коннекторов описываются в ТЗ-Форматах.", path: ".kilo/skills/api-integration/SKILL.md" },
-  { id: "bt-preparation", group: "bt", desc: "Подготовка или доработка одной БТ по индивидуальной инструкции из реестра, актуальным источникам, архитектуре и общему шаблону. Не заменяет независимое ревью.", status: MOVING_SKILL, path: ".kilo/skills/bt-preparation/SKILL.md" },
-  { id: "bt-review", group: "review", desc: "Независимая проверка одной БТ или её изменений по индивидуальной инструкции, источникам, архитектуре и принятым проектным решениям. Проверяет бизнес-границы, структуру, трассировку и диаграммы; возвращает доказательные находки без правок документов.", status: MOVING_SKILL, path: ".kilo/skills/bt-review/SKILL.md" },
+  { id: "bt-preparation", group: "bt", desc: "Подготовка или доработка одной БТ по индивидуальной инструкции из реестра, актуальным источникам, архитектуре и общему шаблону. Не заменяет независимое ревью.", path: ".kilo/skills/bt-preparation/SKILL.md" },
+  { id: "bt-review", group: "review", desc: "Независимая проверка одной БТ или её изменений по индивидуальной инструкции, источникам, архитектуре и принятым проектным решениям. Проверяет бизнес-границы, структуру, трассировку и диаграммы; возвращает доказательные находки без правок документов.", path: ".kilo/skills/bt-review/SKILL.md" },
   { id: "confluence", group: "env", desc: "Чтение страниц корпоративного Confluence по ссылке из задания и публикация статьи из Markdown-источника в указанное пространство. Не для подготовки самого документа и не для пространства, не указанного в задании. На хосте нужны MCP-сервер, персональный токен и VPN — см. <code>.kilo/references/host-setup-windows.md</code>.", path: ".kilo/skills/confluence/SKILL.md" },
   { id: "devops", group: "layout", desc: "Синхронизация репозитория с удалённым origin (fetch, pull, push): проверенный SSH-ключ и типовые ошибки pull/push. Загружать до первой git-команды к remote.", status: "навык проекта-примера; в Золотом стандарте его нет и не переносится: синхронизацию там ведёт роль devops по HTTPS с токеном (canon_update_check.py, pull --ff-only). SSH не используется", path: ".kilo/skills/devops/SKILL.md" },
   { id: "document-digitize", group: "digitize", desc: "Проверяемая оцифровка локальных PDF/DOCX, опись и подготовка к техническому анализу; XML/XSD-валидация. Незавершённые обязательные возможности блокируют полный выпуск; простое чтение названного фрагмента навыка не требует.", path: ".kilo/skills/document-digitize/SKILL.md" },
@@ -1922,7 +1944,7 @@ const SKILLS = [
   { id: "skill-creator", group: "env", desc: "Проектирование, создание, проверка и обновление навыков Kilo Code (SKILL.md), в том числе проверка description и структуры ресурсов. Не вместо выполнения задачи существующим навыком.", path: ".kilo/skills/skill-creator/SKILL.md" },
   { id: "source-verification", group: "review", desc: "Проверка источников, гипотез, противоречий и трассировки требований.", path: ".kilo/skills/source-verification/SKILL.md" },
   { id: "technical-analysis", group: "research", desc: "Анализ источников и подготовка технической документации с трассировкой фактов и контролем блокеров: бизнес-требования, ТЗ/ФТ, сценарии, доменная модель, API — после разбора входных документов.", path: ".kilo/skills/technical-analysis/SKILL.md" },
-  { id: "traceability-matrix", group: "research", desc: "Сборка и проверка сводной матрицы трассируемости требований по цепочке уровней, объявленной в конфигурации traceability-chain.json проекта. Правила, формат и проверки — здесь; роль traceability только исполняет.", status: MOVING_SKILL, path: ".kilo/skills/traceability-matrix/SKILL.md" },
+  { id: "traceability-matrix", group: "research", desc: "Сборка и проверка сводной матрицы трассируемости требований по цепочке уровней, объявленной в конфигурации traceability-chain.json проекта. Правила, формат и проверки — здесь; роль traceability только исполняет.", path: ".kilo/skills/traceability-matrix/SKILL.md" },
   { id: "tz-fssp-mfo", group: "docs", desc: "Профиль одного проекта — только <code>fssp_PKO_MFO</code>, к другим проектам не применяется: настройки сборки ТЗ по форматам ФССП ↔ КО/МФО, карта входов, локальные решения, регрессионные проверки. Работает с ролью tz-writer.", path: ".kilo/skills/tz-fssp-mfo/SKILL.md" },
   { id: "tz-osnovnoe-rs-connect", group: "docs", desc: "Черновик основного ТЗ модуля RS-Connect для обмена, где госорган инициирует запрос, а банк предоставляет сведения, — по подтверждённым ТЗ-Форматам, ФТ и XSD. Не для ТЗ-Форматов, ФТ и варианта «госорган — поставщик».", path: ".kilo/skills/tz-osnovnoe-rs-connect/SKILL.md" },
   { id: "ui-description", group: "docs", desc: "Описание пользовательского интерфейса по регламенту подготовки Use Case и описания UI и правилам каталога описаний UI проекта.", path: ".kilo/skills/ui-description/SKILL.md" },
@@ -1936,7 +1958,7 @@ const TASKS = [
   {
     task: "Подготовить или доработать одну БТ",
     prompt: "Подготовь БТ-&lt;номер&gt; «&lt;название&gt;»",
-    you: roleLink("business-analyst"),
+    you: roleLink("bt-writer") + " — напрямую; или " + roleLink("business-analyst") + ", который поручит БТ ей сам",
     under: roleLink("reviewer") + " — независимую проверку исполнитель запускает сам, просить об этом не нужно",
     skill: skillLink("bt-preparation") + " + " + skillLink("bt-review"),
     notes: [
@@ -1949,14 +1971,14 @@ const TASKS = [
     ]
   },
   {
-    task: "Спроектировать или обновить инструкцию формирования БТ",
+    task: "Спроектировать или обновить инструкцию к документу (БТ, ФТ, ТЗ, UC)",
     prompt: "Обнови инструкцию формирования для БТ-&lt;номер&gt;",
-    you: roleLink("bt-instruction-writer"),
-    under: "—",
+    you: roleLink("instruction-writer"),
+    under: roleLink("reviewer") + " — при прямом вызове роль зовёт его сама",
     skill: "—",
     notes: [
       { icon: "i-compass", label: "Когда запускать",
-        text: "До написания самой БТ, если инструкции для неё ещё нет или она устарела: изменился источник, приняли новое проектное решение, на приёмке прошлой БТ всплыло правило, которое нужно закрепить на будущее." },
+        text: "До написания самого документа (в примере — БТ), если инструкции для него ещё нет или она устарела: изменился источник, приняли новое проектное решение, на приёмке прошлой БТ всплыло правило, которое нужно закрепить на будущее." },
       { icon: "i-check", label: "Что получите",
         text: "Файл инструкции в <code>90-work-items/instruction/</code> — по нему потом собирается БТ. Это методический документ, а не требование: сам по себе он ничего не описывает про продукт." }
     ]
@@ -2031,8 +2053,8 @@ const TASKS = [
   {
     task: "Исследовать вопрос по источникам",
     prompt: "/source-analysis &lt;вопрос своими словами&gt;",
-    you: "готовая команда <code>/source-analysis</code> (пример проекта)",
-    under: roleLink("business-analyst") + ", запись фактов — " + roleLink("knowledge-curator"),
+    you: "готовая команда <code>/source-analysis</code> (Золотой стандарт)",
+    under: "текущая роль с правом записи (" + roleLink("business-analyst") + ", писатели документов); факты — в файлы исследования проекта, в проекте-примере — через " + roleLink("knowledge-curator"),
     skill: skillLink("technical-analysis") + ", " + skillLink("source-verification"),
     notes: [
       { icon: "i-compass", label: "Когда запускать",
@@ -2042,8 +2064,8 @@ const TASKS = [
   {
     task: "Проверить состав входящего комплекта",
     prompt: "/package-review &lt;путь к каталогу с комплектом&gt;",
-    you: "готовая команда <code>/package-review</code> (пример проекта)",
-    under: roleLink("business-analyst") + ", запись — " + roleLink("knowledge-curator"),
+    you: "готовая команда <code>/package-review</code> (Золотой стандарт)",
+    under: "текущая роль с правом записи (" + roleLink("business-analyst") + ", tz-writer, ft-writer); доказательства — в файлы исследования проекта, в проекте-примере — через " + roleLink("knowledge-curator"),
     skill: skillLink("document-package-review"),
     notes: [
       { icon: "i-compass", label: "Когда запускать",
@@ -2116,7 +2138,7 @@ const TASKS = [
     skill: "—",
     notes: [
       { icon: "i-folder", label: "Куда попадёт запись",
-        text: "В Золотом стандарте: подтверждённые факты — <code>findings.md</code>, пробелы — <code>open-questions.md</code>, рассуждения — <code>research-notes.md</code> в каталоге <code>research_root</code> паспорта; то, что нужно в следующей сессии, — строкой в <code>MEMORY.md</code>, свои ошибки — в <code>reflection/</code>. Пример проекта: адреса перечислены в <code>.kilo/knowledge-layout.json</code>." }
+        text: "В Золотом стандарте: подтверждённые факты — <code>findings.md</code>, пробелы — <code>open-questions.md</code>, рассуждения — <code>research-notes.md</code> в каталоге <code>research_root</code> паспорта; то, что нужно в следующей сессии, — строкой в <code>MEMORY.md</code> проекта, свои ошибки — в <code>projects/reflection/</code>. Пример проекта: адреса перечислены в <code>.kilo/knowledge-layout.json</code>." }
     ]
   },
   {
@@ -2173,13 +2195,13 @@ const TASKS = [
   },
   {
     task: "CI, git, выгрузка своей работы",
-    prompt: "Выгрузи накопленные коммиты на сервер",
+    prompt: "Выгрузи работу по проекту",
     you: roleLink("devops"),
     under: "—",
     skill: "без навыка: роль devops, раздел «Выгрузка работы» (в проекте-примере — " + skillLink("devops") + ")",
     notes: [
       { icon: "i-compass", label: "Когда запускать",
-        text: "В конце рабочего куска: зафиксировать сделанное и выгрузить. В коммит своей области идёт только своя часть — <code>projects/</code>, <code>decisions/</code>, <code>Plans/</code>, <code>reflection/</code>, <code>MEMORY.md</code>; общая часть не выгружается." },
+        text: "В конце рабочего куска: зафиксировать сделанное и выгрузить. Каждый проект <code>projects/&lt;проект&gt;/</code> и рефлексия <code>projects/reflection/</code> — отдельные репозитории; выгрузка — по вашей просьбе, по одному репозиторию. Корень — клон канона, из него ничего не выгружается." },
       { icon: "i-alert", label: "Если push отклонён",
         text: "Значит, на сервере уже есть чужие коммиты. Это штатная ситуация: нужно слияние, и его выполняет та же роль — отдельным поручением «влей локальные изменения, при необходимости проведи слияние». Не пересоздавайте файлы вручную и не заводите вторую ветку." },
       { icon: "i-alert", label: "Если нет связи",
@@ -2199,13 +2221,13 @@ const TASKS = [
   },
   {
     task: "Рефлексия сессии, дня, недели, месяца",
-    prompt: "Подведи итог сессии",
+    prompt: "Рефлексия за сегодня",
     you: roleLink("reflector"),
     under: "—",
     skill: skillLink("reflection-synthesis") + ", " + skillLink("session-audit"),
     notes: [
       { icon: "i-compass", label: "Когда запускать",
-        text: "Итог — когда попросите: в конце сессии или дня, если есть что зафиксировать: принятое решение, ошибка, изменившийся порядок работы. Кроме того, при старте сессии роли-исполнители зовут рефлектора догнать пропущенные периоды — с бюджетом, на основную работу это не влияет. Записи рефлексии — архив и сырьё для плана улучшений в <code>Plans/</code>: на вход сборки и проверки документов они не идут." }
+        text: "Итог — когда попросите: в конце сессии или дня, если есть что зафиксировать: принятое решение, ошибка, изменившийся порядок работы. Кроме того, при старте сессии роли-исполнители зовут рефлектора догнать пропущенные периоды — с бюджетом, на основную работу это не влияет. Записи рефлексии лежат в <code>projects/reflection/</code> — это архив и сырьё для плана улучшений; на вход сборки и проверки документов они не идут. Итог недели или месяца просят так же: «Подведи итог недели»." }
     ]
   }
 ];
