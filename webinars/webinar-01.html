@@ -166,6 +166,19 @@
   .agenda td { padding: 7px 12px; border-bottom: 1px solid var(--line); vertical-align: middle; }
   .agenda td:first-child { color: var(--muted); white-space: nowrap; width: 90px; }
   .agenda td:last-child { white-space: nowrap; width: 140px; text-align: right; }
+  .agenda.roles td:first-child { color: inherit; white-space: normal; width: auto; }
+  .agenda.roles td:last-child { white-space: nowrap; width: auto; text-align: left; color: var(--muted); }
+  .agenda.roles code { font-size: 19px; }
+  .agenda.cmp td:first-child { white-space: nowrap; width: 110px; }
+  .agenda.cmp td:last-child { white-space: normal; width: auto; text-align: left; }
+  .agenda.cmp td:nth-child(2), .agenda.cmp td:nth-child(3) { width: 45%; vertical-align: top; }
+  .agenda.duo { font-size: 18px; }
+  .agenda.duo td { vertical-align: top; padding: 9px 10px; line-height: 1.3; }
+  .agenda.duo td:first-child { white-space: nowrap; width: 70px; color: var(--muted); font-weight: 500; }
+  .agenda.duo td:last-child { white-space: normal; width: auto; text-align: left; }
+  .agenda.duo th { padding: 4px 10px 8px; text-align: left; font-size: 19px; font-weight: 500; color: var(--green); border-bottom: 2px solid var(--green); }
+  .agenda.duo code { font-size: 17px; }
+  .agenda.cmp th { padding: 4px 12px 8px; text-align: left; font-size: 20px; font-weight: 500; color: var(--green); border-bottom: 2px solid var(--green); }
   .agenda td:last-child span { display: inline-block; padding: 2px 12px; border-radius: 999px; font-size: 15px; font-weight: 700; }
   .agenda .nik span { background: var(--who-nik); color: var(--dark); }
   .agenda .alena span { background: var(--who-alena); color: var(--dark); }
@@ -291,7 +304,7 @@
     <div class="card"><h3>Цели</h3><p>Себестоимость разработки изменилась — либо мы её меняем, либо не встраиваемся в рынок. Задач приходит вдвое больше, чем закрываем.</p><p>Задача — чтобы аналитики стали быстрее и эффективнее.</p></div>
     <div class="card"><h3>Польза для аналитиков</h3><p>Навыки, над которыми мы сейчас работаем, по значению сравнимы с приходом компьютеров и интернета. Кто их проигнорировал — выпал из рынка. Кто освоил — ушёл далеко вперёд конкурентов.</p></div>
     <div class="card"><h3>Польза для компании</h3><p>Сегодня опыт аналитика живёт у него в голове и дальше не расходится. Мы настраиваем горизонтальное распространение опыта: то, чего добился один, работает у всех.</p><p>Рефлексия в конце дня переводит этот опыт в записи: ошибка → решение → правило. Каждый следующий аналитик и каждая следующая сессия агента стартуют не с нуля, а с накопленного.</p><p>На этих записях строится корпоративный ИИ, который знает наш контекст, наши документы и наши грабли — вместо покупных синтетических данных.</p></div>
-    <div class="card"><h3>Сроки и ожидания</h3><div class="hold">сроки внедрения — текст Алёны</div></div>
+    <div class="card"><h3>Сроки и ожидания</h3><p>Сегодня — показ. На этой неделе — разворачиваете у себя по инструкции «Как начать». К следующей встрече — первая задача выполнена, результат и время записаны.</p></div>
   </div>
   <aside class="notes">Пункты — по программе Алёны (предложение, блок 1). Содержание заполнит Алёна. По желанию — свой случай из работы (сюжет 1.3 предложения).</aside>
 </section>
@@ -328,8 +341,14 @@
     <div class="card"><h3>Решения остаются за вами</h3><p>аналитические решения и приёмку по-прежнему принимает аналитик</p></div>
   </div>
   <p style="font-size:24px">Схемы и скриншоты — тоже источник: в пакете есть модели, которые переводят картинки в машиночитаемый вид.</p>
-  <div class="hold">2–3 типовые задачи, где инструмент уже работает на наших проектах — одной строкой каждая</div>
-  <aside class="notes">Vision-модели в китайском пакете — встреча 25.09; сверить с выбранной подпиской (OQ-43).</aside>
+  <p style="font-size:24px;margin-top:18px"><b>Уже работает на наших проектах:</b></p>
+  <ul>
+    <li>Регуляторика из PDF — в машиночитаемый вид</li>
+    <li>Сверка РП ВС, XSD и ТЗ-Форматы: расхождения отдельно от вопросов</li>
+    <li>Требования к интерфейсу по макетам Figma и БФТ, журнал расхождений по методам</li>
+    <li>Диаграмма Activity по готовым требованиям — агент строит сам</li>
+  </ul>
+  <aside class="notes">Vision-модели есть в пакете Alibaba (решение 23.09 с Игорем).</aside>
 </section>
 
 <section class="slide" data-title="2.3 Ограничения и риски" data-who="Николай">
@@ -361,17 +380,32 @@
   <aside class="notes">Ждать 30 секунд, ответы не комментировать. Текст для чата — в каноне, блок 2.4.</aside>
 </section>
 
-<section class="slide" data-title="2.5 От чего зависит качество" data-who="Николай">
-  <h2>От чего зависит качество результата</h2>
-  <div class="grid" style="grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:30px">
-    <div class="card"><h3><span class="n">01</span></h3><p>как поставлена задача</p></div>
-    <div class="card"><h3><span class="n">02</span></h3><p>какой собран контекст</p></div>
-    <div class="card"><h3><span class="n">03</span></h3><p>какие правила действуют</p></div>
-    <div class="card"><h3><span class="n">04</span></h3><p>какие инструменты подключены</p></div>
-    <div class="card"><h3><span class="n">05</span></h3><p>как аналитик проверяет результат</p></div>
+<section class="slide" data-title="2.5 Три фундамента" data-who="Николай">
+  <h2>Три фундамента работы с ИИ</h2>
+  <svg class="loop" viewBox="0 0 1080 200" width="1080" height="200" aria-label="Цикл: входные данные, агент, результат, обратная связь аналитика, рефлексия, инструкции">
+    <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#2C2C2C"/></marker></defs>
+    <g font-family="inherit" font-size="22" fill="#2C2C2C" text-anchor="middle">
+      <rect x="20" y="20" width="250" height="56" rx="12" fill="#3ECE5F"/><text x="145" y="55" fill="#fff" font-weight="500">1 · Входные данные</text>
+      <rect x="415" y="20" width="250" height="56" rx="12" fill="#F2F2F2"/><text x="540" y="55">Агент</text>
+      <rect x="810" y="20" width="250" height="56" rx="12" fill="#F2F2F2"/><text x="935" y="55">Результат</text>
+      <rect x="810" y="124" width="250" height="56" rx="12" fill="#3ECE5F"/><text x="935" y="159" fill="#fff" font-weight="500">2 · Обратная связь</text>
+      <rect x="415" y="124" width="250" height="56" rx="12" fill="#3ECE5F"/><text x="540" y="159" fill="#fff" font-weight="500">3 · Рефлексия</text>
+      <rect x="20" y="124" width="250" height="56" rx="12" fill="#F2F2F2"/><text x="145" y="159">Инструкции и правила</text>
+    </g>
+    <g stroke="#2C2C2C" stroke-width="2.5" fill="none" marker-end="url(#arr)">
+      <path d="M270 48 H405"/><path d="M665 48 H800"/>
+      <path d="M935 76 V114"/>
+      <path d="M810 152 H675"/><path d="M415 152 H280"/>
+      <path d="M145 124 V86"/>
+    </g>
+  </svg>
+  <div class="grid g3" style="margin-top:22px">
+    <div class="card"><h3><span class="n">1</span>Данные</h3><p>Что не попало в контекст — того для модели нет. Источники — в проект, версия зафиксирована.</p></div>
+    <div class="card"><h3><span class="n">2</span>Обратная связь</h3><p>Плох результат — правим не результат, а постановку или инструкцию. Запрет — через причину, не через «убери».</p></div>
+    <div class="card"><h3><span class="n">3</span>Рефлексия</h3><p>Вечером <code>reflector</code> переводит день в правила. Следующая сессия стартует с накопленного.</p></div>
   </div>
-  <p class="lead"><b>Правила и инструкции строим фундаментально.</b> Модель можно сменить: Kilo Code переключает модель под задачу. Правила остаются.</p>
-  <aside class="notes">Пять факторов — дословно из программы (раздел 2). Позиция Николая 25.09. Признак закрытия: в чате оба варианта ответа, ведущий связал их с пятью факторами.</aside>
+  <p class="lead" style="margin-top:20px"><b>Правила и инструкции строим фундаментально.</b> Модель можно сменить: Kilo Code переключает модель под задачу. Правила остаются.</p>
+  <aside class="notes">Заменил «пять факторов» (программа, раздел 2) на три фундамента — 26.09. Позиция Николая 25.09. Ход 3 и ход 4 банка кейсов — устно, одной фразой каждый. Алёна на слайде 23 показывает этот цикл на живом кейсе. Признак закрытия: в чате оба варианта ответа, ведущий связал их с тремя фундаментами.</aside>
 </section>
 
 <section class="slide dark chat" data-title="Вопросы по блоку 2" data-who="все">
@@ -395,7 +429,7 @@
     <div class="arrow">→</div>
     <div class="node"><b>Kilo Code</b><span>помощник внутри VS Code</span></div>
     <div class="arrow">→</div>
-    <div class="node"><b>Модели</b><span>пакет китайских моделей <span class="hold small" style="display:inline-block;padding:0 8px;margin-top:6px">название пакета (OQ-43)</span></span></div>
+    <div class="node"><b>Модели</b><span>пакет Alibaba: Qwen, DeepSeek, GLM, Kimi — есть модели для картинок</span></div>
   </div>
   <div class="under"><b>Git</b> — история работы и способ делиться ею между аналитиками и проектами</div>
   <aside class="notes">Состав — программа 3.1 и встреча 25.09. Модели: «их достаточно для нашего контекста» (D-11).</aside>
@@ -416,15 +450,17 @@
 
 <section class="slide" data-title="3.3 Навигатор" data-who="Николай">
   <h2>Навигатор по ролям и навыкам</h2>
-  <p style="font-size:24px">Какие роли, какие навыки и с какой команды начинать каждой ролью. Лежит внутри Золотого стандарта — будет у каждого.</p>
-  <div class="grid g4" style="margin:12px 0 24px">
-    <div class="card"><p><b>ФТ</b></p></div>
-    <div class="card"><p><b>Пользовательские сценарии</b></p></div>
-    <div class="card"><p><b>Описание UI</b></p></div>
-    <div class="card"><p><b>API-контракты</b></p></div>
-  </div>
-  <div class="hold">какую роль показываем и её первая команда — по обновлённому навигатору</div>
-  <aside class="notes">D-08. Здесь переключиться на живой навигатор. Пересказывать его не нужно — смотрят в удобное время.</aside>
+  <p style="font-size:24px">Полный навигатор — какие роли, какие навыки, с какой команды начинать — будет у каждого внутри Золотого стандарта и по адресу <span class="hold small" style="display:inline-block;padding:0 8px">ссылка</span>. Здесь — кого звать чаще всего.</p>
+  <table class="agenda roles" style="margin-top:18px">
+    <tr><td>БТ по регуляторике — проекты ДБО</td><td><code>bt-writer</code></td><td>«Работаем с &lt;проект&gt;»</td></tr>
+    <tr><td>Use Case, UI, API — проекты ДБО</td><td><code>business-analyst</code></td><td>«Работаем с &lt;проект&gt;»</td></tr>
+    <tr><td>ТЗ и ТЗ-Форматы — коннекторы</td><td><code>tz-writer</code></td><td>«Работаем с &lt;проект&gt;»</td></tr>
+    <tr><td>ФТ со смежными системами</td><td><code>ft-writer</code></td><td>«Работаем с &lt;проект&gt;»</td></tr>
+    <tr><td>Рефлексия в конце дня</td><td><code>reflector</code></td><td>«Рефлексия за сегодня»</td></tr>
+    <tr><td>Выгрузить работу в Git, обновить канон</td><td><code>devops</code></td><td>«Выгрузи работу по проекту»</td></tr>
+    <tr><td>Структура нового проекта</td><td><code>layout-builder</code></td><td>«Заведи раскладку проекта &lt;имя&gt;»</td></tr>
+  </table>
+  <aside class="notes">D-08. Роль bt-writer в канон — обязательство до 29.09 (по правилам формирования БТ Генбанка). Здесь переключиться на живой навигатор. Пересказывать его не нужно — смотрят в удобное время.</aside>
 </section>
 
 <section class="slide dark chat" data-title="3.3 Вопрос в чат" data-who="Николай">
@@ -450,7 +486,13 @@
     <div class="card"><h3>Confluence</h3><p>читает страницу по ссылке из задания и публикует статью в указанное пространство</p></div>
     <div class="card"><h3>Figma</h3><p>только читает макеты</p></div>
   </div>
-  <div class="hold">чем живые корпоративные источники отличаются от материалов, загруженных в рабочее пространство (программа 3.4)</div>
+  <table class="agenda cmp">
+    <tr><th></th><th>Загружено в проект (3.4)</th><th>Живые системы (MCP)</th></tr>
+    <tr><td>Что это</td><td>снимок: версия и дата в реестре источников</td><td>читается в момент задачи по ссылке из задания</td></tr>
+    <tr><td>Плюс</td><td>результат воспроизводим, работает без VPN</td><td>всегда актуально</td></tr>
+    <tr><td>Минус</td><td>устаревает, надо обновлять руками</td><td>нужен VPN и токен; агент ничего не сохраняет</td></tr>
+    <tr><td>Правило</td><td>регуляторика, вендорские документы, ТЗ заказчика</td><td>страницы проекта в Confluence, макеты Figma</td></tr>
+  </table>
   <aside class="notes">Навыки confluence и figma Золотого стандарта (SKILL.md). D-10. Признак закрытия блока: ответы про источники в чате; назван, где лежит навигатор.</aside>
 </section>
 
@@ -483,8 +525,14 @@
 
 <section class="slide" data-title="4. Иллюстрация" data-who="Алёна">
   <h2>Как это выглядит в работе</h2>
-  <div class="hold">реплики Алёны по шагам</div>
-  <div class="hold">иллюстрация к шагу 7 «Уточнение и доработка» — кандидат: сюжет 7.1 предложения</div>
+  <p class="muted" style="font-size:22px;margin:-6px 0 14px">Генбанк, БТ по цифровому рублю — кто что делает</p>
+  <table class="agenda duo">
+    <tr><th></th><th>Источники</th><th>Реестр</th><th>Инструкция на БТ</th><th>Черновик и вычитка</th><th>Утверждено</th></tr>
+    <tr><td>Алёна</td><td>собирает требования ЦБ, вендора, UI-стандарты, архитектурную схему</td><td>собирает реестр сценариев — он же таблица трассируемости</td><td>задаёт правила: цель, коллизии, входные данные, маппинг на шаблон</td><td>вычитывает, отвечает на вопросы в той же сессии</td><td>«переведи в статус утверждён»; публикует в Confluence под своей учёткой</td></tr>
+    <tr><td>Агент</td><td>PDF → MD; схему-картинку → описание в MD</td><td>дополняет реестр, держит ссылки на источники</td><td>пишет инструкцию на каждую БТ, готовит промт</td><td>пишет черновик в <code>черновики/</code>, ведёт открытые вопросы и трассировку; строит Activity сам</td><td>переносит в согласованные, переименовывает, ставит ссылку в реестр</td></tr>
+  </table>
+  <p style="font-size:21px;margin-top:18px">Роли: <code>bt-writer</code> пишет по инструкции на каждую БТ · <code>vision</code> читает схемы · <code>reflector</code> вечером правит инструкции</p>
+  <aside class="notes">Рассказ Алёны лидам 18.09: «просто дать задачу — полная фигня», «пару инструкций помучились вместе, дальше он сам», «по качеству не придраться». Ошибки агента здесь не обсуждать — это блок 2.5 и персональные сессии.</aside>
 </section>
 
 <section class="slide" data-title="4. Рефлексия" data-who="Алёна">
@@ -517,12 +565,12 @@
 <section class="slide" data-title="5.1 Задача → результат" data-who="Алёна">
   <h2>ДБО ФЛ ЦР ГенБанк: задача → инструмент → результат</h2>
   <div class="grid g3">
-    <div class="card"><h3>Задача</h3><div class="hold">текст Алёны (OQ-40)</div></div>
-    <div class="card"><h3>Роль / навык</h3><div class="hold">текст Алёны</div></div>
-    <div class="card"><h3>Результат</h3><div class="hold">текст Алёны</div></div>
+    <div class="card"><h3>Задача</h3><p>Подробные БТ по цифровому рублю: клиентский путь, действия пользователя и системы, требования к UI, диаграмма Activity — по регуляторике ЦБ и требованиям вендора</p></div>
+    <div class="card"><h3>Роль / навык</h3><p><code>bt-writer</code> по инструкции на каждую БТ · <code>vision</code> для схем ЦБ · <code>confluence</code> для публикации</p></div>
+    <div class="card"><h3>Результат</h3><p><b>14 БТ за 8 дней.</b> Реестр на 18 БТ с трассировкой на Альбом / UI / ОТВ; черновик → утверждённая БТ → Confluence; «по качеству не придраться»</p></div>
   </div>
-  <div class="hold" style="margin-top:20px">что на экране — скриншоты или живой показ</div>
-  <aside class="notes">Кандидаты — сюжеты 1.1 и 1.3 предложения. Вопросы к кейсу — в чат, ответы в блоке 7.</aside>
+  <p style="font-size:22px;margin-top:22px"><b>На экране:</b> реестр → одна БТ с Activity → та же БТ в Confluence. Живой показ.</p>
+  <aside class="notes">Метрику «14 БТ за 8 дней» подтверждает Алёна до эфира — если не согласна, снять цифру, оставить «по качеству не придраться». Публикацию в Confluence в эфире не запускать (сломана с 23.09) — показать уже опубликованную БТ. Вопросы к кейсу — в чат, ответы в блоке 7.</aside>
 </section>
 
 <!-- ═══════════ Блок 5.2 · Женя ═══════════ -->
