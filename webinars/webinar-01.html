@@ -176,6 +176,12 @@
   .goals .card h3 { font-size: 22px; margin-bottom: 6px; }
   .goals .card p { font-size: 18px; line-height: 1.32; }
   .goals .card p + p { margin-top: 6px; }
+  .vec .card { padding: 14px 20px 10px; }
+  .vec .card h3 { font-size: 22px; }
+  .vec .card ol { margin: 4px 0 0; padding-left: 0; font-size: 18px; line-height: 1.3; counter-reset: v; }
+  .vec .card ol li { margin-bottom: 6px; padding-left: 28px; counter-increment: v; font-size: 18px; line-height: 1.28; }
+  .vec .card ol li::before { content: counter(v); background: none; width: auto; height: auto; top: 0; color: var(--green); font-weight: 700; }
+  .vec .card code { font-size: 16px; }
   .agenda.duo { font-size: 18px; }
   .agenda.duo td { vertical-align: top; padding: 9px 10px; line-height: 1.3; }
   .agenda.duo td:first-child { white-space: nowrap; width: 70px; color: var(--muted); font-weight: 500; }
@@ -610,15 +616,27 @@
 </section>
 
 <section class="slide" data-title="6. Инструкция" data-who="Николай">
-  <h2>Всё сегодняшнее — в навигаторе</h2>
-  <p style="font-size:26px"><a href="https://nikolai-pir-s-ru.sourcecraft.site/portfolio/webinars/navigator.html" style="color:var(--green)">nikolai-pir-s-ru.sourcecraft.site/portfolio/webinars/navigator.html</a></p>
-  <p class="lead" style="margin-top:28px"><b>Начинается всё с Git:</b> доступ к репозиторию, синхронизация с Золотым стандартом, свои папки проектов по его структуре.</p>
-  <div class="grid g2" style="margin-top:8px">
-    <div class="card"><h3>Первая задача · коннекторы</h3><p>Один сданный коннектор: положите РП ВС, XSD и ТЗ-Форматы в проект и попросите сверить реквизитный состав — расхождения отдельно от вопросов.</p></div>
-    <div class="card"><h3>Первая задача · другие проекты</h3><p>Один регуляторный или вендорский документ в PDF: положите в проект и попросите перевести в машиночитаемый вид и составить реестр требований.</p></div>
+  <h2>Как начать у себя: два вектора</h2>
+  <div class="grid g2 vec">
+    <div class="card"><h3>Настроить — один раз, на этой неделе</h3>
+      <ol>
+        <li>VS Code + Kilo Code, ключ Alibaba — выдаёт Игорь, заявка через Алёну</li>
+        <li>Клонировать Золотой стандарт — он и есть корень рабочего места</li>
+        <li>Проект: <code>layout-builder</code> заводит структуру — «Заведи раскладку проекта &lt;имя&gt;»</li>
+        <li>Проект ещё не в репозитории — подключить: репозиторий заводит Николай, выгрузку делает <code>devops</code></li>
+      </ol></div>
+    <div class="card"><h3>Работать — каждая задача</h3>
+      <ol>
+        <li>Источники — в папку проекта</li>
+        <li>«Работаем с &lt;проект&gt;» — агент говорит, что прочитал</li>
+        <li>Роль под артефакт — по навигатору</li>
+        <li>Проверка; плох результат — правим инструкцию</li>
+        <li>Вечером — «Рефлексия за сегодня»</li>
+      </ol></div>
   </div>
-  <p style="font-size:22px;margin-top:16px"><b>Без прав администратора:</b> VS Code и Kilo Code ставятся в профиль пользователя, права администратора не нужны. Если установка заблокирована политикой — заявка Игорю через Алёну.</p>
-  <aside class="notes">Раздел готовит Николай для двух типов проектов (D-14). «Как начать» заменена навигатором (26.09): ссылка на публикацию в портфолио — в чат сейчас и в письме после встречи; ссылки внутри навигатора на файлы канона работают только в клоне канона. Git — встреча 25.09, Николай. Первая задача коннекторов — то, что делали 22.09 на ЕПГУ; для остальных — шаг «Источники» из кейса Алёны. Установка без прав администратора — верно для VS Code User Setup; на корпоративном образе не проверено (риск R3) — до эфира прогнать на чужой машине.</aside>
+  <p style="font-size:20px;margin-top:12px">Всё это — в навигаторе: <a href="https://nikolai-pir-s-ru.sourcecraft.site/portfolio/webinars/navigator.html" style="color:var(--green)">nikolai-pir-s-ru.sourcecraft.site/portfolio/webinars/navigator.html</a></p>
+  <p style="font-size:18px;margin-top:4px;max-width:940px" class="muted"><b>Без прав администратора:</b> VS Code и Kilo Code ставятся в профиль пользователя; заблокировано политикой — заявка Игорю через Алёну.</p>
+  <aside class="notes">Два вектора — решение 26.09: настройка (один раз) отдельно от работы по проекту (каждая задача). Раздел для двух типов проектов (D-14); «Как начать» заменена навигатором — ссылка в чат сейчас и в письме после встречи; ссылки внутри навигатора на файлы канона работают только в клоне канона. Git — встреча 25.09, Николай. Шаг 4 «репозиторий заводит Николай» — допущение методолога, проверить. Установка без прав администратора — верно для VS Code User Setup; на корпоративном образе не проверено (риск R3) — до эфира прогнать на чужой машине.</aside>
 </section>
 
 <section class="slide dark chat" data-title="6. Вопросы в чат" data-who="Николай">
