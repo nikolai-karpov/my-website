@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Подписки для AI-агентов — сравнение (май 2026)</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px; line-height: 1.6;
+        }
+        .container {
+            max-width: 1400px; margin: 0 auto; background: white;
+            border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); padding: 40px;
+        }
+        h1 { text-align: center; color: #2d3748; margin-bottom: 10px; font-size: 2.2em; }
+        .subtitle { text-align: center; color: #718096; margin-bottom: 10px; font-size: 1.1em; }
+        .last-updated { text-align: center; color: #a0aec0; font-size: 0.9em; margin-bottom: 40px; }
+        .status-badge {
+            display: inline-block; padding: 4px 12px; border-radius: 20px;
+            font-size: 0.85em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .status-works { background: linear-gradient(135deg, #48bb78 0%, #38a169 100%); color: white; }
+        .status-banned { background: linear-gradient(135deg, #fc8181 0%, #e53e3e 100%); color: white; }
+        .status-not-for-agents { background: linear-gradient(135deg, #ed8936 0%, #dd6b20 100%); color: white; }
+        .status-no-subscription { background: linear-gradient(135deg, #a0aec0 0%, #718096 100%); color: white; }
+        .status-free { background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%); color: white; }
+        .status-sold-out { background: linear-gradient(135deg, #d69e2e 0%, #b7791f 100%); color: white; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 40px; font-size: 0.92em; }
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;
+            padding: 14px 10px; text-align: left; font-weight: 600;
+            text-transform: uppercase; font-size: 0.82em; letter-spacing: 0.5px;
+        }
+        th:first-child { border-top-left-radius: 8px; }
+        th:last-child { border-top-right-radius: 8px; }
+        td { padding: 12px 10px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+        tr:nth-child(even) { background: #f7fafc; }
+        tr:hover { background: #edf2f7; transition: background 0.2s ease; }
+        .provider-name { font-weight: 700; color: #2d3748; font-size: 1.02em; }
+        .plan-name { font-weight: 600; color: #4a5568; }
+        .price { font-weight: 700; color: #667eea; font-size: 1.05em; }
+        .supported-tools { color: #4a5568; font-size: 0.88em; }
+        .models { color: #718096; font-size: 0.88em; }
+        .notes { color: #e53e3e; font-size: 0.83em; font-weight: 500; }
+        .works-notes { color: #38a169; font-size: 0.83em; font-weight: 500; }
+        .link { color: #3182ce; text-decoration: none; font-size: 0.85em; }
+        .link:hover { text-decoration: underline; }
+        h2 { color: #2d3748; margin: 30px 0 20px 0; font-size: 1.5em; border-bottom: 3px solid #667eea; padding-bottom: 10px; }
+        .warning { background: #fff5f5; border-left: 4px solid #fc8181; padding: 15px 20px; margin: 20px 0; border-radius: 4px; color: #c53030; }
+        .info { background: #ebf8ff; border-left: 4px solid #4299e1; padding: 15px 20px; margin: 20px 0; border-radius: 4px; color: #2b6cb0; }
+        footer { text-align: center; color: #718096; margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; font-size: 0.9em; }
+        @media (max-width: 768px) {
+            .container { padding: 20px; }
+            table { font-size: 0.82em; }
+            th, td { padding: 8px 6px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>🤖 LLM Подписки для AI-агентов</h1>
+<p class="subtitle">Какие вендоры продают подписки на LLM, разрешая использовать их в OpenClaw, OpenCode, Hermes и других агентах</p>
+<p class="last-updated">📅 Обновлено: 22 мая 2026</p>
+
+<!-- ============================================================ -->
+<h2>✅ Подписки, которые РАБОТАЮТ с агентами</h2>
+<!-- ============================================================ -->
+
+<table>
+    <thead>
+        <tr>
+            <th>Провайдер</th>
+            <th>Подписка</th>
+            <th>Цена</th>
+            <th>Агенты</th>
+            <th>Модели</th>
+            <th>Лимиты / условия</th>
+            <th>Где купить</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- OpenCode Go -->
+        <tr>
+            <td class="provider-name">OpenCode Go</td>
+            <td class="plan-name">Go Plan</td>
+            <td class="price">$5 первый месяц<br>$10/мес</td>
+            <td class="supported-tools">OpenCode, OpenClaw, Hermes, любой агент с OpenAI-совместимым API</td>
+            <td class="models">GLM-5.1, Kimi K2.5/K2.6, MiMo-V2.5-Pro, Qwen3.5/3.6 Plus, MiniMax M2.5/M2.7, DeepSeek V4 Pro/Flash (12 моделей)</td>
+            <td class="works-notes">200–31 650 requests / 5 часов (зависит от модели)</td>
+            <td><a class="link" href="https://opencode.ai/go" target="_blank">opencode.ai/go</a></td>
+        </tr>
+
+        <!-- xAI SuperGrok -->
+        <tr>
+            <td class="provider-name">xAI (Grok)</td>
+            <td class="plan-name">SuperGrok</td>
+            <td class="price">$30/мес</td>
+            <td class="supported-tools">OpenClaw (OAuth с 19.05.2026), Hermes (OAuth)</td>
+            <td class="models">Grok 4.3, Grok 4.20, Grok 4.1 Fast</td>
+            <td class="works-notes">Официальная OAuth-интеграция, отдельный API-ключ не нужен</td>
+            <td><a class="link" href="https://x.ai/" target="_blank">x.ai</a> → Subscribe</td>
+        </tr>
+
+        <!-- xAI X Premium+ -->
+        <tr>
+            <td class="provider-name">xAI (Grok)</td>
+            <td class="plan-name">X Premium+</td>
+            <td class="price">$40/мес<br>($395/год)</td>
+            <td class="supported-tools">OpenClaw, Hermes</td>
+            <td class="models">Grok 4.3, Grok 4.20, Grok 4.1 Fast</td>
+            <td class="works-notes">Приоритетный доступ к Grok, ad-free X</td>
+            <td><a class="link" href="https://x.com/i/premium" target="_blank">x.com/i/premium</a></td>
+        </tr>
+
+        <!-- OpenAI Codex OAuth -->
+        <tr>
+            <td class="provider-name">OpenAI (Codex OAuth)</td>
+            <td class="plan-name">ChatGPT Plus / Pro / Team</td>
+            <td class="price">$20–$200/мес</td>
+            <td class="supported-tools">OpenClaw, Hermes (через Copilot provider), Roo Code, Cline</td>
+            <td class="models">GPT-5.3-codex, GPT-5.4, GPT-5.5 (Pro)</td>
+            <td class="works-notes">Официальный Codex OAuth — подписка прокидывается в агенты без доплат. Plus: 5 часов/неделю Codex. Pro: безлимит. <strong>НЕ путать с reverse proxy</strong> — это бан.</td>
+            <td><a class="link" href="https://chatgpt.com/" target="_blank">chatgpt.com</a> → Upgrade</td>
+        </tr>
+
+        <!-- Xiaomi MiMo -->
+        <tr>
+            <td class="provider-name">Xiaomi MiMo</td>
+            <td class="plan-name">Token Plan Lite / Standard / Pro / Max</td>
+            <td class="price">¥39–659/мес<br>~$5–90/мес</td>
+            <td class="supported-tools">OpenClaw, OpenCode</td>
+            <td class="models">MiMo-V2-Omni, MiMo-V2-Pro, MiMo-V2.5-Pro, MiMo-V2.5, MiMo-V2.5-TTS</td>
+            <td class="works-notes">20% скидка off-peak, до 30% экономии с auto-renewal</td>
+            <td><a class="link" href="https://platform.xiaomimimo.com/token-plan" target="_blank">platform.xiaomimimo.com</a></td>
+        </tr>
+
+        <!-- Qwen Cloud -->
+        <tr>
+            <td class="provider-name">Qwen Cloud</td>
+            <td class="plan-name">Coding Plan</td>
+            <td class="price">$50/мес</td>
+            <td class="supported-tools">OpenCode, Claude Code, Cursor, Cline, Codex</td>
+            <td class="models">Qwen3.6-Plus, Kimi K2.5, GLM-5, MiniMax-M2.5</td>
+            <td class="works-notes">90K requests/мес, 45K/неделю, 6K / 5 часов</td>
+            <td><a class="link" href="https://qwen.ai/" target="_blank">qwen.ai</a></td>
+        </tr>
+
+        <!-- MiniMax -->
+        <tr>
+            <td class="provider-name">MiniMax</td>
+            <td class="plan-name">Token Plan Starter / Plus / Max</td>
+            <td class="price">$10–80/мес<br>или $100–800/год</td>
+            <td class="supported-tools">OpenCode, OpenClaw</td>
+            <td class="models">MiniMax M2.5, M2.7 (Highspeed)</td>
+            <td class="works-notes">1 500–30 000 requests / 5 часов</td>
+            <td><a class="link" href="https://platform.minimax.io/subscribe/token-plan" target="_blank">platform.minimax.io</a></td>
+        </tr>
+
+        <!-- Zhipu AI GLM Lite -->
+        <tr>
+            <td class="provider-name">Zhipu AI (GLM)</td>
+            <td class="plan-name">Coding Plan Lite</td>
+            <td class="price">$30/квартал<br>~$10/мес</td>
+            <td class="supported-tools">Claude Code, Cursor, Cline, OpenCode, OpenClaw, 20+ tools</td>
+            <td class="models">GLM-5.1, GLM-5-Turbo, GLM-4.7, GLM-4.6, GLM-4.5-Air</td>
+            <td class="works-notes">~3× Claude Pro usage, бесплатные MCP tools (Vision, Web Search, Web Reader)</td>
+            <td><a class="link" href="https://z.ai/subscribe" target="_blank">z.ai/subscribe</a></td>
+        </tr>
+
+        <!-- Zhipu AI GLM Pro -->
+        <tr>
+            <td class="provider-name">Zhipu AI (GLM)</td>
+            <td class="plan-name">Coding Plan Pro</td>
+            <td class="price">$90/квартал<br>~$30/мес</td>
+            <td class="supported-tools">Claude Code, Cursor, Cline, OpenCode, OpenClaw, 20+ tools</td>
+            <td class="models">Всё в Lite + GLM-5</td>
+            <td class="works-notes">~5× Lite usage, разблокирован GLM-5</td>
+            <td><a class="link" href="https://z.ai/subscribe" target="_blank">z.ai/subscribe</a></td>
+        </tr>
+
+        <!-- Zhipu AI GLM Max -->
+        <tr>
+            <td class="provider-name">Zhipu AI (GLM)</td>
+            <td class="plan-name">Coding Plan Max</td>
+            <td class="price">$240/квартал<br>~$80/мес</td>
+            <td class="supported-tools">Claude Code, Cursor, Cline, OpenCode, OpenClaw, 20+ tools</td>
+            <td class="models">Всё в Pro</td>
+            <td class="works-notes">~4× Pro usage, для команд / интенсивного использования</td>
+            <td><a class="link" href="https://z.ai/subscribe" target="_blank">z.ai/subscribe</a></td>
+        </tr>
+
+        <!-- Alibaba Cloud Standard -->
+        <tr>
+            <td class="provider-name">Alibaba Cloud</td>
+            <td class="plan-name">Token Plan Team — Standard</td>
+            <td class="price">$30/seat/мес</td>
+            <td class="supported-tools">Популярные AI coding и agent tools</td>
+            <td class="models">Qwen 3.6/3.7, Kimi K2.5/K2.6, GLM-5/5.1, MiniMax M2.5, DeepSeek V4</td>
+            <td class="works-notes">25 000 Credits/seat/мес, только Singapore region</td>
+            <td><a class="link" href="https://www.alibabacloud.com/help/en/model-studio/token-plan-overview" target="_blank">Alibaba Cloud Docs</a></td>
+        </tr>
+
+        <!-- Alibaba Cloud Pro -->
+        <tr>
+            <td class="provider-name">Alibaba Cloud</td>
+            <td class="plan-name">Token Plan Team — Pro</td>
+            <td class="price">$100/seat/мес</td>
+            <td class="supported-tools">Популярные AI coding и agent tools</td>
+            <td class="models">Qwen 3.6/3.7, Kimi K2.5/K2.6, GLM-5/5.1, MiniMax M2.5, DeepSeek V4</td>
+            <td class="works-notes">100 000 Credits/seat/мес</td>
+            <td><a class="link" href="https://www.alibabacloud.com/help/en/model-studio/token-plan-overview" target="_blank">Alibaba Cloud Docs</a></td>
+        </tr>
+
+        <!-- Alibaba Cloud Max -->
+        <tr>
+            <td class="provider-name">Alibaba Cloud</td>
+            <td class="plan-name">Token Plan Team — Max</td>
+            <td class="price">$200/seat/мес</td>
+            <td class="supported-tools">Популярные AI coding и agent tools</td>
+            <td class="models">Qwen 3.6/3.7, Kimi K2.5/K2.6, GLM-5/5.1, MiniMax M2.5, DeepSeek V4</td>
+            <td class="works-notes">250 000 Credits/seat/мес</td>
+            <td><a class="link" href="https://www.alibabacloud.com/help/en/model-studio/token-plan-overview" target="_blank">Alibaba Cloud Docs</a></td>
+        </tr>
+
+        <!-- GitHub Copilot -->
+        <tr>
+            <td class="provider-name">GitHub Copilot</td>
+            <td class="plan-name">Pro</td>
+            <td class="price">$10/мес</td>
+            <td class="supported-tools">OpenCode, Hermes (через ACP subprocess)</td>
+            <td class="models">Codex модели</td>
+            <td class="works-notes">Auth через GitHub token (COPILOT_GITHUB_TOKEN / GH_TOKEN)</td>
+            <td><a class="link" href="https://github.com/features/copilot" target="_blank">github.com/features/copilot</a></td>
+        </tr>
+
+        <!-- Awan LLM -->
+        <tr>
+            <td class="provider-name">Awan LLM</td>
+            <td class="plan-name">Lite / Core / Plus / Pro / Max</td>
+            <td class="price">$0–80/мес</td>
+            <td class="supported-tools">Любой агент с OpenAI-совместимым API (OpenCode, OpenClaw, Hermes, Cline и др.)</td>
+            <td class="models">Llama 3.1 8B/70B, Mixtral и другие open-source модели</td>
+            <td class="works-notes">Единственный провайдер с <strong>настоящим безлимитом по токенам</strong> (оплата за RPM). Max ($80/мес) — безлимит. Не логирует промпты.</td>
+            <td><a class="link" href="https://www.awanllm.com/pricing" target="_blank">awanllm.com/pricing</a></td>
+        </tr>
+
+        <!-- Cerebras Code -->
+        <tr>
+            <td class="provider-name">Cerebras Code</td>
+            <td class="plan-name">Free / Pro / Max</td>
+            <td class="price">$0–200/мес</td>
+            <td class="supported-tools">OpenCode, OpenClaw, Hermes, Cline, Crush</td>
+            <td class="models">Llama 3.3, GLM-4.7 (#1 tool calling на Berkeley leaderboard)</td>
+            <td class="works-notes">1000+ токенов/сек (wafer-scale engine). Pro: 24M токенов/день, Max: 120M. <span class="status-badge status-sold-out">SOLD OUT — waitlist</span></td>
+            <td><a class="link" href="https://www.cerebras.ai/code" target="_blank">cerebras.ai/code</a></td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- ============================================================ -->
+<h2>🆓 Бесплатные / условно-бесплатные</h2>
+<!-- ============================================================ -->
+
+<table>
+    <thead>
+        <tr>
+            <th>Провайдер</th>
+            <th>Цена</th>
+            <th>Агенты</th>
+            <th>Модели</th>
+            <th>Лимиты</th>
+            <th>Где взять</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Groq -->
+        <tr>
+            <td class="provider-name">Groq</td>
+            <td class="price">Free + prepaid</td>
+            <td class="supported-tools">OpenClaw, Hermes, OpenCode (нативная поддержка)</td>
+            <td class="models">Llama 3.3 70B/405B, Gemma, Mixtral</td>
+            <td class="works-notes">Free: 14 400 req/день, 30 RPM. Developer ($10+ prepaid): 10× лимиты, выше приоритет</td>
+            <td><a class="link" href="https://console.groq.com/" target="_blank">console.groq.com</a></td>
+        </tr>
+
+        <!-- DeepSeek free -->
+        <tr>
+            <td class="provider-name">DeepSeek</td>
+            <td class="price">Free API tier + PAYG</td>
+            <td class="supported-tools">Любой агент (OpenAI-совместимый endpoint)</td>
+            <td class="models">DeepSeek V4 Flash (бесплатно), V4 Pro (75% скидка до 31.05.2026)</td>
+            <td class="works-notes">V4 Flash: $0.14/$0.28 за 1M in/out. V4 Pro: $0.435/$0.87. 1M контекст. Кэш-хит: 1/50 цены</td>
+            <td><a class="link" href="https://api-docs.deepseek.com/" target="_blank">api-docs.deepseek.com</a></td>
+        </tr>
+
+        <!-- GLM free models -->
+        <tr>
+            <td class="provider-name">Zhipu AI (GLM)</td>
+            <td class="price">Free</td>
+            <td class="supported-tools">Любой агент</td>
+            <td class="models">GLM-4.7-Flash, GLM-4.5-Flash</td>
+            <td class="works-notes">Бесплатные модели навсегда, 203K контекст. Оптимизированы для скорости, не для сложных задач.</td>
+            <td><a class="link" href="https://z.ai/" target="_blank">z.ai</a></td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- ============================================================ -->
+<h2>❌ Подписки, которые ЗАПРЕЩЕНЫ для агентов</h2>
+<!-- ============================================================ -->
+
+<table>
+    <thead>
+        <tr>
+            <th>Провайдер</th>
+            <th>Подписка</th>
+            <th>Цена</th>
+            <th>Статус</th>
+            <th>Дата</th>
+            <th>Детали</th>
+            <th>Что работает вместо</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="provider-name">Anthropic Claude</td>
+            <td class="plan-name">Pro / Max</td>
+            <td class="price">$20–200/мес</td>
+            <td><span class="status-badge status-banned">ЗАПРЕЩЕНО</span></td>
+            <td>4 апреля 2026</td>
+            <td class="notes">OAuth-токены от claude.ai заблокированы в сторонних инструментах. Claude Max API Proxy (community) тоже не работает.</td>
+            <td class="models">API ключ PAYG: $3–15/$15–75 за 1M in/out</td>
+        </tr>
+        <tr>
+            <td class="provider-name">Google Gemini</td>
+            <td class="plan-name">CLI / Antigravity</td>
+            <td class="price">$20/мес</td>
+            <td><span class="status-badge status-banned">БАНЯТ</span></td>
+            <td>Февраль 2026</td>
+            <td class="notes">ToS violation. Массовые 403 баны, перманентная блокировка GCP-аккаунта без предупреждения.</td>
+            <td class="models">Vertex AI PAYG (разрешено для агентов, но это не подписка)</td>
+        </tr>
+        <tr>
+            <td class="provider-name">OpenAI ChatGPT<br>(reverse proxy)</td>
+            <td class="plan-name">Plus / Pro<br>через session token</td>
+            <td class="price">$20/мес</td>
+            <td><span class="status-badge status-banned">БАН АККАУНТА</span></td>
+            <td>Постоянно</td>
+            <td class="notes">Reverse proxy / scraping через session token — нарушение ToS, перманентный бан.</td>
+            <td class="models">Codex OAuth (см. ✅-секцию выше) — <strong>официально разрешено</strong></td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- ============================================================ -->
+<h2>🔍 Вендоры без подписок для агентов</h2>
+<!-- ============================================================ -->
+
+<table>
+    <thead>
+        <tr>
+            <th>Провайдер</th>
+            <th>Модель</th>
+            <th>Статус</th>
+            <th>Что есть вместо</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="provider-name">Moonshot AI (Kimi)</td>
+            <td class="plan-name">Kimi K2.5 / K2.6</td>
+            <td><span class="status-badge status-no-subscription">БЕЗ ПОДПИСКИ</span></td>
+            <td class="models">API PAYG: $0.60/$2.50 за 1M in/out. Pro subscription (~$19/мес) — ТОЛЬКО web UI. Open-source (Modified MIT), self-host через vLLM/SGLang. Доступен через OpenCode Go ($10/мес).</td>
+        </tr>
+        <tr>
+            <td class="provider-name">Meta</td>
+            <td class="plan-name">Llama</td>
+            <td><span class="status-badge status-no-subscription">OPEN SOURCE</span></td>
+            <td class="models">Self-host бесплатно (MIT license). API через партнёров (Together AI, Replicate, Fireworks, DeepInfra) — только PAYG.</td>
+        </tr>
+        <tr>
+            <td class="provider-name">Mistral</td>
+            <td class="plan-name">Mistral / Codestral</td>
+            <td><span class="status-badge status-no-subscription">БЕЗ ПОДПИСКИ</span></td>
+            <td class="models">API PAYG. La Plateforme subscription — только для web UI. Codestral доступен бесплатно для open-source проектов.</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="info">
+    <strong>💡 Важно:</strong> Большинство подписок рассчитаны на <strong>интерактивное использование</strong> (coding assistants), а не на автоматические скрипты или application backends. Alibaba Cloud Token Plan и Qwen Coding Plan явно запрещают использование для батчей и продакшн-бэкендов.
+</div>
+
+<div class="warning">
+    <strong>⚠️ Внимание:</strong> Статус меняется быстро. Anthropic заблокировал OAuth в апреле 2026, Google — в феврале. Перед покупкой подписки проверяйте актуальную политику вендора. Данные в таблице актуальны на 22 мая 2026.
+</div>
+
+<footer>
+    <p><strong>Источники:</strong> официальные документации OpenCode, xAI, Xiaomi MiMo, Qwen Cloud, MiniMax, Zhipu AI, Alibaba Cloud, OpenAI, Anthropic, Google, Moonshot AI, Cerebras, Awan LLM, Groq</p>
+    <p><strong>Агенты:</strong> OpenClaw, OpenCode, Hermes, Claude Code, Cursor, Cline, Kilo Code, Continue.dev и др.</p>
+</footer>
+
+</div>
+</body>
+</html>

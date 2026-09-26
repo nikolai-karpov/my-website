@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обзор самых дешёвых LLM API (PAYG) — отзывы, тренды, рекомендации</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #e2e8f0; padding: 30px 20px; line-height: 1.65; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { font-size: 2em; margin-bottom: 8px; color: #f8fafc; }
+        h2 { font-size: 1.4em; margin: 40px 0 16px; color: #94a3b8; border-bottom: 1px solid #334155; padding-bottom: 8px; }
+        h3 { font-size: 1.15em; margin: 24px 0 10px; color: #cbd5e1; }
+        .subtitle { color: #64748b; margin-bottom: 30px; font-size: 1.05em; }
+        .card { background: #1e293b; border-radius: 12px; padding: 24px; margin-bottom: 20px; border-left: 4px solid #475569; }
+        .card-best { border-left-color: #22c55e; }
+        .card-value { border-left-color: #3b82f6; }
+        .card-warn { border-left-color: #eab308; }
+        .card-hot { border-left-color: #ef4444; }
+        table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.9em; }
+        th { text-align: left; color: #94a3b8; font-weight: 600; padding: 8px 10px; border-bottom: 1px solid #334155; white-space: nowrap; }
+        td { padding: 8px 10px; border-bottom: 1px solid #1e293b; }
+        tr:hover { background: #1e293b; }
+        .hi { color: #22c55e; font-weight: 700; }
+        .lo { color: #f87171; }
+        .mid { color: #fbbf24; }
+        .tag { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.75em; font-weight: 600; }
+        .tag-green { background: #14532d; color: #4ade80; }
+        .tag-yellow { background: #422006; color: #fbbf24; }
+        .tag-red { background: #450a0a; color: #f87171; }
+        .tag-blue { background: #1e3a5f; color: #60a5fa; }
+        ul { margin: 8px 0 8px 20px; }
+        li { margin: 4px 0; }
+        li::marker { color: #64748b; }
+        code { background: #334155; padding: 2px 6px; border-radius: 4px; font-size: 0.85em; color: #fbbf24; }
+        .source { font-size: 0.8em; color: #64748b; margin-top: 6px; }
+        .source a { color: #60a5fa; text-decoration: none; }
+        .source a:hover { text-decoration: underline; }
+        .verdict { background: #0f172a; border: 1px solid #334155; border-radius: 8px; padding: 16px; margin: 12px 0; }
+        .verdict strong { color: #f8fafc; }
+        .bot-note { background: #450a0a; border: 1px solid #7f1d1d; border-radius: 8px; padding: 12px 16px; margin: 16px 0; font-size: 0.9em; }
+        .bot-note strong { color: #f87171; }
+        footer { text-align: center; color: #475569; margin-top: 40px; padding-top: 20px; border-top: 1px solid #1e293b; font-size: 0.85em; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>🔍 Обзор самых дешёвых LLM API (Pay-as-you-go)</h1>
+<p class="subtitle">Отзывы с форумов, тренды, боты vs люди, рекомендации по применению — май 2026</p>
+
+<!-- ============================================================ -->
+<h2>📊 Рейтинг: самые дешёвые PAYG API за 1 млн токенов</h2>
+<!-- ============================================================ -->
+
+<table>
+    <tr>
+        <th>#</th>
+        <th>Модель</th>
+        <th>Вход ($/1M)</th>
+        <th>Выход ($/1M)</th>
+        <th>Кэш-хит</th>
+        <th>Контекст</th>
+        <th>Open Source</th>
+        <th>Self-host</th>
+    </tr>
+    <tr>
+        <td><strong>1</strong></td>
+        <td><strong>DeepSeek V4 Flash</strong></td>
+        <td class="hi">$0.14</td>
+        <td class="hi">$0.28</td>
+        <td>$0.0028</td>
+        <td>1M</td>
+        <td><span class="tag tag-green">MIT</span></td>
+        <td>✅</td>
+    </tr>
+    <tr>
+        <td><strong>2</strong></td>
+        <td><strong>Groq (Llama 3.3 70B)</strong></td>
+        <td class="hi">$0.59</td>
+        <td class="hi">$0.79</td>
+        <td>—</td>
+        <td>128K</td>
+        <td><span class="tag tag-green">Free tier</span></td>
+        <td>—</td>
+    </tr>
+    <tr>
+        <td><strong>3</strong></td>
+        <td><strong>Kimi K2.6 (Moonshot)</strong></td>
+        <td>$0.20</td>
+        <td>$0.95</td>
+        <td>$0.04</td>
+        <td>262K</td>
+        <td><span class="tag tag-green">Mod. MIT</span></td>
+        <td>✅</td>
+    </tr>
+    <tr>
+        <td><strong>4</strong></td>
+        <td><strong>GLM-4.7 (Zhipu AI)</strong></td>
+        <td>$0.60</td>
+        <td>$2.20</td>
+        <td>—</td>
+        <td>205K</td>
+        <td><span class="tag tag-blue">API</span></td>
+        <td>—</td>
+    </tr>
+    <tr>
+        <td><strong>5</strong></td>
+        <td><strong>MiniMax M2.7</strong></td>
+        <td>$0.30</td>
+        <td>$1.20</td>
+        <td>$0.06</td>
+        <td>196K</td>
+        <td><span class="tag tag-green">Open</span></td>
+        <td>✅</td>
+    </tr>
+    <tr>
+        <td><strong>6</strong></td>
+        <td><strong>DeepSeek V4 Pro</strong></td>
+        <td>$1.74</td>
+        <td>$3.48</td>
+        <td>$0.036</td>
+        <td>1M</td>
+        <td><span class="tag tag-green">MIT</span></td>
+        <td>✅</td>
+    </tr>
+    <tr>
+        <td><strong>7</strong></td>
+        <td><strong>xAI Grok 4.1 Fast</strong></td>
+        <td>$0.20</td>
+        <td>$0.50</td>
+        <td>—</td>
+        <td>128K</td>
+        <td><span class="tag tag-yellow">Закрытый</span></td>
+        <td>—</td>
+    </tr>
+    <tr>
+        <td><strong>8</strong></td>
+        <td><strong>GLM-4.7-Flash (Zhipu)</strong></td>
+        <td class="hi">FREE</td>
+        <td class="hi">FREE</td>
+        <td>—</td>
+        <td>203K</td>
+        <td><span class="tag tag-green">Free</span></td>
+        <td>—</td>
+    </tr>
+    <tr style="color:#64748b">
+        <td colspan="2"><em>Для сравнения: Claude Opus 4.7</em></td>
+        <td><em>$15.00</em></td>
+        <td><em>$75.00</em></td>
+        <td><em>$1.50</em></td>
+        <td><em>200K</em></td>
+        <td colspan="2"><em>Закрытый</em></td>
+    </tr>
+</table>
+
+<p class="source">Источники: <a href="https://api-docs.deepseek.com/quick_start/pricing/">DeepSeek Docs</a>, <a href="https://console.groq.com/docs/rate-limits">Groq Docs</a>, <a href="https://docs.x.ai/developers/models">xAI Docs</a>, <a href="https://platform.minimax.io/docs/pricing/overview">MiniMax Docs</a>, <a href="https://vibecoding.app/blog/zhipu-ai-glm-pricing-2026">GLM Pricing</a>, <a href="https://andrew.ooo/answers/minimax-m2-7-vs-kimi-k2-6-vs-glm-5-1-vs-deepseek-v4-may-2026/">andrew.ooo comparison</a></p>
+
+<!-- ============================================================ -->
+<h2>🏷️ Отзывы по каждому провайдеру</h2>
+<!-- ============================================================ -->
+
+<!-- DeepSeek V4 -->
+<div class="card card-best">
+    <h3>1. DeepSeek V4 Flash / Pro — <span class="hi">абсолютный лидер по цене</span></h3>
+
+    <p><strong>Цена PAYG:</strong> Flash $0.14/$0.28 за 1M in/out. Pro $1.74/$3.48 (75% скидка до 31.05.2026, потом $0.435/$0.87)</p>
+
+    <table>
+        <tr><th>Хвалят</th><th>Ругают</th></tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>«V4 Flash costs roughly 1% of Claude Opus 4.7 per output token, yet delivers performance rivaling models 100x more expensive» — <em>aistackchoice.com</em></li>
+                    <li>«DeepSeek is practically free» — <em>r/LocalLLaMA</em></li>
+                    <li>Code generation quality 93/100, matching Claude Opus 4.6</li>
+                    <li>1M контекст — обрабатывает целые кодовые базы</li>
+                    <li>Function Calling error rate упал с ~15% до <2%</li>
+                    <li>Потоковый вывод ~55-60 токенов/сек</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Только текст — нет мультимодальности (нет vision/audio)</li>
+                    <li>Pro tier throughput ограничен в пиковые часы</li>
+                    <li>Occasional streaming interruptions в preview</li>
+                    <li>Claude Opus 4.6 всё ещё лучше для large-scale system design</li>
+                    <li><strong>429 Rate Limit</strong> при интенсивном использовании — мы это видели в логах Hermes</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <div class="verdict">
+        <strong>🎯 Лучше всего для:</strong>
+        <ul>
+            <li><strong>Batch-обработка</strong> — код-ревью, рефакторинг, документация</li>
+            <li><strong>Cost-sensitive development</strong> — ежедневные задачи, прототипы</li>
+            <li><strong>Router pattern Tier 1</strong> — 70% трафика на самом дешёвом</li>
+            <li><strong>Math & data analysis</strong> — топовая производительность</li>
+        </ul>
+    </div>
+    <p class="source">Источник: <a href="https://www.aistackchoice.com/deepseek-v4-review-2026-benchmarks-pricing-architecture/">AIStackChoice review</a>, <a href="https://codersera.com/blog/deepseek-v4-complete-guide-2026/">CodersEra guide</a></p>
+</div>
+
+<!-- Groq -->
+<div class="card card-value">
+    <h3>2. Groq — <span class="hi">ультра-быстрый бесплатный</span></h3>
+
+    <p><strong>Цена PAYG:</strong> Free tier: 14,400 req/день. Developer: $0.59/$0.79 за 1M. LPU-чип, 1000+ токенов/сек.</p>
+
+    <table>
+        <tr><th>Хвалят</th><th>Ругают</th></tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>Ultra-fast: 10-100x быстрее GPU-инференса</li>
+                    <li>Бесплатный tier с щедрыми лимитами</li>
+                    <li>Не банит за агентов — можно использовать в OpenClaw, Hermes</li>
+                    <li>Отлично для real-time interactions</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li><strong>Жёсткие rate limits</strong> — 30 RPM на free tier</li>
+                    <li>Только open-source модели (Llama, Gemma, Mixtral) — нет frontier</li>
+                    <li>Не подписка, а prepaid-кредиты</li>
+                    <li>Модели устаревают быстрее, чем у frontier-провайдеров</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <div class="verdict">
+        <strong>🎯 Лучше всего для:</strong>
+        <ul>
+            <li><strong>Прототипы и POC</strong> — быстро, бесплатно</li>
+            <li><strong>Real-time agents</strong> — минимальная задержка ответа</li>
+            <li><strong>Fallback provider</strong> — в цепочке после основного провайдера</li>
+        </ul>
+    </div>
+    <p class="source">Источник: <a href="https://console.groq.com/docs/rate-limits">Groq Docs</a></p>
+</div>
+
+<!-- Kimi K2.6 -->
+<div class="card card-best">
+    <h3>3. Kimi K2.6 (Moonshot AI) — <span class="hi">лучший для долгих агентных сессий</span></h3>
+
+    <p><strong>Цена PAYG:</strong> $0.20/$0.95 за 1M in/out. Через OpenRouter: $0.45/$2.20. Auto context caching: скидка до 75%.</p>
+
+    <table>
+        <tr><th>Хвалят</th><th>Ругают</th></tr>
+        <tr>
+            <td>
+                <ul>
+                    <li><strong>Terminal-Bench 2.0: 66.7%</strong> — лучший среди open-source моделей</li>
+                    <li>Сессия 4,000+ tool calls за 13 часов без перерыва — «stability ceiling no other open model reaches»</li>
+                    <li>SWE-Bench Pro: 58.6%</li>
+                    <li>Кросс-языковая генерализация: Rust, Go, Python, front-end, DevOps</li>
+                    <li>Пресеты для Cline, Roo Code, Aider, OpenCode из коробки</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Самый дорогой среди китайских open-source ($0.95/1M output)</li>
+                    <li>Контекст 262K — меньше чем у DeepSeek V4 (1M) и Qwen 3.6 (1M)</li>
+                    <li>Pro subscription (~$19/мес) — ТОЛЬКО для web UI, НЕ для API</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <div class="verdict">
+        <strong>🎯 Лучше всего для:</strong>
+        <ul>
+            <li><strong>Автономные coding agents</strong> — сессии по 1+ часу</li>
+            <li><strong>Multi-language projects</strong> — Rust + Go + Python в одном проекте</li>
+            <li><strong>Router pattern Tier 2</strong> — 25% трафика на «умном»</li>
+        </ul>
+    </div>
+    <p class="source">Источник: <a href="https://www.atlascloud.ai/blog/guides/kimi-k2-6-vs-glm-5-1-vs-qwen-3-6-plus-vs-minimax-m2-7-coding-2026">Atlas Cloud comparison</a></p>
+</div>
+
+<!-- MiniMax M2.7 -->
+<div class="card card-value">
+    <h3>4. MiniMax M2.7 — <span class="hi">лучший value: 94% качества за 1/5 цены</span></h3>
+
+    <p><strong>Цена PAYG:</strong> $0.30/$1.20 за 1M in/out. Highspeed: $0.60/$2.40. Token Plan: от $10/мес.</p>
+
+    <table>
+        <tr><th>Хвалят</th><th>Ругают</th></tr>
+        <tr>
+            <td>
+                <ul>
+                    <li><strong>94% качества GLM-5.1 за 1/5 цены</strong> — best value по данным Atlas Cloud</li>
+                    <li>MLE-Bench Lite: 66.6% medal rate — ML speciality</li>
+                    <li>Правильно реализует критичные PyTorch детали (scaler.step/update)</li>
+                    <li>Быстрый — 31 tool call в тесте bug fix (быстрее всех)</li>
+                    <li>OpenAI-совместимый API</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Только текст — нет мультимодальности</li>
+                    <li>Benchmark scores ниже других на стандартных тестах</li>
+                    <li>Генерирует устаревшие React patterns в UI-задачах</li>
+                    <li>«I'm not really into the entire agent vibe» — r/LocalLLaMA</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <div class="verdict">
+        <strong>🎯 Лучше всего для:</strong>
+        <ul>
+            <li><strong>ML training loops</strong> — градиенты, AMP, PyTorch</li>
+            <li><strong>High-volume batch code review</strong> — самый дешёвый</li>
+            <li><strong>Router pattern Tier 1</strong> — для простых задач</li>
+        </ul>
+    </div>
+    <p class="source">Источник: <a href="https://www.atlascloud.ai/blog/guides/kimi-k2-6-vs-glm-5-1-vs-qwen-3-6-plus-vs-minimax-m2-7-coding-2026">Atlas Cloud</a>, <a href="https://andrew.ooo/answers/minimax-m2-7-vs-kimi-k2-6-vs-glm-5-1-vs-deepseek-v4-may-2026/">andrew.ooo</a></p>
+</div>
+
+<!-- GLM-5.1 -->
+<div class="card">
+    <h3>5. GLM-5.1 (Zhipu AI / Z.ai) — <span class="hi">лучший для front-end и агентов</span></h3>
+
+    <p><strong>Цена PAYG:</strong> $1.40/$4.40 за 1M in/out. Coding Plan: от ~$10/мес (Lite). GLM-4.7: $0.60/$2.20. GLM-4.7-Flash: <strong>FREE</strong>.</p>
+
+    <table>
+        <tr><th>Хвалят</th><th>Ругают</th></tr>
+        <tr>
+            <td>
+                <ul>
+                    <li><strong>Code Arena Elo 1,530</strong> — топ-3 глобально по agentic web dev</li>
+                    <li>React/Vue компоненты — корректный TypeScript + Tailwind с первого раза</li>
+                    <li>754B MoE — серьёзная модель</li>
+                    <li>«Personally I prefer DeepSeek, then GLM, then Kimi, then MiniMax» — r/LocalLLaMA</li>
+                    <li>nVidia NIM: «You can have it going all day and its free» — r/vibecoding</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Самый дорогой в группе ($1.40/$4.40)</li>
+                    <li>Меньше third-party tooling ecosystem</li>
+                    <li>«GLM-5 is only available on Pro and Max Coding Plan tiers»</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <div class="verdict">
+        <strong>🎯 Лучше всего для:</strong>
+        <ul>
+            <li><strong>React/Vue/Front-end generation</strong> — топ-3 в мире</li>
+            <li><strong>Full-stack scaffolding</strong> — TypeScript + UI + API</li>
+            <li><strong>Router pattern Tier 2</strong> — для сложных UI-задач</li>
+        </ul>
+    </div>
+    <p class="source">Источник: <a href="https://vibecoding.app/blog/zhipu-ai-glm-pricing-2026">Vibecoding.app</a>, <a href="https://www.atlascloud.ai/blog/guides/kimi-k2-6-vs-glm-5-1-vs-qwen-3-6-plus-vs-minimax-m2-7-coding-2026">Atlas Cloud</a></p>
+</div>
+
+<!-- xAI Grok -->
+<div class="card">
+    <h3>6. xAI Grok 4.1 Fast / 4.3 — <span class="hi">дешёвый frontier</span></h3>
+
+    <p><strong>Цена PAYG:</strong> 4.1 Fast: $0.20/$0.50. 4.3: $1.25/$2.50. Cached input: $0.20/1M (90% скидка).</p>
+
+    <table>
+        <tr><th>Хвалят</th><th>Ругают</th></tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>Grok 4.1 Fast — cheapest frontier-adjacent model available</li>
+                    <li>Real-time X search grounding — уникальная фича</li>
+                    <li>1M контекст (Grok 4.3)</li>
+                    <li>Официальная интеграция в OpenClaw через OAuth</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Trails Claude на code generation quality</li>
+                    <li>Trails OpenAI на function-calling reliability</li>
+                    <li>Уже́е enterprise data-residency options</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <div class="verdict">
+        <strong>🎯 Лучше всего для:</strong>
+        <ul>
+            <li><strong>Real-time search + reasoning</strong> — grounding на X постах</li>
+            <li><strong>Дешёвый frontier</strong> — когда нужен «умный» но бюджет ограничен</li>
+        </ul>
+    </div>
+    <p class="source">Источник: <a href="https://www.aipricing.guru/xai-pricing/">AI Pricing Guru</a>, <a href="https://docs.x.ai/developers/models">xAI Docs</a></p>
+</div>
+
+<!-- OpenRouter -->
+<div class="card card-warn">
+    <h3>7. OpenRouter — <span class="mid">агрегатор: удобно, но с нюансами</span></h3>
+
+    <p><strong>Цена:</strong> Зависит от модели (300+). Надбавка 5.5% при оплате картой. Нет подписки — только PAYG.</p>
+
+    <table>
+        <tr><th>Хвалят</th><th>Ругают</th></tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>Один API ключ — 300+ моделей</li>
+                    <li>Auto-failover при rate limits</li>
+                    <li>Удобно для прототипирования и сравнения</li>
+                    <li>25-40ms overhead — приемлемо</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li><strong>Нет SLA</strong> — 3 outage за 8 месяцев (35-50 мин каждый)</li>
+                    <li><strong>5.5% комиссия</strong> при покупке кредитов картой</li>
+                    <li>Кредиты сгорают через 365 дней</li>
+                    <li>Возвращал <strong>401 «User not found»</strong> при инфраструктурных сбоях (исправлено)</li>
+                    <li>Open-source модели через OpenRouter иногда хуже, чем напрямую</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <div class="verdict">
+        <strong>🎯 Лучше всего для:</strong> прототипирование, A/B тест моделей, low-stakes задачи.<br>
+        <strong>❌ НЕ для:</strong> production workloads без fallback на прямые провайдеры.
+    </div>
+    <p class="source">Источник: <a href="https://ofox.ai/blog/is-openrouter-reliable-honest-review-2026/">ofox.ai review</a></p>
+</div>
+
+<!-- ============================================================ -->
+<h2>📈 Тренды с форумов (май 2026)</h2>
+<!-- ============================================================ -->
+
+<div class="card card-hot">
+    <h3>Что обсуждают</h3>
+    <ul>
+        <li><strong>«API pricing is in freefall»</strong> — r/LocalLLaMA, январь 2026: Kimi K2.5 вышел за ~10% цены Opus, DeepSeek «practically free»</li>
+        <li><strong>Router pattern</strong> — самый популярный подход в production:
+            <ul>
+                <li>Tier 1 (~70% трафика): DeepSeek V4 Flash — $0.30/1M</li>
+                <li>Tier 2 (~25% трафика): Kimi K2.6 или GLM-5.1 — ~$1.00/1M</li>
+                <li>Tier 3 (~5% трафика): Claude Opus 4.7 — $75.00/1M</li>
+            </ul>
+            Экономия <strong>85-95%</strong> vs всё на Opus, с потерей качества <10%</li>
+        <li><strong>Китайская волна</strong> — 4 модели за 12 дней в апреле 2026: GLM-5.1, Kimi K2.6, MiniMax M2.7, DeepSeek V4 — «all landing at roughly the same capability ceiling at meaningfully lower cost»</li>
+        <li><strong>Subscription fatigue</strong> — «What LLM subscriptions are you using for coding in 2026?» — r/LLMDevs: пользователи устали от множества подписок, переходят на PAYG + router</li>
+        <li><strong>nVidia NIM бесплатно</strong> — «You can have it going all day and its free» через GLM-5.1 на nVidia NIM — r/vibecoding</li>
+    </ul>
+</div>
+
+<!-- ============================================================ -->
+<h2>🤖 Боты vs Люди: кто продвигает платформы</h2>
+<!-- ============================================================ -->
+
+<div class="bot-note">
+    <strong>⚠️ Признаки бот-промо на форумах:</strong>
+    <ul>
+        <li>Overly positive reviews без конкретных use cases — <strong>часто встречается в обзорах MiniMax и GLM</strong> на блогах с affiliate-ссылками</li>
+        <li>Generic praise: «amazing model», «best I've ever used» — без бенчмарков или сравнений</li>
+        <li>Newly created Reddit accounts (< 30 дней) с 1-2 постами</li>
+        <li>Similar phrasing across multiple posts / platforms — координированные кампании</li>
+        <li>Статьи на доменах типа <code>*review.com</code>, <code>*guide.ai</code> — часто написаны LLM, не людьми</li>
+    </ul>
+    <strong>✅ Признаки реальных отзывов:</strong>
+    <ul>
+        <li>Конкретные проблемы: «rate limit at 2am», «context window too small for my monorepo»</li>
+        <li>Сравнение 2-3 моделей с конкретными результатами: «47/50 tests passing vs 43/50»</li>
+        <li>Reddit karma > 1000, постовая история > 6 месяцев</li>
+        <li>Упоминание edge cases: async context manager bugs, PyTorch scaler placement</li>
+    </ul>
+    <p><strong>Оценка по вендорам:</strong></p>
+    <table>
+        <tr><th>Вендор</th><th>Бот-активность</th><th>Реальных отзывов</th><th>Оценка достоверности</th></tr>
+        <tr><td>DeepSeek</td><td><span class="tag tag-green">Низкая</span></td><td>Много на r/LocalLLaMA</td><td><strong>Высокая</strong></td></tr>
+        <tr><td>Groq</td><td><span class="tag tag-green">Низкая</span></td><td>Много, практический опыт</td><td><strong>Высокая</strong></td></tr>
+        <tr><td>Kimi (Moonshot)</td><td><span class="tag tag-green">Низкая</span></td><td>Средне, растёт</td><td><strong>Высокая</strong></td></tr>
+        <tr><td>MiniMax</td><td><span class="tag tag-yellow">Средняя</span></td><td>Мало, много SEO-статей</td><td><strong>Средняя</strong></td></tr>
+        <tr><td>GLM (Zhipu)</td><td><span class="tag tag-yellow">Средняя</span></td><td>Растёт после Coding Plan</td><td><strong>Средняя</strong></td></tr>
+        <tr><td>xAI (Grok)</td><td><span class="tag tag-red">Высокая</span></td><td>Много на X/Twitter</td><td><strong>Низкая</strong> — много промо Elon-фанатов</td></tr>
+        <tr><td>OpenRouter</td><td><span class="tag tag-green">Низкая</span></td><td>Много честных обзоров</td><td><strong>Высокая</strong></td></tr>
+    </table>
+</div>
+
+<!-- ============================================================ -->
+<h2>🎯 Итоговая рекомендация: Router Pattern</h2>
+<!-- ============================================================ -->
+
+<div class="card card-best">
+    <h3>Оптимальная конфигурация для агентов (май 2026)</h3>
+
+    <table>
+        <tr><th>Tier</th><th>% трафика</th><th>Модель</th><th>Цена output/1M</th><th>Назначение</th></tr>
+        <tr>
+            <td><strong>Tier 1</strong></td>
+            <td>~70%</td>
+            <td><strong>DeepSeek V4 Flash</strong></td>
+            <td class="hi">$0.28</td>
+            <td>Простые задачи, batch, код-ревью, документация</td>
+        </tr>
+        <tr>
+            <td><strong>Tier 2</strong></td>
+            <td>~25%</td>
+            <td><strong>Kimi K2.6</strong> или <strong>GLM-5.1</strong></td>
+            <td>$0.95 / $4.40</td>
+            <td>Сложный код, front-end, долгие агентные сессии</td>
+        </tr>
+        <tr>
+            <td><strong>Tier 3</strong></td>
+            <td>~5%</td>
+            <td><strong>Claude Opus 4.7</strong> или <strong>xAI Grok 4.3</strong></td>
+            <td>$75 / $2.50</td>
+            <td>Large-scale system design, задачи где важен максимум качества</td>
+        </tr>
+    </table>
+
+    <p><strong>Бесплатный fallback:</strong> Groq (Llama 3.3 70B) — 14,400 req/день бесплатно, ultra-fast</p>
+    <p><strong>Экономия:</strong> 85-95% vs всё на Claude Opus, с потерей качества <10%</p>
+</div>
+
+<footer>
+    <p>Исследование проведено 22 мая 2026. Источники: Reddit (r/LocalLLaMA, r/vibecoding, r/LLMDevs, r/ChatGPTCoding, r/opencodeCLI),<br>
+    Atlas Cloud, andrew.ooo, AIStackChoice, ofox.ai, Vibecoding.app, официальные документации провайдеров.</p>
+</footer>
+
+</div>
+</body>
+</html>
+   
