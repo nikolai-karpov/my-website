@@ -678,7 +678,7 @@
     <h2>Стартовый бриф: что поставить до начала работы</h2>
   </div>
   <p class="lead">Всё окружение рабочего места одним списком. Статус строки: <b>обязательно</b> — без этого не начать; <b>условно</b> — нужно для отдельных задач; <b>по согласованию</b> — ставится только с согласия владельца компьютера. Под каждой строкой мелко — файл, из которого она взята.</p>
-  <p class="lead" data-no-marks>Где файлы Золотого стандарта расходятся между собой, показаны оба варианта с пометкой <b>[РЕШАЕТ АВТОР]</b>. Где данных нет — пометка <b>[НЕ ОПИСАНО]</b>: пробел виден, а не заполнен догадкой.</p>
+  <p class="lead" data-no-marks>Под каждой строкой мелко — источник: файл канона или «по документации разработчиков», если в каноне этого нет. Что намеренно не описано и что решено владельцем — на вкладке «Пробелы и противоречия». Сверено с каноном 26.09.2026.</p>
   <p class="warn-inline"><b>Статус инструкции.</b> Установка на чистом Windows-хосте не проверена (NOT VERIFIED), полный разбор PDF/DOCX остаётся BLOCKED по <code>capabilities.md</code>. <small>INSTALL-PARSER-WINDOWS.md, шапка</small></p>
 
   <h3 class="sub">1. Программы</h3>
@@ -693,7 +693,7 @@
           <td>Редактор: в нём открывают рабочую папку и правят файлы<small>webinar-01, разд. 5</small></td>
           <td>обязательно</td>
           <td>Установить, если нет; рабочую папку открыть в VS Code: Файл → Открыть папку<small>webinar-01, разд. 6, шаг 1</small></td>
-          <td>[НЕ ОПИСАНО]</td>
+          <td>Установщик .dmg с code.visualstudio.com; рабочую папку открыть: Файл → Открыть папку<small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
           <td>Рабочая папка открыта в VS Code<small>webinar-01, разд. 13</small></td>
         </tr>
         <tr>
@@ -701,31 +701,31 @@
           <td>Агент: сессии, роли, навыки, память проекта, доступ к файлам<small>webinar-01, разд. 5</small></td>
           <td>обязательно</td>
           <td>Установить расширение и перезапустить окно VS Code; установка закрыта политикой — заявка в сервис-деск<small>webinar-01, разд. 6, шаг 2</small></td>
-          <td>[НЕ ОПИСАНО]</td>
+          <td>Расширение из Marketplace VS Code, перезапустить окно. Kilo CLI аналитику не нужен — всё работает внутри VS Code<small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
           <td>Расширение активно после перезапуска<small>webinar-01, разд. 13</small> Новая сессия или <code>/reload</code><small>INSTALL-PARSER-WINDOWS.md, § 6</small></td>
         </tr>
         <tr>
           <td><b>Git</b></td>
           <td>Рабочая область — репозиторий; обновление Золотого стандарта и выгрузка своей работы<small>kilo-canon/README.md; .kilo/agents/devops.md</small></td>
           <td>обязательно</td>
-          <td>[НЕ ОПИСАНО]</td>
-          <td>[НЕ ОПИСАНО]</td>
-          <td><code>git remote -v</code> — видно <code>origin</code> и, если есть, <code>upstream</code><small>devops.md, «Сначала определи, где ты»</small></td>
+          <td>Git for Windows с git-scm.com (или <code>winget install --id Git.Git -e</code>); при установке оставить Git Credential Manager — helper канона для SourceCraft отключает его точечно<small>по документации разработчиков; сверено 26.09.2026 — в каноне способ установки не описан</small></td>
+          <td>Входит в Xcode Command Line Tools: <code>xcode-select --install</code>; или <code>brew install git</code><small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
+          <td><code>git remote -v</code> в корне рабочего места — <code>origin</code> указывает на <code>…/kilo-canon.git</code> по HTTPS; <code>git ls-remote origin</code> отвечает без запроса пароля<small>devops.md, «Сначала определи, где ты»; hosting-sourcecraft.md</small></td>
         </tr>
         <tr>
-          <td><b>SSH-клиент</b></td>
-          <td>Доступ к репозиториям на SourceCraft<small>.kilo/references/hosting-sourcecraft.md</small></td>
+          <td><b>Токен SourceCraft (PAT)</b> и credential helper</td>
+          <td>Доступ к репозиториям на SourceCraft. Единственный транспорт git — HTTPS; SSH-клиент и ключ SSH не нужны<small>.kilo/references/hosting-sourcecraft.md (решение владельца 26.09.2026)</small></td>
           <td>обязательно</td>
-          <td>[НЕ ОПИСАНО]</td>
-          <td>[НЕ ОПИСАНО]</td>
-          <td><code>ssh -T git@ssh.sourcecraft.dev</code> → «You've successfully authenticated, but SourceCraft does not provide shell access.»<small>hosting-sourcecraft.md, «Адреса и протоколы»</small></td>
+          <td>Токен — строка <code>SOURCECRAFT_TOKEN=&lt;токен&gt;</code> в файле <code>.env</code> в корне рабочего места. Helper подключается один раз, путь прямыми слешами: <code>git config --global credential.https://git.sourcecraft.dev.helper ""</code>, затем <code>git config --global --add credential.https://git.sourcecraft.dev.helper "!py -3 'C:/&lt;корень&gt;/.kilo/tools/git_credential_env.py'"</code><small>hosting-sourcecraft.md, «Токен: .env и credential helper»</small></td>
+          <td>То же; вторая команда — <code>"!python3 '&lt;корень&gt;/.kilo/tools/git_credential_env.py'"</code><small>hosting-sourcecraft.md</small></td>
+          <td><code>git ls-remote https://git.sourcecraft.dev/&lt;организация&gt;/&lt;репозиторий&gt;.git</code> отвечает без запроса пароля<small>hosting-sourcecraft.md, п. 3</small></td>
         </tr>
         <tr>
           <td><b>Python</b></td>
           <td>Окружение <code>.venv</code> для CLI разбора документов, скрипт раскладки проекта, сборка DOCX<small>INSTALL-PARSER-WINDOWS.md; project-layout/SKILL.md; docx-layout/references/windows-setup.md</small></td>
-          <td>обязательно; минимальная версия — [РЕШАЕТ АВТОР], см. «Противоречия»</td>
+          <td>обязательно; версия — 3.14 (минимум 3.10). Решение владельца 26.09.2026: на 3.14.7 собран и проверен парсер (<code>/setup-parser</code>, PYTHON_DEPS_OK)</td>
           <td>С python.org<small>INSTALL-PARSER-WINDOWS.md, § 1</small></td>
-          <td>Команда — <code>python3</code><small>project-layout/references/customization.md</small> Порядок установки [НЕ ОПИСАНО]</td>
+          <td>Команда — <code>python3</code><small>project-layout/references/customization.md</small> Установка: <code>brew install python@3.14</code> или установщик с python.org; окружение — <code>python3 -m venv .venv</code> в корне, интерпретатор <code>.venv/bin/python</code><small>.kilo/tools/README.md, «Интерпретатор»; способ установки — по документации разработчиков</small></td>
           <td><code>py --version</code>; нет <code>py</code> — перезапустить PowerShell, проверить App Execution Aliases<small>INSTALL-PARSER-WINDOWS.md, § 1</small></td>
         </tr>
         <tr>
@@ -733,23 +733,23 @@
           <td>Конвертация внедрённых Visio/OLE из DOCX<small>INSTALL-PARSER-WINDOWS.md</small></td>
           <td>условно: полный маршрут разбора DOCX</td>
           <td>Установщик с libreoffice.org<small>INSTALL-PARSER-WINDOWS.md, § 4</small> или <code>winget install --id TheDocumentFoundation.LibreOffice -e --silent --accept-package-agreements --accept-source-agreements</code><small>.kilo/command/setup-parser.md, шаг 4</small></td>
-          <td>[НЕ ОПИСАНО]</td>
+          <td><code>brew install --cask libreoffice</code> или .dmg с libreoffice.org; <code>soffice</code> — <code>/Applications/LibreOffice.app/Contents/MacOS/soffice</code><small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
           <td><code>soffice --version</code> в новом окне PowerShell<small>INSTALL-PARSER-WINDOWS.md, § 4</small></td>
         </tr>
         <tr>
           <td><b>Tesseract OCR 5</b>, языки <code>rus</code> и <code>eng</code></td>
           <td>Независимая проверка текста в растре<small>INSTALL-PARSER-WINDOWS.md</small></td>
-          <td>условно: полный маршрут; ставить ли — [РЕШАЕТ АВТОР]</td>
+          <td>условно: полный маршрут разбора растровых страниц. Общее правило — INSTALL § 4; команда <code>/setup-parser</code> записана под хост владельца («программа уже есть», языки не докачивает) — на чистом Windows NOT VERIFIED</td>
           <td>Сборка UB Mannheim, при установке выбрать English и Russian<small>INSTALL-PARSER-WINDOWS.md, § 4</small></td>
-          <td>[НЕ ОПИСАНО]</td>
+          <td><code>brew install tesseract tesseract-lang</code> — языки <code>rus</code> и <code>eng</code> входят в <code>tesseract-lang</code><small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
           <td><code>tesseract --version</code>, <code>tesseract --list-langs</code> — в списке <code>eng</code> и <code>rus</code><small>INSTALL-PARSER-WINDOWS.md, § 4</small></td>
         </tr>
         <tr>
           <td><b>Java 11+</b> и <code>plantuml.jar</code></td>
           <td>Проверка и рендер PlantUML, диаграммы в DOCX<small>INSTALL-PARSER-WINDOWS.md; docx-layout/references/windows-setup.md, § 4</small></td>
-          <td>условно: диаграммы; где лежит JAR — [РЕШАЕТ АВТОР]</td>
-          <td>Java — способ установки [НЕ ОПИСАНО]. JAR — с plantuml.com/download, только локальный, не online-server<small>INSTALL-PARSER-WINDOWS.md, § 4</small></td>
-          <td>[НЕ ОПИСАНО]</td>
+          <td>условно: диаграммы. JAR лежит в <code>.venv\vendor\plantuml.jar</code>; для сборки DOCX тот же путь — в поле <code>plantuml.jar</code> профиля прогона. <code>/setup-parser</code> JAR не скачивает — [ОТКЛОНЕНИЕ] для хоста владельца, рендер «NOT INSTALLED»</td>
+          <td>Java — Eclipse Temurin с adoptium.net (или <code>winget install --id EclipseAdoptium.Temurin.17.JDK -e</code>). JAR — с plantuml.com/download, только локальный, не online-server<small>INSTALL-PARSER-WINDOWS.md, § 4; способ установки Java — по документации разработчиков</small></td>
+          <td><code>brew install openjdk@17</code> (или Temurin с adoptium.net); JAR — с plantuml.com в <code>.venv/vendor/plantuml.jar</code><small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
           <td><code>java -version</code>; <code>java -jar .venv\vendor\plantuml.jar -version</code><small>INSTALL-PARSER-WINDOWS.md, § 4</small></td>
         </tr>
         <tr>
@@ -765,7 +765,7 @@
           <td>Рендер блоков <code>bpmn</code> в DOCX<small>windows-setup.md, § 4</small></td>
           <td>по согласованию</td>
           <td>Инсталлятор с nodejs.org, затем <code>npm install -g bpmn-to-image</code>. Пакет скачивает свой Chromium — на закрытом прокси установка может не пройти<small>windows-setup.md, § 4</small></td>
-          <td>[НЕ ОПИСАНО]</td>
+          <td><code>brew install node</code> или установщик с nodejs.org, затем <code>npm install -g bpmn-to-image</code><small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
           <td><code>bpmn-to-image --version</code><small>windows-setup.md, § 4</small></td>
         </tr>
         <tr>
@@ -773,24 +773,24 @@
           <td>Рендер блоков <code>drawio</code> в DOCX<small>windows-setup.md, § 4</small></td>
           <td>по согласованию</td>
           <td>Инсталлятор с diagrams.net; путь по умолчанию <code>C:\Program Files\draw.io\draw.io.exe</code><small>windows-setup.md, § 4</small></td>
-          <td>[НЕ ОПИСАНО]</td>
+          <td><code>brew install --cask drawio</code> или .dmg с diagrams.net; CLI — <code>/Applications/draw.io.app/Contents/MacOS/draw.io</code>, путь задать в <code>drawio.cli</code> профиля прогона<small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
           <td><code>&amp; "&lt;путь&gt;\draw.io.exe" --version</code><small>windows-setup.md, § 4</small></td>
         </tr>
         <tr>
           <td><b>uv</b> / <code>uvx</code></td>
           <td>Запуск MCP-сервера Confluence: <code>uvx mcp-atlassian</code><small>.kilo/references/host-setup-windows.md, § 3</small></td>
           <td>условно: работа с Confluence</td>
-          <td>[НЕ ОПИСАНО]</td>
-          <td>[НЕ ОПИСАНО]</td>
-          <td>Отдельной команды нет [НЕ ОПИСАНО]; итоговая проверка — Confluence MCP отвечает на чтение страницы из разрешённого пространства<small>host-setup-windows.md, «Проверка после настройки»</small></td>
+          <td><code>winget install --id astral-sh.uv -e</code> или установщик <code>powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"</code><small>по документации разработчиков; сверено 26.09.2026 — в каноне способ установки не описан</small></td>
+          <td><code>brew install uv</code> или <code>curl -LsSf https://astral.sh/uv/install.sh | sh</code><small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
+          <td>В новой сессии субагент <code>confluence</code> читает страницу-родителя из задания — ответ сервера, а не «инструменты не загружены»; повторить в двух новых сессиях. (Проверка <code>kilo mcp list</code> из канона требует Kilo CLI, аналитику он не нужен)<small>host-setup-windows.md, «Проверка загрузки Confluence MCP»</small></td>
         </tr>
         <tr>
           <td><b>PowerShell 5.1+</b></td>
           <td>Оболочка для команд установки и проверки SHA-манифеста<small>INSTALL-PARSER-WINDOWS.md, § 3</small></td>
           <td>обязательно на Windows</td>
-          <td>[НЕ ОПИСАНО]</td>
+          <td>Входит в Windows 10/11, ставить не нужно<small>по документации Microsoft; канон только требует PowerShell 5.1+</small></td>
           <td>—</td>
-          <td>[НЕ ОПИСАНО]</td>
+          <td><code>$PSVersionTable.PSVersion</code> — Major 5 или выше<small>по документации Microsoft</small></td>
         </tr>
         <tr>
           <td><b>Корпоративный VPN</b></td>
@@ -798,7 +798,7 @@
           <td>условно: работа с внутренними системами</td>
           <td>Через сервис-деск<small>webinar-01, разд. 4.1</small></td>
           <td>Через сервис-деск<small>webinar-01, разд. 4.1</small></td>
-          <td>[НЕ ОПИСАНО]</td>
+          <td>Доступ через VPN — по правилам компании; признак и проверка в навигаторе не описываются</td>
         </tr>
       </tbody>
     </table>
@@ -837,7 +837,16 @@
 .\.venv\Scripts\python.exe -c "import lxml.etree, pymupdf; d=pymupdf.open(); p=d.new_page(); assert hasattr(p, 'find_tables'); print('PYTHON_DEPS_OK')"
 .\.venv\Scripts\python.exe .kilo\tools\test_pdf_layers.py</pre><button type="button" class="copy">Копировать</button></div>
 </div>
-  <p class="lead">Команды для macOS [НЕ ОПИСАНО]. Готовое поручение агенту на Windows — команда <code>/setup-parser</code> (<a href="#commands">таблица команд</a>).</p>
+  <p class="lead">Те же шаги на macOS (zsh, корень рабочего места):<small>по .kilo/tools/README.md «Интерпретатор»; команда <code>/setup-parser</code> написана для Windows</small></p>
+  <div class="msg">
+  <div class="msg-to"><span class="msg-label">Кому:</span> <span class="chip-plain">Терминал (zsh), корень рабочего места</span></div>
+  <div class="msg-body"><pre class="msg-text">python3 -m venv .venv
+./.venv/bin/python -m pip install --upgrade pip
+./.venv/bin/python -m pip install -r .kilo/tools/requirements.txt
+./.venv/bin/python -c "import lxml.etree, pymupdf; d=pymupdf.open(); p=d.new_page(); assert hasattr(p, 'find_tables'); print('PYTHON_DEPS_OK')"
+./.venv/bin/python .kilo/tools/test_pdf_layers.py</pre><button type="button" class="copy">Копировать</button></div>
+</div>
+  <p class="lead">Готовое поручение агенту на Windows — команда <code>/setup-parser</code> (<a href="#commands">таблица команд</a>); на macOS команды выше выполняются вручную.</p>
 
   <h3 class="sub">3. Модели и ключи</h3>
   <details class="tbl">
@@ -848,7 +857,7 @@
       <thead><tr><th>Что</th><th>Как устроено</th></tr></thead>
       <tbody>
         <tr><td>Провайдер</td><td>В Золотом стандарте не закреплён: ни одна роль не задаёт provider и model<small>kilo-canon/README.md; PACKAGE-MANIFEST.md</small></td></tr>
-        <tr><td>Где задаются модели</td><td>Глобальный конфиг хоста: <code>%USERPROFILE%\.config\kilo\kilo.jsonc</code>, ключи <code>model</code>, <code>small_model</code>, <code>subagent_model</code>, значение вида <code>&lt;провайдер&gt;/&lt;модель&gt;</code> — из списка моделей своего клиента, не угадывать<small>host-setup-windows.md, § 1</small> Путь на macOS [НЕ ОПИСАНО]</td></tr>
+        <tr><td>Где задаются модели</td><td>Глобальный конфиг хоста: <code>%USERPROFILE%\.config\kilo\kilo.jsonc</code>, ключи <code>model</code>, <code>small_model</code>, <code>subagent_model</code>, значение вида <code>&lt;провайдер&gt;/&lt;модель&gt;</code> — из списка моделей своего клиента, не угадывать<small>host-setup-windows.md, § 1</small> Путь на macOS — <code>~/.config/kilo/kilo.jsonc</code><small>документация Kilo, «Settings»; сверено 26.09.2026</small></td></tr>
         <tr><td>Ключ</td><td>Личный: не пересылают коллегам, не кладут в рабочую папку, не вставляют в промпты и на скриншоты<small>webinar-01, разд. 6, шаг 3</small></td></tr>
         <tr><td>Изображения</td><td>Нужна модель с поддержкой image input — её использует роль <a href="#role-vision">vision</a>. Без неё разбор PDF/DOCX останавливается в <code>WAITING_FOR_VISION</code> там, где vision обязателен<small>INSTALL-PARSER-WINDOWS.md; .kilo/agents/vision.md</small></td></tr>
         <tr><td>Подписка и модели у коллег</td><td>[ПОСЛЕ ВЫБОРА ПОДПИСКИ] — открытый вопрос OQ-43<small>Webinars/open-questions.md</small></td></tr>
@@ -873,9 +882,9 @@
         </tr>
         <tr>
           <td><b>Figma</b></td>
-          <td>Какой сервер ставить и как — [НЕ ОПИСАНО]</td>
+          <td>Figma MCP — отдельная тема, отдельный вебинар; здесь не описывается (решение владельца 26.09.2026)</td>
           <td>Файл <code>projects/&lt;проект&gt;/99-governance/figma-scope.md</code>; только чтение. Файл описывает границы и не доказывает, что MCP доступен. Нет файла — работа по выгруженным макетам из <code>design_mockups_root</code><small>.kilo/skills/figma/SKILL.md</small></td>
-          <td>[НЕ ОПИСАНО]</td>
+          <td>—</td>
         </tr>
       </tbody>
     </table>
@@ -891,14 +900,14 @@
     <table class="flow">
       <thead><tr><th>Что</th><th>Как устроено</th></tr></thead>
       <tbody>
-        <tr><td>Хостинг</td><td>SourceCraft, SSH-хост <code>ssh.sourcecraft.dev</code>, remote вида <code>ssh://git@ssh.sourcecraft.dev/&lt;владелец&gt;/&lt;репозиторий&gt;.git</code><small>hosting-sourcecraft.md</small></td></tr>
-        <tr><td>Порт</td><td>Обычно <code>22</code>. Из некоторых офисных сетей доступен только <code>443</code>, нужен <code>ProxyCommand</code>-реле «сервер говорит первым»<small>hosting-sourcecraft.md</small></td></tr>
-        <tr><td>Запасной канал</td><td>HTTPS: <code>https://git.sourcecraft.dev/&lt;organization_slug&gt;/&lt;repository_slug&gt;.git</code>, личный токен (PAT) как пароль через credential helper. Токен не кладут в URL remote, <code>.git/config</code> и командную строку<small>hosting-sourcecraft.md; devops.md</small></td></tr>
+        <tr><td>Хостинг</td><td>SourceCraft, только HTTPS: remote вида <code>https://git.sourcecraft.dev/&lt;организация&gt;/&lt;репозиторий&gt;.git</code>. SSH не используется (решение владельца 26.09.2026)<small>hosting-sourcecraft.md</small></td></tr>
+        <tr><td>Web-адрес</td><td><code>https://sourcecraft.dev/…</code> открывается в браузере, но для git не подходит: запросы перехватывает капча — это не бан<small>hosting-sourcecraft.md, «Адреса»</small></td></tr>
+        <tr><td>Аутентификация</td><td>Персональный токен (PAT) как пароль, из <code>.env</code> корня через helper <code>.kilo/tools/git_credential_env.py</code>. Токен не кладут в URL remote, <code>.git/config</code> и командную строку<small>hosting-sourcecraft.md; devops.md</small></td></tr>
         <tr><td>Сбои связи</td><td>Канал нестабилен — это норма: повторять, а не чинить; ключи, remote и порт не менять<small>hosting-sourcecraft.md</small></td></tr>
-        <tr><td>Remote</td><td><code>origin</code> — своя рабочая область; <code>upstream</code> — Золотой стандарт <code>kilo-canon</code>, из области только для чтения (fetch/merge)<small>devops.md, «Сначала определи, где ты»</small></td></tr>
-        <tr><td>Регистрация области</td><td>Область в реестре <code>.kilo/references/workspaces.json</code> с <code>canon_update: auto</code> — обновления Золотого стандарта сливаются сами; нет в реестре — только сверка и отчёт<small>kilo-canon/README.md</small></td></tr>
-        <tr><td>Обновление вручную</td><td>Команда <code>/sync-workspace</code><small>.kilo/command/sync-workspace.md</small></td></tr>
-        <tr><td>Ключ SSH и токен</td><td>Как заводить — [НЕ ОПИСАНО]. Роль <code>devops</code> ключи сама не заводит и <code>~/.ssh/config</code> без согласия не меняет<small>devops.md</small></td></tr>
+        <tr><td>Remote</td><td>Корень рабочего места — клон канона, его <code>origin</code> — <code>kilo-canon</code>, только чтение. Каждый проект <code>projects/&lt;проект&gt;</code> и <code>projects/reflection</code> — отдельный репозиторий со своим <code>origin</code>. Прежней схемы «форк с <code>upstream</code>» больше нет<small>devops.md, «Сначала определи, где ты»; kilo-canon/README.md</small></td></tr>
+        <tr><td>Обновление канона</td><td>Роль <code>devops</code> проверяет сама при старте сессии, не чаще раза в сутки: <code>python .kilo/tools/canon_update_check.py</code> — только <code>fetch</code> и <code>pull --ff-only</code> в корне; изменились правила — строка «начните новую сессию». Регистрироваться не нужно; локальные правки в корне останавливают обновление<small>kilo-canon/README.md, «Как получать обновления»; devops.md, «Проверка актуальности канона при старте»</small></td></tr>
+        <tr><td>Обновление вручную</td><td>Фраза «проверь канон» — та же проверка с ключом <code>--force</code>, без суточного гейта. Команды <code>/sync-workspace</code> больше нет (удалена 25.09.2026)<small>devops.md; PACKAGE-MANIFEST.md, «История»</small></td></tr>
+        <tr><td>Токен</td><td>Ключ SSH не нужен. Токен выпускается в SourceCraft (документация <code>security/pat</code>) и записывается в <code>.env</code> корня (<code>.env</code> в <code>.gitignore</code>). Роль <code>devops</code> токен не просит и не выводит; remote меняет только по вашему согласию<small>hosting-sourcecraft.md; devops.md, «Сеть и особенности хостинга»</small></td></tr>
       </tbody>
     </table>
     </div>
@@ -924,7 +933,7 @@
       <div class="step-title">Что принести с собой</div>
       <p>Один реальный и хорошо знакомый проект, лучше уже сданный: так видно, где настоящая находка, а где ошибка помощника. Исходные документы — файлами.<small>Lessons/lesson-01…/brief-uchastnika.md, разд. 3</small></p>
       <p>Файлы привести в рабочий вид: распаковать архивы; старые <code>.doc</code> пересохранить в <code>.docx</code>; принять исправления рецензирования; скачать справочники, доступные только по внешним ссылкам; ключ доступа и документы в чат встречи не отправлять.<small>brief-uchastnika.md, разд. 3</small></p>
-      <p>Пример проекта-коннектора: ТЗ, ТЗ-Форматы, ФТ, РП ВС — обязательно; XSD, предыдущая версия РП ВС, текстовый экспорт макетов — если есть.<small>brief-uchastnika.md, разд. 3</small> Состав для проекта ДБО — [УТОЧНИТЬ У АВТОРА].</p>
+      <p>Пример проекта-коннектора: ТЗ, ТЗ-Форматы, ФТ, РП ВС — обязательно; XSD, предыдущая версия РП ВС, текстовый экспорт макетов — если есть.<small>brief-uchastnika.md, разд. 3</small> Проект ДБО — по приоритету источников регламента: требование пользователя → БФТ (источник истины) → эталонные Use Case проекта → код backend и frontend → выгруженные макеты и Figma → архитектурные соглашения → общие шаблоны; деления «обязательно / если есть» канон не задаёт.<small>use-case-preparation/SKILL.md, «Приоритет источников»</small></p>
     </li>
     <li>
       <div class="step-title">Границы по данным</div>
@@ -995,7 +1004,7 @@
   <div class="msg-body"><pre class="msg-text">Какие skills доступны в этой рабочей папке? Покажи имя и путь каждого.</pre><button type="button" class="copy">Копировать</button></div>
 </div>
       <p>Пути должны существовать; субагент <code>vision</code> найден по пути <code>.kilo/agents/vision.md</code><small>INSTALL-PARSER-WINDOWS.md, § 6</small></p>
-      <p>Сколько навыков должно быть в ответе — [РЕШАЕТ АВТОР]: «шесть» или двадцать два, см. «Противоречия».</p>
+      <p>В ответе — двадцать четыре навыка по составу канона; приёмка проверяет, что среди них есть шесть базовых: document-digitize, technical-analysis, document-draft, document-package-review, reflection-synthesis, session-audit.<small>PACKAGE-MANIFEST.md, «Состав инструкций» и «Приёмка у студента»</small></p>
     </li>
     <li>
       <div class="step-title">«Работаем с…»</div>
@@ -1013,11 +1022,11 @@
   <h3 class="sub">8. Что ещё не описано</h3>
   <p class="warn-inline"><b>Пробелы, которые пока закрыть нечем.</b> Здесь нет правдоподобного текста — нужен ответ автора.</p>
   <ul>
-    <li>Установка Git, SSH-клиента, заведение ключа SSH и токена HTTPS, установка <code>uv</code>, выбор и установка Figma MCP — [НЕ ОПИСАНО].</li>
-    <li>macOS в целом: порядок установки, путь глобального конфига, команды проверки — [НЕ ОПИСАНО].</li>
-    <li>Версии VS Code и Kilo Code — [НЕ ОПИСАНО]. Проверен только Kilo backend 7.5.14 на macOS для discovery<small>INSTALL-PARSER-WINDOWS.md; PACKAGE-MANIFEST.md</small></li>
-    <li>Способ установки Java — [НЕ ОПИСАНО].</li>
-    <li>Команда проверки PowerShell и VPN — [НЕ ОПИСАНО].</li>
+    <li>Установка Git, Java, <code>uv</code> и колонка macOS заполнены 26.09.2026 по документации разработчиков, не по канону. SSH снят: транспорт только HTTPS. Выпуск токена SourceCraft и Figma MCP в навигаторе намеренно не описываются (решение владельца 26.09.2026; Figma MCP — отдельный вебинар).</li>
+    <li>macOS: колонка таблицы «Программы» и команды установки базы парсера заполнены 26.09.2026 по документации разработчиков, не по канону — в каноне macOS не описан, установка на macOS не проверена.</li>
+    <li>Версии VS Code и Kilo Code не закреплены — ставится текущая стабильная. Проверен только Kilo backend 7.5.14 на macOS для discovery<small>INSTALL-PARSER-WINDOWS.md; PACKAGE-MANIFEST.md</small></li>
+    <li>Способ установки Java — по документации разработчиков (Temurin), в каноне не закреплён.</li>
+    <li>Проверка PowerShell — <code>$PSVersionTable.PSVersion</code>. VPN — по правилам компании, в навигаторе не описывается (решение владельца 26.09.2026).</li>
   </ul>
 
   <h3 class="sub">Противоречия в источниках</h3>
@@ -1027,11 +1036,11 @@
     <table class="flow">
       <thead><tr><th>Вопрос</th><th>Что говорят источники</th><th>Решение</th></tr></thead>
       <tbody>
-        <tr><td>Минимальная версия Python</td><td>3.10+<small>INSTALL-PARSER-WINDOWS.md; setup-parser.md</small> 3.11/3.12<small>docx-layout/references/windows-setup.md</small> 3.9+<small>layout-builder.md; project-layout/SKILL.md</small></td><td>[РЕШАЕТ АВТОР]</td></tr>
-        <tr><td>Где лежит <code>plantuml.jar</code></td><td><code>.venv\vendor\plantuml.jar</code><small>INSTALL-PARSER-WINDOWS.md, § 4</small> Путь в поле <code>plantuml.jar</code> профиля сборки<small>windows-setup.md, § 4</small> JAR не скачивать, «PlantUML render: NOT INSTALLED»<small>setup-parser.md, шаг 6 [ОТКЛОНЕНИЕ]</small></td><td>[РЕШАЕТ АВТОР]</td></tr>
-        <tr><td>Tesseract</td><td>Ставить сборку UB Mannheim<small>INSTALL-PARSER-WINDOWS.md, § 4</small> «Программа уже есть», языков нет — не ставить<small>setup-parser.md, шаг 5 — записаны факты одного хоста</small></td><td>[РЕШАЕТ АВТОР]</td></tr>
-        <tr><td>Число навыков</td><td>Шесть<small>INSTALL-PARSER-WINDOWS.md; PACKAGE-MANIFEST.md, «Приёмка у студента»; webinar-01, разд. 8.2</small> Двадцать два<small>PACKAGE-MANIFEST.md, «Состав инструкций»; ls .kilo/skills</small></td><td>[РЕШАЕТ АВТОР]</td></tr>
-        <tr><td>Структура рабочей папки</td><td><code>tools/</code>, <code>projects/&lt;коннектор&gt;/input/ research/ work/ out/</code><small>webinar-01, разд. 8.1</small> <code>.kilo/tools/</code>, паспорт <code>99-governance/layout.json</code>, разделы <code>00-sources/</code> … <a href="#layout">(Где что лежит)</a><small>kilo-canon/README.md; project-layout-*/references</small></td><td>[РЕШАЕТ АВТОР]</td></tr>
+        <tr><td>Минимальная версия Python</td><td>3.10+<small>INSTALL-PARSER-WINDOWS.md; setup-parser.md</small> 3.11/3.12<small>docx-layout/references/windows-setup.md</small> 3.9+<small>layout-builder.md; project-layout/SKILL.md</small></td><td>Решение владельца 26.09.2026: <b>Python 3.14</b>, минимум 3.10. «3.11/3.12» в windows-setup.md — среда прогона навыка, не верхняя граница; строку в каноне заменить на «3.10+; проверено на 3.12 и 3.14»</td></tr>
+        <tr><td>Где лежит <code>plantuml.jar</code></td><td><code>.venv\vendor\plantuml.jar</code><small>INSTALL-PARSER-WINDOWS.md, § 4</small> Путь в поле <code>plantuml.jar</code> профиля сборки<small>windows-setup.md, § 4</small> JAR не скачивать, «PlantUML render: NOT INSTALLED»<small>setup-parser.md, шаг 6 [ОТКЛОНЕНИЕ]</small></td><td>Противоречия нет: общее правило — INSTALL (<code>.venv\vendor\plantuml.jar</code>), профиль сборки указывает тот же путь; <code>/setup-parser</code> — согласованное владельцем отклонение для его хоста</td></tr>
+        <tr><td>Tesseract</td><td>Ставить сборку UB Mannheim<small>INSTALL-PARSER-WINDOWS.md, § 4</small> «Программа уже есть», языков нет — не ставить<small>setup-parser.md, шаг 5 — записаны факты одного хоста</small></td><td>Общее правило — INSTALL § 4 (UB Mannheim, языки rus и eng); шаг 5 <code>/setup-parser</code> — факт одного хоста. На чистом Windows NOT VERIFIED</td></tr>
+        <tr><td>Число навыков</td><td>Шесть<small>INSTALL-PARSER-WINDOWS.md; PACKAGE-MANIFEST.md, «Приёмка у студента»; webinar-01, разд. 8.2</small> Двадцать четыре<small>PACKAGE-MANIFEST.md, «Состав инструкций» (26.09.2026, добавлены bt-preparation и bt-review); ls .kilo/skills — 24 каталога</small></td><td>Противоречия нет: «шесть» — базовые навыки из состава манифеста (document-digitize, technical-analysis, document-draft, document-package-review, reflection-synthesis, session-audit), их наличие проверяет приёмка; всего навыков двадцать четыре</td></tr>
+        <tr><td>Структура рабочей папки</td><td><code>tools/</code>, <code>projects/&lt;коннектор&gt;/input/ research/ work/ out/</code><small>webinar-01, разд. 8.1</small> <code>.kilo/tools/</code>, паспорт <code>99-governance/layout.json</code>, разделы <code>00-sources/</code> … <a href="#layout">(Где что лежит)</a><small>kilo-canon/README.md; project-layout-*/references</small></td><td>Действует канон: корень — клон канона, проект — <code>projects/&lt;проект&gt;/</code> с паспортом <code>99-governance/layout.json</code> и разделами <code>00-sources/</code>, <code>90-work-items/…</code>. Раскладка <code>input/ research/ work/ out/</code> из webinar-01 — прежняя, заменена 22.09.2026</td></tr>
       </tbody>
     </table>
   </div>
@@ -1073,8 +1082,8 @@
 
     <article class="tile">
       <div class="tile-head"><svg class="ico"><use href="#i-branch"/></svg><h4>Где хранится</h4></div>
-      <p>Каждый специалист работает в своей рабочей области — отдельном репозитории на SourceCraft, история которого начинается с Золотого стандарта. <code>.kilo/</code> в ней — обычные файлы, не submodule и не отдельный клон.</p>
-      <p>Remote <code>origin</code> — своя область, <code>upstream</code> — <code>kilo-canon</code>, только для чтения.<small>.kilo/agents/devops.md, «Из чего собрана рабочая область»</small></p>
+      <p>Корень рабочего места специалиста — клон канона <code>kilo-canon</code> только для чтения; своя работа живёт в <code>projects/&lt;проект&gt;/</code> и <code>projects/reflection/</code> — каждый со своим репозиторием на SourceCraft.</p>
+      <p>Корень рабочего места — клон канона (<code>origin</code> — <code>kilo-canon</code>, только чтение); проекты — отдельные репозитории в <code>projects/</code>.<small>.kilo/agents/devops.md, «Из чего собрано рабочее место»</small></p>
     </article>
 
     <article class="tile">
@@ -1085,8 +1094,8 @@
 
     <article class="tile">
       <div class="tile-head"><svg class="ico"><use href="#i-wrench"/></svg><h4>Как обновляется</h4></div>
-      <p>Раз в сутки при старте сессии роли <code>business-analyst</code>, <code>devops</code>, <code>ft-writer</code>, <code>layout-builder</code>, <code>project-architect</code>, <code>reflector</code>, <code>tz-writer</code> зовут <a href="#role-devops">devops</a>, и он сливает обновления в общую часть. В любой момент — команда <code>/sync-workspace</code>.</p>
-      <p>Автоматически — только для областей из <code>.kilo/references/workspaces.json</code> с <code>canon_update: auto</code>; остальные — сверка и отчёт, слияние по прямой просьбе.<small>kilo-canon/README.md, «Как получать обновления»</small></p>
+      <p>При старте сессии любой роли субагент <a href="#role-devops">devops</a> проверяет канон (<code>canon_update_check.py</code>, не чаще раза в сутки) и подтягивает обновления <code>git pull --ff-only</code>. Если изменились <code>.kilo/</code> или <code>AGENTS.md</code> — одна строка «начните новую сессию». В любой момент — фраза «проверь канон».</p>
+      <p>Ваши проекты проверка не трогает. Выгрузка работы в репозитории проектов и рефлексии — только по вашей просьбе, по одному репозиторию.<small>kilo-canon/README.md, «Как получать обновления»; devops.md</small></p>
     </article>
 
     <article class="tile">
@@ -1296,13 +1305,8 @@
   <div class="msg-body"><code class="msg-text">/source-analysis &lt;вопрос&gt;</code><button type="button" class="copy">Копировать</button></div>
   <dl class="msg-notes msg-dl"><dt>Когда применять</dt><dd>По ходу работы возник вопрос «а что говорит источник»: как устроена операция, есть ли требование, чем отличаются версии. Вопрос формулируйте своими словами, одной темой за раз</dd><dt>Что на выходе</dt><dd>Ответ со ссылками на файлы и строки, отдельно — что источник не говорит; факты и открытые вопросы уходят в файлы знаний</dd></dl>
 </article>
-<article class="msg cmd-card" id="cmd-sync-workspace">
-  <div class="msg-to"><span class="msg-label">Кому · Исполнитель:</span> <span class="msg-exec"><a href="#role-devops">devops</a>, навык <a href="#skill-workspace-sync">workspace-sync</a><small>.kilo/command/sync-workspace.md</small></span></div>
-  <div class="msg-body"><code class="msg-text">/sync-workspace</code><button type="button" class="copy">Копировать</button></div>
-  <dl class="msg-notes msg-dl"><dt>Когда применять</dt><dd>Нужно обновить рабочую область сейчас, не дожидаясь суточной сверки: сверка с реестром, обновление Золотого стандарта и выгрузка своей части. Суточный гейт при ручном запуске не действует</dd><dt>Что на выходе</dt><dd>Отчёт первой строкой: актуально / обновлено и выгружено / остановлено стоп-условием / <code>SYNC_VERIFY_FAILED</code> / сверка не выполнена из-за связи / область не зарегистрирована / клон канона. Если было слияние — команда отката</dd></dl>
-</article>
 <article class="msg cmd-card" id="cmd-setup-parser">
-  <div class="msg-to"><span class="msg-label">Кому · Исполнитель:</span> <span class="msg-exec">в команде не назначен [УТОЧНИТЬ У АВТОРА]<small>.kilo/command/setup-parser.md</small></span></div>
+  <div class="msg-to"><span class="msg-label">Кому · Исполнитель:</span> <span class="msg-exec">исполнитель в команде не назначен — выполняет текущая роль сессии; сообщение само является разрешением на установку<small>.kilo/command/setup-parser.md</small></span></div>
   <div class="msg-body"><code class="msg-text">/setup-parser</code><button type="button" class="copy">Копировать</button></div>
   <dl class="msg-notes msg-dl"><dt>Когда применять</dt><dd>Установка зависимостей парсера на Windows без участия владельца: сообщение само является разрешением на установку. Порядок — <code>INSTALL-PARSER-WINDOWS.md</code> с согласованными отклонениями</dd><dt>Что на выходе</dt><dd>Отчёт одной таблицей: версия Python в <code>.venv</code>, две зафиксированные версии пакетов, <code>PYTHON_DEPS_OK</code>, smoke, SHA, soffice, tesseract (rus/eng), java, 10/10 CLI</dd></dl>
 </article>
@@ -1318,7 +1322,7 @@
   </div>
   <p class="lead">Пример разобран до конца, потому что по нему видно общий порядок: вы кладёте файл и называете его, дальше работает конвейер.</p>
   <p class="lead"><b>Общее правило Золотого стандарта.</b> Оцифровку ведёт роль <a href="#role-parser_doc">parser_doc</a> по навыку <a href="#skill-document-digitize">document-digitize</a>. Итоговый <code>&lt;имя-исходника&gt;.md</code> ложится рядом с исходным документом в его каталоге <code>source_roots</code>, промежуточные данные — в <code>&lt;имя-исходника&gt;.parse/&lt;version&gt;__&lt;sha8&gt;/</code>. Сам исходный файл не изменяется и не удаляется.<small>AGENTS.md, § 4; .kilo/agents/parser_doc.md</small></p>
-  <p class="lead">Ниже — маршрут проекта-примера: команда <code>/document-process</code>, каталог прогона и ручное размещение в <code>markdown/</code>. Он отличается от общего правила — какой порядок оставить общим, [РЕШАЕТ АВТОР].</p>
+  <p class="lead">Ниже — маршрут проекта-примера: команда <code>/document-process</code>, каталог прогона и ручное размещение в <code>markdown/</code>. В Золотом стандарте этой команды и каталога <code>markdown/</code> нет: общий порядок — «Оцифруй &lt;файл&gt;» роли <code>parser_doc</code>, прогон в <code>&lt;ИМЯ&gt;.parse/</code>, итог <code>&lt;ИМЯ&gt;.md</code> рядом с оригиналом. Пример показан как иллюстрация конвейера.<small>parser_doc.md, § 2, § 4.7; PACKAGE-MANIFEST.md</small></p>
   <ol class="steps">
     <li>
       <div class="step-title">Положите файл в проект</div>
@@ -1745,9 +1749,9 @@ const ROLES = [
     id: "business-analyst",
     group: "docs",
     mode: "primary",
-    desc: "Основной аналитик проекта ДБО: Use Case, описания UI, API и интеграции по навыкам use-case-preparation, ui-description, api-integration. В проектах БТ дополнительно: системный и бизнес-аналитик для подготовки БТ, основная роль работы с бизнес-требованиями (пример проекта).",
+    desc: "Основной аналитик проекта ДБО: Use Case, описания UI, API и интеграции по навыкам use-case-preparation, ui-description, api-integration. Главный помощник и распорядитель работ: сам ведёт Use Case, UI, API и макеты проектов ДБО, подготовку БТ поручает роли bt-writer и принимает результат.",
     perms: "Порученные правки вносит сразу, без отдельного согласования diff, кроме <code>00-sources/</code> и <code>.kilo/</code>. Команды в терминале — с вашего подтверждения. Commit, push и публикация в Confluence — только по отдельному явному поручению. После создания документа сама зовёт reviewer.",
-    status: "под одним id в Золотом стандарте и в проекте-примере разное содержание — [РЕШАЕТ АВТОР: слияние ролей]",
+    status: "в Золотом стандарте — главный помощник и распорядитель работ; редакция проекта-примера с подготовкой БТ в канон не перенесена: методика БТ Генбанка вошла 26.09.2026 ролью bt-writer",
     path: ".kilo/agents/business-analyst.md"
   },
   {
@@ -1788,7 +1792,7 @@ const ROLES = [
     id: "devops",
     group: "env",
     mode: "all",
-    desc: "DevOps/CI-агент: жизненный цикл кода и инфраструктуры, выгрузка работы специалиста в его репозиторий и получение обновлений Золотого стандарта. Раз в сутки при старте сессии его зовут другие роли; вручную — <code>/sync-workspace</code>.",
+    desc: "DevOps/CI-агент: жизненный цикл кода и инфраструктуры, выгрузка работы специалиста в его репозиторий и получение обновлений Золотого стандарта. При старте сессии любой роли проверяет канон (<code>canon_update_check.py</code>, не чаще раза в сутки); вручную — «проверь канон».",
     perms: "Команды git — без вопросов, кроме запретов: <code>push --force</code>, <code>reset --hard</code>, <code>rebase</code>, <code>stash</code>. Удаление веток и тегов — с вашего подтверждения. Общую часть в коммит своей области не включает.",
     path: ".kilo/agents/devops.md"
   },
@@ -1798,7 +1802,7 @@ const ROLES = [
     mode: "subagent",
     desc: "Локальная обработка документов и схем; технические результаты только в изолированных прогонах, без изменения источников и принятых артефактов.",
     calledBy: "команда <code>/document-process</code> или роль с правом делегирования",
-    warn: "Дублирует роль <a href=\"#role-parser_doc\">parser_doc</a> Золотого стандарта — [РЕШАЕТ АВТОР].",
+    warn: "Роль проекта-примера; в Золотом стандарте её нет (PACKAGE-MANIFEST.md: «отсутствуют в каноне»). В каноне оцифровку ведёт <a href=\"#role-parser_doc\">parser_doc</a>.",
     perms: "Пишет только в каталог прогона. Источники и принятые артефакты не меняет. Из других ролей может позвать только vlm.",
     status: MOVING,
     path: ".kilo/agents/document-processor.md"
@@ -1808,7 +1812,7 @@ const ROLES = [
     group: "documents",
     mode: "all",
     desc: "Парсер-цифровизатор документов: оцифровка PDF/DOCX проекта в единый машиночитаемый Markdown без потерь. Маршрут, инструменты и гейты — навык document-digitize; таблицы только HTML <code>&lt;table&gt;</code>, сомнение — маркер, а не догадка. Рабочие файлы хранятся рядом с оригиналом; оригинал неизменяем.",
-    warn: "Дублирует роль <a href=\"#role-document-processor\">document-processor</a> проекта-примера — [РЕШАЕТ АВТОР].",
+    warn: "Единственная роль оцифровки в Золотом стандарте; document-processor проекта-примера в канон не переносится.",
     perms: "Пишет в проект, в том числе рядом с оригиналом в <code>00-sources/</code>, но не в <code>.kilo/</code>; команды — с вашего подтверждения. Работает и как основная роль, и как субагент: в режиме субагента решения человека не принимает, а возвращает их перечень.",
     path: ".kilo/agents/parser_doc.md"
   },
@@ -1879,7 +1883,7 @@ const ROLES = [
     mode: "subagent",
     desc: "Разбор одного локального изображения или отрендеренной страницы PDF моделью, подключённой сейчас в Kilo; провайдер и модель в проекте не закреплены.",
     calledBy: "parser_doc по навыку document-digitize",
-    warn: "Дублирует роль <a href=\"#role-vlm\">vlm</a> проекта-примера — [РЕШАЕТ АВТОР]. Нужна модель с поддержкой изображений: без неё роль возвращает только <code>WAITING_FOR_VISION</code>.",
+    warn: "Роль Золотого стандарта — единственный канал чтения изображений для parser_doc; vlm проекта-примера в канон не переносится. Нужна модель с поддержкой изображений: без неё роль возвращает только <code>WAITING_FOR_VISION</code>.",
     perms: "Ничего не правит, не запускает и файлов не пишет. Нечитаемое помечает <code>[НЕЧИТАЕМО]</code>, сомнение — <code>UNCERTAIN</code>.",
     path: ".kilo/agents/vision.md"
   },
@@ -1889,7 +1893,7 @@ const ROLES = [
     mode: "subagent",
     desc: "Узкоспециализированный разбор изображений: смотрит картинку и возвращает машиночитаемое описание. Сам по себе документ не оцифровывает.",
     calledBy: "document-processor по контракту document-digitize, отдельными вызовами STRUCTURE и TRANSCRIBE",
-    warn: "Дублирует роль <a href=\"#role-vision\">vision</a> Золотого стандарта — [РЕШАЕТ АВТОР]. Не вызывайте напрямую: при прямом обращении теряется весь порядок оцифровки — выбор формата, конвертация, проверки и запись в каталог прогона. Нужен разбор документа или схемы — запускайте <code>/document-process</code>.",
+    warn: "Роль проекта-примера; в Золотом стандарте её нет — там <a href=\"#role-vision\">vision</a>. Не вызывайте напрямую: при прямом обращении теряется весь порядок оцифровки — выбор формата, конвертация, проверки и запись в каталог прогона. Нужен разбор документа или схемы — запускайте <code>/document-process</code>.",
     perms: "Ничего не правит и не запускает: только смотрит изображение и возвращает разбор.",
     status: MOVING,
     path: ".kilo/agents/vlm.md"
@@ -1903,7 +1907,7 @@ const SKILLS = [
   { id: "bt-preparation", group: "bt", desc: "Подготовка или доработка одной БТ по индивидуальной инструкции из реестра, актуальным источникам, архитектуре и общему шаблону. Не заменяет независимое ревью.", status: MOVING_SKILL, path: ".kilo/skills/bt-preparation/SKILL.md" },
   { id: "bt-review", group: "review", desc: "Независимая проверка одной БТ или её изменений по индивидуальной инструкции, источникам, архитектуре и принятым проектным решениям. Проверяет бизнес-границы, структуру, трассировку и диаграммы; возвращает доказательные находки без правок документов.", status: MOVING_SKILL, path: ".kilo/skills/bt-review/SKILL.md" },
   { id: "confluence", group: "env", desc: "Чтение страниц корпоративного Confluence по ссылке из задания и публикация статьи из Markdown-источника в указанное пространство. Не для подготовки самого документа и не для пространства, не указанного в задании. На хосте нужны MCP-сервер, персональный токен и VPN — см. <code>.kilo/references/host-setup-windows.md</code>.", path: ".kilo/skills/confluence/SKILL.md" },
-  { id: "devops", group: "layout", desc: "Синхронизация репозитория с удалённым origin (fetch, pull, push): проверенный SSH-ключ и типовые ошибки pull/push. Загружать до первой git-команды к remote.", status: "навык проекта-примера; в Золотом стандарте его нет, и в список переноса он не входит — синхронизацию там ведёт <a href=\"#skill-workspace-sync\">workspace-sync</a>. Оставить или убрать — [РЕШАЕТ АВТОР]", path: ".kilo/skills/devops/SKILL.md" },
+  { id: "devops", group: "layout", desc: "Синхронизация репозитория с удалённым origin (fetch, pull, push): проверенный SSH-ключ и типовые ошибки pull/push. Загружать до первой git-команды к remote.", status: "навык проекта-примера; в Золотом стандарте его нет и не переносится: синхронизацию там ведёт роль devops по HTTPS с токеном (canon_update_check.py, pull --ff-only). SSH не используется", path: ".kilo/skills/devops/SKILL.md" },
   { id: "document-digitize", group: "digitize", desc: "Проверяемая оцифровка локальных PDF/DOCX, опись и подготовка к техническому анализу; XML/XSD-валидация. Незавершённые обязательные возможности блокируют полный выпуск; простое чтение названного фрагмента навыка не требует.", path: ".kilo/skills/document-digitize/SKILL.md" },
   { id: "document-draft", group: "bt", desc: "Черновик аналитического документа по явно названному шаблону и подтверждённым findings активного коннектора: ТЗ, ФТ или описание форматов. Не для извлечения данных из неразобранных DOCX/PDF.", path: ".kilo/skills/document-draft/SKILL.md" },
   { id: "document-package-review", group: "review", desc: "Проверка комплекта входных документов коннектора по именам, версиям, связям и подтверждённым фактам; расхождения и вопросы с адресами. Перед подготовкой документа; не замена оцифровке и XML-валидации.", path: ".kilo/skills/document-package-review/SKILL.md" },
@@ -1924,7 +1928,7 @@ const SKILLS = [
   { id: "ui-description", group: "docs", desc: "Описание пользовательского интерфейса по регламенту подготовки Use Case и описания UI и правилам каталога описаний UI проекта.", path: ".kilo/skills/ui-description/SKILL.md" },
   { id: "use-case-preparation", group: "docs", desc: "Подготовка Use Case по регламенту подготовки Use Case и описания UI и правилам каталога Use Case проекта. Регламент общий для навыков use-case-preparation, ui-description и api-integration.", path: ".kilo/skills/use-case-preparation/SKILL.md" },
   { id: "visual-analysis", group: "digitize", desc: "Универсальный канон визуального анализа и lossless-конвертации изображений, страниц документов, таблиц, схем, диаграмм, графиков, UI, формул и кода в машиночитаемые форматы.", status: MOVING_SKILL, path: ".kilo/skills/visual-analysis/SKILL.md" },
-  { id: "workspace-sync", group: "layout", desc: "Цикл синхронизации рабочей области с Золотым стандартом и с её собственным origin: сверка по реестру, автослияние обновлений в общую часть при выполнении стоп-условий, выгрузка своей части с гейтом секретов, отчёт первой строкой с командой отката. Запускается ролью devops и командой <code>/sync-workspace</code>.", path: ".kilo/skills/workspace-sync/SKILL.md" }
+  { id: "workspace-sync", group: "layout", desc: "Удалён из Золотого стандарта 25.09.2026 вместе с командой /sync-workspace и суточным гейтом. Обновление канона теперь делает роль devops при старте сессии (<code>canon_update_check.py</code>, <code>git pull --ff-only</code>), выгрузка работы — по просьбе.", status: "удалён; ссылка оставлена для старых материалов", path: ".kilo/references/devops-changelog.md" }
 ];
 
 /* ---------- Данные: маршруты «задача → кто → навык» ---------- */
@@ -1972,7 +1976,7 @@ const TASKS = [
   },
   {
     task: "Подготовить пользовательский сценарий (Use Case)",
-    prompt: "[УТОЧНИТЬ У АВТОРА]",
+    prompt: "Работаем с &lt;проект&gt;. Подготовь Use Case UC-&lt;номер&gt; «&lt;название&gt;»",
     you: roleLink("business-analyst"),
     under: roleLink("reviewer") + " — после создания документа роль зовёт его сама",
     skill: skillLink("use-case-preparation") + ", " + skillLink("analysis-review"),
@@ -2000,7 +2004,7 @@ const TASKS = [
   },
   {
     task: "Описать API и проверить соответствие параметров",
-    prompt: "[УТОЧНИТЬ У АВТОРА]",
+    prompt: "Работаем с &lt;проект&gt;. Опиши API &lt;метод или экран&gt; и сверь параметры с UI, backend и БФТ",
     you: roleLink("business-analyst"),
     under: roleLink("reviewer") + " — после создания документа роль зовёт его сама",
     skill: skillLink("api-integration"),
@@ -2019,7 +2023,7 @@ const TASKS = [
     skill: "профильный навык проекта (" + skillLink("tz-osnovnoe-rs-connect") + ", " + skillLink("tz-fssp-mfo") + ") + " + skillLink("technical-analysis"),
     notes: [
       { icon: "i-check", label: "Откуда формулировка",
-        text: "«Собери основное ТЗ» — из навыка tz-osnovnoe-rs-connect: основное ТЗ RS-Connect для обмена, где госорган инициирует запрос, а банк — поставщик сведений. Для других видов ТЗ формулировка — [УТОЧНИТЬ У АВТОРА]." },
+        text: "«Собери основное ТЗ» — из навыка tz-osnovnoe-rs-connect: основное ТЗ RS-Connect для обмена, где госорган инициирует запрос, а банк — поставщик сведений. Для ТЗ-Форматов: «Работаем с &lt;проект&gt;. Собери ТЗ-Форматы по &lt;коннектор&gt;» — работает только при профильном навыке проекта (например tz-fssp-mfo); без него роль спросит, по какому регламенту собирать. Формулировки — решение владельца 26.09.2026." },
       { icon: "i-compass", label: "Когда запускать",
         text: "Когда источники разобраны и версии входов согласованы: роль не выбирает «последнюю» редакцию автоматически. Если специального навыка у проекта нет, роль работает по общему процессу и согласованному шаблону." }
     ]
@@ -2119,7 +2123,7 @@ const TASKS = [
     task: "Завести или проверить раскладку нового проекта",
     prompt: "Заведи структуру проекта",
     you: roleLink("layout-builder"),
-    under: roleLink("devops") + " и " + roleLink("reflector") + " — при старте сессии, по правилу суточной синхронизации и досмотра рефлексии",
+    under: roleLink("devops") + " и " + roleLink("reflector") + " — при старте сессии: проверка канона и досмотр рефлексии",
     skill: skillLink("project-layout") + " → " + skillLink("project-layout-connector") + " или " + skillLink("project-layout-analyst"),
     notes: [
       { icon: "i-compass", label: "Как идёт работа",
@@ -2129,18 +2133,18 @@ const TASKS = [
     ]
   },
   {
-    task: "Обновить рабочую область из Золотого стандарта",
-    prompt: "/sync-workspace",
-    you: "готовая команда <code>/sync-workspace</code>",
-    under: roleLink("devops"),
-    skill: skillLink("workspace-sync"),
+    task: "Проверить и обновить Золотой стандарт",
+    prompt: "Проверь канон",
+    you: roleLink("devops"),
+    under: "—",
+    skill: "без навыка: скрипт <code>.kilo/tools/canon_update_check.py</code>",
     notes: [
       { icon: "i-compass", label: "Когда запускать",
-        text: "Когда обновление нужно сейчас. Без команды сверка идёт сама раз в сутки при старте сессии основных ролей. Работает без вопросов к вам." },
+        text: "Обычно не нужно: при старте сессии любой роли субагент devops проверяет канон сам, не чаще раза в сутки. Фраза «проверь канон» — та же проверка сразу, без суточного гейта (<code>--force</code>)." },
       { icon: "i-check", label: "Что получите",
-        text: "Отчёт первой строкой: актуально, обновлено и выгружено, остановлено стоп-условием, сверка не выполнена из-за связи или область не зарегистрирована. Если было слияние — команда отката." },
-      { icon: "i-alert", label: "Если область не в реестре",
-        text: "Область не записана в <code>.kilo/references/workspaces.json</code> с <code>canon_update: auto</code> — только сверка и отчёт; слияние и выгрузка — по вашей прямой просьбе." }
+        text: "Не больше одной строки: «канон актуален», «канон обновлён» или «начните новую сессию» — если изменились <code>.kilo/</code> или <code>AGENTS.md</code>. Сетевой сбой — тишина: сессия работает на текущем каноне." },
+      { icon: "i-alert", label: "Чего проверка не делает",
+        text: "Не трогает <code>projects/</code> и рефлексию, не делает push, merge и reset. Локальные правки в корне рабочего места останавливают обновление — в корне специалист ничего не правит." }
     ]
   },
   {
@@ -2172,7 +2176,7 @@ const TASKS = [
     prompt: "Выгрузи накопленные коммиты на сервер",
     you: roleLink("devops"),
     under: "—",
-    skill: skillLink("workspace-sync") + " (в проекте-примере — " + skillLink("devops") + ")",
+    skill: "без навыка: роль devops, раздел «Выгрузка работы» (в проекте-примере — " + skillLink("devops") + ")",
     notes: [
       { icon: "i-compass", label: "Когда запускать",
         text: "В конце рабочего куска: зафиксировать сделанное и выгрузить. В коммит своей области идёт только своя часть — <code>projects/</code>, <code>decisions/</code>, <code>Plans/</code>, <code>reflection/</code>, <code>MEMORY.md</code>; общая часть не выгружается." },
