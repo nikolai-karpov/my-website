@@ -229,6 +229,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 0.875rem;
   color: var(--text-muted);
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .site-nav a:hover { color: var(--text); }
@@ -319,7 +320,7 @@ img { max-width: 100%; height: auto; display: block; }
   .site-nav { gap: 14px; }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 960px) {
   .brand span:last-child {
     max-width: min(56vw, 260px);
     overflow: hidden;
@@ -3884,4 +3885,400 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (min-width: 2200px) {
   html { font-size: 20px; }
+}
+
+/* ============================================
+   Projects navigator (site-pages/projects.html)
+   ============================================ */
+
+.projects-section {
+  padding-top: clamp(20px, 3vh, 40px);
+  padding-bottom: clamp(80px, 12vh, 140px);
+}
+
+/* Заголовок и лид страницы должны начинаться там же, где карточки:
+   .article-hero.container добавляет --hero-inset слева/справа, а
+   .projects-section — обычный .container без него. Снимаем инсет
+   только для этой страницы, не трогая остальные article-hero. */
+.projects-hero.container {
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.projects-counters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(24px, 4vw, 48px);
+  margin-top: 32px;
+}
+
+.projects-counter {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.projects-counter__value {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1;
+}
+
+.projects-counter__label {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Toolbar: search + filters ---------- */
+.projects-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.projects-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1 1 260px;
+  min-width: 0;
+}
+
+.projects-search-icon {
+  position: absolute;
+  left: 12px;
+  width: 16px;
+  height: 16px;
+  color: var(--text-faint);
+  pointer-events: none;
+}
+
+.projects-search {
+  width: 100%;
+  padding: 10px 14px 10px 36px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+}
+
+.projects-search:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+
+.projects-search::placeholder {
+  color: var(--text-faint);
+}
+
+.projects-filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.projects-filter-btn {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.projects-filter-btn:hover {
+  color: var(--text);
+  border-color: var(--line-strong);
+}
+
+.projects-filter-btn.is-active {
+  color: var(--bg);
+  background: var(--text);
+  border-color: var(--text);
+}
+
+/* ---------- Group chips ---------- */
+.projects-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: clamp(28px, 4vw, 40px);
+}
+
+.projects-chip {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--bg-alt);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.projects-chip:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.projects-chip.is-active {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* ---------- Groups ---------- */
+.projects-group {
+  padding-top: 32px;
+  margin-top: 32px;
+  border-top: 1px solid var(--line);
+}
+
+.projects-group:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.projects-group__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 20px;
+  list-style: none;
+}
+
+.projects-group__head::-webkit-details-marker {
+  display: none;
+}
+
+.projects-group__title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--text);
+  margin: 0;
+}
+
+.projects-group__count {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-faint);
+}
+
+.projects-group--secondary {
+  opacity: 0.82;
+}
+
+.projects-group--secondary > .projects-group__head {
+  cursor: pointer;
+}
+
+.projects-group--secondary > .projects-group__head:hover .projects-group__title {
+  color: var(--accent);
+}
+
+/* ---------- Card grid ---------- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1080px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.repo-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  min-width: 0;
+}
+
+.repo-card--fork {
+  background: var(--bg-alt);
+}
+
+.repo-card__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px 10px;
+}
+
+.repo-card__title {
+  font-family: var(--font-display);
+  font-size: 1.0125rem;
+  font-weight: 500;
+  color: var(--text);
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.repo-card__lock {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-faint);
+  flex: none;
+  white-space: nowrap;
+}
+
+.repo-card__lock-icon {
+  width: 13px;
+  height: 13px;
+}
+
+.repo-card__fork-of {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  overflow-wrap: anywhere;
+}
+
+.repo-card__desc {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+.repo-card__desc--empty {
+  color: var(--text-faint);
+  font-style: italic;
+}
+
+.repo-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.repo-card__tag {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 8px;
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  color: var(--text-muted);
+  border-radius: 999px;
+}
+
+.repo-card__date {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+}
+
+.repo-card__badge--empty {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 8px;
+  border: 1px dashed var(--line-strong);
+  color: var(--text-faint);
+  border-radius: 999px;
+}
+
+.repo-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.repo-card__link {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1 1 140px;
+  min-width: 0;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+a.repo-card__link:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.repo-card__link-platform {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.repo-card__link-owner {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+.repo-card__link--masked {
+  cursor: default;
+  background: var(--bg-alt);
+  opacity: 0.75;
+}
+
+.repo-card__link--masked .repo-card__link-platform {
+  color: var(--text-faint);
+}
+
+/* ---------- Empty / error states ---------- */
+.projects-empty,
+.projects-error {
+  text-align: center;
+  padding: 48px 16px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.projects-error {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg-alt);
 }

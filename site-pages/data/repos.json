@@ -1,0 +1,1667 @@
+{
+  "generated_at": "2026-09-27T17:34:18.064Z",
+  "counts": {
+    "github": 50,
+    "sourcecraft": 28,
+    "projects": 76,
+    "private": 27,
+    "forks": 37
+  },
+  "groups": [
+    {
+      "id": "products",
+      "title": "Авторские продукты",
+      "secondary": false
+    },
+    {
+      "id": "sites",
+      "title": "Сайты, курсы и презентации",
+      "secondary": false
+    },
+    {
+      "id": "agents",
+      "title": "Инструменты ИИ-агентов",
+      "secondary": false
+    },
+    {
+      "id": "automation",
+      "title": "Автоматизация, данные, инфраструктура",
+      "secondary": false
+    },
+    {
+      "id": "exchange",
+      "title": "Рабочие обмены и совместная работа",
+      "secondary": false
+    },
+    {
+      "id": "other",
+      "title": "Прочее",
+      "secondary": false
+    },
+    {
+      "id": "forks",
+      "title": "Изучаю: форки чужих проектов",
+      "secondary": true
+    }
+  ],
+  "projects": [
+    {
+      "id": "matrix",
+      "title": "matrix",
+      "description": "Мини-приложение - Матрица проектов",
+      "group": "products",
+      "language": "HTML",
+      "updated": "2026-05-06",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "nikolai-pir-s-ru",
+          "repo": "matrix",
+          "url": "https://sourcecraft.dev/nikolai-pir-s-ru/matrix",
+          "visibility": "private"
+        }
+      ]
+    },
+    {
+      "id": "pseudonymizer",
+      "title": "pseudonymizer",
+      "description": null,
+      "group": "products",
+      "language": "Python",
+      "updated": "2026-04-25",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "nikolai-pir-s-ru",
+          "repo": "pseudonymizer",
+          "url": "https://sourcecraft.dev/nikolai-pir-s-ru/pseudonymizer",
+          "visibility": "private"
+        }
+      ]
+    },
+    {
+      "id": "bot",
+      "title": "bot",
+      "description": "Бот ПИР-Системы",
+      "group": "products",
+      "language": "Python",
+      "updated": "2026-03-01",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "pir-system",
+          "repo": "bot",
+          "url": "https://sourcecraft.dev/pir-system/bot",
+          "visibility": "private"
+        }
+      ]
+    },
+    {
+      "id": "pirs",
+      "title": "pirs",
+      "description": null,
+      "group": "products",
+      "language": null,
+      "updated": "2019-10-06",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "pirs",
+          "url": "https://github.com/nikolai-karpov/pirs",
+          "visibility": "private"
+        }
+      ]
+    },
+    {
+      "id": "my-website-portfolio",
+      "title": "my-website / portfolio",
+      "description": "https://nikolai-karpov.github.io/my-website/",
+      "group": "sites",
+      "language": "HTML",
+      "updated": "2026-09-26",
+      "visibility": "public",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "my-website",
+          "url": "https://github.com/nikolai-karpov/my-website",
+          "visibility": "public"
+        },
+        {
+          "platform": "sourcecraft",
+          "owner": "nikolai-pir-s-ru",
+          "repo": "portfolio",
+          "url": "https://sourcecraft.dev/nikolai-pir-s-ru/portfolio",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "analitic-course",
+      "title": "analitic-course",
+      "description": null,
+      "group": "sites",
+      "language": "HTML",
+      "updated": "2026-09-26",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "nikolai-pir-s-ru",
+          "repo": "analitic-course",
+          "url": "https://sourcecraft.dev/nikolai-pir-s-ru/analitic-course",
+          "visibility": "private"
+        }
+      ]
+    },
+    {
+      "id": "self-coder",
+      "title": "self-coder",
+      "description": "Обзор имеющихся решений, которые автоматизируют цепочку создания ПО от анализа ТЗ до генерации кода",
+      "group": "sites",
+      "language": "HTML",
+      "updated": "2026-08-05",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "nikolai-pir-s-ru",
+          "repo": "self-coder",
+          "url": "https://sourcecraft.dev/nikolai-pir-s-ru/self-coder",
+          "visibility": "private"
+        }
+      ]
+    },
+    {
+      "id": "pir-system-im",
+      "title": "im",
+      "description": "Инвестиционный меморандум",
+      "group": "sites",
+      "language": "HTML",
+      "updated": "2026-05-26",
+      "visibility": "public",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "pir-system",
+          "repo": "im",
+          "url": "https://sourcecraft.dev/pir-system/im",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "work-to-home",
+      "title": "work-to-home",
+      "description": null,
+      "group": "sites",
+      "language": "HTML",
+      "updated": "2026-05-08",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "nikolai-pir-s-ru",
+          "repo": "work-to-home",
+          "url": "https://sourcecraft.dev/nikolai-pir-s-ru/work-to-home",
+          "visibility": "private"
+        }
+      ]
+    },
+    {
+      "id": "pir-s-ru",
+      "title": "pir-s.ru",
+      "description": null,
+      "group": "sites",
+      "language": "JavaScript",
+      "updated": "2026-02-26",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "pir-s",
+          "repo": "pir-s.ru",
+          "url": "https://github.com/pir-s/pir-s.ru",
+          "visibility": "private"
+        }
+      ]
+    },
+    {
+      "id": "organization-pirs-ru-im",
+      "title": "im",
+      "description": "Инвестиционный меморандум",
+      "group": "sites",
+      "language": null,
+      "updated": "2026-02-02",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "organization-pirs-ru",
+          "repo": "im",
+          "url": "https://sourcecraft.dev/organization-pirs-ru/im",
+          "visibility": "private"
+        }
+      ]
+    },
+    {
+      "id": "invest-memo",
+      "title": "invest-memo",
+      "description": "Публичный доступ к инвестиционному меморандуму",
+      "group": "sites",
+      "language": null,
+      "updated": "2026-02-02",
+      "visibility": "internal",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "organization-pirs-ru",
+          "repo": "invest-memo",
+          "url": "https://sourcecraft.dev/organization-pirs-ru/invest-memo",
+          "visibility": "internal"
+        }
+      ]
+    },
+    {
+      "id": "ai-course",
+      "title": "ai-course",
+      "description": "Веб-презентация курса",
+      "group": "sites",
+      "language": "HTML",
+      "updated": "2026-01-13",
+      "visibility": "public",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "nikolai-pir-s-ru",
+          "repo": "ai-course",
+          "url": "https://sourcecraft.dev/nikolai-pir-s-ru/ai-course",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "curs",
+      "title": "curs",
+      "description": "Технологическая и дорожная карта курса https://nikolai-pir-s-ru.sourcecraft.site/curs/index.html",
+      "group": "sites",
+      "language": "HTML",
+      "updated": "2026-01-12",
+      "visibility": "public",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "nikolai-pir-s-ru",
+          "repo": "curs",
+          "url": "https://sourcecraft.dev/nikolai-pir-s-ru/curs",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "hermes-plugin-mempalace",
+      "title": "hermes-plugin-mempalace",
+      "description": "MemPalace memory provider plugin for Hermes Agent",
+      "group": "agents",
+      "language": "Python",
+      "updated": "2026-09-27",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "hermes-plugin-mempalace",
+          "url": "https://github.com/nikolai-karpov/hermes-plugin-mempalace",
+          "visibility": "private"
+        }
+      ]
+    },
+    {
+      "id": "hermes-agent",
+      "title": "hermes-agent",
+      "description": "The agent that grows with you",
+      "group": "agents",
+      "language": "Python",
+      "updated": "2026-09-27",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "hermes-agent",
+          "url": "https://github.com/nikolai-karpov/hermes-agent",
+          "visibility": "private"
+        }
+      ]
+    },
+    {
+      "id": "kilo-canon",
+      "title": "kilo-canon",
+      "description": null,
+      "group": "agents",
+      "language": "Python",
+      "updated": "2026-09-27",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "softlab",
+          "repo": "kilo-canon",
+          "url": "https://sourcecraft.dev/softlab/kilo-canon",
+          "visibility": "private"
+        }
+      ]
+    },
+    {
+      "id": "analitic",
+      "title": "analitic",
+      "description": "связка навыки аналитика + парсер",
+      "group": "agents",
+      "language": "Python",
+      "updated": "2026-09-25",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "nikolai-pir-s-ru",
+          "repo": "analitic",
+          "url": "https://sourcecraft.dev/nikolai-pir-s-ru/analitic",
+          "visibility": "private"
+        }
+      ]
+    },
+    {
+      "id": "devhub",
+      "title": "devhub",
+      "description": null,
+      "group": "agents",
+      "language": null,
+      "updated": "2026-09-01",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "nikolai-pir-s-ru",
+          "repo": "devhub",
+          "url": "https://sourcecraft.dev/nikolai-pir-s-ru/devhub",
+          "visibility": "private"
+        }
+      ]
+    },
+    {
+      "id": "claude-config",
+      "title": "claude-config",
+      "description": "Personal Claude Code customizations (hooks, plugins, skills, global CLAUDE.md)",
+      "group": "agents",
+      "language": "TypeScript",
+      "updated": "2026-08-25",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "claude-config",
+          "url": "https://github.com/nikolai-karpov/claude-config",
+          "visibility": "private"
+        }
+      ]
+    },
+    {
+      "id": "tg-mcp",
+      "title": "tg-mcp",
+      "description": "MCP для Телеграм",
+      "group": "agents",
+      "language": "Python",
+      "updated": "2026-08-24",
+      "visibility": "internal",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "nikolai-pir-s-ru",
+          "repo": "tg-mcp",
+          "url": "https://sourcecraft.dev/nikolai-pir-s-ru/tg-mcp",
+          "visibility": "internal"
+        }
+      ]
+    },
+    {
+      "id": "komutator",
+      "title": "komutator",
+      "description": "Репо для моста с мессенджерами",
+      "group": "agents",
+      "language": "Python",
+      "updated": "2026-08-22",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "nikolai-pir-s-ru",
+          "repo": "komutator",
+          "url": "https://sourcecraft.dev/nikolai-pir-s-ru/komutator",
+          "visibility": "private"
+        }
+      ]
+    },
+    {
+      "id": "hermes-pipeline",
+      "title": "hermes-pipeline",
+      "description": "Личный news-пайплайн: сбор RSS → классификация → рендер → публикация на сайт + Telegram",
+      "group": "agents",
+      "language": "Python",
+      "updated": "2026-06-05",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "hermes-pipeline",
+          "url": "https://github.com/nikolai-karpov/hermes-pipeline",
+          "visibility": "private"
+        }
+      ]
+    },
+    {
+      "id": "pollinations-think-mcp",
+      "title": "pollinations-think-mcp",
+      "description": "Advanced strategic thinking MCP server with DeepSeek reasoning and SearchGPT integration",
+      "group": "agents",
+      "language": "JavaScript",
+      "updated": "2025-07-01",
+      "visibility": "public",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "pollinations-think-mcp",
+          "url": "https://github.com/nikolai-karpov/pollinations-think-mcp",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "monitor-fssp",
+      "title": "monitor-fssp",
+      "description": null,
+      "group": "automation",
+      "language": "Python",
+      "updated": "2026-09-12",
+      "visibility": "public",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "nikolai-pir-s-ru",
+          "repo": "monitor-fssp",
+          "url": "https://sourcecraft.dev/nikolai-pir-s-ru/monitor-fssp",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "express-js-on-vercel",
+      "title": "express-js-on-vercel",
+      "description": null,
+      "group": "automation",
+      "language": "TypeScript",
+      "updated": "2025-12-05",
+      "visibility": "public",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "pir-s",
+          "repo": "express-js-on-vercel",
+          "url": "https://github.com/pir-s/express-js-on-vercel",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "sf-ds",
+      "title": "SF_DS",
+      "description": null,
+      "group": "automation",
+      "language": "Jupyter Notebook",
+      "updated": "2022-03-15",
+      "visibility": "public",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "SF_DS",
+          "url": "https://github.com/nikolai-karpov/SF_DS",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "python",
+      "title": "Python",
+      "description": "Config files for my GitHub profile.",
+      "group": "automation",
+      "language": "Jupyter Notebook",
+      "updated": "2022-02-21",
+      "visibility": "public",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "Python",
+          "url": "https://github.com/nikolai-karpov/Python",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "bitrix-deploy",
+      "title": "bitrix-deploy",
+      "description": "Конфигурация docker-compose для развертывания корпоративного сайта pir-s.ru на платформе Битрикс",
+      "group": "automation",
+      "language": "Dockerfile",
+      "updated": "2020-03-26",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "pir-s",
+          "repo": "bitrix-deploy",
+          "url": "https://github.com/pir-s/bitrix-deploy",
+          "visibility": "private"
+        }
+      ]
+    },
+    {
+      "id": "ai-gip",
+      "title": "ai-gip",
+      "description": null,
+      "group": "automation",
+      "language": null,
+      "updated": null,
+      "visibility": "public",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": true,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "nikolai-pir-s-ru",
+          "repo": "ai-gip",
+          "url": "https://sourcecraft.dev/nikolai-pir-s-ru/ai-gip",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "exchange-5",
+      "title": "Совместная работа 5",
+      "description": null,
+      "group": "exchange",
+      "language": "HTML",
+      "updated": "2026-09-27",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "softlab",
+          "repo": null,
+          "url": null,
+          "visibility": "private",
+          "masked": true
+        }
+      ]
+    },
+    {
+      "id": "exchange-8",
+      "title": "Совместная работа 8",
+      "description": null,
+      "group": "exchange",
+      "language": null,
+      "updated": "2026-09-27",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "softlab",
+          "repo": null,
+          "url": null,
+          "visibility": "private",
+          "masked": true
+        }
+      ]
+    },
+    {
+      "id": "exchange-3",
+      "title": "Совместная работа 3",
+      "description": "репо для обмена меду хостами",
+      "group": "exchange",
+      "language": "HTML",
+      "updated": "2026-09-26",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "nikolai-pir-s-ru",
+          "repo": null,
+          "url": null,
+          "visibility": "private",
+          "masked": true
+        }
+      ]
+    },
+    {
+      "id": "exchange-1",
+      "title": "Совместная работа 1",
+      "description": null,
+      "group": "exchange",
+      "language": "Python",
+      "updated": "2026-09-25",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "softlab",
+          "repo": null,
+          "url": null,
+          "visibility": "private",
+          "masked": true
+        }
+      ]
+    },
+    {
+      "id": "exchange-4",
+      "title": "Совместная работа 4",
+      "description": null,
+      "group": "exchange",
+      "language": "Python",
+      "updated": "2026-09-25",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "softlab",
+          "repo": null,
+          "url": null,
+          "visibility": "private",
+          "masked": true
+        }
+      ]
+    },
+    {
+      "id": "exchange-6",
+      "title": "Совместная работа 6",
+      "description": "для обмена между хостами",
+      "group": "exchange",
+      "language": "Python",
+      "updated": "2026-09-25",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "nikolai-pir-s-ru",
+          "repo": null,
+          "url": null,
+          "visibility": "private",
+          "masked": true
+        }
+      ]
+    },
+    {
+      "id": "exchange-7",
+      "title": "Совместная работа 7",
+      "description": null,
+      "group": "exchange",
+      "language": "Python",
+      "updated": "2026-09-25",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "softlab",
+          "repo": null,
+          "url": null,
+          "visibility": "private",
+          "masked": true
+        }
+      ]
+    },
+    {
+      "id": "exchange-2",
+      "title": "Совместная работа 2",
+      "description": "рабочая папка для обмена",
+      "group": "exchange",
+      "language": "Python",
+      "updated": "2026-09-24",
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "nikolai-pir-s-ru",
+          "repo": null,
+          "url": null,
+          "visibility": "private",
+          "masked": true
+        }
+      ]
+    },
+    {
+      "id": "dataset-reflection",
+      "title": "dataset-reflection",
+      "description": null,
+      "group": "exchange",
+      "language": null,
+      "updated": null,
+      "visibility": "private",
+      "is_fork": false,
+      "fork_of": null,
+      "is_empty": true,
+      "locations": [
+        {
+          "platform": "sourcecraft",
+          "owner": "softlab",
+          "repo": "dataset-reflection",
+          "url": "https://sourcecraft.dev/softlab/dataset-reflection",
+          "visibility": "private"
+        }
+      ]
+    },
+    {
+      "id": "deepseek-harness",
+      "title": "deepseek-harness",
+      "description": "DeepSeek Harness: Everything is a Plugin.",
+      "group": "forks",
+      "language": "TypeScript",
+      "updated": "2026-09-10",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "deepseek-ai/deepseek-harness",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "deepseek-harness",
+          "url": "https://github.com/nikolai-karpov/deepseek-harness",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "home-generative-agent",
+      "title": "home-generative-agent",
+      "description": "AI agent for Home Assistant — talk to your home, create automations in plain language, analyze cameras with face recognition, and get proactive anomaly alerts. Cloud LLMs or fully local via Ollama.",
+      "group": "forks",
+      "language": "Python",
+      "updated": "2026-09-04",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "goruck/home-generative-agent",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "home-generative-agent",
+          "url": "https://github.com/nikolai-karpov/home-generative-agent",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "transformer-explainer",
+      "title": "transformer-explainer",
+      "description": "Визуальное объяснение трансформера: изучите работу LLM-моделей на основе трансформеров с помощью интерактивной визуализации",
+      "group": "forks",
+      "language": "JavaScript",
+      "updated": "2026-08-26",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "poloclub/transformer-explainer",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "transformer-explainer",
+          "url": "https://github.com/nikolai-karpov/transformer-explainer",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "learn-harness-engineering",
+      "title": "learn-harness-engineering",
+      "description": "Harness engineering beginner tutorial, from 0 to 1",
+      "group": "forks",
+      "language": "TypeScript",
+      "updated": "2026-08-26",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "walkinglabs/learn-harness-engineering",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "learn-harness-engineering",
+          "url": "https://github.com/nikolai-karpov/learn-harness-engineering",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "awesome-harness-engineering",
+      "title": "awesome-harness-engineering",
+      "description": "🛠️ Awesome tools & guides for harness engineering.",
+      "group": "forks",
+      "language": null,
+      "updated": "2026-08-19",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "walkinglabs/awesome-harness-engineering",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "awesome-harness-engineering",
+          "url": "https://github.com/nikolai-karpov/awesome-harness-engineering",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "awesome-deeplinks",
+      "title": "awesome-deeplinks",
+      "description": "Hidden Deeplinks of Applications",
+      "group": "forks",
+      "language": "Python",
+      "updated": "2026-06-17",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "f/awesome-deeplinks",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "awesome-deeplinks",
+          "url": "https://github.com/nikolai-karpov/awesome-deeplinks",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "skills-mattpocock",
+      "title": "skills_mattpocock",
+      "description": "Skills for Real Engineers. Straight from my .claude directory.",
+      "group": "forks",
+      "language": "Shell",
+      "updated": "2026-05-13",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "mattpocock/skills",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "skills_mattpocock",
+          "url": "https://github.com/nikolai-karpov/skills_mattpocock",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "openclaude",
+      "title": "openclaude",
+      "description": "Open Claude Is Open-source coding-agent CLI for OpenAI, Gemini, DeepSeek, Ollama, Codex, GitHub Models, and 200+ models via OpenAI-compatible APIs.",
+      "group": "forks",
+      "language": "TypeScript",
+      "updated": "2026-05-13",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "Gitlawb/openclaude",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "openclaude",
+          "url": "https://github.com/nikolai-karpov/openclaude",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "openclaw",
+      "title": "openclaw",
+      "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
+      "group": "forks",
+      "language": "TypeScript",
+      "updated": "2026-05-13",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "openclaw/openclaw",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "openclaw",
+          "url": "https://github.com/nikolai-karpov/openclaw",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "polyakov-claude-skills",
+      "title": "polyakov-claude-skills",
+      "description": "Набор скиллов для Claude",
+      "group": "forks",
+      "language": "Shell",
+      "updated": "2026-05-10",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "artwist-polyakov/polyakov-claude-skills",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "polyakov-claude-skills",
+          "url": "https://github.com/nikolai-karpov/polyakov-claude-skills",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "scientific-agent-skills",
+      "title": "scientific-agent-skills",
+      "description": "A set of ready to use Agent Skills for research, science, engineering, analysis, finance and writing.",
+      "group": "forks",
+      "language": "Python",
+      "updated": "2026-04-12",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "K-Dense-AI/scientific-agent-skills",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "scientific-agent-skills",
+          "url": "https://github.com/nikolai-karpov/scientific-agent-skills",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "rowboat",
+      "title": "rowboat",
+      "description": "Open-source AI coworker, with memory",
+      "group": "forks",
+      "language": "TypeScript",
+      "updated": "2026-04-11",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "rowboatlabs/rowboat",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "rowboat",
+          "url": "https://github.com/nikolai-karpov/rowboat",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "gigaam",
+      "title": "GigaAM",
+      "description": "Foundational Model for Speech Recognition Tasks",
+      "group": "forks",
+      "language": "Python",
+      "updated": "2026-04-02",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "salute-developers/GigaAM",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "GigaAM",
+          "url": "https://github.com/nikolai-karpov/GigaAM",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "handy",
+      "title": "Handy",
+      "description": "A free, open source, and extensible speech-to-text application that works completely offline.",
+      "group": "forks",
+      "language": "Rust",
+      "updated": "2026-03-14",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "cjpais/Handy",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "Handy",
+          "url": "https://github.com/nikolai-karpov/Handy",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "dexter",
+      "title": "dexter",
+      "description": "An autonomous agent for deep financial research",
+      "group": "forks",
+      "language": "TypeScript",
+      "updated": "2026-03-06",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "virattt/dexter",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "dexter",
+          "url": "https://github.com/nikolai-karpov/dexter",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "goose",
+      "title": "goose",
+      "description": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM",
+      "group": "forks",
+      "language": "Rust",
+      "updated": "2026-03-02",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "aaif-goose/goose",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "goose",
+          "url": "https://github.com/nikolai-karpov/goose",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "antigravity-awesome-skills",
+      "title": "antigravity-awesome-skills",
+      "description": "The Ultimate Collection of 600+ Agentic Skills for Claude Code/Antigravity/Cursor. Battle-tested, high-performance skills for AI agents including official skills from Anthropic and Vercel.",
+      "group": "forks",
+      "language": "Python",
+      "updated": "2026-02-03",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "sickn33/agentic-awesome-skills",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "antigravity-awesome-skills",
+          "url": "https://github.com/nikolai-karpov/antigravity-awesome-skills",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "get-shit-done",
+      "title": "get-shit-done",
+      "description": "A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.",
+      "group": "forks",
+      "language": "JavaScript",
+      "updated": "2026-01-21",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "gsd-build/get-shit-done",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "get-shit-done",
+          "url": "https://github.com/nikolai-karpov/get-shit-done",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "hunyuanocr",
+      "title": "HunyuanOCR",
+      "description": null,
+      "group": "forks",
+      "language": "Python",
+      "updated": "2026-01-20",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "Tencent-Hunyuan/HunyuanOCR",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "HunyuanOCR",
+          "url": "https://github.com/nikolai-karpov/HunyuanOCR",
+          "visibility": "public"
+        },
+        {
+          "platform": "github",
+          "owner": "pir-s",
+          "repo": "HunyuanOCR",
+          "url": "https://github.com/pir-s/HunyuanOCR",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "haystack",
+      "title": "haystack",
+      "description": "AI orchestration framework to build customizable, production-ready LLM applications. Connect components (models, vector DBs, file converters) to pipelines or agents that can interact with your data. With advanced retrieval methods, it's best suited for building RAG, question answering, semantic search or conversational agent chatbots.",
+      "group": "forks",
+      "language": "MDX",
+      "updated": "2026-01-16",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "deepset-ai/haystack",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "haystack",
+          "url": "https://github.com/nikolai-karpov/haystack",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "cowork-local-llm",
+      "title": "Cowork-Local-LLM",
+      "description": "🤖 Desktop AI Assistant with Local Model Support - OpenAI SDK compatible agent with memory system, file operations, web search, and modern UI. Supports vLLM, Ollama, Qwen, Llama, and more.",
+      "group": "forks",
+      "language": "TypeScript",
+      "updated": "2026-01-15",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "vakovalskii/NeuralDeskApp",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "Cowork-Local-LLM",
+          "url": "https://github.com/nikolai-karpov/Cowork-Local-LLM",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "llm-aided-ocr",
+      "title": "llm_aided_ocr",
+      "description": "Enhance Tesseract OCR output for scanned PDFs by applying Large Language Model (LLM) corrections.",
+      "group": "forks",
+      "language": "Python",
+      "updated": "2026-01-14",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "Dicklesworthstone/llm_aided_ocr",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "llm_aided_ocr",
+          "url": "https://github.com/nikolai-karpov/llm_aided_ocr",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "dnsconf",
+      "title": "DnsConf",
+      "description": "DNS Block and Redirect configurer for Cloudflare / NextDNS",
+      "group": "forks",
+      "language": "Java",
+      "updated": "2026-01-13",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "noVibe/DnsConf",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "DnsConf",
+          "url": "https://github.com/nikolai-karpov/DnsConf",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "qwen3-vl",
+      "title": "Qwen3-VL",
+      "description": "Qwen3-VL is the multimodal large language model series developed by Qwen team, Alibaba Cloud.",
+      "group": "forks",
+      "language": "Jupyter Notebook",
+      "updated": "2026-01-04",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "QwenLM/Qwen3-VL",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "Qwen3-VL",
+          "url": "https://github.com/nikolai-karpov/Qwen3-VL",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "ragflow",
+      "title": "ragflow",
+      "description": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
+      "group": "forks",
+      "language": "Python",
+      "updated": "2025-12-31",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "infiniflow/ragflow",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "ragflow",
+          "url": "https://github.com/nikolai-karpov/ragflow",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "infinity",
+      "title": "infinity",
+      "description": "The AI-native database built for LLM applications, providing incredibly fast hybrid search of dense vector, sparse vector, tensor (multi-vector), and full-text.",
+      "group": "forks",
+      "language": "C++",
+      "updated": "2025-12-31",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "infiniflow/infinity",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "infinity",
+          "url": "https://github.com/nikolai-karpov/infinity",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "sensevoice",
+      "title": "SenseVoice",
+      "description": "Multilingual Voice Understanding Model",
+      "group": "forks",
+      "language": "Python",
+      "updated": "2025-12-30",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "QwenAudio/SenseVoice",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "SenseVoice",
+          "url": "https://github.com/nikolai-karpov/SenseVoice",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "title": "skills",
+      "description": "Public repository for Agent Skills",
+      "group": "forks",
+      "language": "Python",
+      "updated": "2025-12-20",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "anthropics/skills",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "skills",
+          "url": "https://github.com/nikolai-karpov/skills",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "cad2data-revit-ifc-dwg-dgn-pipeline-with-conversion-validation-qto",
+      "title": "cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto",
+      "description": "This workflow enables automated conversion of CAD files (such as `.rvt`, `.ifc`, `.dwg`) using command-line converters on a local Windows machine",
+      "group": "forks",
+      "language": "Jupyter Notebook",
+      "updated": "2025-12-02",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "datadrivenconstruction/cad2data-Revit-IFC-DWG-DGN",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto",
+          "url": "https://github.com/nikolai-karpov/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "roo-code",
+      "title": "Roo-Code",
+      "description": "Roo Code gives you a whole dev team of AI agents in your code editor.",
+      "group": "forks",
+      "language": "TypeScript",
+      "updated": "2025-11-30",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "RooCodeInc/Roo-Code",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "Roo-Code",
+          "url": "https://github.com/nikolai-karpov/Roo-Code",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "ai-chat-widget",
+      "title": "ai-chat-widget",
+      "description": "Drop-in AI chat widget for any website. Supports OpenAI, Claude, Gemini, GigaChat, YandexGPT, Ollama and more.",
+      "group": "forks",
+      "language": "Python",
+      "updated": "2025-11-28",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "gmen1057/ai-chat-widget",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "ai-chat-widget",
+          "url": "https://github.com/nikolai-karpov/ai-chat-widget",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "cursor-anthropic-skills",
+      "title": "cursor-anthropic-skills",
+      "description": "Comprehensive framework for integrating Anthropic Skills into Cursor IDE, ensuring AI agents consistently apply specialized knowledge and domain expertise when responding to user requests.",
+      "group": "forks",
+      "language": "Python",
+      "updated": "2025-11-19",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "SteelMorgan/cursor-anthropic-skills",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "cursor-anthropic-skills",
+          "url": "https://github.com/nikolai-karpov/cursor-anthropic-skills",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "claudecode-skills",
+      "title": "claudecode-skills",
+      "description": "All powerful skills for Claude Code.",
+      "group": "forks",
+      "language": "Python",
+      "updated": "2025-11-15",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "ckng/claudecode-skills",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "claudecode-skills",
+          "url": "https://github.com/nikolai-karpov/claudecode-skills",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "cursor-skills",
+      "title": "cursor-skills",
+      "description": "CURSOR IDE best practices and guidelines",
+      "group": "forks",
+      "language": "JavaScript",
+      "updated": "2025-10-23",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "araguaci/cursor-skills",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "cursor-skills",
+          "url": "https://github.com/nikolai-karpov/cursor-skills",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "fitness-assistant",
+      "title": "fitness-assistant",
+      "description": "Пример личного фитнес-ассистента на основе Yandex AI Assistant API / Yandex Cloud ML SDK ",
+      "group": "forks",
+      "language": "Jupyter Notebook",
+      "updated": "2025-09-28",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "yandex-datasphere/fitness-assistant",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "fitness-assistant",
+          "url": "https://github.com/nikolai-karpov/fitness-assistant",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "trae-agent",
+      "title": "trae-agent",
+      "description": "Trae Agent is an LLM-based agent for general purpose software engineering tasks.",
+      "group": "forks",
+      "language": "Python",
+      "updated": "2025-09-24",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "bytedance/trae-agent",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "trae-agent",
+          "url": "https://github.com/nikolai-karpov/trae-agent",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "chat-ai-widget",
+      "title": "chat-ai-widget",
+      "description": "Build AI Chatbot in minutes with Sendbird Chatbot Widget.",
+      "group": "forks",
+      "language": "TypeScript",
+      "updated": "2025-03-10",
+      "visibility": "public",
+      "is_fork": true,
+      "fork_of": "sendbird/chat-ai-widget",
+      "is_empty": false,
+      "locations": [
+        {
+          "platform": "github",
+          "owner": "nikolai-karpov",
+          "repo": "chat-ai-widget",
+          "url": "https://github.com/nikolai-karpov/chat-ai-widget",
+          "visibility": "public"
+        }
+      ]
+    }
+  ]
+}

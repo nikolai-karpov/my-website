@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Где лежат мои проекты — навигатор по репозиториям | Карпов Николай</title>
+    <meta
+      name="description"
+      content="Карта репозиториев на GitHub и SourceCraft: где искать конкретный код, что открыто, что закрыто и что давно не трогали. Поиск, фильтры по площадке и доступу, группы проектов."
+    />
+    <link rel="canonical" href="https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/projects.html" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Где лежат мои проекты — навигатор по репозиториям" />
+    <meta property="og:description" content="Карта репозиториев на GitHub и SourceCraft: поиск, фильтры по площадке и доступу, группы проектов." />
+    <meta property="og:url" content="https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/projects.html" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Где лежат мои проекты",
+        "description": "Навигатор по репозиториям на GitHub и SourceCraft: группы, фильтры по площадке и доступу, поиск.",
+        "author": {
+          "@type": "Person",
+          "name": "Николай Карпов"
+        },
+        "mainEntityOfPage": "https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/projects.html"
+      }
+    </script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=109350250", "ym");
+
+   ym(109350250, "init", {ssr:true, webvisor:true, clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/109350250" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+
+  <body>
+    <header class="site-header" role="banner">
+      <div class="container site-header__inner">
+        <a href="../" class="brand" aria-label="На главную">
+          <span class="brand__dot" aria-hidden="true"></span>
+          <span>Внедрение нейросетей</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="siteNav" aria-label="Открыть меню">
+          <span class="nav-toggle__icon" aria-hidden="true"></span>
+        </button>
+        <nav class="site-nav" id="siteNav" aria-label="Основная навигация">
+          <a href="../">Главная</a>
+          <a href="../#cases">Кейсы</a>
+          <a href="../site-pages/methodology.html">Методология</a>
+          <a href="../site-pages/ai-marketing-assistant.html">AI-Маркетинг</a>
+          <a href="../site-pages/publications/index.html">Обзоры</a>
+          <a href="projects.html" class="is-active">Проекты</a>
+          <a href="../site-pages/news/">Новости</a>
+          <a href="../#security">ИБ</a>
+          <a href="../#contact">Контакт</a>
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" stroke-linejoin="round" />
+            </svg>
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main">
+      <section class="article-hero projects-hero container">
+        <div class="article-hero__meta">
+          <span id="projectsSnapshot">Снимок обновляется…</span>
+        </div>
+
+        <h1 class="article-hero__title">Где лежат мои проекты</h1>
+
+        <p class="article-hero__hook">
+          Карта репозиториев на GitHub и SourceCraft: где искать конкретный
+          код, что открыто, а что закрыто, и когда там что-то последний раз
+          менялось.
+        </p>
+
+        <div class="projects-counters" id="projectsCounters" aria-live="polite"></div>
+      </section>
+
+      <section class="container projects-section">
+        <div class="projects-toolbar">
+          <label class="projects-search-wrap" for="projectsSearch">
+            <svg class="projects-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="M21 21l-4.3-4.3" stroke-linecap="round" />
+            </svg>
+            <input
+              type="search"
+              id="projectsSearch"
+              class="projects-search"
+              placeholder="Поиск по названию, описанию, стеку"
+              aria-label="Поиск по проектам"
+              autocomplete="off"
+            />
+          </label>
+
+          <div class="projects-filter-group" role="group" aria-label="Площадка" id="projectsPlatformFilter">
+            <button type="button" class="projects-filter-btn is-active" data-value="all">Все</button>
+            <button type="button" class="projects-filter-btn" data-value="github">GitHub</button>
+            <button type="button" class="projects-filter-btn" data-value="sourcecraft">SourceCraft</button>
+          </div>
+
+          <div class="projects-filter-group" role="group" aria-label="Доступ" id="projectsAccessFilter">
+            <button type="button" class="projects-filter-btn is-active" data-value="all">Все</button>
+            <button type="button" class="projects-filter-btn" data-value="public">Открытые</button>
+            <button type="button" class="projects-filter-btn" data-value="closed">Закрытые</button>
+          </div>
+        </div>
+
+        <div class="projects-chips" id="projectsChips" role="group" aria-label="Группы проектов"></div>
+
+        <div id="projectsGroups"></div>
+
+        <p class="projects-empty" id="projectsEmpty" hidden>
+          По этому фильтру ничего не нашлось. Попробуйте изменить запрос или сбросить фильтры.
+        </p>
+
+        <p class="projects-error" id="projectsError" hidden>
+          Не удалось загрузить список проектов. Попробуйте обновить страницу
+          позже.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <div>© 2026 · Карпов Николай</div>
+        <div>
+          <a href="methodology.html">Методология</a>
+          <a href="projects.html">Проекты</a>
+        </div>
+      </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" type="button" aria-label="Наверх">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M6 15l6-6 6 6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/projects.js" defer></script>
+  </body>
+</html>

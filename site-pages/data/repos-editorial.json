@@ -1,0 +1,69 @@
+{
+  "_comment": "Редакционная разметка для scripts/collect-repos.mjs. Ключи локаций — 'платформа:owner/repo'. Не добавлять сюда имена/фамилии людей.",
+  "_mask_readme": "Список замаскированных ключей ('платформа:owner/repo') в этот файл не входит и в репозиторий не коммитится — он хранится локально в ~/.config/my-website/repos-mask.json (переопределяется REPOS_MASK_FILE), правами 600, ключи открытым текстом. Порядок ключей в этом файле задаёт номер 'Совместная работа N' (N — 1-based позиция ключа). Для совпавших локаций скрипт: подставляет title 'Совместная работа N', обнуляет location.repo/location.url, ставит location.masked=true, принудительно относит проект к группе exchange, и обнуляет description, если он не входит в белый список безопасных фраз (ALLOWED_MASKED_DESCRIPTIONS в скрипте). Если файл маски отсутствует или не читается, скрипт останавливается и не пишет repos.json.",
+  "groups": [
+    { "id": "products", "title": "Авторские продукты", "secondary": false },
+    { "id": "sites", "title": "Сайты, курсы и презентации", "secondary": false },
+    { "id": "agents", "title": "Инструменты ИИ-агентов", "secondary": false },
+    { "id": "automation", "title": "Автоматизация, данные, инфраструктура", "secondary": false },
+    { "id": "exchange", "title": "Рабочие обмены и совместная работа", "secondary": false },
+    { "id": "other", "title": "Прочее", "secondary": false },
+    { "id": "forks", "title": "Изучаю: форки чужих проектов", "secondary": true }
+  ],
+  "default_group": {
+    "fork": "forks",
+    "unassigned": "other"
+  },
+  "assign": {
+    "github:nikolai-karpov/pirs": "products",
+    "sourcecraft:pir-system/bot": "products",
+    "sourcecraft:nikolai-pir-s-ru/pseudonymizer": "products",
+    "sourcecraft:nikolai-pir-s-ru/matrix": "products",
+
+    "github:nikolai-karpov/my-website": "sites",
+    "sourcecraft:nikolai-pir-s-ru/portfolio": "sites",
+    "sourcecraft:nikolai-pir-s-ru/ai-course": "sites",
+    "sourcecraft:nikolai-pir-s-ru/curs": "sites",
+    "sourcecraft:nikolai-pir-s-ru/analitic-course": "sites",
+    "sourcecraft:nikolai-pir-s-ru/self-coder": "sites",
+    "sourcecraft:nikolai-pir-s-ru/work-to-home": "sites",
+    "sourcecraft:pir-system/im": "sites",
+    "sourcecraft:organization-pirs-ru/im": "sites",
+    "sourcecraft:organization-pirs-ru/invest-memo": "sites",
+    "github:pir-s/pir-s.ru": "sites",
+
+    "github:nikolai-karpov/hermes-agent": "agents",
+    "github:nikolai-karpov/hermes-plugin-mempalace": "agents",
+    "github:nikolai-karpov/claude-config": "agents",
+    "github:nikolai-karpov/hermes-pipeline": "agents",
+    "github:nikolai-karpov/pollinations-think-mcp": "agents",
+    "sourcecraft:nikolai-pir-s-ru/komutator": "agents",
+    "sourcecraft:nikolai-pir-s-ru/tg-mcp": "agents",
+    "sourcecraft:nikolai-pir-s-ru/analitic": "agents",
+    "sourcecraft:nikolai-pir-s-ru/devhub": "agents",
+    "sourcecraft:softlab/kilo-canon": "agents",
+
+    "sourcecraft:nikolai-pir-s-ru/monitor-fssp": "automation",
+    "github:nikolai-karpov/SF_DS": "automation",
+    "github:nikolai-karpov/Python": "automation",
+    "github:pir-s/express-js-on-vercel": "automation",
+    "github:pir-s/bitrix-deploy": "automation",
+    "sourcecraft:nikolai-pir-s-ru/ai-gip": "automation",
+
+    "sourcecraft:softlab/dataset-reflection": "exchange"
+  },
+  "merge": [
+    {
+      "keys": ["github:nikolai-karpov/my-website", "sourcecraft:nikolai-pir-s-ru/portfolio"],
+      "title": "my-website / portfolio",
+      "group": "sites"
+    },
+    {
+      "keys": ["github:nikolai-karpov/HunyuanOCR", "github:pir-s/HunyuanOCR"],
+      "title": "HunyuanOCR",
+      "group": "forks"
+    }
+  ],
+  "hidden": [],
+  "rename": {}
+}
