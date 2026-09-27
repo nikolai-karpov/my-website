@@ -87,6 +87,11 @@
       project.language || '',
       project.id || '',
     ];
+    if (project.summary) {
+      parts.push(project.summary.lead || '');
+      parts.push(project.summary.what || '');
+      parts.push(project.summary.use || '');
+    }
     safeArray(project.locations).forEach(function (loc) {
       if (!loc) return;
       parts.push(loc.owner || '');
@@ -124,6 +129,59 @@
 
   function groupIsSecondary(group) {
     return !!(group && group.secondary);
+  }
+
+  // Сначала карточки с полным саммари (summary.quality === 'full'), затем —
+  // по дате обновления по убыванию. Стабильность не гарантирована Array#sort
+  // во всех движках, но порядок внутри группы для равных ключей некритичен.
+  function sortProjects(list) {
+    return list.slice().sort(function (a, b) {
+      var qa = a.summary && a.summary.quality === 'full' ? 0 : 1;
+      var qb = b.summary && b.summary.quality === 'full' ? 0 : 1;
+      if (qa !== qb) return qa - qb;
+      var ua = a.updated || '';
+      var ub = b.updated || '';
+      if (ua === ub) return 0;
+      return ua < ub ? 1 : -1;
+    });
+  }
+
+  function visibleSortedProjects(list) {
+    return sortProjects(list.filter(matchesFilters));
+  }
+
+  function summaryHasDetails(summary) {
+    if (!summary) return false;
+    var hasStart =
+      Array.isArray(summary.start) &&
+      summary.start.some(function (s) {
+        return s && String(s).trim();
+      });
+    return !!(summary.what || summary.use || hasStart || summary.status);
+  }
+
+  function appendSummarySection(container, heading, text) {
+    if (!text) return;
+    var block = el('div', 'repo-card__detail-block', null);
+    block.appendChild(el('h4', 'repo-card__detail-heading', heading));
+    block.appendChild(el('p', 'repo-card__detail-text', text));
+    container.appendChild(block);
+  }
+
+  function appendSummaryList(container, heading, items) {
+    var list = safeArray(items).filter(function (s) {
+      return s && String(s).trim();
+    });
+    if (!list.length) return;
+    var block = el('div', 'repo-card__detail-block', null);
+    block.appendChild(el('h4', 'repo-card__detail-heading', heading));
+    var ol = document.createElement('ol');
+    ol.className = 'repo-card__detail-list';
+    list.forEach(function (item) {
+      ol.appendChild(el('li', null, item));
+    });
+    block.appendChild(ol);
+    container.appendChild(block);
   }
 
   function buildLockBadge(visibility) {
@@ -239,11 +297,37 @@
     }
     card.appendChild(links);
 
+    if (summaryHasDetails(project.summary)) {
+      var detailsId = 'repo-details-' + (project.id || Math.random().toString(36).slice(2));
+      var toggle = el('button', 'repo-card__toggle', 'Подробнее');
+      toggle.type = 'button';
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-controls', detailsId);
+      card.appendChild(toggle);
+
+      var panel = el('div', 'repo-card__details', null);
+      panel.id = detailsId;
+      panel.hidden = true;
+      appendSummarySection(panel, 'Что это', project.summary.what);
+      appendSummarySection(panel, 'Чем полезно', project.summary.use);
+      appendSummaryList(panel, 'Как начать', project.summary.start);
+      appendSummarySection(panel, 'Состояние', project.summary.status);
+      card.appendChild(panel);
+
+      toggle.addEventListener('click', function () {
+        var next = toggle.getAttribute('aria-expanded') !== 'true';
+        toggle.setAttribute('aria-expanded', String(next));
+        toggle.textContent = next ? 'Свернуть' : 'Подробнее';
+        panel.hidden = !next;
+        card.classList.toggle('repo-card--expanded', next);
+      });
+    }
+
     return card;
   }
 
   function buildGroupSection(group, projects) {
-    var visible = projects.filter(matchesFilters);
+    var visible = visibleSortedProjects(projects);
     if (!visible.length) return null;
 
     var isSecondary = groupIsSecondary(group);
@@ -276,6 +360,40 @@
 
     visible.forEach(function (project) {
       body.appendChild(buildCard(project));
+    });
+
+    return section;
+  }
+
+  function buildClosedSection(subsections, totalCount) {
+    var section = el('details', 'projects-group projects-group--closed', null);
+    var wasOpen = groupOpenState.__closed__;
+    section.open = wasOpen === undefined ? true : !!wasOpen;
+    section.addEventListener('toggle', function () {
+      groupOpenState.__closed__ = section.open;
+    });
+
+    var summary = el('summary', 'projects-group__head', null);
+    summary.appendChild(el('span', 'projects-group__title', 'Закрытые репозитории'));
+    summary.appendChild(el('span', 'projects-group__count', String(totalCount)));
+    section.appendChild(summary);
+
+    subsections.forEach(function (item) {
+      var sub = el('div', 'projects-closed-subgroup', null);
+      var subHead = el('div', 'projects-closed-subgroup__head', null);
+      subHead.appendChild(
+        el('h3', 'projects-closed-subgroup__title', item.group.title || item.group.id)
+      );
+      subHead.appendChild(el('span', 'projects-group__count', String(item.visible.length)));
+      sub.appendChild(subHead);
+
+      var body = el('div', 'projects-grid', null);
+      item.visible.forEach(function (project) {
+        body.appendChild(buildCard(project));
+      });
+      sub.appendChild(body);
+
+      section.appendChild(sub);
     });
 
     return section;
@@ -361,9 +479,14 @@
     var primarySections = [];
     var secondarySections = [];
 
+    // Открытые репозитории — как раньше, по группам редакционного порядка;
+    // закрытые (private/internal) сюда не попадают — они уходят в отдельный
+    // раздел «Закрытые репозитории» в самом низу страницы.
     groups.forEach(function (group) {
       if (state.group !== 'all' && state.group !== group.id) return;
-      var groupProjects = projectsByGroup[group.id] || [];
+      var groupProjects = (projectsByGroup[group.id] || []).filter(function (p) {
+        return !isClosed(p.visibility);
+      });
       var section = buildGroupSection(group, groupProjects);
       if (!section) return;
       anyVisible = true;
@@ -380,6 +503,25 @@
     secondarySections.forEach(function (s) {
       els.groups.appendChild(s);
     });
+
+    // Закрытые репозитории — единый раздел внизу, с подзаголовками по тем же
+    // группам (включая «Совместная работа N» из группы exchange).
+    var closedSubsections = [];
+    var closedTotal = 0;
+    groups.forEach(function (group) {
+      if (state.group !== 'all' && state.group !== group.id) return;
+      var groupProjects = (projectsByGroup[group.id] || []).filter(function (p) {
+        return isClosed(p.visibility);
+      });
+      var visible = visibleSortedProjects(groupProjects);
+      if (!visible.length) return;
+      closedSubsections.push({ group: group, visible: visible });
+      closedTotal += visible.length;
+    });
+    if (closedSubsections.length) {
+      anyVisible = true;
+      els.groups.appendChild(buildClosedSection(closedSubsections, closedTotal));
+    }
 
     els.empty.hidden = anyVisible;
   }

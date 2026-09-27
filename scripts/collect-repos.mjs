@@ -282,6 +282,35 @@ function readMaskFile() {
 }
 
 // ---------------------------------------------------------------------------
+// Русские саммари карточек (готовит отдельный процесс, файл сюда не коммитится)
+// ---------------------------------------------------------------------------
+
+// Формат файла: { "<project id>": { lead, what, use, start: [...], status,
+// quality: "full"|"short"|"none", source } }. Путь переопределяется
+// REPOS_SUMMARIES_FILE (используется для фикстур при разработке). Файла нет —
+// не ошибка: все проекты получают summary = null. Файл есть, но битый —
+// падаем, чтобы не молчать про испорченные данные.
+const DEFAULT_SUMMARIES_PATH = path.join(REPO_ROOT, "site-pages/data/repos-summaries.json");
+
+function readSummaries() {
+  const summariesPath = process.env.REPOS_SUMMARIES_FILE || DEFAULT_SUMMARIES_PATH;
+  if (!fs.existsSync(summariesPath)) {
+    return {};
+  }
+  const raw = fs.readFileSync(summariesPath, "utf8");
+  let parsed;
+  try {
+    parsed = JSON.parse(raw);
+  } catch (err) {
+    throw new Error(`Файл саммари ${summariesPath} — невалидный JSON: ${err.message}`);
+  }
+  if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+    throw new Error(`Файл саммари ${summariesPath} должен быть JSON-объектом { "<id>": {...} }`);
+  }
+  return parsed;
+}
+
+// ---------------------------------------------------------------------------
 // Сборка проектов
 // ---------------------------------------------------------------------------
 
@@ -428,6 +457,29 @@ async function main() {
       const ownerHint = p.locations[0]?.owner || p.locations[0]?.platform || "x";
       p.id = `${slugify(ownerHint)}-${p.id}`;
     }
+  }
+
+  // Русские саммари — накладываем поверх финальных id. Если есть lead,
+  // он становится отображаемым описанием, а исходное (обычно английское)
+  // описание уходит в description_original.
+  const summaries = readSummaries();
+  const projectIdSet = new Set(projects.map((p) => p.id));
+  for (const p of projects) {
+    const s = summaries[p.id];
+    if (s && typeof s === "object") {
+      p.summary = s;
+      if (typeof s.lead === "string" && s.lead.trim()) {
+        p.description_original = p.description;
+        p.description = s.lead;
+      }
+    } else {
+      p.summary = null;
+    }
+  }
+  const unknownSummaryIds = Object.keys(summaries).filter((id) => !projectIdSet.has(id));
+  if (unknownSummaryIds.length) {
+    console.warn("\nПредупреждение: в файле саммари есть id, которых нет в выборке проектов:");
+    for (const id of unknownSummaryIds) console.warn("  -", id);
   }
 
   // Сортировка: по порядку групп, затем по updated убыв.

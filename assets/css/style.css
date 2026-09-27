@@ -4268,6 +4268,131 @@ a.repo-card__link:hover {
   color: var(--text-faint);
 }
 
+/* ---------- Card expand: русские саммари ---------- */
+.repo-card__toggle {
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 6px 12px;
+  margin-top: 4px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.repo-card__toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.repo-card__toggle[aria-expanded="true"] {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.repo-card--expanded {
+  grid-column: 1 / -1;
+}
+
+.repo-card__details {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 4px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+/* Явно перебиваем [hidden]: без этого правило выше (author-стили) обходит
+   встроенный display:none у user-agent стилей для [hidden]. */
+.repo-card__details[hidden] {
+  display: none;
+}
+
+@media (min-width: 720px) {
+  .repo-card--expanded .repo-card__details {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.repo-card__detail-block {
+  min-width: 0;
+}
+
+.repo-card__detail-heading {
+  margin: 0 0 6px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+}
+
+.repo-card__detail-text {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+.repo-card__detail-list {
+  margin: 0;
+  padding-left: 1.2em;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.repo-card__detail-list li {
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Closed repositories (bottom section) ---------- */
+.projects-group--closed {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 2px solid var(--line-strong);
+}
+
+.projects-group--closed > summary.projects-group__head {
+  cursor: pointer;
+}
+
+.projects-group--closed > summary.projects-group__head:hover .projects-group__title {
+  color: var(--accent);
+}
+
+.projects-closed-subgroup {
+  margin-top: 28px;
+}
+
+.projects-closed-subgroup:first-of-type {
+  margin-top: 0;
+}
+
+.projects-closed-subgroup__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.projects-closed-subgroup__title {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin: 0;
+}
+
 /* ---------- Empty / error states ---------- */
 .projects-empty,
 .projects-error {

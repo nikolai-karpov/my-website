@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T17:34:18.064Z",
+  "generated_at": "2026-09-27T18:09:58.259Z",
   "counts": {
     "github": 50,
     "sourcecraft": 28,
@@ -48,7 +48,7 @@
     {
       "id": "matrix",
       "title": "matrix",
-      "description": "Мини-приложение - Матрица проектов",
+      "description": "Внутренний каталог собственных проектов и идей: раскладывает их по матрице «важность × реализуемость».",
       "group": "products",
       "language": "HTML",
       "updated": "2026-05-06",
@@ -64,12 +64,22 @@
           "url": "https://sourcecraft.dev/nikolai-pir-s-ru/matrix",
           "visibility": "private"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Внутренний каталог собственных проектов и идей: раскладывает их по матрице «важность × реализуемость».",
+        "what": "Веб-приложение, которое ведёт единый список проектов и гипотез, хранит паспорт и статус каждого, связывает карточки с протоколами встреч и синхронизирует состояние между рабочими местами. Личный рабочий инструмент, не публичный сервис.",
+        "use": "",
+        "start": [],
+        "status": "",
+        "quality": "short",
+        "source": "README"
+      },
+      "description_original": "Мини-приложение - Матрица проектов"
     },
     {
       "id": "pseudonymizer",
       "title": "pseudonymizer",
-      "description": null,
+      "description": "Сервис для автоматического обезличивания чувствительных данных в документах.",
       "group": "products",
       "language": "Python",
       "updated": "2026-04-25",
@@ -85,12 +95,22 @@
           "url": "https://sourcecraft.dev/nikolai-pir-s-ru/pseudonymizer",
           "visibility": "private"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Сервис для автоматического обезличивания чувствительных данных в документах.",
+        "what": "Веб-приложение в контейнере: загружаешь документ (txt/docx/pdf), получаешь версию, где имена, телефоны, email, ИНН и номера договоров заменены на плейсхолдеры, с возможностью обратимого восстановления по сессии. Есть встроенный чат с языковой моделью поверх уже обезличенного текста.",
+        "use": "",
+        "start": [],
+        "status": "",
+        "quality": "short",
+        "source": "README"
+      },
+      "description_original": null
     },
     {
       "id": "bot",
       "title": "bot",
-      "description": "Бот ПИР-Системы",
+      "description": "Telegram-бот ПИР-Системы: отвечает на вопросы по базе знаний продукта и подстраивает ответ под роль собеседника.",
       "group": "products",
       "language": "Python",
       "updated": "2026-03-01",
@@ -106,12 +126,22 @@
           "url": "https://sourcecraft.dev/pir-system/bot",
           "visibility": "private"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Telegram-бот ПИР-Системы: отвечает на вопросы по базе знаний продукта и подстраивает ответ под роль собеседника.",
+        "what": "Бот на базе языковой модели с поиском по базе знаний, автоматическим определением роли пользователя (руководитель, технический директор, операционный директор, закупки) и аналитикой обращений.",
+        "use": "",
+        "start": [],
+        "status": "рефакторинг завершён",
+        "quality": "short",
+        "source": "README"
+      },
+      "description_original": "Бот ПИР-Системы"
     },
     {
       "id": "pirs",
       "title": "pirs",
-      "description": null,
+      "description": "Пустой репозиторий, содержимого нет.",
       "group": "products",
       "language": null,
       "updated": "2019-10-06",
@@ -127,15 +157,25 @@
           "url": "https://github.com/nikolai-karpov/pirs",
           "visibility": "private"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Пустой репозиторий, содержимого нет.",
+        "what": "Проверено напрямую: репозиторий не содержит ни одного файла.",
+        "use": "",
+        "start": [],
+        "status": "пусто",
+        "quality": "short",
+        "source": "нет данных"
+      },
+      "description_original": null
     },
     {
       "id": "my-website-portfolio",
       "title": "my-website / portfolio",
-      "description": "https://nikolai-karpov.github.io/my-website/",
+      "description": "Портфолио-сайт Николая Карпова: методология работы и практические кейсы на чистом HTML/CSS без сборочного фреймворка.",
       "group": "sites",
       "language": "HTML",
-      "updated": "2026-09-26",
+      "updated": "2026-09-27",
       "visibility": "public",
       "is_fork": false,
       "fork_of": null,
@@ -155,12 +195,26 @@
           "url": "https://sourcecraft.dev/nikolai-pir-s-ru/portfolio",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Портфолио-сайт Николая Карпова: методология работы и практические кейсы на чистом HTML/CSS без сборочного фреймворка.",
+        "what": "Статический сайт (GitHub Pages / SourceCraft) с главной страницей, страницей методологии, набором кейсов и отдельных страниц-прототипов (ИИ-ассистент, блокчейн-лаборатория, платформа перевозчиков, HR-агент на n8n и др.). CSS правится напрямую в собранном style.css — отдельный SCSS/PurgeCSS-пайплайн в проекте есть, но не используется. Есть архивная папка legacy/ с прежней версией сайта.",
+        "use": "Это сам навигатор и портфолио — источник примеров того, как оформлены кейсы и прототипы для внешней аудитории. Полезен как эталон структуры при добавлении новой страницы-кейса или прототипа на сайт.",
+        "start": [
+          "Открыть index.html локально или через любой статический сервер",
+          "Новую страницу класть в site-pages/, исходные материалы кейса — в cases/",
+          "CSS редактировать напрямую в assets/css/style.css, не запускать npm run build"
+        ],
+        "status": "Активно поддерживается, последние изменения — сентябрь 2026.",
+        "quality": "full",
+        "source": "README (рус.) + код"
+      },
+      "description_original": "https://nikolai-karpov.github.io/my-website/"
     },
     {
       "id": "analitic-course",
       "title": "analitic-course",
-      "description": null,
+      "description": "Учебные материалы курса о работе системного аналитика в паре с ИИ-агентом.",
       "group": "sites",
       "language": "HTML",
       "updated": "2026-09-26",
@@ -176,12 +230,22 @@
           "url": "https://sourcecraft.dev/nikolai-pir-s-ru/analitic-course",
           "visibility": "private"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Учебные материалы курса о работе системного аналитика в паре с ИИ-агентом.",
+        "what": "Планы уроков, модульная программа практикума и комплект инструментов и правил, который разворачивается в рабочую среду обучающегося аналитика.",
+        "use": "",
+        "start": [],
+        "status": "",
+        "quality": "short",
+        "source": "README"
+      },
+      "description_original": null
     },
     {
       "id": "self-coder",
       "title": "self-coder",
-      "description": "Обзор имеющихся решений, которые автоматизируют цепочку создания ПО от анализа ТЗ до генерации кода",
+      "description": "Исследовательский проект: обзор существующих платформ, которые по требованиям и макетам сами генерируют рабочий код.",
       "group": "sites",
       "language": "HTML",
       "updated": "2026-08-05",
@@ -197,12 +261,22 @@
           "url": "https://sourcecraft.dev/nikolai-pir-s-ru/self-coder",
           "visibility": "private"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Исследовательский проект: обзор существующих платформ, которые по требованиям и макетам сами генерируют рабочий код.",
+        "what": "Конвейер из нескольких ролей (сбор проверяемых фактов о продуктах-аналогах → сравнение → редактура → архитектура) готовит обоснованный вывод о реализуемости и объёме работ, а затем — архитектуру собственной такой платформы.",
+        "use": "",
+        "start": [],
+        "status": "",
+        "quality": "short",
+        "source": "README"
+      },
+      "description_original": "Обзор имеющихся решений, которые автоматизируют цепочку создания ПО от анализа ТЗ до генерации кода"
     },
     {
       "id": "pir-system-im",
       "title": "im",
-      "description": "Инвестиционный меморандум",
+      "description": "Инвестиционный меморандум ПИР-Системы — многостраничный HTML-сайт с тизером, разделами меморандума и материалами для презентации инвесторам.",
       "group": "sites",
       "language": "HTML",
       "updated": "2026-05-26",
@@ -218,12 +292,26 @@
           "url": "https://sourcecraft.dev/pir-system/im",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Инвестиционный меморандум ПИР-Системы — многостраничный HTML-сайт с тизером, разделами меморандума и материалами для презентации инвесторам.",
+        "what": "Статический сайт: тизер-лендинг в корне (index.html), сам меморандум в pages/ (введение, рынок, решение, GTM, конкуренты, финплан, риски, команда, приложения) и исходники текста в Markdown в source_md/ для совместной работы редакторов и ИИ. Отдельно лежат материалы обоснования (бизнес-модель, ценообразование, рыночные исследования, оценка рисков) и папка presentation/ с версиями под конкретных инвесторов. HTML не пересобирается из Markdown — страницы правятся вручную.",
+        "use": "Рабочий репозиторий для подготовки и обновления инвестиционных материалов по продукту ПИР-Система (собственная разработка, не заказная). Пригодится, когда нужно поправить цифры раунда, добавить презентацию под нового инвестора или свериться с единым источником финансовых констант.",
+        "start": [
+          "Открывать через локальный HTTP-сервер (нужны CDN-ресурсы и относительные пути): python3 -m http.server 8000",
+          "Тизер — на /, меморандум — на /pages/index.html",
+          "Перед правкой цифр раунда сверяться с FINANCIAL_CONSTANTS.md как источником истины"
+        ],
+        "status": "Активно ведётся, последнее обновление — май 2026.",
+        "quality": "full",
+        "source": "README (рус.)"
+      },
+      "description_original": "Инвестиционный меморандум"
     },
     {
       "id": "work-to-home",
       "title": "work-to-home",
-      "description": null,
+      "description": "Рабочий репозиторий консультационного проекта по внедрению ИИ у корпоративного заказчика.",
       "group": "sites",
       "language": "HTML",
       "updated": "2026-05-08",
@@ -239,12 +327,22 @@
           "url": "https://sourcecraft.dev/nikolai-pir-s-ru/work-to-home",
           "visibility": "private"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Рабочий репозиторий консультационного проекта по внедрению ИИ у корпоративного заказчика.",
+        "what": "Здесь ведётся системная работа по проекту: аудит данных и процессов, портфель инициатив по направлениям внедрения ИИ, письма, протоколы встреч и отчётность.",
+        "use": "",
+        "start": [],
+        "status": "",
+        "quality": "short",
+        "source": "README"
+      },
+      "description_original": null
     },
     {
       "id": "pir-s-ru",
       "title": "pir-s.ru",
-      "description": null,
+      "description": "Корпоративная платформа ПИР-Системы: сайт и связанная инфраструктура.",
       "group": "sites",
       "language": "JavaScript",
       "updated": "2026-02-26",
@@ -260,12 +358,22 @@
           "url": "https://github.com/pir-s/pir-s.ru",
           "visibility": "private"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Корпоративная платформа ПИР-Системы: сайт и связанная инфраструктура.",
+        "what": "Монорепозиторий с веб-клиентом, бэкендом, слоем работы с базой данных, сидером данных и настройками развёртывания продукта ПИР-Система.",
+        "use": "",
+        "start": [],
+        "status": "",
+        "quality": "short",
+        "source": "README"
+      },
+      "description_original": null
     },
     {
       "id": "organization-pirs-ru-im",
       "title": "im",
-      "description": "Инвестиционный меморандум",
+      "description": "Исходник инвестиционного меморандума проекта «ПИР-Система» для потенциальных инвесторов.",
       "group": "sites",
       "language": null,
       "updated": "2026-02-02",
@@ -281,12 +389,22 @@
           "url": "https://sourcecraft.dev/organization-pirs-ru/im",
           "visibility": "private"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Исходник инвестиционного меморандума проекта «ПИР-Система» для потенциальных инвесторов.",
+        "what": "Документ с описанием рынка, продукта, стратегии выхода на рынок и конкурентного анализа для привлечения инвестиций. Помечен как конфиденциальный, предназначен для квалифицированных инвесторов.",
+        "use": "",
+        "start": [],
+        "status": "конфиденциальный документ",
+        "quality": "short",
+        "source": "код"
+      },
+      "description_original": "Инвестиционный меморандум"
     },
     {
       "id": "invest-memo",
       "title": "invest-memo",
-      "description": "Публичный доступ к инвестиционному меморандуму",
+      "description": "Публичная витрина инвестиционного меморандума ПИР-Системы — доступ по ссылке для инвесторов.",
       "group": "sites",
       "language": null,
       "updated": "2026-02-02",
@@ -302,12 +420,22 @@
           "url": "https://sourcecraft.dev/organization-pirs-ru/invest-memo",
           "visibility": "internal"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Публичная витрина инвестиционного меморандума ПИР-Системы — доступ по ссылке для инвесторов.",
+        "what": "Отдельный репозиторий, который публикует инвестиционный меморандум для внешнего доступа, отдельно от рабочего документа.",
+        "use": "",
+        "start": [],
+        "status": "",
+        "quality": "short",
+        "source": "README"
+      },
+      "description_original": "Публичный доступ к инвестиционному меморандуму"
     },
     {
       "id": "ai-course",
       "title": "ai-course",
-      "description": "Веб-презентация курса",
+      "description": "Технологическая карта авторского курса «AI-ассистент для системного аналитика» плюс набор скриптов для генерации учебного контента через Cursor AI.",
       "group": "sites",
       "language": "HTML",
       "updated": "2026-01-13",
@@ -323,12 +451,26 @@
           "url": "https://sourcecraft.dev/nikolai-pir-s-ru/ai-course",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Технологическая карта авторского курса «AI-ассистент для системного аналитика» плюс набор скриптов для генерации учебного контента через Cursor AI.",
+        "what": "Веб-страница index.html («Технологическая карта курса AI-ассистент») подробно раскрывает программу курса: модули про LLM и API, проектирование AI-ассистента, RAG как корпоративную память и далее — со сквозным учебным кейсом «Спроси-Доку». Рядом лежит рабочий процесс подготовки материалов: исходные тексты уроков (.txt, полученные из .docx/.pdf/.xlsx) кладутся в content/source_texts/, промпты — в prompts/, а Cursor AI по ссылке @-файл генерирует контент в content/generated/. Есть вспомогательные Python-скрипты (cleanup.py, convert_table.py) для приведения таблиц и текста в порядок.",
+        "use": "Полезно как готовая программа курса для публикации/презентации, и как шаблон процесса «сырой текст урока → промпт → сгенерированный учебный материал» — можно переиспользовать для подготовки других курсов.",
+        "start": [
+          "Открыть index.html в браузере, чтобы посмотреть карту курса",
+          "Для генерации контента: положить исходный .txt в content/source_texts/, сослаться на него через @-reference в промпте Cursor",
+          "Результат сохранить в content/generated/"
+        ],
+        "status": "Разовая подготовка курса, обновлений с января 2026 не было.",
+        "quality": "full",
+        "source": "README (рус.) + код"
+      },
+      "description_original": "Веб-презентация курса"
     },
     {
       "id": "curs",
       "title": "curs",
-      "description": "Технологическая и дорожная карта курса https://nikolai-pir-s-ru.sourcecraft.site/curs/index.html",
+      "description": "Интерактивная веб-страница-портфолио с дорожной картой и технологической картой AI-курса, плюс встроенный лидогенератор-бриф для заказа курсов.",
       "group": "sites",
       "language": "HTML",
       "updated": "2026-01-12",
@@ -344,12 +486,26 @@
           "url": "https://sourcecraft.dev/nikolai-pir-s-ru/curs",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Интерактивная веб-страница-портфолио с дорожной картой и технологической картой AI-курса, плюс встроенный лидогенератор-бриф для заказа курсов.",
+        "what": "Одностраничное приложение (HTML + Tailwind CSS + vanilla JS) без сборки фреймворков: табы для этапов дорожной карты, аккордеоны для модулей техкарты, диаграммы через Mermaid.js, данные вынесены в JSON (data/roadmap.json, data/techmap.json). Отдельный модуль brief.js реализует расширенную бриф-форму (подход 5P) для сбора требований на разработку курса, с возможностью поделиться заполненным брифом через ссылку с закодированными параметрами.",
+        "use": "Готовая витрина методологии для портфолио плюс работающий лидогенератор — можно использовать как форму приёма заявок на консультации/курсы или как образец интерактивной подачи сложного методического материала.",
+        "start": [
+          "Открыть index.html напрямую в браузере или через любой статический сервер",
+          "Для полной пересборки CSS: npm install, затем npm run build:css (Tailwind)",
+          "Данные роадмапа и техкарты редактировать в data/roadmap.json и data/techmap.json"
+        ],
+        "status": "Разовая подготовка, последние изменения — январь 2026.",
+        "quality": "full",
+        "source": "README (рус.)"
+      },
+      "description_original": "Технологическая и дорожная карта курса https://nikolai-pir-s-ru.sourcecraft.site/curs/index.html"
     },
     {
       "id": "hermes-plugin-mempalace",
       "title": "hermes-plugin-mempalace",
-      "description": "MemPalace memory provider plugin for Hermes Agent",
+      "description": "Плагин памяти для ИИ-агента Hermes: подключает личную систему семантической памяти MemPalace.",
       "group": "agents",
       "language": "Python",
       "updated": "2026-09-27",
@@ -365,12 +521,22 @@
           "url": "https://github.com/nikolai-karpov/hermes-plugin-mempalace",
           "visibility": "private"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Плагин памяти для ИИ-агента Hermes: подключает личную систему семантической памяти MemPalace.",
+        "what": "Даёт агенту инструменты хранения и поиска воспоминаний — семантический поиск, граф знаний, дневник по сессиям — вместо облачных провайдеров памяти; всё работает локально, без внешних сервисов.",
+        "use": "",
+        "start": [],
+        "status": "",
+        "quality": "short",
+        "source": "README"
+      },
+      "description_original": "MemPalace memory provider plugin for Hermes Agent"
     },
     {
       "id": "hermes-agent",
       "title": "hermes-agent",
-      "description": "The agent that grows with you",
+      "description": "Личный ИИ-агент (форк проекта Hermes Agent) — терминальный ассистент с памятью, навыками и подключением к мессенджерам.",
       "group": "agents",
       "language": "Python",
       "updated": "2026-09-27",
@@ -386,12 +552,22 @@
           "url": "https://github.com/nikolai-karpov/hermes-agent",
           "visibility": "private"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Личный ИИ-агент (форк проекта Hermes Agent) — терминальный ассистент с памятью, навыками и подключением к мессенджерам.",
+        "what": "Агент с обучающимся циклом: сам создаёт и улучшает свои навыки, работает из терминала и мессенджеров, по расписанию выполняет фоновые задачи. В форк добавлен собственный модуль подбора модели под сложность каждого хода.",
+        "use": "",
+        "start": [],
+        "status": "",
+        "quality": "short",
+        "source": "README"
+      },
+      "description_original": "The agent that grows with you"
     },
     {
       "id": "kilo-canon",
       "title": "kilo-canon",
-      "description": null,
+      "description": "Общий канон рабочей среды для специалистов-аналитиков, использующих Kilo Code.",
       "group": "agents",
       "language": "Python",
       "updated": "2026-09-27",
@@ -407,12 +583,22 @@
           "url": "https://sourcecraft.dev/softlab/kilo-canon",
           "visibility": "private"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Общий канон рабочей среды для специалистов-аналитиков, использующих Kilo Code.",
+        "what": "Задаёт единые роли, навыки и правила работы для проектов аналитиков: как устроено рабочее место и где искать инструкции под задачу.",
+        "use": "",
+        "start": [],
+        "status": "",
+        "quality": "short",
+        "source": "README"
+      },
+      "description_original": null
     },
     {
       "id": "analitic",
       "title": "analitic",
-      "description": "связка навыки аналитика + парсер",
+      "description": "Учебно-рабочий проект по настройке связки «системный аналитик + ИИ-агент» на реальных документах.",
       "group": "agents",
       "language": "Python",
       "updated": "2026-09-25",
@@ -428,12 +614,22 @@
           "url": "https://sourcecraft.dev/nikolai-pir-s-ru/analitic",
           "visibility": "private"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Учебно-рабочий проект по настройке связки «системный аналитик + ИИ-агент» на реальных документах.",
+        "what": "Здесь находки о работе ИИ-агента с документами аналитика (техзадания, форматы обмена, нормативные акты) переносятся в общие правила, инструменты разбора документов и учебные материалы.",
+        "use": "",
+        "start": [],
+        "status": "",
+        "quality": "short",
+        "source": "README"
+      },
+      "description_original": "связка навыки аналитика + парсер"
     },
     {
       "id": "devhub",
       "title": "devhub",
-      "description": null,
+      "description": "Пакет проектной документации для SaaS-платформы, организующей работу с внештатными разработчиками ПО.",
       "group": "agents",
       "language": null,
       "updated": "2026-09-01",
@@ -449,12 +645,22 @@
           "url": "https://sourcecraft.dev/nikolai-pir-s-ru/devhub",
           "visibility": "private"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Пакет проектной документации для SaaS-платформы, организующей работу с внештатными разработчиками ПО.",
+        "what": "Описывает будущий продукт: тендеры на разработку, трекер задач, приёмку и проверку качества работ, расчёты и выплаты, рейтинг исполнителей, разбор споров и модуль ИИ-контроля качества. Это документация и спецификация, а не рабочий код — реализация ведётся отдельно.",
+        "use": "",
+        "start": [],
+        "status": "документация в разработке",
+        "quality": "short",
+        "source": "README"
+      },
+      "description_original": null
     },
     {
       "id": "claude-config",
       "title": "claude-config",
-      "description": "Personal Claude Code customizations (hooks, plugins, skills, global CLAUDE.md)",
+      "description": "Личные настройки ИИ-ассистента Claude Code: автоматизации, уведомления, общие инструкции.",
       "group": "agents",
       "language": "TypeScript",
       "updated": "2026-08-25",
@@ -470,12 +676,22 @@
           "url": "https://github.com/nikolai-karpov/claude-config",
           "visibility": "private"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Личные настройки ИИ-ассистента Claude Code: автоматизации, уведомления, общие инструкции.",
+        "what": "Хранит и версионирует персональную конфигурацию — хуки, интеграции с мессенджерами, скиллы и общие правила поведения, которые подключаются к рабочей машине.",
+        "use": "",
+        "start": [],
+        "status": "",
+        "quality": "short",
+        "source": "README"
+      },
+      "description_original": "Personal Claude Code customizations (hooks, plugins, skills, global CLAUDE.md)"
     },
     {
       "id": "tg-mcp",
       "title": "tg-mcp",
-      "description": "MCP для Телеграм",
+      "description": "Инструмент, который даёт ИИ-агентам доступ к личной переписке в Telegram.",
       "group": "agents",
       "language": "Python",
       "updated": "2026-08-24",
@@ -491,12 +707,22 @@
           "url": "https://sourcecraft.dev/nikolai-pir-s-ru/tg-mcp",
           "visibility": "internal"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Инструмент, который даёт ИИ-агентам доступ к личной переписке в Telegram.",
+        "what": "Позволяет агентам читать чаты, группы и каналы и — с ограничениями и списком разрешённых адресатов — отправлять сообщения от имени владельца аккаунта. Доступ на запись отключаем и ограничен отдельным переключателем.",
+        "use": "",
+        "start": [],
+        "status": "",
+        "quality": "short",
+        "source": "README"
+      },
+      "description_original": "MCP для Телеграм"
     },
     {
       "id": "komutator",
       "title": "komutator",
-      "description": "Репо для моста с мессенджерами",
+      "description": "Мост между мессенджерами и рабочими сессиями ИИ-ассистента.",
       "group": "agents",
       "language": "Python",
       "updated": "2026-08-22",
@@ -512,12 +738,22 @@
           "url": "https://sourcecraft.dev/nikolai-pir-s-ru/komutator",
           "visibility": "private"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Мост между мессенджерами и рабочими сессиями ИИ-ассистента.",
+        "what": "Принимает сообщения из мессенджеров и раздаёт их нужной из нескольких параллельных сессий; позволяет переключаться между сессиями командами или кнопками и не теряет сообщения, если сессия временно не на связи.",
+        "use": "",
+        "start": [],
+        "status": "",
+        "quality": "short",
+        "source": "README"
+      },
+      "description_original": "Репо для моста с мессенджерами"
     },
     {
       "id": "hermes-pipeline",
       "title": "hermes-pipeline",
-      "description": "Личный news-пайплайн: сбор RSS → классификация → рендер → публикация на сайт + Telegram",
+      "description": "Личный новостной конвейер: собирает новости об ИИ, отбирает и оформляет материалы, публикует их автоматически.",
       "group": "agents",
       "language": "Python",
       "updated": "2026-06-05",
@@ -533,12 +769,22 @@
           "url": "https://github.com/nikolai-karpov/hermes-pipeline",
           "visibility": "private"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Личный новостной конвейер: собирает новости об ИИ, отбирает и оформляет материалы, публикует их автоматически.",
+        "what": "Последовательность шагов — сбор источников, отбор релевантного, написание текста по шаблону, вёрстка в HTML, публикация и рассылка уведомлений, обновление общего реестра опубликованного.",
+        "use": "",
+        "start": [],
+        "status": "",
+        "quality": "short",
+        "source": "README"
+      },
+      "description_original": "Личный news-пайплайн: сбор RSS → классификация → рендер → публикация на сайт + Telegram"
     },
     {
       "id": "pollinations-think-mcp",
       "title": "pollinations-think-mcp",
-      "description": "Advanced strategic thinking MCP server with DeepSeek reasoning and SearchGPT integration",
+      "description": "MCP-сервер «второе мнение»: даёт Claude/агенту инструмент для более глубокого стратегического рассуждения и живого веб-поиска через бесплатный API Pollinations.ai — без своих ключей и подписок.",
       "group": "agents",
       "language": "JavaScript",
       "updated": "2025-07-01",
@@ -554,12 +800,27 @@
           "url": "https://github.com/nikolai-karpov/pollinations-think-mcp",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "MCP-сервер «второе мнение»: даёт Claude/агенту инструмент для более глубокого стратегического рассуждения и живого веб-поиска через бесплатный API Pollinations.ai — без своих ключей и подписок.",
+        "what": "Node.js MCP-сервер с тремя инструментами: think — многоцикловый стратегический анализ через reasoning-модели (DeepSeek/OpenAI-reasoning) с поиском противоречий и синтезом вывода; search — поиск в реальном времени через модель SearchGPT; continue_thinking — забрать продолжение большого ответа, если он не поместился в один вызов (ответы > ~30 КБ режутся на части). Работает поверх публичных эндпоинтов text.pollinations.ai, ключи не нужны.",
+        "use": "Подключается как обычный MCP-сервер к любому клиенту (Claude Desktop, Cursor и т.п.) и даёт агенту дополнительный инструмент для стратегического обдумывания сложных решений и быстрого веб-поиска, не завязанный на платный API. Годится как запасной/дешёвый источник рассуждений и поиска рядом с основной моделью.",
+        "start": [
+          "git clone репозитория, затем npm install",
+          "npm start — запустить сервер (index.js, точка входа)",
+          "Прописать сервер в конфиге MCP-клиента: command node, args [\"/path/to/index.js\"]",
+          "Переменные окружения не нужны — используются публичные эндпоинты Pollinations.ai"
+        ],
+        "status": "Разовый релиз v2.0.0 (июль 2025), с тех пор не обновлялся.",
+        "quality": "full",
+        "source": "README (англ.) + код"
+      },
+      "description_original": "Advanced strategic thinking MCP server with DeepSeek reasoning and SearchGPT integration"
     },
     {
       "id": "monitor-fssp",
       "title": "monitor-fssp",
-      "description": null,
+      "description": "Скрипт-монитор, который следит за одной конкретной страницей сайта ФССП (для участников межведомственного взаимодействия) и сообщает, изменилось ли её содержимое или подменённые под старым названием файлы.",
       "group": "automation",
       "language": "Python",
       "updated": "2026-09-12",
@@ -575,12 +836,27 @@
           "url": "https://sourcecraft.dev/nikolai-pir-s-ru/monitor-fssp",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Скрипт-монитор, который следит за одной конкретной страницей сайта ФССП (для участников межведомственного взаимодействия) и сообщает, изменилось ли её содержимое или подменённые под старым названием файлы.",
+        "what": "Python-скрипт (fssp_monitor.py) сравнивает не байты HTML, а нормализованное содержимое — текст, таблицы, ссылки на документы — и считает от него sha256-сигнатуру, поэтому не путает косметические изменения разметки с реальными. Умеет распознавать, что страница — SPA без контента в исходном HTML, и в этом случае сам рендерит её в headless-браузере (Chromium/Chrome/Edge). Отдельно (--check-files) может проверять сами файлы по ссылкам через HEAD/Range-запросы, ловя подмену документа под прежним URL, а в расширённом режиме (--monitor-files) — полностью скачивать и версионировать все вложения с HTML-отчётом. Устойчив к заглушке ФССП «превышен лимit подключений»: не считает её изменением и не долбит повторными запросами.",
+        "use": "Готовое решение для юридического/комплаенс-мониторинга конкретной госстраницы на предмет тихих изменений регламентов или подмены документов (например, форм и инструкций) — можно запускать по расписанию (cron/Планировщик) и получать код выхода 0/1/2 для автоматизации.",
+        "start": [
+          "python3 -m venv .venv && source .venv/bin/activate",
+          "pip install \"playwright==1.61.0\" (важно для macOS 13 — более новые версии не поддерживают эту ОС), затем playwright install chromium",
+          "Первый запуск python3 fssp_monitor.py создаёт базовую линию (exit 0)",
+          "Повторные запуски сравнивают с базой; при изменениях — exit 1 и диф в консоли; флаги --check-files / --monitor-files включают проверку самих файлов по ссылкам"
+        ],
+        "status": "Активно поддерживается, последнее обновление — сентябрь 2026, есть автотесты (29 шт.).",
+        "quality": "full",
+        "source": "README (рус.)"
+      },
+      "description_original": null
     },
     {
       "id": "express-js-on-vercel",
       "title": "express-js-on-vercel",
-      "description": null,
+      "description": "Учебный шаблон: минимальный сервер на Express.js, настроенный для деплоя на Vercel — без БД и форм.",
       "group": "automation",
       "language": "TypeScript",
       "updated": "2025-12-05",
@@ -596,12 +872,26 @@
           "url": "https://github.com/pir-s/express-js-on-vercel",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Учебный шаблон: минимальный сервер на Express.js, настроенный для деплоя на Vercel — без БД и форм.",
+        "what": "Basic Express-приложение (TypeScript) с несколькими роутами: главная страница, /about (статический .htm), /api-data (пример JSON-ответа) и /healthz (health-check). Это адаптированный пример из официальной коллекции Vercel Examples, доработанный для собственного использования.",
+        "use": "Годится как отправная точка/референс для быстрого разворачивания простого Express-сервера на Vercel — health-check и структура роутов уже готовы, остаётся добавить бизнес-логику.",
+        "start": [
+          "npm install (или через vercel dev — поднимает окружение Vercel локально)",
+          "vercel dev — запустить приложение локально",
+          "Роуты: / (HTML), /about, /api-data (JSON), /healthz (статус)"
+        ],
+        "status": "Учебный шаблон, один коммит, декабрь 2025, дальше не развивался.",
+        "quality": "full",
+        "source": "README (англ.) + код"
+      },
+      "description_original": null
     },
     {
       "id": "sf-ds",
       "title": "SF_DS",
-      "description": null,
+      "description": "Учебные проекты по Data Science с курсов SkillFactory: игра «Угадай число» и анализ вакансий с hh.ru.",
       "group": "automation",
       "language": "Jupyter Notebook",
       "updated": "2022-03-15",
@@ -617,12 +907,22 @@
           "url": "https://github.com/nikolai-karpov/SF_DS",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Учебные проекты по Data Science с курсов SkillFactory: игра «Угадай число» и анализ вакансий с hh.ru.",
+        "what": "Два оформленных мини-проекта (project0 — консольная игра на Python, project1 — Jupyter-ноутбук с анализом зарплат по данным hh.ru с графиками) плюс папка homework с разрозненными учебными скриптами (работа с XML, VK API, автоматический запуск и т.п.).",
+        "use": "Демонстрация базовых навыков анализа данных на Python (pandas, визуализация, работа с внешними API) — годится как учебный артефакт для портфолио, не production-код.",
+        "start": [],
+        "status": "Учебный архив, не развивается с марта 2022.",
+        "quality": "full",
+        "source": "README (англ.) + код"
+      },
+      "description_original": null
     },
     {
       "id": "python",
       "title": "Python",
-      "description": "Config files for my GitHub profile.",
+      "description": "Личный профильный репозиторий GitHub (README на странице профиля) вперемешку с учебными скриптами и ноутбуками по Data Science.",
       "group": "automation",
       "language": "Jupyter Notebook",
       "updated": "2022-02-21",
@@ -638,12 +938,22 @@
           "url": "https://github.com/nikolai-karpov/Python",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Личный профильный репозиторий GitHub (README на странице профиля) вперемешку с учебными скриптами и ноутбуками по Data Science.",
+        "what": "Специальный репозиторий, чей README.md показывается на странице профиля GitHub — сейчас там короткая самопрезентация «интересуюсь Python, учу Data Science». В остальном репозиторий занят разрозненными учебными материалами: скрипты по ООП, обработке исключений, работе с файлами, очистке и визуализации данных, пример парсера, ноутбук по анализу вакансий hh.ru и общий Github.txt с заметками.",
+        "use": "Служебный репозиторий для профиля GitHub плюс архив учебных Python/DS-скриптов; для портфолио как отдельный продукт малополезен — это скорее черновик обучения.",
+        "start": [],
+        "status": "Не поддерживается с февраля 2022, содержимое учебное.",
+        "quality": "full",
+        "source": "README (англ.) + код"
+      },
+      "description_original": "Config files for my GitHub profile."
     },
     {
       "id": "bitrix-deploy",
       "title": "bitrix-deploy",
-      "description": "Конфигурация docker-compose для развертывания корпоративного сайта pir-s.ru на платформе Битрикс",
+      "description": "Конфигурация для развёртывания корпоративного сайта ПИР-Системы на платформе 1С-Битрикс через Docker.",
       "group": "automation",
       "language": "Dockerfile",
       "updated": "2020-03-26",
@@ -659,12 +969,22 @@
           "url": "https://github.com/pir-s/bitrix-deploy",
           "visibility": "private"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Конфигурация для развёртывания корпоративного сайта ПИР-Системы на платформе 1С-Битрикс через Docker.",
+        "what": "Docker-compose с переменными окружения для запуска сайта и разворачивания его базы данных на сервере.",
+        "use": "",
+        "start": [],
+        "status": "",
+        "quality": "short",
+        "source": "README"
+      },
+      "description_original": "Конфигурация docker-compose для развертывания корпоративного сайта pir-s.ru на платформе Битрикс"
     },
     {
       "id": "ai-gip",
       "title": "ai-gip",
-      "description": null,
+      "description": "Пустой репозиторий — контента нет.",
       "group": "automation",
       "language": null,
       "updated": null,
@@ -680,7 +1000,17 @@
           "url": "https://sourcecraft.dev/nikolai-pir-s-ru/ai-gip",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Пустой репозиторий — контента нет.",
+        "what": "Репозиторий создан, но не содержит файлов (is_empty: true).",
+        "use": "Не применимо — использовать нечего.",
+        "start": [],
+        "status": "Пустой, не начат.",
+        "quality": "full",
+        "source": "нет данных"
+      },
+      "description_original": null
     },
     {
       "id": "exchange-5",
@@ -702,7 +1032,8 @@
           "visibility": "private",
           "masked": true
         }
-      ]
+      ],
+      "summary": null
     },
     {
       "id": "exchange-8",
@@ -724,7 +1055,8 @@
           "visibility": "private",
           "masked": true
         }
-      ]
+      ],
+      "summary": null
     },
     {
       "id": "exchange-3",
@@ -746,7 +1078,8 @@
           "visibility": "private",
           "masked": true
         }
-      ]
+      ],
+      "summary": null
     },
     {
       "id": "exchange-1",
@@ -768,7 +1101,8 @@
           "visibility": "private",
           "masked": true
         }
-      ]
+      ],
+      "summary": null
     },
     {
       "id": "exchange-4",
@@ -790,7 +1124,8 @@
           "visibility": "private",
           "masked": true
         }
-      ]
+      ],
+      "summary": null
     },
     {
       "id": "exchange-6",
@@ -812,7 +1147,8 @@
           "visibility": "private",
           "masked": true
         }
-      ]
+      ],
+      "summary": null
     },
     {
       "id": "exchange-7",
@@ -834,7 +1170,8 @@
           "visibility": "private",
           "masked": true
         }
-      ]
+      ],
+      "summary": null
     },
     {
       "id": "exchange-2",
@@ -856,12 +1193,13 @@
           "visibility": "private",
           "masked": true
         }
-      ]
+      ],
+      "summary": null
     },
     {
       "id": "dataset-reflection",
       "title": "dataset-reflection",
-      "description": null,
+      "description": "Пустой репозиторий, содержимого нет.",
       "group": "exchange",
       "language": null,
       "updated": null,
@@ -877,12 +1215,22 @@
           "url": "https://sourcecraft.dev/softlab/dataset-reflection",
           "visibility": "private"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Пустой репозиторий, содержимого нет.",
+        "what": "",
+        "use": "",
+        "start": [],
+        "status": "пусто",
+        "quality": "short",
+        "source": "нет данных"
+      },
+      "description_original": null
     },
     {
       "id": "deepseek-harness",
       "title": "deepseek-harness",
-      "description": "DeepSeek Harness: Everything is a Plugin.",
+      "description": "Форк агентского харнеса DeepSeek AI (dsh) — открытая среда для запуска ИИ-агентов, построенная на архитектуре «всё — плагин».",
       "group": "forks",
       "language": "TypeScript",
       "updated": "2026-09-10",
@@ -898,12 +1246,25 @@
           "url": "https://github.com/nikolai-karpov/deepseek-harness",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк агентского харнеса DeepSeek AI (dsh) — открытая среда для запуска ИИ-агентов, построенная на архитектуре «всё — плагин».",
+        "what": "DeepSeek Harness (dsh) — экспериментальный (developer preview) харнес для агентов от DeepSeek AI. В основе — библиотека Cordis, реализующая идею «пространственно-временной компонуемости»: любая часть системы, включая ядро, оформлена как плагин. Есть веб-интерфейс, запускаемый локально.",
+        "use": "Полезно как референс архитектуры альтернативного (не Claude Code) агентского харнеса — для сравнения подходов при проектировании собственных мультиагентных систем и изучения плагинной модели расширения агента.",
+        "start": [
+          "Через npm: `npx @deepseek-ai/dsh web` — поднимает веб-интерфейс на http://127.0.0.1:3080",
+          "Из исходников: клонировать репозиторий, `pnpm install`, `pnpm run build`, затем `pnpm dsh web`"
+        ],
+        "status": "Активно развивается, но помечен как developer preview — авторы предупреждают о ломающих изменениях.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "DeepSeek Harness: Everything is a Plugin."
     },
     {
       "id": "home-generative-agent",
       "title": "home-generative-agent",
-      "description": "AI agent for Home Assistant — talk to your home, create automations in plain language, analyze cameras with face recognition, and get proactive anomaly alerts. Cloud LLMs or fully local via Ollama.",
+      "description": "Форк интеграции для Home Assistant, добавляющей полноценного ИИ-агента: голосовое управление домом, создание автоматизаций на естественном языке, анализ камер с распознаванием лиц и проактивные алерты.",
       "group": "forks",
       "language": "Python",
       "updated": "2026-09-04",
@@ -919,12 +1280,27 @@
           "url": "https://github.com/nikolai-karpov/home-generative-agent",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк интеграции для Home Assistant, добавляющей полноценного ИИ-агента: голосовое управление домом, создание автоматизаций на естественном языке, анализ камер с распознаванием лиц и проактивные алерты.",
+        "what": "Home Generative Agent (автор — goruck, Lindo St Angel) — не просто прокси к LLM, а агент на LangGraph с инструментами для управления сущностями Home Assistant, анализа истории, просмотра камер и генерации автоматизаций (YAML). Хранит долгосрочную семантическую память в pgvector, включает детерминированный движок обнаружения аномалий Sentinel (LLM только советует, не действует), поддерживает облачные модели (OpenAI, Gemini, Anthropic) или полностью локальные (Ollama и любой OpenAI-совместимый сервер), а также встроенные STT/TTS.",
+        "use": "Хороший референс для проектирования мультиагентных систем умного дома: разделение LLM-совета и детерминированного исполнения (Sentinel), паттерн долгосрочной памяти через pgvector, работа с локальными и облачными моделями в одном контуре.",
+        "start": [
+          "Требует Home Assistant OS/Supervised и HACS",
+          "Установить приложение PostgreSQL с pgvector, затем саму интеграцию через HACS",
+          "Добавить интеграцию, настроить провайдера модели (облако или Ollama/OpenAI-совместимый сервер)",
+          "Выбрать режим настройки Basic/Advanced и назначить агента голосовым ассистентом в Assist"
+        ],
+        "status": "Активно развивается (релизы, множество докладов о фичах вплоть до сентября 2026), у оригинала есть HACS-дистрибуция.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "AI agent for Home Assistant — talk to your home, create automations in plain language, analyze cameras with face recognition, and get proactive anomaly alerts. Cloud LLMs or fully local via Ollama."
     },
     {
       "id": "transformer-explainer",
       "title": "transformer-explainer",
-      "description": "Визуальное объяснение трансформера: изучите работу LLM-моделей на основе трансформеров с помощью интерактивной визуализации",
+      "description": "Форк интерактивной визуализации трансформера (poloclub/transformer-explainer) с русским переводом обучающих карточек — наглядно показывает, как GPT-2 предсказывает следующий токен.",
       "group": "forks",
       "language": "JavaScript",
       "updated": "2026-08-26",
@@ -940,12 +1316,27 @@
           "url": "https://github.com/nikolai-karpov/transformer-explainer",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк интерактивной визуализации трансформера (poloclub/transformer-explainer) с русским переводом обучающих карточек — наглядно показывает, как GPT-2 предсказывает следующий токен.",
+        "what": "В браузере запускается настоящая модель GPT-2, и пользователь может ввести свой текст и увидеть в реальном времени, как компоненты трансформера (эмбеддинги, внимание, слои) работают на пути к предсказанию следующего токена. В этом форке переведены объяснения в обучающих карточках на русский, при этом интерфейс, подписи схемы и промпты оставлены на английском осознанно — GPT-2 обучена на английском, и кириллица разбивается токенизатором на бессмысленные фрагменты.",
+        "use": "Готовый учебный материал по устройству трансформеров на русском — можно использовать в презентациях, обучении клиентов/коллег основам LLM или как демонстрационный кейс на сайте-портфолио.",
+        "start": [
+          "git clone https://github.com/nikolai-karpov/transformer-explainer.git",
+          "npm install",
+          "npm run dev",
+          "Открыть http://localhost:5173"
+        ],
+        "status": "Стабильный образовательный проект; есть опубликованная русская версия на GitHub Pages (http://nikolai-karpov.github.io/transformer-explainer).",
+        "quality": "full",
+        "source": "README (рус.)"
+      },
+      "description_original": "Визуальное объяснение трансформера: изучите работу LLM-моделей на основе трансформеров с помощью интерактивной визуализации"
     },
     {
       "id": "learn-harness-engineering",
       "title": "learn-harness-engineering",
-      "description": "Harness engineering beginner tutorial, from 0 to 1",
+      "description": "Форк учебного курса «Learn Harness Engineering» — практический курс по построению надёжной среды (харнеса) вокруг ИИ-агентов кода: инструкции, состояние, верификация, границы задачи, жизненный цикл сессии.",
       "group": "forks",
       "language": "TypeScript",
       "updated": "2026-08-26",
@@ -961,12 +1352,26 @@
           "url": "https://github.com/nikolai-karpov/learn-harness-engineering",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк учебного курса «Learn Harness Engineering» — практический курс по построению надёжной среды (харнеса) вокруг ИИ-агентов кода: инструкции, состояние, верификация, границы задачи, жизненный цикл сессии.",
+        "what": "Курс на 14 лекций и 8 проектов, все построены вокруг одного капстоун-проекта — Electron-приложения базы знаний. Идея курса: сильная модель сама по себе не даёт надёжный результат — нужен харнес (инструкции AGENTS.md/CLAUDE.md, файлы состояния прогресса, верификация тестами, ограничение объёма задачи на сессию, чистое завершение сессии). Последние обновления добавили раздел про loop engineering (автоматизация циклов агента) и graph engineering (переход от одного цикла к графу с узлами, ветвлением, откатами и участием человека). Есть готовые шаблоны (AGENTS.md, feature_list.json, init.sh) и скилл harness-creator для быстрого создания харнеса под свой проект.",
+        "use": "Прямое применение в работе с Claude Code и мультиагентными системами: даёт словарь и конкретные практики (feature-лист, progress-лог, init.sh, verification-гейты) для проектирования собственных харнесов и оценки чужих агентских пайплайнов.",
+        "start": [
+          "Материалы читаются на сайте документации (VitePress): https://walkinglabs.github.io/learn-harness-engineering/",
+          "Локально: npm install, затем npm run docs:dev для предпросмотра",
+          "Готовые шаблоны — в разделе Resource Library, скилл harness-creator — в skills/harness-creator/"
+        ],
+        "status": "Активно развивается, последнее крупное обновление — август 2026 (раздел разбора харнесов Pi, Claude Code, Codex, DeepSeek и лекция про graph engineering).",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "Harness engineering beginner tutorial, from 0 to 1"
     },
     {
       "id": "awesome-harness-engineering",
       "title": "awesome-harness-engineering",
-      "description": "🛠️ Awesome tools & guides for harness engineering.",
+      "description": "Форк курируемого списка (awesome-list) статей, курсов, бенчмарков и open-source проектов по инженерии харнесов для ИИ-агентов.",
       "group": "forks",
       "language": null,
       "updated": "2026-08-19",
@@ -982,12 +1387,22 @@
           "url": "https://github.com/nikolai-karpov/awesome-harness-engineering",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк курируемого списка (awesome-list) статей, курсов, бенчмарков и open-source проектов по инженерии харнесов для ИИ-агентов.",
+        "what": "Обширная подборка ссылок, разбитая по темам: основы харнес-инжиниринга, работа с контекстом и памятью, ограничения и безопасная автономность, спецификации и AGENTS.md-подобные форматы, evals и observability, десятки бенчмарков (SWE-bench, Terminal-Bench, WebArena и т.д.), а также каталог рантаймов и харнесов (deepagents, SWE-agent, Citadel, Harness Evolver и др.) и инструментов оркестрации нескольких агентов.",
+        "use": "Справочник для быстрой навигации по экосистеме харнес-инжиниринга и мультиагентной оркестрации — полезно при выборе инструментов, изучении новых практик или подготовке материалов по теме для клиентов.",
+        "start": [],
+        "status": "Активно поддерживаемый курируемый список (CC0 лицензия), приветствуются PR.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "🛠️ Awesome tools & guides for harness engineering."
     },
     {
       "id": "awesome-deeplinks",
       "title": "awesome-deeplinks",
-      "description": "Hidden Deeplinks of Applications",
+      "description": "Форк публичного каталога deeplink-схем (кастомных URL-протоколов) популярных приложений macOS/iOS/Windows — включая Claude, Codex, Cursor и десятки других.",
       "group": "forks",
       "language": "Python",
       "updated": "2026-06-17",
@@ -1003,12 +1418,26 @@
           "url": "https://github.com/nikolai-karpov/awesome-deeplinks",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк публичного каталога deeplink-схем (кастомных URL-протоколов) популярных приложений macOS/iOS/Windows — включая Claude, Codex, Cursor и десятки других.",
+        "what": "Каталог собран macOS-экстрактором, который читает CFBundleURLTypes из установленных приложений, плюс ручная проверка через код и документацию. Для каждого приложения приведены категория, платформы, bundle ID и таблица форматов ссылок с примерами (например, claude://code/new?q=... для запуска Claude Code с промптом и путём к проекту, или codex://threads/new для Codex). Есть Python-скрипт scripts/extract_deeplinks.py для запуска сканирования своих приложений и локальный агентский скилл для более глубокого поиска схем в коде и документации.",
+        "use": "Полезный справочник готовых deeplink-команд для автоматизации рабочего процесса (например, открыть Claude Code с конкретной папкой и промптом одной ссылкой) и как инструмент для инвентаризации собственных приложений на предмет скрытых точек входа.",
+        "start": [
+          "Запустить экстрактор по конкретным приложениям: python3 scripts/extract_deeplinks.py Cursor \"GitHub\" Slack",
+          "Или просканировать все приложения: python3 scripts/extract_deeplinks.py --all",
+          "Готовые ссылки и таблицы — прямо в README (раздел Apps), сгруппированы по категориям"
+        ],
+        "status": "Поддерживаемый каталог, регулярно пополняется (последнее обновление отражено в мета-файле — июнь 2026).",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "Hidden Deeplinks of Applications"
     },
     {
       "id": "skills-mattpocock",
       "title": "skills_mattpocock",
-      "description": "Skills for Real Engineers. Straight from my .claude directory.",
+      "description": "Форк набора агентских скиллов Мэтта Покока (Total TypeScript) для «настоящей инженерии» с Claude Code — без vibe-coding: выравнивание с агентом, TDD, борьба с разрастанием кодовой базы.",
       "group": "forks",
       "language": "Shell",
       "updated": "2026-05-13",
@@ -1024,12 +1453,26 @@
           "url": "https://github.com/nikolai-karpov/skills_mattpocock",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк набора агентских скиллов Мэтта Покока (Total TypeScript) для «настоящей инженерии» с Claude Code — без vibe-coding: выравнивание с агентом, TDD, борьба с разрастанием кодовой базы.",
+        "what": "Небольшой, но продуманный набор скиллов, решающих типовые провалы работы с coding-агентами: непонимание задачи (`/grill-me`, `/grill-with-docs` — «допрос» агента до полного согласования и фиксация решений в CONTEXT.md), избыточная многословность агента (общий язык проекта), нерабочий код (`/tdd` для red-green-refactor, `/diagnose` для отладки) и деградацию архитектуры (`/improve-codebase-architecture`, `/zoom-out`). Есть также продуктивити-скиллы (handoff между сессиями, ультра-сжатая коммуникация) и мелкие утилиты (git-guardrails, pre-commit setup).",
+        "use": "Готовые к установке скиллы для повышения качества совместной работы с Claude Code на реальных задачах — особенно `/grill-with-docs` для выравнивания перед началом фичи и `/tdd` для дисциплины тестирования.",
+        "start": [
+          "npx skills@latest add mattpocock/skills",
+          "Выбрать нужные скиллы и агентов для установки, обязательно включить /setup-matt-pocock-skills",
+          "Запустить /setup-matt-pocock-skills в агенте и ответить на вопросы про issue-трекер, лейблы триажа и расположение доков"
+        ],
+        "status": "Активно используется автором ежедневно, поддерживается рассылка с обновлениями (~60000 подписчиков).",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "Skills for Real Engineers. Straight from my .claude directory."
     },
     {
       "id": "openclaude",
       "title": "openclaude",
-      "description": "Open Claude Is Open-source coding-agent CLI for OpenAI, Gemini, DeepSeek, Ollama, Codex, GitHub Models, and 200+ models via OpenAI-compatible APIs.",
+      "description": "Форк OpenClaude — open-source CLI-агента для кода, форкнутого из кодовой базы Claude Code, но переработанного для работы с любыми провайдерами моделей (OpenAI, Gemini, DeepSeek, Ollama, Codex и др.).",
       "group": "forks",
       "language": "TypeScript",
       "updated": "2026-05-13",
@@ -1045,12 +1488,26 @@
           "url": "https://github.com/nikolai-karpov/openclaude",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк OpenClaude — open-source CLI-агента для кода, форкнутого из кодовой базы Claude Code, но переработанного для работы с любыми провайдерами моделей (OpenAI, Gemini, DeepSeek, Ollama, Codex и др.).",
+        "what": "OpenClaude сохраняет терминальный агентский workflow Claude Code (bash, файловые инструменты, grep/glob, суб-агенты, задачи, MCP, слэш-команды, стриминг), но добавляет слой провайдеров: OpenAI-совместимые API, Gemini, GitHub Models, Codex OAuth, Ollama и другие. Поддерживает маршрутизацию разных подагентов на разные модели через конфиг, headless gRPC-сервер для встраивания в другие приложения, и VS Code расширение. Явно не аффилирован с Anthropic.",
+        "use": "Интересен как пример адаптации архитектуры Claude Code под мультипровайдерность — полезно для сравнения с собственными решениями по маршрутизации моделей и для сценариев, где нужно запускать агентский CLI на локальных/дешёвых моделях вместо Anthropic API.",
+        "start": [
+          "npm install -g @gitlawb/openclaude",
+          "Запустить: openclaude, затем /provider для настройки провайдера или /onboard-github для GitHub Models",
+          "Быстрый локальный запуск через Ollama: ollama launch openclaude --model qwen2.5-coder:7b"
+        ],
+        "status": "Активно развивается (CI, релизы, discussions), независимый community-проект без аффилиации с Anthropic.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "Open Claude Is Open-source coding-agent CLI for OpenAI, Gemini, DeepSeek, Ollama, Codex, GitHub Models, and 200+ models via OpenAI-compatible APIs."
     },
     {
       "id": "openclaw",
       "title": "openclaw",
-      "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
+      "description": "Форк OpenClaw — персональный ИИ-ассистент, который работает локально на своих устройствах и отвечает в уже используемых мессенджерах (WhatsApp, Telegram, Slack, Discord и ещё почти 20 каналов).",
       "group": "forks",
       "language": "TypeScript",
       "updated": "2026-05-13",
@@ -1066,12 +1523,27 @@
           "url": "https://github.com/nikolai-karpov/openclaw",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк OpenClaw — персональный ИИ-ассистент, который работает локально на своих устройствах и отвечает в уже используемых мессенджерах (WhatsApp, Telegram, Slack, Discord и ещё почти 20 каналов).",
+        "what": "OpenClaw — локальный (local-first) Gateway-шлюз, который выступает единой точкой управления сессиями, каналами, инструментами и событиями. Поддерживает мультиагентную маршрутизацию (разные каналы/аккаунты — на изолированные агенты со своими workspace и сессиями), голосовые wake-word и режим постоянного диалога на macOS/iOS/Android, «живой Canvas» (визуальное рабочее пространство, управляемое агентом), встроенные инструменты (браузер, canvas, cron, действия в Discord/Slack). По умолчанию инструменты агента выполняются на хосте для основной сессии; для групповых/публичных каналов рекомендуется песочница (Docker/SSH/OpenShell backend).",
+        "use": "Прямая аналогия с текущей практикой Николая (работа через MAX/Telegram-мосты) — интересен как готовая альтернатива/референс для организации личного ассистента с множеством каналов, песочницами и маршрутизацией по агентам.",
+        "start": [
+          "npm install -g openclaw@latest (или pnpm add -g openclaw@latest)",
+          "openclaw onboard --install-daemon — интерактивная настройка шлюза, воркспейса, каналов и скиллов, установка службы (launchd/systemd)",
+          "openclaw gateway --port 18789 --verbose — запуск шлюза",
+          "openclaw message send / openclaw agent --message \"...\" — отправка сообщений и общение с агентом"
+        ],
+        "status": "Активно развивается, есть CI, релизы, крупные спонсоры (OpenAI, GitHub, NVIDIA, Vercel), требует Node 22.16+/24.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 "
     },
     {
       "id": "polyakov-claude-skills",
       "title": "polyakov-claude-skills",
-      "description": "Набор скиллов для Claude",
+      "description": "Форк набора русскоязычных плагинов-скиллов для Claude Code: от заполнения Word-договоров и SSH-администрирования до полного набора инструментов для Яндекс-маркетинга (Wordstat, Метрика, Вебмастер, Search API).",
       "group": "forks",
       "language": "Shell",
       "updated": "2026-05-10",
@@ -1087,12 +1559,26 @@
           "url": "https://github.com/nikolai-karpov/polyakov-claude-skills",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк набора русскоязычных плагинов-скиллов для Claude Code: от заполнения Word-договоров и SSH-администрирования до полного набора инструментов для Яндекс-маркетинга (Wordstat, Метрика, Вебмастер, Search API).",
+        "what": "Маркетплейс плагинов Claude Code с 18 скиллами: работа с документами (docx-contracts), веб-скрапинг (scrapedo-web-scraper, crawl4ai-seo), управление саб-агентами (agent-deck), анализ генетических данных (genome-analizer), SSH на удалённые серверы, полный стек для Яндекса (Wordstat, Search API, Metrika, Webmaster), публикация контента (Telegraph, GitHub Pages, SourceCraft Sites), парсинг Telegram-каналов и X/Twitter, работа с Reddit API и компиляция книг/PDF в персональные скиллы (knowledge-compiler).",
+        "use": "Прямое пересечение с текущим стеком Николая по Яндекс-маркетингу (Wordstat/Metrika/Webmaster уже используются в проекте my-website) — можно сверять подходы или переиспользовать паттерны (cache-first, TSV-индексы, разделение read/write с явными предохранителями).",
+        "start": [
+          "Через маркетплейс: /plugin marketplace add artwist-polyakov/polyakov-claude-skills, затем /plugin install <имя-скилла>",
+          "Вручную: скопировать нужную папку скилла в ~/.claude/skills/ (глобально) или .claude/skills/ в проекте",
+          "Локальное тестирование: claude --plugin-dir ./plugins/<skill>"
+        ],
+        "status": "Активно поддерживается, 18 готовых плагинов на май 2026.",
+        "quality": "full",
+        "source": "README (рус.)"
+      },
+      "description_original": "Набор скиллов для Claude"
     },
     {
       "id": "scientific-agent-skills",
       "title": "scientific-agent-skills",
-      "description": "A set of ready to use Agent Skills for research, science, engineering, analysis, finance and writing.",
+      "description": "Форк большой коллекции из 133 готовых научно-исследовательских скиллов (Scientific Agent Skills, K-Dense) для превращения ИИ-агента в помощника по биоинформатике, хемоинформатике, клиническим исследованиям, физике и другим научным областям.",
       "group": "forks",
       "language": "Python",
       "updated": "2026-04-12",
@@ -1108,12 +1594,26 @@
           "url": "https://github.com/nikolai-karpov/scientific-agent-skills",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк большой коллекции из 133 готовых научно-исследовательских скиллов (Scientific Agent Skills, K-Dense) для превращения ИИ-агента в помощника по биоинформатике, хемоинформатике, клиническим исследованиям, физике и другим научным областям.",
+        "what": "Универсальный (по открытому стандарту Agent Skills) набор скиллов, работающих с Claude Code, Cursor, Codex, Gemini CLI и др. Покрывает биоинформатику и геномику, разработку лекарств, протеомику, клинические исследования и точную медицину, медицинскую визуализацию, машинное обучение, материаловедение, физику, инженерное моделирование, геопространственный анализ, лабораторную автоматизацию и научные коммуникации — с доступом к 100+ базам данных (PubChem, ChEMBL, UniProt, ClinicalTrials.gov и др.) и 70+ Python-пакетам (RDKit, Scanpy, PyTorch Lightning и др.).",
+        "use": "Не совпадает напрямую с текущим профилем (бизнес/маркетинг/интеграции), но полезен как образец качественно организованной большой библиотеки скиллов — структура SKILL.md, security-сканирование (Cisco AI Defense Skill Scanner) и практика документирования применимы при проектировании собственных наборов скиллов.",
+        "start": [
+          "npx skills add K-Dense-AI/scientific-agent-skills — устанавливает все скиллы стандартным способом Agent Skills",
+          "Требуется Python 3.11+ и uv для установки зависимостей отдельных скиллов",
+          "Агент автоматически обнаруживает и применяет скиллы по контексту запроса"
+        ],
+        "status": "Активно развивается и поддерживается компанией K-Dense, регулярные обновления и security-сканирование скиллов.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "A set of ready to use Agent Skills for research, science, engineering, analysis, finance and writing."
     },
     {
       "id": "rowboat",
       "title": "rowboat",
-      "description": "Open-source AI coworker, with memory",
+      "description": "Форк Rowboat — локального open-source «ИИ-коллеги», который строит граф знаний из почты и заметок встреч и использует его для подготовки к встречам, черновиков писем и генерации документов.",
       "group": "forks",
       "language": "TypeScript",
       "updated": "2026-04-11",
@@ -1129,12 +1629,26 @@
           "url": "https://github.com/nikolai-karpov/rowboat",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк Rowboat — локального open-source «ИИ-коллеги», который строит граф знаний из почты и заметок встреч и использует его для подготовки к встречам, черновиков писем и генерации документов.",
+        "what": "Rowboat подключается к Gmail, Google Calendar и заметкам встреч (собственным или Fireflies), накапливая долгоживущую память в виде Obsidian-совместимого хранилища Markdown-заметок со связями — прозрачную «рабочую память», которую можно инспектировать и редактировать руками. В отличие от инструментов, которые каждый раз заново ищут контекст в транскриптах, Rowboat хранит явные, редактируемые связи. Поддерживает «живые заметки» (автообновляемые сводки по теме/человеку/компании), голосовой ввод/вывод (Deepgram, ElevenLabs), веб-поиск (Exa) и расширение инструментами через MCP или Composio.",
+        "use": "Интересный референс архитектуры персональной памяти агента (граф знаний как обычный Markdown-vault, а не непрозрачная база) — можно сравнить с подходом MemPalace и почерпнуть идеи по «живым заметкам», обновляющимся автоматически.",
+        "start": [
+          "Скачать готовую сборку под Mac/Windows/Linux с сайта rowboatlabs.com/downloads",
+          "Настроить Google-интеграцию по отдельной инструкции (google-setup.md) для Gmail/Calendar/Drive",
+          "Опционально добавить API-ключи (Deepgram для голоса, ElevenLabs для TTS, Exa для веб-поиска, Composio для внешних инструментов) в ~/.rowboat/config/"
+        ],
+        "status": "Активно продвигаемый стартап-продукт (Y Combinator S24), десктопное приложение с готовыми релизами.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "Open-source AI coworker, with memory"
     },
     {
       "id": "gigaam",
       "title": "GigaAM",
-      "description": "Foundational Model for Speech Recognition Tasks",
+      "description": "Форк GigaAM — открытого семейства акустических моделей от SberDevices для распознавания русской речи, эмоций и универсальных аудио-эмбеддингов.",
       "group": "forks",
       "language": "Python",
       "updated": "2026-04-02",
@@ -1150,12 +1664,26 @@
           "url": "https://github.com/nikolai-karpov/GigaAM",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк GigaAM — открытого семейства акустических моделей от SberDevices для распознавания русской речи, эмоций и универсальных аудио-эмбеддингов.",
+        "what": "GigaAM — Conformer-модель (220-240М параметров), предобученная на большом объёме русской речи, служит основой для нескольких моделей: распознавание речи через CTC/RNNT-декодеры (в т.ч. e2e-версии с пунктуацией и нормализацией текста) и распознавание эмоций (GigaAM-Emo). Версия v3 обучена на 700 тыс. часов, показывает SOTA-результаты на русском и превосходит Whisper-large-v3 в сравнении «бок о бок» (70:30). Поддерживает экспорт в ONNX и деплой через Triton Inference Server/TensorRT.",
+        "use": "Прямое применение для распознавания русской речи в собственных пайплайнах (например, транскрибация встреч, голосовые интерфейсы) — альтернатива Whisper с лучшими результатами именно на русском языке.",
+        "start": [
+          "git clone https://github.com/salute-developers/GigaAM.git && cd GigaAM",
+          "pip install -e .[torch] (требуется Python ≥3.10 и ffmpeg в PATH)",
+          "В Python: model = gigaam.load_model(\"v3_e2e_rnnt\"); model.transcribe(audio_path)"
+        ],
+        "status": "Активно развивается, последний релиз v3 — ноябрь 2025, статья принята на InterSpeech 2025.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "Foundational Model for Speech Recognition Tasks"
     },
     {
       "id": "handy",
       "title": "Handy",
-      "description": "A free, open source, and extensible speech-to-text application that works completely offline.",
+      "description": "Форк Handy — бесплатного open-source приложения для оффлайн-транскрибации речи в текст: нажал горячую клавишу, сказал — текст вставился в любое поле.",
       "group": "forks",
       "language": "Rust",
       "updated": "2026-03-14",
@@ -1171,12 +1699,26 @@
           "url": "https://github.com/nikolai-karpov/Handy",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк Handy — бесплатного open-source приложения для оффлайн-транскрибации речи в текст: нажал горячую клавишу, сказал — текст вставился в любое поле.",
+        "what": "Кроссплатформенное (Windows/macOS/Linux) desktop-приложение на Tauri (React+TypeScript фронтенд, Rust бэкенд). Всё работает локально: голосовая активность фильтруется через Silero VAD, транскрибация — через Whisper (Small/Medium/Turbo/Large, с GPU-ускорением) или CPU-оптимизированную модель Parakeet V3 с автоопределением языка. Поддерживает CLI-флаги для удалённого управления запущенным экземпляром и автозапуска без окна/трея.",
+        "use": "Готовый инструмент для голосового ввода текста в любое приложение без отправки аудио в облако — полезен как личный инструмент продуктивности и как референс простой Rust/Tauri архитектуры голосового приложения.",
+        "start": [
+          "Скачать релиз с github.com/cjpais/Handy/releases или сайта handy.computer (на macOS также через brew install --cask handy)",
+          "Установить, дать разрешения на микрофон и accessibility",
+          "Настроить горячие клавиши в Settings и начать транскрибацию"
+        ],
+        "status": "Активно развивается, есть открытые задачи (краши Whisper на некоторых системах, ограниченная поддержка Wayland), поддерживается спонсорами.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "A free, open source, and extensible speech-to-text application that works completely offline."
     },
     {
       "id": "dexter",
       "title": "dexter",
-      "description": "An autonomous agent for deep financial research",
+      "description": "Форк Dexter — автономного агента для финансовых исследований: превращает сложный финансовый вопрос в пошаговый план анализа и выполняет его на реальных рыночных данных.",
       "group": "forks",
       "language": "TypeScript",
       "updated": "2026-03-06",
@@ -1192,12 +1734,27 @@
           "url": "https://github.com/nikolai-karpov/dexter",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк Dexter — автономного агента для финансовых исследований: превращает сложный финансовый вопрос в пошаговый план анализа и выполняет его на реальных рыночных данных.",
+        "what": "Dexter декомпозирует запрос на структурированные шаги, автономно выбирает и вызывает инструменты для сбора финансовых данных (отчёты о прибылях, балансы, денежные потоки), проверяет собственную работу и уточняет результат до уверенного ответа. Есть защита от зацикливания (лимиты шагов), набор для оценки качества через LangSmith и LLM-as-judge, детальное логирование каждого вызова инструмента в JSONL-файлы для отладки, а также готовый шлюз для общения с агентом через WhatsApp.",
+        "use": "Показательный пример узкоспециализированного исследовательского агента (по аналогии с «Claude Code, но для финансов») — полезен как референс архитектуры план→выполнение→самопроверка для собственных агентских систем анализа данных.",
+        "start": [
+          "Установить Bun (curl -fsSL https://bun.com/install | bash)",
+          "git clone https://github.com/virattt/dexter.git && cd dexter && bun install",
+          "Скопировать env.example в .env и указать ключи (OpenAI, Financial Datasets API, опционально Exa)",
+          "bun start — запуск в интерактивном режиме"
+        ],
+        "status": "Активно развивается, есть Discord-сообщество.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "An autonomous agent for deep financial research"
     },
     {
       "id": "goose",
       "title": "goose",
-      "description": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM",
+      "description": "Форк goose — локального расширяемого open-source ИИ-агента от Block для автоматизации инженерных задач: пишет и выполняет код, отлаживает, оркестрирует workflow и работает с внешними API автономно.",
       "group": "forks",
       "language": "Rust",
       "updated": "2026-03-02",
@@ -1213,12 +1770,22 @@
           "url": "https://github.com/nikolai-karpov/goose",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк goose — локального расширяемого open-source ИИ-агента от Block для автоматизации инженерных задач: пишет и выполняет код, отлаживает, оркестрирует workflow и работает с внешними API автономно.",
+        "what": "goose работает на машине пользователя, поддерживает любую LLM с мультимодельной конфигурацией (для баланса цены/качества), интегрируется с MCP-серверами и доступен и как десктопное приложение, и как CLI. Позиционируется как инструмент для полного цикла: от прототипирования идеи до сложных инженерных пайплайнов. Есть возможность собирать собственные кастомные дистрибутивы goose с preconfigured провайдерами, расширениями и брендингом.",
+        "use": "Ещё один референс open-source агента для автоматизации разработки (аналог Claude Code/Codex) — полезен для сравнения архитектур мультимодельной конфигурации и MCP-интеграции при выборе или проектировании инструментов.",
+        "start": [],
+        "status": "Активно развивается (CI badge, Discord-сообщество), поддерживается компанией Block.",
+        "quality": "full",
+        "source": "README (англ.), README короткий — раздел запуска отсутствует, детали только по внешним ссылкам на документацию"
+      },
+      "description_original": "an open source, extensible AI agent that goes beyond code suggestions - install, execute, edit, and test with any LLM"
     },
     {
       "id": "antigravity-awesome-skills",
       "title": "antigravity-awesome-skills",
-      "description": "The Ultimate Collection of 600+ Agentic Skills for Claude Code/Antigravity/Cursor. Battle-tested, high-performance skills for AI agents including official skills from Anthropic and Vercel.",
+      "description": "Форк огромной коллекции из 626+ универсальных агентских скиллов (Antigravity Awesome Skills) для Claude Code, Gemini CLI, Codex CLI, Cursor, GitHub Copilot и других ИИ-инструментов разработки.",
       "group": "forks",
       "language": "Python",
       "updated": "2026-02-03",
@@ -1234,12 +1801,26 @@
           "url": "https://github.com/nikolai-karpov/antigravity-awesome-skills",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк огромной коллекции из 626+ универсальных агентских скиллов (Antigravity Awesome Skills) для Claude Code, Gemini CLI, Codex CLI, Cursor, GitHub Copilot и других ИИ-инструментов разработки.",
+        "what": "Библиотека скиллов в едином формате SKILL.md, организованная по категориям: архитектура (52), бизнес (35), данные и ИИ (81, включая RAG, промпт-инжиниринг, LangGraph), разработка (72), общее (95), инфраструктура/DevOps (72), безопасность (107), тестирование (21), автоматизация workflow (17). Включает официальные скиллы от Anthropic, OpenAI, Google, Supabase и Vercel Labs, а также собранные из множества community-репозиториев. Есть кураторские «стартовые пакеты» (Web Wizard, Security Engineer и т.д.) в docs/BUNDLES.md.",
+        "use": "Большой источник готовых скиллов для расширения возможностей Claude Code по конкретным доменам (архитектура, безопасность, DevOps) — можно выбирать точечно нужные скиллы вместо изобретения своих с нуля.",
+        "start": [
+          "npx antigravity-awesome-skills — установка через npx (по умолчанию в ~/.agent/skills), с флагом --claude для Claude Code",
+          "Или git clone https://github.com/sickn33/antigravity-awesome-skills.git .claude/skills",
+          "Выбрать стартовый пакет по роли в docs/BUNDLES.md и вызывать скиллы по имени в промпте (например, \"Use the @brainstorming skill\")"
+        ],
+        "status": "Активно развивается, версия 4.0.0 (Enterprise Edition), крупная community-агрегация.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "The Ultimate Collection of 600+ Agentic Skills for Claude Code/Antigravity/Cursor. Battle-tested, high-performance skills for AI agents including official skills from Anthropic and Vercel."
     },
     {
       "id": "get-shit-done",
       "title": "get-shit-done",
-      "description": "A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES.",
+      "description": "Форк GET SHIT DONE (GSD) — лёгкой но мощной системы мета-промптинга и спецификационной разработки для Claude Code от независимого разработчика TÂCHES: решает проблему деградации качества по мере заполнения контекстного окна.",
       "group": "forks",
       "language": "JavaScript",
       "updated": "2026-01-21",
@@ -1255,12 +1836,27 @@
           "url": "https://github.com/nikolai-karpov/get-shit-done",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк GET SHIT DONE (GSD) — лёгкой но мощной системы мета-промптинга и спецификационной разработки для Claude Code от независимого разработчика TÂCHES: решает проблему деградации качества по мере заполнения контекстного окна.",
+        "what": "GSD — набор слэш-команд для Claude Code, реализующих полный цикл разработки фичи без «энтерпрайз-театра» (никаких спринтов и Jira): /gsd:new-project (вопросы → исследование → требования → роадмап), /gsd:discuss-phase (фиксация решений по фазе до планирования), /gsd:plan-phase (исследование + план + верификация), /gsd:execute-phase (параллельное исполнение атомарных планов в свежем контексте, атомарные git-коммиты на каждую задачу), /gsd:verify-work (ручная приёмка через диалог с агентом). Использует XML-структурированные промпты для планов, мультиагентную оркестрацию (тонкий оркестратор + специализированные саб-агенты) и настраиваемые профили моделей (quality/balanced/budget) под баланс качества и стоимости.",
+        "use": "Готовая к использованию система для дисциплинированной работы с Claude Code на реальных проектах — можно применить сам инструмент (npx get-shit-done-cc) или позаимствовать паттерны: фазы discuss→plan→execute→verify, XML-планы с явным verify/done, атомарные коммиты по задаче.",
+        "start": [
+          "npx get-shit-done-cc — интерактивная установка (или --global/--local для non-interactive)",
+          "Проверить установку: /gsd:help внутри Claude Code",
+          "Рекомендуется запускать Claude Code с флагом --dangerously-skip-permissions для бесшовной автоматизации",
+          "Цикл работы: /gsd:new-project → /gsd:discuss-phase N → /gsd:plan-phase N → /gsd:execute-phase N → /gsd:verify-work N"
+        ],
+        "status": "Активно развивается, есть npm-пакет с версионированием и командой /gsd:whats-new для отслеживания обновлений; используется инженерами в Amazon, Google, Shopify, Webflow (по заявлению авторов).",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "A light-weight and powerful meta-prompting, context engineering and spec-driven development system for Claude Code by TÂCHES."
     },
     {
       "id": "hunyuanocr",
       "title": "HunyuanOCR",
-      "description": null,
+      "description": "Форк HunyuanOCR — компактной (1B параметров) но state-of-the-art модели оптического распознавания текста от Tencent Hunyuan, покрывающей более 100 языков.",
       "group": "forks",
       "language": "Python",
       "updated": "2026-01-20",
@@ -1283,12 +1879,27 @@
           "url": "https://github.com/pir-s/HunyuanOCR",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк HunyuanOCR — компактной (1B параметров) но state-of-the-art модели оптического распознавания текста от Tencent Hunyuan, покрывающей более 100 языков.",
+        "what": "Vision-Language модель на нативной мультимодальной архитектуре Hunyuan, объединяющая в одной модели классические задачи OCR (детекция и распознавание текста), сложный парсинг документов (формулы в LaTeX, таблицы в HTML, диаграммы в Mermaid/Markdown), извлечение произвольных полей в JSON, извлечение субтитров из видео и сквозной перевод фотографий текста. Работает по принципу «один инструкция — один инференс» без каскадных пайплайнов, превосходит на бенчмарках более крупные модели (включая Qwen3-VL-235B) при 1B параметров.",
+        "use": "Потенциально полезен для задач автоматизации документооборота и извлечения данных из сканов/фото (например, для банковских выписок или маркетинговых отчётов) — компактная модель, которую можно развернуть локально через vLLM или Transformers.",
+        "start": [
+          "Требуется Linux, Python 3.12+, CUDA 12.9, GPU с 20GB памяти (для vLLM)",
+          "pip install vllm>=0.12.0 && pip install -r requirements.txt",
+          "Развернуть модель: vllm serve tencent/HunyuanOCR --no-enable-prefix-caching ...",
+          "Или через Transformers: pip install git+https://github.com/huggingface/transformers@... и запустить пример инференса из README"
+        ],
+        "status": "Активно развивается, стабильный онлайн-демо запущен в январе 2026, веса и код опубликованы в ноябре 2025.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": null
     },
     {
       "id": "haystack",
       "title": "haystack",
-      "description": "AI orchestration framework to build customizable, production-ready LLM applications. Connect components (models, vector DBs, file converters) to pipelines or agents that can interact with your data. With advanced retrieval methods, it's best suited for building RAG, question answering, semantic search or conversational agent chatbots.",
+      "description": "Форк ключевого open-source фреймворка для сборки LLM-приложений (deepset-ai) — оркестрация пайплайнов RAG, поиска по документам и агентов из готовых компонентов.",
       "group": "forks",
       "language": "MDX",
       "updated": "2026-01-16",
@@ -1304,12 +1915,26 @@
           "url": "https://github.com/nikolai-karpov/haystack",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк ключевого open-source фреймворка для сборки LLM-приложений (deepset-ai) — оркестрация пайплайнов RAG, поиска по документам и агентов из готовых компонентов.",
+        "what": "Технологически-агностичный Python-фреймворк: единообразно подключает разные LLM и эмбеддинг-модели (OpenAI, Cohere, Hugging Face, локальные, Azure/Bedrock/SageMaker), векторные хранилища и конвертеры документов, собирая их в пайплайны или агентов. Есть готовые компоненты для очистки и разбиения текста, обучения, оценки качества и инференса. Пайплайны можно деплоить как REST API через отдельный проект Hayhooks, включая OpenAI-совместимые эндпоинты.",
+        "use": "Референс архитектуры зрелого RAG/агентного фреймворка: можно смотреть, как устроены компоненты и пайплайны, использовать готовые компоненты вместо написания своих, или взять как основу для мультиагентных решений с интеграцией разных LLM и векторных БД.",
+        "start": [
+          "Установить пакет: `pip install haystack-ai`",
+          "Пройти гайд «Get Started» и туториалы в документации",
+          "Посмотреть примеры пайплайнов в Cookbook"
+        ],
+        "status": "Активно поддерживаемый проект deepset с большим сообществом и коммерческой Enterprise-версией.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "AI orchestration framework to build customizable, production-ready LLM applications. Connect components (models, vector DBs, file converters) to pipelines or agents that can interact with your data. With advanced retrieval methods, it's best suited for building RAG, question answering, semantic search or conversational agent chatbots."
     },
     {
       "id": "cowork-local-llm",
       "title": "Cowork-Local-LLM",
-      "description": "🤖 Desktop AI Assistant with Local Model Support - OpenAI SDK compatible agent with memory system, file operations, web search, and modern UI. Supports vLLM, Ollama, Qwen, Llama, and more.",
+      "description": "Форк десктопного ИИ-агента (Electron + React) от Valerii Kovalskii — версия «Agent Cowork» с поддержкой локальных моделей (vLLM, Ollama) вместо только облачных API; исходно проект форкнут из DevAgentForge/Claude-Cowork.",
       "group": "forks",
       "language": "TypeScript",
       "updated": "2026-01-15",
@@ -1325,12 +1950,27 @@
           "url": "https://github.com/nikolai-karpov/Cowork-Local-LLM",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк десктопного ИИ-агента (Electron + React) от Valerii Kovalskii — версия «Agent Cowork» с поддержкой локальных моделей (vLLM, Ollama) вместо только облачных API; исходно проект форкнут из DevAgentForge/Claude-Cowork.",
+        "what": "Desktop-приложение с агентом, у которого есть инструменты (bash, чтение/запись/правка файлов, поиск по файлам и тексту, веб-поиск через Tavily), система персистентной памяти (memory.md с ручным и автоматическим сохранением), UI на React+Electron, режимы разрешений на выполнение инструментов (ask/default). Работает через OpenAI-совместимый API — можно подключить vLLM, Ollama, Claude или OpenAI, просто указав base URL и модель.",
+        "use": "Пример того, как собрать desktop-агента с инструментами и памятью на локальных моделях — полезно как референс архитектуры для собственных агентских приложений с локальными LLM, если понадобится desktop UI вместо CLI/чата в браузере.",
+        "start": [
+          "`git clone` и `bun install` (или `npm install`)",
+          "Скомпилировать electron-код: `npm run transpile:electron`",
+          "Запустить в режиме разработки: `npm run dev`",
+          "Настроить API-ключ, base URL и модель во вкладке Settings приложения"
+        ],
+        "status": "Ранняя версия (0.0.3), но заявлена как рабочая, кросс-платформенная (Windows/macOS/Linux).",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "🤖 Desktop AI Assistant with Local Model Support - OpenAI SDK compatible agent with memory system, file operations, web search, and modern UI. Supports vLLM, Ollama, Qwen, Llama, and more."
     },
     {
       "id": "llm-aided-ocr",
       "title": "llm_aided_ocr",
-      "description": "Enhance Tesseract OCR output for scanned PDFs by applying Large Language Model (LLM) corrections.",
+      "description": "Форк проекта, улучшающего качество OCR: берёт сырой текст с Tesseract после сканирования PDF и исправляет ошибки распознавания, форматируя результат в markdown с помощью LLM (локальной или облачной).",
       "group": "forks",
       "language": "Python",
       "updated": "2026-01-14",
@@ -1346,12 +1986,27 @@
           "url": "https://github.com/nikolai-karpov/llm_aided_ocr",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк проекта, улучшающего качество OCR: берёт сырой текст с Tesseract после сканирования PDF и исправляет ошибки распознавания, форматируя результат в markdown с помощью LLM (локальной или облачной).",
+        "what": "Пайплайн: PDF → изображения (pdf2image) → OCR (pytesseract с предобработкой — grayscale, бинаризация, дилатация) → разбиение текста на чанки с перекрытием для сохранения контекста → построчное исправление OCR-ошибок и разметка в markdown через LLM (OpenAI, Anthropic или локальная модель через llama.cpp) → удаление дублирующихся абзацев → финальная оценка качества результата той же LLM. Обработка чанков асинхронная для скорости.",
+        "use": "Готовый рецепт для задач «оцифровать скан/старый документ и получить читаемый текст» — можно применять напрямую для клиентских кейсов с бумажными документами или взять как основу пайплайна пост-обработки OCR в собственных проектах.",
+        "start": [
+          "Установить Python 3.12 и Tesseract OCR",
+          "`git clone`, создать venv, `pip install -r requirements.txt`",
+          "Настроить `.env` (использовать локальную LLM или API, ключи OpenAI/Anthropic)",
+          "Указать путь к PDF в `main()` и запустить `python llm_aided_ocr.py`"
+        ],
+        "status": "Автор описывает как рабочий инструмент; сам указывает ограничения — качество зависит от выбранной LLM, обработка больших документов может быть долгой.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "Enhance Tesseract OCR output for scanned PDFs by applying Large Language Model (LLM) corrections."
     },
     {
       "id": "dnsconf",
       "title": "DnsConf",
-      "description": "DNS Block and Redirect configurer for Cloudflare / NextDNS",
+      "description": "Форк инструмента для автоматической настройки блокировок и редиректов DNS-запросов в Cloudflare или NextDNS по спискам доменов, готов к запуску по расписанию через GitHub Actions.",
       "group": "forks",
       "language": "Java",
       "updated": "2026-01-13",
@@ -1367,12 +2022,27 @@
           "url": "https://github.com/nikolai-karpov/DnsConf",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк инструмента для автоматической настройки блокировок и редиректов DNS-запросов в Cloudflare или NextDNS по спискам доменов, готов к запуску по расписанию через GitHub Actions.",
+        "what": "Скрипт на Java, который берёт источники — hosts-файлы со списками доменов, разбирает их на правила блокировки (записи на 0.0.0.0/127.0.0.1) и редиректа (записи на прочие IP), и применяет их через API Cloudflare Zero Trust или NextDNS. Перед обновлением скрипт удаляет ранее сгенерированные им же правила (по имени/session id), чтобы не плодить дубли.",
+        "use": "Узкоспециализированный DNS-инструмент, не про ИИ — пригодится, если нужно настроить личную/семейную фильтрацию DNS (реклама, трекеры) без ручного администрирования; можно форкнуть в свой аккаунт и запускать по крону без поддержки серверов.",
+        "start": [
+          "Завести аккаунт в Cloudflare (Zero Trust) или NextDNS и получить API-токен/ключ",
+          "Форкнуть репозиторий, создать GitHub Environment «DNS»",
+          "Задать секреты AUTH_SECRET/CLIENT_ID и переменные DNS, REDIRECT, BLOCK",
+          "Action запускается по крону (по умолчанию 01:30 UTC) или вручную через «Run workflow»"
+        ],
+        "status": "Заявлен как готовый к использованию (ready-to-run), есть видео-гайд по настройке.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "DNS Block and Redirect configurer for Cloudflare / NextDNS"
     },
     {
       "id": "qwen3-vl",
       "title": "Qwen3-VL",
-      "description": "Qwen3-VL is the multimodal large language model series developed by Qwen team, Alibaba Cloud.",
+      "description": "Форк репозитория модели Qwen3-VL — мультимодальной (текст + изображение + видео) большой языковой модели от команды Qwen (Alibaba Cloud), одной из сильнейших открытых VLM на сегодня.",
       "group": "forks",
       "language": "Jupyter Notebook",
       "updated": "2026-01-04",
@@ -1388,12 +2058,26 @@
           "url": "https://github.com/nikolai-karpov/Qwen3-VL",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк репозитория модели Qwen3-VL — мультимодальной (текст + изображение + видео) большой языковой модели от команды Qwen (Alibaba Cloud), одной из сильнейших открытых VLM на сегодня.",
+        "what": "Семейство vision-language моделей разного размера (от 2B до 235B параметров, dense и MoE-архитектуры, версии Instruct и «Thinking»), с расширенными возможностями: агент для управления GUI по изображению экрана, генерация кода (Draw.io/HTML/CSS/JS) по картинке или видео, пространственное понимание сцены (2D и 3D grounding), очень длинный контекст (нативно 256K, расширяемо до 1M токенов) с пониманием часовых видео, OCR на 32 языках. В репозитории — документация и готовые ноутбуки-примеры (cookbooks) по распознаванию, парсингу документов, видео, GUI- и computer-use агентам.",
+        "use": "Открытая VLM для проектов с изображениями/видео/документами: OCR документов, визуальные агенты, работа со скриншотами интерфейсов — можно запускать локально через Transformers или ModelScope. Cookbooks дают готовые примеры под конкретные задачи (OCR, извлечение ключевой информации, работа со скриншотами, mobile/computer-use агенты).",
+        "start": [
+          "`pip install \"transformers>=4.57.0\"`",
+          "Загрузить модель: `AutoModelForImageTextToText.from_pretrained(\"Qwen/Qwen3-VL-...\")`",
+          "Смотреть готовые Colab-ноутбуки в папке cookbooks под конкретную задачу"
+        ],
+        "status": "Активно развивается, последний крупный релиз и технический paper — ноябрь 2025, регулярно выходят новые размеры модели.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "Qwen3-VL is the multimodal large language model series developed by Qwen team, Alibaba Cloud."
     },
     {
       "id": "ragflow",
       "title": "ragflow",
-      "description": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs",
+      "description": "Форк RAGFlow — открытого RAG-движка с агентными возможностями от infiniflow для построения контекстного слоя над LLM на основе собственных данных предприятия.",
       "group": "forks",
       "language": "Python",
       "updated": "2025-12-31",
@@ -1409,12 +2093,27 @@
           "url": "https://github.com/nikolai-karpov/ragflow",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк RAGFlow — открытого RAG-движка с агентными возможностями от infiniflow для построения контекстного слоя над LLM на основе собственных данных предприятия.",
+        "what": "Полноценная платформа (Docker-стек: сервер, Elasticsearch или Infinity, MinIO, Redis, MySQL, веб-интерфейс) с глубоким разбором документов сложных форматов (Word, Excel, сканы, веб-страницы), шаблонным чанкованием, гибридным поиском с ре-ранкингом, визуализацией чанков и цитат для проверки ответов человеком. Поддерживает агентные workflow, MCP, память для агентов, синхронизацию данных из Confluence/S3/Notion/Discord/Google Drive, кросс-языковые запросы.",
+        "use": "Готовое enterprise-решение для RAG «из коробки» — можно развернуть как альтернативу собственной RAG-архитектуре, использовать как демонстрацию клиенту зрелого open-source RAG-движка, или взять отдельные идеи (шаблонное чанкование, визуализация цитат, orchestrable ingestion pipeline) для своих систем.",
+        "start": [
+          "Проверить `vm.max_map_count >= 262144` на сервере",
+          "`git clone` репозитория",
+          "В папке `docker` запустить `docker compose -f docker-compose.yml up -d`",
+          "Открыть IP сервера в браузере, указать LLM-провайдера и API-ключ в конфиге"
+        ],
+        "status": "Активно развивается (обновления вплоть до конца 2025 — память для агентов, поддержка Gemini 3 Pro), популярный проект (Trendshift).",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs"
     },
     {
       "id": "infinity",
       "title": "infinity",
-      "description": "The AI-native database built for LLM applications, providing incredibly fast hybrid search of dense vector, sparse vector, tensor (multi-vector), and full-text.",
+      "description": "Форк Infinity — быстрой AI-native базы данных для гибридного поиска (плотные и разреженные векторы, тензоры, полнотекстовый поиск), которая используется как движок поиска в RAGFlow.",
       "group": "forks",
       "language": "C++",
       "updated": "2025-12-31",
@@ -1430,12 +2129,26 @@
           "url": "https://github.com/nikolai-karpov/infinity",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк Infinity — быстрой AI-native базы данных для гибридного поиска (плотные и разреженные векторы, тензоры, полнотекстовый поиск), которая используется как движок поиска в RAGFlow.",
+        "what": "Однобинарная база данных без внешних зависимостей, написана на C++ с Python API. Поддерживает несколько типов реранкеров (RRF, weighted sum, ColBERT) и заявлена как очень быстрая: около 0.1 мс задержки на векторном поиске по миллионным датасетам и около 1 мс на полнотекстовом поиске по 33 млн документов.",
+        "use": "Альтернативное или дополняющее векторное хранилище для собственных RAG-систем вместо Elasticsearch или других векторных БД — особенно если важна скорость гибридного поиска и простота деплоя (единственный бинарник, встраивается прямо в Python).",
+        "start": [
+          "Развернуть сервер через Docker: `docker pull infiniflow/infinity:nightly`, `docker run ...`",
+          "Установить клиент: `pip install infinity-sdk`",
+          "Подключиться `infinity.connect(...)`, создать таблицу с векторным полем и выполнить поиск `match_dense`"
+        ],
+        "status": "Активно развивается, есть публичный roadmap на 2025 год.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "The AI-native database built for LLM applications, providing incredibly fast hybrid search of dense vector, sparse vector, tensor (multi-vector), and full-text."
     },
     {
       "id": "sensevoice",
       "title": "SenseVoice",
-      "description": "Multilingual Voice Understanding Model",
+      "description": "Форк SenseVoice — модели распознавания и понимания речи (ASR, определение языка, эмоций в голосе, детекция звуковых событий), поддерживающей более 50 языков.",
       "group": "forks",
       "language": "Python",
       "updated": "2025-12-30",
@@ -1451,12 +2164,27 @@
           "url": "https://github.com/nikolai-karpov/SenseVoice",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк SenseVoice — модели распознавания и понимания речи (ASR, определение языка, эмоций в голосе, детекция звуковых событий), поддерживающей более 50 языков.",
+        "what": "Не-авторегрессионная end-to-end модель: распознаёт речь на китайском, кантонском, английском, японском, корейском и других языках, определяет эмоцию говорящего и события в звуке (аплодисменты, смех, плач, кашель и т.п.), работает значительно быстрее Whisper (в статье — до 15 раз быстрее Whisper-Large при сравнимом качестве). Поддерживает экспорт в ONNX и Libtorch, деплой через FastAPI и Docker, дообучение (finetune) и веб-интерфейс.",
+        "use": "Пригодится в задачах голосовых ассистентов и обработки звонков/встреч: расшифровка речи с определением языка и эмоций, детекция событий в аудио — можно использовать как более быструю альтернативу Whisper там, где важна скорость и многоязычность.",
+        "start": [
+          "`pip install -r requirements.txt`",
+          "Загрузить модель через `AutoModel` (FunASR) или напрямую класс `SenseVoiceSmall`",
+          "Вызвать `model.generate(input=аудиофайл, language=\"auto\", ...)`",
+          "Для сервиса — `fastapi run --port 50000` или Docker (`docker compose up --build`)"
+        ],
+        "status": "Активный проект (обновления до конца 2024), часть экосистемы FunASR/FunAudioLLM (та же команда, что и CosyVoice).",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "Multilingual Voice Understanding Model"
     },
     {
       "id": "skills",
       "title": "skills",
-      "description": "Public repository for Agent Skills",
+      "description": "Форк официального репозитория Anthropic с примерами Agent Skills — готовых «навыков» (папки с инструкциями, скриптами и материалами), которые Claude подгружает динамически для решения специализированных задач.",
       "group": "forks",
       "language": "Python",
       "updated": "2025-12-20",
@@ -1472,12 +2200,26 @@
           "url": "https://github.com/nikolai-karpov/skills",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк официального репозитория Anthropic с примерами Agent Skills — готовых «навыков» (папки с инструкциями, скриптами и материалами), которые Claude подгружает динамически для решения специализированных задач.",
+        "what": "Набор демонстрационных скиллов: креативные (арт, музыка, дизайн), технические (тестирование веб-приложений, генерация MCP-серверов), корпоративные (коммуникации, брендинг), а также скиллы для работы с документами (docx, pdf, pptx, xlsx) — те же, что используются в самом продукте Claude для создания файлов. Плюс спецификация формата Agent Skills и базовый шаблон для создания собственных скиллов.",
+        "use": "Прямой первоисточник для собственной библиотеки скиллов — можно смотреть паттерны построения скиллов, брать шаблон `template-skill` за основу, устанавливать готовые скиллы через `/plugin marketplace add anthropics/skills` в Claude Code.",
+        "start": [
+          "В Claude Code: `/plugin marketplace add anthropics/skills`",
+          "Выбрать и установить набор скиллов (`document-skills` или `example-skills`)",
+          "Или скопировать папку `template-skill` как основу для своего скилла"
+        ],
+        "status": "Официальный, активно поддерживаемый репозиторий Anthropic.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "Public repository for Agent Skills"
     },
     {
       "id": "cad2data-revit-ifc-dwg-dgn-pipeline-with-conversion-validation-qto",
       "title": "cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto",
-      "description": "This workflow enables automated conversion of CAD files (such as `.rvt`, `.ifc`, `.dwg`) using command-line converters on a local Windows machine",
+      "description": "Форк пайплайна DataDrivenConstruction для автоматической конвертации CAD/BIM-файлов (Revit, IFC, DWG, DGN) в Excel и другие форматы — с валидацией, оценкой стоимости и подсчётом объёмов работ (QTO), без лицензий Autodesk.",
       "group": "forks",
       "language": "Jupyter Notebook",
       "updated": "2025-12-02",
@@ -1493,12 +2235,27 @@
           "url": "https://github.com/nikolai-karpov/cad2data-Revit-IFC-DWG-DGN-pipeline-with-conversion-validation-qto",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк пайплайна DataDrivenConstruction для автоматической конвертации CAD/BIM-файлов (Revit, IFC, DWG, DGN) в Excel и другие форматы — с валидацией, оценкой стоимости и подсчётом объёмов работ (QTO), без лицензий Autodesk.",
+        "what": "Набор конвертеров (exe-утилиты под Windows) для Revit/IFC/DWG/DGN, выгружающих элементы модели построчно в Excel со свойствами-столбцами плюс 3D-геометрию (DAE) с привязкой по ID элементов. Работает офлайн, без интернета, API и лицензий Autodesk/CAD. Автоматизация доступна через графический UI, консоль/PowerShell, Python-пайплайны или готовые workflow n8n — базовая конвертация, пакетная валидация с отчётами, ИИ-классификация элементов с RAG, оценка стоимости строительства и углеродного следа через LLM, генерация HTML-отчётов по количествам (QTO).",
+        "use": "Применимо для проектов в строительной/инженерной сфере — автоматизация выгрузки данных из BIM-моделей заказчика в аналитику, отчёты и таблицы без покупки Autodesk-лицензий. Готовые n8n-воркфлоу с LLM-классификацией и RAG — пример интеграции CAD-данных с ИИ-пайплайнами, который можно адаптировать под другие предметные области.",
+        "start": [
+          "Установить Node.js и запустить `npx n8n` (интерфейс на localhost:5678)",
+          "Скачать репозиторий (ZIP через кнопку Code)",
+          "Для версий v17+ поставить Microsoft Visual C++ Redistributable 2015–2022 (x64)",
+          "Открыть нужный workflow в n8n и нажать «Execute Workflow»"
+        ],
+        "status": "Активно развивается, у автора (DataDrivenConstruction.io) есть коммерческий консалтинг и обучение по теме.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "This workflow enables automated conversion of CAD files (such as `.rvt`, `.ifc`, `.dwg`) using command-line converters on a local Windows machine"
     },
     {
       "id": "roo-code",
       "title": "Roo-Code",
-      "description": "Roo Code gives you a whole dev team of AI agents in your code editor.",
+      "description": "Форк Roo Code — расширения VS Code, превращающего редактор в команду ИИ-агентов для разработки: генерация кода по описанию, рефакторинг, отладка, документация.",
       "group": "forks",
       "language": "TypeScript",
       "updated": "2025-11-30",
@@ -1514,12 +2271,26 @@
           "url": "https://github.com/nikolai-karpov/Roo-Code",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк Roo Code — расширения VS Code, превращающего редактор в команду ИИ-агентов для разработки: генерация кода по описанию, рефакторинг, отладка, документация.",
+        "what": "Расширение с несколькими режимами работы: Code (повседневное кодирование и правки), Architect (планирование систем, спецификаций и миграций), Ask (быстрые ответы и объяснения кода), Debug (трассировка проблем, логирование, поиск первопричины), плюс кастомные режимы под конкретную команду или процесс. Поддерживает MCP-серверы и удалённое управление задачами (Roomote Control) — можно управлять запущенными в локальном VS Code задачами удалённо.",
+        "use": "Альтернатива и точка сравнения с Claude Code — можно смотреть, как устроены режимы и custom modes у конкурента, тестировать как ещё один инструмент агентской разработки внутри VS Code, или брать идеи по организации режимов для собственных промптов и скиллов.",
+        "start": [
+          "`git clone https://github.com/RooCodeInc/Roo-Code.git`",
+          "`pnpm install`",
+          "Запуск для разработки — F5 в VS Code, либо сборка VSIX-пакета через `pnpm install:vsix`"
+        ],
+        "status": "Активно развивается, есть публикация в VS Code Marketplace, Discord- и Reddit-сообщество.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "Roo Code gives you a whole dev team of AI agents in your code editor."
     },
     {
       "id": "ai-chat-widget",
       "title": "ai-chat-widget",
-      "description": "Drop-in AI chat widget for any website. Supports OpenAI, Claude, Gemini, GigaChat, YandexGPT, Ollama and more.",
+      "description": "Форк готового чат-виджета «под ключ» для сайта: одна строка `<script>`, поддержка любых LLM (OpenAI, Claude, Gemini, GigaChat, YandexGPT, Ollama и др.), виджет видит контент текущей страницы.",
       "group": "forks",
       "language": "Python",
       "updated": "2025-11-28",
@@ -1535,12 +2306,26 @@
           "url": "https://github.com/nikolai-karpov/ai-chat-widget",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк готового чат-виджета «под ключ» для сайта: одна строка `<script>`, поддержка любых LLM (OpenAI, Claude, Gemini, GigaChat, YandexGPT, Ollama и др.), виджет видит контент текущей страницы.",
+        "what": "Backend на FastAPI + самодостаточный JS-виджет (без сборки на стороне клиента). Особенности: осознание контекста страницы (URL, заголовки, текст, выделенный пользователем фрагмент) для точных ответов по содержимому сайта; база знаний из markdown-файлов; уведомления в Telegram об эскалациях и жалобах пользователей; защита от спама и инъекций (rate limiting, детекция SQL-инъекций/XSS/prompt injection, бан по IP); гибкое хранилище истории чата (JSON/SQLite/PostgreSQL); настройка видимости виджета по конкретным страницам сайта.",
+        "use": "Прямое применение для собственного сайта-портфолио или клиентских проектов — готовый self-hosted чат-бот с осознанием контента страницы и уведомлениями в Telegram, не требующий стороннего SaaS и привязки к одному провайдеру LLM.",
+        "start": [
+          "`git clone`, скопировать `backend/.env.example` в `backend/.env` и указать ключ ИИ-провайдера",
+          "Запустить через `docker-compose up -d` (или локально: venv + `pip install -r requirements.txt` + `uvicorn app.main:app`)",
+          "Добавить на сайт тег `<script src=\"...\" data-server=\"...\">`"
+        ],
+        "status": "Рабочий проект с production-функциями (rate limiting, множество провайдеров ИИ, Telegram-алерты, поддержка PostgreSQL).",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "Drop-in AI chat widget for any website. Supports OpenAI, Claude, Gemini, GigaChat, YandexGPT, Ollama and more."
     },
     {
       "id": "cursor-anthropic-skills",
       "title": "cursor-anthropic-skills",
-      "description": "Comprehensive framework for integrating Anthropic Skills into Cursor IDE, ensuring AI agents consistently apply specialized knowledge and domain expertise when responding to user requests.",
+      "description": "Форк фреймворка (автор SteelMorgan), который приносит систему «скиллов» в Cursor IDE — Cursor не умеет работать с несколькими агентами одновременно, поэтому знания подгружаются через индекс и глобальное промпт-правило.",
       "group": "forks",
       "language": "Python",
       "updated": "2025-11-19",
@@ -1556,12 +2341,27 @@
           "url": "https://github.com/nikolai-karpov/cursor-anthropic-skills",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк фреймворка (автор SteelMorgan), который приносит систему «скиллов» в Cursor IDE — Cursor не умеет работать с несколькими агентами одновременно, поэтому знания подгружаются через индекс и глобальное промпт-правило.",
+        "what": "Механизм на основе user rules Cursor: агент при получении запроса читает индексный файл SKILLS INDEX.md, находит подходящие навыки по ключевым словам или смыслу запроса и подгружает их инструкции перед выполнением задачи. В комплекте — коллекция из более чем 180 скиллов (клоны anthropics/skills и стороннего репозитория claude-code-templates, плюс кастомные скиллы автора — PowerShell, Docker, 1С/BSL-разработка, YAxUnit-тестирование и др.).",
+        "use": "Полезно, если нужно организовать похожую систему скиллов для Cursor (в отличие от родной поддержки скиллов в Claude Code) — можно взять подход к индексации и семантическому подбору навыков, либо использовать сами навыки как справочник уже описанных практик.",
+        "start": [
+          "Клонировать репозиторий",
+          "Прописать свой путь к проекту в файлах SKILLS RULE.md и SKILLS INDEX.md (замена путей группово)",
+          "Добавить содержимое SKILLS RULE.md как глобальное User Rule в настройках Cursor",
+          "Пользоваться агентом как обычно — он сам подгрузит нужный навык по контексту запроса"
+        ],
+        "status": "Рабочий проект; часть кастомных скиллов автор помечает как находящиеся в стадии отладки и тестирования.",
+        "quality": "full",
+        "source": "README (рус.)"
+      },
+      "description_original": "Comprehensive framework for integrating Anthropic Skills into Cursor IDE, ensuring AI agents consistently apply specialized knowledge and domain expertise when responding to user requests."
     },
     {
       "id": "claudecode-skills",
       "title": "claudecode-skills",
-      "description": "All powerful skills for Claude Code.",
+      "description": "Форк большого каталога скиллов для Claude Code — оригинал называется ClaudeKit и принадлежит автору mrgoonie (ClaudeKit.cc); в цепочке форков прямой источник Николая — репозиторий ckng/claudecode-skills.",
       "group": "forks",
       "language": "Python",
       "updated": "2025-11-15",
@@ -1577,12 +2377,26 @@
           "url": "https://github.com/nikolai-karpov/claudecode-skills",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк большого каталога скиллов для Claude Code — оригинал называется ClaudeKit и принадлежит автору mrgoonie (ClaudeKit.cc); в цепочке форков прямой источник Николая — репозиторий ckng/claudecode-skills.",
+        "what": "Каталог готовых скиллов по категориям: аутентификация (better-auth), ИИ-агенты (Google ADK, мультимодальный Gemini для аудио/видео/документов/изображений), backend- и frontend-разработка, дизайн интерфейсов, браузерная автоматизация (chrome-devtools), облака и DevOps (Cloudflare, Docker, GCP), базы данных (MongoDB, PostgreSQL), работа с документами (docx/pdf/pptx/xlsx), фреймворки отладки (систематическая отладка, трассировка первопричины, верификация перед завершением задачи), техники решения проблем (инверсия допущений, поиск межотраслевых паттернов), а также скиллы по созданию и управлению MCP-серверами.",
+        "use": "Готовая библиотека скиллов, из которой можно частично утащить и адаптировать под свои проекты — особенно отладочные фреймворки (root-cause-tracing, verification-before-completion, systematic-debugging) и скиллы по управлению MCP-серверами пригодны как паттерны для собственных скиллов Claude Code.",
+        "start": [
+          "Склонировать репозиторий или скопировать нужные папки из `.claude/skills` в свой проект",
+          "Отредактировать инструкции под свои процессы и инструменты",
+          "Открыть Claude Code, подключить репозиторий — Claude сам подберёт подходящий скилл под задачу"
+        ],
+        "status": "Активно развивается; у автора оригинала есть платное расширение (ClaudeKit.cc) с дополнительными скиллами.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "All powerful skills for Claude Code."
     },
     {
       "id": "cursor-skills",
       "title": "cursor-skills",
-      "description": "CURSOR IDE best practices and guidelines",
+      "description": "Форк коллекции best practices и шаблонов для Cursor IDE от бразильского сообщества (автор araguaci) — по одному разделу правил на технологию: PHP, веб-фронтенд, Python, Node.js, API, мобильная разработка, DevOps, тестирование.",
       "group": "forks",
       "language": "JavaScript",
       "updated": "2025-10-23",
@@ -1598,12 +2412,26 @@
           "url": "https://github.com/nikolai-karpov/cursor-skills",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк коллекции best practices и шаблонов для Cursor IDE от бразильского сообщества (автор araguaci) — по одному разделу правил на технологию: PHP, веб-фронтенд, Python, Node.js, API, мобильная разработка, DevOps, тестирование.",
+        "what": "Для каждого окружения — отдельная папка со своим файлом правил CURSOR.md (на английском для международной аудитории), пояснением на португальском для местного сообщества, скриптами автоматизации, шаблонами проектов и примерами конфигураций Cursor. По заявленным в README метрикам у проекта есть система валидации ссылок и тестов.",
+        "use": "Справочник best practices под конкретный стек (PHP, Node.js, API, DevOps и т.д.) — можно смотреть готовые правила и шаблоны, если понадобится настроить Cursor под новый для Николая стек; сам проект не про ИИ-агентов, а про конвенции и шаблоны разработки.",
+        "start": [
+          "Открыть папку нужного окружения (php/, python/, node/ и т.д.)",
+          "Прочитать файл CURSOR.md с правилами для этого стека",
+          "Использовать шаблоны и скрипты автоматизации из подпапок templates/ и scripts/"
+        ],
+        "status": "Развивается по заявленному в README roadmap: базовые фазы (структура, окружения, автоматизация, навигация) завершены, дальнейшие фазы (сообщество, маркетплейс) — в работе или планах.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "CURSOR IDE best practices and guidelines"
     },
     {
       "id": "fitness-assistant",
       "title": "fitness-assistant",
-      "description": "Пример личного фитнес-ассистента на основе Yandex AI Assistant API / Yandex Cloud ML SDK ",
+      "description": "Форк короткого учебного примера от Yandex Datasphere — личный фитнес-ассистент на Yandex Cloud (Responses API поверх OpenAI SDK) с RAG по базе знаний.",
       "group": "forks",
       "language": "Jupyter Notebook",
       "updated": "2025-09-28",
@@ -1619,12 +2447,26 @@
           "url": "https://github.com/nikolai-karpov/fitness-assistant",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк короткого учебного примера от Yandex Datasphere — личный фитнес-ассистент на Yandex Cloud (Responses API поверх OpenAI SDK) с RAG по базе знаний.",
+        "what": "Небольшой обучающий пример на нескольких понятиях: языковые модели Yandex Cloud через Responses API и OpenAI SDK, простой ассистент с сохранением контекста диалога, function calling в генеративных моделях, подключение текстовой базы знаний (индекса) к модели для RAG, умное чанкование и индексирование markdown-таблиц.",
+        "use": "Справочный пример интеграции с Yandex Cloud AI Assistant API — пригодится, если понадобится быстро собрать RAG-ассистента на модели YandexGPT вместо своей реализации с нуля, особенно для клиентских проектов, завязанных на Yandex Cloud (пересекается с текущей рекламной работой Николая на Яндекс.Директ/Метрике).",
+        "start": [
+          "Клонировать репозиторий (локально или в проекте Yandex DataSphere)",
+          "Создать сервисный аккаунт с правами ai.editor и правами на MCP-шлюзы (anonymousInvoker, invoker)",
+          "Получить ключ авторизации или API-ключ и сохранить в authorized_key.json или в секреты датасферы (folder_id, api_key)"
+        ],
+        "status": "Минимальный учебный пример (README всего 20 строк), не production-решение.",
+        "quality": "full",
+        "source": "README (рус.)"
+      },
+      "description_original": "Пример личного фитнес-ассистента на основе Yandex AI Assistant API / Yandex Cloud ML SDK "
     },
     {
       "id": "trae-agent",
       "title": "trae-agent",
-      "description": "Trae Agent is an LLM-based agent for general purpose software engineering tasks.",
+      "description": "Форк Trae Agent — CLI-агента от ByteDance для инженерных задач разработки, спроектированного как исследовательская, легко модифицируемая платформа для изучения архитектур ИИ-агентов.",
       "group": "forks",
       "language": "Python",
       "updated": "2025-09-24",
@@ -1640,12 +2482,26 @@
           "url": "https://github.com/nikolai-karpov/trae-agent",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк Trae Agent — CLI-агента от ByteDance для инженерных задач разработки, спроектированного как исследовательская, легко модифицируемая платформа для изучения архитектур ИИ-агентов.",
+        "what": "Модульный агент с поддержкой множества LLM-провайдеров (OpenAI, Anthropic, Doubao, Azure, OpenRouter, Ollama, Google Gemini), набором инструментов (правка файлов, выполнение bash-команд, sequential-thinking) и записью полной траектории выполнения — всех шагов, вызовов LLM и инструментов — для отладки и анализа. Поддерживает MCP-серверы, запуск задач в изолированном Docker-контейнере и интерактивный диалоговый режим.",
+        "use": "Референс архитектуры CLI-агента «для исследований» — полезно смотреть, как устроена запись траекторий выполнения и модульная система инструментов, если понадобится строить или отлаживать собственного мультиагентного CLI-агента; можно сравнить архитектурные решения с Claude Code и Roo Code.",
+        "start": [
+          "`git clone`, `uv sync --all-extras`, `source .venv/bin/activate`",
+          "Скопировать `trae_config.yaml.example` в `trae_config.yaml` и указать API-ключи провайдеров",
+          "Запустить задачу: `trae-cli run \"описание задачи\"` или интерактивный режим `trae-cli interactive`"
+        ],
+        "status": "Активно разрабатывается, есть опубликованный технический отчёт (arXiv 2507.23370).",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "Trae Agent is an LLM-based agent for general purpose software engineering tasks."
     },
     {
       "id": "chat-ai-widget",
       "title": "chat-ai-widget",
-      "description": "Build AI Chatbot in minutes with Sendbird Chatbot Widget.",
+      "description": "Форк официального React-виджета Sendbird для встраивания их AI-чат-бота на сайт — обёртка над Sendbird UIKit, привязанная к платному SaaS Sendbird.",
       "group": "forks",
       "language": "TypeScript",
       "updated": "2025-03-10",
@@ -1661,7 +2517,21 @@
           "url": "https://github.com/nikolai-karpov/chat-ai-widget",
           "visibility": "public"
         }
-      ]
+      ],
+      "summary": {
+        "lead": "Форк официального React-виджета Sendbird для встраивания их AI-чат-бота на сайт — обёртка над Sendbird UIKit, привязанная к платному SaaS Sendbird.",
+        "what": "React/TypeScript-компонент `<ChatAiWidget />`, который подключается к уже настроенному в дашборде Sendbird AI-боту (нужны Application ID и Bot ID) и позволяет настраивать UI: emoji-реакции на сообщения, упоминания, локаль дат, кастомный компонент обновления диалога и другие визуальные параметры. Полноценная сборка через код доступна начиная с платного плана Sendbird «AI Chatbot Pro».",
+        "use": "Прямая альтернатива своему проекту ai-chat-widget, но привязанная к платному SaaS — полезно как референс для сравнения с self-hosted решением (какие настройки UI предлагает готовый коммерческий виджет), но для собственных проектов Николая менее применим без покупки плана Sendbird.",
+        "start": [
+          "Создать приложение и бота в Sendbird Dashboard, получить Application ID и Bot ID",
+          "Установить пакет: `npm install @sendbird/chat-ai-widget` (или yarn)",
+          "Импортировать и вставить `<ChatAiWidget applicationId=... botId=... />` в код приложения"
+        ],
+        "status": "Поддерживается Sendbird, но полноценная работа требует платного плана «AI Chatbot Pro» и выше.",
+        "quality": "full",
+        "source": "README (англ.)"
+      },
+      "description_original": "Build AI Chatbot in minutes with Sendbird Chatbot Widget."
     }
   ]
 }
