@@ -230,7 +230,7 @@
   .crumbs a { color: var(--text-muted); }
   .crumbs .sep { margin: 0 .4em; }
   h1 { font-family: var(--serif); font-size: clamp(1.7rem, 3.4vw, 2.4rem); line-height: 1.15; margin: 0 0 8px; font-weight: 600; }
-  .why { color: var(--text-muted); margin: 0; max-width: 70ch; font-size: 1rem; }
+  .why { color: var(--text-muted); margin: 0;  font-size: 1rem; }
   .tablist-wrap { position: sticky; top: var(--top-h); z-index: 20; background: var(--bg); border-bottom: 1px solid var(--border); margin: 0 0 28px; }
   .tablist { display: flex; gap: 2px; overflow-x: auto; scrollbar-width: thin; }
   .tablist [role="tab"] {
@@ -267,12 +267,11 @@
   .sec-head { display: flex; align-items: center; gap: 11px; margin-bottom: 6px; }
   .sec-head .ico { width: 1.3rem; height: 1.3rem; color: var(--accent); }
   .sec-head h2 { font-family: var(--serif); font-size: 1.6rem; line-height: 1.2; margin: 0; font-weight: 600; }
-  p.lead { color: var(--text); font-size: 1.01rem; line-height: 1.62; margin: 8px 0 18px; max-width: 80ch; }
+  p.lead { color: var(--text); font-size: 1.01rem; line-height: 1.62; margin: 8px 0 18px; }
   p.lead + p.lead { color: var(--text-muted); font-size: .94rem; }
   h3.sub { font-family: var(--serif); font-size: 1.22rem; font-weight: 600; color: var(--text); margin: 40px 0 14px; display: flex; align-items: center; gap: 10px; }
   h3.sub::after { content: ""; flex: 1; height: 1px; background: var(--border); min-width: 24px; }
   h3.sub .ico { color: var(--accent); width: 1.05rem; height: 1.05rem; }
-  .tabpanel > p, .tabpanel > ul:not(.legend), .tabpanel > ol:not(.steps):not(.ribbon) { max-width: 80ch; }
   .tabpanel > ul li { margin-bottom: 5px; }
   small { font-size: .78em; }
   table.flow small, .steps small, .tile small, .lead small, .msg small, .warn-inline small { display: block; color: var(--text-muted); font-size: .76rem; margin-top: 3px; }
@@ -283,15 +282,16 @@
   .tile-head { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
   .tile-head .ico { width: 1.15rem; height: 1.15rem; color: var(--accent); }
   .tile-head h4 { margin: 0; font-size: 1rem; font-weight: 600; }
-  .tile p { margin: 0 0 8px; font-size: .93rem; max-width: 80ch; }
+  .tile p { margin: 0 0 8px; font-size: .93rem;  }
   .tile p:last-child { margin-bottom: 0; }
 
   /* ---------- Предупреждения ---------- */
   .card .warn, p.warn-inline {
     background: var(--warn-soft); border-left: 3px solid var(--warn-line);
-    border-radius: 0 8px 8px 0; padding: 9px 12px; margin: 10px 0; font-size: .9rem; max-width: 80ch;
+    border-radius: 0 10px 10px 0; padding: 16px 22px; margin: 22px 0; font-size: .92rem; line-height: 1.65;
   }
-  .card .warn { display: flex; gap: 8px; align-items: flex-start; font-size: .86rem; }
+  p.warn-inline small { margin-top: 8px; }
+  .card .warn { display: flex; gap: 10px; align-items: flex-start; font-size: .88rem; padding: 14px 18px; margin: 16px 0; }
   .card .warn .ico { width: 1rem; height: 1rem; color: var(--warn-line); margin-top: .15em; }
 
   /* ---------- Схема выбора (3 шага) ---------- */
@@ -335,7 +335,7 @@
     .lane-arrow .ico { transform: none; }
   }
   .flow-notes { display: grid; gap: 7px; }
-  .flow-note { display: flex; gap: 8px; align-items: flex-start; margin: 0; font-size: .86rem; color: var(--text-muted); max-width: 88ch; }
+  .flow-note { display: flex; gap: 8px; align-items: flex-start; margin: 0; font-size: .86rem; color: var(--text-muted);  }
   .flow-note .ico { width: .95rem; height: .95rem; flex: none; margin-top: .24em; color: var(--accent); }
   .flow-note b { color: var(--text); font-weight: 600; }
   .flow-note.must .ico { color: var(--warn-line); }
@@ -364,7 +364,7 @@
   .msg-dl { margin: 0; display: grid; grid-template-columns: 1fr; gap: 2px 16px; font-size: .88rem; }
   .msg-dl dt { font-weight: 600; margin-top: 6px; }
   .msg-dl dt:first-child { margin-top: 0; }
-  .msg-dl dd { margin: 0; color: var(--text-muted); max-width: 80ch; }
+  .msg-dl dd { margin: 0; color: var(--text-muted);  }
   @container (min-width: 620px) {
     .msg-dl { grid-template-columns: max-content minmax(0, 1fr); gap: 8px 18px; }
     .msg-dl dt { margin-top: 0; }
@@ -506,12 +506,12 @@
   /* ---------- Для автора ---------- */
   .mark-sum { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 10px 0 8px; }
   .mark-list { padding-left: 22px; }
-  .mark-list li { margin-bottom: 8px; max-width: 90ch; font-size: .9rem; }
+  .mark-list li { margin-bottom: 8px;  font-size: .9rem; }
   .mark-list .where { font-weight: 600; }
   .mark-list .ctx { color: var(--text-muted); }
 
   /* ---------- О справочнике ---------- */
-  footer.about { margin-top: 64px; padding-top: 18px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: .86rem; max-width: 86ch; }
+  footer.about { margin-top: 64px; padding-top: 18px; border-top: 1px solid var(--border); color: var(--text-muted); font-size: .86rem;  }
   footer.about p { margin: 0 0 10px; }
 
   /* ---------- Глобальный поиск ---------- */
