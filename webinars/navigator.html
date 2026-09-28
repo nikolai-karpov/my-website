@@ -405,6 +405,10 @@
   .card > .table-scroll { border: 0; border-radius: 0; }
 
   /* ---------- Пошаговые списки ---------- */
+  figure.shot { margin: 12px 0 4px; }
+  figure.shot .shot-box { border: 2px dashed var(--warn-line); background: var(--warn-soft); color: var(--warn-line); border-radius: 10px; padding: 26px 16px; text-align: center; font-weight: 600; letter-spacing: .02em; }
+  figure.shot img { display: block; max-width: 100%; border: 1px solid var(--border-strong); border-radius: 10px; box-shadow: var(--shadow); }
+  figure.shot figcaption { font-size: .82rem; color: var(--text-muted); margin-top: 6px; }
   ol.steps { margin: 0; padding: 0; list-style: none; counter-reset: st; display: grid; gap: 20px; }
   ol.steps > li { counter-increment: st; position: relative; min-width: 0; background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; font-size: .96rem; line-height: 1.7; }
   ol.steps > li > .step-title { display: flex; align-items: center; gap: 10px; font-weight: 600; margin-bottom: 7px; }
@@ -612,6 +616,7 @@
   <div class="nav-page-head"><a class="nav-page-link" href="#t-start-env" title="Старт"><svg class="ico" aria-hidden="true"><use href="#i-flag"/></svg><span>Старт</span></a><button type="button" class="nav-caret" aria-expanded="true" aria-controls="nav-sub-start" aria-label="Свернуть или развернуть «Старт»"><svg class="ico" aria-hidden="true"><use href="#i-chevron"/></svg></button></div>
   <ul class="nav-sub" id="nav-sub-start">
     <li><a href="#t-start-env">Окружение</a></li>
+    <li><a href="#t-start-gitlab">Подключение к GitLab</a></li>
     <li><a href="#t-start-day">Первый день</a></li>
     <li><a href="#t-start-ready">Проверка готовности</a></li>
     <li><a href="#t-start-gaps">Пробелы и противоречия</a></li>
@@ -667,6 +672,7 @@
 </header>
 <div class="tablist-wrap"><div class="tablist" role="tablist" aria-label="Вкладки страницы «Старт»">
   <button type="button" role="tab" id="tab-start-env" aria-controls="t-start-env" aria-selected="false" tabindex="-1" data-page="start" data-tab="env">Окружение</button>
+  <button type="button" role="tab" id="tab-start-gitlab" aria-controls="t-start-gitlab" aria-selected="false" tabindex="-1" data-page="start" data-tab="gitlab">Подключение к GitLab</button>
   <button type="button" role="tab" id="tab-start-day" aria-controls="t-start-day" aria-selected="false" tabindex="-1" data-page="start" data-tab="day">Первый день</button>
   <button type="button" role="tab" id="tab-start-ready" aria-controls="t-start-ready" aria-selected="false" tabindex="-1" data-page="start" data-tab="ready">Проверка готовности</button>
   <button type="button" role="tab" id="tab-start-gaps" aria-controls="t-start-gaps" aria-selected="false" tabindex="-1" data-page="start" data-tab="gaps">Пробелы и противоречия</button>
@@ -679,7 +685,6 @@
   </div>
   <p class="lead">Всё окружение рабочего места одним списком. Статус строки: <b>обязательно</b> — без этого не начать; <b>условно</b> — нужно для отдельных задач; <b>по согласованию</b> — ставится только с согласия владельца компьютера. Под каждой строкой мелко — файл, из которого она взята.</p>
   <p class="lead" data-no-marks>Под каждой строкой мелко — источник: файл канона или «по документации разработчиков», если в каноне этого нет. Что намеренно не описано и что решено владельцем — на вкладке «Пробелы и противоречия». Сверено с каноном 26.09.2026.</p>
-  <p class="warn-inline"><b>Статус инструкции.</b> Установка на чистом Windows-хосте не проверена (NOT VERIFIED), полный разбор PDF/DOCX остаётся BLOCKED по <code>capabilities.md</code>. <small>INSTALL-PARSER-WINDOWS.md, шапка</small></p>
 
   <h3 class="sub">1. Программы</h3>
   <details class="tbl">
@@ -708,17 +713,17 @@
           <td><b>Git</b></td>
           <td>Рабочая область — репозиторий; обновление Золотого стандарта и выгрузка своей работы<small>kilo-canon/README.md; .kilo/agents/devops.md</small></td>
           <td>обязательно</td>
-          <td>Git for Windows с git-scm.com (или <code>winget install --id Git.Git -e</code>); при установке оставить Git Credential Manager — helper канона для SourceCraft отключает его точечно<small>по документации разработчиков; сверено 26.09.2026 — в каноне способ установки не описан</small></td>
+          <td>Git for Windows с git-scm.com (или <code>winget install --id Git.Git -e</code>)<small>по документации разработчиков; сверено 26.09.2026 — в каноне способ установки не описан</small></td>
           <td>Входит в Xcode Command Line Tools: <code>xcode-select --install</code>; или <code>brew install git</code><small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
-          <td><code>git remote -v</code> в корне рабочего места — <code>origin</code> указывает на <code>…/kilo-canon.git</code> по HTTPS; <code>git ls-remote origin</code> отвечает без запроса пароля<small>devops.md, «Сначала определи, где ты»; hosting-sourcecraft.md</small></td>
+          <td><code>git remote -v</code> в корне рабочего места — <code>origin</code> указывает на <code>…/kilo-canon.git</code> в корпоративном GitLab; в <code>projects/</code> — на ваш репозиторий<small>devops.md, «Сначала определи, где ты»</small></td>
         </tr>
         <tr>
-          <td><b>Токен SourceCraft (PAT)</b> и credential helper</td>
-          <td>Доступ к репозиториям на SourceCraft. Единственный транспорт git — HTTPS; SSH-клиент и ключ SSH не нужны<small>.kilo/references/hosting-sourcecraft.md (решение владельца 26.09.2026)</small></td>
+          <td><b>Ключ SSH</b> для корпоративного GitLab</td>
+          <td>Доступ к репозиториям канона и своему. Внешние хостинги (GitHub, SourceCraft) запрещены политикой ИБ<small>решение владельца 28.09.2026</small></td>
           <td>обязательно</td>
-          <td>Токен — строка <code>SOURCECRAFT_TOKEN=&lt;токен&gt;</code> в файле <code>.env</code> в корне рабочего места. Helper подключается один раз, путь прямыми слешами: <code>git config --global credential.https://git.sourcecraft.dev.helper ""</code>, затем <code>git config --global --add credential.https://git.sourcecraft.dev.helper "!py -3 'C:/&lt;корень&gt;/.kilo/tools/git_credential_env.py'"</code><small>hosting-sourcecraft.md, «Токен: .env и credential helper»</small></td>
-          <td>То же; вторая команда — <code>"!python3 '&lt;корень&gt;/.kilo/tools/git_credential_env.py'"</code><small>hosting-sourcecraft.md</small></td>
-          <td><code>git ls-remote https://git.sourcecraft.dev/&lt;организация&gt;/&lt;репозиторий&gt;.git</code> отвечает без запроса пароля<small>hosting-sourcecraft.md, п. 3</small></td>
+          <td>Ключ создаёт агент в роли Code одной командой (вкладка «Подключение к GitLab», шаг 1); публичная часть — в GitLab → Preferences → Access → SSH Keys</td>
+          <td>То же</td>
+          <td>Агенту: «Ключи добавлены. Проверь связь с GitLab» — ответ сервера без запроса пароля</td>
         </tr>
         <tr>
           <td><b>Python</b></td>
@@ -731,7 +736,7 @@
         <tr>
           <td><b>LibreOffice</b> (<code>soffice</code>)</td>
           <td>Конвертация внедрённых Visio/OLE из DOCX<small>INSTALL-PARSER-WINDOWS.md</small></td>
-          <td>условно: полный маршрут разбора DOCX</td>
+          <td>условно: только для DOCX со внедрёнными схемами Visio/OLE; PDF → MD работает без него</td>
           <td>Установщик с libreoffice.org<small>INSTALL-PARSER-WINDOWS.md, § 4</small> или <code>winget install --id TheDocumentFoundation.LibreOffice -e --silent --accept-package-agreements --accept-source-agreements</code><small>.kilo/command/setup-parser.md, шаг 4</small></td>
           <td><code>brew install --cask libreoffice</code> или .dmg с libreoffice.org; <code>soffice</code> — <code>/Applications/LibreOffice.app/Contents/MacOS/soffice</code><small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
           <td><code>soffice --version</code> в новом окне PowerShell<small>INSTALL-PARSER-WINDOWS.md, § 4</small></td>
@@ -739,7 +744,7 @@
         <tr>
           <td><b>Tesseract OCR 5</b>, языки <code>rus</code> и <code>eng</code></td>
           <td>Независимая проверка текста в растре<small>INSTALL-PARSER-WINDOWS.md</small></td>
-          <td>условно: полный маршрут разбора растровых страниц. Общее правило — INSTALL § 4; команда <code>/setup-parser</code> записана под хост владельца («программа уже есть», языки не докачивает) — на чистом Windows NOT VERIFIED</td>
+          <td>условно: независимая проверка текста на отсканированных страницах; без него агент просто делает лишний вызов модели. Команда <code>/setup-parser</code> написана под хост владельца («программа уже есть») — на новом компьютере ставить по INSTALL § 4</td>
           <td>Сборка UB Mannheim, при установке выбрать English и Russian<small>INSTALL-PARSER-WINDOWS.md, § 4</small></td>
           <td><code>brew install tesseract tesseract-lang</code> — языки <code>rus</code> и <code>eng</code> входят в <code>tesseract-lang</code><small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
           <td><code>tesseract --version</code>, <code>tesseract --list-langs</code> — в списке <code>eng</code> и <code>rus</code><small>INSTALL-PARSER-WINDOWS.md, § 4</small></td>
@@ -860,7 +865,7 @@
         <tr><td>Где задаются модели</td><td>Глобальный конфиг хоста: <code>%USERPROFILE%\.config\kilo\kilo.jsonc</code>, ключи <code>model</code>, <code>small_model</code>, <code>subagent_model</code>, значение вида <code>&lt;провайдер&gt;/&lt;модель&gt;</code> — из списка моделей своего клиента, не угадывать<small>host-setup-windows.md, § 1</small> Путь на macOS — <code>~/.config/kilo/kilo.jsonc</code><small>документация Kilo, «Settings»; сверено 26.09.2026</small></td></tr>
         <tr><td>Ключ</td><td>Личный: не пересылают коллегам, не кладут в рабочую папку, не вставляют в промпты и на скриншоты<small>webinar-01, разд. 6, шаг 3</small></td></tr>
         <tr><td>Изображения</td><td>Нужна модель с поддержкой image input — её использует роль <a href="#role-vision">vision</a>. Без неё разбор PDF/DOCX останавливается в <code>WAITING_FOR_VISION</code> там, где vision обязателен<small>INSTALL-PARSER-WINDOWS.md; .kilo/agents/vision.md</small></td></tr>
-        <tr><td>Подписка и модели у коллег</td><td>Пакет Alibaba: Qwen, DeepSeek, GLM, Kimi, есть модели для изображений. Ключ выдаёт Игорь, заявка через Алёну. Личная подписка Claude или GPT остаётся — роли подключаются и к ней<small>решение 23.09.2026 с Игорем; канон вебинара 1, блок 3.1 и «Ожидаемые вопросы»</small></td></tr>
+        <tr><td>Подписка и модели у коллег</td><td>[ПОСЛЕ ВЫБОРА ПОДПИСКИ] — открытый вопрос OQ-43<small>Webinars/open-questions.md</small></td></tr>
       </tbody>
     </table>
     </div>
@@ -900,14 +905,14 @@
     <table class="flow">
       <thead><tr><th>Что</th><th>Как устроено</th></tr></thead>
       <tbody>
-        <tr><td>Хостинг</td><td>SourceCraft, только HTTPS: remote вида <code>https://git.sourcecraft.dev/&lt;организация&gt;/&lt;репозиторий&gt;.git</code>. SSH не используется (решение владельца 26.09.2026)<small>hosting-sourcecraft.md</small></td></tr>
-        <tr><td>Web-адрес</td><td><code>https://sourcecraft.dev/…</code> открывается в браузере, но для git не подходит: запросы перехватывает капча — это не бан<small>hosting-sourcecraft.md, «Адреса»</small></td></tr>
-        <tr><td>Аутентификация</td><td>Персональный токен (PAT) как пароль, из <code>.env</code> корня через helper <code>.kilo/tools/git_credential_env.py</code>. Токен не кладут в URL remote, <code>.git/config</code> и командную строку<small>hosting-sourcecraft.md; devops.md</small></td></tr>
-        <tr><td>Сбои связи</td><td>Канал нестабилен — это норма: повторять, а не чинить; ключи, remote и порт не менять<small>hosting-sourcecraft.md</small></td></tr>
-        <tr><td>Remote</td><td>Корень рабочего места — клон канона, его <code>origin</code> — <code>kilo-canon</code>, только чтение. Каждый проект <code>projects/&lt;проект&gt;</code> и <code>projects/reflection</code> — отдельный репозиторий со своим <code>origin</code>. Прежней схемы «форк с <code>upstream</code>» больше нет<small>devops.md, «Сначала определи, где ты»; kilo-canon/README.md</small></td></tr>
+        <tr><td>Хостинг</td><td>Корпоративный GitLab, группа R&amp;D-лаборатория → AI Analytics: там <code>kilo-canon</code> и репозиторий каждого аналитика под его фамилией. Транспорт — SSH по ключу. Внешние хостинги запрещены политикой ИБ<small>решение владельца 28.09.2026</small></td></tr>
+        <tr><td>Доступ</td><td>Группа открыта всем аналитикам с равными правами: свой репозиторий каждый создаёт сам (New project в группе). Корпоративный VPN нужен для GitLab и Confluence<small>28.09.2026</small></td></tr>
+        <tr><td>Аутентификация</td><td>Ключ SSH: создаётся на компьютере (агент, роль Code), публичная часть вставляется в GitLab → Preferences → Access → SSH Keys, срок — до года. Ключи, токены и пароли агенту в чат не пишут<small>вкладка «Подключение к GitLab»</small></td></tr>
+        <tr><td>Под VPN</td><td>Агент может не дойти до сервера — тогда он коммитит, а <code>git push</code> делаете вы в терминале VS Code. Ключи, remote и порт агент сам не меняет<small>28.09.2026; devops.md</small></td></tr>
+        <tr><td>Remote</td><td>Корень рабочего места — клон канона, его <code>origin</code> — <code>kilo-canon</code>, только чтение. <code>projects/</code> целиком — ваш репозиторий под вашей фамилией (проекты и <code>reflection/</code>), со своим <code>origin</code>. Прежней схемы «форк с <code>upstream</code>» больше нет<small>решение владельца 28.09.2026; devops.md, «Сначала определи, где ты»</small></td></tr>
         <tr><td>Обновление канона</td><td>Роль <code>devops</code> проверяет сама при старте сессии, не чаще раза в сутки: <code>python .kilo/tools/canon_update_check.py</code> — только <code>fetch</code> и <code>pull --ff-only</code> в корне; изменились правила — строка «начните новую сессию». Регистрироваться не нужно; локальные правки в корне останавливают обновление<small>kilo-canon/README.md, «Как получать обновления»; devops.md, «Проверка актуальности канона при старте»</small></td></tr>
         <tr><td>Обновление вручную</td><td>Фраза «проверь канон» — та же проверка с ключом <code>--force</code>, без суточного гейта. Команды <code>/sync-workspace</code> больше нет (удалена 25.09.2026)<small>devops.md; PACKAGE-MANIFEST.md, «История»</small></td></tr>
-        <tr><td>Токен</td><td>Ключ SSH не нужен. Токен выпускается в SourceCraft (документация <code>security/pat</code>) и записывается в <code>.env</code> корня (<code>.env</code> в <code>.gitignore</code>). Роль <code>devops</code> токен не просит и не выводит; remote меняет только по вашему согласию<small>hosting-sourcecraft.md; devops.md, «Сеть и особенности хостинга»</small></td></tr>
+        <tr><td>Токены MCP</td><td>Confluence и Figma — токены строками в <code>.env</code> корня (<code>.env</code> в <code>.gitignore</code>); агенту называют имя переменной. Роль <code>devops</code> токены не просит и не выводит; remote меняет только по вашему согласию<small>devops.md, «Сеть и особенности хостинга»; 28.09.2026</small></td></tr>
       </tbody>
     </table>
     </div>
@@ -941,6 +946,72 @@
     </li>
   </ol>
 </section>
+<section class="tabpanel" id="t-start-gitlab" role="tabpanel" aria-labelledby="tab-start-gitlab" tabindex="-1" data-page="start" data-tab="gitlab" data-title="Подключение к GitLab">
+<h2 class="tab-title">Старт › Подключение к GitLab</h2>
+  <div class="sec-head">
+    <svg class="ico"><use href="#i-branch"/></svg>
+    <h2>Шпаргалка: подключить своё рабочее место к корпоративному GitLab</h2>
+  </div>
+  <p class="lead">Что получится. Корень рабочего места — клон Золотого стандарта <code>kilo-canon</code> из корпоративного GitLab, только для чтения. Рядом папка <code>projects/</code> — <b>ваш собственный репозиторий под вашей фамилией</b>: в нём межпроектная рефлексия <code>reflection/</code> и все ваши проекты. Один репозиторий на аналитика, одна точка входа.<small>решение владельца 28.09.2026; проверено на двух рабочих местах 28.09.2026</small></p>
+  <p class="warn-inline"><b>Только корпоративный GitLab.</b> Внешние хостинги (GitHub, SourceCraft и другие) для рабочих материалов запрещены политикой ИБ; если они подключены в старой рабочей папке — отключаются на шаге 5.</p>
+  <p class="lead">Порядок из трёх этапов: <b>канон</b> → через роли канона <b>структура папок</b> → <b>свой репозиторий</b>. Время: канон — 15–30 минут, полный контур с токенами и MCP — около часа. После каждого шага, который меняет правила или конфиг, — <b>закрыть и заново открыть VS Code</b>: роли и правила читаются при старте сессии.</p>
+  <ol class="steps timeline">
+    <li>
+      <div class="step-title">Создать ключ SSH на своём компьютере</div>
+      <p>VS Code → Kilo Code, роль <b>Code</b> (роли <code>devops</code> ещё нет — канон не подключён). Ключ создаётся один раз на компьютере; закрытая часть остаётся на нём, агенту и коллегам её не показывают.</p>
+<div class="msg"><div class="msg-to"><span class="msg-label">Кому:</span> <span class="chip-plain">Kilo Code, роль Code</span></div><div class="msg-body"><pre class="msg-text">Сформируй SSH-ключ для подключения к корпоративному GitLab на этом компьютере. Верни публичную часть ключа одной строкой — я вставлю её в GitLab.</pre><button type="button" class="copy">Копировать</button></div></div><figure class="shot" data-shot="ssh-create"><div class="shot-box">СКРИНШОТ · Создать SSH: ответ агента с публичной частью ключа</div><figcaption>Создать SSH: ответ агента с публичной частью ключа</figcaption></figure>    </li>
+    <li>
+      <div class="step-title">Вставить публичный ключ в GitLab</div>
+      <p>GitLab → аватар в правом верхнем углу → <b>Preferences → Access → SSH Keys → Add new key</b>. Вставить строку из шага 1, название — например <code>kilo</code>, срок действия — не больше года (GitLab не даст дольше) → <b>Add key</b>.</p>
+<figure class="shot" data-shot="ssh-gitlab"><div class="shot-box">СКРИНШОТ · Вставить SSH на GitLab: Preferences → Access → SSH Keys</div><figcaption>Вставить SSH на GitLab: Preferences → Access → SSH Keys</figcaption></figure>      <p>Проверка — агенту той же сессии: «Ключи добавлены. Проверь связь с GitLab».</p>
+    </li>
+    <li>
+      <div class="step-title">Подключить Золотой стандарт в корень</div>
+      <p>Открыть в VS Code корневую папку рабочего места (она станет клоном канона; старые проектные папки перенесём на шаге 5). Адрес канона — репозиторий <code>kilo-canon</code> в группе <b>R&amp;D-лаборатория → AI Analytics</b>: в GitLab открыть его, <b>Code → Clone with SSH</b>, скопировать адрес вида <code>git@&lt;хост&gt;:&lt;группа&gt;/kilo-canon.git</code>.</p>
+<div class="msg"><div class="msg-to"><span class="msg-label">Кому:</span> <span class="chip-plain">Kilo Code, роль Code</span></div><div class="msg-body"><pre class="msg-text">Твоя задача — подключить текущий проект к репозиторию &lt;SSH-адрес kilo-canon&gt;. Ключ SSH на этом компьютере есть. Корень рабочего места должен стать клоном kilo-canon; папка projects в него не входит. Лишние файлы в корне не создавай.</pre><button type="button" class="copy">Копировать</button></div></div><figure class="shot" data-shot="canon-clone"><div class="shot-box">СКРИНШОТ · Канон подключён: в проводнике появилась папка .kilo</div><figcaption>Канон подключён: в проводнике появилась папка .kilo</figcaption></figure>      <p>Затем <b>закрыть и открыть VS Code</b>. В новой сессии в списке ролей появятся <code>devops</code>, <code>layout-builder</code>, <code>project-architect</code> и остальные. Всё, что в корне не из канона (старые скрипты, XML, заметки), — убрать: агент читает это как шум и начинает додумывать.</p>
+<figure class="shot" data-shot="roles-list"><div class="shot-box">СКРИНШОТ · Список ролей после перезапуска: devops, layout-builder, project-architect</div><figcaption>Список ролей после перезапуска: devops, layout-builder, project-architect</figcaption></figure>    </li>
+    <li>
+      <div class="step-title">Создать свой репозиторий в GitLab</div>
+      <p>GitLab → группа <b>R&amp;D-лаборатория → AI Analytics → New project → Create blank project</b>. Имя — ваша фамилия латиницей (как у соседей в группе), без README и других файлов → <b>Create project</b>. Затем <b>Code → Clone with SSH</b> — скопировать адрес.</p>
+<figure class="shot" data-shot="repo-create"><div class="shot-box">СКРИНШОТ · Создать свой репозиторий: New project в группе AI Analytics</div><figcaption>Создать свой репозиторий: New project в группе AI Analytics</figcaption></figure><figure class="shot" data-shot="repo-ssh"><div class="shot-box">СКРИНШОТ · Скопировать SSH-адрес: Code → Clone with SSH</div><figcaption>Скопировать SSH-адрес: Code → Clone with SSH</figcaption></figure>    </li>
+    <li>
+      <div class="step-title">Дать агенту команду подключить свой репозиторий к хосту</div>
+      <p>Новая сессия, роль <b>devops</b>. Свои старые проектные папки заранее перенести в <code>projects/</code>; если внутри них есть настройки Git от GitHub или SourceCraft — сказать об этом агенту, он переподключит; папка с тем же именем, что в репозитории, — переименовать в <code>&lt;имя&gt;.bak</code>.</p>
+<div class="msg"><div class="msg-to"><span class="msg-label">Кому:</span> <span class="chip-plain">Kilo Code, роль devops</span></div><div class="msg-body"><pre class="msg-text">Твоя задача — подключить дополнительный репозиторий, который синхронизируется отдельно от корневого, в папку projects: &lt;SSH-адрес своего репозитория&gt;. В него должен выгружаться каталог projects целиком, со всеми вложенными каталогами: проекты и reflection.
+
+Дополнение к заданию: внутри каталога &lt;имя старой папки&gt; лежат установочные файлы Git — они потеряли актуальность в связи с этим заданием.</pre><button type="button" class="copy">Копировать</button></div></div><figure class="shot" data-shot="repo-connect"><div class="shot-box">СКРИНШОТ · Дать команду агенту: подключить свой репозиторий в projects/</div><figcaption>Дать команду агенту: подключить свой репозиторий в projects/</figcaption></figure>    </li>
+    <li>
+      <div class="step-title">Завести структуру проекта</div>
+      <p>Роль <b>layout-builder</b>: «Заведи раскладку проекта &lt;имя&gt;» — папки по канону создаются сами, руками их не строят. Кодовую базу, которую агент должен читать (репозитории фронта и бэка), положить внутрь проекта в <code>00-sources/code/</code> — агент её не меняет.</p>
+      <p>Рефлексия — <code>projects/reflection/</code>; если папки нет, агент создаёт её при подключении. Память проекта — <code>MEMORY.md</code> внутри проекта (см. <a href="#t-how-gold">три слоя памяти</a>).</p>
+    </li>
+    <li>
+      <div class="step-title">Выгрузить и проверить в браузере</div>
+<div class="msg"><div class="msg-to"><span class="msg-label">Кому:</span> <span class="chip-plain">Kilo Code, роль devops</span></div><div class="msg-body"><pre class="msg-text">Синхронизируйся с GitLab. Верни, что выгружено и в какой репозиторий.</pre><button type="button" class="copy">Копировать</button></div></div>      <p>Открыть свой репозиторий в GitLab, обновить страницу: видны <code>projects/…</code>. Пусто — агент выгрузил не туда или не выгрузил; спросить его «почему в репозитории на GitLab нет файлов» и дать адрес ещё раз.</p>
+<figure class="shot" data-shot="repo-check"><div class="shot-box">СКРИНШОТ · Проверить: файлы видны в своём репозитории на GitLab</div><figcaption>Проверить: файлы видны в своём репозитории на GitLab</figcaption></figure>      <p><b>Под корпоративным VPN</b> агент может не дойти до сервера (зависит от модели и настроек). Тогда: агент делает коммиты, а <code>git push</code> — вы сами: меню <b>Terminal → New Terminal</b>, команда <code>git push</code> в папке <code>projects</code>. Это штатный ручной шаг, не ошибка.</p>
+    </li>
+    <li>
+      <div class="step-title">Токены — в файл <code>.env</code>, не в переписку</div>
+      <p>В корне рабочего места создать файл <code>.env</code> (он в <code>.gitignore</code>, в репозиторий не уходит). Каждый токен — строкой <code>ИМЯ=значение</code>: <code>CONFLUENCE_TOKEN=…</code>, <code>FIGMA_TOKEN=…</code>. Персональный токен Confluence — настройки профиля → Personal access tokens, срок действия убрать. Агенту называют <b>имя переменной</b>, сам токен ему не пишут: так токены не попадают в конфиги и в модель.</p>
+<figure class="shot" data-shot="env-file"><div class="shot-box">СКРИНШОТ · Файл .env в корне: имена переменных без значений</div><figcaption>Файл .env в корне: имена переменных без значений</figcaption></figure>    </li>
+    <li>
+      <div class="step-title">Окружение инструментов <code>.venv</code></div>
+      <p>Роль <b>project-architect</b>; нужен Python 3.14 (инструменты канона — <code>.kilo/tools</code>). На корпоративном ноутбуке без прав администратора — сначала заявка в поддержку: <b>8888@softlab.ru</b>, от своего имени, с номером машины; шаблон письма — ниже.</p>
+      <figure class="shot" data-shot="request-8888"><div class="shot-box">ШАБЛОН ЗАЯВКИ в 8888@softlab.ru — вставит владелец канона (тема, номер машины, список программ: Python 3.14, Git, LibreOffice, Tesseract, Java)</div><figcaption>Заявка на установку программ на корпоративный ноутбук — от своего имени</figcaption></figure>
+<div class="msg"><div class="msg-to"><span class="msg-label">Кому:</span> <span class="chip-plain">Kilo Code, роль project-architect</span></div><div class="msg-body"><pre class="msg-text">Проанализируй инструменты .kilo/tools. Верни инструкцию для создания соответствующего окружения .venv. Устанавливай Python 3.14. Параллельно сделай заметки для выгрузки в бэклог канона.</pre><button type="button" class="copy">Копировать</button></div></div>    </li>
+    <li>
+      <div class="step-title">MCP Confluence — по необходимости</div>
+      <p>Новая сессия, роль <b>project-architect</b>. После ответа «перезагрузите приложение» — закрыть и открыть VS Code, затем в той же сессии: «Подтверди связь с сервером Confluence, верни данные, которые возвращает сервер». Figma MCP подключается по той же схеме с <code>FIGMA_TOKEN</code> (удалённая версия, Figma Desktop не нужен) — подробности будут на отдельном вебинаре.</p>
+<div class="msg"><div class="msg-to"><span class="msg-label">Кому:</span> <span class="chip-plain">Kilo Code, роль project-architect</span></div><div class="msg-body"><pre class="msg-text">Твоя задача — установить и настроить MCP для Confluence, чтобы он был доступен в Kilo Code. Для выполнения задачи изучи:
+.kilo/agents/confluence.md
+.kilo/skills/confluence/SKILL.md
+Токен хранится в файле .env в корне рабочего места, имя переменной CONFLUENCE_TOKEN. В конце внеси необходимые правки в конфиг и дай сигнал, когда перезагрузить приложение.</pre><button type="button" class="copy">Копировать</button></div></div>    </li>
+    <li>
+      <div class="step-title">Первая рефлексия</div>
+      <p>Новая сессия, роль <b>reflector</b>: «Проведи рефлексию». Первый запуск идёт долго — он читает все сессии и раскладывает записи по трём слоям. Дальше — в конце каждого рабочего дня, после обратной связи агенту в сессии.</p>
+    </li>
+  </ol>
+</section>
 <section class="tabpanel" id="t-start-day" role="tabpanel" aria-labelledby="tab-start-day" tabindex="-1" data-page="start" data-tab="day" data-title="Первый день">
 <h2 class="tab-title">Старт › Первый день</h2>
   <div class="sec-head">
@@ -950,9 +1021,9 @@
   <p class="lead">Если вы открыли рабочую область впервые, порядок такой. Он снимает большую часть вопросов «почему у меня не работает так, как показывали».</p>
   <ol class="steps timeline">
     <li>
-      <div class="step-title">Получите свою рабочую область и посмотрите, что в ней</div>
-      <p>Рабочее место — каталог, корень которого — клон <a href="#gold">Золотого стандарта</a> только для чтения; ваши проекты и рефлексия подключены отдельными репозиториями в <code>projects/</code>. Репозитории — источник истины: документы, правила, роли и навыки лежат здесь, а не в переписке и не в голове у агента.<small>kilo-canon/README.md</small></p>
-      <p>Начните с <a href="README.md">README.md</a> (из чего собрана область) и <a href="AGENTS.md">AGENTS.md</a> (правила помощника). Эта страница — навигация по ним, а не замена.</p>
+      <div class="step-title">Подключите рабочее место к GitLab и посмотрите, что в нём</div>
+      <p>Корень рабочего места — клон <a href="#gold">Золотого стандарта</a> из корпоративного GitLab (только чтение); <code>projects/</code> — ваш репозиторий под вашей фамилией с проектами и рефлексией. Порядок подключения по шагам — вкладка <a href="#t-start-gitlab">«Подключение к GitLab»</a>. Репозиторий — источник истины: документы, правила, роли и навыки лежат здесь, а не в переписке.</p>
+      <p>Начните с <a href="README.md">README.md</a> (из чего собрано рабочее место) и <a href="AGENTS.md">AGENTS.md</a> (правила помощника). Эта страница — навигация по ним, а не замена.</p>
     </li>
     <li>
       <div class="step-title">Настройте среду на своей машине</div>
@@ -1022,7 +1093,7 @@
   <h3 class="sub">8. Что ещё не описано</h3>
   <p class="warn-inline"><b>Пробелы, которые пока закрыть нечем.</b> Здесь нет правдоподобного текста — нужен ответ автора.</p>
   <ul>
-    <li>Установка Git, Java, <code>uv</code> и колонка macOS заполнены 26.09.2026 по документации разработчиков, не по канону. SSH снят: транспорт только HTTPS. Выпуск токена SourceCraft и Figma MCP в навигаторе намеренно не описываются (решение владельца 26.09.2026; Figma MCP — отдельный вебинар).</li>
+    <li>Установка Git, Java, <code>uv</code> и колонка macOS заполнены 26.09.2026 по документации разработчиков, не по канону. Хостинг — только корпоративный GitLab по SSH (28.09.2026); справка канона <code>hosting-sourcecraft.md</code> и helper <code>git_credential_env.py</code> относятся к запрещённому внешнему хостингу и подлежат замене в каноне. Figma MCP в навигаторе описан одной строкой — отдельный вебинар.</li>
     <li>macOS: колонка таблицы «Программы» и команды установки базы парсера заполнены 26.09.2026 по документации разработчиков, не по канону — в каноне macOS не описан, установка на macOS не проверена.</li>
     <li>Версии VS Code и Kilo Code не закреплены — ставится текущая стабильная. Проверен только Kilo backend 7.5.14 на macOS для discovery<small>INSTALL-PARSER-WINDOWS.md; PACKAGE-MANIFEST.md</small></li>
     <li>Способ установки Java — по документации разработчиков (Temurin), в каноне не закреплён.</li>
@@ -1075,27 +1146,35 @@
     </article>
 
     <article class="tile">
-      <div class="tile-head"><svg class="ico"><use href="#i-folder"/></svg><h4>Что своё — проекты и рефлексия</h4></div>
-      <p><code>projects/&lt;проект&gt;/</code> — репозиторий проекта: работа по проекту, его память <code>MEMORY.md</code> и решения <code>decisions/</code> в корне проекта, планы и промпты в <code>90-work-items/</code>. <code>projects/reflection/</code> — репозиторий рефлексии специалиста по всем его проектам, с памятью <code>MEMORY.md</code> для того, что относится ко всем проектам.</p>
+      <div class="tile-head"><svg class="ico"><use href="#i-folder"/></svg><h4>Что своё — рабочая область</h4></div>
+      <p><code>projects/&lt;проект&gt;/</code> — ваши проекты; <code>decisions/</code> — решения о размещении новых типов файлов; <code>Plans/</code> — планы; <code>reflection/</code> — установка рефлексии и записи об ошибках; <code>MEMORY.md</code> — память области.</p>
       <p><code>CLAUDE.md</code> не хранится нигде: это инструкции конкретного хоста.<small>kilo-canon/README.md</small></p>
     </article>
 
     <article class="tile">
       <div class="tile-head"><svg class="ico"><use href="#i-branch"/></svg><h4>Где хранится</h4></div>
-      <p>Корень рабочего места специалиста — клон канона <code>kilo-canon</code> только для чтения; своя работа живёт в <code>projects/&lt;проект&gt;/</code> и <code>projects/reflection/</code> — каждый со своим репозиторием на SourceCraft.</p>
-      <p>Корень рабочего места — клон канона (<code>origin</code> — <code>kilo-canon</code>, только чтение); проекты — отдельные репозитории в <code>projects/</code>.<small>.kilo/agents/devops.md, «Из чего собрано рабочее место»</small></p>
+      <p>Корень рабочего места специалиста — клон канона <code>kilo-canon</code> из корпоративного GitLab, только для чтения; своя работа живёт в <code>projects/</code> — это ваш репозиторий под вашей фамилией в той же группе GitLab: в нём <code>reflection/</code> и все ваши проекты.</p>
+      <p>Корень — клон канона (<code>origin</code> — <code>kilo-canon</code>, только чтение); <code>projects/</code> целиком — один ваш репозиторий.<small>решение владельца 28.09.2026; .kilo/agents/devops.md, «Из чего собрано рабочее место»</small></p>
     </article>
 
     <article class="tile">
       <div class="tile-head"><svg class="ico"><use href="#i-pointer"/></svg><h4>Как используется</h4></div>
-      <p>Фраза «Работаем с <code>&lt;проект&gt;</code>» — помощник открывает проект, читает его память <code>MEMORY.md</code> и решения, паспорт <code>99-governance/layout.json</code>, <code>findings.md</code>, <code>open-questions.md</code> и первой строкой говорит, что прочитал.</p>
+      <p>Фраза «Работаем с <code>&lt;проект&gt;</code>» — помощник читает <code>MEMORY.md</code> и <code>README.md</code> области, README и паспорт проекта <code>99-governance/layout.json</code>, <code>findings.md</code>, <code>open-questions.md</code>, последние записи <code>reflection/</code> и первой строкой говорит, что прочитал.</p>
       <p>Без фразы: проект в <code>projects/</code> один — работает с ним; несколько — один вопрос со списком.<small>AGENTS.md, § 3</small></p>
     </article>
 
     <article class="tile">
       <div class="tile-head"><svg class="ico"><use href="#i-wrench"/></svg><h4>Как обновляется</h4></div>
       <p>При старте сессии любой роли субагент <a href="#role-devops">devops</a> проверяет канон (<code>canon_update_check.py</code>, не чаще раза в сутки) и подтягивает обновления <code>git pull --ff-only</code>. Если изменились <code>.kilo/</code> или <code>AGENTS.md</code> — одна строка «начните новую сессию». В любой момент — фраза «проверь канон».</p>
-      <p>Ваши проекты проверка не трогает. Выгрузка работы в репозитории проектов и рефлексии — только по вашей просьбе, по одному репозиторию.<small>kilo-canon/README.md, «Как получать обновления»; devops.md</small></p>
+      <p>Ваш <code>projects/</code> проверка не трогает. Выгрузка вашей работы — только по вашей просьбе: «Синхронизируйся с GitLab»; под VPN <code>git push</code> может понадобиться сделать руками.<small>kilo-canon/README.md, «Как получать обновления»; devops.md; 28.09.2026</small></p>
+    </article>
+
+    <article class="tile" id="memory-layers">
+      <div class="tile-head"><svg class="ico"><use href="#i-link"/></svg><h4>Три слоя памяти</h4></div>
+      <p><b>Память проекта</b> — <code>MEMORY.md</code> внутри <code>projects/&lt;проект&gt;/</code>: как устроен именно этот проект. Читается, когда вы говорите «Работаем с &lt;проект&gt;».</p>
+      <p><b>Межпроектная рефлексия</b> — <code>projects/reflection/</code>: опыт, который пригодится во всех ваших проектах; сюда пишет <code>reflector</code> в конце дня.</p>
+      <p><b>Бэклог канона</b> — если <code>reflector</code> видит, что дело не в понимании задачи, а в дефекте роли, навыка или инструмента, запись уходит владельцу канона; он правит канон, обновление приезжает всем.</p>
+      <p>Зачем три: чтобы не раздувать один файл до бесконечности и не грузить контекст сессии тем, что ей не нужно.<small>объяснение владельца 28.09.2026; devops.md; reflector.md</small></p>
     </article>
 
     <article class="tile">
@@ -1214,8 +1293,8 @@
     <table class="flow">
       <thead><tr><th>Слово</th><th>Что это в проекте</th></tr></thead>
       <tbody>
-        <tr id="term-1"><td><b>Золотой стандарт</b></td><td>Репозиторий <code>kilo-canon</code>: общий для всех специалистов набор ролей, навыков, правил и инструментов в <code>.kilo/</code> и корневых файлах. Меняется только у владельца; на рабочее место приходит обновлением <code>git pull --ff-only</code> — <a href="#gold">подробнее</a></td></tr>
-        <tr id="term-2"><td><b>Рабочее место</b></td><td>Каталог специалиста: корень — клон Золотого стандарта только для чтения, в <code>projects/</code> — репозитории своих проектов и рефлексии <code>projects/reflection/</code></td></tr>
+        <tr id="term-1"><td><b>Золотой стандарт</b></td><td>Репозиторий <code>kilo-canon</code>: общий для всех специалистов набор ролей, навыков, правил и инструментов в <code>.kilo/</code> и корневых файлах. Меняется только у владельца, в область приходит слиянием — <a href="#gold">подробнее</a></td></tr>
+        <tr id="term-2"><td><b>Рабочая область</b></td><td>Свой репозиторий специалиста: история начинается с Золотого стандарта, сверху — свои проекты, <code>decisions/</code>, <code>Plans/</code>, <code>reflection/</code>, <code>MEMORY.md</code></td></tr>
         <tr id="term-3"><td><b>Паспорт проекта</b></td><td>Файл <code>projects/&lt;проект&gt;/99-governance/layout.json</code>: адреса разделов, исследования, шаблонов, релиза. Роли и навыки берут адреса из него</td></tr>
         <tr id="term-4"><td><b>Роль</b></td><td>Кто выполняет задачу и что ему позволено. Файл <code>.kilo/agents/&lt;имя&gt;.md</code>. Выбирается в начале работы</td></tr>
         <tr id="term-5"><td><b>Навык</b></td><td>Как делается задача такого типа: порядок, проверки, формат. Файл <code>.kilo/skills/&lt;имя&gt;/SKILL.md</code>. Подключается сам</td></tr>
@@ -1296,12 +1375,12 @@
   <dl class="msg-notes msg-dl"><dt>Когда применять</dt><dd>Пришёл PDF, DOCX, XML или картинка, и нужен машиночитаемый текст: новый документ регулятора или вендора, скан, схема, таблица из презентации. Путь к файлу обязателен — команда не ищет файл по названию</dd><dt>Что на выходе</dt><dd>Каталог прогона с файлом-кандидатом и отчётом проверок. Готовый результат вы затем размещаете рядом с оригиналом — <a href="#howto-digitize">разбор ниже</a></dd></dl>
 </article>
 <article class="msg cmd-card" id="cmd-package-review">
-  <div class="msg-to"><span class="msg-label">Кому · Исполнитель:</span> <span class="msg-exec"><a href="#role-business-analyst">business-analyst</a>, tz-writer, ft-writer<small>команда Золотого стандарта, <code>.kilo/command/package-review.md</code></small></span></div>
+  <div class="msg-to"><span class="msg-label">Кому · Исполнитель:</span> <span class="msg-exec"><a href="#role-business-analyst">business-analyst</a><small>команда проекта-примера, переносится в Золотой стандарт</small></span></div>
   <div class="msg-body"><code class="msg-text">/package-review &lt;комплект&gt;</code><button type="button" class="copy">Копировать</button></div>
   <dl class="msg-notes msg-dl"><dt>Когда применять</dt><dd>Старт нового проекта или новая порция материалов: надо понять, полон ли комплект, прежде чем по нему писать документ. Не для проверки готовой спецификации — для этого есть ревью БТ</dd><dt>Что на выходе</dt><dd>Перечень того, что есть, чего не хватает и что друг другу противоречит; находки записываются в файлы знаний</dd></dl>
 </article>
 <article class="msg cmd-card" id="cmd-source-analysis">
-  <div class="msg-to"><span class="msg-label">Кому · Исполнитель:</span> <span class="msg-exec"><a href="#role-business-analyst">business-analyst</a>, tz-writer, ft-writer, bt-writer, instruction-writer<small>команда Золотого стандарта, <code>.kilo/command/source-analysis.md</code></small></span></div>
+  <div class="msg-to"><span class="msg-label">Кому · Исполнитель:</span> <span class="msg-exec"><a href="#role-business-analyst">business-analyst</a><small>команда проекта-примера, переносится в Золотой стандарт</small></span></div>
   <div class="msg-body"><code class="msg-text">/source-analysis &lt;вопрос&gt;</code><button type="button" class="copy">Копировать</button></div>
   <dl class="msg-notes msg-dl"><dt>Когда применять</dt><dd>По ходу работы возник вопрос «а что говорит источник»: как устроена операция, есть ли требование, чем отличаются версии. Вопрос формулируйте своими словами, одной темой за раз</dd><dt>Что на выходе</dt><dd>Ответ со ссылками на файлы и строки, отдельно — что источник не говорит; факты и открытые вопросы уходят в файлы знаний</dd></dl>
 </article>
@@ -1720,7 +1799,7 @@ function skillLink(id) { return '<a href="#skill-' + id + '">' + id + '</a>'; }
 /* ---------- Группы (презентационные) ---------- */
 const ROLE_GROUPS = [
   { id: "docs",      title: "Документы проекта: ТЗ, ФТ, UC, UI, API", icon: "i-doc" },
-  { id: "analysis",  title: "Бизнес-требования и инструкции к документам", icon: "i-compass" },
+  { id: "analysis",  title: "Методика бизнес-требований",     icon: "i-compass" },
   { id: "review",    title: "Независимая проверка",          icon: "i-shield" },
   { id: "knowledge", title: "Знания и трассируемость",        icon: "i-graph" },
   { id: "documents", title: "Оцифровка, изображения, публикация", icon: "i-scan" },
@@ -1749,8 +1828,9 @@ const ROLES = [
     id: "business-analyst",
     group: "docs",
     mode: "primary",
-    desc: "Главный помощник аналитика: сам готовит Use Case, описания UI, API и интеграции (навыки use-case-preparation, ui-description, api-integration, figma), а остальную работу ведёт распорядителем — ставит задачу нужной роли (БТ — <a href=\"#role-bt-writer\">bt-writer</a>, инструкция к документу — <a href=\"#role-instruction-writer\">instruction-writer</a>, оцифровка, трассируемость, публикация, порядок репозитория, выгрузка) и принимает результат.",
+    desc: "Основной аналитик проекта ДБО: Use Case, описания UI, API и интеграции по навыкам use-case-preparation, ui-description, api-integration. Главный помощник и распорядитель работ: сам ведёт Use Case, UI, API и макеты проектов ДБО, подготовку БТ поручает роли bt-writer и принимает результат.",
     perms: "Порученные правки вносит сразу, без отдельного согласования diff, кроме <code>00-sources/</code> и <code>.kilo/</code>. Команды в терминале — с вашего подтверждения. Commit, push и публикация в Confluence — только по отдельному явному поручению. После создания документа сама зовёт reviewer.",
+    status: "в Золотом стандарте — главный помощник и распорядитель работ; редакция проекта-примера с подготовкой БТ в канон не перенесена: методика БТ Генбанка вошла 26.09.2026 ролью bt-writer",
     path: ".kilo/agents/business-analyst.md"
   },
   {
@@ -1770,22 +1850,12 @@ const ROLES = [
     path: ".kilo/agents/ft-writer.md"
   },
   {
-    id: "bt-writer",
+    id: "bt-instruction-writer",
     group: "analysis",
-    mode: "all",
-    desc: "Готовит бизнес-требования (БТ) по одной за цикл: по шаблону проекта, утверждённой инструкции к документу и навыку bt-preparation, с обязательной проверкой reviewer по навыку bt-review до предъявления. Не для ТЗ, ФТ, Use Case и технического разбора API/XSD.",
-    calledBy: "вы — напрямую (тогда reviewer она зовёт сама) или business-analyst — поручением; в этом случае готовит черновик и возвращает вопросы распорядителю",
-    perms: "Правит файлы проекта, кроме <code>00-sources/</code> и <code>.kilo/</code>; команды — с вашего подтверждения. Недостающее не проектирует — пробел становится вопросом.",
-    path: ".kilo/agents/bt-writer.md"
-  },
-  {
-    id: "instruction-writer",
-    group: "analysis",
-    mode: "all",
-    desc: "Методист инструкций: пишет и актуализирует индивидуальную инструкцию подготовки одного документа по шаблону проекта (БТ, ФТ, ТЗ, UC и любой другой артефакт с шаблоном). Сам документ не пишет.",
-    calledBy: "вы — напрямую (тогда reviewer она зовёт сама) или business-analyst — поручением",
-    perms: "Правит файлы проекта, кроме <code>00-sources/</code> и <code>.kilo/</code>; одна инструкция за итерацию. Инструкция не разрешает создавать сам документ или менять его статус.",
-    path: ".kilo/agents/instruction-writer.md"
+    mode: "primary",
+    desc: "Методолог бизнес-анализа и проектировщик инструкций для ИИ-агентов — готовит и обновляет индивидуальные инструкции формирования БТ.",
+    status: MOVING,
+    path: ".kilo/agents/bt-instruction-writer.md"
   },
   {
     id: "confluence",
@@ -1813,7 +1883,7 @@ const ROLES = [
     calledBy: "команда <code>/document-process</code> или роль с правом делегирования",
     warn: "Роль проекта-примера; в Золотом стандарте её нет (PACKAGE-MANIFEST.md: «отсутствуют в каноне»). В каноне оцифровку ведёт <a href=\"#role-parser_doc\">parser_doc</a>.",
     perms: "Пишет только в каталог прогона. Источники и принятые артефакты не меняет. Из других ролей может позвать только vlm.",
-    status: "роль проекта-примера; в Золотом стандарте её нет",
+    status: MOVING,
     path: ".kilo/agents/document-processor.md"
   },
   {
@@ -1832,7 +1902,7 @@ const ROLES = [
     desc: "Единственный канал записи знаний: факты, вопросы к источникам и к проекту, противоречия, память и ошибки в выделенных областях проекта.",
     calledBy: "рабочая роль по ходу задачи — отдельно запускать не нужно",
     perms: "Единственная роль, которой разрешено писать в файлы знаний — факты, вопросы, противоречия, память, ошибки. Больше ничего не трогает.",
-    status: "роль проекта-примера; в Золотом стандарте её нет",
+    status: MOVING,
     path: ".kilo/agents/knowledge-curator.md"
   },
   {
@@ -1855,16 +1925,17 @@ const ROLES = [
     id: "reflector",
     group: "reflection",
     mode: "all",
-    desc: "Рефлектор специалиста: фиксирует события, формирует итоги сессии, дня, недели или месяца, управленческие инсайты и накопительный план улучшений среды и методики. Рефлексия — одна на все проекты специалиста.",
-    perms: "Пишет только в свой репозиторий рефлексии <code>projects/reflection/</code> (события, итоги, журнал, память специалиста <code>MEMORY.md</code>). При старте сессии роли-исполнители зовут её для догона пропущенных периодов.",
+    desc: "Рефлектор проекта: фиксирует события, формирует итоги сессии, дня, недели или месяца и накопительный план улучшений среды и методики.",
+    perms: "Пишет только в <code>reflection/</code>, <code>journal/</code> и план улучшений в <code>Plans/</code>; терминал не запускает. При старте сессии роли-исполнители зовут её для догона пропущенных периодов.",
     path: ".kilo/agents/reflector.md"
   },
   {
     id: "repo-keeper",
     group: "env",
     mode: "all",
-    desc: "Смотритель репозитория проекта: проверяет порядок в файлах, каталогах, README, ветках и рабочих копиях по правилам репозитория и паспорту раскладки, докладывает расхождения с доказательствами и предлагает починку. Не для переноса памяти и рефлексии к канону (это canon-migrator) и не для раскладки каталогов (это layout-builder).",
+    desc: "Смотритель репозитория: проверяет порядок в файлах, каталогах, индексах и ветках, докладывает расхождения и чинит только явно разрешённое. Ничего не додумывает.",
     perms: "Состояние репозитория смотрит свободно, любое изменение — только с вашего подтверждения. Содержание документов не оценивает.",
+    status: MOVING,
     path: ".kilo/agents/repo-keeper.md"
   },
   {
@@ -1882,6 +1953,7 @@ const ROLES = [
     mode: "all",
     desc: "Хранитель трассируемости: собирает матрицы связей между артефактами по навыку и конфигурации проекта, проверяет целостность связей и докладывает расхождения. Ничего не додумывает и не чинит без поручения.",
     perms: "Пишет только в каталог трассируемости и с подтверждением. Найденные расхождения докладывает, но не чинит.",
+    status: MOVING,
     path: ".kilo/agents/traceability.md"
   },
   {
@@ -1890,7 +1962,7 @@ const ROLES = [
     mode: "subagent",
     desc: "Разбор одного локального изображения или отрендеренной страницы PDF моделью, подключённой сейчас в Kilo; провайдер и модель в проекте не закреплены.",
     calledBy: "parser_doc по навыку document-digitize",
-    warn: "Роль Золотого стандарта — канал чтения изображений для parser_doc; <a href=\"#role-vlm\">vlm</a> взаимозаменяема с ней. Нужна модель с поддержкой изображений: без неё роль возвращает только <code>WAITING_FOR_VISION</code>.",
+    warn: "Роль Золотого стандарта — единственный канал чтения изображений для parser_doc; vlm проекта-примера в канон не переносится. Нужна модель с поддержкой изображений: без неё роль возвращает только <code>WAITING_FOR_VISION</code>.",
     perms: "Ничего не правит, не запускает и файлов не пишет. Нечитаемое помечает <code>[НЕЧИТАЕМО]</code>, сомнение — <code>UNCERTAIN</code>.",
     path: ".kilo/agents/vision.md"
   },
@@ -1898,27 +1970,12 @@ const ROLES = [
     id: "vlm",
     group: "documents",
     mode: "subagent",
-    desc: "Визуальная роль, взаимозаменяемая с vision: те же правила, модель другого вендора (выбирается на хосте). Вызывается вместо vision или при её отказе по модели или провайдеру.",
-    calledBy: "parser_doc и другие роли — вместо vision или при её отказе",
+    desc: "Узкоспециализированный разбор изображений: смотрит картинку и возвращает машиночитаемое описание. Сам по себе документ не оцифровывает.",
+    calledBy: "document-processor по контракту document-digitize, отдельными вызовами STRUCTURE и TRANSCRIBE",
+    warn: "Роль проекта-примера; в Золотом стандарте её нет — там <a href=\"#role-vision\">vision</a>. Не вызывайте напрямую: при прямом обращении теряется весь порядок оцифровки — выбор формата, конвертация, проверки и запись в каталог прогона. Нужен разбор документа или схемы — запускайте <code>/document-process</code>.",
     perms: "Ничего не правит и не запускает: только смотрит изображение и возвращает разбор.",
+    status: MOVING,
     path: ".kilo/agents/vlm.md"
-  },
-  {
-    id: "canon-migrator",
-    group: "env",
-    mode: "all",
-    desc: "Приводит рабочее место к канону: находит в репозитории проекта или рефлексии расхождения (память не в <code>MEMORY.md</code>, <code>92-reflection/</code> в проекте, установка рефлексии старой схемы) и переносит найденное на место. Одна цель за запуск.",
-    perms: "Пишет только в <code>projects/</code>, не в <code>00-sources/</code> и не в <code>.kilo/</code>; перенос — только по вашему «да». Не коммитит и не выгружает.",
-    path: ".kilo/agents/canon-migrator.md"
-  },
-  {
-    id: "workspace-migrator",
-    group: "env",
-    mode: "subagent",
-    desc: "Разовая техническая роль: переводит прежнюю рабочую область (форк канона с <code>upstream</code>) на новое рабочее место копированием — проекты, память, решения, планы, промпты, рефлексия. Исходная область не меняется.",
-    calledBy: "только по поручению владельца канона",
-    perms: "Пишет только в <code>projects/</code>; commit, push, удаление и перенос файлов запрещены.",
-    path: ".kilo/agents/workspace-migrator.md"
   }
 ];
 
@@ -1926,11 +1983,11 @@ const ROLES = [
 const SKILLS = [
   { id: "analysis-review", group: "review", desc: "Независимая проверка документов и доказательной базы.", path: ".kilo/skills/analysis-review/SKILL.md" },
   { id: "api-integration", group: "docs", desc: "Описание методов API и объектов, проверка соответствия параметров UI, backend и БФТ. Для API проектов ДБО; внешние форматы коннекторов описываются в ТЗ-Форматах.", path: ".kilo/skills/api-integration/SKILL.md" },
-  { id: "bt-preparation", group: "bt", desc: "Подготовка или доработка одной БТ по индивидуальной инструкции из реестра, актуальным источникам, архитектуре и общему шаблону. Не заменяет независимое ревью.", path: ".kilo/skills/bt-preparation/SKILL.md" },
-  { id: "bt-review", group: "review", desc: "Независимая проверка одной БТ или её изменений по индивидуальной инструкции, источникам, архитектуре и принятым проектным решениям. Проверяет бизнес-границы, структуру, трассировку и диаграммы; возвращает доказательные находки без правок документов.", path: ".kilo/skills/bt-review/SKILL.md" },
+  { id: "bt-preparation", group: "bt", desc: "Подготовка или доработка одной БТ по индивидуальной инструкции из реестра, актуальным источникам, архитектуре и общему шаблону. Не заменяет независимое ревью.", status: MOVING_SKILL, path: ".kilo/skills/bt-preparation/SKILL.md" },
+  { id: "bt-review", group: "review", desc: "Независимая проверка одной БТ или её изменений по индивидуальной инструкции, источникам, архитектуре и принятым проектным решениям. Проверяет бизнес-границы, структуру, трассировку и диаграммы; возвращает доказательные находки без правок документов.", status: MOVING_SKILL, path: ".kilo/skills/bt-review/SKILL.md" },
   { id: "confluence", group: "env", desc: "Чтение страниц корпоративного Confluence по ссылке из задания и публикация статьи из Markdown-источника в указанное пространство. Не для подготовки самого документа и не для пространства, не указанного в задании. На хосте нужны MCP-сервер, персональный токен и VPN — см. <code>.kilo/references/host-setup-windows.md</code>.", path: ".kilo/skills/confluence/SKILL.md" },
   { id: "devops", group: "layout", desc: "Синхронизация репозитория с удалённым origin (fetch, pull, push): проверенный SSH-ключ и типовые ошибки pull/push. Загружать до первой git-команды к remote.", status: "навык проекта-примера; в Золотом стандарте его нет и не переносится: синхронизацию там ведёт роль devops по HTTPS с токеном (canon_update_check.py, pull --ff-only). SSH не используется", path: ".kilo/skills/devops/SKILL.md" },
-  { id: "document-digitize", group: "digitize", desc: "Проверяемая оцифровка локальных PDF/DOCX, опись и подготовка к техническому анализу; XML/XSD-валидация. Незавершённые обязательные возможности блокируют полный выпуск; простое чтение названного фрагмента навыка не требует.", path: ".kilo/skills/document-digitize/SKILL.md" },
+  { id: "document-digitize", group: "digitize", desc: "Проверяемая оцифровка локальных PDF/DOCX в Markdown, опись и подготовка к техническому анализу; XML/XSD-валидация. Уже работает на проектах: регуляторика из PDF → MD. Внедрённые схемы Visio в DOCX — только при установленном LibreOffice. Простое чтение названного фрагмента навыка не требует.", path: ".kilo/skills/document-digitize/SKILL.md" },
   { id: "document-draft", group: "bt", desc: "Черновик аналитического документа по явно названному шаблону и подтверждённым findings активного коннектора: ТЗ, ФТ или описание форматов. Не для извлечения данных из неразобранных DOCX/PDF.", path: ".kilo/skills/document-draft/SKILL.md" },
   { id: "document-package-review", group: "review", desc: "Проверка комплекта входных документов коннектора по именам, версиям, связям и подтверждённым фактам; расхождения и вопросы с адресами. Перед подготовкой документа; не замена оцифровке и XML-валидации.", path: ".kilo/skills/document-package-review/SKILL.md" },
   { id: "docx-layout", group: "bt", desc: "Вёрстка DOCX из Markdown. На Windows нужен настольный Word, для диаграмм — Java и <code>plantuml.jar</code>, для BPMN и draw.io — свои программы: см. <a href=\"#brief\">«Стартовый бриф»</a>.", path: ".kilo/skills/docx-layout/SKILL.md" },
@@ -1944,7 +2001,7 @@ const SKILLS = [
   { id: "skill-creator", group: "env", desc: "Проектирование, создание, проверка и обновление навыков Kilo Code (SKILL.md), в том числе проверка description и структуры ресурсов. Не вместо выполнения задачи существующим навыком.", path: ".kilo/skills/skill-creator/SKILL.md" },
   { id: "source-verification", group: "review", desc: "Проверка источников, гипотез, противоречий и трассировки требований.", path: ".kilo/skills/source-verification/SKILL.md" },
   { id: "technical-analysis", group: "research", desc: "Анализ источников и подготовка технической документации с трассировкой фактов и контролем блокеров: бизнес-требования, ТЗ/ФТ, сценарии, доменная модель, API — после разбора входных документов.", path: ".kilo/skills/technical-analysis/SKILL.md" },
-  { id: "traceability-matrix", group: "research", desc: "Сборка и проверка сводной матрицы трассируемости требований по цепочке уровней, объявленной в конфигурации traceability-chain.json проекта. Правила, формат и проверки — здесь; роль traceability только исполняет.", path: ".kilo/skills/traceability-matrix/SKILL.md" },
+  { id: "traceability-matrix", group: "research", desc: "Сборка и проверка сводной матрицы трассируемости требований по цепочке уровней, объявленной в конфигурации traceability-chain.json проекта. Правила, формат и проверки — здесь; роль traceability только исполняет.", status: MOVING_SKILL, path: ".kilo/skills/traceability-matrix/SKILL.md" },
   { id: "tz-fssp-mfo", group: "docs", desc: "Профиль одного проекта — только <code>fssp_PKO_MFO</code>, к другим проектам не применяется: настройки сборки ТЗ по форматам ФССП ↔ КО/МФО, карта входов, локальные решения, регрессионные проверки. Работает с ролью tz-writer.", path: ".kilo/skills/tz-fssp-mfo/SKILL.md" },
   { id: "tz-osnovnoe-rs-connect", group: "docs", desc: "Черновик основного ТЗ модуля RS-Connect для обмена, где госорган инициирует запрос, а банк предоставляет сведения, — по подтверждённым ТЗ-Форматам, ФТ и XSD. Не для ТЗ-Форматов, ФТ и варианта «госорган — поставщик».", path: ".kilo/skills/tz-osnovnoe-rs-connect/SKILL.md" },
   { id: "ui-description", group: "docs", desc: "Описание пользовательского интерфейса по регламенту подготовки Use Case и описания UI и правилам каталога описаний UI проекта.", path: ".kilo/skills/ui-description/SKILL.md" },
@@ -1958,7 +2015,7 @@ const TASKS = [
   {
     task: "Подготовить или доработать одну БТ",
     prompt: "Подготовь БТ-&lt;номер&gt; «&lt;название&gt;»",
-    you: roleLink("bt-writer") + " — напрямую; или " + roleLink("business-analyst") + ", который поручит БТ ей сам",
+    you: roleLink("business-analyst"),
     under: roleLink("reviewer") + " — независимую проверку исполнитель запускает сам, просить об этом не нужно",
     skill: skillLink("bt-preparation") + " + " + skillLink("bt-review"),
     notes: [
@@ -1971,14 +2028,14 @@ const TASKS = [
     ]
   },
   {
-    task: "Спроектировать или обновить инструкцию к документу (БТ, ФТ, ТЗ, UC)",
+    task: "Спроектировать или обновить инструкцию формирования БТ",
     prompt: "Обнови инструкцию формирования для БТ-&lt;номер&gt;",
-    you: roleLink("instruction-writer"),
-    under: roleLink("reviewer") + " — при прямом вызове роль зовёт его сама",
+    you: roleLink("bt-instruction-writer"),
+    under: "—",
     skill: "—",
     notes: [
       { icon: "i-compass", label: "Когда запускать",
-        text: "До написания самого документа (в примере — БТ), если инструкции для него ещё нет или она устарела: изменился источник, приняли новое проектное решение, на приёмке прошлой БТ всплыло правило, которое нужно закрепить на будущее." },
+        text: "До написания самой БТ, если инструкции для неё ещё нет или она устарела: изменился источник, приняли новое проектное решение, на приёмке прошлой БТ всплыло правило, которое нужно закрепить на будущее." },
       { icon: "i-check", label: "Что получите",
         text: "Файл инструкции в <code>90-work-items/instruction/</code> — по нему потом собирается БТ. Это методический документ, а не требование: сам по себе он ничего не описывает про продукт." }
     ]
@@ -2053,8 +2110,8 @@ const TASKS = [
   {
     task: "Исследовать вопрос по источникам",
     prompt: "/source-analysis &lt;вопрос своими словами&gt;",
-    you: "готовая команда <code>/source-analysis</code> (Золотой стандарт)",
-    under: "текущая роль с правом записи (" + roleLink("business-analyst") + ", писатели документов); факты — в файлы исследования проекта, в проекте-примере — через " + roleLink("knowledge-curator"),
+    you: "готовая команда <code>/source-analysis</code> (пример проекта)",
+    under: roleLink("business-analyst") + ", запись фактов — " + roleLink("knowledge-curator"),
     skill: skillLink("technical-analysis") + ", " + skillLink("source-verification"),
     notes: [
       { icon: "i-compass", label: "Когда запускать",
@@ -2064,8 +2121,8 @@ const TASKS = [
   {
     task: "Проверить состав входящего комплекта",
     prompt: "/package-review &lt;путь к каталогу с комплектом&gt;",
-    you: "готовая команда <code>/package-review</code> (Золотой стандарт)",
-    under: "текущая роль с правом записи (" + roleLink("business-analyst") + ", tz-writer, ft-writer); доказательства — в файлы исследования проекта, в проекте-примере — через " + roleLink("knowledge-curator"),
+    you: "готовая команда <code>/package-review</code> (пример проекта)",
+    under: roleLink("business-analyst") + ", запись — " + roleLink("knowledge-curator"),
     skill: skillLink("document-package-review"),
     notes: [
       { icon: "i-compass", label: "Когда запускать",
@@ -2138,7 +2195,7 @@ const TASKS = [
     skill: "—",
     notes: [
       { icon: "i-folder", label: "Куда попадёт запись",
-        text: "В Золотом стандарте: подтверждённые факты — <code>findings.md</code>, пробелы — <code>open-questions.md</code>, рассуждения — <code>research-notes.md</code> в каталоге <code>research_root</code> паспорта; то, что нужно в следующей сессии, — строкой в <code>MEMORY.md</code> проекта, свои ошибки — в <code>projects/reflection/</code>. Пример проекта: адреса перечислены в <code>.kilo/knowledge-layout.json</code>." }
+        text: "В Золотом стандарте: подтверждённые факты — <code>findings.md</code>, пробелы — <code>open-questions.md</code>, рассуждения — <code>research-notes.md</code> в каталоге <code>research_root</code> паспорта; то, что нужно в следующей сессии, — строкой в <code>MEMORY.md</code>, свои ошибки — в <code>reflection/</code>. Пример проекта: адреса перечислены в <code>.kilo/knowledge-layout.json</code>." }
     ]
   },
   {
@@ -2195,13 +2252,13 @@ const TASKS = [
   },
   {
     task: "CI, git, выгрузка своей работы",
-    prompt: "Выгрузи работу по проекту",
+    prompt: "Выгрузи накопленные коммиты на сервер",
     you: roleLink("devops"),
     under: "—",
     skill: "без навыка: роль devops, раздел «Выгрузка работы» (в проекте-примере — " + skillLink("devops") + ")",
     notes: [
       { icon: "i-compass", label: "Когда запускать",
-        text: "В конце рабочего куска: зафиксировать сделанное и выгрузить. Каждый проект <code>projects/&lt;проект&gt;/</code> и рефлексия <code>projects/reflection/</code> — отдельные репозитории; выгрузка — по вашей просьбе, по одному репозиторию. Корень — клон канона, из него ничего не выгружается." },
+        text: "В конце рабочего куска: зафиксировать сделанное и выгрузить. В коммит своей области идёт только своя часть — <code>projects/</code>, <code>decisions/</code>, <code>Plans/</code>, <code>reflection/</code>, <code>MEMORY.md</code>; общая часть не выгружается." },
       { icon: "i-alert", label: "Если push отклонён",
         text: "Значит, на сервере уже есть чужие коммиты. Это штатная ситуация: нужно слияние, и его выполняет та же роль — отдельным поручением «влей локальные изменения, при необходимости проведи слияние». Не пересоздавайте файлы вручную и не заводите вторую ветку." },
       { icon: "i-alert", label: "Если нет связи",
@@ -2221,13 +2278,13 @@ const TASKS = [
   },
   {
     task: "Рефлексия сессии, дня, недели, месяца",
-    prompt: "Рефлексия за сегодня",
+    prompt: "Подведи итог сессии",
     you: roleLink("reflector"),
     under: "—",
     skill: skillLink("reflection-synthesis") + ", " + skillLink("session-audit"),
     notes: [
       { icon: "i-compass", label: "Когда запускать",
-        text: "Итог — когда попросите: в конце сессии или дня, если есть что зафиксировать: принятое решение, ошибка, изменившийся порядок работы. Кроме того, при старте сессии роли-исполнители зовут рефлектора догнать пропущенные периоды — с бюджетом, на основную работу это не влияет. Записи рефлексии лежат в <code>projects/reflection/</code> — это архив и сырьё для плана улучшений; на вход сборки и проверки документов они не идут. Итог недели или месяца просят так же: «Подведи итог недели»." }
+        text: "Итог — когда попросите: в конце сессии или дня, если есть что зафиксировать: принятое решение, ошибка, изменившийся порядок работы. Кроме того, при старте сессии роли-исполнители зовут рефлектора догнать пропущенные периоды — с бюджетом, на основную работу это не влияет. Записи рефлексии — архив и сырьё для плана улучшений в <code>Plans/</code>: на вход сборки и проверки документов они не идут." }
     ]
   }
 ];
