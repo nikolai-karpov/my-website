@@ -617,9 +617,12 @@
   <div class="nav-page-head"><a class="nav-page-link" href="#t-start-env" title="Старт"><svg class="ico" aria-hidden="true"><use href="#i-flag"/></svg><span>Старт</span></a><button type="button" class="nav-caret" aria-expanded="true" aria-controls="nav-sub-start" aria-label="Свернуть или развернуть «Старт»"><svg class="ico" aria-hidden="true"><use href="#i-chevron"/></svg></button></div>
   <ul class="nav-sub" id="nav-sub-start">
     <li><a href="#t-start-env">Окружение</a></li>
+    <li><a href="#t-start-ui">Интерфейс Kilo Code</a></li>
     <li><a href="#t-start-gitlab">Подключение к GitLab</a></li>
+    <li><a href="#t-start-project">Первый проект</a></li>
     <li><a href="#t-start-day">Первый день</a></li>
     <li><a href="#t-start-ready">Проверка готовности</a></li>
+    <li><a href="#t-start-issues">Типовые сбои</a></li>
     <li><a href="#t-start-gaps">Пробелы и противоречия</a></li>
   </ul>
 </li>
@@ -673,9 +676,12 @@
 </header>
 <div class="tablist-wrap"><div class="tablist" role="tablist" aria-label="Вкладки страницы «Старт»">
   <button type="button" role="tab" id="tab-start-env" aria-controls="t-start-env" aria-selected="false" tabindex="-1" data-page="start" data-tab="env">Окружение</button>
+  <button type="button" role="tab" id="tab-start-ui" aria-controls="t-start-ui" aria-selected="false" tabindex="-1" data-page="start" data-tab="ui">Интерфейс Kilo Code</button>
   <button type="button" role="tab" id="tab-start-gitlab" aria-controls="t-start-gitlab" aria-selected="false" tabindex="-1" data-page="start" data-tab="gitlab">Подключение к GitLab</button>
+  <button type="button" role="tab" id="tab-start-project" aria-controls="t-start-project" aria-selected="false" tabindex="-1" data-page="start" data-tab="project">Первый проект</button>
   <button type="button" role="tab" id="tab-start-day" aria-controls="t-start-day" aria-selected="false" tabindex="-1" data-page="start" data-tab="day">Первый день</button>
   <button type="button" role="tab" id="tab-start-ready" aria-controls="t-start-ready" aria-selected="false" tabindex="-1" data-page="start" data-tab="ready">Проверка готовности</button>
+  <button type="button" role="tab" id="tab-start-issues" aria-controls="t-start-issues" aria-selected="false" tabindex="-1" data-page="start" data-tab="issues">Типовые сбои</button>
   <button type="button" role="tab" id="tab-start-gaps" aria-controls="t-start-gaps" aria-selected="false" tabindex="-1" data-page="start" data-tab="gaps">Пробелы и противоречия</button>
 </div></div>
 <section class="tabpanel" id="t-start-env" role="tabpanel" aria-labelledby="tab-start-env" tabindex="-1" data-page="start" data-tab="env" data-title="Окружение">
@@ -689,28 +695,28 @@
 
   <h3 class="sub">1. Программы</h3>
   <details class="tbl">
-  <summary><svg class="ico tbl-chev" aria-hidden="true"><use href="#i-chevron"/></svg><span class="tbl-title">1. Программы</span><span class="tbl-count">14 строк</span></summary>
+  <summary><svg class="ico tbl-chev" aria-hidden="true"><use href="#i-chevron"/></svg><span class="tbl-title">1. Программы</span><span class="tbl-count">15 строк</span></summary>
 <div class="table-scroll">
     <table class="flow">
       <thead><tr><th>Программа</th><th>Зачем</th><th>Статус</th><th>Windows</th><th>macOS</th><th>Linux</th><th>Как проверить</th></tr></thead>
       <tbody>
         <tr>
           <td><b>VS Code</b></td>
-          <td>Редактор: в нём открывают рабочую папку и правят файлы<small>webinar-01, разд. 5</small></td>
+          <td>Редактор: в нём открывают рабочую папку и правят файлы<small>вебинар 1, разд. 5</small></td>
           <td>обязательно</td>
-          <td>Установить, если нет; рабочую папку открыть в VS Code: Файл → Открыть папку<small>webinar-01, разд. 6, шаг 1</small></td>
+          <td>Установить, если нет; рабочую папку открыть в VS Code: Файл → Открыть папку<small>вебинар 1, разд. 6, шаг 1</small></td>
           <td>Установщик .dmg с code.visualstudio.com; рабочую папку открыть: Файл → Открыть папку<small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
           <td>Пакет .deb/.rpm с code.visualstudio.com или из репозитория/зеркала дистрибутива; рабочую папку открыть: Файл → Открыть папку<small>по документации разработчиков; сверено 29.09.2026 — в каноне Linux-установка не описана; имена пакетов — Debian/Ubuntu, на другом дистрибутиве уточнить</small></td>
-          <td>Рабочая папка открыта в VS Code<small>webinar-01, разд. 13</small></td>
+          <td>Рабочая папка открыта в VS Code<small>вебинар 1, разд. 13</small></td>
         </tr>
         <tr>
           <td><b>Kilo Code</b> (расширение)</td>
-          <td>Агент: сессии, роли, навыки, память проекта, доступ к файлам<small>webinar-01, разд. 5</small></td>
+          <td>Агент: сессии, роли, навыки, память проекта, доступ к файлам<small>вебинар 1, разд. 5</small></td>
           <td>обязательно</td>
-          <td>Установить расширение и перезапустить окно VS Code; установка закрыта политикой — заявка в сервис-деск<small>webinar-01, разд. 6, шаг 2</small></td>
+          <td>Установить расширение и перезапустить окно VS Code; установка закрыта политикой — заявка в сервис-деск<small>вебинар 1, разд. 6, шаг 2</small></td>
           <td>Расширение из Marketplace VS Code, перезапустить окно. Kilo CLI аналитику не нужен — всё работает внутри VS Code<small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
           <td>Как на macOS: расширение из Marketplace VS Code, перезапустить окно; если установка расширений закрыта политикой — заявка в сервис-деск<small>по документации разработчиков; сверено 29.09.2026 — в каноне Linux-установка не описана; имена пакетов — Debian/Ubuntu, на другом дистрибутиве уточнить</small></td>
-          <td>Расширение активно после перезапуска<small>webinar-01, разд. 13</small> Новая сессия или <code>/reload</code><small>INSTALL-PARSER-WINDOWS.md, § 6</small></td>
+          <td>Расширение активно после перезапуска<small>вебинар 1, разд. 13</small> Новая сессия или <code>/reload</code><small>INSTALL-PARSER-WINDOWS.md, § 6</small></td>
         </tr>
         <tr>
           <td><b>Git</b></td>
@@ -766,6 +772,15 @@
           <td><code>sudo apt install openjdk-17-jre</code> (или Temurin с adoptium.net); JAR — с plantuml.com в <code>.venv/vendor/plantuml.jar</code>, не встроенный в расширение VS Code<small>по документации разработчиков; сверено 29.09.2026 — в каноне Linux-установка не описана; имена пакетов — Debian/Ubuntu, на другом дистрибутиве уточнить</small></td>
           <td><code>java -version</code>; <code>java -jar .venv\vendor\plantuml.jar -version</code><small>INSTALL-PARSER-WINDOWS.md, § 4</small> macOS и Linux: <code>java -jar .venv/vendor/plantuml.jar -version</code></td>
         </tr>
+        <tr id="row-plantuml-preview">
+          <td><b>Markdown Preview Enhanced</b> (расширение VS Code)</td>
+          <td>Превью PlantUML-диаграмм внутри <code>.md</code> в VS Code — чтобы видеть картинку, а не текст диаграммы<small>решение владельца 29.09.2026; на пилоте 23–29.09.2026 расширение проверяли в Marketplace</small></td>
+          <td>условно: диаграммы в Markdown</td>
+          <td>Marketplace VS Code → поиск по названию → установить. В настройках расширения указать путь к <b>локальному</b> <code>.venv\vendor\plantuml.jar</code>; внешний сервер рендера не использовать — JAR только локальный, не online-server. Как называются параметры и что стоит в них по умолчанию — сверить на своей машине [ПРОВЕРИТЬ ПО ЭКРАНУ]<small>правило JAR — INSTALL-PARSER-WINDOWS.md, § 4; порядок — вкладка «Подключение к GitLab», шаг 10</small></td>
+          <td>То же; путь — <code>.venv/vendor/plantuml.jar</code></td>
+          <td>То же; путь — <code>.venv/vendor/plantuml.jar</code></td>
+          <td>Превью <code>.md</code> с диаграммой PlantUML показывает картинку [ПРОВЕРИТЬ ПО ЭКРАНУ]</td>
+        </tr>
         <tr>
           <td><b>Microsoft Word</b>, настольный, активированный</td>
           <td>Сборка DOCX навыком <code>docx-layout</code>; Word Online и работа как служба не поддерживаются<small>docx-layout/references/windows-setup.md</small></td>
@@ -813,10 +828,10 @@
         </tr>
         <tr>
           <td><b>Корпоративный VPN</b></td>
-          <td>Доступ к внутренним системам, в том числе к Confluence<small>webinar-01, разд. 4.1; .kilo/agents/confluence.md</small></td>
+          <td>Доступ к внутренним системам, в том числе к Confluence<small>вебинар 1, разд. 4.1; .kilo/agents/confluence.md</small></td>
           <td>условно: работа с внутренними системами</td>
-          <td>Через сервис-деск<small>webinar-01, разд. 4.1</small></td>
-          <td>Через сервис-деск<small>webinar-01, разд. 4.1</small></td>
+          <td>Через сервис-деск<small>вебинар 1, разд. 4.1</small></td>
+          <td>Через сервис-деск<small>вебинар 1, разд. 4.1</small></td>
           <td>Через сервис-деск; есть ли клиент VPN под Linux — спросить в заявке: без него нет GitLab и Confluence<small>вкладка «Пробелы и противоречия»</small></td>
           <td>Доступ через VPN — по правилам компании; признак и проверка в навигаторе не описываются</td>
         </tr>
@@ -826,7 +841,8 @@
 </details>
 
   <h3 class="sub">2. Python-библиотеки</h3>
-  <p class="lead">Окружение <code>.venv/</code> создаётся только по <code>INSTALL-PARSER-WINDOWS.md</code>, своё на каждой машине, между компьютерами не переносится и проектными данными не является. <small>AGENTS.md, § 4</small></p>
+  <p class="lead"><b>Зачем.</b> Инструменты канона — разбор документов, работа с диаграммами, сборка DOCX — работают в своей среде. Администраторы ставят на компьютер основные библиотеки, но их нужно подключить к рабочему месту — в отдельную «песочницу» <code>.venv</code>. Пока её нет, с агентом можно разговаривать, но распарсить ваши документы и пересобрать их он не сможет.<small>объяснение владельца на пилоте 23–29.09.2026</small></p>
+  <p class="lead">Окружение <code>.venv/</code> создаётся только по <code>INSTALL-PARSER-WINDOWS.md</code>, своё на каждой машине, между компьютерами не переносится и проектными данными не является. <small>AGENTS.md, § 4</small> Основной путь — поручить создание агенту в режиме <b>Code</b>: <a href="#step-venv">вкладка «Подключение к GitLab», шаг 9</a> (признак успеха и что делать при ошибке — там же).<small>решение владельца 29.09.2026</small></p>
   <details class="tbl">
   <summary><svg class="ico tbl-chev" aria-hidden="true"><use href="#i-chevron"/></svg><span class="tbl-title">2. Python-библиотеки</span><span class="tbl-count">11 строк</span></summary>
 <div class="table-scroll">
@@ -866,7 +882,7 @@
 ./.venv/bin/python -c "import lxml.etree, pymupdf; d=pymupdf.open(); p=d.new_page(); assert hasattr(p, 'find_tables'); print('PYTHON_DEPS_OK')"
 ./.venv/bin/python .kilo/tools/test_pdf_layers.py</pre><button type="button" class="copy">Копировать</button></div>
 </div>
-  <p class="lead">Готовое поручение агенту на Windows — команда <code>/setup-parser</code> (<a href="#commands">таблица команд</a>); на macOS и Linux команды выше выполняются вручную.</p>
+  <p class="lead">Команды выше — ручной путь и справка: что именно делает агент на шаге 9 вкладки «Подключение к GitLab». Ещё одно готовое поручение на Windows — команда <code>/setup-parser</code> (<a href="#commands">таблица команд</a>); <code>plantuml.jar</code> она не скачивает<small>.kilo/command/setup-parser.md, шаг 6</small>.</p>
 
   <h3 class="sub">3. Модели и ключи</h3>
   <details class="tbl">
@@ -878,7 +894,7 @@
       <tbody>
         <tr><td>Провайдер</td><td>В Золотом стандарте не закреплён: ни одна роль не задаёт provider и model<small>kilo-canon/README.md; PACKAGE-MANIFEST.md</small></td></tr>
         <tr><td>Где задаются модели</td><td>Глобальный конфиг хоста: <code>%USERPROFILE%\.config\kilo\kilo.jsonc</code>, ключи <code>model</code>, <code>small_model</code>, <code>subagent_model</code>, значение вида <code>&lt;провайдер&gt;/&lt;модель&gt;</code> — из списка моделей своего клиента, не угадывать<small>host-setup-windows.md, § 1</small> Путь на macOS — <code>~/.config/kilo/kilo.jsonc</code><small>документация Kilo, «Settings»; сверено 26.09.2026</small> На Linux — тот же <code>~/.config/kilo/kilo.jsonc</code>; история Kilo — <code>~/.local/share/kilo/</code><small>reflector.md — путь истории для macOS и Linux; путь конфига на Linux не проверен</small></td></tr>
-        <tr><td>Ключ</td><td>Личный: не пересылают коллегам, не кладут в рабочую папку, не вставляют в промпты и на скриншоты<small>webinar-01, разд. 6, шаг 3</small></td></tr>
+        <tr><td>Ключ</td><td>Личный: не пересылают коллегам, не кладут в рабочую папку, не вставляют в промпты и на скриншоты<small>вебинар 1, разд. 6, шаг 3</small></td></tr>
         <tr><td>Изображения</td><td>Нужна модель с поддержкой image input — её использует роль <a href="#role-vision">vision</a>. Без неё разбор PDF/DOCX останавливается в <code>WAITING_FOR_VISION</code> там, где vision обязателен<small>INSTALL-PARSER-WINDOWS.md; .kilo/agents/vision.md</small></td></tr>
         <tr><td>Подписка и модели у коллег</td><td>Пакет Alibaba: Qwen, DeepSeek, GLM, Kimi; ключ выдаёт Игорь, заявка через Алёну<small>вебинар 1, слайд «Рабочий контур»; договорённость 29.09.2026</small></td></tr>
         <tr><td>Своя подписка</td><td>Можно: к Kilo Code подключаются GPT и другие провайдеры. Claude — только по API, по подписке нельзя. Настройка доступа и VPN для личной подписки — на сотруднике<small>встреча ведущих 29.09.2026</small></td></tr>
@@ -888,6 +904,25 @@
     </div>
   </div>
 </details>
+  <p class="lead" id="provider-setup" style="margin-top:14px"><b>Подключить провайдера в Kilo Code</b> — руками, один раз на компьютере. Надписи интерфейса записаны с речи на пилоте и не сверены со скриншотом: [ПРОВЕРИТЬ ПО ЭКРАНУ].<small>пилот 23–29.09.2026</small></p>
+  <ol class="steps timeline">
+    <li>
+      <div class="step-title">Открыть список провайдеров и найти Alibaba</div>
+      <p>Панель Kilo Code → настройки → провайдеры → «показать больше провайдеров» → набрать в поиске <b>Alibaba</b>.<small>пилот 23–29.09.2026</small></p>
+      <figure class="shot" data-shot="provider-alibaba"><div class="shot-box">СКРИНШОТ · Провайдеры Kilo Code: поиск Alibaba и выбор тарифа</div><figcaption>Провайдеры Kilo Code: поиск Alibaba и выбор тарифа</figcaption></figure>
+    </li>
+    <li>
+      <div class="step-title">Выбрать тариф и вставить ключ</div>
+      <p>Из вариантов Alibaba — тариф «токенплан». Ключ, выданный вам, скопировать <b>кнопкой «копировать»</b> там, где его выдали, а не выделением мышью, и вставить в поле ключа.<small>пилот 23–29.09.2026</small> Ключ личный: его не пересылают, не кладут в рабочую папку и не вставляют в сообщения агенту (строка «Ключ» таблицы выше).</p>
+    </li>
+    <li>
+      <div class="step-title">Проверить связь</div>
+      <p>Новая сессия, любая роль: «Подтверди связь одним предложением» (<a href="#t-start-ready">вкладка «Проверка готовности»</a>).</p>
+      <p><b>Признак успеха.</b> Агент ответил, ошибки авторизации нет.</p>
+      <p><b>Если не вышло.</b> Чаще всего ключ скопировался не целиком — на пилоте не скопировались первые символы. Отключите провайдера, скопируйте ключ заново кнопкой и вставьте ещё раз.<small>пилот 23–29.09.2026</small> Не помогло — вопрос в чат аналитиков, топик «GitLab и ключи» (<a href="#t-start-issues">типовые сбои</a>).</p>
+    </li>
+  </ol>
+  <p class="lead">Модель выбирается в панели агента; «звёздочка» у модели добавляет её в избранное. Группу Kilo Gateway в списке моделей можно свернуть: она не нужна, учётной записи там у вас нет.<small>пилот 23–29.09.2026; решение владельца 29.09.2026</small> Правило пилота: фундамент проекта (паспорт) — модель поумнее, механика (каркас папок, коммиты и пуш) — дешёвая. Названия моделей здесь не приводятся.<small>пилот 23–29.09.2026</small></p>
 
   <h3 class="sub">4. MCP-серверы: Confluence и Figma</h3>
   <details class="tbl">
@@ -926,7 +961,7 @@
         <tr><td>Доступ</td><td>Группа открыта всем аналитикам с равными правами: свой репозиторий каждый создаёт сам (New project в группе). Корпоративный VPN нужен для GitLab и Confluence<small>28.09.2026</small></td></tr>
         <tr><td>Аутентификация</td><td>Ключ SSH: создаётся на компьютере (агент, роль Code), публичная часть вставляется в GitLab → Preferences → Access → SSH Keys, срок — до года. Ключи, токены и пароли агенту в чат не пишут<small>вкладка «Подключение к GitLab»</small></td></tr>
         <tr><td>VPN и Git</td><td>Commit, push и pull в корпоративный GitLab проходят только под корпоративным VPN<small>встреча ведущих 29.09.2026</small> Если агент не дошёл до сервера — он коммитит, а <code>git push</code> делаете вы в терминале VS Code. Ключи, remote и порт агент сам не меняет<small>28.09.2026; devops.md</small></td></tr>
-        <tr><td>Нет прав на <code>main</code></td><td>Пока права на выгрузку в главную ветку выдаются, попросите <code>devops</code> выгрузить работу в отдельную ветку — владелец канона её вольёт<small>встреча ведущих 29.09.2026</small></td></tr>
+        <tr><td>Нет прав на <code>main</code></td><td>Отказ «You are not allowed to push code to protected branches»: защиту и права не менять, веток и merge request не предлагать; дословный текст отказа — владельцу канона<small>.kilo/references/hosting-gitlab.md, таблица отказов; devops.md, «Сбой выгрузки»</small> На встрече ведущих 29.09.2026 обсуждали выгрузку в отдельную ветку — канон её не допускает [РЕШАЕТ АВТОР]</td></tr>
         <tr><td>Remote</td><td>Корень рабочего места — клон канона, его <code>origin</code> — <code>kilo-canon</code>, только чтение. <code>projects/</code> целиком — ваш репозиторий под вашей фамилией (проекты и <code>reflection/</code>), со своим <code>origin</code>. Прежней схемы «форк с <code>upstream</code>» больше нет<small>решение владельца 28.09.2026; devops.md, «Сначала определи, где ты»</small></td></tr>
         <tr><td>Обновление канона</td><td>Роль <code>devops</code> проверяет сама при старте сессии, не чаще раза в сутки: <code>python .kilo/tools/canon_update_check.py</code> — только <code>fetch</code> и <code>pull --ff-only</code> в корне; изменились правила — строка «начните новую сессию». Регистрироваться не нужно; локальные правки в корне останавливают обновление<small>kilo-canon/README.md, «Как получать обновления»; devops.md, «Проверка актуальности канона при старте»</small></td></tr>
         <tr><td>Обновление вручную</td><td>Фраза «проверь канон» — та же проверка с ключом <code>--force</code>, без суточного гейта. Команды <code>/sync-workspace</code> больше нет (удалена 25.09.2026)<small>devops.md; PACKAGE-MANIFEST.md, «История»</small></td></tr>
@@ -941,7 +976,7 @@
   <ol class="steps">
     <li>
       <div class="step-title">Короткий путь до рабочей папки</div>
-      <p>Держите его короче 40 символов: длинный путь ломает сборку документов<small>webinar-01, разд. 6, шаг 1 и разд. 7.1</small></p>
+      <p>Держите его короче 40 символов: длинный путь ломает сборку документов<small>вебинар 1, разд. 6, шаг 1 и разд. 7.1</small></p>
       <p>Лимит длины пути у Word на Windows — 255; при раскладке проекта роль передаёт <code>--host-root-length</code> по Windows-хосту<small>.kilo/agents/layout-builder.md</small></p>
     </li>
     <li>
@@ -959,15 +994,107 @@
     </li>
     <li>
       <div class="step-title">Границы по данным</div>
-      <p>Облачная модель получает всё, что ей дали. Без отдельного разрешения не передавать пароли, токены, ключи, персональные и реальные клиентские данные; то, что передаёте, — обезличивать. Регламент компании по ИИ важнее этой страницы.<small>webinar-01, разд. 12</small></p>
+      <p>Облачная модель получает всё, что ей дали. Без отдельного разрешения не передавать пароли, токены, ключи, персональные и реальные клиентские данные; то, что передаёте, — обезличивать. Регламент компании по ИИ важнее этой страницы.<small>вебинар 1, разд. 12</small></p>
     </li>
     <li class="wide">
       <div class="step-title">Что принести с собой</div>
-      <p>Один реальный и хорошо знакомый проект, лучше уже сданный: так видно, где настоящая находка, а где ошибка помощника. Исходные документы — файлами.<small>Lessons/lesson-01…/brief-uchastnika.md, разд. 3</small></p>
-      <p>Файлы привести в рабочий вид: распаковать архивы; старые <code>.doc</code> пересохранить в <code>.docx</code>; принять исправления рецензирования; скачать справочники, доступные только по внешним ссылкам; ключ доступа и документы в чат встречи не отправлять.<small>brief-uchastnika.md, разд. 3</small></p>
-      <p>Пример проекта-коннектора: ТЗ, ТЗ-Форматы, ФТ, РП ВС — обязательно; XSD, предыдущая версия РП ВС, текстовый экспорт макетов — если есть.<small>brief-uchastnika.md, разд. 3</small> Проект ДБО — по приоритету источников регламента: требование пользователя → БФТ (источник истины) → эталонные Use Case проекта → код backend и frontend → выгруженные макеты и Figma → архитектурные соглашения → общие шаблоны; деления «обязательно / если есть» канон не задаёт.<small>use-case-preparation/SKILL.md, «Приоритет источников»</small></p>
+      <p>Один реальный и хорошо знакомый проект, лучше уже сданный: так видно, где настоящая находка, а где ошибка помощника. Исходные документы — файлами.<small>бриф участника вебинара 1, разд. 3</small></p>
+      <p>Файлы привести в рабочий вид: распаковать архивы; старые <code>.doc</code> пересохранить в <code>.docx</code>; принять исправления рецензирования; скачать справочники, доступные только по внешним ссылкам; ключ доступа и документы в чат встречи не отправлять.<small>бриф участника вебинара 1, разд. 3</small></p>
+      <p>Пример проекта-коннектора: ТЗ, ТЗ-Форматы, ФТ, РП ВС — обязательно; XSD, предыдущая версия РП ВС, текстовый экспорт макетов — если есть.<small>бриф участника вебинара 1, разд. 3</small> Проект ДБО — по приоритету источников регламента: требование пользователя → БФТ (источник истины) → эталонные Use Case проекта → код backend и frontend → выгруженные макеты и Figma → архитектурные соглашения → общие шаблоны; деления «обязательно / если есть» канон не задаёт.<small>use-case-preparation/SKILL.md, «Приоритет источников»</small></p>
     </li>
   </ol>
+</section>
+<section class="tabpanel" id="t-start-ui" role="tabpanel" aria-labelledby="tab-start-ui" tabindex="-1" data-page="start" data-tab="ui" data-title="Интерфейс Kilo Code">
+<h2 class="tab-title">Старт › Интерфейс Kilo Code</h2>
+  <div class="sec-head">
+    <svg class="ico"><use href="#i-pointer"/></svg>
+    <h2>Азбука панели Kilo Code: где нажать</h2>
+  </div>
+  <p class="lead">Всё, что понадобится на следующих вкладках: открыть панель агента, начать сессию, выбрать роль, передать агенту путь, ответить на запрос разрешения. Порядок строк — порядок, в котором это встречается на первых шагах. Писать агенту можно по-русски: «он всё поймёт».<small>пилот 23–29.09.2026</small></p>
+  <p class="warn-inline"><b>Надписи не сверены со скриншотами.</b> Названия кнопок и расположение записаны с речи на пилоте 23–29.09.2026; перед опорой на них сверьте со своим экраном [ПРОВЕРИТЬ ПО ЭКРАНУ]. Версия Kilo Code не закреплена — вид панели может отличаться.</p>
+  <details class="tbl" open>
+  <summary><svg class="ico tbl-chev" aria-hidden="true"><use href="#i-chevron"/></svg><span class="tbl-title">Что сделать → где нажать</span><span class="tbl-count">12 строк</span></summary>
+<div class="table-scroll">
+    <table class="flow">
+      <thead><tr><th>Что сделать</th><th>Где нажать</th><th>Признак успеха</th><th>Если не вышло</th></tr></thead>
+      <tbody>
+        <tr id="ui-layout">
+          <td><b>Разложить окно</b></td>
+          <td>Слева — проводник, «основной рабочий инструмент»; справа — диалог с агентом. На боковой панели оставить проводник, поиск, изменения (Git) и Marketplace<small>пилот 23–29.09.2026</small></td>
+          <td>Слева видны папки рабочего места, справа — панель агента</td>
+          <td>Окно агента узкое — растянуть границу панели мышью<small>пилот</small></td>
+        </tr>
+        <tr id="ui-open-panel">
+          <td><b>Открыть панель агента</b></td>
+          <td>Иконка в правом верхнем углу окна, самая правая<small>пилот 23–29.09.2026</small></td>
+          <td>Справа открылась панель Kilo Code с полем сообщения</td>
+          <td>Панель закрыли случайно — открыть той же иконкой. Открылись два окна Kilo — лишнее закрыть<small>пилот</small></td>
+        </tr>
+        <tr id="ui-new-session">
+          <td><b>Новая сессия</b></td>
+          <td>«Плюсик» вверху панели агента. На пилоте для новой роли или новой задачи открывали новую сессию; сессии могут идти параллельно<small>пилот 23–29.09.2026</small></td>
+          <td>Пустой диалог, в поле сообщения нет прежней переписки</td>
+          <td>—</td>
+        </tr>
+        <tr id="ui-history">
+          <td><b>Вернуть прежнюю сессию</b></td>
+          <td>«Часики со стрелкой» справа от плюсика — история сессий; так же возвращают случайно закрытую вкладку<small>пилот 23–29.09.2026</small></td>
+          <td>Прежний диалог снова открыт</td>
+          <td>—</td>
+        </tr>
+        <tr id="ui-role">
+          <td><b>Выбрать роль</b></td>
+          <td>Список ролей в панели агента. Пока канон не подключён, в списке только встроенный режим <b>Code</b> — им делают шаги 1–3 вкладки <a href="#t-start-gitlab">«Подключение к GitLab»</a><small>пилот 23–29.09.2026</small></td>
+          <td>В панели показано имя нужной роли</td>
+          <td>Колёсико мыши может не листать список<small>пилот</small> — как прокрутить, [ПРОВЕРИТЬ ПО ЭКРАНУ]. Ролей канона нет в списке — закрыть и открыть VS Code (<a href="#t-start-issues">типовые сбои</a>)</td>
+        </tr>
+        <tr id="ui-model">
+          <td><b>Выбрать модель</b></td>
+          <td>Список моделей в панели агента; «звёздочка» — добавить модель в избранное<small>пилот 23–29.09.2026</small></td>
+          <td>Имя модели видно в панели</td>
+          <td>Моделей нет — не подключён провайдер (<a href="#provider-setup">Окружение, «Подключить провайдера»</a>)</td>
+        </tr>
+        <tr id="ui-path">
+          <td><b>Передать агенту путь</b></td>
+          <td>Проводник → правая кнопка на папке или файле → «Копировать относительный путь» → вставить в сообщение. Так агент не тратит время на поиск по проекту<small>пилот 23–29.09.2026</small></td>
+          <td>В сообщении путь вида <code>projects/&lt;проект&gt;/…</code></td>
+          <td>—</td>
+        </tr>
+        <tr id="ui-newline">
+          <td><b>Новая строка в сообщении</b></td>
+          <td><b>Shift+Enter</b>; просто Enter отправляет сообщение<small>пилот 23–29.09.2026</small></td>
+          <td>Курсор перешёл на новую строку, сообщение не ушло</td>
+          <td>Сообщение не ушло — нажать Enter<small>пилот</small></td>
+        </tr>
+        <tr id="ui-permission">
+          <td><b>Ответить на запрос разрешения</b></td>
+          <td>Агент просит разрешения на команду — «разрешить один раз». Если агент переспрашивает, создавать ли каталоги, — ответить «create» или «да, создавай»<small>пилот 23–29.09.2026</small></td>
+          <td>Агент продолжил работу</td>
+          <td>—</td>
+        </tr>
+        <tr id="ui-context">
+          <td><b>Понять, сколько контекста занято</b></td>
+          <td>Полоса вверху окна агента — заполнение контекстного окна сессии<small>пилот 23–29.09.2026</small></td>
+          <td>—</td>
+          <td>—</td>
+        </tr>
+        <tr id="ui-changes">
+          <td><b>Увидеть невыгруженные изменения</b></td>
+          <td>Цифра в кружке на значке изменений (Git) на левой боковой панели — сколько изменений ещё не выгружено в репозиторий<small>пилот 23–29.09.2026</small></td>
+          <td>—</td>
+          <td>Выгрузить — роль <code>devops</code>: «Сделай коммиты и пуш» (<a href="#t-start-project">«Первый проект»</a>)</td>
+        </tr>
+        <tr id="ui-marketplace">
+          <td><b>Проверить или поставить расширение</b></td>
+          <td>Marketplace на левой боковой панели → поиск по названию → «Установить»; установленное показано как активное<small>пилот 23–29.09.2026</small></td>
+          <td>Расширение в списке установленных, активно</td>
+          <td>Установка закрыта политикой — заявка в поддержку (<a href="#t-start-env">Окружение, «Прочее»</a>)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+  <figure class="shot" data-shot="kilo-panel"><div class="shot-box">СКРИНШОТ · Панель Kilo Code: плюсик, история, список ролей, список моделей, полоса контекста — вставит владелец канона</div><figcaption>Панель Kilo Code: где что нажимать</figcaption></figure>
 </section>
 <section class="tabpanel" id="t-start-gitlab" role="tabpanel" aria-labelledby="tab-start-gitlab" tabindex="-1" data-page="start" data-tab="gitlab" data-title="Подключение к GitLab">
 <h2 class="tab-title">Старт › Подключение к GitLab</h2>
@@ -977,7 +1104,7 @@
   </div>
   <p class="lead">Что получится. Корень рабочего места — клон Золотого стандарта <code>kilo-canon</code> из корпоративного GitLab, только для чтения. Рядом папка <code>projects/</code> — <b>ваш собственный репозиторий под вашей фамилией</b>: в нём межпроектная рефлексия <code>reflection/</code> и все ваши проекты. Один репозиторий на аналитика, одна точка входа.<small>решение владельца 28.09.2026; проверено на двух рабочих местах 28.09.2026</small></p>
   <p class="warn-inline"><b>Только корпоративный GitLab.</b> Внешние хостинги (GitHub, SourceCraft и другие) для рабочих материалов запрещены политикой ИБ; если они подключены в старой рабочей папке — отключаются на шаге 5.</p>
-  <p class="lead">Порядок из трёх этапов: <b>канон</b> → через роли канона <b>структура папок</b> → <b>свой репозиторий</b>. Время: канон — 15–30 минут, полный контур с токенами и MCP — около часа. После каждого шага, который меняет правила или конфиг, — <b>закрыть и заново открыть VS Code</b>: роли и правила читаются при старте сессии.</p>
+  <p class="lead">Порядок: <b>канон</b> (шаги 1–3) → <b>свой репозиторий</b> (шаги 4–5, 7) → окружение, доступы и рефлексия (шаги 8–12); проект заводится потом — вкладка <a href="#t-start-project">«Первый проект»</a>. Время: канон — 15–30 минут, полный контур с токенами и MCP — около часа. После каждого шага, который меняет правила или конфиг, — <b>закрыть и заново открыть VS Code</b>: роли и правила читаются при старте сессии.</p>
   <ol class="steps timeline">
     <li>
       <div class="step-title">Создать ключ SSH на своём компьютере</div>
@@ -1005,7 +1132,7 @@
 Дополнение к заданию: внутри каталога &lt;имя старой папки&gt; лежат установочные файлы Git — они потеряли актуальность в связи с этим заданием.</pre><button type="button" class="copy">Копировать</button></div></div><figure class="shot" data-shot="repo-connect"><div class="shot-box">СКРИНШОТ · Дать команду агенту: подключить свой репозиторий в projects/</div><figcaption>Дать команду агенту: подключить свой репозиторий в projects/</figcaption></figure>    </li>
     <li>
       <div class="step-title">Завести структуру проекта</div>
-      <p>Роль <b>layout-builder</b>: «Заведи раскладку проекта &lt;имя&gt;» — папки по канону создаются сами, руками их не строят. Кодовую базу, которую агент должен читать (репозитории фронта и бэка), положить внутрь проекта в <code>00-sources/code/</code> — агент её не меняет.</p>
+      <p>Роль <b>layout-builder</b>: папки по канону создаются скриптом навыка, руками их не строят. Пошагово — с типом проекта, признаком успеха и тем, что делать, если агент пишет «каталог уже существует» или «паспорта нет», — на вкладке <a href="#t-start-project">«Первый проект»</a>, шаги 1–4. Это можно сделать и после шагов 7–12: раскладка нужна до первой задачи роли-писателя.<small>AGENTS.md, § 3; .kilo/agents/layout-builder.md, «Смежные роли»</small> Кодовую базу, которую агент должен читать (репозитории фронта и бэка), положить внутрь проекта в <code>00-sources/code/</code> — агент её не меняет.</p>
       <p>Рефлексия — <code>projects/reflection/</code>; если папки нет, агент создаёт её при подключении. Память проекта — <code>MEMORY.md</code> внутри проекта (см. <a href="#t-how-gold">три слоя памяти</a>).</p>
     </li>
     <li>
@@ -1017,11 +1144,52 @@
       <div class="step-title">Токены — в файл <code>.env</code>, не в переписку</div>
       <p>В корне рабочего места создать файл <code>.env</code> (он в <code>.gitignore</code>, в репозиторий не уходит). Каждый токен — строкой <code>ИМЯ=значение</code>: <code>CONFLUENCE_TOKEN=…</code>, <code>FIGMA_TOKEN=…</code>. Персональный токен Confluence — настройки профиля → Personal access tokens, срок действия убрать. Агенту называют <b>имя переменной</b>, сам токен ему не пишут: так токены не попадают в конфиги и в модель.</p>
 <figure class="shot" data-shot="env-file"><div class="shot-box">СКРИНШОТ · Файл .env в корне: имена переменных без значений</div><figcaption>Файл .env в корне: имена переменных без значений</figcaption></figure>    </li>
-    <li>
-      <div class="step-title">Окружение инструментов <code>.venv</code></div>
-      <p>Роль <b>project-architect</b>; нужен Python 3.14 (инструменты канона — <code>.kilo/tools</code>). На корпоративном ноутбуке без прав администратора — сначала заявка в поддержку: <b>8888@softlab.ru</b>, от своего имени, с номером машины; шаблон письма — ниже.</p>
+    <li id="step-venv">
+      <div class="step-title">Окружение инструментов <code>.venv</code> — создаёт агент</div>
+      <p><b>Зачем.</b> Инструменты канона — разбор документов, работа с диаграммами, сборка DOCX — работают в своей среде. Администраторы ставят основные библиотеки на компьютер, но их нужно подключить к рабочему месту — в «песочницу» <code>.venv</code> в корне. Без неё с агентом можно разговаривать, но распарсить ваши документы и пересобрать их он не сможет. <code>.venv</code> в репозиторий не выгружается и между компьютерами не переносится — у каждого своя.<small>объяснение владельца на пилоте 23–29.09.2026; AGENTS.md, § 4; .gitignore канона</small></p>
+      <p><b>Что нужно заранее.</b> Python 3.14 (минимум 3.10) на компьютере — <a href="#t-start-env">Окружение, таблица «Программы»</a>. На корпоративном ноутбуке без прав администратора — сначала заявка в поддержку: <b>8888@softlab.ru</b>, от своего имени, с номером машины; шаблон письма — ниже.</p>
       <figure class="shot" data-shot="request-8888"><div class="shot-box">ШАБЛОН ЗАЯВКИ в 8888@softlab.ru — вставит владелец канона (тема, номер машины, список программ: Python 3.14, Git, Tesseract, Java; LibreOffice — только если нет Word)</div><figcaption>Заявка на установку программ на корпоративный ноутбук — от своего имени</figcaption></figure>
-<div class="msg"><div class="msg-to"><span class="msg-label">Кому:</span> <span class="chip-plain">Kilo Code, роль project-architect</span></div><div class="msg-body"><pre class="msg-text">Проанализируй инструменты .kilo/tools. Верни инструкцию для создания соответствующего окружения .venv. Устанавливай Python 3.14. Параллельно сделай заметки для выгрузки в бэклог канона.</pre><button type="button" class="copy">Копировать</button></div></div>    </li>
+      <p><b>1. Скопировать путь к инструментам.</b> Проводник → <code>.kilo</code> → правая кнопка на папке <code>tools</code> → «Копировать относительный путь».<small>пилот 23–29.09.2026</small></p>
+      <p><b>2. Поручить агенту.</b> Панель Kilo Code → новая сессия («плюсик») → режим <b>Code</b> (так окружение создавали на пилоте). Вставить сообщение, на место заглушки — скопированный путь:<small>решение владельца 29.09.2026; пилот 23–29.09.2026; INSTALL-PARSER-WINDOWS.md, § 2</small></p>
+<div class="msg"><div class="msg-to"><span class="msg-label">Кому:</span> <span class="chip-plain">Kilo Code, режим Code, новая сессия</span></div><div class="msg-body"><pre class="msg-text">Создай корневой .venv. Учти, что инструменты у нас живут тут: &lt;относительный путь к .kilo/tools&gt;
+Установи в .venv зависимости из .kilo/tools/requirements.txt и проверь установку по INSTALL-PARSER-WINDOWS.md, § 3 и § 5. Верни, что установлено и какие проверки прошли.</pre><button type="button" class="copy">Копировать</button></div></div>
+      <p><b>3. Разрешить команды.</b> Агент будет спрашивать разрешение на запуск команд — «разрешить один раз» (<a href="#ui-permission">азбука панели</a>).<small>пилот 23–29.09.2026</small></p>
+      <p><b>Признак успеха.</b> В корне рабочего места появилась папка <code>.venv</code>; в ответе агента — <code>PYTHON_DEPS_OK</code>, тест <code>test_pdf_layers.py</code> завершился <code>OK</code>, проверка CLI — <code>ALL_10_CLI_HELP_OK</code>.<small>INSTALL-PARSER-WINDOWS.md, § 3 и § 5</small> На пилоте это звучало так: «окружение работает, тесты запустил».<small>пилот 23–29.09.2026</small> Те же команды для ручного запуска — <a href="#t-start-env">Окружение, «2. Python-библиотеки»</a>.</p>
+      <figure class="shot" data-shot="venv-ok"><div class="shot-box">СКРИНШОТ · Ответ агента: .venv создан, PYTHON_DEPS_OK, OK, ALL_10_CLI_HELP_OK — вставит владелец канона</div><figcaption>Окружение создано: что должно быть в ответе агента</figcaption></figure>
+      <details class="tbl">
+      <summary><svg class="ico tbl-chev" aria-hidden="true"><use href="#i-chevron"/></svg><span class="tbl-title">Если не вышло</span><span class="tbl-count">7 строк</span></summary>
+<div class="table-scroll">
+        <table class="flow">
+          <thead><tr><th>Что видно</th><th>Что делать</th></tr></thead>
+          <tbody>
+            <tr><td>В корне уже лежит чужая <code>.venv</code> — пришла архивом или с другого компьютера</td><td>Удалить её и создать свою: окружение не переносится между компьютерами<small>пилот 23–29.09.2026; AGENTS.md, § 4</small></td></tr>
+            <tr><td>Агент докладывает: глобальные инструменты есть, корневого <code>.venv</code> нет</td><td>Это и есть задача шага: повторить сообщение выше с путём к <code>.kilo/tools</code><small>пилот 23–29.09.2026</small></td></tr>
+            <tr><td><code>No module named pymupdf</code> или <code>No module named lxml</code></td><td>Повторить установку через интерпретатор <code>.venv</code>: <code>pip install -r .kilo/tools/requirements.txt</code>; глобально библиотеку не ставить<small>INSTALL-PARSER-WINDOWS.md, «Типовые ошибки»</small></td></tr>
+            <tr><td><code>page.find_tables недоступен</code></td><td>Проверить, что Kilo Code использует <code>.venv\Scripts\python.exe</code>, затем переустановить requirements<small>INSTALL-PARSER-WINDOWS.md, «Типовые ошибки»</small></td></tr>
+            <tr><td>Агент предлагает поставить пакет <code>fitz</code></td><td>Не ставить: это другой, устаревший пакет<small>INSTALL-PARSER-WINDOWS.md, § 3</small></td></tr>
+            <tr><td>Нет LibreOffice, есть Microsoft Word</td><td>Это нормально: LibreOffice нужен только там, где нет Word<small>решение владельца 28.09.2026; пилот 23–29.09.2026</small></td></tr>
+            <tr><td>Нет Python или <code>py</code> не находится</td><td>Python не установлен или не в <code>PATH</code> — заявка в поддержку; нет <code>py</code> после установки — перезапустить PowerShell, проверить App Execution Aliases<small>INSTALL-PARSER-WINDOWS.md, § 1</small></td></tr>
+          </tbody>
+        </table>
+      </div>
+      </details>
+      <p>Ничего из таблицы не подошло — скопируйте вывод агента целиком и задайте вопрос в чат аналитиков<small>решение владельца 29.09.2026</small> (топики чата — <a href="#t-start-env">Окружение, «Прочее»</a>).</p>
+    </li>
+    <li id="step-plantuml">
+      <div class="step-title">Диаграммы PlantUML: Java, локальный <code>plantuml.jar</code> и превью в VS Code</div>
+      <p><b>Зачем.</b> Без Java и <code>plantuml.jar</code> агент напишет PlantUML, но собрать из него картинку не сможет — «PlantUML можно сформировать, но нельзя объявлять скомпилированным». Для рабочих документов — только локальный JAR, не публичный online-server.<small>INSTALL-PARSER-WINDOWS.md, § 4 и «Типовые ошибки»</small> Шаг условный: нужен, если в работе есть диаграммы.</p>
+      <p><b>1. Java 11 или новее.</b> Проверка — <code>java -version</code> в терминале VS Code (меню <b>Terminal → New Terminal</b>). Нет Java — заявка в поддержку (Java есть в списке шаблона заявки выше).<small>INSTALL-PARSER-WINDOWS.md, § 4</small></p>
+      <p><b>2. Локальный <code>plantuml.jar</code> в <code>.venv</code>.</b> JAR скачивается с plantuml.com/download и кладётся в <code>.venv\vendor\plantuml.jar</code>; каталог <code>.kilo/tools/</code> при этом не меняется.<small>INSTALL-PARSER-WINDOWS.md, § 4</small> Поручить агенту в той же сессии, что и <code>.venv</code>:</p>
+<div class="msg"><div class="msg-to"><span class="msg-label">Кому:</span> <span class="chip-plain">Kilo Code, режим Code</span></div><div class="msg-body"><pre class="msg-text">Подготовь рендер PlantUML по INSTALL-PARSER-WINDOWS.md, § 4: проверь Java, положи plantuml.jar в .venv/vendor/plantuml.jar и проверь его командой java -jar. Используй только локальный JAR, не публичный online-server. Затем сделай картинку из небольшой тестовой диаграммы, сохрани её во временный каталог прогона, не в корень рабочего места, и верни путь к ней.</pre><button type="button" class="copy">Копировать</button></div></div>
+      <p>Ручная проверка — PowerShell, корень рабочего места:<small>INSTALL-PARSER-WINDOWS.md, § 4</small></p>
+<div class="msg"><div class="msg-to"><span class="msg-label">Кому:</span> <span class="chip-plain">PowerShell, корень рабочего места</span></div><div class="msg-body"><pre class="msg-text">java -version
+java -jar .venv\vendor\plantuml.jar -version</pre><button type="button" class="copy">Копировать</button></div></div>
+      <p>macOS и Linux: <code>java -jar .venv/vendor/plantuml.jar -version</code>.</p>
+      <p><b>3. Превью в VS Code — расширение Markdown Preview Enhanced.</b> Marketplace → поиск «Markdown Preview Enhanced» → установить (<a href="#ui-marketplace">азбука панели</a>).<small>решение владельца 29.09.2026</small> В настройках расширения укажите путь к локальному <code>.venv/vendor/plantuml.jar</code> и не включайте внешний сервер рендера: правило канона — JAR только локальный, не online-server.<small>INSTALL-PARSER-WINDOWS.md, § 4</small> Как называются эти параметры и что в них стоит по умолчанию, навигатор не утверждает — <b>сверить на своей машине</b> [ПРОВЕРИТЬ ПО ЭКРАНУ].</p>
+      <figure class="shot" data-shot="mpe-settings"><div class="shot-box">СКРИНШОТ · Настройки Markdown Preview Enhanced: путь к локальному plantuml.jar, внешний сервер не используется — вставит владелец канона</div><figcaption>Настройки превью PlantUML: сверить на своей машине</figcaption></figure>
+      <p><b>Признак успеха.</b> <code>java -jar … plantuml.jar -version</code> отвечает версией; агент сделал картинку из диаграммы и не пишет «PlantUML render: NOT INSTALLED»; превью <code>.md</code> с диаграммой показывает картинку, а не текст.<small>INSTALL-PARSER-WINDOWS.md, § 4; .kilo/command/setup-parser.md, шаг 6; пилот 23–29.09.2026</small></p>
+      <p><b>Если не вышло.</b> «Java/JAR не найден» — Java не установлена или JAR не в <code>.venv\vendor\</code>: вернуться к пунктам 1–2. Окружение ставили командой <code>/setup-parser</code> — она JAR не скачивает и помечает рендер «NOT INSTALLED»: выполнить пункт 2.<small>INSTALL-PARSER-WINDOWS.md, «Типовые ошибки»; setup-parser.md, шаг 6</small> Агент рисует, а превью в VS Code — нет: проверить путь к JAR в настройках расширения. Не помогло — вывод агента и снимок настроек — вопросом в чат аналитиков.<small>решение владельца 29.09.2026</small></p>
+    </li>
     <li>
       <div class="step-title">MCP Confluence — по необходимости</div>
       <p>Новая сессия, роль <b>project-architect</b>. После ответа «перезагрузите приложение» — закрыть и открыть VS Code, затем в той же сессии: «Подтверди связь с сервером Confluence, верни данные, которые возвращает сервер». Figma MCP подключается по той же схеме с <code>FIGMA_TOKEN</code> (удалённая версия, Figma Desktop не нужен) — подробности будут на отдельном вебинаре.</p>
@@ -1032,6 +1200,97 @@
     <li>
       <div class="step-title">Первая рефлексия</div>
       <p>Новая сессия, роль <b>reflector</b>: «Проведи рефлексию». Первый запуск идёт долго — он читает все сессии и раскладывает записи по трём слоям. Дальше — в конце каждого рабочего дня, после обратной связи агенту в сессии.</p>
+      <p><b>Если не вышло.</b> При старте любой роли (на пилоте — у <code>devops</code> во время «Сделай коммиты и пуш») красная ошибка, что памяти рефлексии ещё нет, — новая сессия, роль <b>reflector</b>: «Проведи аудит готовности инструментов к проведению рефлексии. Верни вывод, чего не хватает».<small>пилот 23–29.09.2026</small></p>
+    </li>
+  </ol>
+  <p class="lead">Рабочее место готово. Следующий этап — <a href="#t-start-project">завести проект</a>: он делается один раз на каждый проект.</p>
+</section>
+<section class="tabpanel" id="t-start-project" role="tabpanel" aria-labelledby="tab-start-project" tabindex="-1" data-page="start" data-tab="project" data-title="Первый проект">
+<h2 class="tab-title">Старт › Первый проект</h2>
+  <div class="sec-head">
+    <svg class="ico"><use href="#i-folder"/></svg>
+    <h2>Завести проект — один раз на проект</h2>
+  </div>
+  <p class="lead">Три этапа: <b>настроить</b> рабочее место — один раз (вкладки «Окружение» и «Подключение к GitLab»); <b>завести проект</b> — один раз на каждый проект (эта вкладка); <b>работать</b> — каждая задача («Работа по задаче»). Настройки отдельно, проекты отдельно: проектов может быть много, а настройки одни.<small>решение владельца 29.09.2026; раздатка вебинара 1 «Развёртывание рабочего места»; пилот 23–29.09.2026</small></p>
+  <p class="warn-inline" id="order-rule"><b>Сначала раскладка, потом роли-писатели.</b> Роли, которые пишут документы (<code>business-analyst</code>, <code>tz-writer</code>, <code>ft-writer</code>, <code>bt-writer</code>, <code>instruction-writer</code>), берут все адреса проекта из его паспорта раскладки <code>99-governance/layout.json</code>. Паспорта нет — роль скажет об этом одной строкой и будет работать по умолчаниям: черновик без своего каталога уйдёт в рабочую папку <code>90-work-items/work/</code>, а для нового типа файла она остановится и предложит место — каталог сама не изобретает. Поэтому шаги 1–4 — до первой задачи.<small>AGENTS.md, § 3 и § 4; .kilo/agents/layout-builder.md, «Смежные роли»</small></p>
+  <ol class="steps timeline">
+    <li id="project-step-folder">
+      <div class="step-title">Создать папку проекта в <code>projects/</code></div>
+      <p>Проводник → правая кнопка на папке <code>projects</code> → «Создать папку» → имя латиницей → Enter.<small>пилот 23–29.09.2026</small> Имя папки проекта каждый выбирает сам: к имени репозитория оно не привязано.<small>решение владельца 29.09.2026</small> Держите весь путь коротким: лимит длины пути у Word на Windows — 255 символов.<small>.kilo/agents/layout-builder.md</small></p>
+      <p><b>Признак успеха.</b> Новая папка видна слева в проводнике внутри <code>projects/</code>.</p>
+      <p><b>Если не вышло.</b> Папки <code>projects/</code> нет — не подключён свой репозиторий: <a href="#t-start-gitlab">«Подключение к GitLab»</a>, шаг 5.</p>
+    </li>
+    <li id="project-step-layout">
+      <div class="step-title">Раскладка по канону — роль <code>layout-builder</code></div>
+      <p>Проводник → правая кнопка на папке проекта → «Копировать относительный путь». Панель Kilo Code → новая сессия → роль <b>layout-builder</b>; модель подойдёт дешёвая: каркас — механическая работа.<small>пилот 23–29.09.2026</small> Тип проекта назовите сразу, второй строкой (Shift+Enter): <b>коннектор</b> (RS-Connect, СМЭВ: ТЗ-Форматы и ФТ) или <b>проект ДБО</b> (Use Case, UI, API). Названный тип роль принимает без проверки.<small>project-layout/references/layout-types.md, «Порядок определения», п. 1</small></p>
+<div class="msg"><div class="msg-to"><span class="msg-label">Кому:</span> <a href="#role-layout-builder">layout-builder</a> <span class="chip-plain">новая сессия</span></div><div class="msg-body"><pre class="msg-text">Сформируй в этом проекте структуру каталогов по канону: &lt;относительный путь к папке проекта&gt;
+Это &lt;коннектор / проект ДБО&gt;.</pre><button type="button" class="copy">Копировать</button></div></div>
+      <p><b>Что будет дальше.</b> Первой строкой роль скажет, какую папку считает проектом и какой тип выбрала. Затем проверит папку, покажет план — список того, что создаст, — и спросит подтверждение: ответьте «да, создавай». Создаёт только недостающее и ничего существующего не перезаписывает; файлы с содержанием не переносит, сама не коммитит.<small>.kilo/agents/layout-builder.md, «Старт», «Ход работы», «Границы»; пилот 23–29.09.2026</small></p>
+      <p><b>Признак успеха.</b> В папке проекта появились нумерованные разделы с README (среди них <code>00-sources/</code>, <code>90-work-items/</code>, <code>98-templates/</code>, <code>99-governance/</code>), паспорт раскладки <code>99-governance/layout.json</code>, память <code>MEMORY.md</code> и каталог решений <code>decisions/</code>; повторная проверка роли — без расхождений. Заглушка паспорта проекта для <a href="#project-step-passport">шага 5</a>: у коннектора — <code>91-project-control/Паспорт-проекта.md</code>, у проекта ДБО — <code>01-project-documentation/project-passport.md</code>; поля в ней — <code>{УТОЧНИТЬ}</code>.<small>layout-builder.md, «Ход работы»; project-layout-connector и project-layout-analyst, assets/layout.json</small> Разделы обоих типов — вкладка <a href="#t-project-layouts">«Проект › Две раскладки»</a>.</p>
+      <p><b>Если не вышло.</b></p>
+      <ul>
+        <li>Агент пишет «каталог уже существует» и ничего не создал, или спрашивает «это коннектор или ДБО?» — тип не назван. Ответьте одной строкой: «Это коннектор» (или «Это проект ДБО»).<small>пилот 23–29.09.2026; layout-types.md, п. 5</small></li>
+        <li>Модель переспрашивает, создавать ли, — «Да, делай, я согласен».<small>пилот 23–29.09.2026</small></li>
+        <li>Роли <code>layout-builder</code> нет в списке — канон не подключён или не обновлён, или VS Code не перезапущен после подключения: закрыть и открыть VS Code; не помогло — роль <code>devops</code>: «Проверь канон».<small>пилот 23–29.09.2026; .kilo/agents/devops.md</small></li>
+        <li>Агент остановился: нет Python 3.9+ — установку он молча не выполняет; сначала окружение (<a href="#step-venv">«Подключение к GitLab», шаг 9</a>).<small>layout-builder.md, «Ход работы»</small></li>
+        <li>В папке лежит раскладка прежней схемы (<code>input/</code>, <code>research/</code>, <code>work/</code>, <code>out/</code>) — роль покажет расхождения; файлы с содержанием она не переносит: перенос — отдельное поручение по согласованному плану с записью в журнал переименований и <code>decisions/</code> проекта. Кто исполняет перенос старой раскладки — вопрос владельцу канона (в чат аналитиков) [РЕШАЕТ АВТОР].<small>layout-builder.md, «Границы»</small></li>
+      </ul>
+    </li>
+    <li id="project-step-push">
+      <div class="step-title">Выгрузить каркас в GitLab — роль <code>devops</code></div>
+      <p>Новая сессия, роль <b>devops</b>, модель дешёвая.<small>пилот 23–29.09.2026</small></p>
+<div class="msg"><div class="msg-to"><span class="msg-label">Кому:</span> <a href="#role-devops">devops</a> <span class="chip-plain">новая сессия</span></div><div class="msg-body"><pre class="msg-text">Сделай коммиты и пуш.</pre><button type="button" class="copy">Копировать</button></div></div>
+      <p><b>Признак успеха.</b> Открыть свой репозиторий в GitLab и обновить страницу — папка проекта видна.<small>пилот 23–29.09.2026</small></p>
+      <p><b>Если не вышло.</b> В GitLab пусто — попросите <code>devops</code> вернуть полный вывод git дословно. Отказ вида «You are not allowed to push code to protected branches» — это права в GitLab: защиту и права не менять, веток и merge request не предлагать, force-push не пробовать; дословный текст отказа — владельцу канона (<a href="#issue-push">типовые сбои</a>).<small>.kilo/references/hosting-gitlab.md, таблица отказов; .kilo/agents/devops.md, «Сбой выгрузки»</small> Под VPN агент не дошёл до сервера — <code>git push</code> руками (<a href="#t-start-gitlab">«Подключение к GitLab»</a>, шаг 7).<small>28.09.2026; devops.md</small></p>
+    </li>
+    <li id="project-step-sources">
+      <div class="step-title">Положить исходники — до первой задачи</div>
+      <p>Нормативку и вводные положить в папку источников проекта <code>00-sources/</code> (ключ паспорта <code>source_roots</code>) <b>до первой задачи</b> — чтобы агент «не фантазировал с нуля».<small>пилот 23–29.09.2026; AGENTS.md, § 3</small></p>
+      <ul>
+        <li><b>Копировать, не переносить</b>: из проводника Windows — именно копировать.<small>пилот 23–29.09.2026</small></li>
+        <li><b>Кладёт человек.</b> Первичные файлы в <code>00-sources/</code> не изменяет ни одна роль; у <code>layout-builder</code>, <code>business-analyst</code>, <code>bt-writer</code>, <code>instruction-writer</code> запись туда закрыта правами. Оцифровка — <code>parser_doc</code> кладёт <code>.md</code> рядом с оригиналом.<small>AGENTS.md, § 4; permission в файлах этих ролей; parser_doc.md</small></li>
+        <li><b>XML, XSD, WSDL, JSON не оцифровывают</b> — они уже машиночитаемы<small>пилот 23–29.09.2026</small>; XML и XSD проверяют валидацией (навык <code>document-digitize</code>).</li>
+        <li><b>Архивы распаковать, zip убрать</b> — чтобы агент не тратил токены на распаковку и архивы не создавали шум.<small>пилот 23–29.09.2026</small></li>
+        <li><b>Длинные имена сократить заранее</b>, убрать «(1)», «восстановлено» и подобное: у операционных систем есть ограничения по длине пути — до того, как отдать файлы в работу.<small>пилот 23–29.09.2026; layout-builder.md: лимит пути 255 у Word на Windows</small></li>
+        <li><b>Рабочие документы</b> — правки коллег, промежуточные версии — не в <code>00-sources/</code>, а в <code>90-work-items/research/&lt;исследование&gt;/входящие/</code> (<a href="#howto-digitize">разбор оцифровки</a>).</li>
+      </ul>
+      <p>Изменили состав папки — проверьте порядок ролью <b>repo-keeper</b> («библиотекарь»). Роль проверяет и отчитывается, сама ничего не правит: в отчёте — расхождения и предложенные починки с исполнителем. Строку README раздела правит роль, которая ведёт раздел, или <code>project-architect</code> — по вашему «да».<small>.kilo/agents/repo-keeper.md, description, «Границы», «Какие починки предлагать»</small> Промпт пилота («…внеси необходимые правки») роли не подходит: править она не может [РЕШАЕТ АВТОР].</p>
+<div class="msg"><div class="msg-to"><span class="msg-label">Кому:</span> <a href="#role-repo-keeper">repo-keeper</a> <span class="chip-plain">новая сессия</span></div><div class="msg-body"><pre class="msg-text">Проведи аудит каталогов проекта &lt;относительный путь к папке проекта&gt;: где нет README или он неактуален, какие файлы не учтены. Верни отчёт с предложенными правками и исполнителем каждой.</pre><button type="button" class="copy">Копировать</button></div></div>
+      <p>Затем — исполнителю из отчёта (например, <code>project-architect</code>): «Внеси правки README по отчёту repo-keeper».</p>
+      <p><b>Признак успеха.</b> В <code>00-sources/</code> нет архивов и дублей, имена короткие; repo-keeper вернул отчёт (он сохраняется в <code>99-governance/Отчёт-проверки-порядка-репозитория.md</code> проекта), и предложенные правки README внесены исполнителем.<small>repo-keeper.md, permission</small></p>
+      <p><b>Если не вышло.</b> В именах файлов «кракозябры» (файлы прошли через обмен Windows ↔ macOS) — удалить испорченные копии, скопировать файлы заново из оригинала и выгрузить.<small>пилот 23–29.09.2026</small></p>
+    </li>
+    <li id="project-step-passport">
+      <div class="step-title">Паспорт проекта — роль <code>business-analyst</code>, модель поумнее</div>
+      <p>Каркас паспорта оставил <code>layout-builder</code> (шаг 2); содержание — назначение, владелец, границы, версии — заполняет <b>business-analyst</b> по вашим ответам. Модель — «поумнее»: это фундамент проекта.<small>решение владельца 29.09.2026; пилот 23–29.09.2026</small> Паспорт даёт агенту ориентиры: что это за проект и с чем он работает.<small>пилот 23–29.09.2026</small></p>
+<div class="msg"><div class="msg-to"><span class="msg-label">Кому:</span> <a href="#role-business-analyst">business-analyst</a> <span class="chip-plain">новая сессия</span></div><div class="msg-body"><pre class="msg-text">Я начинаю работу над новым проектом: &lt;относительный путь к папке проекта&gt;
+Паспорт проекта лежит тут: &lt;относительный путь к Паспорт-проекта.md или project-passport.md&gt;
+Твоя задача — помочь мне выстроить фундамент, после которого можно переходить к генерации артефактов. Начни с вопросов, ответы на которые помогут тебе сформировать паспорт проекта.
+Дай мне подтверждение, что ты понял свою роль и видишь исходные данные.</pre><button type="button" class="copy">Копировать</button></div></div>
+      <p><b>Как отвечать.</b> Коротко: «чем лаконичнее, тем лучше». Что откладываете — так и назовите: «шаблоны положу позже в другой сессии».<small>пилот 23–29.09.2026</small></p>
+      <p><b>Признак успеха.</b> Файл паспорта проекта (заглушка из шага 2) заполнен вашими ответами; чего вы не знаете — осталось маркером <code>{УТОЧНИТЬ}</code>, а не догадкой.<small>layout-builder.md, «Ход работы»; project-layout-*/assets/layout.json</small></p>
+      <p>Путь к файлу паспорта укажите прямо в сообщении — так на пилоте агенту сразу было ясно, где лежит паспорт.<small>пилот 23–29.09.2026</small></p>
+      <p><b>Если не вышло.</b> Роль отвечает, что паспорт проекта — задача <code>layout-builder</code> или <code>project-architect</code>: так сейчас записано в её инструкции<small>.kilo/agents/business-analyst.md, § 1 «Маршрутизация»</small>, а на пилоте паспорт заполнила именно она; расхождение вынесено на решение владельца канона. Скопируйте ответ агента целиком и пришлите владельцу канона — в чат аналитиков, топик «подключение своего проекта». До ответа переходите к <a href="#project-step-templates">шагу 6</a>: поля паспорта остаются <code>{УТОЧНИТЬ}</code>.</p>
+    </li>
+    <li id="project-step-templates">
+      <div class="step-title">Шаблоны — в <code>98-templates/</code></div>
+      <p>Образцы документов, которые нужно выпускать, — в папку шаблонов проекта <code>98-templates/</code> (есть в обеих раскладках). «Чем больше примеров у него будет, тем сообразительнее он себя поведёт».<small>пилот 23–29.09.2026; project-layout-connector и project-layout-analyst, assets/layout.json</small></p>
+      <p><b>Признак успеха.</b> Шаблон нужного документа лежит в <code>98-templates/</code>.</p>
+      <p><b>Если не вышло.</b> Папки <code>98-templates/</code> нет — раскладка не заведена: <a href="#project-step-layout">шаг 2</a>.</p>
+    </li>
+    <li id="project-step-ready">
+      <div class="step-title">Проверить готовность к первой задаче</div>
+      <p>Новая сессия, роль-писатель под ваш артефакт (например <code>tz-writer</code> для ТЗ; кого выбрать — <a href="#tasks">«Выбор по задаче»</a>). Одно из двух сообщений:<small>пилот 23–29.09.2026</small></p>
+<div class="msg"><div class="msg-to"><span class="msg-label">Кому:</span> <span class="chip-plain">роль-писатель, новая сессия</span></div><div class="msg-body"><pre class="msg-text">Работаем с &lt;проект&gt;. Составь мне список исходных данных, которых тебе не хватает.</pre><button type="button" class="copy">Копировать</button></div></div>
+<div class="msg"><div class="msg-to"><span class="msg-label">Кому:</span> <span class="chip-plain">роль-писатель, новая сессия</span></div><div class="msg-body"><pre class="msg-text">Работаем с &lt;проект&gt;. Задача: &lt;что сделать&gt;. Учти, что файлы могут содержать ошибки. Верни выводы о готовности начать выполнять текущую задачу.</pre><button type="button" class="copy">Копировать</button></div></div>
+      <p><b>Признак успеха.</b> Первой строкой агент назвал проект и что прочитал<small>AGENTS.md, § 3</small>; вернул, чего ему не хватает, и выводы о готовности. Откройте <code>open-questions.md</code> проекта (<code>90-work-items/research/</code>) — «там бывают важные вещи»; смотрите, чего не хватает, а не что есть.<small>пилот 23–29.09.2026</small></p>
+      <p><b>Если не вышло.</b> Агент пишет, что паспорта нет или каталога нет, — проект не заведён: вернуться к <a href="#project-step-layout">шагу 2</a>. Не хватает исходников — <a href="#project-step-sources">шаг 4</a>: «что на входе, то на выходе»; без исходников агент задания выполняет, но «не настолько хорошо».<small>пилот 23–29.09.2026; AGENTS.md, § 3</small></p>
+    </li>
+    <li id="project-step-sync">
+      <div class="step-title">Выгрузить сделанное</div>
+      <p>Параллельная сессия (плюсик), роль <b>devops</b>, модель дешёвая: «Сделай коммиты и пуш». Проверка — обновить страницу проекта в GitLab.<small>пилот 23–29.09.2026</small></p>
+      <p><b>Признак успеха.</b> Новые файлы видны в GitLab.</p>
+      <p><b>Если не вышло.</b> <a href="#issue-push">Отказ push</a> или <a href="#issue-local-only">папка не выгружена</a> — «Типовые сбои».</p>
     </li>
   </ol>
 </section>
@@ -1055,8 +1314,9 @@
     </li>
     <li>
       <div class="step-title">Начните разговор фразой «Работаем с &lt;проект&gt;»</div>
-      <p>Помощник сам откроет <code>projects/&lt;проект&gt;/</code>, прочитает память, паспорт проекта, факты и открытые вопросы и первой строкой скажет, что прочитал. Без этой фразы он определит проект сам или задаст один короткий вопрос.<small>kilo-canon/README.md, «Как начинать разговор»; AGENTS.md, § 3</small></p>
-      <p>Нет проекта — его раскладку заводит <a href="#role-layout-builder">layout-builder</a>: «Заведи структуру проекта».</p>
+      <p>Помощник сам откроет <code>projects/&lt;проект&gt;/</code>, прочитает память, паспорт раскладки, факты и открытые вопросы и первой строкой скажет, что прочитал. Без этой фразы он определит проект сам или задаст один короткий вопрос.<small>kilo-canon/README.md, «Как начинать разговор»; AGENTS.md, § 3</small></p>
+      <p>Нет проекта — его раскладку заводит <a href="#role-layout-builder">layout-builder</a>, тип проекта (коннектор или проект ДБО) называете сразу; пошагово — вкладка <a href="#t-start-project">«Первый проект»</a>.</p>
+      <p class="warn-inline"><b>Сначала раскладка, потом роли-писатели.</b> Они берут адреса из паспорта раскладки; без него работают по умолчаниям и складывают черновики в рабочую папку <code>90-work-items/work/</code>.<small>AGENTS.md, § 3 и § 4</small></p>
     </li>
     <li>
       <div class="step-title">Перезапустите VS Code и проверьте, что всё подхватилось</div>
@@ -1066,6 +1326,7 @@
     <li>
       <div class="step-title">Возьмите маленькую задачу и пройдите её до конца</div>
       <p>Лучший первый заход — <a href="#howto-digitize">оцифровка одного документа</a>: видно весь путь, от «положил файл» до «разместил результат рядом с оригиналом», и ничего нельзя испортить — оригиналы не меняются.</p>
+      <p class="warn-inline"><b>Если инструменты оцифровки не работают.</b> На пилоте 23–29.09.2026 у новичка оцифровка упёрлась именно в инструменты: агент сообщал, что не смог выполнить разбор. Проверьте окружение (<a href="#step-venv">«Подключение к GitLab», шаг 9</a>); не помогло — скопируйте вывод агента целиком и задайте вопрос в чат аналитиков<small>решение владельца 29.09.2026</small> (топики чата — <a href="#t-start-env">Окружение, «Прочее»</a>).</p>
       <p>Дальше выбирайте задачу в разделе <a href="#tasks">«Быстрый выбор по задаче»</a>: в каждой карточке написано, кого назначить исполнителем и с какого сообщения начать.</p>
     </li>
     <li>
@@ -1081,7 +1342,7 @@
 <section class="tabpanel" id="t-start-ready" role="tabpanel" aria-labelledby="tab-start-ready" tabindex="-1" data-page="start" data-tab="ready" data-title="Проверка готовности">
 <h2 class="tab-title">Старт › Проверка готовности</h2>
   <h3 class="sub">7. Проверка готовности</h3>
-  <p class="lead">Три проверки подряд в новой сессии. Пока они не прошли, установка не завершена. <small>webinar-01, разд. 6, шаг 5</small></p>
+  <p class="lead">Три проверки подряд в новой сессии. Пока они не прошли, установка не завершена. <small>вебинар 1, разд. 6, шаг 5</small></p>
   <ol class="steps">
     <li>
       <div class="step-title">Связь</div>
@@ -1098,7 +1359,7 @@
   <div class="msg-body"><pre class="msg-text">Какие skills доступны в этой рабочей папке? Покажи имя и путь каждого.</pre><button type="button" class="copy">Копировать</button></div>
 </div>
       <p>Пути должны существовать; субагент <code>vision</code> найден по пути <code>.kilo/agents/vision.md</code><small>INSTALL-PARSER-WINDOWS.md, § 6</small></p>
-      <p>В ответе — двадцать четыре навыка по составу канона; приёмка проверяет, что среди них есть шесть базовых: document-digitize, technical-analysis, document-draft, document-package-review, reflection-synthesis, session-audit.<small>PACKAGE-MANIFEST.md, «Состав инструкций» и «Приёмка у студента»</small></p>
+      <p>В ответе — двадцать пять навыков по составу канона; приёмка проверяет, что среди них есть шесть базовых: document-digitize, technical-analysis, document-draft, document-package-review, reflection-synthesis, session-audit.<small>PACKAGE-MANIFEST.md, «Состав инструкций» и «Приёмка у студента»</small></p>
     </li>
     <li>
       <div class="step-title">«Работаем с…»</div>
@@ -1107,16 +1368,48 @@
   <div class="msg-body"><pre class="msg-text">Работаем с &lt;имя проекта&gt;</pre><button type="button" class="copy">Копировать</button></div>
 </div>
       <p>Первой строкой помощник называет проект и то, что прочитал<small>AGENTS.md, § 3</small></p>
-      <p>Прошли первые две проверки, а третья нет — дело в расположении папки, а не в установке<small>webinar-01, разд. 6, шаг 5</small></p>
+      <p>Прошли первые две проверки, а третья нет — дело в расположении папки, а не в установке<small>вебинар 1, разд. 6, шаг 5</small></p>
     </li>
   </ol>
+</section>
+<section class="tabpanel" id="t-start-issues" role="tabpanel" aria-labelledby="tab-start-issues" tabindex="-1" data-page="start" data-tab="issues" data-title="Типовые сбои">
+<h2 class="tab-title">Старт › Типовые сбои</h2>
+  <div class="sec-head">
+    <svg class="ico"><use href="#i-alert"/></svg>
+    <h2>Типовые сбои первых дней: симптом → что делать</h2>
+  </div>
+  <p class="lead">Сбои, которые встретились при настройке рабочего места и заведении первого проекта на пилоте 23–29.09.2026, и то, что по ним говорит канон. Своего случая нет в таблице — скопируйте вывод агента целиком и задайте вопрос в чат аналитиков, в топик по теме; навигатор пополняется по этим вопросам.<small>решение владельца 29.09.2026; встреча ведущих 29.09.2026</small></p>
+  <p class="warn-inline"><b>Объяснение агента — гипотеза, а не диагноз.</b> На пилоте агент уверенно назвал причину сбоя, а на вопрос признал: «Честно, не проверил». Просите проверить: «Проверь мою гипотезу…»; ответ непонятен — «Объясни проще. Что тебе нужно?».<small>пилот 23–29.09.2026</small></p>
+  <details class="tbl" open>
+  <summary><svg class="ico tbl-chev" aria-hidden="true"><use href="#i-chevron"/></svg><span class="tbl-title">Симптом → что делать</span><span class="tbl-count">12 строк</span></summary>
+<div class="table-scroll">
+    <table class="flow">
+      <thead><tr><th>Симптом</th><th>Причина</th><th>Что делать</th><th>Источник</th></tr></thead>
+      <tbody>
+        <tr id="issue-key"><td>Ошибка авторизации у провайдера моделей</td><td>Ключ скопировался не целиком</td><td>Отключить провайдера, скопировать ключ заново <b>кнопкой</b> «копировать» и вставить (<a href="#provider-setup">«Подключить провайдера»</a>)</td><td>пилот 23–29.09.2026</td></tr>
+        <tr id="issue-roles"><td>После подключения канона ролей канона нет в списке</td><td>Роли читаются при старте сессии</td><td>Закрыть и открыть VS Code — роли подгрузятся</td><td>пилот 23–29.09.2026; «Как устроено › О чём помнить»</td></tr>
+        <tr id="issue-ssh"><td><code>Permission denied</code>, «Could not read from remote repository»</td><td>Нет SSH-ключа или он не добавлен в GitLab</td><td>Шаги 1–2 вкладки <a href="#t-start-gitlab">«Подключение к GitLab»</a></td><td>пилот 23–29.09.2026</td></tr>
+        <tr id="issue-port"><td>Подключение к GitLab висит и обрывается по таймауту</td><td>Нет связи: VPN не подключён или канал; на пилоте причина не установлена</td><td>Проверить корпоративный VPN; агент повторяет попытку до трёх раз; не помогло — вопрос в чат, топик «GitLab и ключи». Ключи, remote и порт агент сам не меняет, вывод о причине — только после серии проб</td><td>.kilo/references/hosting-gitlab.md; devops.md; пилот 23–29.09.2026</td></tr>
+        <tr id="issue-canon-local"><td>Канон не обновляется</td><td>В корне рабочего места изменён файл канона (на пилоте — <code>kilo.jsonc</code>): локальные правки останавливают обновление. Это не сеть и не VPN</td><td>Роль <code>devops</code> покажет изменённые файлы канона и обновлять не станет. Вернуть файл к версии канона (снять локальную правку) — ваше решение; после этого канон обновится при следующей проверке. Нужное вам изменение — предложением владельцу канона, а не правкой в корне</td><td>пилот 23–29.09.2026; devops.md, «Обновление канона», п. 1; kilo-canon/README.md, «Как получать обновления»</td></tr>
+        <tr id="issue-push"><td>Агент выгрузил, а в GitLab пусто; отказ push</td><td>По тексту отказа: «You are not allowed to push code to protected branches» — права в GitLab не разрешают push в защищённую ветку; отказ по защите ветки — защита сервера</td><td>Попросить <code>devops</code> вернуть полный вывод git дословно. Защиту и права не менять, веток и merge request не предлагать, force-push не пробовать; дословный текст отказа — владельцу канона (например, в чат аналитиков, топик «GitLab и ключи»)</td><td>.kilo/references/hosting-gitlab.md, таблица отказов; devops.md, «Сбой выгрузки»</td></tr>
+        <tr id="issue-local-only"><td>Папка есть на компьютере, но её нет в GitLab</td><td>Не выгружена</td><td>Роль <code>devops</code>: «Сделай коммиты и пуш», затем обновить страницу в GitLab</td><td>пилот 23–29.09.2026</td></tr>
+        <tr id="issue-layout"><td><code>layout-builder</code>: «каталог уже существует», ничего не создано; «паспорта проекта нет — это коннектор или ДБО?»</td><td>Не назван тип проекта</td><td>Ответить одной строкой: «Это коннектор» или «Это проект ДБО» (<a href="#project-step-layout">«Первый проект», шаг 2</a>)</td><td>пилот 23–29.09.2026; layout-types.md</td></tr>
+        <tr id="issue-no-folder"><td>Роль-писатель пишет, что паспорта или каталога нет, складывает черновик в <code>90-work-items/work/</code></td><td>Проект не заведён: нет раскладки и паспорта</td><td>Новая сессия, <code>layout-builder</code>, путь к папке проекта и тип (<a href="#t-start-project">«Первый проект»</a>)</td><td>AGENTS.md, § 3 и § 4</td></tr>
+        <tr id="issue-venv"><td>Агент: «глобальные инструменты есть, корневого <code>.venv</code> нет»; <code>No module named …</code></td><td>Окружение не создано или создано не тем интерпретатором</td><td><a href="#step-venv">«Подключение к GitLab», шаг 9</a>, таблица «Если не вышло»</td><td>пилот 23–29.09.2026; INSTALL-PARSER-WINDOWS.md</td></tr>
+        <tr id="issue-reflection"><td>При старте любой роли (на пилоте — у <code>devops</code>) красная ошибка: памяти рефлексии ещё нет</td><td>У рабочего места ещё нет памяти рефлексии</td><td>Новая сессия, роль <code>reflector</code>: «Проведи аудит готовности инструментов к проведению рефлексии. Верни вывод, чего не хватает»</td><td>пилот 23–29.09.2026</td></tr>
+        <tr id="issue-names"><td>«Кракозябры» в именах файлов</td><td>Файлы прошли через обмен Windows ↔ macOS</td><td>Удалить испорченные копии, скопировать файлы заново из оригинала и выгрузить</td><td>пилот 23–29.09.2026</td></tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+  <p class="lead">Долгая «инициализация системы снимков» при выгрузке — снимки для проекта не нужны, у вас репозиторий: в запросе агента выберите «Отключить для этого проекта» [ПРОВЕРИТЬ ПО ЭКРАНУ].<small>пилот 23–29.09.2026</small></p>
 </section>
 <section class="tabpanel" id="t-start-gaps" role="tabpanel" aria-labelledby="tab-start-gaps" tabindex="-1" data-page="start" data-tab="gaps" data-title="Пробелы и противоречия">
 <h2 class="tab-title">Старт › Пробелы и противоречия</h2>
   <h3 class="sub">8. Что ещё не описано</h3>
   <p class="warn-inline"><b>Пробелы, которые пока закрыть нечем.</b> Здесь нет правдоподобного текста — нужен ответ автора.</p>
   <ul>
-    <li>Установка Git, Java, <code>uv</code> и колонка macOS заполнены 26.09.2026 по документации разработчиков, не по канону. Хостинг — только корпоративный GitLab по SSH (28.09.2026); справка канона <code>hosting-sourcecraft.md</code> и helper <code>git_credential_env.py</code> относятся к запрещённому внешнему хостингу и подлежат замене в каноне. Figma MCP в навигаторе описан одной строкой — отдельный вебинар.</li>
+    <li>Установка Git, Java, <code>uv</code> и колонка macOS заполнены 26.09.2026 по документации разработчиков, не по канону. Хостинг — только корпоративный GitLab по SSH (28.09.2026); справка канона по хостингу — <code>.kilo/references/hosting-gitlab.md</code> (прежней справки <code>hosting-sourcecraft.md</code> и helper <code>git_credential_env.py</code> в каноне нет). Figma MCP в навигаторе описан одной строкой — отдельный вебинар.</li>
     <li>macOS: колонка таблицы «Программы» и команды установки базы парсера заполнены 26.09.2026 по документации разработчиков, не по канону — в каноне macOS не описан, установка на macOS не проверена.</li>
     <li>Версии VS Code и Kilo Code не закреплены — ставится текущая стабильная. Проверен только Kilo backend 7.5.14 на macOS для discovery<small>INSTALL-PARSER-WINDOWS.md; PACKAGE-MANIFEST.md</small></li>
     <li>Linux: колонка таблицы «Программы» заполнена 29.09.2026. Из канона подтверждено: интерпретатор <code>.venv/bin/python</code> и команда <code>python3</code><small>.kilo/tools/README.md; customization.md</small>, <code>soffice</code> только из <code>PATH</code><small>docx_embeddings.py</small>, <code>drawio</code> из <code>PATH</code><small>diagram_renderer.py</small>, выпуск DOCX (<code>draft</code>/<code>final</code>) только на Windows с Word — на Linux только <code>preview</code><small>docx-layout/SKILL.md</small>. Способы установки и имена пакетов — по документации разработчиков для Debian/Ubuntu; для Astra Linux и РЕД ОС не сверены. Установка на Linux не проверена, <code>/setup-parser</code> под Linux не написан.</li>
@@ -1135,8 +1428,8 @@
         <tr><td>Минимальная версия Python</td><td>3.10+<small>INSTALL-PARSER-WINDOWS.md; setup-parser.md</small> 3.11/3.12<small>docx-layout/references/windows-setup.md</small> 3.9+<small>layout-builder.md; project-layout/SKILL.md</small></td><td>Решение владельца 26.09.2026: <b>Python 3.14</b>, минимум 3.10. «3.11/3.12» в windows-setup.md — среда прогона навыка, не верхняя граница; строку в каноне заменить на «3.10+; проверено на 3.12 и 3.14»</td></tr>
         <tr><td>Где лежит <code>plantuml.jar</code></td><td><code>.venv\vendor\plantuml.jar</code><small>INSTALL-PARSER-WINDOWS.md, § 4</small> Путь в поле <code>plantuml.jar</code> профиля сборки<small>windows-setup.md, § 4</small> JAR не скачивать, «PlantUML render: NOT INSTALLED»<small>setup-parser.md, шаг 6 [ОТКЛОНЕНИЕ]</small></td><td>Противоречия нет: общее правило — INSTALL (<code>.venv\vendor\plantuml.jar</code>), профиль сборки указывает тот же путь; <code>/setup-parser</code> — согласованное владельцем отклонение для его хоста</td></tr>
         <tr><td>Tesseract</td><td>Ставить сборку UB Mannheim<small>INSTALL-PARSER-WINDOWS.md, § 4</small> «Программа уже есть», языков нет — не ставить<small>setup-parser.md, шаг 5 — записаны факты одного хоста</small></td><td>Общее правило — INSTALL § 4 (UB Mannheim, языки rus и eng); шаг 5 <code>/setup-parser</code> — факт одного хоста. На чистом Windows NOT VERIFIED</td></tr>
-        <tr><td>Число навыков</td><td>Шесть<small>INSTALL-PARSER-WINDOWS.md; PACKAGE-MANIFEST.md, «Приёмка у студента»; webinar-01, разд. 8.2</small> Двадцать четыре<small>PACKAGE-MANIFEST.md, «Состав инструкций» (26.09.2026, добавлены bt-preparation и bt-review); ls .kilo/skills — 24 каталога</small></td><td>Противоречия нет: «шесть» — базовые навыки из состава манифеста (document-digitize, technical-analysis, document-draft, document-package-review, reflection-synthesis, session-audit), их наличие проверяет приёмка; всего навыков двадцать четыре</td></tr>
-        <tr><td>Структура рабочей папки</td><td><code>tools/</code>, <code>projects/&lt;коннектор&gt;/input/ research/ work/ out/</code><small>webinar-01, разд. 8.1</small> <code>.kilo/tools/</code>, паспорт <code>99-governance/layout.json</code>, разделы <code>00-sources/</code> … <a href="#layout">(Где что лежит)</a><small>kilo-canon/README.md; project-layout-*/references</small></td><td>Действует канон: корень — клон канона, проект — <code>projects/&lt;проект&gt;/</code> с паспортом <code>99-governance/layout.json</code> и разделами <code>00-sources/</code>, <code>90-work-items/…</code>. Раскладка <code>input/ research/ work/ out/</code> из webinar-01 — прежняя, заменена 22.09.2026</td></tr>
+        <tr><td>Число навыков</td><td>Шесть<small>INSTALL-PARSER-WINDOWS.md; PACKAGE-MANIFEST.md, «Приёмка у студента»; вебинар 1, разд. 8.2</small> Двадцать пять<small>PACKAGE-MANIFEST.md, «Состав инструкций» (26.09.2026 добавлены bt-preparation и bt-review, 27.09.2026 — workspace-setup); ls .kilo/skills — 25 каталогов</small></td><td>Противоречия нет: «шесть» — базовые навыки из состава манифеста (document-digitize, technical-analysis, document-draft, document-package-review, reflection-synthesis, session-audit), их наличие проверяет приёмка; всего навыков двадцать пять</td></tr>
+        <tr><td>Структура рабочей папки</td><td><code>tools/</code>, <code>projects/&lt;коннектор&gt;/input/ research/ work/ out/</code><small>вебинар 1, разд. 8.1</small> <code>.kilo/tools/</code>, паспорт <code>99-governance/layout.json</code>, разделы <code>00-sources/</code> … <a href="#layout">(Где что лежит)</a><small>kilo-canon/README.md; project-layout-*/references</small></td><td>Действует канон: корень — клон канона, проект — <code>projects/&lt;проект&gt;/</code> с паспортом <code>99-governance/layout.json</code> и разделами <code>00-sources/</code>, <code>90-work-items/…</code>. Раскладка <code>input/ research/ work/ out/</code> из вебинара 1 — прежняя, заменена 22.09.2026</td></tr>
       </tbody>
     </table>
   </div>
@@ -1184,7 +1477,7 @@
 
     <article class="tile">
       <div class="tile-head"><svg class="ico"><use href="#i-pointer"/></svg><h4>Как используется</h4></div>
-      <p>Фраза «Работаем с <code>&lt;проект&gt;</code>» — помощник читает <code>MEMORY.md</code> и <code>README.md</code> области, README и паспорт проекта <code>99-governance/layout.json</code>, <code>findings.md</code>, <code>open-questions.md</code>, последние записи <code>reflection/</code> и первой строкой говорит, что прочитал.</p>
+      <p>Фраза «Работаем с <code>&lt;проект&gt;</code>» — помощник читает <code>MEMORY.md</code> и <code>README.md</code> области, README и паспорт раскладки <code>99-governance/layout.json</code>, <code>findings.md</code>, <code>open-questions.md</code>, последние записи <code>reflection/</code> и первой строкой говорит, что прочитал.</p>
       <p>Без фразы: проект в <code>projects/</code> один — работает с ним; несколько — один вопрос со списком.<small>AGENTS.md, § 3</small></p>
     </article>
 
@@ -1200,6 +1493,14 @@
       <p><b>Межпроектная рефлексия</b> — <code>projects/reflection/</code>: опыт, который пригодится во всех ваших проектах; сюда пишет <code>reflector</code> в конце дня.</p>
       <p><b>Бэклог канона</b> — если <code>reflector</code> видит, что дело не в понимании задачи, а в дефекте роли, навыка или инструмента, запись уходит владельцу канона; он правит канон, обновление приезжает всем.</p>
       <p>Зачем три: чтобы не раздувать один файл до бесконечности и не грузить контекст сессии тем, что ей не нужно.<small>объяснение владельца 28.09.2026; devops.md; reflector.md</small></p>
+    </article>
+
+    <article class="tile" id="canon-backlog">
+      <div class="tile-head"><svg class="ico"><use href="#i-wrench"/></svg><h4>Предложить правку в канон</h4></div>
+      <p>Проблему роли, навыка или инструмента не чините сами — оформите предложением в бэклог канона. Запись пишет роль, у которой возникла проблема, — в той же сессии; <code>devops</code> только готовит рабочее дерево и выгружает, записи он не сочиняет.<small>.kilo/references/canon-backlog.md, «Кто что делает»; .kilo/agents/devops.md, «Бэклог канона»</small> Выделите абзац с описанием проблемы, возьмите его в кавычки:<small>пилот 23–29.09.2026</small></p>
+      <div class="msg"><div class="msg-to"><span class="msg-label">Кому:</span> <span class="chip-plain">роль, в сессии которой возникла проблема</span></div><div class="msg-body"><pre class="msg-text">По данному абзацу подготовь запись в бэклог канона и выгрузи её: «&lt;абзац&gt;».</pre><button type="button" class="copy">Копировать</button></div></div>
+      <p><b>Признак успеха.</b> Агент назвал ветку <code>canon-backlog/&lt;project&gt;</code>, где <code>&lt;project&gt;</code> — значение ключа <code>project</code> паспорта раскладки проекта, а не имя папки. В главную ветку канона push с хоста специалиста запрещён.<small>canon-backlog.md, «Где лежит»; devops.md</small></p>
+      <p><b>Если не вышло.</b> Ключа <code>project</code> в паспорте раскладки нет — роль остановится и спросит: ветка без него не создаётся.<small>canon-backlog.md, «Где лежит»</small></p>
     </article>
 
     <article class="tile">
@@ -1312,7 +1613,7 @@
   </div>
   <p class="lead">Слова, которые в переписке и в ответах агента встречаются чаще всего. Если непонятно одно из них — непонятен и весь ответ, поэтому они собраны здесь.</p>
   <details class="tbl">
-  <summary><svg class="ico tbl-chev" aria-hidden="true"><use href="#i-chevron"/></svg><span class="tbl-title">Словарь</span><span class="tbl-count">19 строк</span></summary>
+  <summary><svg class="ico tbl-chev" aria-hidden="true"><use href="#i-chevron"/></svg><span class="tbl-title">Словарь</span><span class="tbl-count">20 строк</span></summary>
 <div class="card">
     <div class="table-scroll">
     <table class="flow">
@@ -1320,7 +1621,8 @@
       <tbody>
         <tr id="term-1"><td><b>Золотой стандарт</b></td><td>Репозиторий <code>kilo-canon</code>: общий для всех специалистов набор ролей, навыков, правил и инструментов в <code>.kilo/</code> и корневых файлах. Меняется только у владельца, в область приходит слиянием — <a href="#gold">подробнее</a></td></tr>
         <tr id="term-2"><td><b>Рабочая область</b></td><td>Свой репозиторий специалиста: история начинается с Золотого стандарта, сверху — свои проекты, <code>decisions/</code>, <code>Plans/</code>, <code>reflection/</code>, <code>MEMORY.md</code></td></tr>
-        <tr id="term-3"><td><b>Паспорт проекта</b></td><td>Файл <code>projects/&lt;проект&gt;/99-governance/layout.json</code>: адреса разделов, исследования, шаблонов, релиза. Роли и навыки берут адреса из него</td></tr>
+        <tr id="term-3"><td><b>Паспорт раскладки</b></td><td>Файл <code>projects/&lt;проект&gt;/99-governance/layout.json</code> (его пишет <code>layout-builder</code>): адреса разделов, исследования, шаблонов, релиза. Роли и навыки берут адреса из него</td></tr>
+        <tr id="term-20"><td><b>Паспорт проекта</b></td><td>Содержательный паспорт: назначение, владелец, границы, константы проекта. Файл <code>91-project-control/Паспорт-проекта.md</code> у коннектора, <code>01-project-documentation/project-passport.md</code> (PD-001) в раскладке <code>analyst</code>. Заглушку заводит <code>layout-builder</code>, заполняет <code>business-analyst</code> по ответам владельца — не путать с паспортом раскладки</td></tr>
         <tr id="term-4"><td><b>Роль</b></td><td>Кто выполняет задачу и что ему позволено. Файл <code>.kilo/agents/&lt;имя&gt;.md</code>. Выбирается в начале работы</td></tr>
         <tr id="term-5"><td><b>Навык</b></td><td>Как делается задача такого типа: порядок, проверки, формат. Файл <code>.kilo/skills/&lt;имя&gt;/SKILL.md</code>. Подключается сам</td></tr>
         <tr id="term-6"><td><b>Команда</b></td><td>Готовое поручение с назначенным исполнителем. Пишется через слэш: <code>/document-process &lt;путь&gt;</code></td></tr>
@@ -1395,17 +1697,17 @@
   <p class="lead">Команда — не «кнопка побыстрее», а фиксированный порядок работы: кто делает, в каком порядке, какие проверки обязательны и куда ложится результат. Поэтому её и просят вместо свободной формулировки — так результат получается одинаковым у всех и воспроизводится завтра. Аргумент пишется через пробел после имени: <code>/document-process 00-sources/…/файл.pdf</code>.</p>
   <div class="cmd-list">
 <article class="msg cmd-card" id="cmd-document-process">
-  <div class="msg-to"><span class="msg-label">Кому · Исполнитель:</span> <span class="msg-exec">технический агент, делегирует <a href="#role-document-processor">document-processor</a> и <a href="#role-vlm">vlm</a><small>команда проекта-примера, переносится в Золотой стандарт</small></span></div>
+  <div class="msg-to"><span class="msg-label">Кому · Исполнитель:</span> <span class="msg-exec">технический агент проекта-примера, делегирует <code>document-processor</code> (в Золотом стандарте нет) и <code>vlm</code><small>команда проекта-примера; в Золотом стандарте её нет (<code>.kilo/command/</code>)</small></span></div>
   <div class="msg-body"><code class="msg-text">/document-process &lt;путь&gt;</code><button type="button" class="copy">Копировать</button></div>
   <dl class="msg-notes msg-dl"><dt>Когда применять</dt><dd>Пришёл PDF, DOCX, XML или картинка, и нужен машиночитаемый текст: новый документ регулятора или вендора, скан, схема, таблица из презентации. Путь к файлу обязателен — команда не ищет файл по названию</dd><dt>Что на выходе</dt><dd>Каталог прогона с файлом-кандидатом и отчётом проверок. Готовый результат вы затем размещаете рядом с оригиналом — <a href="#howto-digitize">разбор ниже</a></dd></dl>
 </article>
 <article class="msg cmd-card" id="cmd-package-review">
-  <div class="msg-to"><span class="msg-label">Кому · Исполнитель:</span> <span class="msg-exec"><a href="#role-business-analyst">business-analyst</a><small>команда проекта-примера, переносится в Золотой стандарт</small></span></div>
+  <div class="msg-to"><span class="msg-label">Кому · Исполнитель:</span> <span class="msg-exec">исполнитель в команде не назначен — выполняет текущая роль сессии<small>команда Золотого стандарта, <code>.kilo/command/</code></small></span></div>
   <div class="msg-body"><code class="msg-text">/package-review &lt;комплект&gt;</code><button type="button" class="copy">Копировать</button></div>
   <dl class="msg-notes msg-dl"><dt>Когда применять</dt><dd>Старт нового проекта или новая порция материалов: надо понять, полон ли комплект, прежде чем по нему писать документ. Не для проверки готовой спецификации — для этого есть ревью БТ</dd><dt>Что на выходе</dt><dd>Перечень того, что есть, чего не хватает и что друг другу противоречит; находки записываются в файлы знаний</dd></dl>
 </article>
 <article class="msg cmd-card" id="cmd-source-analysis">
-  <div class="msg-to"><span class="msg-label">Кому · Исполнитель:</span> <span class="msg-exec"><a href="#role-business-analyst">business-analyst</a><small>команда проекта-примера, переносится в Золотой стандарт</small></span></div>
+  <div class="msg-to"><span class="msg-label">Кому · Исполнитель:</span> <span class="msg-exec">исполнитель в команде не назначен — выполняет текущая роль сессии<small>команда Золотого стандарта, <code>.kilo/command/</code></small></span></div>
   <div class="msg-body"><code class="msg-text">/source-analysis &lt;вопрос&gt;</code><button type="button" class="copy">Копировать</button></div>
   <dl class="msg-notes msg-dl"><dt>Когда применять</dt><dd>По ходу работы возник вопрос «а что говорит источник»: как устроена операция, есть ли требование, чем отличаются версии. Вопрос формулируйте своими словами, одной темой за раз</dd><dt>Что на выходе</dt><dd>Ответ со ссылками на файлы и строки, отдельно — что источник не говорит; факты и открытые вопросы уходят в файлы знаний</dd></dl>
 </article>
@@ -1461,7 +1763,7 @@
     <li>
       <div class="step-title">Положите принятый результат рядом с оригиналом</div>
       <p><b>Оцифрованный источник хранится там же, где источник, — в <code>00-sources/</code>.</b> В каталоге прогона результат остаётся только до вашей приёмки. Конвенция раздела простая: у каждого источника рядом лежат <code>original/</code> — то, что прислали, и <code>markdown/</code> — его машиночитаемое представление.</p>
-      <p>Это штатный завершающий шаг маршрута, а не особый случай: в проекте-примере он описан в <code>.kilo/knowledge-policy.md</code> («Размещение машиночитаемого представления источника») и в инструкции самой оцифровки; в Золотом стандарте — <code>AGENTS.md</code>, § 4 и навык <code>document-digitize</code>. Добавление недостающего представления и правка уже существующего — разные вещи: первое штатно, второе возможно только по точечным исключениям политики.</p>
+      <p>Это штатный завершающий шаг маршрута, а не особый случай: в проекте-примере он описан в его политике знаний («Размещение машиночитаемого представления источника») и в инструкции самой оцифровки; в Золотом стандарте — <code>AGENTS.md</code>, § 4, навык <code>document-digitize</code>, политика знаний — <code>.kilo/rules/knowledge-policy.md</code>. Добавление недостающего представления и правка уже существующего — разные вещи: первое штатно, второе возможно только по точечным исключениям политики.</p>
       <p>Общий вид: <code>00-sources/&lt;источник&gt;/original/&lt;файл&gt;</code> и рядом <code>markdown/</code>. Пример проекта (<code>pm-br</code>):</p>
       <div class="msg">
   <div class="msg-to"><span class="msg-label">Раскладка источника: оригинал и оцифровка рядом</span></div>
@@ -1475,7 +1777,7 @@
         <li>оригинал и исходные изображения остаются на месте, без переименования и удаления;</li>
         <li>размещается только проверенный результат: кандидат с пометками <code>PRESERVED_FALLBACK</code>, <code>NATIVE_CANDIDATE_UNREVIEWED</code> или <code>NOT_VERIFIED</code> остаётся в каталоге прогона — сначала доводят качество, потом размещают;</li>
         <li>если у источника есть <code>checksums.sha256</code>, добавляется строка размещённого файла; контрольная сумма оригинала при этом не меняется;</li>
-        <li>если документ ещё не в реестре источников — он получает номер <code>ИСТ-</code> и строку в реестре источников (пример проекта: <a href="00-sources/reestr-istochnikov-trebovaniy.md">00-sources/reestr-istochnikov-trebovaniy.md</a>; адрес в своём проекте — из паспорта), иначе агент не поймёт, чем этот файл является;</li>
+        <li>если документ ещё не в реестре источников — он получает номер <code>ИСТ-</code> и строку в реестре источников (пример проекта: <code>00-sources/reestr-istochnikov-trebovaniy.md</code> — в клоне канона такого файла нет; адрес в своём проекте — из паспорта), иначе агент не поймёт, чем этот файл является;</li>
         <li>перенос делает аналитик или основной агент по вашему поручению; <code>document-processor</code> по-прежнему пишет только в каталог прогона — это защита: до вашей приёмки результат остаётся кандидатом, а не нормой, на которую сошлются в требовании;</li>
         <li>в журнале задачи или отчёте прогона остаётся, из какого прогона взят файл (run-id), — чтобы через месяц было видно, чем получен текст.</li>
       </ul>
@@ -1712,10 +2014,10 @@
 </section>
 <section class="tabpanel" id="t-project-passport" role="tabpanel" aria-labelledby="tab-project-passport" tabindex="-1" data-page="project" data-tab="passport" data-title="Паспорт layout.json">
 <h2 class="tab-title">Проект › Паспорт layout.json</h2>
-  <h3 class="sub">Паспорт проекта: <code>99-governance/layout.json</code></h3>
+  <h3 class="sub">Паспорт раскладки: <code>99-governance/layout.json</code></h3>
   <p class="lead">Паспорт пишет скрипт раскладки. Схема ключей одна на все проекты: роль ищет адрес по тому же коду в проекте любого типа. Значение <code>NOT_CONFIGURED</code> — раздела в проекте нет, документ такого типа не сохраняется до решения владельца.<small>layout-connector.md, «Схема ключей паспорта — одна на все проекты»</small></p>
   <details class="tbl">
-  <summary><svg class="ico tbl-chev" aria-hidden="true"><use href="#i-chevron"/></svg><span class="tbl-title">Паспорт проекта: <code>99-governance/layout.json</code></span><span class="tbl-count">10 строк</span></summary>
+  <summary><svg class="ico tbl-chev" aria-hidden="true"><use href="#i-chevron"/></svg><span class="tbl-title">Паспорт раскладки: <code>99-governance/layout.json</code></span><span class="tbl-count">10 строк</span></summary>
 <div class="card">
     <div class="table-scroll">
     <table class="flow">
@@ -1790,8 +2092,8 @@
 </section>
 </div>
 
-<footer class="about" data-build="2026-09-29 17:38">
-  <p id="build-stamp">Версия навигатора: 2026-09-29 17:38 (МСК). Если на сайте другая дата — обновите страницу с очисткой кэша: Cmd+Shift+R / Ctrl+F5.</p>
+<footer class="about" data-build="2026-09-29 20:45">
+  <p id="build-stamp">Версия навигатора: 2026-09-29 20:45 (МСК). Если на сайте другая дата — обновите страницу с очисткой кэша: Cmd+Shift+R / Ctrl+F5.</p>
   <p>Навигация по Золотому стандарту — репозиторию <code>kilo-canon</code>: роли в <code>.kilo/agents/</code>, навыки в <code>.kilo/skills/</code>, команды в <code>.kilo/command/</code>.</p>
   <p>Источник актуальных правил — сами файлы ролей и навыков и точка входа помощника <a href="AGENTS.md">AGENTS.md</a>. Эта страница — справочная навигация, она ничего не решает сама. Конкретика одного проекта оставлена как пример и помечена «пример проекта».</p>
   <p>Страница — справочная навигация, не регламент. Источник истины — Золотой стандарт, каталог <code>kilo-canon/.kilo</code>: роли <code>.kilo/agents/</code>, навыки <code>.kilo/skills/</code>, команды <code>.kilo/command/</code>, точка входа <code>AGENTS.md</code>. Состав на странице поддерживается вручную: добавили, убрали или переименовали файл в <code>.kilo</code> — обновите в конце этого файла массивы <code>ROLES</code> и <code>ROLE_GROUPS</code> (роли), <code>SKILLS</code> и <code>SKILL_GROUPS</code> (навыки), <code>TASKS</code> (первые команды), а в разметке — таблицу команд в разделе «Команды» и «Стартовый бриф» (программы, библиотеки, противоречия).</p>
@@ -1843,10 +2145,6 @@ const SKILL_GROUPS = [
   { id: "env",       title: "Среда, публикация, рефлексия",   icon: "i-wrench" }
 ];
 
-/* Пометки о происхождении: роли и навыки проекта-примера переносятся в Золотой стандарт.
-   Пока перенос не сделан, путь указан по каноническому каталогу Золотого стандарта. */
-const MOVING = "роль проекта-примера, переносится в Золотой стандарт; путь указан по каноническому каталогу <code>.kilo/agents/</code>";
-const MOVING_SKILL = "навык проекта-примера, переносится в Золотой стандарт; путь указан по каноническому каталогу <code>.kilo/skills/</code>";
 
 /* ---------- Данные: роли ---------- */
 const ROLES = [
@@ -1880,7 +2178,8 @@ const ROLES = [
     group: "analysis",
     mode: "primary",
     desc: "Методолог бизнес-анализа и проектировщик инструкций для ИИ-агентов — готовит и обновляет индивидуальные инструкции формирования БТ.",
-    status: MOVING,
+    warn: "Роли с таким именем в Золотом стандарте нет. Индивидуальные инструкции подготовки документа там пишет роль <a href=\"#role-instruction-writer\">instruction-writer</a>.",
+    status: "нет в Золотом стандарте (проверено по <code>.kilo/agents/</code> 29.09.2026); удалить карточку или оставить с пометкой — [РЕШАЕТ АВТОР]",
     path: ".kilo/agents/bt-instruction-writer.md"
   },
   {
@@ -1907,9 +2206,9 @@ const ROLES = [
     mode: "subagent",
     desc: "Локальная обработка документов и схем; технические результаты только в изолированных прогонах, без изменения источников и принятых артефактов.",
     calledBy: "команда <code>/document-process</code> или роль с правом делегирования",
-    warn: "Роль проекта-примера; в Золотом стандарте её нет (PACKAGE-MANIFEST.md: «отсутствуют в каноне»). В каноне оцифровку ведёт <a href=\"#role-parser_doc\">parser_doc</a>.",
+    warn: "Роль проекта-примера; в Золотом стандарте её нет (PACKAGE-MANIFEST.md: «Отсутствуют в каноне… Ссылки на них не действуют»). В каноне оцифровку ведёт <a href=\"#role-parser_doc\">parser_doc</a>.",
     perms: "Пишет только в каталог прогона. Источники и принятые артефакты не меняет. Из других ролей может позвать только vlm.",
-    status: MOVING,
+    status: "нет в Золотом стандарте (проверено по <code>.kilo/agents/</code> 29.09.2026); удалить карточку или оставить с пометкой — [РЕШАЕТ АВТОР]",
     path: ".kilo/agents/document-processor.md"
   },
   {
@@ -1927,8 +2226,9 @@ const ROLES = [
     mode: "subagent",
     desc: "Единственный канал записи знаний: факты, вопросы к источникам и к проекту, противоречия, память и ошибки в выделенных областях проекта.",
     calledBy: "рабочая роль по ходу задачи — отдельно запускать не нужно",
+    warn: "Роль проекта-примера; в Золотом стандарте её нет (PACKAGE-MANIFEST.md: «Отсутствуют в каноне… Ссылки на них не действуют»). Правила записи знаний в каноне — <code>.kilo/rules/knowledge-policy.md</code>.",
     perms: "Единственная роль, которой разрешено писать в файлы знаний — факты, вопросы, противоречия, память, ошибки. Больше ничего не трогает.",
-    status: MOVING,
+    status: "нет в Золотом стандарте (проверено по <code>.kilo/agents/</code> 29.09.2026); удалить карточку или оставить с пометкой — [РЕШАЕТ АВТОР]",
     path: ".kilo/agents/knowledge-curator.md"
   },
   {
@@ -1961,7 +2261,7 @@ const ROLES = [
     mode: "all",
     desc: "Смотритель репозитория: проверяет порядок в файлах, каталогах, индексах и ветках, докладывает расхождения и чинит только явно разрешённое. Ничего не додумывает.",
     perms: "Состояние репозитория смотрит свободно, любое изменение — только с вашего подтверждения. Содержание документов не оценивает.",
-    status: MOVING,
+    status: "в Золотом стандарте с 26.09.2026 (PACKAGE-MANIFEST.md)",
     path: ".kilo/agents/repo-keeper.md"
   },
   {
@@ -1979,7 +2279,7 @@ const ROLES = [
     mode: "all",
     desc: "Хранитель трассируемости: собирает матрицы связей между артефактами по навыку и конфигурации проекта, проверяет целостность связей и докладывает расхождения. Ничего не додумывает и не чинит без поручения.",
     perms: "Пишет только в каталог трассируемости и с подтверждением. Найденные расхождения докладывает, но не чинит.",
-    status: MOVING,
+    status: "в Золотом стандарте с 26.09.2026 (PACKAGE-MANIFEST.md)",
     path: ".kilo/agents/traceability.md"
   },
   {
@@ -1988,7 +2288,7 @@ const ROLES = [
     mode: "subagent",
     desc: "Разбор одного локального изображения или отрендеренной страницы PDF моделью, подключённой сейчас в Kilo; провайдер и модель в проекте не закреплены.",
     calledBy: "parser_doc по навыку document-digitize",
-    warn: "Роль Золотого стандарта — единственный канал чтения изображений для parser_doc; vlm проекта-примера в канон не переносится. Нужна модель с поддержкой изображений: без неё роль возвращает только <code>WAITING_FOR_VISION</code>.",
+    warn: "Роль Золотого стандарта для чтения изображений; взаимозаменяема с <a href=\"#role-vlm\">vlm</a> — та же роль с моделью другого вендора. Нужна модель с поддержкой изображений: без неё роль возвращает только <code>WAITING_FOR_VISION</code>.",
     perms: "Ничего не правит, не запускает и файлов не пишет. Нечитаемое помечает <code>[НЕЧИТАЕМО]</code>, сомнение — <code>UNCERTAIN</code>.",
     path: ".kilo/agents/vision.md"
   },
@@ -1996,12 +2296,40 @@ const ROLES = [
     id: "vlm",
     group: "documents",
     mode: "subagent",
-    desc: "Узкоспециализированный разбор изображений: смотрит картинку и возвращает машиночитаемое описание. Сам по себе документ не оцифровывает.",
-    calledBy: "document-processor по контракту document-digitize, отдельными вызовами STRUCTURE и TRANSCRIBE",
-    warn: "Роль проекта-примера; в Золотом стандарте её нет — там <a href=\"#role-vision\">vision</a>. Не вызывайте напрямую: при прямом обращении теряется весь порядок оцифровки — выбор формата, конвертация, проверки и запись в каталог прогона. Нужен разбор документа или схемы — запускайте <code>/document-process</code>.",
-    perms: "Ничего не правит и не запускает: только смотрит изображение и возвращает разбор.",
-    status: MOVING,
+    desc: "Визуальная роль, взаимозаменяемая с vision: те же правила, модель другого вендора (выбирается на хосте). Вызывается вместо vision или при её отказе по модели или провайдеру.",
+    calledBy: "роль, которой нужен разбор изображения, — например parser_doc по навыку document-digitize; какую из двух звать первой, решает вызывающая роль по доступности на хосте",
+    warn: "Модель выбирает специалист в личной конфигурации хоста; в каноне она не закреплена. Модель не выбрана — роль недоступна, это не ошибка.<small>.kilo/agents/vlm.md</small> Не вызывайте напрямую «посмотри картинку»: нужен разбор документа — поручите оцифровку роли <a href=\"#role-parser_doc\">parser_doc</a>.",
+    perms: "Файлов проекта не правит и команд не запускает: только смотрит изображение и возвращает разбор.",
     path: ".kilo/agents/vlm.md"
+  },
+  {
+    id: "bt-writer",
+    group: "analysis",
+    mode: "all",
+    desc: "Готовит бизнес-требования (БТ) по одной за цикл: по шаблону проекта, утверждённой инструкции к документу и навыку bt-preparation, с обязательной проверкой reviewer по навыку bt-review до предъявления. Вызывается напрямую (сам вызывает reviewer) или субагентом от business-analyst (готовит черновик и возвращает вопросы и нужные проверки распорядителю). Не для ТЗ, ФТ, Use Case и технического разбора API/XSD.",
+    path: ".kilo/agents/bt-writer.md"
+  },
+  {
+    id: "instruction-writer",
+    group: "analysis",
+    mode: "all",
+    desc: "Методист инструкций: пишет и актуализирует индивидуальную инструкцию подготовки одного документа по шаблону проекта (БТ, ФТ, ТЗ, UC и любой другой артефакт с шаблоном) — переменные, предметная методика, сопоставление с каждым разделом шаблона, чек-лист, порядок повторного запуска. Сам документ не пишет. Вызывается напрямую (сам вызывает reviewer) или субагентом от business-analyst (готовит проект и возвращает вопросы и нужные проверки распорядителю).",
+    path: ".kilo/agents/instruction-writer.md"
+  },
+  {
+    id: "canon-migrator",
+    group: "env",
+    mode: "all",
+    desc: "Приводит рабочее место специалиста к канону: находит расхождения в репозитории проекта или рефлексии (память не в MEMORY.md, смешанные записи памяти, 92-reflection в проекте, установка рефлексии старой схемы, события без YAML или старой схемы, старые записи ошибок ERR-*, исходники не по схеме папки файла) и переносит найденное туда, где ему место по канону. Одна цель за запуск, перенос — только по «да» владельца. Не для перевода прежних областей-форков (это workspace-migrator).",
+    path: ".kilo/agents/canon-migrator.md"
+  },
+  {
+    id: "workspace-migrator",
+    group: "env",
+    mode: "subagent",
+    desc: "Разовая техническая роль: переводит одну прежнюю рабочую область (форк канона с upstream) на новое рабочее место копированием — проекты, память, решения, планы, промпты, рефлексия; исходная область не меняется. Только по поручению владельца.",
+    calledBy: "только по поручению владельца",
+    path: ".kilo/agents/workspace-migrator.md"
   }
 ];
 
@@ -2009,10 +2337,10 @@ const ROLES = [
 const SKILLS = [
   { id: "analysis-review", group: "review", desc: "Независимая проверка документов и доказательной базы.", path: ".kilo/skills/analysis-review/SKILL.md" },
   { id: "api-integration", group: "docs", desc: "Описание методов API и объектов, проверка соответствия параметров UI, backend и БФТ. Для API проектов ДБО; внешние форматы коннекторов описываются в ТЗ-Форматах.", path: ".kilo/skills/api-integration/SKILL.md" },
-  { id: "bt-preparation", group: "bt", desc: "Подготовка или доработка одной БТ по индивидуальной инструкции из реестра, актуальным источникам, архитектуре и общему шаблону. Не заменяет независимое ревью.", status: MOVING_SKILL, path: ".kilo/skills/bt-preparation/SKILL.md" },
-  { id: "bt-review", group: "review", desc: "Независимая проверка одной БТ или её изменений по индивидуальной инструкции, источникам, архитектуре и принятым проектным решениям. Проверяет бизнес-границы, структуру, трассировку и диаграммы; возвращает доказательные находки без правок документов.", status: MOVING_SKILL, path: ".kilo/skills/bt-review/SKILL.md" },
+  { id: "bt-preparation", group: "bt", desc: "Подготовка или доработка одной БТ по индивидуальной инструкции из реестра, актуальным источникам, архитектуре и общему шаблону. Не заменяет независимое ревью.", path: ".kilo/skills/bt-preparation/SKILL.md" },
+  { id: "bt-review", group: "review", desc: "Независимая проверка одной БТ или её изменений по индивидуальной инструкции, источникам, архитектуре и принятым проектным решениям. Проверяет бизнес-границы, структуру, трассировку и диаграммы; возвращает доказательные находки без правок документов.", path: ".kilo/skills/bt-review/SKILL.md" },
   { id: "confluence", group: "env", desc: "Чтение страниц корпоративного Confluence по ссылке из задания и публикация статьи из Markdown-источника в указанное пространство. Не для подготовки самого документа и не для пространства, не указанного в задании. На хосте нужны MCP-сервер, персональный токен и VPN — см. <code>.kilo/references/host-setup-windows.md</code>.", path: ".kilo/skills/confluence/SKILL.md" },
-  { id: "devops", group: "layout", desc: "Синхронизация репозитория с удалённым origin (fetch, pull, push): проверенный SSH-ключ и типовые ошибки pull/push. Загружать до первой git-команды к remote.", status: "навык проекта-примера; в Золотом стандарте его нет и не переносится: синхронизацию там ведёт роль devops по HTTPS с токеном (canon_update_check.py, pull --ff-only). SSH не используется", path: ".kilo/skills/devops/SKILL.md" },
+  { id: "devops", group: "layout", desc: "Синхронизация репозитория с удалённым origin (fetch, pull, push): проверенный SSH-ключ и типовые ошибки pull/push. Загружать до первой git-команды к remote.", status: "навык проекта-примера; нет в Золотом стандарте (проверено по <code>.kilo/skills/</code> 29.09.2026); удалить карточку или оставить с пометкой — [РЕШАЕТ АВТОР]. Синхронизацию в каноне ведёт роль <a href=\"#role-devops\">devops</a>", path: ".kilo/skills/devops/SKILL.md" },
   { id: "document-digitize", group: "digitize", desc: "Проверяемая оцифровка локальных PDF/DOCX в Markdown, опись и подготовка к техническому анализу; XML/XSD-валидация. Уже работает на проектах: регуляторика из PDF → MD. Внедрённые схемы Visio в DOCX — через Word; без Word нужен LibreOffice. Простое чтение названного фрагмента навыка не требует.", path: ".kilo/skills/document-digitize/SKILL.md" },
   { id: "document-draft", group: "bt", desc: "Черновик аналитического документа по явно названному шаблону и подтверждённым findings активного коннектора: ТЗ, ФТ или описание форматов. Не для извлечения данных из неразобранных DOCX/PDF.", path: ".kilo/skills/document-draft/SKILL.md" },
   { id: "document-package-review", group: "review", desc: "Проверка комплекта входных документов коннектора по именам, версиям, связям и подтверждённым фактам; расхождения и вопросы с адресами. Перед подготовкой документа; не замена оцифровке и XML-валидации.", path: ".kilo/skills/document-package-review/SKILL.md" },
@@ -2027,12 +2355,13 @@ const SKILLS = [
   { id: "skill-creator", group: "env", desc: "Проектирование, создание, проверка и обновление навыков Kilo Code (SKILL.md), в том числе проверка description и структуры ресурсов. Не вместо выполнения задачи существующим навыком.", path: ".kilo/skills/skill-creator/SKILL.md" },
   { id: "source-verification", group: "review", desc: "Проверка источников, гипотез, противоречий и трассировки требований.", path: ".kilo/skills/source-verification/SKILL.md" },
   { id: "technical-analysis", group: "research", desc: "Анализ источников и подготовка технической документации с трассировкой фактов и контролем блокеров: бизнес-требования, ТЗ/ФТ, сценарии, доменная модель, API — после разбора входных документов.", path: ".kilo/skills/technical-analysis/SKILL.md" },
-  { id: "traceability-matrix", group: "research", desc: "Сборка и проверка сводной матрицы трассируемости требований по цепочке уровней, объявленной в конфигурации traceability-chain.json проекта. Правила, формат и проверки — здесь; роль traceability только исполняет.", status: MOVING_SKILL, path: ".kilo/skills/traceability-matrix/SKILL.md" },
+  { id: "traceability-matrix", group: "research", desc: "Сборка и проверка сводной матрицы трассируемости требований по цепочке уровней, объявленной в конфигурации traceability-chain.json проекта. Правила, формат и проверки — здесь; роль traceability только исполняет.", path: ".kilo/skills/traceability-matrix/SKILL.md" },
   { id: "tz-fssp-mfo", group: "docs", desc: "Профиль одного проекта — только <code>fssp_PKO_MFO</code>, к другим проектам не применяется: настройки сборки ТЗ по форматам ФССП ↔ КО/МФО, карта входов, локальные решения, регрессионные проверки. Работает с ролью tz-writer.", path: ".kilo/skills/tz-fssp-mfo/SKILL.md" },
   { id: "tz-osnovnoe-rs-connect", group: "docs", desc: "Черновик основного ТЗ модуля RS-Connect для обмена, где госорган инициирует запрос, а банк предоставляет сведения, — по подтверждённым ТЗ-Форматам, ФТ и XSD. Не для ТЗ-Форматов, ФТ и варианта «госорган — поставщик».", path: ".kilo/skills/tz-osnovnoe-rs-connect/SKILL.md" },
   { id: "ui-description", group: "docs", desc: "Описание пользовательского интерфейса по регламенту подготовки Use Case и описания UI и правилам каталога описаний UI проекта.", path: ".kilo/skills/ui-description/SKILL.md" },
   { id: "use-case-preparation", group: "docs", desc: "Подготовка Use Case по регламенту подготовки Use Case и описания UI и правилам каталога Use Case проекта. Регламент общий для навыков use-case-preparation, ui-description и api-integration.", path: ".kilo/skills/use-case-preparation/SKILL.md" },
-  { id: "visual-analysis", group: "digitize", desc: "Универсальный канон визуального анализа и lossless-конвертации изображений, страниц документов, таблиц, схем, диаграмм, графиков, UI, формул и кода в машиночитаемые форматы.", status: MOVING_SKILL, path: ".kilo/skills/visual-analysis/SKILL.md" },
+  { id: "visual-analysis", group: "digitize", desc: "Универсальный канон визуального анализа и lossless-конвертации изображений, страниц документов, таблиц, схем, диаграмм, графиков, UI, формул и кода в машиночитаемые форматы.", status: "навык проекта-примера; нет в Золотом стандарте (проверено по <code>.kilo/skills/</code> 29.09.2026); удалить карточку или оставить с пометкой — [РЕШАЕТ АВТОР]", path: ".kilo/skills/visual-analysis/SKILL.md" },
+  { id: "workspace-setup", group: "layout", desc: "Проверка и доустановка рабочего места аналитика как часть синхронизации с каноном: исключения корня, репозиторий специалиста projects/ (клон по выданному адресу, прежнее устройство, адрес origin), каталог рефлексии projects/reflection/ и её installation.json, ключ project паспортов проектов, перекрытие ролей глобальной настройкой Kilo и копии ролей и навыков канона вне канона. Исполняет роль devops при старте сессии после проверки канона и по вызову роли, получившей CONFIGURATION_REQUIRED или несоответствие паспорта рефлексии; пользователь навык не вызывает. Не используйте для правки раскладки проекта — это layout-builder — и для перевода прежних рабочих областей — это canon-migrator и workspace-migrator.", path: ".kilo/skills/workspace-setup/SKILL.md" },
   { id: "workspace-sync", group: "layout", desc: "Удалён из Золотого стандарта 25.09.2026 вместе с командой /sync-workspace и суточным гейтом. Обновление канона теперь делает роль devops при старте сессии (<code>canon_update_check.py</code>, <code>git pull --ff-only</code>), выгрузка работы — по просьбе.", status: "удалён; ссылка оставлена для старых материалов", path: ".kilo/references/devops-changelog.md" }
 ];
 
@@ -2041,14 +2370,14 @@ const TASKS = [
   {
     task: "Подготовить или доработать одну БТ",
     prompt: "Подготовь БТ-&lt;номер&gt; «&lt;название&gt;»",
-    you: roleLink("business-analyst"),
+    you: roleLink("business-analyst") + " — поручит " + roleLink("bt-writer") + "; или " + roleLink("bt-writer") + " напрямую",
     under: roleLink("reviewer") + " — независимую проверку исполнитель запускает сам, просить об этом не нужно",
     skill: skillLink("bt-preparation") + " + " + skillLink("bt-review"),
     notes: [
       { icon: "i-compass", label: "Когда запускать",
         text: "Когда по этой БТ есть индивидуальная инструкция в реестре и собраны источники. Одна задача — одна БТ: «сделай все» не запускают (в проекте-примере их 18), тираж идёт по одному документу с вашим подтверждением по каждому." },
       { icon: "i-check", label: "Что получите",
-        text: "Черновик в <code>draft/</code> раздела БТ по паспорту проекта (пример проекта: <code>DRAFT-</code> в <code>02-business-requirements/черновики/</code>) и находки независимой проверки. Финалом он станет после ваших правок и вашего решения, а не по завершении прогона." },
+        text: "Черновик в <code>draft/</code> раздела БТ по паспорту раскладки (пример проекта: <code>DRAFT-</code> в <code>02-business-requirements/черновики/</code>) и находки независимой проверки. Финалом он станет после ваших правок и вашего решения, а не по завершении прогона." },
       { icon: "i-alert", label: "Частая ошибка",
         text: "Пересказывать в запросе структуру БТ и порядок разделов. Это уже описано в шаблоне и правилах формирования; пересказ переопределяет инструкцию и ломает единообразие документов." }
     ]
@@ -2056,14 +2385,14 @@ const TASKS = [
   {
     task: "Спроектировать или обновить инструкцию формирования БТ",
     prompt: "Обнови инструкцию формирования для БТ-&lt;номер&gt;",
-    you: roleLink("bt-instruction-writer"),
+    you: roleLink("instruction-writer"),
     under: "—",
     skill: "—",
     notes: [
       { icon: "i-compass", label: "Когда запускать",
         text: "До написания самой БТ, если инструкции для неё ещё нет или она устарела: изменился источник, приняли новое проектное решение, на приёмке прошлой БТ всплыло правило, которое нужно закрепить на будущее." },
       { icon: "i-check", label: "Что получите",
-        text: "Файл инструкции в <code>90-work-items/instruction/</code> — по нему потом собирается БТ. Это методический документ, а не требование: сам по себе он ничего не описывает про продукт." }
+        text: "Файл инструкции в каталоге инструкций проекта (ключ паспорта <code>instructions_root</code>) — по нему потом собирается документ. Ключа нет — роль инструкцию не сохраняет и предлагает <code>layout-builder</code>. Это методический документ, а не требование: сам по себе он ничего не описывает про продукт." }
     ]
   },
   {
@@ -2076,7 +2405,7 @@ const TASKS = [
       { icon: "i-compass", label: "Когда запускать",
         text: "Когда собраны исходные документы: основное ТЗ, ТЗ на форматы, при наличии — ФТ смежного проекта, справочники, схемы. Неразобранные PDF/DOCX сначала оцифровывают. Пример задания из роли: «собрать ФТ по взаимодействию со смежной АС для коннектора X по виду сведений Y»." },
       { icon: "i-check", label: "Что получите",
-        text: "Черновик ФТ в <code>draft/</code> раздела <code>ФТ</code> по паспорту проекта. Чего нет в источниках — маркер <code>{УТОЧНИТЬ: Q-…}</code> и вопрос в <code>open-questions.md</code>, а не догадка." }
+        text: "Черновик ФТ в <code>draft/</code> раздела <code>ФТ</code> по паспорту раскладки. Чего нет в источниках — маркер <code>{УТОЧНИТЬ: Q-…}</code> и вопрос в <code>open-questions.md</code>, а не догадка." }
     ]
   },
   {
@@ -2136,8 +2465,8 @@ const TASKS = [
   {
     task: "Исследовать вопрос по источникам",
     prompt: "/source-analysis &lt;вопрос своими словами&gt;",
-    you: "готовая команда <code>/source-analysis</code> (пример проекта)",
-    under: roleLink("business-analyst") + ", запись фактов — " + roleLink("knowledge-curator"),
+    you: "готовая команда <code>/source-analysis</code> (Золотой стандарт)",
+    under: roleLink("business-analyst"),
     skill: skillLink("technical-analysis") + ", " + skillLink("source-verification"),
     notes: [
       { icon: "i-compass", label: "Когда запускать",
@@ -2147,8 +2476,8 @@ const TASKS = [
   {
     task: "Проверить состав входящего комплекта",
     prompt: "/package-review &lt;путь к каталогу с комплектом&gt;",
-    you: "готовая команда <code>/package-review</code> (пример проекта)",
-    under: roleLink("business-analyst") + ", запись — " + roleLink("knowledge-curator"),
+    you: "готовая команда <code>/package-review</code> (Золотой стандарт)",
+    under: roleLink("business-analyst"),
     skill: skillLink("document-package-review"),
     notes: [
       { icon: "i-compass", label: "Когда запускать",
@@ -2159,8 +2488,8 @@ const TASKS = [
     task: "Оцифровать PDF / DOCX / XML / изображение",
     prompt: "/document-process &lt;путь к файлу&gt;",
     you: "роль " + roleLink("parser_doc") + " (Золотой стандарт) — «Оцифруй» и путь; или готовая команда <code>/document-process</code> (пример проекта) — <a href=\"#howto-digitize\">разбор ниже</a>",
-    under: roleLink("vision") + "; в проекте-примере — технический исполнитель → " + roleLink("document-processor") + " → " + roleLink("vlm"),
-    skill: skillLink("document-digitize") + ", " + skillLink("visual-analysis"),
+    under: roleLink("vision") + " или " + roleLink("vlm") + " — разбор изображений",
+    skill: skillLink("document-digitize"),
     notes: [
       { icon: "i-compass", label: "Когда запускать",
         text: "Как только в проект пришёл нетекстовый документ, на который потом будут ссылаться: PDF регулятора или вендора, скан, схема, таблица из презентации. Чем раньше он станет машиночитаемым, тем раньше по нему можно искать и цитировать." },
@@ -2217,16 +2546,16 @@ const TASKS = [
     task: "Запомнить факт, вопрос или ошибку",
     prompt: "Запиши как факт: &lt;что именно&gt;",
     you: "Ничего специально выбирать не нужно. Просто скажите это в работе: «запиши как факт», «это открытый вопрос», «запомни решение»",
-    under: roleLink("knowledge-curator") + " — в проекте-примере записать в файлы знаний может только он",
+    under: "—",
     skill: "—",
     notes: [
       { icon: "i-folder", label: "Куда попадёт запись",
-        text: "В Золотом стандарте: подтверждённые факты — <code>findings.md</code>, пробелы — <code>open-questions.md</code>, рассуждения — <code>research-notes.md</code> в каталоге <code>research_root</code> паспорта; то, что нужно в следующей сессии, — строкой в <code>MEMORY.md</code>, свои ошибки — в <code>reflection/</code>. Пример проекта: адреса перечислены в <code>.kilo/knowledge-layout.json</code>." }
+        text: "В Золотом стандарте: подтверждённые факты — <code>findings.md</code>, пробелы — <code>open-questions.md</code>, рассуждения — <code>research-notes.md</code> в каталоге <code>research_root</code> паспорта; то, что нужно в следующей сессии, — строкой в <code>MEMORY.md</code>, свои ошибки — в <code>reflection/</code>. Общего <code>.kilo/knowledge-layout.json</code> проекта-примера в каноне нет (удалён 24.09.2026, PACKAGE-MANIFEST.md): адреса — только из паспорта проекта; правила записи — <code>.kilo/rules/knowledge-policy.md</code>." }
     ]
   },
   {
     task: "Завести или проверить раскладку нового проекта",
-    prompt: "Заведи структуру проекта",
+    prompt: "Сформируй в этом проекте структуру каталогов по канону: &lt;путь к папке проекта&gt;. Это &lt;коннектор / проект ДБО&gt;.",
     you: roleLink("layout-builder"),
     under: roleLink("devops") + " и " + roleLink("reflector") + " — при старте сессии: проверка канона и досмотр рефлексии",
     skill: skillLink("project-layout") + " → " + skillLink("project-layout-connector") + " или " + skillLink("project-layout-analyst"),
@@ -2234,7 +2563,9 @@ const TASKS = [
       { icon: "i-compass", label: "Как идёт работа",
         text: "Роль определяет тип проекта и первой строкой называет его с основанием. Дальше: проверка → план → показывает вам список создаваемого → создание → повторная проверка → паспорт, README, <code>.gitignore</code>. Тип неоднозначен — один вопрос с двумя вариантами." },
       { icon: "i-alert", label: "Чего роль не делает",
-        text: "Не переносит и не переименовывает файлы с содержанием, не создаёт папки документов «для порядка», не правит <code>.kilo/</code>, не коммитит и не выгружает." }
+        text: "Не переносит и не переименовывает файлы с содержанием, не создаёт папки документов «для порядка», не правит <code>.kilo/</code>, не коммитит и не выгружает." },
+      { icon: "i-flag", label: "Пошагово",
+        text: "С признаком успеха и тем, что делать при «каталог уже существует», — вкладка <a href=\"#t-start-project\">«Старт › Первый проект»</a>. Раскладка — до первой задачи ролей-писателей: они берут адреса из паспорта." }
     ]
   },
   {
@@ -2281,7 +2612,7 @@ const TASKS = [
     prompt: "Выгрузи накопленные коммиты на сервер",
     you: roleLink("devops"),
     under: "—",
-    skill: "без навыка: роль devops, раздел «Выгрузка работы» (в проекте-примере — " + skillLink("devops") + ")",
+    skill: "без навыка: роль devops, раздел «Выгрузка работы»",
     notes: [
       { icon: "i-compass", label: "Когда запускать",
         text: "В конце рабочего куска: зафиксировать сделанное и выгрузить. В коммит своей области идёт только своя часть — <code>projects/</code>, <code>decisions/</code>, <code>Plans/</code>, <code>reflection/</code>, <code>MEMORY.md</code>; общая часть не выгружается." },
@@ -2543,7 +2874,7 @@ const TASKS = [
   }
 
   /* ---------- Пилюли состояния (визуальная обёртка, текст не меняется) ---------- */
-  var PILL_RE = /\[(?:НЕ ОПИСАНО|РЕШАЕТ АВТОР[^\]]*|УТОЧНИТЬ У АВТОРА|ПОСЛЕ ВЫБОРА ПОДПИСКИ)\]|[Пп]ример проекта(?![-А-Яа-яЁё])|переносится в Золотой стандарт/g;
+  var PILL_RE = /\[(?:НЕ ОПИСАНО|РЕШАЕТ АВТОР[^\]]*|УТОЧНИТЬ У АВТОРА|ПОСЛЕ ВЫБОРА ПОДПИСКИ|ПРОВЕРИТЬ ПО ЭКРАНУ|НУЖЕН ПРИМЕР ОТ АВТОРА[^\]]*)\]|[Пп]ример проекта(?![-А-Яа-яЁё])|переносится в Золотой стандарт/g;
   function pillClass(s) {
     if (s.charAt(0) === "[") return "pill pill-warn";
     if (s.indexOf("переносится") === 0) return "pill pill-info";
@@ -2582,7 +2913,7 @@ const TASKS = [
   }
 
   /* ---------- Пометки для автора ---------- */
-  var MARK_RE = /\[(НЕ ОПИСАНО|РЕШАЕТ АВТОР|УТОЧНИТЬ У АВТОРА|ПОСЛЕ ВЫБОРА ПОДПИСКИ)[^\]]*\]/g;
+  var MARK_RE = /\[(НЕ ОПИСАНО|РЕШАЕТ АВТОР|УТОЧНИТЬ У АВТОРА|ПОСЛЕ ВЫБОРА ПОДПИСКИ|ПРОВЕРИТЬ ПО ЭКРАНУ|НУЖЕН ПРИМЕР ОТ АВТОРА)[^\]]*\]/g;
   function collectMarks() {
     var out = [], seen = {}, n = 0;
     $$(".tabpanel").forEach(function (panel) {
@@ -2605,7 +2936,7 @@ const TASKS = [
   }
   function renderAuthor(marks) {
     var box = doc.getElementById("author-marks");
-    var types = ["НЕ ОПИСАНО", "РЕШАЕТ АВТОР", "УТОЧНИТЬ У АВТОРА", "ПОСЛЕ ВЫБОРА ПОДПИСКИ"];
+    var types = ["НЕ ОПИСАНО", "РЕШАЕТ АВТОР", "УТОЧНИТЬ У АВТОРА", "ПОСЛЕ ВЫБОРА ПОДПИСКИ", "ПРОВЕРИТЬ ПО ЭКРАНУ", "НУЖЕН ПРИМЕР ОТ АВТОРА"];
     var html = '<p class="lead">Всего мест с пометками: ' + marks.length + '.</p><ul class="mark-sum">' +
       types.map(function (tp) {
         var c = marks.filter(function (m) { return m.type === tp; }).length;
@@ -2646,6 +2977,7 @@ const TASKS = [
   var TERM_STEMS = {
     "Золотой стандарт": "золот(?:ой|ого|ому|ым|ом) стандарт(?:а|у|ом|е)?",
     "Рабочая область": "рабоч(?:ая|ей|ую|ею) област(?:ь|и|ью)",
+    "Паспорт раскладки": "паспорт(?:а|у|ом|е)? раскладки",
     "Паспорт проекта": "паспорт(?:а|у|ом|е)? проекта",
     "Субагент": "субагент(?:а|у|ом|е|ы|ов)?",
     "MCP-сервер": "MCP-сервер(?:а|у|ом|е|ы|ов)?",
@@ -3044,6 +3376,16 @@ const TASKS = [
     INDEX.push({ kind: "Термин словаря", k: "", title: tr.cells[0].textContent.replace(/\s+/g, " ").trim(),
       text: tr.cells[1].textContent.replace(/\s+/g, " ").trim(), href: canonical(normalize(resolve("#" + tr.id))) });
   });
+  $$(".tabpanel").forEach(function (panel) {
+    if (panel.dataset.page === "author") return;
+    var head = $(".sec-head h2", panel) || $("h3.sub", panel);
+    INDEX.push({ kind: "Вкладка", k: "", title: textOf(panel.dataset.title), text: head ? head.textContent.replace(/\s+/g, " ").trim() : "",
+      href: canonical(normalize(resolve("#" + panel.id))) });
+    $$("li[id] > .step-title", panel).forEach(function (st) {
+      INDEX.push({ kind: "Шаг", k: "", title: st.textContent.replace(/\s+/g, " ").trim(), text: panel.dataset.title,
+        href: canonical(normalize(resolve("#" + st.parentElement.id))) });
+    });
+  });
   INDEX.forEach(function (it, i) { it.n = i; it.hay = (it.title + " " + it.text).toLowerCase(); it.lt = it.title.toLowerCase(); });
 
   var gs = doc.getElementById("gs"), gsInput = doc.getElementById("gs-input"), gsList = doc.getElementById("gs-list");
@@ -3063,7 +3405,7 @@ const TASKS = [
     gsResults = gsSearch(gsInput.value);
     gsActive = 0;
     if (!gsInput.value.trim()) {
-      gsList.innerHTML = '<li class="gs-empty" role="presentation">Роли, навыки, задачи, команды и термины словаря.</li>';
+      gsList.innerHTML = '<li class="gs-empty" role="presentation">Роли, навыки, задачи, команды, вкладки, шаги и термины словаря.</li>';
     } else if (!gsResults.length) {
       gsList.innerHTML = '<li class="gs-empty" role="presentation">Ничего не найдено.</li>';
     } else {
