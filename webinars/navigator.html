@@ -685,14 +685,14 @@
     <h2>Стартовый бриф: что поставить до начала работы</h2>
   </div>
   <p class="lead">Всё окружение рабочего места одним списком. Статус строки: <b>обязательно</b> — без этого не начать; <b>условно</b> — нужно для отдельных задач; <b>по согласованию</b> — ставится только с согласия владельца компьютера. Под каждой строкой мелко — файл, из которого она взята.</p>
-  <p class="lead" data-no-marks>Под каждой строкой мелко — источник: файл канона или «по документации разработчиков», если в каноне этого нет. Что намеренно не описано и что решено владельцем — на вкладке «Пробелы и противоречия». Сверено с каноном 26.09.2026.</p>
+  <p class="lead" data-no-marks>Под каждой строкой мелко — источник: файл канона или «по документации разработчиков», если в каноне этого нет. Что намеренно не описано и что решено владельцем — на вкладке «Пробелы и противоречия». Сверено с каноном 26.09.2026; колонка Linux — 29.09.2026.</p>
 
   <h3 class="sub">1. Программы</h3>
   <details class="tbl">
   <summary><svg class="ico tbl-chev" aria-hidden="true"><use href="#i-chevron"/></svg><span class="tbl-title">1. Программы</span><span class="tbl-count">14 строк</span></summary>
 <div class="table-scroll">
     <table class="flow">
-      <thead><tr><th>Программа</th><th>Зачем</th><th>Статус</th><th>Windows</th><th>macOS</th><th>Как проверить</th></tr></thead>
+      <thead><tr><th>Программа</th><th>Зачем</th><th>Статус</th><th>Windows</th><th>macOS</th><th>Linux</th><th>Как проверить</th></tr></thead>
       <tbody>
         <tr>
           <td><b>VS Code</b></td>
@@ -700,6 +700,7 @@
           <td>обязательно</td>
           <td>Установить, если нет; рабочую папку открыть в VS Code: Файл → Открыть папку<small>webinar-01, разд. 6, шаг 1</small></td>
           <td>Установщик .dmg с code.visualstudio.com; рабочую папку открыть: Файл → Открыть папку<small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
+          <td>Пакет .deb/.rpm с code.visualstudio.com или из репозитория/зеркала дистрибутива; рабочую папку открыть: Файл → Открыть папку<small>по документации разработчиков; сверено 29.09.2026 — в каноне Linux-установка не описана; имена пакетов — Debian/Ubuntu, на другом дистрибутиве уточнить</small></td>
           <td>Рабочая папка открыта в VS Code<small>webinar-01, разд. 13</small></td>
         </tr>
         <tr>
@@ -708,6 +709,7 @@
           <td>обязательно</td>
           <td>Установить расширение и перезапустить окно VS Code; установка закрыта политикой — заявка в сервис-деск<small>webinar-01, разд. 6, шаг 2</small></td>
           <td>Расширение из Marketplace VS Code, перезапустить окно. Kilo CLI аналитику не нужен — всё работает внутри VS Code<small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
+          <td>Как на macOS: расширение из Marketplace VS Code, перезапустить окно; если установка расширений закрыта политикой — заявка в сервис-деск<small>по документации разработчиков; сверено 29.09.2026 — в каноне Linux-установка не описана; имена пакетов — Debian/Ubuntu, на другом дистрибутиве уточнить</small></td>
           <td>Расширение активно после перезапуска<small>webinar-01, разд. 13</small> Новая сессия или <code>/reload</code><small>INSTALL-PARSER-WINDOWS.md, § 6</small></td>
         </tr>
         <tr>
@@ -716,6 +718,7 @@
           <td>обязательно</td>
           <td>Git for Windows с git-scm.com (или <code>winget install --id Git.Git -e</code>)<small>по документации разработчиков; сверено 26.09.2026 — в каноне способ установки не описан</small></td>
           <td>Входит в Xcode Command Line Tools: <code>xcode-select --install</code>; или <code>brew install git</code><small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
+          <td><code>sudo apt install git</code> (Debian/Ubuntu) или <code>sudo dnf install git</code> (RPM-дистрибутивы)<small>по документации разработчиков; сверено 29.09.2026 — в каноне Linux-установка не описана; имена пакетов — Debian/Ubuntu, на другом дистрибутиве уточнить</small></td>
           <td><code>git remote -v</code> в корне рабочего места — <code>origin</code> указывает на <code>…/kilo-canon.git</code> в корпоративном GitLab; в <code>projects/</code> — на ваш репозиторий<small>devops.md, «Сначала определи, где ты»</small></td>
         </tr>
         <tr>
@@ -723,6 +726,7 @@
           <td>Доступ к репозиториям канона и своему. Внешние хостинги (GitHub, SourceCraft) запрещены политикой ИБ<small>решение владельца 28.09.2026</small></td>
           <td>обязательно</td>
           <td>Ключ создаёт агент в роли Code одной командой (вкладка «Подключение к GitLab», шаг 1); публичная часть — в GitLab → Preferences → Access → SSH Keys</td>
+          <td>То же</td>
           <td>То же</td>
           <td>Агенту: «Ключи добавлены. Проверь связь с GitLab» — ответ сервера без запроса пароля</td>
         </tr>
@@ -732,15 +736,17 @@
           <td>обязательно; версия — 3.14 (минимум 3.10). Решение владельца 26.09.2026: на 3.14.7 собран и проверен парсер (<code>/setup-parser</code>, PYTHON_DEPS_OK)</td>
           <td>С python.org<small>INSTALL-PARSER-WINDOWS.md, § 1</small></td>
           <td>Команда — <code>python3</code><small>project-layout/references/customization.md</small> Установка: <code>brew install python@3.14</code> или установщик с python.org; окружение — <code>python3 -m venv .venv</code> в корне, интерпретатор <code>.venv/bin/python</code><small>.kilo/tools/README.md, «Интерпретатор»; способ установки — по документации разработчиков</small></td>
-          <td><code>py --version</code>; нет <code>py</code> — перезапустить PowerShell, проверить App Execution Aliases<small>INSTALL-PARSER-WINDOWS.md, § 1</small></td>
+          <td>Команда — <code>python3</code><small>project-layout/references/customization.md; devops.md</small> Окружение — <code>python3 -m venv .venv</code> в корне, интерпретатор <code>.venv/bin/python</code><small>.kilo/tools/README.md, «Интерпретатор»</small> Подходит <code>python3</code> дистрибутива, если версия 3.10+. На Debian/Ubuntu для <code>venv</code> нужен отдельный пакет <code>python3-venv</code>. Готовых установщиков Python для Linux на python.org нет — только исходники<small>по документации разработчиков; сверено 29.09.2026 — в каноне Linux-установка не описана; имена пакетов — Debian/Ubuntu, на другом дистрибутиве уточнить</small></td>
+          <td><code>py --version</code>; нет <code>py</code> — перезапустить PowerShell, проверить App Execution Aliases<small>INSTALL-PARSER-WINDOWS.md, § 1</small> macOS и Linux: <code>python3 --version</code> — 3.10 или выше</td>
         </tr>
         <tr>
           <td><b>LibreOffice</b> (<code>soffice</code>)</td>
           <td>Замена Microsoft Word там, где его нет: конвертация внедрённых схем Visio/OLE из DOCX<small>INSTALL-PARSER-WINDOWS.md; решение владельца 28.09.2026</small></td>
-          <td>условно: <b>только если на компьютере нет Microsoft Word</b>. Есть Word — LibreOffice не ставить; PDF → MD работает и без того, и без другого</td>
+          <td>условно: <b>только если на компьютере нет Microsoft Word</b>. Есть Word — LibreOffice не ставить; PDF → MD работает и без того, и без другого. На Linux Word нет — значит, для Visio/OLE нужен LibreOffice</td>
           <td>Установщик с libreoffice.org<small>INSTALL-PARSER-WINDOWS.md, § 4</small> или <code>winget install --id TheDocumentFoundation.LibreOffice -e --silent --accept-package-agreements --accept-source-agreements</code><small>.kilo/command/setup-parser.md, шаг 4</small></td>
           <td><code>brew install --cask libreoffice</code> или .dmg с libreoffice.org; <code>soffice</code> — <code>/Applications/LibreOffice.app/Contents/MacOS/soffice</code><small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
-          <td><code>soffice --version</code> в новом окне PowerShell<small>INSTALL-PARSER-WINDOWS.md, § 4</small></td>
+          <td><code>sudo apt install libreoffice</code> (или пакет дистрибутива). <b><code>soffice</code> обязан быть в <code>PATH</code></b>: инструмент ищет его в <code>PATH</code>, а запасные пути знает только для Windows и macOS<small>.kilo/tools/docx_embeddings.py, <code>find_soffice</code>; способ установки — по документации разработчиков</small></td>
+          <td><code>soffice --version</code> в новом окне PowerShell<small>INSTALL-PARSER-WINDOWS.md, § 4</small> Linux: <code>soffice --version</code> в терминале — команда найдена</td>
         </tr>
         <tr>
           <td><b>Tesseract OCR 5</b>, языки <code>rus</code> и <code>eng</code></td>
@@ -748,6 +754,7 @@
           <td>условно: независимая проверка текста на отсканированных страницах; без него агент просто делает лишний вызов модели. Команда <code>/setup-parser</code> написана под хост владельца («программа уже есть») — на новом компьютере ставить по INSTALL § 4</td>
           <td>Сборка UB Mannheim, при установке выбрать English и Russian<small>INSTALL-PARSER-WINDOWS.md, § 4</small></td>
           <td><code>brew install tesseract tesseract-lang</code> — языки <code>rus</code> и <code>eng</code> входят в <code>tesseract-lang</code><small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
+          <td><code>sudo apt install tesseract-ocr tesseract-ocr-eng tesseract-ocr-rus</code>; сборка UB Mannheim — только для Windows<small>по документации разработчиков; сверено 29.09.2026 — в каноне Linux-установка не описана; имена пакетов — Debian/Ubuntu, на другом дистрибутиве уточнить</small></td>
           <td><code>tesseract --version</code>, <code>tesseract --list-langs</code> — в списке <code>eng</code> и <code>rus</code><small>INSTALL-PARSER-WINDOWS.md, § 4</small></td>
         </tr>
         <tr>
@@ -756,7 +763,8 @@
           <td>условно: диаграммы. JAR лежит в <code>.venv\vendor\plantuml.jar</code>; для сборки DOCX тот же путь — в поле <code>plantuml.jar</code> профиля прогона. <code>/setup-parser</code> JAR не скачивает — [ОТКЛОНЕНИЕ] для хоста владельца, рендер «NOT INSTALLED»</td>
           <td>Java — Eclipse Temurin с adoptium.net (или <code>winget install --id EclipseAdoptium.Temurin.17.JDK -e</code>). JAR — с plantuml.com/download, только локальный, не online-server<small>INSTALL-PARSER-WINDOWS.md, § 4; способ установки Java — по документации разработчиков</small></td>
           <td><code>brew install openjdk@17</code> (или Temurin с adoptium.net); JAR — с plantuml.com в <code>.venv/vendor/plantuml.jar</code><small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
-          <td><code>java -version</code>; <code>java -jar .venv\vendor\plantuml.jar -version</code><small>INSTALL-PARSER-WINDOWS.md, § 4</small></td>
+          <td><code>sudo apt install openjdk-17-jre</code> (или Temurin с adoptium.net); JAR — с plantuml.com в <code>.venv/vendor/plantuml.jar</code>, не встроенный в расширение VS Code<small>по документации разработчиков; сверено 29.09.2026 — в каноне Linux-установка не описана; имена пакетов — Debian/Ubuntu, на другом дистрибутиве уточнить</small></td>
+          <td><code>java -version</code>; <code>java -jar .venv\vendor\plantuml.jar -version</code><small>INSTALL-PARSER-WINDOWS.md, § 4</small> macOS и Linux: <code>java -jar .venv/vendor/plantuml.jar -version</code></td>
         </tr>
         <tr>
           <td><b>Microsoft Word</b>, настольный, активированный</td>
@@ -764,6 +772,7 @@
           <td>условно: выпуск DOCX; установка Office — по согласованию</td>
           <td>Нужен; Office скриптом не скачивать и его защиту не менять<small>windows-setup.md, § 1</small></td>
           <td>Не используется: сборка без Word только в режиме preview через <code>python-docx</code><small>docx-layout/requirements.txt</small></td>
+          <td>Word для Linux нет. Режимы <code>draft</code> и <code>final</code> — только Windows, вне Windows завершаются ошибкой; доступен только <code>preview</code> через <code>python-docx</code>: в отчёте <code>statuses.generated = not_verified</code> и предупреждение <code>preview_backend_not_word</code> — это превью, не выпуск<small>docx-layout/SKILL.md, начало и «Отчёт»; requirements.txt</small></td>
           <td><code>preflight.py --with-word</code>: Word создаёт, сохраняет, открывает тестовый DOCX и экспортирует PDF<small>windows-setup.md, § 2</small></td>
         </tr>
         <tr>
@@ -772,6 +781,7 @@
           <td>по согласованию</td>
           <td>Инсталлятор с nodejs.org, затем <code>npm install -g bpmn-to-image</code>. Пакет скачивает свой Chromium — на закрытом прокси установка может не пройти<small>windows-setup.md, § 4</small></td>
           <td><code>brew install node</code> или установщик с nodejs.org, затем <code>npm install -g bpmn-to-image</code><small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
+          <td>Node.js LTS с nodejs.org или из репозитория/зеркала, затем <code>npm install -g bpmn-to-image</code>; пакет качает свой Chromium — на закрытом прокси нужно npm-зеркало<small>по документации разработчиков; windows-setup.md, § 4</small> Разделитель в команде рендера — <code>:</code><small>docx-layout/references/style-contract.md</small></td>
           <td><code>bpmn-to-image --version</code><small>windows-setup.md, § 4</small></td>
         </tr>
         <tr>
@@ -780,7 +790,8 @@
           <td>по согласованию</td>
           <td>Инсталлятор с diagrams.net; путь по умолчанию <code>C:\Program Files\draw.io\draw.io.exe</code><small>windows-setup.md, § 4</small></td>
           <td><code>brew install --cask drawio</code> или .dmg с diagrams.net; CLI — <code>/Applications/draw.io.app/Contents/MacOS/draw.io</code>, путь задать в <code>drawio.cli</code> профиля прогона<small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
-          <td><code>&amp; "&lt;путь&gt;\draw.io.exe" --version</code><small>windows-setup.md, § 4</small></td>
+          <td>Пакет .deb/.rpm или AppImage со страницы релизов drawio-desktop<small>по документации разработчиков; сверено 29.09.2026</small> CLI по умолчанию на Linux — команда <code>drawio</code> из <code>PATH</code><small>docx-layout/scripts/docx_layout/diagram_renderer.py, <code>default_cli</code></small> Для AppImage путь задать в <code>drawio.cli</code> профиля прогона</td>
+          <td><code>&amp; "&lt;путь&gt;\draw.io.exe" --version</code><small>windows-setup.md, § 4</small> Linux: <code>drawio --version</code></td>
         </tr>
         <tr>
           <td><b>uv</b> / <code>uvx</code></td>
@@ -788,6 +799,7 @@
           <td>условно: работа с Confluence</td>
           <td><code>winget install --id astral-sh.uv -e</code> или установщик <code>powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"</code><small>по документации разработчиков; сверено 26.09.2026 — в каноне способ установки не описан</small></td>
           <td><code>brew install uv</code> или <code>curl -LsSf https://astral.sh/uv/install.sh | sh</code><small>по документации разработчиков; сверено 26.09.2026 — в каноне macOS не описан</small></td>
+          <td><code>curl -LsSf https://astral.sh/uv/install.sh | sh</code> — ставится в профиль пользователя, права администратора не нужны<small>по документации разработчиков; сверено 29.09.2026 — в каноне Linux не описан</small></td>
           <td>В новой сессии субагент <code>confluence</code> читает страницу-родителя из задания — ответ сервера, а не «инструменты не загружены»; повторить в двух новых сессиях. (Проверка <code>kilo mcp list</code> из канона требует Kilo CLI, аналитику он не нужен)<small>host-setup-windows.md, «Проверка загрузки Confluence MCP»</small></td>
         </tr>
         <tr>
@@ -796,6 +808,7 @@
           <td>обязательно на Windows</td>
           <td>Входит в Windows 10/11, ставить не нужно<small>по документации Microsoft; канон только требует PowerShell 5.1+</small></td>
           <td>—</td>
+          <td>— (не нужен: команды выполняются в bash)</td>
           <td><code>$PSVersionTable.PSVersion</code> — Major 5 или выше<small>по документации Microsoft</small></td>
         </tr>
         <tr>
@@ -804,6 +817,7 @@
           <td>условно: работа с внутренними системами</td>
           <td>Через сервис-деск<small>webinar-01, разд. 4.1</small></td>
           <td>Через сервис-деск<small>webinar-01, разд. 4.1</small></td>
+          <td>Через сервис-деск; есть ли клиент VPN под Linux — спросить в заявке: без него нет GitLab и Confluence<small>вкладка «Пробелы и противоречия»</small></td>
           <td>Доступ через VPN — по правилам компании; признак и проверка в навигаторе не описываются</td>
         </tr>
       </tbody>
@@ -843,16 +857,16 @@
 .\.venv\Scripts\python.exe -c "import lxml.etree, pymupdf; d=pymupdf.open(); p=d.new_page(); assert hasattr(p, 'find_tables'); print('PYTHON_DEPS_OK')"
 .\.venv\Scripts\python.exe .kilo\tools\test_pdf_layers.py</pre><button type="button" class="copy">Копировать</button></div>
 </div>
-  <p class="lead">Те же шаги на macOS (zsh, корень рабочего места):<small>по .kilo/tools/README.md «Интерпретатор»; команда <code>/setup-parser</code> написана для Windows</small></p>
+  <p class="lead">Те же шаги на macOS и Linux (zsh или bash, корень рабочего места). На Debian/Ubuntu, если <code>python3 -m venv</code> пишет, что <code>ensurepip</code> недоступен, — не хватает пакета <code>python3-venv</code>, его ставит администратор:<small>по .kilo/tools/README.md «Интерпретатор»; про <code>python3-venv</code> — по документации дистрибутива; команда <code>/setup-parser</code> написана для Windows</small></p>
   <div class="msg">
-  <div class="msg-to"><span class="msg-label">Кому:</span> <span class="chip-plain">Терминал (zsh), корень рабочего места</span></div>
+  <div class="msg-to"><span class="msg-label">Кому:</span> <span class="chip-plain">Терминал (zsh / bash), корень рабочего места</span></div>
   <div class="msg-body"><pre class="msg-text">python3 -m venv .venv
 ./.venv/bin/python -m pip install --upgrade pip
 ./.venv/bin/python -m pip install -r .kilo/tools/requirements.txt
 ./.venv/bin/python -c "import lxml.etree, pymupdf; d=pymupdf.open(); p=d.new_page(); assert hasattr(p, 'find_tables'); print('PYTHON_DEPS_OK')"
 ./.venv/bin/python .kilo/tools/test_pdf_layers.py</pre><button type="button" class="copy">Копировать</button></div>
 </div>
-  <p class="lead">Готовое поручение агенту на Windows — команда <code>/setup-parser</code> (<a href="#commands">таблица команд</a>); на macOS команды выше выполняются вручную.</p>
+  <p class="lead">Готовое поручение агенту на Windows — команда <code>/setup-parser</code> (<a href="#commands">таблица команд</a>); на macOS и Linux команды выше выполняются вручную.</p>
 
   <h3 class="sub">3. Модели и ключи</h3>
   <details class="tbl">
@@ -863,10 +877,12 @@
       <thead><tr><th>Что</th><th>Как устроено</th></tr></thead>
       <tbody>
         <tr><td>Провайдер</td><td>В Золотом стандарте не закреплён: ни одна роль не задаёт provider и model<small>kilo-canon/README.md; PACKAGE-MANIFEST.md</small></td></tr>
-        <tr><td>Где задаются модели</td><td>Глобальный конфиг хоста: <code>%USERPROFILE%\.config\kilo\kilo.jsonc</code>, ключи <code>model</code>, <code>small_model</code>, <code>subagent_model</code>, значение вида <code>&lt;провайдер&gt;/&lt;модель&gt;</code> — из списка моделей своего клиента, не угадывать<small>host-setup-windows.md, § 1</small> Путь на macOS — <code>~/.config/kilo/kilo.jsonc</code><small>документация Kilo, «Settings»; сверено 26.09.2026</small></td></tr>
+        <tr><td>Где задаются модели</td><td>Глобальный конфиг хоста: <code>%USERPROFILE%\.config\kilo\kilo.jsonc</code>, ключи <code>model</code>, <code>small_model</code>, <code>subagent_model</code>, значение вида <code>&lt;провайдер&gt;/&lt;модель&gt;</code> — из списка моделей своего клиента, не угадывать<small>host-setup-windows.md, § 1</small> Путь на macOS — <code>~/.config/kilo/kilo.jsonc</code><small>документация Kilo, «Settings»; сверено 26.09.2026</small> На Linux — тот же <code>~/.config/kilo/kilo.jsonc</code>; история Kilo — <code>~/.local/share/kilo/</code><small>reflector.md — путь истории для macOS и Linux; путь конфига на Linux не проверен</small></td></tr>
         <tr><td>Ключ</td><td>Личный: не пересылают коллегам, не кладут в рабочую папку, не вставляют в промпты и на скриншоты<small>webinar-01, разд. 6, шаг 3</small></td></tr>
         <tr><td>Изображения</td><td>Нужна модель с поддержкой image input — её использует роль <a href="#role-vision">vision</a>. Без неё разбор PDF/DOCX останавливается в <code>WAITING_FOR_VISION</code> там, где vision обязателен<small>INSTALL-PARSER-WINDOWS.md; .kilo/agents/vision.md</small></td></tr>
-        <tr><td>Подписка и модели у коллег</td><td>[ПОСЛЕ ВЫБОРА ПОДПИСКИ] — открытый вопрос OQ-43<small>Webinars/open-questions.md</small></td></tr>
+        <tr><td>Подписка и модели у коллег</td><td>Пакет Alibaba: Qwen, DeepSeek, GLM, Kimi; ключ выдаёт Игорь, заявка через Алёну<small>вебинар 1, слайд «Рабочий контур»; договорённость 29.09.2026</small></td></tr>
+        <tr><td>Своя подписка</td><td>Можно: к Kilo Code подключаются GPT и другие провайдеры. Claude — только по API, по подписке нельзя. Настройка доступа и VPN для личной подписки — на сотруднике<small>встреча ведущих 29.09.2026</small></td></tr>
+        <tr><td>Под корпоративным VPN</td><td>Китайские модели пакета Alibaba работают, включая Kimi; GPT и Claude — нет<small>встреча ведущих 29.09.2026</small></td></tr>
       </tbody>
     </table>
     </div>
@@ -909,7 +925,8 @@
         <tr><td>Хостинг</td><td>Корпоративный GitLab, группа R&amp;D-лаборатория → AI Analytics: там <code>kilo-canon</code> и репозиторий каждого аналитика под его фамилией. Транспорт — SSH по ключу. Внешние хостинги запрещены политикой ИБ<small>решение владельца 28.09.2026</small></td></tr>
         <tr><td>Доступ</td><td>Группа открыта всем аналитикам с равными правами: свой репозиторий каждый создаёт сам (New project в группе). Корпоративный VPN нужен для GitLab и Confluence<small>28.09.2026</small></td></tr>
         <tr><td>Аутентификация</td><td>Ключ SSH: создаётся на компьютере (агент, роль Code), публичная часть вставляется в GitLab → Preferences → Access → SSH Keys, срок — до года. Ключи, токены и пароли агенту в чат не пишут<small>вкладка «Подключение к GitLab»</small></td></tr>
-        <tr><td>Под VPN</td><td>Агент может не дойти до сервера — тогда он коммитит, а <code>git push</code> делаете вы в терминале VS Code. Ключи, remote и порт агент сам не меняет<small>28.09.2026; devops.md</small></td></tr>
+        <tr><td>VPN и Git</td><td>Commit, push и pull в корпоративный GitLab проходят только под корпоративным VPN<small>встреча ведущих 29.09.2026</small> Если агент не дошёл до сервера — он коммитит, а <code>git push</code> делаете вы в терминале VS Code. Ключи, remote и порт агент сам не меняет<small>28.09.2026; devops.md</small></td></tr>
+        <tr><td>Нет прав на <code>main</code></td><td>Пока права на выгрузку в главную ветку выдаются, попросите <code>devops</code> выгрузить работу в отдельную ветку — владелец канона её вольёт<small>встреча ведущих 29.09.2026</small></td></tr>
         <tr><td>Remote</td><td>Корень рабочего места — клон канона, его <code>origin</code> — <code>kilo-canon</code>, только чтение. <code>projects/</code> целиком — ваш репозиторий под вашей фамилией (проекты и <code>reflection/</code>), со своим <code>origin</code>. Прежней схемы «форк с <code>upstream</code>» больше нет<small>решение владельца 28.09.2026; devops.md, «Сначала определи, где ты»</small></td></tr>
         <tr><td>Обновление канона</td><td>Роль <code>devops</code> проверяет сама при старте сессии, не чаще раза в сутки: <code>python .kilo/tools/canon_update_check.py</code> — только <code>fetch</code> и <code>pull --ff-only</code> в корне; изменились правила — строка «начните новую сессию». Регистрироваться не нужно; локальные правки в корне останавливают обновление<small>kilo-canon/README.md, «Как получать обновления»; devops.md, «Проверка актуальности канона при старте»</small></td></tr>
         <tr><td>Обновление вручную</td><td>Фраза «проверь канон» — та же проверка с ключом <code>--force</code>, без суточного гейта. Команды <code>/sync-workspace</code> больше нет (удалена 25.09.2026)<small>devops.md; PACKAGE-MANIFEST.md, «История»</small></td></tr>
@@ -934,6 +951,11 @@
     <li>
       <div class="step-title">Корпоративный ноутбук без прав администратора</div>
       <p>Установка программ, права администратора, VPN — заявка в поддержку <b>8888@softlab.ru</b> от своего имени, с номером машины; за коллегу подать нельзя. Шаблон письма — на вкладке <a href="#t-start-gitlab">«Подключение к GitLab»</a>, шаг 9<small>28.09.2026</small></p>
+    </li>
+    <li>
+      <div class="step-title">Где этот навигатор и куда с вопросами</div>
+      <p>Навигатор — файл <code>navigator.html</code> в корне Золотого стандарта (<code>kilo-canon</code>), приезжает с обновлениями канона; открыть в браузере. Стартовая страница в Confluence: <a href="https://wiki.softlab.ru/pages/viewpage.action?pageId=67997945">wiki.softlab.ru, pageId=67997945</a><small>29.09.2026</small></p>
+      <p>Вопросы — в чат аналитиков в Telegram, топики: GitLab и ключи · Золотой стандарт · подключение своего проекта · прочие вопросы. В каждом топике закреплена инструкция. Навигатор пополняется по этим вопросам<small>встреча ведущих 29.09.2026; чат готовит Алёна</small></p>
     </li>
     <li>
       <div class="step-title">Границы по данным</div>
@@ -1097,6 +1119,8 @@
     <li>Установка Git, Java, <code>uv</code> и колонка macOS заполнены 26.09.2026 по документации разработчиков, не по канону. Хостинг — только корпоративный GitLab по SSH (28.09.2026); справка канона <code>hosting-sourcecraft.md</code> и helper <code>git_credential_env.py</code> относятся к запрещённому внешнему хостингу и подлежат замене в каноне. Figma MCP в навигаторе описан одной строкой — отдельный вебинар.</li>
     <li>macOS: колонка таблицы «Программы» и команды установки базы парсера заполнены 26.09.2026 по документации разработчиков, не по канону — в каноне macOS не описан, установка на macOS не проверена.</li>
     <li>Версии VS Code и Kilo Code не закреплены — ставится текущая стабильная. Проверен только Kilo backend 7.5.14 на macOS для discovery<small>INSTALL-PARSER-WINDOWS.md; PACKAGE-MANIFEST.md</small></li>
+    <li>Linux: колонка таблицы «Программы» заполнена 29.09.2026. Из канона подтверждено: интерпретатор <code>.venv/bin/python</code> и команда <code>python3</code><small>.kilo/tools/README.md; customization.md</small>, <code>soffice</code> только из <code>PATH</code><small>docx_embeddings.py</small>, <code>drawio</code> из <code>PATH</code><small>diagram_renderer.py</small>, выпуск DOCX (<code>draft</code>/<code>final</code>) только на Windows с Word — на Linux только <code>preview</code><small>docx-layout/SKILL.md</small>. Способы установки и имена пакетов — по документации разработчиков для Debian/Ubuntu; для Astra Linux и РЕД ОС не сверены. Установка на Linux не проверена, <code>/setup-parser</code> под Linux не написан.</li>
+    <li>Linux: наличие клиента корпоративного VPN под Linux не подтверждено — без VPN нет GitLab и Confluence. Вопрос к сервис-деску; ответ — за владельцем.</li>
     <li>Способ установки Java — по документации разработчиков (Temurin), в каноне не закреплён.</li>
     <li>Проверка PowerShell — <code>$PSVersionTable.PSVersion</code>. VPN — по правилам компании, в навигаторе не описывается (решение владельца 26.09.2026).</li>
   </ul>
@@ -1766,8 +1790,8 @@
 </section>
 </div>
 
-<footer class="about" data-build="2026-09-28 22:49">
-  <p id="build-stamp">Версия навигатора: 2026-09-28 22:49 (МСК). Если на сайте другая дата — обновите страницу с очисткой кэша: Cmd+Shift+R / Ctrl+F5.</p>
+<footer class="about" data-build="2026-09-29 17:38">
+  <p id="build-stamp">Версия навигатора: 2026-09-29 17:38 (МСК). Если на сайте другая дата — обновите страницу с очисткой кэша: Cmd+Shift+R / Ctrl+F5.</p>
   <p>Навигация по Золотому стандарту — репозиторию <code>kilo-canon</code>: роли в <code>.kilo/agents/</code>, навыки в <code>.kilo/skills/</code>, команды в <code>.kilo/command/</code>.</p>
   <p>Источник актуальных правил — сами файлы ролей и навыков и точка входа помощника <a href="AGENTS.md">AGENTS.md</a>. Эта страница — справочная навигация, она ничего не решает сама. Конкретика одного проекта оставлена как пример и помечена «пример проекта».</p>
   <p>Страница — справочная навигация, не регламент. Источник истины — Золотой стандарт, каталог <code>kilo-canon/.kilo</code>: роли <code>.kilo/agents/</code>, навыки <code>.kilo/skills/</code>, команды <code>.kilo/command/</code>, точка входа <code>AGENTS.md</code>. Состав на странице поддерживается вручную: добавили, убрали или переименовали файл в <code>.kilo</code> — обновите в конце этого файла массивы <code>ROLES</code> и <code>ROLE_GROUPS</code> (роли), <code>SKILLS</code> и <code>SKILL_GROUPS</code> (навыки), <code>TASKS</code> (первые команды), а в разметке — таблицу команд в разделе «Команды» и «Стартовый бриф» (программы, библиотеки, противоречия).</p>
@@ -2264,7 +2288,7 @@ const TASKS = [
       { icon: "i-alert", label: "Если push отклонён",
         text: "Значит, на сервере уже есть чужие коммиты. Это штатная ситуация: нужно слияние, и его выполняет та же роль — отдельным поручением «влей локальные изменения, при необходимости проведи слияние». Не пересоздавайте файлы вручную и не заводите вторую ветку." },
       { icon: "i-alert", label: "Если нет связи",
-        text: "Канал SourceCraft нестабилен — это норма: роль повторяет попытки, а не чинит ключи и remote. «Нет связи» не означает «нет доступа»." }
+        text: "Сначала проверьте корпоративный VPN: без него GitLab недоступен. Роль повторяет попытки, а не чинит ключи и remote. «Нет связи» не означает «нет доступа»." }
     ]
   },
   {
