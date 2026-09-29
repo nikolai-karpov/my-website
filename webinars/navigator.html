@@ -1189,7 +1189,7 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
         </table>
 </div>
       </details>
-<figure class="shot" data-shot="repo-connect"><div class="shot-box">СКРИНШОТ · Дать команду агенту: подключить свой репозиторий в projects/</div><figcaption>Дать команду агенту: подключить свой репозиторий в projects/</figcaption></figure>    </li>
+<details class="shot-fold"><summary><svg class="ico tbl-chev" aria-hidden="true"><use href="#i-chevron"/></svg><span>Скриншот · Сообщение в роли Devops: в обеих строках — адрес своего репозитория</span></summary><figure class="shot" data-shot="repo-connect"><img src="navigator-img/kilo-03-devops-projects-prompt.png" alt="Сообщение в роли Devops: в обеих строках — адрес своего репозитория" loading="lazy"></figure></details>    </li>
     <li>
       <div class="step-title">Завести структуру проекта</div>
       <p>Роль <b>layout-builder</b>: папки по канону создаются скриптом навыка, руками их не строят. Пошагово — с типом проекта, признаком успеха и тем, что делать, если агент пишет «каталог уже существует» или «паспорта нет», — на вкладке <a href="#t-start-project">«Первый проект»</a>, шаги 1–4. Это можно сделать и после шагов 7–12: раскладка нужна до первой задачи роли-писателя.<small>AGENTS.md, § 3; .kilo/agents/layout-builder.md, «Смежные роли»</small> Кодовую базу, которую агент должен читать (репозитории фронта и бэка), положить внутрь проекта в <code>00-sources/code/</code> — агент её не меняет.</p>
