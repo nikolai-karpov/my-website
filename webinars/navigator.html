@@ -1039,7 +1039,7 @@
           <td><b>Confluence</b></td>
           <td>Программа <code>uvx mcp-atlassian</code>; блок <code>mcp.confluence</code> с переменными <code>CONFLUENCE_URL</code> и <code>CONFLUENCE_PERSONAL_TOKEN</code> — в глобальном конфиге хоста, не в проектном <code>kilo.jsonc</code> Установка навыка и роли — <code>.kilo/skills/confluence/INSTALL.md</code>; активация — отдельно, на хосте</td>
           <td>Файл <code>projects/&lt;проект&gt;/99-governance/confluence-scope.md</code>; без него, без пространства и без ссылки из задания роль к серверу не обращается. Нужен VPN</td>
-          <td>Сервер отвечает на чтение страницы из разрешённого пространства</td>
+          <td><code>project-architect</code> проверяет подключение и передачу токена, затем <code>confluence</code> проверяет доступные инструменты, границы проекта и ответ на чтение указанной страницы из разрешённого пространства</td>
         </tr>
         <tr>
           <td><b>Figma</b></td>
@@ -1069,7 +1069,7 @@
         <tr><td>Remote</td><td>Корень рабочего места — клон канона, его <code>origin</code> — <code>kilo-canon</code>, только чтение. <code>projects/</code> целиком — ваш репозиторий под вашей фамилией (проекты и <code>reflection/</code>), со своим <code>origin</code>. Прежней схемы «форк с <code>upstream</code>» больше нет</td></tr>
         <tr><td>Обновление канона</td><td>Роль <code>devops</code> проверяет сама при старте сессии, не чаще раза в сутки: <code>python .kilo/tools/canon_update_check.py</code> — только <code>fetch</code> и <code>pull --ff-only</code> в корне; изменились правила — строка «начните новую сессию». Регистрироваться не нужно; локальные правки в корне останавливают обновление</td></tr>
         <tr><td>Обновление вручную</td><td>Фраза «проверь канон» — та же проверка с ключом <code>--force</code>, без суточного гейта. Команды <code>/sync-workspace</code> больше нет (удалена 25.09.2026)</td></tr>
-        <tr><td>Токены MCP</td><td>Confluence и Figma — токены строками в <code>.env</code> корня (<code>.env</code> в <code>.gitignore</code>); агенту называют имя переменной. Роль <code>devops</code> токены не просит и не выводит; remote меняет только по вашему согласию</td></tr>
+        <tr><td>Токены MCP</td><td><code>.env</code> хранит секреты, но сам не активирует MCP. Для Confluence роль <code>project-architect</code> явно настраивает и проверяет передачу <code>CONFLUENCE_TOKEN</code> в <code>CONFLUENCE_PERSONAL_TOKEN</code> сервера через личную конфигурацию. В чат передают только имя переменной; значение не выводят и не коммитят</td></tr>
       </tbody>
     </table>
     </div>
@@ -1318,7 +1318,7 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
     <li>
       <div class="step-title">Завести структуру проекта</div>
       <p>Роль <b>layout-builder</b>: папки по канону создаются скриптом навыка, руками их не строят. Пошагово — с типом проекта, признаком успеха и тем, что делать, если агент пишет «каталог уже существует» или «паспорта нет», — на вкладке <a href="#t-start-project">«Первый проект»</a>, шаги 1–4. Это можно сделать и после шагов 7–12: раскладка нужна до первой задачи роли-писателя. Кодовую базу, которую агент должен читать (репозитории фронта и бэка), положить внутрь проекта в <code>00-sources/code/</code> — агент её не меняет.</p>
-      <p>Рефлексия — <code>projects/reflection/</code>; если папки нет, агент создаёт её при подключении. Память проекта — <code>MEMORY.md</code> внутри проекта (см. <a href="#t-how-gold">три слоя памяти</a>).</p>
+      <p>До создания раскладки <b>devops</b> автоматически готовит рабочее место навыком <code>workspace-setup</code>, включая установку рефлексии в <code>projects/reflection/</code>. Память специалиста — <code>projects/reflection/MEMORY.md</code>, память проекта — <code>projects/&lt;проект&gt;/MEMORY.md</code> (см. <a href="#t-how-gold">слои памяти</a>). Роль <b>reflector</b> занимается рефлексией, а не установкой хранилища.</p>
     </li>
     <li>
       <div class="step-title">Выгрузить и проверить в браузере</div>
@@ -1327,7 +1327,7 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
     </li>
     <li>
       <div class="step-title">Токены — в файл <code>.env</code>, не в переписку</div>
-      <p>В корне рабочего места создать файл <code>.env</code> (он в <code>.gitignore</code>, в репозиторий не уходит). Каждый токен — строкой <code>ИМЯ=значение</code>: <code>CONFLUENCE_TOKEN=…</code>, <code>FIGMA_TOKEN=…</code>. Строка для Redmine понадобится, когда в Золотом стандарте появятся роль и навык Redmine; имя <code>REDMINE_TOKEN</code> на снимке — пример, а не утверждённое имя. Персональный токен Confluence — настройки профиля → Personal access tokens, срок действия убрать. Агенту называют <b>имя переменной</b>, сам токен ему не пишут: так токены не попадают в конфиги и в модель.</p>
+      <p>В корне рабочего места создать файл <code>.env</code> (он исключён из Git; исключение нужно проверить). Каждый токен — строкой <code>ИМЯ=значение</code>: <code>CONFLUENCE_TOKEN=…</code>, <code>FIGMA_TOKEN=…</code>. Строка для Redmine понадобится, когда в Золотом стандарте появятся роль и навык Redmine; имя <code>REDMINE_TOKEN</code> на снимке — пример, а не утверждённое имя. Персональный токен Confluence выпускается в настройках профиля → Personal access tokens. Агенту называют <b>имя переменной</b>, сам токен в чат не пишут. Наличие <code>.env</code> не загружает переменные автоматически и не активирует MCP: <b>project-architect</b> должен явно настроить и проверить передачу <code>CONFLUENCE_TOKEN</code> в <code>CONFLUENCE_PERSONAL_TOKEN</code> процесса сервера, не раскрывая значение.</p>
 <details class="shot-fold"><summary><svg class="ico tbl-chev" aria-hidden="true"><use href="#i-chevron"/></svg><span>Скриншот · Файл .env в корне рабочего места, рядом с .kilo и navigator.html; значения токенов на снимке вымышленные</span></summary><figure class="shot" data-shot="env-file"><img src="https://nikolai-pir-s-ru.sourcecraft.site/portfolio/webinars/navigator-img/kilo-06-env-file.png" alt="Файл .env в корне рабочего места, рядом с .kilo и navigator.html; значения токенов на снимке вымышленные" loading="lazy"></figure></details>    </li>
     <li id="step-venv">
       <div class="step-title">Окружение инструментов <code>.venv</code> — проверяет и доустанавливает агент</div>
@@ -1363,28 +1363,23 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
     <li id="step-plantuml">
       <div class="step-title">Диаграммы PlantUML — настраивает агент</div>
       <p><b>Зачем.</b> Без этого агент напишет диаграмму текстом, но не сможет превратить её в картинку, а VS Code не покажет картинку в превью документа. Шаг нужен, если в работе есть диаграммы. Нужна Java 11 или новее — она есть в списке заявки в поддержку выше.</p>
-      <p><b>1. Установить расширение Markdown Preview Enhanced</b> — это единственное, что делается руками:</p>
+      <p><b>1. Проверить расширение.</b> Автоподготовка настроек и наличие расширения — разные проверки. <b>devops</b> расширения не устанавливает. Если Markdown Preview Enhanced (MPE) или PlantUML (jebbs) уже установлен, повторная установка не нужна. Для рекомендованного MPE, если его нет:</p>
       <ol>
         <li>Слева на панели VS Code нажать значок <b>«Расширения»</b> (четыре квадратика).</li>
         <li>В строке поиска набрать <code>Markdown Preview Enhanced</code>.</li>
         <li>Выбрать расширение с ровно таким названием и нажать <b>Install</b> («Установить»).</li>
       </ol>
-      <p><b>2. Отправить агенту одно сообщение</b> — новая сессия, роль <b>project-architect</b>: она отвечает за настройки VS Code, в том числе вне рабочей папки. Java и <code>plantuml.jar</code> проверит и при необходимости доустановит роль <b>devops</b> — агент вызовет её сам; затем он пропишет настройки расширения и создаст файл для проверки. Настройки превью он пишет в <code>.vscode/settings.json</code> рабочего места — это разрешённое исключение правил Золотого стандарта, как и <code>.venv</code>; в Git эта папка не попадает. Когда агент спросит разрешение на команду — «разрешить один раз».</p>
-<div class="msg"><div class="msg-to"><span class="msg-label">Кому:</span> <span class="chip-plain">Kilo Code, роль project-architect</span></div><div class="msg-body"><pre class="msg-text">Твоя задача — подготовить на этом компьютере рисование диаграмм PlantUML. Делай всё сам, мне оставь только проверку превью.
-1. Вызови роль devops: «проверь установку рабочего места» — она проверит Java (нужна 11 или новее) и файл .venv/vendor/plantuml.jar и сама доустановит недостающее. Если devops вернула письмо в поддержку — передай его мне целиком и остановись. Сам Java и JAR не ставь, старую версию PlantUML под Java 8 не ставь.
-2. Проверь результат: java -jar &lt;путь к .venv/vendor/plantuml.jar&gt; -version должен ответить версией. Используй только этот локальный JAR, не публичный онлайн-сервер. Папку .kilo не трогай.
-3. Настрой превью диаграмм для этого рабочего места: в файле .vscode/settings.json в корне рабочего места (создай, если его нет — это разрешённое исключение правил) задай markdown-preview-enhanced.plantumlJarPath — полный путь к этому plantuml.jar на этом компьютере — и markdown-preview-enhanced.plantumlServer — пустая строка. Остальные настройки в файле не меняй.
-4. Создай файл .venv/vendor/plantuml-check.md с небольшой диаграммой PlantUML для проверки.
-Верни: версию Java, версию PlantUML, что записано в настройках, путь к файлу проверки.</pre><button type="button" class="copy">Копировать</button></div></div>
+      <p><b>2. Штатная подготовка выполняется автоматически.</b> При проверке рабочего места <b>devops</b> через <code>workspace-setup</code> запускает проверку и исправление окружения (<code>env_setup.py check/fix</code>): Java, локальный <code>plantuml.jar</code> и настройки обнаруженного MPE/jebbs в <code>.vscode/settings.json</code>. Если расширение не подтверждено, готовит настройки рекомендованного MPE и явно сообщает ограничение. Отдельная новая сессия <b>project-architect</b> для этого не нужна. Чужие непустые значения не затираются; JSONC, дубли ключей, невалидный JSON, конфликт настроек, небезопасная ссылка или отслеживаемый файл вызывают безопасный отказ. Такой отказ передают <b>project-architect</b> для точечного разбора с сохранением личных настроек, а не обходят перезаписью файла.</p>
+<div class="msg"><div class="msg-to"><span class="msg-label">Кому:</span> <span class="chip-plain">Kilo Code, роль devops</span></div><div class="msg-body"><pre class="msg-text">Проверь установку рабочего места, включая локальное превью PlantUML. Верни отдельно: готовность Java и JAR, подготовку настроек MPE/jebbs, обнаруженные расширения и результат живого превью. Чужие настройки не затирай; при конфликте передай точный отказ для project-architect. Непроверенное превью обозначь NOT VERIFIED.</pre><button type="button" class="copy">Копировать</button></div></div>
       <figure class="shot" data-shot="plantuml-answer"><div class="shot-box">СКРИНШОТ · Ответ агента: версии Java и PlantUML, настройки записаны, путь к файлу проверки</div><figcaption>Ответ агента после настройки PlantUML</figcaption></figure>
       <p><b>3. Проверить превью:</b></p>
       <ol>
-        <li>В проводнике слева раскрыть папку <code>.venv</code>, затем <code>vendor</code>, и щёлкнуть файл <code>plantuml-check.md</code> — он откроется.</li>
+        <li>Открыть Markdown с диаграммой, например <code>.kilo/skills/docx-layout/assets/plantuml-smoke.md</code>, не изменяя его. Для jebbs открыть файл <code>.puml</code> проекта в установленном расширении PlantUML.</li>
         <li>Щёлкнуть правой кнопкой внутри открытого файла и выбрать <b>«Markdown Preview Enhanced: Open Preview to the Side»</b>. То же — клавишами <code>Ctrl+K</code>, затем <code>V</code> (на Mac — <code>Cmd+K</code>, затем <code>V</code>).</li>
         <li>Справа откроется превью.</li>
       </ol>
       <figure class="shot" data-shot="plantuml-preview"><div class="shot-box">СКРИНШОТ · Превью: справа от файла проверки — картинка диаграммы, а не текст</div><figcaption>Превью с картинкой диаграммы</figcaption></figure>
-      <p><b>Признак успеха.</b> Агент назвал версии Java и PlantUML; в превью справа — картинка диаграммы, а не текст.</p>
+      <p><b>Признак успеха превью.</b> В установленном расширении открыта и видна картинка диаграммы, а не текст. Версии Java/JAR и записанные настройки сами по себе этого не доказывают: <code>runtime: NOT VERIFIED</code> означает, что живое превью не проверено, даже при коде завершения 0. Превью в VS Code не подтверждает рендер и встраивание диаграммы в DOCX: это отдельная проверка сборки.</p>
       <details class="tbl">
       <summary><svg class="ico tbl-chev" aria-hidden="true"><use href="#i-chevron"/></svg><span class="tbl-title">Если не вышло</span><span class="tbl-count">6 строк</span></summary>
 <div class="table-scroll">
@@ -1393,7 +1388,7 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
           <tbody>
             <tr><td>Агент пишет, что Java нет или она старше 11 и обновить не удалось</td><td>Заявка в поддержку на установку Java 11 или новее — шаблон выше; после установки отправить сообщение заново</td></tr>
             <tr><td>Агент не смог скачать <code>plantuml.jar</code></td><td>Скопируйте его ответ целиком — вопросом в чат аналитиков, топик «прочее»</td></tr>
-            <tr><td>Агент сделал всё, кроме настроек превью: пишет, что не может создать папку <code>.vscode</code> — правила рабочего места запрещают новые папки в корне</td><td>У вас канон до обновления 30.09.2026: тогда исключения для <code>.vscode</code> в правилах ещё не было. Роль <b>devops</b>: «Проверь канон», закрыть и открыть VS Code, затем отправить сообщение пункта 2 заново — агент допишет только недостающее.</td></tr>
+            <tr><td>Автоподготовка настроек отказала: конфликт значений, JSONC или другая защита файла</td><td>Передать точный отказ роли <b>project-architect</b>: проверить файл и согласовать точечное исправление, сохранив чужие значения и комментарии. Не удалять настройки и не перезаписывать файл целиком.</td></tr>
             <tr><td>В меню правой кнопки нет «Markdown Preview Enhanced: Open Preview to the Side»</td><td>Расширение не установлено — пункт 1</td></tr>
             <tr><td>В превью вместо картинки текст диаграммы или ошибка</td><td>Закрыть и открыть VS Code, открыть превью заново. Не помогло — ответ агента и снимок превью — вопросом в чат аналитиков</td></tr>
             <tr><td>Агент пишет, что <code>plantuml.jar</code> скачать не удалось, и возвращает письмо в поддержку</td><td>Закрыт доступ к хранилищу Maven Central — отправить письмо; после ответа поддержки — роль <b>devops</b>: «Проверь установку рабочего места, повтори попытки установки»</td></tr>
@@ -1404,15 +1399,16 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
     </li>
     <li>
       <div class="step-title">MCP Confluence — по необходимости</div>
-      <p>Новая сессия, роль <b>project-architect</b>. После ответа «перезагрузите приложение» — закрыть и открыть VS Code, затем в той же сессии: «Подтверди связь с сервером Confluence, верни данные, которые возвращает сервер». Figma MCP подключается по той же схеме с <code>FIGMA_TOKEN</code> (удалённая версия, Figma Desktop не нужен) — подробности будут на отдельном вебинаре.</p>
+      <p>Настройку выполняет <b>project-architect</b>, а проверку чтения поручает роли <b>confluence</b> после необходимой перезагрузки клиента. В задании нужны проект, разрешённое пространство и ссылка на страницу; роль проверяет границы проекта и реальные доступные инструменты своей сессии. Отсутствие этих инструментов у текущего <b>business-analyst</b> не доказывает отсутствие сервера. Подключение Figma рассматривается отдельно, не переносите на него настройки Confluence по аналогии.</p>
 <div class="msg"><div class="msg-to"><span class="msg-label">Кому:</span> <span class="chip-plain">Kilo Code, роль project-architect</span></div><div class="msg-body"><pre class="msg-text">Твоя задача — установить и настроить MCP для Confluence, чтобы он был доступен в Kilo Code. Для выполнения задачи изучи:
 .kilo/agents/confluence.md
 .kilo/skills/confluence/SKILL.md
-Токен хранится в файле .env в корне рабочего места, имя переменной CONFLUENCE_TOKEN. В конце внеси необходимые правки в конфиг и дай сигнал, когда перезагрузить приложение.</pre><button type="button" class="copy">Копировать</button></div></div>    </li>
+Токен хранится в файле .env в корне рабочего места, имя переменной CONFLUENCE_TOKEN. Само наличие .env не активирует MCP. Настрой в личной конфигурации и проверь явную передачу значения в CONFLUENCE_PERSONAL_TOKEN процесса сервера; значение не выводи. Сохрани остальные настройки. Сообщи, нужна ли перезагрузка клиента. Затем поручай проверку роли confluence: проект &lt;проект&gt;, пространство &lt;space key&gt;, страница &lt;URL&gt;. Она должна проверить scope, реальные инструменты своей сессии и ответ сервера на чтение этой страницы; недоступную проверку назови ограничением.</pre><button type="button" class="copy">Копировать</button></div></div>    </li>
     <li>
       <div class="step-title">Первая рефлексия</div>
-      <p>Новая сессия, роль <b>reflector</b>: «Проведи рефлексию». Первый запуск идёт долго — он читает все сессии и раскладывает записи по трём слоям. Дальше — в конце каждого рабочего дня, после обратной связи агенту в сессии. Дежурная фраза в конце работы — её достаточно просто вставлять: «Я закончил работу в текущей сессии, сделай рефлексию, внеси необходимые правки в память проекта».</p>
-      <p><b>Если не вышло.</b> При старте любой роли (на пилоте — у <code>devops</code> во время «Сделай коммиты и пуш») красная ошибка, что памяти рефлексии ещё нет, — новая сессия, роль <b>reflector</b>: «Проведи аудит готовности инструментов к проведению рефлексии. Верни вывод, чего не хватает».</p>
+      <p>Установку рефлексии автоматически готовит <b>devops</b> навыком <code>workspace-setup</code> до <b>layout-builder</b>. Роль <b>reflector</b> только разбирает опыт работы и ведёт рефлексию, не инициализирует хранилище и не чинит окружение.</p>
+      <p><b>Предпочтительно после каждой рабочей сессии</b>, пока доступен её контекст: «Я закончил работу в текущей сессии, сделай рефлексию, внеси необходимые правки в память проекта». Свод за день и свод за неделю — отдельные задачи роли <b>reflector</b>, они не заменяют итог сессии.</p>
+      <p><b>Если не вышло.</b> Сообщение об отсутствии памяти или <code>EXECUTION_BLOCKED</code> — не ожидаемый успех и не доказательство конкретной причины. Сохраните точный текст отказа и передайте роли <b>devops</b>: «Проверь установку рабочего места». Проверяются установка, окружение и доступность нужных инструментов; после устранения подтверждённого ограничения повторяют рефлексию.</p>
     </li>
   </ol>
   <p class="lead">Рабочее место готово. Следующий этап — <a href="#t-start-project">завести проект</a>: он делается один раз на каждый проект.</p>
@@ -1424,7 +1420,7 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
     <h2>Завести проект — один раз на проект</h2>
   </div>
   <p class="lead">Три этапа: <b>настроить</b> рабочее место — один раз (вкладки «Окружение» и «Подключение к GitLab»); <b>завести проект</b> — один раз на каждый проект (эта вкладка); <b>работать</b> — каждая задача («Работа по задаче»). Настройки отдельно, проекты отдельно: проектов может быть много, а настройки одни.</p>
-  <p class="warn-inline" id="order-rule"><b>Сначала раскладка, потом роли-писатели.</b> Роли, которые пишут документы (<code>business-analyst</code>, <code>tz-writer</code>, <code>ft-writer</code>, <code>bt-writer</code>, <code>instruction-writer</code>), берут все адреса проекта из его паспорта раскладки <code>99-governance/layout.json</code>. Паспорта нет — роль скажет об этом одной строкой и будет работать по умолчаниям: черновик без своего каталога уйдёт в рабочую папку <code>90-work-items/work/</code>, а для нового типа файла она остановится и предложит место — каталог сама не изобретает. Поэтому шаги 1–4 — до первой задачи.</p>
+  <p class="warn-inline" id="order-rule"><b>Сначала раскладка, потом роли-писатели.</b> Роли, которые пишут документы (<code>business-analyst</code>, <code>tz-writer</code>, <code>ft-writer</code>, <code>bt-writer</code>, <code>instruction-writer</code>), берут адреса из паспорта <code>99-governance/layout.json</code>. Паспорта нет — сообщают об этом и используют предусмотренные правилами адреса: рабочий MD в <code>md/</code>, DOCX/PDF в <code>docx/</code> своего раздела. Подходящего места нет — останавливаются и предлагают его согласовать, не складывают документ в произвольную рабочую папку. Поэтому шаги 1–4 — до первой задачи.</p>
   <ol class="steps timeline">
     <li id="project-step-folder">
       <div class="step-title">Создать папку проекта в <code>projects/</code></div>
@@ -1435,16 +1431,16 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
     <li id="project-step-layout">
       <div class="step-title">Раскладка по канону — роль <code>layout-builder</code></div>
       <p>Проводник → правая кнопка на папке проекта → «Копировать относительный путь». Панель Kilo Code → новая сессия → роль <b>layout-builder</b>; модель подойдёт дешёвая: каркас — механическая работа. Тип проекта назовите сразу, второй строкой (Shift+Enter): <b>коннектор</b> (RS-Connect, СМЭВ: ТЗ-Форматы и ФТ) или <b>проект ДБО</b> (Use Case, UI, API). Названный тип роль принимает без проверки.</p>
-      <p><b>Что нужно заранее.</b> Ничего: окружение инструментов <code>.venv</code> роль <code>layout-builder</code> проверяет сама и, если оно не готово, сама поручает доустановку (<a href="#step-venv">«Подключение к GitLab», шаг 9</a>).</p>
+      <p><b>Что нужно заранее.</b> До создания раскладки <b>devops</b> автоматически проверяет и готовит рабочее место, включая установку рефлексии. Роль <b>layout-builder</b> проверяет окружение инструментов и при нехватке поручает доустановку <b>devops</b> (<a href="#step-venv">«Подключение к GitLab», шаг 9</a>).</p>
 <div class="msg"><div class="msg-to"><span class="msg-label">Кому:</span> <a href="#role-layout-builder">layout-builder</a> <span class="chip-plain">новая сессия</span></div><div class="msg-body"><pre class="msg-text">Создай структуру каталогов в проекте &lt;относительный путь к папке проекта&gt;
 Тип проекта: &lt;коннектор / ДБО&gt;</pre><button type="button" class="copy">Копировать</button></div></div><details class="shot-fold"><summary><svg class="ico tbl-chev" aria-hidden="true"><use href="#i-chevron"/></svg><span>Скриншот · Роль Layout Builder: путь к папке проекта и тип второй строкой</span></summary><figure class="shot" data-shot="layout-prompt"><img src="https://nikolai-pir-s-ru.sourcecraft.site/portfolio/webinars/navigator-img/kilo-04-layout-builder-prompt.png" alt="Роль Layout Builder: путь к папке проекта и тип второй строкой" loading="lazy"></figure></details>
-      <p><b>Что будет дальше.</b> Первой строкой роль скажет, какую папку считает проектом и какой тип выбрала. Затем проверит папку и сразу создаст структуру — без дополнительных вопросов: спрашивает роль только тип проекта, если он не назван. Состав разделов и состояния документа одинаковы для всех проектов: в папке каждого документа — <code>draft/</code> (черновик, и <code>.md</code>, и <code>.docx</code>), <code>md/</code> (утверждённый исходник), <code>docx/</code> (сборки) и <code>journal.md</code>; финал вы переносите в релизный каталог сами. Создаёт только недостающее и ничего существующего не перезаписывает; файлы с содержанием не переносит, сама не коммитит.</p>
+      <p><b>Что будет дальше.</b> Первой строкой роль скажет, какую папку считает проектом и какой тип выбрала. Затем проверит папку и создаст структуру. Рабочий Markdown хранится в <code>md/</code>, сборки DOCX/PDF — в <code>docx/</code>; все эти документы — черновики, отдельного каталога черновиков нет. История документа — <code>journal.md</code>. Финал вы переносите сами только в релизный каталог, заданный <code>release_root</code>; если он не задан, сборка в <code>docx/</code> финалом не становится. Роль создаёт только недостающее и ничего существующего не перезаписывает; файлы с содержанием не переносит, сама не коммитит.</p>
       <p><b>Признак успеха.</b> В папке проекта появились нумерованные разделы с README (среди них <code>00-sources/</code>, <code>90-work-items/</code>, <code>98-templates/</code>, <code>99-governance/</code>), паспорт раскладки <code>99-governance/layout.json</code>, память <code>MEMORY.md</code> и каталог решений <code>decisions/</code>; повторная проверка роли — без расхождений. Заглушка паспорта проекта для <a href="#project-step-passport">шага 5</a>: у коннектора — <code>91-project-control/Паспорт-проекта.md</code>, у проекта ДБО — <code>01-project-documentation/project-passport.md</code>; поля в ней — <code>{УТОЧНИТЬ}</code>. Разделы обоих типов — вкладка <a href="#t-project-layouts">«Проект › Две раскладки»</a>.</p>
 <details class="shot-fold"><summary><svg class="ico tbl-chev" aria-hidden="true"><use href="#i-chevron"/></svg><span>Скриншот · Структура создана: разделы 00–15, 80, 90, 91, 98, 99, decisions/, MEMORY.md, README.md; проверка роли — «расхождений нет»</span></summary><figure class="shot" data-shot="layout-created"><img src="https://nikolai-pir-s-ru.sourcecraft.site/portfolio/webinars/navigator-img/kilo-05-layout-created.png" alt="Структура создана: разделы 00–15, 80, 90, 91, 98, 99, decisions/, MEMORY.md, README.md; проверка роли — «расхождений нет»" loading="lazy"></figure></details>
       <p><b>Если не вышло.</b></p>
       <ul>
         <li>Агент пишет «каталог уже существует» и ничего не создал, или спрашивает «это коннектор или ДБО?» — тип не назван. Ответьте одной строкой: «Это коннектор» (или «Это проект ДБО»).</li>
-        <li>Агент спрашивает, создавать ли, или предлагает выбрать состав («<code>draft,md,docx</code> или <code>draft,md</code>», нужен ли DOCX) — у вас канон до обновления 30.09.2026. Ответьте: «Создавай все состояния: draft, md, docx», затем роль <code>devops</code>: «Проверь канон».</li>
+        <li>Агент предлагает отдельный каталог черновиков или считает <code>md/</code> только утверждённым исходником — попросите сверить действующие правила: рабочие MD в <code>md/</code>, DOCX/PDF в <code>docx/</code>. Существующие файлы не переносить автоматически; согласованный перенос выполняет <code>canon-migrator</code>.</li>
         <li>Роли <code>layout-builder</code> нет в списке — канон не подключён или не обновлён, или VS Code не перезапущен после подключения: закрыть и открыть VS Code; не помогло — роль <code>devops</code>: «Проверь канон».</li>
         <li>Агент вернул письмо в поддержку и остановился: окружение на этом компьютере поставить не удалось (нет прав или доступа). Отправить письмо от своего имени; после установки повторить сообщение (<a href="#step-venv">«Подключение к GitLab», шаг 9</a>).</li>
         <li>В папке лежит раскладка прежней схемы (<code>input/</code>, <code>research/</code>, <code>work/</code>, <code>out/</code>) — роль покажет расхождения; файлы с содержанием она не переносит. Перенос делает роль <b>canon-migrator</b>: новая сессия, «Приведи проект &lt;путь к папке проекта&gt; к канону» — она покажет план «было → станет» и после вашего «да» перенесёт файлы, поправит ссылки и запишет журнал переименований.</li>
@@ -1525,13 +1521,13 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
     <li>
       <div class="step-title">Настройте среду на своей машине</div>
       <p>Роли, навыки и команды приезжают с репозиторием сами. А вот доступы — нет: модели и ключ, токен Confluence, MCP-серверы, VPN, программы для разбора и сборки документов ставятся на каждом хосте отдельно. Полный список — <a href="#brief">«Стартовый бриф»</a>, порядок для Windows — <code>.kilo/references/host-setup-windows.md</code> и <code>INSTALL-PARSER-WINDOWS.md</code>.</p>
-      <p>Задачу на настройку так и формулируют: «Подключи навык <code>&lt;имя&gt;</code> на этом хосте», исполнитель — <a href="#role-project-architect">project-architect</a>. Пока этот шаг не сделан, остальные задачи запускать нечем.</p>
+      <p>Штатную установку рабочего места автоматически выполняет <a href="#role-devops">devops</a> до создания проекта. Отдельная настройка доступа к Confluence или конфликт личных настроек — задача <a href="#role-project-architect">project-architect</a>. Неподключённый внешний сервис не блокирует независимую работу с локальными файлами.</p>
     </li>
     <li>
       <div class="step-title">Начните разговор фразой «Работаем с &lt;проект&gt;»</div>
       <p>Помощник сам откроет <code>projects/&lt;проект&gt;/</code>, прочитает память, паспорт раскладки, факты и открытые вопросы и первой строкой скажет, что прочитал. Без этой фразы он определит проект сам или задаст один короткий вопрос.</p>
       <p>Нет проекта — его раскладку заводит <a href="#role-layout-builder">layout-builder</a>, тип проекта (коннектор или проект ДБО) называете сразу; пошагово — вкладка <a href="#t-start-project">«Первый проект»</a>.</p>
-      <p class="warn-inline"><b>Сначала раскладка, потом роли-писатели.</b> Они берут адреса из паспорта раскладки; без него работают по умолчаниям и складывают черновики в рабочую папку <code>90-work-items/work/</code>.</p>
+      <p class="warn-inline"><b>Сначала раскладка, потом роли-писатели.</b> Рабочий MD хранится в <code>md/</code>, DOCX/PDF в <code>docx/</code> своего раздела. Если подходящее место не определено, сначала согласуйте его, а не создавайте обходной каталог черновиков.</p>
     </li>
     <li>
       <div class="step-title">Перезапустите VS Code и проверьте, что всё подхватилось</div>
@@ -1607,13 +1603,13 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
         <tr id="issue-roles"><td>После подключения канона ролей канона нет в списке</td><td>Роли читаются при старте сессии</td><td>Закрыть и открыть VS Code — роли подгрузятся</td></tr>
         <tr id="issue-ssh"><td><code>Permission denied</code>, «Could not read from remote repository»</td><td>Нет SSH-ключа или он не добавлен в GitLab</td><td>Шаги 1–2 вкладки <a href="#t-start-gitlab">«Подключение к GitLab»</a></td></tr>
         <tr id="issue-port"><td>Подключение к GitLab висит и обрывается по таймауту</td><td>Нет связи: VPN не подключён или канал; на пилоте причина не установлена</td><td>Проверить корпоративный VPN; агент повторяет попытку до трёх раз; не помогло — вопрос в чат, топик «GitLab и ключи». Ключи, remote и порт агент сам не меняет, вывод о причине — только после серии проб</td></tr>
-        <tr id="issue-canon-local"><td>Канон не обновляется</td><td>В корне рабочего места изменён файл канона (на пилоте — <code>kilo.jsonc</code>): локальные правки останавливают обновление. Это не сеть и не VPN</td><td>Роль <code>devops</code> покажет изменённые файлы канона и обновлять не станет. Вернуть файл к версии канона (снять локальную правку) — ваше решение; после этого канон обновится при следующей проверке. Нужное вам изменение — предложением владельцу канона, а не правкой в корне</td></tr>
+        <tr id="issue-canon-local"><td>Обновление остановлено локальной правкой <code>kilo.jsonc</code></td><td>Проверка обнаружила изменение общего файла настроек</td><td><code>project-architect</code> действует по разделу «Если обновление остановлено правкой kilo.jsonc» инструкции настройки хоста: сохраняет нужные личные настройки, проверяет, что они применяются, и запрашивает отдельное подтверждение восстановления только этого файла к проверенной версии. Изменения в индексе, свои коммиты и новые правки не сбрасываются; <code>reset</code> всей рабочей копии не применяется. Затем <code>devops</code> повторно проверяет обновление</td></tr>
         <tr id="issue-push"><td>Агент выгрузил, а в GitLab пусто; отказ push</td><td>По тексту отказа: «You cannot push the initial commit because the default branch is protected» — защищённая ветка не принимает первый коммит; «You are not allowed to push code to protected branches» — права в GitLab не разрешают push в защищённую ветку; отказ по защите ветки — защита сервера</td><td>Попросить <code>devops</code> вернуть полный вывод git дословно. Работа идёт в ветке <code>main</code>; при таком отказе <code>devops</code> выгружает её в ветку <code>upload/&lt;имя вашего репозитория&gt;</code> и возвращает текст для владельца канона — переслать его (например, в чат аналитиков, топик «GitLab и ключи»): ветку вольёт владелец. Защиту и права не менять, merge request не создавать, force-push не пробовать</td></tr>
         <tr id="issue-local-only"><td>Папка есть на компьютере, но её нет в GitLab</td><td>Не выгружена</td><td>Роль <code>devops</code>: «Сделай коммиты и пуш», затем обновить страницу в GitLab</td></tr>
         <tr id="issue-layout"><td><code>layout-builder</code>: «каталог уже существует», ничего не создано; «паспорта проекта нет — это коннектор или ДБО?»</td><td>Не назван тип проекта</td><td>Ответить одной строкой: «Это коннектор» или «Это проект ДБО» (<a href="#project-step-layout">«Первый проект», шаг 2</a>)</td></tr>
-        <tr id="issue-no-folder"><td>Роль-писатель пишет, что паспорта или каталога нет, складывает черновик в <code>90-work-items/work/</code></td><td>Проект не заведён: нет раскладки и паспорта</td><td>Новая сессия, <code>layout-builder</code>, путь к папке проекта и тип (<a href="#t-start-project">«Первый проект»</a>)</td></tr>
+        <tr id="issue-no-folder"><td>Роль-писатель пишет, что паспорта или нужного каталога нет</td><td>Нужно проверить раскладку проекта</td><td><code>layout-builder</code>, путь к папке проекта и тип (<a href="#t-start-project">«Первый проект»</a>). Рабочий MD сохраняют в <code>md/</code>, DOCX/PDF в <code>docx/</code> соответствующего раздела, не в произвольную папку</td></tr>
         <tr id="issue-venv"><td>Агент: «глобальные инструменты есть, корневого <code>.venv</code> нет»; <code>No module named …</code></td><td>Окружение не создано или собрано не до конца</td><td>Роль <b>devops</b>: «Проверь установку рабочего места» (<a href="#step-venv">«Подключение к GitLab», шаг 9</a>)</td></tr>
-        <tr id="issue-reflection"><td>При старте любой роли (на пилоте — у <code>devops</code>) красная ошибка: памяти рефлексии ещё нет</td><td>У рабочего места ещё нет памяти рефлексии</td><td>Новая сессия, роль <code>reflector</code>: «Проведи аудит готовности инструментов к проведению рефлексии. Верни вывод, чего не хватает»</td></tr>
+        <tr id="issue-reflection"><td>Сообщение об отсутствии памяти рефлексии или <code>EXECUTION_BLOCKED</code></td><td>Причина требует проверки установки и доступных инструментов; по цвету ошибки её не определяют</td><td>Передайте точный отказ роли <code>devops</code>: «Проверь установку рабочего места». Установку готовит <code>workspace-setup</code>, не <code>reflector</code>. Повторять рефлексию только после устранения подтверждённого ограничения</td></tr>
         <tr id="issue-model-error"><td>Агент ничего не выдаёт, ответа нет</td><td>Модель вернула ошибку — она видна только в строке состояния над полем ввода</td><td>Выбрать другую модель и повторить (<a href="#ui-status">«Интерфейс Kilo Code»</a>)</td></tr>
         <tr id="issue-doc"><td>Агент не берёт документ <code>.doc</code></td><td>Инструменты разбора работают с <code>.docx</code></td><td>Открыть в Word, принять правки рецензирования, «Сохранить как» <code>.docx</code>; положить вместо <code>.doc</code></td></tr>
         <tr id="issue-translate"><td>В GitLab не находится Preferences или Access</td><td>Браузер перевёл страницу; Access — в левом боковом меню, а не на странице</td><td>Выключить перевод страницы; Preferences → слева Access → SSH Keys (<a href="#t-start-gitlab">«Подключение к GitLab», шаг 2</a>)</td></tr>
@@ -1679,13 +1675,13 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
 
     <article class="tile">
       <div class="tile-head"><svg class="ico"><use href="#i-layers"/></svg><h4>Что входит — общая часть</h4></div>
-      <p><code>.kilo/</code> целиком: роли <code>agents/</code>, навыки <code>skills/</code>, правила <code>rules/</code>, команды <code>command/</code>, инструменты <code>tools/</code>, справки <code>references/</code>. В корне — <code>AGENTS.md</code>, <code>kilo.jsonc</code>, <code>README.md</code>, <code>INSTALL-PARSER-WINDOWS.md</code>, <code>PACKAGE-MANIFEST.md</code>, <code>.gitignore</code>.</p>
+      <p><code>.kilo/</code> целиком: роли <code>agents/</code>, навыки <code>skills/</code>, правила <code>rules/</code>, команды <code>command/</code>, инструменты <code>tools/</code>, справки <code>references/</code>. В корне — <code>AGENTS.md</code>, <code>kilo.jsonc</code>, <code>README.md</code>, <code>INSTALL-PARSER-WINDOWS.md</code>, <code>PACKAGE-MANIFEST.md</code>, <code>.gitignore</code> и этот <code>navigator.html</code>: обычная часть канона, обновляется вместе с ним.</p>
       <p>Меняется только в репозитории <code>kilo-canon</code>, у владельца.</p>
     </article>
 
     <article class="tile">
       <div class="tile-head"><svg class="ico"><use href="#i-folder"/></svg><h4>Что своё — рабочая область</h4></div>
-      <p><code>projects/&lt;проект&gt;/</code> — ваши проекты; <code>decisions/</code> — решения о размещении новых типов файлов; <code>Plans/</code> — планы; <code>reflection/</code> — установка рефлексии и записи об ошибках; <code>MEMORY.md</code> — память области.</p>
+      <p><code>projects/&lt;проект&gt;/</code> — ваши проекты, их решения и планы. Память проекта — <code>MEMORY.md</code> в его корне; память специалиста — <code>projects/reflection/MEMORY.md</code>, общая рефлексия — <code>projects/reflection/</code>.</p>
       <p><code>CLAUDE.md</code> не хранится нигде: это инструкции конкретного хоста.</p>
     </article>
 
@@ -1697,7 +1693,7 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
 
     <article class="tile">
       <div class="tile-head"><svg class="ico"><use href="#i-pointer"/></svg><h4>Как используется</h4></div>
-      <p>Фраза «Работаем с <code>&lt;проект&gt;</code>» — помощник читает <code>MEMORY.md</code> и <code>README.md</code> области, README и паспорт раскладки <code>99-governance/layout.json</code>, <code>findings.md</code>, <code>open-questions.md</code>, последние записи <code>reflection/</code> и первой строкой говорит, что прочитал.</p>
+      <p>В начале сессии помощник читает память специалиста <code>projects/reflection/MEMORY.md</code>. Для выбранного проекта читает его <code>MEMORY.md</code>, решения, README, паспорт раскладки и файлы исследования; первой строкой говорит, с каким проектом работает и что прочитал. События рефлексии на обычном старте не перечитывает.</p>
       <p>Без фразы: проект в <code>projects/</code> один — работает с ним; несколько — один вопрос со списком.</p>
     </article>
 
@@ -1710,7 +1706,7 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
     <article class="tile" id="memory-layers">
       <div class="tile-head"><svg class="ico"><use href="#i-link"/></svg><h4>Три слоя памяти</h4></div>
       <p><b>Память проекта</b> — <code>MEMORY.md</code> внутри <code>projects/&lt;проект&gt;/</code>: как устроен именно этот проект. Читается, когда вы говорите «Работаем с &lt;проект&gt;».</p>
-      <p><b>Межпроектная рефлексия</b> — <code>projects/reflection/</code>: опыт, который пригодится во всех ваших проектах; сюда пишет <code>reflector</code> в конце дня.</p>
+      <p><b>Память специалиста и межпроектная рефлексия</b> — <code>projects/reflection/MEMORY.md</code> хранит указания для всех ваших проектов, <code>projects/reflection/</code> — события и своды. Рабочая роль фиксирует урок сразу; рефлексию предпочтительно проводить после сессии. Итоги дня и недели формируются отдельно.</p>
       <p><b>Бэклог канона</b> — если <code>reflector</code> видит, что дело не в понимании задачи, а в дефекте роли, навыка или инструмента, запись уходит владельцу канона; он правит канон, обновление приезжает всем.</p>
       <p><b>Как пользоваться.</b> Агент ошибся — скажите ему, что не так. Когда исправил — «Сделай рефлексию»: по слоям он разложит сам, в бэклог канона заглядывать не обязательно (разве что ошибка повторилась). Результат рабочий, но не эталон — попросите записать в рефлексии, что это не эталонный вариант и его надо улучшать.</p>
       <p>Зачем три: чтобы не раздувать один файл до бесконечности и не грузить контекст сессии тем, что ей не нужно.</p>
@@ -1765,9 +1761,9 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
     <article class="tile">
       <div class="tile-head"><svg class="ico"><use href="#i-link"/></svg><h4>MCP-сервер</h4></div>
       <p>Роли, навыки и команды — это текст в репозитории. Но выйти во внешнюю систему — корпоративный Confluence, трекер, почту — одним текстом нельзя: нужен <b>MCP-сервер</b>, отдельная программа-посредник, которую запускает ваш клиент.</p>
-      <p><b>Он ставится отдельно на каждом хосте.</b> Программа (<code>uvx mcp-atlassian</code>), блок MCP с адресом wiki и ваш персональный токен живут в глобальном конфиге хоста, а не в проектном <code>kilo.jsonc</code>; у коллеги они свои. С репозиторием приезжают только роль, навык и границы проекта <code>confluence-scope.md</code>.</p>
-      <p>Пример проекта: прежняя схема «блок MCP в проектном <code>kilo.jsonc</code> + токен в <code>.secrets/</code>» выведена из обращения 22.09.2026 — токен только в личном конфиге.</p>
-      <p>Поэтому задача «прочитать страницу в Confluence» может не пойти не из-за ошибки в запросе, а из-за того, что сервер на этом хосте не поднят. Порядок настройки — <code>.kilo/references/host-setup-windows.md</code>, проверка — вкладка MCP в клиенте после его перезапуска.</p>
+      <p><b>Он настраивается отдельно на каждом хосте.</b> Программа (<code>uvx mcp-atlassian</code>), адрес wiki и передача персонального токена задаются в личной конфигурации, а не в проектном <code>kilo.jsonc</code>. Сам файл <code>.env</code> сервер не подключает.</p>
+      <p>Прежняя схема «блок MCP в проектном <code>kilo.jsonc</code> + токен в <code>.secrets/</code>» выведена из обращения 22.09.2026. <code>project-architect</code> проверяет явную передачу <code>CONFLUENCE_TOKEN</code> в <code>CONFLUENCE_PERSONAL_TOKEN</code> процесса сервера без раскрытия секрета.</p>
+      <p>Затем роль <code>confluence</code> проверяет границы проекта, инструменты своей сессии и чтение указанной разрешённой страницы. Отсутствие инструментов у <code>business-analyst</code> не означает, что сервера нет. Статус на вкладке MCP сам по себе не подтверждает чтение страницы.</p>
     </article>
 
   </div>
@@ -1852,7 +1848,7 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
         <tr id="term-9"><td><b>Прогон</b> (run)</td><td>Одно техническое выполнение: оцифровки, сборки DOCX. Складывает всё в свой каталог с датой — это кухня, а не место хранения результата</td></tr>
         <tr id="term-10"><td><b>Артефакт</b></td><td>Документ проекта, который кому-то нужен: БТ, матрица, отчёт. В отличие от файлов прогона, у артефакта есть место в структуре и ответственный</td></tr>
         <tr id="term-11"><td><b>Источник</b>, <code>ИСТ-</code></td><td>Документ регулятора, вендора или стандарт в <code>00-sources/</code>. Неизменяем, имеет номер и строку в реестре источников. Только на него можно сослаться как на требование извне. Префикс <code>ИСТ-</code> — пример проекта; в раскладке <code>analyst</code> — <code>SRC-</code></td></tr>
-        <tr id="term-12"><td><b>БТ</b></td><td>Бизнес-требование: зачем нужен продукт — цели, ценность, границы. В проекте-примере — основной документ аналитика. Черновик, финал в Markdown и экспорт в DOCX — три разных состояния одного документа</td></tr>
+        <tr id="term-12"><td><b>БТ</b></td><td>Бизнес-требование: зачем нужен продукт — цели, ценность, границы. Рабочие Markdown и DOCX/PDF — форматы черновика, не ступени утверждения. Финал выпускает человек в релизный каталог</td></tr>
         <tr id="term-13"><td><b>ФТ</b></td><td>Функциональные требования: что должна делать система. У коннектора — «Функциональные требования к интерфейсам со смежными системами», по ним разработчик смежной АС реализует свою сторону интеграции. Готовит роль <a href="#role-ft-writer">ft-writer</a></td></tr>
         <tr id="term-14"><td><b>UC</b>, Use Case</td><td>Сценарий использования: основной путь, альтернативы, ошибки, критерии приёмки. Есть в проектах ДБО, у коннекторов нет. Навык <a href="#skill-use-case-preparation">use-case-preparation</a></td></tr>
         <tr id="term-15"><td><b>UI</b></td><td>Описание пользовательского интерфейса: экраны, состояния, переходы. Навыки <a href="#skill-ui-description">ui-description</a> и <a href="#skill-figma">figma</a></td></tr>
@@ -2055,15 +2051,15 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
     <svg class="ico"><use href="#i-folder"/></svg>
     <h2>Где что лежит</h2>
   </div>
-  <p class="lead">Главное различие — между тем, что ещё в работе, и тем, что уже принято. Оно проходит не по имени файла, а по каталогу.</p>
-  <p class="lead">Отсюда простое правило, которое отвечает на половину вопросов «а куда это положить»: <b>принятое лежит рядом с тем, к чему относится</b> — оцифровка источника рядом с оригиналом в <code>00-sources/</code>, финал документа в своём разделе, матрица в своём. А каталоги прогонов и исследований — это кухня: по ним видно, как результат получен, но раздают и цитируют не оттуда.</p>
+  <p class="lead">Рабочие документы разделяются по формату, а не по степени готовности: Markdown в <code>md/</code>, DOCX/PDF в <code>docx/</code>. Все они остаются черновиками до выпуска человеком в релизный каталог.</p>
+  <p class="lead">Оцифровка источника лежит рядом с оригиналом в <code>00-sources/</code>, документы и матрицы — в своих разделах. Каталоги прогонов и исследований показывают, как результат получен. Успешная сборка и проверка не заменяют приёмку и выпуск.</p>
   <p class="lead">Точные адреса проекта задаёт его паспорт раскладки <code>projects/&lt;проект&gt;/99-governance/layout.json</code>: роли и навыки берут адреса оттуда, а не из своего текста. Номера разделов ниже — умолчания раскладки; в своём проекте сверяйтесь с паспортом.</p>
 
   <h3 class="sub">Путь одного артефакта: от черновика до готового DOCX</h3>
-  <p class="lead">Схема общая для БТ, ФТ, Use Case, UI, API и ТЗ: у раздела артефакта подкаталоги <code>draft/</code> → <code>md/</code> → <code>docx/</code> и файл <code>journal.md</code>; финал переносит человек. БТ проекта-примера показана как пример под каждым шагом.</p>
+  <p class="lead">Схема общая для БТ, ФТ, Use Case, UI, API и ТЗ: рабочий исходник в <code>md/</code>, рабочая сборка в <code>docx/</code>, история в <code>journal.md</code>. Финал переносит человек только в <code>release_root</code>. Примеры имён ниже не заменяют правила вашего проекта.</p>
 <ol class="ribbon" aria-label="Этапы пути артефакта">
   <li><a href="#path-step-1"><span class="rb-num">1</span><span><span class="rb-title">Черновик</span><span class="rb-sub">пока идёт работа</span></span></a></li>
-  <li><a href="#path-step-2"><span class="rb-num">2</span><span><span class="rb-title">Финал в Markdown</span><span class="rb-sub">принятая редакция</span></span></a></li>
+  <li><a href="#path-step-2"><span class="rb-num">2</span><span><span class="rb-title">Рабочий Markdown</span><span class="rb-sub">исходник документа</span></span></a></li>
   <li><a href="#path-step-3"><span class="rb-num">3</span><span><span class="rb-title">Каталог прогона</span><span class="rb-sub">внутренняя кухня сборки</span></span></a></li>
   <li><a href="#path-step-4"><span class="rb-num">4</span><span><span class="rb-title">Готовый DOCX</span><span class="rb-sub">сборка, не источник</span></span></a></li>
   <li><a href="#path-step-5"><span class="rb-num">5</span><span><span class="rb-title">Финал</span><span class="rb-sub">в релизный раздел, руками</span></span></a></li>
@@ -2071,13 +2067,13 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
   <ol class="steps">
     <li id="path-step-1">
       <div class="step-title">Черновик — пока идёт работа</div>
-      <p><code>&lt;раздел артефакта&gt;/draft/</code> · суффикс <code>_DRAFT_</code> в имени (ключ паспорта <code>artifact_subdirs.draft</code>). Статус несут каталог и имя файла, не надпись в теле документа.</p>
+      <p><code>&lt;раздел артефакта&gt;/md/</code> для Markdown, <code>&lt;раздел артефакта&gt;/docx/</code> для DOCX/PDF, включая DRAFT / NOT READY. Отдельного каталога состояния нет; суффикс <code>_DRAFT_</code> не является обязательным общим правилом.</p>
       <p>Редакция в работе. Ссылаться на неё как на требование нельзя.</p>
-      <p>Пример проекта: <code>02-business-requirements/черновики/</code>, имя начинается с <code>DRAFT-</code>.</p>
+      <p>Исторические имена и каталоги сами не переименовываются: перенос выполняется по согласованной карте с сохранением вложений и ссылок.</p>
     </li>
     <li id="path-step-2">
-      <div class="step-title">Финал в Markdown — принятая редакция</div>
-      <p><code>&lt;раздел артефакта&gt;/md/</code> — один действующий файл (<code>artifact_subdirs.final_md</code>). Имя — по правилу раскладки: в раскладке <code>analyst</code> — латиницей <code>&lt;PREFIX&gt;-&lt;NNN&gt;-&lt;slug&gt;</code> (<code>BR-</code>, <code>FR-</code>, <code>UC-</code>, <code>UI-</code>, <code>API-</code> …); у коннектора — кириллические префиксы <code>БТ-</code>, <code>ФТ-</code>, <code>ТЗ-</code>.</p>
+      <div class="step-title">Рабочий Markdown — исходник документа</div>
+      <p><code>&lt;раздел артефакта&gt;/md/</code> — рабочий исходник (<code>artifact_subdirs.final_md</code>: историческое имя ключа, не статус утверждения). Имя — по правилу проекта: в раскладке <code>analyst</code> — латиницей <code>&lt;PREFIX&gt;-&lt;NNN&gt;-&lt;slug&gt;</code> (<code>BR-</code>, <code>FR-</code>, <code>UC-</code>, <code>UI-</code>, <code>API-</code> …); у коннектора — кириллические префиксы <code>БТ-</code>, <code>ФТ-</code>, <code>ТЗ-</code>.</p>
       <p>Это источник истины по документу. Из него собирается всё остальное, правки вносятся сюда.</p>
       <p>Пример проекта: <code>02-business-requirements/md/</code> · <code>БТ-ЦР-ДБОФЛ-&lt;номер&gt;-&lt;Название&gt;.md</code> — схема <code>&lt;тип&gt;-&lt;код проекта&gt;-&lt;номер&gt;</code>.</p>
     </li>
@@ -2090,12 +2086,12 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
     <li id="path-step-4">
       <div class="step-title">Готовый DOCX — сборка, не источник</div>
       <p><code>&lt;раздел артефакта&gt;/docx/</code> (<code>artifact_subdirs.docx</code>) — сборки DOCX/PDF навыком <code>docx-layout</code></p>
-      <p>Файл переносится сюда из каталога прогона только после проверок и вашего решения. Если документа здесь нет — готового DOCX нет, сколько бы прогонов ни было.</p>
+      <p>Здесь хранится рабочая сборка, в том числе DRAFT / NOT READY. Проверки и ограничения сборки сохраняются; наличие файла и успешный прогон не делают его принятым или финальным.</p>
       <p>Пример проекта: <code>02-business-requirements/docx/</code>, рядом <code>.pdf</code>, если экспортировали.</p>
     </li>
     <li id="path-step-5">
       <div class="step-title">Финал — в релизный раздел, руками</div>
-      <p>Каталог <code>release_root</code> паспорта: <code>15-release-documentation/</code> в раскладке <code>analyst</code>, <code>26-release-documentation/</code> у коннектора. Переносит человек, файлы не перезаписываются; автоматическая публикация запрещена.</p>
+      <p>Каталог <code>release_root</code> паспорта: <code>15-release-documentation/</code> в раскладке <code>analyst</code>, <code>26-release-documentation/</code> у коннектора. Переносит человек, файлы не перезаписываются; автоматическая публикация запрещена. Если <code>release_root</code> не задан или равен <code>NOT_CONFIGURED</code>, финальный выпуск недоступен: <code>docx/</code> не становится релизным каталогом.</p>
     </li>
   </ol>
   <p class="lead" style="margin-top:14px">Рядом в том же разделе — <code>journal.md</code>: история замечаний и решений по документу, задним числом не переписывается. Пример проекта: <code>журналы/</code> — история решений по каждой БТ, и реестр пользовательских БТ в корне раздела.</p>
@@ -2148,7 +2144,7 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
 </ul></div>
 </div>
 
-  <p class="lead"><b>Раскладка <code>analyst</code></b> — проекты ДБО и другие. Каждый документ — своя папка <code>&lt;раздел&gt;/&lt;PREFIX&gt;-&lt;NNN&gt;-&lt;slug&gt;/</code> с <code>README.md</code>-паспортом, <code>draft/</code>, <code>md/</code>, <code>docx/</code>, <code>journal.md</code>.</p>
+  <p class="lead"><b>Раскладка <code>analyst</code></b> — проекты ДБО и другие. Каждый документ — своя папка <code>&lt;раздел&gt;/&lt;PREFIX&gt;-&lt;NNN&gt;-&lt;slug&gt;/</code> с <code>README.md</code>-паспортом, рабочими <code>md/</code> и <code>docx/</code>, <code>journal.md</code>. Отдельного каталога черновиков нет.</p>
   <details class="tbl">
   <summary><svg class="ico tbl-chev" aria-hidden="true"><use href="#i-chevron"/></svg><span class="tbl-title">Раскладка <code>analyst</code></span><span class="tbl-count">22 строки</span></summary>
 <div class="card">
@@ -2175,7 +2171,7 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
         <tr><td><code>80-archive/</code></td><td>Вытесненное</td><td>—</td></tr>
         <tr><td><code>90-work-items/</code></td><td>Кухня: <code>research/</code>, <code>work/runs/</code>, <code>prompts/</code>, <code>instruction/</code>, <code>plans/</code>, <code>tools/</code></td><td>—</td></tr>
         <tr><td><code>91-project-control/</code></td><td>Реестр документов, запланированные документы, решения по этапам</td><td><code>PC-</code></td></tr>
-        <tr><td><code>92-reflection/</code></td><td>Установка рефлексии проекта (опция)</td><td>—</td></tr>
+        <tr><td><code>92-reflection/</code></td><td>Прежний каталог, не место новой установки. Общая рефлексия — <code>projects/reflection/</code>; перенос старых записей согласуется отдельно</td><td>—</td></tr>
         <tr><td><code>98-templates/</code></td><td>Шаблон папки документа, шаблоны по типам, профили сборки DOCX</td><td><code>TMP-</code></td></tr>
         <tr><td><code>99-governance/</code></td><td>Паспорт раскладки <code>layout.json</code>, оверлей, соглашения именования, журнал переименований</td><td><code>GOV-</code></td></tr>
       </tbody>
@@ -2203,7 +2199,7 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
         <tr><td><code>80-archive/</code></td><td>Вытесненное</td><td>—</td></tr>
         <tr><td><code>90-work-items/</code></td><td>Кухня: <code>research/</code>, <code>work/runs/</code>, <code>prompts/</code>, <code>instruction/</code>, <code>plans/</code></td><td>—</td></tr>
         <tr><td><code>91-project-control/</code></td><td>Паспорт проекта, реестр документов, решения, вопросы уровня проекта</td><td>—</td></tr>
-        <tr><td><code>92-reflection/</code></td><td>Установка рефлексии коннектора (опция)</td><td>—</td></tr>
+        <tr><td><code>92-reflection/</code></td><td>Прежний каталог, не место новой установки. Общая рефлексия — <code>projects/reflection/</code>; перенос старых записей согласуется отдельно</td><td>—</td></tr>
         <tr><td><code>98-templates/</code></td><td>Шаблоны документов, профили и инструкции сборки DOCX</td><td><code>Шаблон-</code></td></tr>
         <tr><td><code>99-governance/</code></td><td>Как устроено пространство коннектора: журнал переименований, задания хостам, соглашения</td><td>—</td></tr>
       </tbody>
@@ -2224,7 +2220,7 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
       <thead><tr><th>Ключ</th><th>Что это</th></tr></thead>
       <tbody>
         <tr><td><code>artifact_roots</code></td><td>Раздел документа по коду: <code>БТ</code>, <code>ФТ</code>, <code>UC</code>, <code>US</code>, <code>UI</code>, <code>API</code>, <code>НФТ</code>, <code>АРХ</code>, <code>ДАННЫЕ</code>, <code>ИБ</code>, <code>ТЕСТ</code>, <code>РП</code>, <code>ТЗ_Основное</code>, <code>ТЗ_Форматы</code></td></tr>
-        <tr><td><code>artifact_subdirs</code></td><td>Подкаталоги раздела: <code>draft/</code>, <code>md/</code>, <code>docx/</code>, <code>journal.md</code></td></tr>
+        <tr><td><code>artifact_subdirs</code></td><td>Рабочий Markdown — <code>final_md: md</code>, рабочие DOCX/PDF — <code>docx: docx</code>; история — <code>journal.md</code>. Устаревший ключ <code>draft: .</code> сохранён для совместимости, не задаёт каталог записи</td></tr>
         <tr><td><code>source_roots</code></td><td>Каталоги первичных файлов: оригиналы не изменять и не удалять</td></tr>
         <tr><td><code>design_mockups_root</code></td><td>Выгруженные макеты (PNG, PDF); не рабочий артефакт</td></tr>
         <tr><td><code>template_root</code>, <code>templates</code></td><td>Каталог эталонов и карта «код артефакта → файл шаблона»</td></tr>
@@ -2252,7 +2248,7 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
       <tbody>
         <tr><td><code>00-sources/</code></td><td>Исходные материалы: регулятор, вендор, стандарты. Каждый с номером <code>ИСТ-</code> и записью в реестре источников. Внутри у источника рядом лежат <code>original/</code> — присланный файл, <code>markdown/</code> — его оцифровка, при необходимости <code>assets/</code>, <code>diagrams/</code>, <code>xsd/</code> и <code>checksums.sha256</code>. Оригиналы не меняются; правки коллег и рабочие файлы сюда не кладут — им место в <code>90-work-items/research/</code></td></tr>
         <tr><td><code>01-project-documentation/</code></td><td>Проектная документация</td></tr>
-        <tr><td><code>02-business-requirements/</code></td><td>Бизнес-требования: <code>md/</code> — финалы, <code>docx/</code> — экспорт, <code>черновики/</code>, <code>журналы/</code>, реестр в корне</td></tr>
+        <tr><td><code>02-business-requirements/</code></td><td>Бизнес-требования: рабочий Markdown в <code>md/</code>, DOCX/PDF в <code>docx/</code>. В историческом примере также были <code>черновики/</code>, <code>журналы/</code> и реестр в корне; это не инструкция создавать отдельный каталог черновиков. Финал — только в <code>release_root</code></td></tr>
         <tr><td><code>03-functional-requirements/</code></td><td>Функциональные требования (<code>ФТ-</code>)</td></tr>
         <tr><td><code>04-use-cases/</code></td><td>Сценарии использования (<code>UC-</code>)</td></tr>
         <tr><td><code>05-user-interfaces/</code></td><td>Пользовательские интерфейсы (<code>UI-</code>)</td></tr>
@@ -2288,6 +2284,7 @@ python .kilo/skills/workspace-setup/scripts/workspace_setup.py fix --projects-ur
 </div></div>
 <section class="tabpanel" id="t-author-marks" role="tabpanel" aria-labelledby="tab-author-marks" tabindex="-1" data-page="author" data-tab="marks" data-title="Пометки">
 <h2 class="tab-title">Для автора › Пометки</h2>
+<p class="lead">Владельцу: <code>navigator.html</code> сопровождается и выпускается как обычная часть канона. Маршрут выпуска уже описан у <code>devops</code>: проверенные корень, действующие адреса и локальный маркер <code>kilo-canon.owner=true</code>; коммит и выгрузка только по отдельному поручению.</p>
 <div id="author-marks"></div>
 </section>
 </div>
@@ -2431,7 +2428,7 @@ const ROLES = [
     group: "reflection",
     mode: "all",
     desc: "Рефлектор проекта: фиксирует события, формирует итоги сессии, дня, недели или месяца и накопительный план улучшений среды и методики.",
-    perms: "Пишет только в <code>reflection/</code>, <code>journal/</code> и план улучшений в <code>Plans/</code>; терминал не запускает. При старте сессии роли-исполнители зовут её для догона пропущенных периодов.",
+    perms: "Ведёт рефлексию в <code>projects/reflection/</code> по её установленному порядку; не создаёт установку и не чинит среду. Предпочтительно запускать после рабочей сессии; своды дня и недели отдельно. При <code>EXECUTION_BLOCKED</code> точный отказ передаётся в проверку рабочего места роли devops, без угадывания причины.",
     path: ".kilo/agents/reflector.md"
   },
   {
@@ -2553,7 +2550,7 @@ const TASKS = [
       { icon: "i-compass", label: "Когда запускать",
         text: "Когда по этой БТ есть индивидуальная инструкция в реестре и собраны источники. Одна задача — одна БТ: «сделай все» не запускают (в проекте-примере их 18), тираж идёт по одному документу с вашим подтверждением по каждому." },
       { icon: "i-check", label: "Что получите",
-        text: "Черновик в <code>draft/</code> раздела БТ по паспорту раскладки (пример проекта: <code>DRAFT-</code> в <code>02-business-requirements/черновики/</code>) и находки независимой проверки. Финалом он станет после ваших правок и вашего решения, а не по завершении прогона." },
+        text: "Рабочий черновик БТ в <code>md/</code>, сборка DOCX/PDF в <code>docx/</code> раздела по паспорту и находки независимой проверки. Финал переносит человек только в <code>release_root</code>; отсутствие релизного каталога не делает сборку финалом." },
       { icon: "i-alert", label: "Частая ошибка",
         text: "Пересказывать в запросе структуру БТ и порядок разделов. Это уже описано в шаблоне и правилах формирования; пересказ переопределяет инструкцию и ломает единообразие документов." }
     ]
@@ -2581,7 +2578,7 @@ const TASKS = [
       { icon: "i-compass", label: "Когда запускать",
         text: "Когда собраны исходные документы: основное ТЗ, ТЗ на форматы, при наличии — ФТ смежного проекта, справочники, схемы. Неразобранные PDF/DOCX сначала оцифровывают. Пример задания из роли: «собрать ФТ по взаимодействию со смежной АС для коннектора X по виду сведений Y»." },
       { icon: "i-check", label: "Что получите",
-        text: "Черновик ФТ в <code>draft/</code> раздела <code>ФТ</code> по паспорту раскладки. Чего нет в источниках — маркер <code>{УТОЧНИТЬ: Q-…}</code> и вопрос в <code>open-questions.md</code>, а не догадка." }
+        text: "Черновик ФТ в <code>md/</code> раздела <code>ФТ</code> по паспорту, рабочая сборка DOCX/PDF в <code>docx/</code>. Пробелы регистрируются в <code>open-questions.md</code>, а не заполняются догадками; черновик с незакрытым блокером и маркером вопроса — только по явному решению аналитика, не финальный выпуск." }
     ]
   },
   {
@@ -2594,7 +2591,7 @@ const TASKS = [
       { icon: "i-compass", label: "Когда запускать",
         text: "В проектах ДБО. Приоритет источников: требование пользователя → БФТ → эталонные примеры → backend → frontend → макеты и Figma; БФТ — источник истины по составу полей и бизнес-правилам. У коннекторов Use Case нет: их роль выполняют алгоритмы внутри ФТ." },
       { icon: "i-check", label: "Что получите",
-        text: "Черновик <code>UC-NNN_&lt;название&gt;</code> в <code>draft/</code> раздела <code>UC</code> по паспорту, с суффиксом <code>_DRAFT_</code> в имени. Номер UC не определён однозначно — роль уточнит у вас." },
+        text: "Рабочий черновик Use Case в <code>md/</code> раздела <code>UC</code>, DOCX/PDF в <code>docx/</code>. Имя по правилам проекта; общий суффикс <code>_DRAFT_</code> не обязателен. Номер UC не определён однозначно — роль уточнит у вас." },
       { icon: "i-alert", label: "Первое сообщение",
         text: "Готовой формулировки в файлах роли и навыка нет — нужна от автора." }
     ]
@@ -2696,11 +2693,11 @@ const TASKS = [
     skill: skillLink("docx-layout"),
     notes: [
       { icon: "i-compass", label: "Когда запускать",
-        text: "Когда Markdown-финал уже принят и документ нужно отдать людям — на согласование, в почту, на встречу. Собирать DOCX из черновика смысла нет: он пересоберётся после первой же правки." },
+        text: "Когда рабочий Markdown нужно собрать для проверки или согласования. Он может оставаться черновиком; готовность и ограничения указываются явно. Сборка не означает приёмку или выпуск." },
       { icon: "i-alert", label: "Что нужно на хосте",
         text: "Сборка идёт через настольный Word; для диаграмм нужны Java и <code>plantuml.jar</code>, для BPMN и draw.io — свои программы (<a href=\"#brief\">«Стартовый бриф»</a>). На машине без них прогон остановится — это ограничение среды, а не ошибка документа." },
       { icon: "i-folder", label: "Куда ляжет результат",
-        text: "Файл появится в каталоге прогона и только после ваших проверок переносится в <code>docx/</code> раздела документа (пример проекта: <code>02-business-requirements/docx/</code>). Нет файла в этом каталоге — готового DOCX нет." }
+        text: "Рабочие DOCX/PDF — в <code>docx/</code> раздела документа (пример: <code>02-business-requirements/docx/</code>), отчёты и промежуточное — в каталоге прогона. Финал только в <code>release_root</code>, переносит человек; без этого каталога сборка остаётся рабочей." }
     ]
   },
   {
@@ -2711,9 +2708,9 @@ const TASKS = [
     skill: skillLink("confluence"),
     notes: [
       { icon: "i-alert", cls: "must", label: "MCP ставится отдельно на каждом хосте",
-        text: "Программа-посредник (<code>uvx mcp-atlassian</code>), адрес wiki и ваш персональный токен задаются в глобальном конфиге хоста <code>%USERPROFILE%\\.config\\kilo\\kilo.jsonc</code>, не в проекте. Токен выпускается в профиле wiki и никуда не пересылается. Порядок — <code>.kilo/references/host-setup-windows.md</code>; после настройки перезапустите клиент и проверьте сервер на вкладке MCP." },
+        text: "Настройку выполняет project-architect в личной конфигурации. <code>.env</code> не активирует MCP: нужна проверенная передача <code>CONFLUENCE_TOKEN</code> в <code>CONFLUENCE_PERSONAL_TOKEN</code> сервера без вывода секрета. Затем confluence проверяет инструменты своей сессии и ответ на чтение разрешённой страницы. Отсутствие инструментов у business-analyst не доказывает отсутствие сервера." },
       { icon: "i-alert", cls: "must", label: "Ещё условия среды",
-        text: "Файл границ <code>99-governance/confluence-scope.md</code> проекта, включённый корпоративный VPN и модель, которой доступен российский IP-адрес. Без любого из условий задача не выполнится, а отказ будет выглядеть как ошибка соединения — проверяйте среду прежде, чем переписывать запрос." },
+        text: "Нужны границы в <code>99-governance/confluence-scope.md</code>, пространство и ссылка из задания, корпоративный VPN. Роль confluence проверяет границы и фактический ответ инструмента; причину отказа по одному сообщению об ошибке не угадывают." },
       { icon: "i-compass", label: "Когда применять",
         text: "Чтение — когда нужна страница коллег как контекст: дайте ссылку прямо в запросе. Публикация — только когда документ принят, и в задании названы space key, страница-родитель, источник статьи и явное разрешение записи. Страницу после публикации откройте в браузере и подтвердите сами — сверка агента приёмкой не считается." }
     ]
@@ -2733,7 +2730,7 @@ const TASKS = [
     task: "Завести или проверить раскладку нового проекта",
     prompt: "Создай структуру каталогов в проекте &lt;путь к папке проекта&gt;. Тип проекта: &lt;коннектор / ДБО&gt;",
     you: roleLink("layout-builder"),
-    under: roleLink("devops") + " и " + roleLink("reflector") + " — при старте сессии: проверка канона и досмотр рефлексии",
+    under: roleLink("devops") + " — автоматическая подготовка рабочего места через workspace-setup до раскладки; " + roleLink("reflector") + " — только досмотр рефлексии, не установка",
     skill: skillLink("project-layout") + " → " + skillLink("project-layout-connector") + " или " + skillLink("project-layout-analyst"),
     notes: [
       { icon: "i-compass", label: "Как идёт работа",
@@ -2766,8 +2763,8 @@ const TASKS = [
     under: "—",
     skill: "—",
     notes: [
-      { icon: "i-alert", cls: "must", label: "Обязательный шаг, и он первый",
-        text: "Выполняется на новом рабочем месте до любой задачи из этой таблицы: пока роли, навыки, команды и MCP не подключены на этом хосте, запускать нечего — файл в репозитории сам по себе не означает, что сущность загружена в сессии. Повторяется при смене хоста, после обновления плагина и после того, как в проекте появились новые роли или навыки. Полный список окружения — <a href=\"#brief\">«Стартовый бриф»</a>." }
+      { icon: "i-alert", cls: "must", label: "Когда нужна отдельная настройка",
+        text: "Подключение внешнего сервиса или конфликт личных настроек — project-architect. Штатную установку рабочего места и безопасную подготовку PlantUML выполняет devops автоматически. Файл роли на диске не доказывает её загрузку, а неподключённый MCP не блокирует независимую локальную работу. Полный список окружения — <a href=\"#brief\">«Стартовый бриф»</a>." }
     ]
   },
   {
@@ -2817,7 +2814,7 @@ const TASKS = [
     skill: skillLink("reflection-synthesis") + ", " + skillLink("session-audit"),
     notes: [
       { icon: "i-compass", label: "Когда запускать",
-        text: "Итог — когда попросите: в конце сессии или дня, если есть что зафиксировать: принятое решение, ошибка, изменившийся порядок работы. Кроме того, при старте сессии роли-исполнители зовут рефлектора догнать пропущенные периоды — с бюджетом, на основную работу это не влияет. Записи рефлексии — архив и сырьё для плана улучшений в <code>Plans/</code>: на вход сборки и проверки документов они не идут." }
+        text: "Предпочтительно после каждой рабочей сессии: зафиксировать решения, ошибки и изменившийся порядок работы, пока доступен контекст. Свод за день, неделю или месяц — отдельная задача, не замена рефлексии сессии. При старте роли-исполнители могут вызвать досмотр пропущенных периодов. Установку готовит devops, не reflector; при EXECUTION_BLOCKED нужна проверка среды с точным отказом, не повтор без устранения причины." }
     ]
   }
 ];
