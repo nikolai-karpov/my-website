@@ -46,6 +46,7 @@ my-website/
 │   ├── prompt_generator.html
 │   ├── pseudonymizer.html
 │   ├── rd-prompt-engineering.html
+│   ├── publications/        # Новости и обзоры, которыми я делюсь
 │   └── prototypes/
 │       └── yard-booking.html # Прототип бронирования окон (используется carriers-platform)
 ├── legacy/                 # Старая версия сайта (deprecated)
@@ -156,6 +157,7 @@ npm run build
 - Включает [`index.html`](index.html), [`methodology.html`](methodology.html)
 - Использует папку [`assets/`](assets/) для стилей и скриптов
 - Все страницы, доступные с главной, лежат в [`site-pages/`](site-pages/)
+- В подразделе [`site-pages/publications/`](site-pages/publications/) я делюсь новостями и обзорами; здесь размещаются их HTML-страницы.
 - Папка [`cases/`](cases/) — только для исходных материалов (markdown-исследования, обзоры, прототипы); HTML-страниц в ней быть не должно
 
 ### Легаси-версия
