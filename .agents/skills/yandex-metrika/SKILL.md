@@ -129,3 +129,7 @@ Reporting API: ~200 запросов / 5 минут. Наш клиент авт�
 - Запись метрик / создание целей — read-only by design.
 - E-commerce purchases (ym:s:ecommercePurchases) — позже, если попросишь.
 - Session replays / WebVisor — отдельный API, не подключён.
+
+## API access pattern
+
+Metrika curl with OAuth (verbatim lesson from 2026-07-27): [api-access.md](../yandex-project-context/references/api-access.md).

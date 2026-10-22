@@ -24,7 +24,7 @@ Use this skill as the project scope guard for Yandex-related work in this reposi
 
 ## Yandex Direct Scope
 
-Two scope modes apply (mirrors `AGENTS.md` → "Scope modes"). Default is project-scoped; account-wide is opt-in only.
+Two scope modes apply (verbatim text: [Rules moved from root AGENTS.md](#rules-moved-from-root-agentsmd) → "Scope modes"). Default is project-scoped; account-wide is opt-in only.
 
 **Default — project-scoped (`my-website`):**
 
@@ -165,3 +165,70 @@ Read these files first for project context:
 - The current monitoring config has `566497705` as the primary `form_submit` goal; `566492899` must be role-verified before using it in combined CPA.
 - Direct `Conversions` are not lead truth.
 - Shared Direct account requires explicit project scoping every time.
+
+## Rules moved from root AGENTS.md
+
+Verbatim text of the former root `AGENTS.md` section. Root `AGENTS.md` only routes here. Earlier sections of this skill are unchanged; where wording differs, the numbered rules below are the root wording.
+
+### Yandex Performance Marketing
+
+For any task about Yandex Direct, Yandex Metrika, Wordstat, paid traffic, CPA, campaign monitoring, search queries, UTM, landing analytics, weekly ad reports, or advertising optimization:
+
+1. First apply repo context skill:
+   `.agents/skills/yandex-project-context/SKILL.md`
+
+2. Then apply the canonical Yandex performance workflow skill:
+   `.agents/skills/yandex-performance-marketer/SKILL.md`
+
+3. For specific workflows use references inside:
+   `.agents/skills/yandex-performance-marketer/references/`
+
+4. Treat all Yandex actions as read-only. No writes, pauses, bid/budget/ad edits, or campaign creation via API. Produce analysis, change plans, and ready-to-upload drafts only.
+
+### Scope modes
+
+Two modes apply. Default is project-scoped; account-wide is opt-in only.
+
+**Default — project-scoped (`my-website`):**
+
+5. Scope Yandex Direct to campaign `710165227`.
+6. Scope primary paid-traffic Metrika analysis to counter `109350250`.
+7. Conversion goals for this project: `566497705`, `566492899`.
+8. Do not run account-wide reports or analyze unrelated campaigns/counters from the shared account.
+
+**Account-wide mode (explicit opt-in):**
+
+9. Account-wide work is ALLOWED when the user explicitly requests it: creating a new campaign, cross-project analysis, listing or auditing all campaigns in the shared account, or working with a campaign/counter outside the `my-website` project set.
+10. In account-wide mode any campaign, counter, or goal present in the shared Yandex account may be analyzed. The `710165227` / `109350250` defaults no longer restrict the run.
+11. Account-wide mode must be confirmed interactively before running. Never start account-wide reports on your own initiative, and never run them in cron or other non-interactive contexts.
+
+**Both modes:**
+
+12. STOP before any report: confirm and mirror the exact scope (campaign(s), counter(s), goal(s), intent, period). Do not run reports with empty or ambiguous scope.
+13. Master-campaign invariant: `710165227` is a master campaign with limited Direct API visibility. Do not replace it with visible regular campaigns `710220828` or `710496114`. This holds in both modes.
+14. Never use `all_goals=true` for CPA.
+15. Never treat Direct `Conversions` as proof of real leads.
+16. Treat click, contact, and case-view goals as diagnostics only unless the project context explicitly marks them as conversion goals.
+17. Current repo artifacts identify `566497705` as `form_submit`. Verify the role and event name of `566492899` before combining both goals into one CPA denominator.
+18. Produce read-only analysis and change plans only.
+19. For cron or non-interactive runs, fail closed if scope is missing. Account-wide mode is interactive-only.
+
+## Marketing References
+
+Read these first for project-specific marketing context:
+
+The seven files from the former root section are already the first seven entries of [Preferred Repo References](#preferred-repo-references) (not copied again as a second list): `marketing/00_README.md`, `marketing/yandex_direct_project.json`, `marketing/placement_monitor_config.json`, `marketing/yandex_direct_manual_blocks.md`, `marketing/placement_monitor/latest_status.json`, `marketing/placement_monitor/latest_recommendations.md`, `marketing/deep_research/README.md`. That section also lists `marketing/deep_research/04_keyword_clusters.tsv`, `marketing/deep_research/05_minus_phrase_candidates.tsv`, `marketing/deep_research/07_excluded_placements.tsv`, and `marketing/metrika_exports/`.
+
+Important invariant:
+
+- Campaign `710165227` is a master campaign. Do not replace it with visible regular campaigns `710220828` or `710496114`.
+
+Rule 13 above is the same invariant with the limited-visibility clause and "This holds in both modes." Both wordings are kept.
+
+## New Campaign: neuro-tutor (not this site)
+
+Separate landing and counter, not `my-website`. Status snapshot recorded 2026-07-27, with the original campaign lines unchanged: `landing/neuro-tutor-context.md`. Full campaign data: `landing/yandex-campaign.md`.
+
+## Yandex API Access Patterns
+
+Verbatim lessons from 2026-07-27 (Wordstat via hermes-agent runtime, not curl; Direct Bearer token and `Client-Login`; Metrika OAuth curl): `.agents/skills/yandex-project-context/references/api-access.md`.
