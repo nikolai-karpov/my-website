@@ -77,6 +77,7 @@ yandex_wordstat_regions({"phrase": "...", "region_type": "REGION_CITIES"})
 ## References
 
 - [Подводные камни и интерпретация спроса](references/pitfalls.md) — операторы, count-строкой, monthly-toDate, «низкая частотность ≠ нет рынка».
+- [Yandex API access patterns](../yandex-project-context/references/api-access.md) — Wordstat через hermes-agent runtime, не curl (урок 2026-07-27, verbatim).
 
 ## Recommendation style
 

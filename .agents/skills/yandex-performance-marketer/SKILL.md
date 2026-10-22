@@ -91,7 +91,7 @@ For this repository, never start Yandex analysis without applying:
 
 If project context is unavailable, stop.
 
-Do not run account-wide Direct reports.
+Default is project-scoped. Account-wide Direct reports run only on the owner's explicit request and after interactive confirmation; never in cron or other non-interactive runs. See `.agents/skills/yandex-project-context/SKILL.md` → Scope modes (rules 9–11 and 19).
 
 ## Repository Business Rules
 
@@ -259,3 +259,7 @@ Use this format:
 - Do not recommend pausing a campaign only because CPA is high without checking funnel role.
 - Do not recommend mass changes without a control plan.
 - Do not request or store OAuth tokens, passwords, payment data or secrets.
+
+## Instruction routing
+
+Numbered Yandex rules formerly in root `AGENTS.md` ("Yandex Performance Marketing", skill order, read-only policy, scope modes, rules 1–19) are verbatim in `.agents/skills/yandex-project-context/SKILL.md` under "Rules moved from root AGENTS.md". This skill does not restate them. API call patterns: `.agents/skills/yandex-project-context/references/api-access.md`.

@@ -78,6 +78,8 @@ yandex_metrika_conversions({
 })
 ```
 
+`all_goals: true` here is only for listing/inspecting conversions; forbidden for CPA calculation, use explicit goal IDs (rule 14 in `.agents/skills/yandex-project-context/SKILL.md` → Scope modes).
+
 ### "Real CPA по Директу"
 1. Найди `counter_id`, явные `goal_ids` и `campaign_ids` проекта.
 2. Получи/передай `direct_client_logins`. Если логин неизвестен, tool сам читает `/management/v1/clients?counters=<counter_id>`.
@@ -129,3 +131,7 @@ Reporting API: ~200 запросов / 5 минут. Наш клиент авт�
 - Запись метрик / создание целей — read-only by design.
 - E-commerce purchases (ym:s:ecommercePurchases) — позже, если попросишь.
 - Session replays / WebVisor — отдельный API, не подключён.
+
+## API access pattern
+
+Metrika curl with OAuth (verbatim lesson from 2026-07-27): [api-access.md](../yandex-project-context/references/api-access.md).

@@ -112,6 +112,7 @@ Money: ex-VAT, decimal ₽ (`returnMoneyInMicros=false`). Не дели на 1_0
 - [Project campaign map](references/project-campaign-map.md) — локальная карта проектов к кампаниям общего Direct-аккаунта.
 - [Интерпретация аномалий + intent verification](references/anomalies.md) — таблица паттернов и чек-лист «настоящая проблема vs шум».
 - [Подводные камни Direct API](references/pitfalls.md) — ID при переносе, отчёт 5ч, токен 1 год.
+- [Yandex API access patterns](../yandex-project-context/references/api-access.md) — Direct curl с Bearer token и `Client-Login` (урок 2026-07-27, verbatim).
 
 ## Recommendation style
 
