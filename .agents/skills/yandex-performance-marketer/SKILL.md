@@ -91,7 +91,7 @@ For this repository, never start Yandex analysis without applying:
 
 If project context is unavailable, stop.
 
-Do not run account-wide Direct reports.
+Default is project-scoped. Account-wide Direct reports run only on the owner's explicit request and after interactive confirmation; never in cron or other non-interactive runs. See `.agents/skills/yandex-project-context/SKILL.md` → Scope modes (rules 9–11 and 19).
 
 ## Repository Business Rules
 
