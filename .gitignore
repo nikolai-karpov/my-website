@@ -74,3 +74,4 @@ site-pages/case-studies/_plan-*.md
 # Локальные рабочие директории инструментов и приватные заметки
 .kilo/
 networking/
+.DS_Store
