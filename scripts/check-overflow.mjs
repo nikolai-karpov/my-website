@@ -134,6 +134,8 @@ function walkHtml(dir, out) {
 function discoverPages() {
   const roots = [
     path.join(REPO_ROOT, "index.html"),
+    path.join(REPO_ROOT, "landing.html"),
+    path.join(REPO_ROOT, "landing-standalone.html"),
     path.join(REPO_ROOT, "curs", "index.html"),
   ];
   const walkRoots = [path.join(REPO_ROOT, "site-pages"), path.join(REPO_ROOT, "cases")];
