@@ -32,6 +32,16 @@ For mockup/design/prototype work on `Дашборд Маркетолога - Ai-
 
 - `cases/ai-copilot_marketolog/dashboard.md`. Treat it as the canonical guide for the dashboard narrative and structure. It was created to answer the operator question: where to look right now so the business grows instead of merely reporting.
 
+## Text workflow (copywriter → humanizer → article-reviewer)
+
+For any task about writing, rewriting, polishing or reviewing text on this site — articles, case pages, landing copy, section texts, posts:
+
+1. Draft/expand: `.agents/skills/copywriter/SKILL.md`
+2. Make it read human: `.agents/skills/humanizer/SKILL.md`
+3. Critique and find contradictions/gaps: `.agents/skills/article-reviewer/SKILL.md`
+
+All three are fact-bound to `docs/career-profile.md` as the source of truth. Candidate/unverified cases stay marked as candidate. Reviewer reports findings; rewrites happen only after user approval.
+
 ## Yandex (routing only)
 
 For any task about Yandex Direct, Yandex Metrika, Wordstat, paid traffic, CPA, campaign monitoring, search queries, UTM, landing analytics, weekly ad reports, or advertising optimization, read these skills first. All Yandex actions are read-only.
