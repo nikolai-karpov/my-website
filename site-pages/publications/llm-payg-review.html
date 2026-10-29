@@ -17,7 +17,15 @@
         .card-value { border-left-color: #3b82f6; }
         .card-warn { border-left-color: #eab308; }
         .card-hot { border-left-color: #ef4444; }
-        table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.9em; }
+        table {
+            display: block; width: 100%; min-width: 100%; max-width: 100%; overflow-x: auto;
+            overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin; scrollbar-color: #475569 #0f172a;
+            border-collapse: collapse; margin: 12px 0; font-size: 0.9em;
+        }
+        table::-webkit-scrollbar { height: 8px; }
+        table::-webkit-scrollbar-track { background: #0f172a; border-radius: 8px; }
+        table::-webkit-scrollbar-thumb { background: #64748b; border-radius: 8px; }
         th { text-align: left; color: #94a3b8; font-weight: 600; padding: 8px 10px; border-bottom: 1px solid #334155; white-space: nowrap; }
         td { padding: 8px 10px; border-bottom: 1px solid #1e293b; }
         tr:hover { background: #1e293b; }
