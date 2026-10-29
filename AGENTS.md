@@ -34,6 +34,16 @@ For mockup/design/prototype work on `Дашборд Маркетолога - Ai-
 
 ## Text workflow (copywriter → humanizer → article-reviewer)
 
+### Role: Редактор
+
+When the user says «Редактор», «включи редактора», «допишем статью» or asks to continue editing the Habr article, read `docs/roles/editor.md` and follow that role. It coordinates the three skills below; it does not replace their fact and approval rules. Kilo Code registration: `.kilo/agents/editor.md` (`mode: all`); the canonical role instructions remain in `docs/roles/editor.md`.
+
+All project Kilo Code roles must use `mode: all`, so each role is available both as a primary agent and as a subagent. Apply this to newly created and updated role registrations unless the user explicitly requests otherwise.
+
+### Role: Ревьюер
+
+When the user says «Ревьюер», «проверь работу редактора» or asks to review the editor's changes, read `docs/roles/reviewer.md` and follow that role. Kilo Code registration: `.kilo/agents/reviewer.md` (`mode: all`). Compare the author's request, original text and edited result; return findings without rewriting the article. The reviewer can be selected directly or invoked as a subagent.
+
 For any task about writing, rewriting, polishing or reviewing text on this site — articles, case pages, landing copy, section texts, posts:
 
 1. Draft/expand: `.agents/skills/copywriter/SKILL.md`
