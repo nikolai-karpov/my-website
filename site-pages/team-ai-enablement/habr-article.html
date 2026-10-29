@@ -293,6 +293,156 @@
 <p>Где со временем пройдёт граница между работой человека и ИИ, я не знаю. Но, уже сейчас вижу, насколько результат зависит от того, чему человек способен научить свою систему в процессе работы.</p>
 </section>
 
+<script>
+  (() => {
+    const article = document.querySelector(".reading-copy");
+    const visuals = {
+      start: [
+        { title: "Маршрут статьи", nodes: ["Личный опыт", "Канон рабочего места", "Внедрение и поддержка", "Память и развитие", "Результат и роль человека"] },
+      ],
+      experience: [],
+      canon: [
+        { title: "Связь элементов канона", nodes: ["Роль · ответственность и маршрут", "Навык · методика", "Инструмент · операция", "Шаблон · форма", "Артефакт · источники и требования"], note: "Связи не означают обязательную линейную цепочку вызовов." },
+        { title: "Путь материалов проекта", tree: [["Проект", "источники · шаблоны · паспорт"], ["Тип документа", "рабочие документы"], ["Документ / md/", "рабочий Markdown · черновик"], ["Документ / docx/", "сборки DOCX · черновик"], ["Релиз", "отдельный каталог · только после приёмки специалистом"]], note: "Все MD/DOCX в рабочих каталогах остаются черновиками; успешная сборка не равна приёмке." },
+        { title: "Учебный пример иерархии таблицы", tree: [["Требование", "родительская строка"], ["├─ Условие", "дочерняя строка"], ["│  └─ Ограничение", "вложенный уровень"], ["└─ Проверка", "связанный элемент"]], note: "Учебный пример структуры, не результат реального прогона парсера." },
+        { title: "Роль, навык, инструмент и источники", nodes: ["Утверждённые источники + требования", "Навык technical-analysis · порядок и фиксация вопросов", "Инструмент · чтение и проверка", "Артефакт · вывод со связью к источнику"] },
+        { title: "Открытый вопрос в реестре и документе", tree: [["open-questions.md", "Q-01 · уточнить правило · открыт"], ["Черновик", "[Требует уточнения: Q-01] → ссылка на вопрос"]], note: "Учебный пример: Q-01 не содержит выдуманного ответа; статус обновляется после уточнения." },
+        { title: "Сборка и приёмка", nodes: ["Markdown + назначенный шаблон / профиль", "preflight.py · входные проверки", "build_docx.py · рабочая сборка", "Проверка содержания и оформления", "Замечания → исправление → повторная проверка", "Приёмка специалистом → релиз"], note: "Скрипт проверяет и собирает файл; решение о приёмке остаётся за специалистом." },
+      ],
+      owner: [
+        { title: "Развилка рефлексии и решение владельца", tree: [["Опыт проекта", "локальные договорённости остаются в своём проекте"], ["Опыт шире проекта", "может стать предложением владельцу"], ["Владелец канона", "проверяет и решает, принимать ли изменение"], ["Принятое изменение", "проверка, выпуск и обновление рабочих мест"]], note: "Общий канон не меняется автоматически по результату рефлексии." },
+      ],
+      adoption: [
+        { title: "Задача пользователя → рабочий маршрут", nodes: ["Задача специалиста", "Навигатор", "Подходящая роль", "Навык для операции"] },
+      ],
+      support: [
+        { title: "Поддержка с поручением владельца", nodes: ["Специалист · вопрос и лог", "Мессенджер / коммутатор", "Агент разбирает контекст", "Владелец поручает продолжить диалог", "Промпт рабочему агенту специалиста", "Решение общей проблемы → предложение в канон"] , note: "Схема показывает описанное участие владельца, а не автономную отправку ответа." },
+      ],
+      memory: [
+        { title: "Области памяти и граница реализации", nodes: ["Память проекта специалиста · требования и договорённости", "Общая память агентов владельца · связанные сведения и опыт"] },
+        { title: "Замысел, не реализовано", nodes: ["Рефлексии проектов и команд", "Владелец рефлексии", "Институциональная память"] , branch: true, note: "Пунктиром обозначен планируемый слой, а не действующий сервис." },
+      ],
+      review: [
+        { title: "Цикл взаимного ревью с остановкой человеком", nodes: ["Исполнитель", "Проверяющий агент", "Конкретные замечания", "Исправление", "Повторная проверка", "Сверка требований и решение человека"] , note: "Согласие моделей само по себе не гарантирует правильность результата." },
+      ],
+      result: [],
+      human: [],
+    };
+
+    function makeVisual(item) {
+      const figure = document.createElement("figure");
+      figure.className = "designer-proposal__visual";
+      const eyebrow = document.createElement("p");
+      eyebrow.className = "designer-proposal__eyebrow";
+      eyebrow.textContent = item.title;
+      figure.append(eyebrow);
+      if (item.nodes) {
+        const list = document.createElement("ol");
+        list.className = `designer-proposal__flow${item.branch ? " designer-proposal__flow--branch" : ""}`;
+        list.setAttribute("aria-label", item.title);
+        item.nodes.forEach((node) => {
+          const entry = document.createElement("li");
+          entry.textContent = node;
+          list.append(entry);
+        });
+        figure.append(list);
+      }
+      if (item.tree) {
+        const tree = document.createElement("div");
+        tree.className = "designer-proposal__tree";
+        tree.setAttribute("role", "list");
+        item.tree.forEach(([title, text]) => {
+          const entry = document.createElement("div");
+          entry.setAttribute("role", "listitem");
+          const strong = document.createElement("strong");
+          strong.textContent = title;
+          const detail = document.createElement("span");
+          detail.textContent = text;
+          entry.append(strong, detail);
+          tree.append(entry);
+        });
+        figure.append(tree);
+      }
+      if (item.note) {
+        const note = document.createElement("p");
+        note.className = "designer-proposal__note";
+        note.textContent = item.note;
+        figure.append(note);
+      }
+      const caption = document.createElement("figcaption");
+      caption.textContent = "Схема к тексту раздела; подписи поясняют описанный процесс, а не добавляют факты.";
+      figure.append(caption);
+      return figure;
+    }
+
+    article.querySelectorAll(":scope > .reading-section").forEach((original) => {
+      const proposal = original.cloneNode(true);
+      const key = original.id;
+      proposal.removeAttribute("id");
+      proposal.classList.add("designer-proposal");
+      proposal.querySelectorAll("[id]").forEach((node) => node.removeAttribute("id"));
+      const heading = proposal.querySelector("h2");
+      heading.id = `designer-heading-${key}`;
+      proposal.setAttribute("aria-labelledby", heading.id);
+
+      if (key === "canon") {
+        const subsections = [
+          ["Рабочее название пилота", "Канон и структура проекта"],
+          ["При проектировании канона", "Роль, навык и инструмент"],
+          ["Оцифровка документов стала", "Оцифровка источников"],
+          ["После оцифровки начинается", "Анализ и подготовка артефактов"],
+          ["Для сборки документов", "Сборка, проверка и приёмка"],
+        ];
+        subsections.forEach(([prefix, title]) => {
+          const paragraph = [...proposal.querySelectorAll("p")].find((node) => node.textContent.trim().startsWith(prefix));
+          if (paragraph) {
+            const subheading = document.createElement("h3");
+            subheading.textContent = title;
+            paragraph.before(subheading);
+          }
+        });
+      }
+
+      const label = document.createElement("p");
+      label.className = "designer-proposal__label";
+      label.textContent = "предложение дизайнера";
+      proposal.prepend(label);
+
+      const visualGroup = document.createDocumentFragment();
+      (visuals[key] || []).forEach((item) => visualGroup.append(makeVisual(item)));
+      if (key === "adoption") {
+        const figure = document.createElement("figure");
+        figure.className = "designer-proposal__visual";
+        const eyebrow = document.createElement("p");
+        eyebrow.className = "designer-proposal__eyebrow";
+        eyebrow.textContent = "Реальный слайд вебинара";
+        const image = document.createElement("img");
+        image.className = "designer-proposal__webinar";
+        image.src = "../../assets/images/cases/team-ai-enablement/webinar-slide-foundations.jpg";
+        image.alt = "Слайд вебинара об основах рабочего места аналитика";
+        image.loading = "lazy";
+        const caption = document.createElement("figcaption");
+        caption.textContent = "Материал вебинара; изображение не является скриншотом интерфейса навигатора.";
+        const link = document.createElement("p");
+        const anchor = document.createElement("a");
+        anchor.href = "../../webinars/navigator.html";
+        anchor.textContent = "Открыть HTML-навигатор";
+        link.append(anchor);
+        figure.append(eyebrow, image, caption, link);
+        visualGroup.append(figure);
+      }
+      if (key === "experience") proposal.classList.add("designer-proposal--experience");
+      if (key === "result") proposal.classList.add("designer-proposal--result");
+      if (key === "human") {
+        proposal.classList.add("designer-proposal--human");
+        const closing = proposal.querySelector("p:last-of-type");
+        if (closing) closing.classList.add("designer-proposal__closing");
+      }
+      heading.after(visualGroup);
+      original.after(proposal);
+    });
+  })();
+</script>
 <div class="reading-end"><a href="../team-ai-enablement.html">Вернуться к кейсу о внедрении ИИ</a><a href="#main-content">К началу статьи</a></div>
 </article></div></main>
 <footer class="site-footer"><div class="container site-footer__inner"><div>© 2026 · Карпов Николай</div><a href="../../#cases">Все кейсы</a></div></footer>
