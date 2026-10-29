@@ -75,3 +75,8 @@ site-pages/case-studies/_plan-*.md
 .kilo/
 networking/
 .DS_Store
+.playwright-mcp/-var-folders-s2-88z93yx96f1bwcvcr1wf7fpm0000gp-T-kilo-article-v2-desktop.png
+.gitignore
+.gitignore
+.playwright-mcp/article-v2-mobile-diagram.png
+.playwright-mcp/article-v2-mobile.png
