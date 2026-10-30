@@ -3,6 +3,18 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-10-29-paddock-veb-koktpit-dlya-cli-agentov/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-10-29T00:00:00+03:00</news:publication_date>
+      <news:title>Paddock: self-hosted коктпит для CLI-агентов с видимостью между чатами</news:title>
+    </news:news>
+  </url>
+
+  <url>
     <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-10-28-lime-tbank/</loc>
     <news:news>
       <news:publication>

@@ -13,6 +13,23 @@
   ],
   "items": [
     {
+      "id": "https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-10-29-paddock-veb-koktpit-dlya-cli-agentov/",
+      "url": "https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-10-29-paddock-veb-koktpit-dlya-cli-agentov/",
+      "title": "Paddock: self-hosted коктпит для CLI-агентов с видимостью между чатами",
+      "summary": "Open-source обвязка над готовыми харнессами: изолированный контейнер на пользователя, работа из браузера и подтверждение деструктивных команд по умолчанию.",
+      "content_html": "<p>Paddock не делает своего агента — он берёт готовый харнесс (сейчас Codex app-server, дальше OpenCode и другие) и оборачивает его в self-hosted веб-коктпит. На своём VPS поднимается один web-контейнер на всех плюс отдельный контейнер с харнессом на каждого пользователя и два инфраструктурных: egress-прокси и edge. Доступ в интернет агенту только через цепочку прокси; чтобы поработать, хватает браузера и 2FA, хоть с телефона, — VPN и вечно включённый ноутбук не нужны.</p><p>Интерфейс повторяет привычки терминала: до четырёх чатов на экране с раскладкой, переживающей перезагрузку, статусная строка с моделью, папкой, веткой, заполненностью контекста, попаданиями в кеш и лимитами подписки, слэш-команды и shell прямо из поля ввода. Под каждым ответом — время, TTFT и токены в секунду; метрики хранятся на сервере и видны с других устройств.</p><p>Самая необычная черта — агенты видят друг друга: инструмент <code>paddock-agents</code> позволяет агенту из одного окна прочитать соседние чаты, передать задачу, попросить ревью или собрать статус. Сообщения у получателя подписаны «от агента», а та же команда работает вне Paddock с любым агентом в панели tmux.</p><p>Безопасность встроена в UX: <code>rm</code>, <code>git push</code>, <code>reset</code> и <code>clean</code> останавливаются на подтверждении даже у агента с полным доступом — автор добавил правило после случая, когда агент по просьбе «почистить всё» снёс ему все сессии.</p><p>Код открыт под MIT. Полезно смотреть на проект не как на тулинг, а как на набор решений: подтверждения для деструктивных команд, меж агентная связь и метрики под каждым ответом переносимы в любую self-hosted сборку агента.</p>",
+      "date_published": "2026-10-29T00:00:00+03:00",
+      "language": "ru",
+      "tags": [
+        "Вайбкодинг"
+      ],
+      "authors": [
+        {
+          "name": "Карпов Николай"
+        }
+      ]
+    },
+    {
       "id": "https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-10-28-lime-tbank/",
       "url": "https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-10-28-lime-tbank/",
       "title": "Т-Банк представил LIMe: обучение LLM на 15% дешевле при качестве базовой LLaMA",
@@ -835,23 +852,6 @@
       "summary": "Полный реестр релизов OpenAI с ноября 2024 по февраль 2026: от обновлений GPT-4o до GPT-5.2 Thinking и o3-pro. Конкретные даты и версии для планирования миграций.",
       "content_html": "<h3>Что</h3><p>OpenAI ведёт публичный хронологический реестр релизов моделей в Help Center. Последняя запись — февраль 2026 года, обновление настроек thinking time для GPT-5.2 Thinking в ChatGPT.</p><h3>Как</h3><p>Реестр фиксирует каждый релиз с датой и коротким описанием. Это позволяет отследить, когда какая модель стала доступна в ChatGPT и API, и какие модели заменяли предыдущие.</p><h3>Цифры</h3><ul><li><strong>GPT-5.2 Thinking</strong> — обновление настроек thinking time, 4 февраля 2026</li><li><strong>GPT-5-Codex-Mini</strong> — новая кодинг-модель, дата не указана в заголовке</li><li><strong>GPT-5</strong> — обновление, 3 октября 2025</li><li><strong>GPT-5-codex</strong> — доступен в Responses API, 23 сентября 2025</li><li><strong>o3-pro</strong> — запуск для Pro-пользователей в ChatGPT и API, 10 июня 2025</li><li><strong>GPT-4.1</strong> — релиз в ChatGPT для всех платных пользователей, 14 мая 2025</li><li><strong>GPT-4.1 mini</strong> — замена GPT-4o mini, 14 мая 2025</li><li><strong>GPT-4o</strong> — 6 обновлений с ноября 2024 по май 2025</li></ul>",
       "date_published": "2026-06-02T06:41:45+03:00",
-      "language": "en",
-      "tags": [
-        "Новые модели"
-      ],
-      "authors": [
-        {
-          "name": "Карпов Николай"
-        }
-      ]
-    },
-    {
-      "id": "https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-02-introducing-gpt-oss-openai/",
-      "url": "https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-02-introducing-gpt-oss-openai/",
-      "title": "OpenAI выпускает gpt-oss-120b и gpt-oss-20b — первые open-weight модели",
-      "summary": "OpenAI анонсировала gpt-oss-120b и gpt-oss-20b — две open-weight языковые модели с публикацией на Hugging Face, model card и research paper. Это первый релиз open-weight моделей от OpenAI с полной документацией и оценкой по Preparedness Framework.",
-      "content_html": "<h3>Что</h3><p>OpenAI выпустила две open-weight модели: <strong>gpt-oss-120b</strong> (120 млрд параметров) и <strong>gpt-oss-20b</strong> (20 млрд параметров). Модели доступны на Hugging Face, сопровождаются model card и исследовательской статьёй.</p><h3>Как</h3><p>Помимо стандартного safety-тренинга и оценок, OpenAI провела дополнительный слой проверки: adversarially fine-tuned версия gpt-oss-120b была протестирована в рамках Preparedness Framework. Это первый случай, когда open-weight релиз OpenAI прошёл полный цикл оценки безопасности с публикацией результатов.</p><h3>Цифры</h3><ul><li><strong>gpt-oss-120b</strong> — 120 млрд параметров</li><li><strong>gpt-oss-20b</strong> — 20 млрд параметров</li><li>Партнёры для тестирования: AI Sweden, Orange, Snowflake</li></ul><h3>Что перенять</h3><p>Модели позиционируются для on-premise развёртывания (data security) и fine-tuning на специализированных датасетах. Партнёры уже тестируют сценарии: хостинг on-premises для чувствительных данных и дообучение на доменных данных.</p>",
-      "date_published": "2026-06-02T06:40:23+03:00",
       "language": "en",
       "tags": [
         "Новые модели"

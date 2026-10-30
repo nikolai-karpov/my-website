@@ -10,8 +10,19 @@
     <language>ru</language>
     <copyright>© 2026 Карпов Николай</copyright>
     <atom:link href="https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 28 Oct 2026 19:58:19 +0300</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 02:13:42 +0300</lastBuildDate>
     <generator>hermes/news_renderer</generator>
+
+    <item>
+      <title>Paddock: self-hosted коктпит для CLI-агентов с видимостью между чатами</title>
+      <link>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-10-29-paddock-veb-koktpit-dlya-cli-agentov/</link>
+      <description><![CDATA[Open-source обвязка над готовыми харнессами: изолированный контейнер на пользователя, работа из браузера и подтверждение деструктивных команд по умолчанию.]]></description>
+      <content:encoded><![CDATA[<p>Paddock не делает своего агента — он берёт готовый харнесс (сейчас Codex app-server, дальше OpenCode и другие) и оборачивает его в self-hosted веб-коктпит. На своём VPS поднимается один web-контейнер на всех плюс отдельный контейнер с харнессом на каждого пользователя и два инфраструктурных: egress-прокси и edge. Доступ в интернет агенту только через цепочку прокси; чтобы поработать, хватает браузера и 2FA, хоть с телефона, — VPN и вечно включённый ноутбук не нужны.</p><p>Интерфейс повторяет привычки терминала: до четырёх чатов на экране с раскладкой, переживающей перезагрузку, статусная строка с моделью, папкой, веткой, заполненностью контекста, попаданиями в кеш и лимитами подписки, слэш-команды и shell прямо из поля ввода. Под каждым ответом — время, TTFT и токены в секунду; метрики хранятся на сервере и видны с других устройств.</p><p>Самая необычная черта — агенты видят друг друга: инструмент <code>paddock-agents</code> позволяет агенту из одного окна прочитать соседние чаты, передать задачу, попросить ревью или собрать статус. Сообщения у получателя подписаны «от агента», а та же команда работает вне Paddock с любым агентом в панели tmux.</p><p>Безопасность встроена в UX: <code>rm</code>, <code>git push</code>, <code>reset</code> и <code>clean</code> останавливаются на подтверждении даже у агента с полным доступом — автор добавил правило после случая, когда агент по просьбе «почистить всё» снёс ему все сессии.</p><p>Код открыт под MIT. Полезно смотреть на проект не как на тулинг, а как на набор решений: подтверждения для деструктивных команд, меж агентная связь и метрики под каждым ответом переносимы в любую self-hosted сборку агента.</p>]]></content:encoded>
+      <pubDate>Thu, 29 Oct 2026 00:00:00 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-10-29-paddock-veb-koktpit-dlya-cli-agentov/</guid>
+      <category>Вайбкодинг</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
 
     <item>
       <title>Т-Банк представил LIMe: обучение LLM на 15% дешевле при качестве базовой LLaMA</title>
@@ -566,17 +577,6 @@
       <content:encoded><![CDATA[<h3>Что</h3><p>Property Graph Index (PGI) – это индекс, в котором каждая сущность представлена узлом, а её атрибуты – ребрами‑свойствами. PGI объединяет возможности традиционных графовых баз и векторных поисков, делая их доступными через LLM‑интерфейсы.</p><h3>Как</h3><p>Для построения PGI LlamaIndex использует два этапа: (1) извлечение сущностей и их атрибутов из текста с помощью LLM‑парсера; (2) запись полученных тройок «субъект‑свойство‑значение» в графовую структуру, где свойства индексируются как отдельные векторные эмбеддинги. Запросы формируются в виде естественного языка, LLM преобразует их в графовые паттерны, а затем выполняет поиск по векторным представлениям свойств.</p><h3>Цифры</h3><p>В статье указано, что PGI позволяет обрабатывать до 10 000 сущностей в одном индексе и поддерживает контекст до 4 096 токенов при генерации запросов. При тестировании на наборе данных «WikiMovies» PGI показал 12 % ускорение latency по сравнению с обычным векторным поиском.</p><h3>Что перенять</h3><p>Для построения собственных графов знаний можно воспользоваться подходом «entity‑property‑value» и хранить свойства как отдельные векторные эмбеддинги. Такой гибридный индекс упрощает комбинирование семантического поиска и логических фильтров без необходимости отдельной графовой БД.</p>]]></content:encoded>
       <pubDate>Sun, 07 Jun 2026 06:09:30 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-07-introducing-the-property-graph-index-a-powerful-new-way-to-b/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title></title>
-      <link>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-07-introducing-llama-agents-a-powerful-framework-for-building-p/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Sun, 07 Jun 2026 06:08:06 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-07-introducing-llama-agents-a-powerful-framework-for-building-p/</guid>
       <category>Проекты</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
