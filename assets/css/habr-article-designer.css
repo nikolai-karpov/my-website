@@ -193,10 +193,12 @@ body.designer-edition .designer-visual__note {
 }
 
 body.designer-edition .designer-visual--planned { border: 1px dashed var(--designer-accent); }
-body.designer-edition .designer-folders { padding: 1.2rem; border: 1px solid var(--designer-rule); }
+body.designer-edition .designer-folders { padding: 1.2rem; border: 1px solid var(--designer-rule); overflow-wrap: anywhere; }
 body.designer-edition .designer-folders ul { margin: 1rem 0; padding-left: 1.2rem; }
-body.designer-edition .designer-folders li { padding-left: .5rem; border-left: 1px solid var(--designer-rule); list-style: none; }
+body.designer-edition .designer-folders li { padding-left: .5rem; border-left: 1px solid var(--designer-rule); list-style: none; overflow-wrap: anywhere; }
+body.designer-edition .designer-folders li code { overflow-wrap: anywhere; }
 body.designer-edition .designer-folders li span { padding-left: 1rem; font-size: .9rem; }
+body.designer-edition .designer-folders ul ul { margin: .6rem 0 .2rem; }
 body.designer-edition .designer-folders em { color: var(--designer-muted); font-size: .85rem; }
 body.designer-edition .designer-gate { display: grid; padding: .5rem; text-align: center; }
 body.designer-edition .designer-gate strong { font-size: .85rem; font-weight: 500; }
