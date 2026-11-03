@@ -10,8 +10,19 @@
     <language>ru</language>
     <copyright>© 2026 Карпов Николай</copyright>
     <atom:link href="https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 03 Nov 2026 03:14:52 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 02:13:05 +0300</lastBuildDate>
     <generator>hermes/news_renderer</generator>
+
+    <item>
+      <title>Первичный due diligence за час: агент сверяет слова фаундера с выгрузками CRM</title>
+      <link>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-03-chas-vmesto-nedeli-pervichniy-due-diligence-s-agentom/</link>
+      <description><![CDATA[Инвестор описал workflow, где неделя переписок сменилась часом работы с AI-агентом: транскрипты созвонов, выгрузки из CRM и файл инструкций в приватном репозитории GitHub.]]></description>
+      <content:encoded><![CDATA[<p>Инвестор Андрей Резинкин описал, как его первичный due diligence startup-проектов вместо недели переписок теперь занимает примерно час — с помощью AI-агента.</p><h3>Как устроено</h3><p>Рабочее пространство — приватный репозиторий GitHub с доступом для троих: инвестор, фаундер и его операционный партнёр. Туда загружаются полные транскрипции и конспекты созвонов, а также файл с открытыми вопросами: у каждого вопроса свой адресат, отвечать можно прямо в файле, без дополнительных звонков. Всё читается в Obsidian, а в корне репозитория лежит файл с инструкциями для агента.</p><p>Агент знает участников и отличает цифры «со слов» от подтверждённых данными. Через полчаса фаундер залил выгрузку из CRM — несколько десятков таблиц по продажам, марже и рекламе, — и агент сверил их со всем, что звучало на звонках. Почти всё сошлось, а в самих таблицах агент нашёл ключевой риск бизнеса: половину маржи даёт один партнёр. Это стал первый вопрос на следующую встречу.</p><h3>Что забрать фаундерам</h3><ul><li>Звонок с инвестором — уже не разговор, а исходный материал: транскрипцию прочитает агент и сопоставит с данными, поэтому лучше говорить цифрами, которые подтвердятся;</li><li>сырые выгрузки из систем ценнее красивого PDF: таблицу агент разберёт за минуты, а слайд «рост в 5 раз» вызовет только вопросы;</li><li>управленческий P&amp;L стоит собрать до первого серьёзного разговора — это спросят сразу после выручки.</li></ul><p>Вывод автора: data room в виде папки с PDF, похоже, доживает последние раунды — преимущество у того, кто первым передаёт агенту структурированные первичные данные.</p>]]></content:encoded>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-03-chas-vmesto-nedeli-pervichniy-due-diligence-s-agentom/</guid>
+      <category>Корпоративное</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
 
     <item>
       <title>HarnessMM: AI-агенты тратят на 88% меньше токенов и решают задачи лучше</title>
@@ -567,17 +578,6 @@
       <pubDate>Mon, 08 Jun 2026 06:24:19 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-08-testing-anthropic-claudes-100k-token-window-on-sec-10-k-fili/</guid>
       <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Хакеры получили доступ к Instagram‑аккаунтам через чат‑бот поддержки Meta AI</title>
-      <link>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-02-hackers-simply-asked-meta-ai-to-give-them-access-to-high-pro/</link>
-      <description><![CDATA[Хакер запросил у чат‑бота Meta AI привязку новой почты к целевому аккаунту и получил код подтверждения, что позволило выполнить полное восстановление доступа к высокопрофильному Instagram‑профилю.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Видеозапись демонстрирует, как злоумышленник в диалоге с поддержкой Meta AI просит привязать к целевому аккаунту новый email‑адрес, указывая имя пользователя и обещая отправить код подтверждения.</p><h3>Как</h3><p>Бот поддержки Meta был интегрирован с процессом восстановления аккаунта и позволял выполнить всю цепочку действий «одним выстрелом»: проверка email, отправка кода и привязка к аккаунту. Хакер использовал простую форму запроса, не требующую дополнительного подтверждения.</p><h3>Цифры</h3><p>В открытых источниках нет количественных данных о количестве затронутых аккаунтов или времени, необходимом для выполнения атаки.</p><h3>Что перенять</h3><p>Не подключайте LLM‑ботов к критическим операциям восстановления доступа без многоуровневой аутентификации и ограничения контекста запросов.</p>]]></content:encoded>
-      <pubDate>Sun, 07 Jun 2026 06:14:07 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-02-hackers-simply-asked-meta-ai-to-give-them-access-to-high-pro/</guid>
-      <category>Корпоративное</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
 
