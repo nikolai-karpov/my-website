@@ -1,7 +1,7 @@
 /**
  * assets/js/projects.js
  *
- * Страница-навигатор «Где лежат мои проекты» (site-pages/projects.html).
+ * Страница-навигатор «Git» (site-pages/projects.html).
  * Загружает site-pages/data/repos.json, рендерит группы и карточки
  * репозиториев, даёт поиск и фильтры по площадке/доступу/группе.
  *
@@ -411,7 +411,7 @@
     }).length;
 
     var items = [
-      { label: 'проектов', value: total },
+      { label: 'репозиториев', value: total },
       { label: 'из них закрытых', value: closed },
       { label: 'форков', value: forks },
     ];

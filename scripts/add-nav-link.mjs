@@ -1,7 +1,7 @@
 /**
  * scripts/add-nav-link.mjs
  *
- * Добавляет пункт «Проекты» в основное меню (<nav class="site-nav">, сразу после
+ * Добавляет пункт «Git» в основное меню (<nav class="site-nav">, сразу после
  * пункта «Обзоры») и в футер (<footer class="site-footer">, рядом с «Методология»
  * либо в конец группы ссылок) на всех HTML-страницах сайта, у которых есть
  * глобальное меню.
@@ -30,7 +30,7 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const REPO_ROOT = path.resolve(path.join(__dirname, ".."));
 const TARGET_ABS = path.join(REPO_ROOT, "site-pages", "projects.html");
-const LINK_TEXT = "Проекты";
+const LINK_TEXT = "Git";
 
 const DRY_RUN = process.argv.includes("--dry-run");
 
