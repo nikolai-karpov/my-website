@@ -3,6 +3,18 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-02-harnessmm-tokeny-bez-llm-vyzovov/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-11-02T00:00:00+03:00</news:publication_date>
+      <news:title>HarnessMM: AI-агенты тратят на 88% меньше токенов и решают задачи лучше</news:title>
+    </news:news>
+  </url>
+
+  <url>
     <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-01-herdr-desktop-dlya-koding-agentov/</loc>
     <news:news>
       <news:publication>

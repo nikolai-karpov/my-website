@@ -10,8 +10,19 @@
     <language>ru</language>
     <copyright>© 2026 Карпов Николай</copyright>
     <atom:link href="https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 02 Nov 2026 02:44:13 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 03:14:52 +0300</lastBuildDate>
     <generator>hermes/news_renderer</generator>
+
+    <item>
+      <title>HarnessMM: AI-агенты тратят на 88% меньше токенов и решают задачи лучше</title>
+      <link>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-02-harnessmm-tokeny-bez-llm-vyzovov/</link>
+      <description><![CDATA[Метод от команды Tsinghua и Microsoft: цепочка действий агента заранее сохраняется с условиями выполнения, и когда следующий шаг однозначен — он запускается без обращения к LLM. Расход токенов падает, успешность решений растёт.]]></description>
+      <content:encoded><![CDATA[<p>Современные агенты вроде Codex обращаются к модели после каждого действия — даже когда следующий шаг очевиден. Пример из описания метода: агент написал код, запустил компиляцию, получил успешный результат; вместо очередного запроса к модели можно сразу запускать тесты.</p><p>HarnessMM сохраняет цепочку действий с условиями их выполнения заранее. Если условие соблюдено, следующий шаг запускается без повторного обращения к LLM; в нестандартной ситуации управление возвращается модели. Переобучения весов не требуется — оптимизация работает вокруг модели, включая экономию контекста.</p><p>На 98 задачах HumanEval результаты такие: у DeepSeek Harness расход токенов снизился на 87,93%, а успешность выросла с 71,43% до 85,71%; у Codex расход упал на 29,54% при прежней успешности 90,82%. То есть экономия не оплачивается качеством.</p><p>Практический вывод: эффективность агентной системы определяется не только моделью, но и «обвязкой» — тем, сколько очевидных шагов вынесено из цикла обращений к LLM. Для агентных пайплайнов с ежедневным расходом токенов это самый дешёвый способ снизить стоимость: собрать детерминированные шаги (сборка после правки, тесты, проверки файлов) в предзаписанные цепочки с условиями.</p>]]></content:encoded>
+      <pubDate>Mon, 02 Nov 2026 00:00:00 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-02-harnessmm-tokeny-bez-llm-vyzovov/</guid>
+      <category>Вайбкодинг</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
 
     <item>
       <title>Herdr: десктоп-окно для Claude Code и Codex со статусами агентов</title>
@@ -567,17 +578,6 @@
       <pubDate>Sun, 07 Jun 2026 06:14:07 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-02-hackers-simply-asked-meta-ai-to-give-them-access-to-high-pro/</guid>
       <category>Корпоративное</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Qwen 3.7 Max занял 2‑е место в бенчмарке, обойдя GPT‑5.5 Pro по цене</title>
-      <link>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-03-llm-benchmarki-qwen-3-7-gpt-5-4-opus-4-7-deepseek-v4/</link>
-      <description><![CDATA[В обновлённом наборе бенчмарков от TimeToAct модель Qwen 3.7 Max оказалась второй в TOP‑20, при этом её стоимость ниже, чем у GPT‑5.5 Pro. Также o1 Pro остаётся лидером по качеству, а DeepSeek V4 Pro и Flash попали в топ‑20 за символическую цену.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>Новая версия бенчмарков (июль 2023 – сентябрь 2025) включает более 20 моделей. Qwen 3.7 Max занял 2‑е место, DeepSeek V4 Pro – 14‑е, DeepSeek V4 Flash – 18‑е. o1 Pro не был превзойдён по качеству.</p><h3>Как</h3><p>Методология построена на реальных продакшн‑кейсов: оценки собираются из внедрений LLM в компаниях, а не из синтетических наборов. Это обеспечивает более практичную картину производительности.</p><h3>Цифры</h3><ul><li>Qwen 3.7 Max – 2‑е место в TOP‑20.</li><li>DeepSeek V4 Pro – 14‑е место.</li><li>DeepSeek V4 Flash – 18‑е место.</li><li>o1 Pro – лучший показатель качества среди всех.</li></ul><h3>Что перенять</h3><p>Для построения рабочих решений достаточно ориентироваться на модели из TOP‑20, независимо от их провайдера, и проверять их в контексте вашей архитектуры.</p>]]></content:encoded>
-      <pubDate>Sun, 07 Jun 2026 06:12:47 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-03-llm-benchmarki-qwen-3-7-gpt-5-4-opus-4-7-deepseek-v4/</guid>
-      <category>Новые модели</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
 
