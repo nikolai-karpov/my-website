@@ -3,6 +3,18 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
   <url>
+    <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-03-mistral-large-4-teh-otchyot-1t-moe/</loc>
+    <news:news>
+      <news:publication>
+        <news:name>Карпов Николай — Новости</news:name>
+        <news:language>ru</news:language>
+      </news:publication>
+      <news:publication_date>2026-11-03T00:00:00+03:00</news:publication_date>
+      <news:title>Техотчёт Mistral Large 4: триллион параметров, 52 млрд активных и контекст 1M</news:title>
+    </news:news>
+  </url>
+
+  <url>
     <loc>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-03-chas-vmesto-nedeli-pervichniy-due-diligence-s-agentom/</loc>
     <news:news>
       <news:publication>

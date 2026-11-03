@@ -10,8 +10,19 @@
     <language>ru</language>
     <copyright>© 2026 Карпов Николай</copyright>
     <atom:link href="https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 04 Nov 2026 02:13:05 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 02:13:17 +0300</lastBuildDate>
     <generator>hermes/news_renderer</generator>
+
+    <item>
+      <title>Техотчёт Mistral Large 4: триллион параметров, 52 млрд активных и контекст 1M</title>
+      <link>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-03-mistral-large-4-teh-otchyot-1t-moe/</link>
+      <description><![CDATA[Mistral опубликовала технический отчёт по флагманской модели Large 4: около 1 трлн параметров при активации лишь 52 млрд на токен. Веса доступны на Hugging Face в FP8 и NVFP4.]]></description>
+      <content:encoded><![CDATA[<p>Mistral выложила технический отчёт по своей крупнейшей модели Large 4: около 1 трлн параметров, но на каждый токен активируется только 52 млрд. Веса опубликованы на Hugging Face в форматах FP8 и NVFP4.</p><h3>Архитектура</h3><p>Основа — MoE со 128 экспертами: на токен выбираются четыре, плюс один общий. В отчёте подробно разобраны Multi-head Latent Attention, Sparse Attention и переиспользование KV-кеша между слоями — именно эти решения снижают расход памяти и вычислений при работе с длинным контекстом.</p><h3>Характеристики и результаты</h3><ul><li><strong>Контекст:</strong> 1 млн токенов;</li><li><strong>Возможности:</strong> изображения, более 160 языков, вызов инструментов и агентные сценарии;</li><li><strong>Бенчмарк:</strong> 48% на Artificial Analysis Coding Agent Index — примерно на уровне GLM-5.3;</li><li><strong>Экономика:</strong> по данным Mistral, на 47% меньше токенов на результат.</li></ul><p>Запустить такую модель на обычной видеокарте не получится, но отчёт полезен тем, кто занимается архитектурой и оптимизацией LLM: там детально разобраны конкретные приёмы разреживания MoE и работы с KV-кешем.</p>]]></content:encoded>
+      <pubDate>Tue, 03 Nov 2026 00:00:00 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-03-mistral-large-4-teh-otchyot-1t-moe/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
 
     <item>
       <title>Первичный due diligence за час: агент сверяет слова фаундера с выгрузками CRM</title>
@@ -566,17 +577,6 @@
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Mon, 08 Jun 2026 06:25:13 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-08-olmocr-bench-review-insights-and-pitfalls-on-an-ocr-benchmar/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title></title>
-      <link>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-08-testing-anthropic-claudes-100k-token-window-on-sec-10-k-fili/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Mon, 08 Jun 2026 06:24:19 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-08-testing-anthropic-claudes-100k-token-window-on-sec-10-k-fili/</guid>
       <category>Новые модели</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
