@@ -10,7 +10,7 @@
     <language>ru</language>
     <copyright>© 2026 Карпов Николай</copyright>
     <atom:link href="https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 05 Nov 2026 02:13:13 +0300</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 02:13:15 +0300</lastBuildDate>
     <generator>hermes/news_renderer</generator>
 
     <item>
@@ -20,6 +20,17 @@
       <content:encoded><![CDATA[<p>Codex и Claude Code сохраняют историю разговоров на диске, и раньше можно было сослаться на прошлое словами «посмотри в ~/.codex/sessions». Работает, но медленно: требует длинных уточнений, а при редких сбоях инструмента разговоры теряются вовсе.</p><p>Решение автора — хуки, которые автоматически пишут каждую сессию в отдельную локальную SQLite-базу. База растёт только дозаписью, не стирается и не архивируется, переживает сбои Codex.</p><p>Что это даёт:</p><ul><li>вопрос «помнишь, я в прошлом месяце делал то-то — напомни» срабатывает быстро и точно;</li><li>агент может сам прогнать ретроспективу проекта и найти ошибки в собственной обвязке;</li><li>память не привязана к инструменту: харнесс меняется — база остаётся.</li></ul><p>Важна честность промпта: нужен «brain-dead, local, best-effort» индекс — только текст пользователя и финальные ответы, без reasoning, вызовов инструментов и внутренних чатов субагентов. Спекулятивная инфраструктура и внешние сервисы прямо запрещены: иначе стоимость поддержки базы перестаёт быть нулевой.</p><p>Подключают базу к контексту через progressive disclosure — короткое упоминание в дереве документации вместо загрузки всей переписки в контекст. Так индекс ускоряет доступ к памяти, не раздувая расход токенов.</p>]]></content:encoded>
       <pubDate>Wed, 04 Nov 2026 00:00:00 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-04-codex-conversation-index/</guid>
+      <category>Вайбкодинг</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
+
+    <item>
+      <title>Opus думает, дешёвая модель пишет: связка проиграла на хардовых задачах</title>
+      <link>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-04-opus-cheap-coder-hybrid-benchmark/</link>
+      <description><![CDATA[Популярный рецепт экономии на AI-кодинге проверили на 12 сложных ML/SWE-задачах: связка «сильный планировщик + дешёвый исполнитель» оказалась хуже и дороже, зато эксперимент дал рабочий трюк снижения цены.]]></description>
+      <content:encoded><![CDATA[<p>Популярный рецепт удешевления AI-кодинга: сильная модель думает и ревьюит, а код пишет дешёвая. Автор проверил идею на 12 сложных задачах из открытых бенчмарков — максимально близких к реальной production-работе по ML/SWE. Сначала он почистил сам сет: больше половины задач оказались нечестными — тесты валили рабочие решения или пропускали слабые.</p><h3>Цифры</h3><ul><li><strong>Opus один:</strong> 81% задач при цене около $1,20 за задачу;</li><li><strong>Opus + DeepSeek Flash:</strong> 67% и $1,29 — хуже и дороже;</li><li><strong>дешёвые модели в одиночку</strong> обошли все связки: 78% и 75% по $0,17 за задачу;</li><li>деньги в основном уходят на кеш промпта: пока дешёвая модель пишет код, кеш сильной модели протухает, и пересборка стоит дороже всей работы дешёвой модели.</li></ul><p>Два практических вывода. Первый: не запрещать плановой модели писать код, а сказать ей, что её токены в 20 раз дороже — скорость решения та же, цена почти вдвое ниже ($0,71). Трюк взят из идеи статьи DeepSeek про super-agent. Второй: в роли ревьюера маленькая модель справляется лучше Opus — находит косяки в диффах и отправляет воркера переделывать.</p><p>Общий урок: на сложных задачах связка «сильная думает, слабая делает» проигрывает одиночным моделям — накладные расходы на координацию съедают всю экономию. Прежде чем переходить на дешёвый пайплайн, прогоните свои задачи: сет из 12 задач лежит на открытой платформе <a href="https://hub.harborframework.com/datasets/ibragim-badertdinov/hard12">Harbor</a>, там же доступна полная таблица результатов.</p>]]></content:encoded>
+      <pubDate>Wed, 04 Nov 2026 00:00:00 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-04-opus-cheap-coder-hybrid-benchmark/</guid>
       <category>Вайбкодинг</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
@@ -567,17 +578,6 @@
       <pubDate>Mon, 08 Jun 2026 06:27:03 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-08-extracting-repeating-entities-from-documents-tabular-extract/</guid>
       <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title></title>
-      <link>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-08-beyond-ocr-deepseek-s-new-vision-compression-and-how-it-serv/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Mon, 08 Jun 2026 06:26:07 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-08-beyond-ocr-deepseek-s-new-vision-compression-and-how-it-serv/</guid>
-      <category>Новые модели</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
 
