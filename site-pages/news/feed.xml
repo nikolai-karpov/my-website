@@ -10,8 +10,19 @@
     <language>ru</language>
     <copyright>© 2026 Карпов Николай</copyright>
     <atom:link href="https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 04 Nov 2026 02:13:17 +0300</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 02:13:13 +0300</lastBuildDate>
     <generator>hermes/news_renderer</generator>
+
+    <item>
+      <title>Conversation index для агентов: история сессий Codex в собственной SQLite-базе</title>
+      <link>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-04-codex-conversation-index/</link>
+      <description><![CDATA[Хуки автоматически пишут все разговоры с кодинг-агентом в локальную базу: история не теряется при сбоях инструмента, а агент сам быстро находит прошлый контекст.]]></description>
+      <content:encoded><![CDATA[<p>Codex и Claude Code сохраняют историю разговоров на диске, и раньше можно было сослаться на прошлое словами «посмотри в ~/.codex/sessions». Работает, но медленно: требует длинных уточнений, а при редких сбоях инструмента разговоры теряются вовсе.</p><p>Решение автора — хуки, которые автоматически пишут каждую сессию в отдельную локальную SQLite-базу. База растёт только дозаписью, не стирается и не архивируется, переживает сбои Codex.</p><p>Что это даёт:</p><ul><li>вопрос «помнишь, я в прошлом месяце делал то-то — напомни» срабатывает быстро и точно;</li><li>агент может сам прогнать ретроспективу проекта и найти ошибки в собственной обвязке;</li><li>память не привязана к инструменту: харнесс меняется — база остаётся.</li></ul><p>Важна честность промпта: нужен «brain-dead, local, best-effort» индекс — только текст пользователя и финальные ответы, без reasoning, вызовов инструментов и внутренних чатов субагентов. Спекулятивная инфраструктура и внешние сервисы прямо запрещены: иначе стоимость поддержки базы перестаёт быть нулевой.</p><p>Подключают базу к контексту через progressive disclosure — короткое упоминание в дереве документации вместо загрузки всей переписки в контекст. Так индекс ускоряет доступ к памяти, не раздувая расход токенов.</p>]]></content:encoded>
+      <pubDate>Wed, 04 Nov 2026 00:00:00 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-04-codex-conversation-index/</guid>
+      <category>Вайбкодинг</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
 
     <item>
       <title>Техотчёт Mistral Large 4: триллион параметров, 52 млрд активных и контекст 1M</title>
@@ -566,17 +577,6 @@
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Mon, 08 Jun 2026 06:26:07 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-08-beyond-ocr-deepseek-s-new-vision-compression-and-how-it-serv/</guid>
-      <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title></title>
-      <link>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-08-olmocr-bench-review-insights-and-pitfalls-on-an-ocr-benchmar/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Mon, 08 Jun 2026 06:25:13 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-08-olmocr-bench-review-insights-and-pitfalls-on-an-ocr-benchmar/</guid>
       <category>Новые модели</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
