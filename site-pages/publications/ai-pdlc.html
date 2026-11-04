@@ -14,7 +14,13 @@
     <meta property="og:title" content="AI PDLC: от пользовательской проблемы до безопасного выпуска" />
     <meta property="og:description" content="Как встроить ИИ в весь цикл продукта: от исследования проблемы до безопасного выпуска — с проверяемыми результатами этапов, переносимым контекстом, blue-green deployment и измерением пользы." />
     <meta property="og:url" content="https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/publications/ai-pdlc.html" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://nikolai-karpov.github.io/my-website/assets/images/covers/ai-pdlc/og-1200x630.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="AI PDLC: от пользовательской проблемы до безопасного выпуска — цикл с обратной связью" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://nikolai-karpov.github.io/my-website/assets/images/covers/ai-pdlc/og-1200x630.jpg" />
+    <meta name="twitter:image:alt" content="AI PDLC: от пользовательской проблемы до безопасного выпуска — цикл с обратной связью" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -74,6 +80,34 @@
       .article__body .table-wrap td { color: var(--text); }
 
       .article__body a { overflow-wrap: anywhere; }
+
+      /* Self-contained SVG diagrams inherit the selected page color scheme. */
+      .article__body .pdlc-viz {
+        margin: 32px 0;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: var(--surface);
+        color-scheme: light;
+      }
+      .pdlc-viz picture, .pdlc-viz img { display: block; width: 100%; }
+      .pdlc-viz img { height: auto; border-radius: 12px; }
+      .pdlc-viz figcaption {
+        padding: 16px 8px 8px;
+        color: var(--text);
+        font-size: 0.875rem;
+        line-height: 1.65;
+      }
+      [data-theme="dark"] .article__body .pdlc-viz { color-scheme: dark; }
+      @media (prefers-color-scheme: dark) {
+        html:not([data-theme="light"]) .article__body .pdlc-viz { color-scheme: dark; }
+      }
+      @media (max-width: 600px) {
+        .article__body .pdlc-viz { padding: 4px; border-radius: 16px; }
+        .pdlc-viz img { aspect-ratio: 360 / 1368; }
+        .pdlc-viz--deploy img { aspect-ratio: 360 / 1234; }
+        .pdlc-viz figcaption { padding: 12px; }
+      }
     </style>
 
 <!-- Yandex.Metrika counter -->
@@ -168,6 +202,13 @@
           <p>Поэтому смотреть стоит на всю цепочку:</p>
           <p><strong>Проблема → гипотеза → требования и прототип → реализация → выпуск → проверка эффекта.</strong></p>
           <p>Это не последовательность, которую нужно пройти любой ценой. На каждом шаге может оказаться, что следует вернуться назад. Исследование не подтвердило проблему — разработку не начинаем. Проверка прототипа обнаружила непонимание сценария — меняем решение. После выпуска пользователи не получают ожидаемой пользы — пересматриваем гипотезу.</p>
+          <figure class="viz pdlc-viz" aria-labelledby="pdlc-cycle-caption">
+            <picture>
+              <source media="(max-width: 600px)" srcset="../../assets/images/covers/ai-pdlc/cycle-mobile.svg" width="360" height="1368" />
+              <img src="../../assets/images/covers/ai-pdlc/cycle.svg" width="920" height="710" loading="lazy" decoding="async" alt="Шесть этапов AI PDLC: проблема, гипотеза, требования и прототип, реализация, выпуск, проверка эффекта. Неподтверждённая проблема останавливает разработку; непонятный прототип возвращает к решению, отсутствие пользы — к гипотезе." />
+            </picture>
+            <figcaption id="pdlc-cycle-caption">Рабочая схема статьи, не отраслевой стандарт. Дальше передаётся проверенный результат; пунктир обозначает возврат или остановку, а не обязательное продолжение разработки.</figcaption>
+          </figure>
           <p>В таком подходе нет ничего исключительно «нейросетевого». Исследования пользователей, короткие итерации и обратная связь существовали задолго до генеративного ИИ. Новые инструменты меняют способы выполнения работы, но не освобождают от необходимости обосновывать решения.</p>
           <p>Это согласуется с выводом <a href="https://dora.dev/research/2025/dora-report/" target="_blank" rel="noopener">исследования DORA за 2025 год</a>: ИИ усиливает существующие сильные и слабые стороны организации. Поэтому оценивать его внедрение отдельно от процесса работы было бы ошибкой.</p>
 
@@ -233,6 +274,13 @@
           </ul>
           <p>После проверок входящий трафик переводят на green. Blue некоторое время сохраняют: если обнаружится проблема, трафик можно направить обратно.</p>
           <p>Эта схема подробно описана у <a href="https://www.martinfowler.com/bliki/BlueGreenDeployment.html" target="_blank" rel="noopener">Мартина Фаулера в статье Blue Green Deployment</a>. Её смысл — подготовить переключение между версиями и сократить сложность возврата. Но наличие двух сред само по себе не гарантирует безопасного отката.</p>
+          <figure class="viz pdlc-viz pdlc-viz--deploy" aria-labelledby="pdlc-deploy-caption">
+            <picture>
+              <source media="(max-width: 600px)" srcset="../../assets/images/covers/ai-pdlc/blue-green-mobile.svg" width="360" height="1234" />
+              <img src="../../assets/images/covers/ai-pdlc/blue-green.svg" width="920" height="706" loading="lazy" decoding="async" alt="До переключения трафик идёт на blue, green проходит проверки. После проверок трафик идёт на green, blue сохранена. Возврат возможен только при совместимости и не отменяет изменения данных, платежи и уведомления." />
+            </picture>
+            <figcaption id="pdlc-deploy-caption">Упрощённая схема по описанию <a href="https://www.martinfowler.com/bliki/BlueGreenDeployment.html" target="_blank" rel="noopener">Blue Green Deployment — Martin Fowler</a>. Возврат трафика не равнозначен восстановлению прежнего состояния системы.</figcaption>
+          </figure>
           <h3>Приложение вернуть проще, чем данные</h3>
           <p>Предположим, новая версия изменила структуру базы или записала данные в формате, который старая версия не понимает. Переключение трафика обратно на blue не устранит эту несовместимость.</p>
           <p>Поэтому изменение схемы можно проводить поэтапно:</p>
