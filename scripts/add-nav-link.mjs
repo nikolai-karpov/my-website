@@ -2,7 +2,8 @@
  * scripts/add-nav-link.mjs
  *
  * Добавляет пункт «Git» в основное меню (<nav class="site-nav">, сразу после
- * пункта «Обзоры») и в футер (<footer class="site-footer">, рядом с «Методология»
+ * пункта «Публикации», а на немигрированных страницах — «Обзоры») и в футер
+ * (<footer class="site-footer">, рядом с «Методология»
  * либо в конец группы ссылок) на всех HTML-страницах сайта, у которых есть
  * глобальное меню.
  *
@@ -170,10 +171,13 @@ function processFile(file, relHref) {
       if (hrefRe.test(navBlock)) {
         reasons.push("nav: ссылка уже есть (идемпотентность)");
       } else {
-        const anchor = findAnchorByText(html, "Обзоры", navStart, navCloseIdx, []);
+        // Пункт меню мог быть переименован «Обзоры» → «Публикации»; ищем оба.
+        const anchor =
+          findAnchorByText(html, "Публикации", navStart, navCloseIdx, []) ??
+          findAnchorByText(html, "Обзоры", navStart, navCloseIdx, []);
         if (!anchor) {
           reasons.push(
-            "nav: нет <a>Обзоры</a> в этом site-nav (похоже, это не глобальное меню, а локальное подменю)"
+            "nav: нет <a>Публикации</a>/<a>Обзоры</a> в этом site-nav (похоже, это не глобальное меню, а локальное подменю)"
           );
         } else {
           const [anchorStart, anchorEnd] = anchor;
@@ -189,7 +193,7 @@ function processFile(file, relHref) {
   // ---- FOOTER ----
   // Футер трогаем только на страницах с настоящим глобальным меню (<nav
   // class="site-nav">). Локальные подменю публикаций (<ul class="site-nav">
-  // без пункта «Обзоры») — это отдельная, не связанная с глобальным меню
+  // без пункта «Публикации»/«Обзоры») — это отдельная, не связанная с глобальным меню
   // разметка; по условию задачи такие страницы вообще не трогаем.
   if (!navOpenMatch) {
     reasons.push(
@@ -216,6 +220,7 @@ function processFile(file, relHref) {
         reasons.push("footer: ссылка уже есть (идемпотентность)");
       } else {
         const excludeSpans = findLegalSpans(html, footerStart, footerCloseIdx);
+        // «Обзоры» — старый пункт переименованного меню; основной якорь футера — «Методология».
         let anchor = findAnchorByText(html, "Обзоры", footerStart, footerCloseIdx, excludeSpans);
         if (!anchor) {
           anchor = findAnchorByText(html, "Методология", footerStart, footerCloseIdx, excludeSpans);
