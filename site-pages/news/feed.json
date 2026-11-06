@@ -13,6 +13,23 @@
   ],
   "items": [
     {
+      "id": "https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-05-tencent-hy4-agentnaya-model-s-1m-konteksta/",
+      "url": "https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-05-tencent-hy4-agentnaya-model-s-1m-konteksta/",
+      "title": "Hy4: агентная модель Tencent с контекстом 1 млн токенов и зрением",
+      "summary": "Tencent выпустила флагманскую Hy4 для агентных сценариев: миллион токенов контекста, визуальное понимание, вызов инструментов и кэш промпта — с OpenAI-совместимым API, доступным из России.",
+      "content_html": "<p>Tencent выпустила Hy4 — флагманскую модель линейки, рассчитанную на агентные сценарии. Официальный релиз заметно мощнее Preview-версии в долгих реальных задачах и впервые в линейке умеет работать с изображениями: на вход текст и картинки, на выход — текст.</p><p>Ключевые характеристики: контекст 1 048 576 токенов, ответ до 66K токенов, режим рассуждений, вызов инструментов, структурированный вывод по JSON-схеме и кэш промпта. Для оркестрации агентов это означает долгую сессию без постоянной повторной подгрузки контекста — кэш напрямую влияет на стоимость и скорость.</p><p>Доступ: модель с идентификатором tencent/hy4 подаётся через OpenAI-совместимый API, поддерживаются также Responses API и Anthropic Messages API. Эндпоинт доступен из России, что снимает вопрос обходных подключений при тестировании.</p><p>Что это даёт на практике: Hy4 стоит прогнать в A/B с текущей агентной моделью на длинных задачах — особенно там, где входы содержат изображения (скриншоты, сканы, макеты) и нужен жёсткий структурированный вывод.</p>",
+      "date_published": "2026-11-05T00:00:00+03:00",
+      "language": "ru",
+      "tags": [
+        "Новые модели"
+      ],
+      "authors": [
+        {
+          "name": "Карпов Николай"
+        }
+      ]
+    },
+    {
       "id": "https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-04-codex-conversation-index/",
       "url": "https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-04-codex-conversation-index/",
       "title": "Conversation index для агентов: история сессий Codex в собственной SQLite-базе",
@@ -835,23 +852,6 @@
       "summary": "LangChain представил новый примитив DeltaChannel в библиотеке LangGraph 1.2, который сохраняет только диффы между шагами и периодически делает полные снимки, обеспечивая постоянные затраты на хранение при росте длительности сессий.",
       "content_html": "<h3>Что</h3><p>DeltaChannel — новый примитив, включённый в LangGraph 1.2 и автоматически активируемый в Deep Agents v0.6.</p><h3>Как</h3><p>При каждом шаге агент сохраняет лишь разницу (diff) от предыдущего состояния, а полные снимки (snapshot) создаются лишь периодически. Такой подход заменяет полное чекпоинт‑ирование, которое росло квадратично O(N²) по количеству шагов.</p><h3>Цифры</h3><p>Благодаря хранению только диффов, затраты на хранение остаются почти постоянными независимо от длины сессии, в отличие от прежних решений, где объём данных увеличивался пропорционально квадрату количества шагов.</p><h3>Что перенять</h3><p>При проектировании длительно работающих агентов используйте дифф‑ориентированное чекпоинт‑ирование и периодические полные снимки, чтобы избежать экспоненциального роста хранилища.</p>",
       "date_published": "2026-06-04T06:44:49+03:00",
-      "language": "en",
-      "tags": [
-        "Проекты"
-      ],
-      "authors": [
-        {
-          "name": "Карпов Николай"
-        }
-      ]
-    },
-    {
-      "id": "https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-30-running-python-asgi-apps-in-the-browser-via-pyodide-a-servic/",
-      "url": "https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-05-30-running-python-asgi-apps-in-the-browser-via-pyodide-a-servic/",
-      "title": "Datasette Lite переезжает с Web Workers на Service Workers для запуска ASGI в браузере",
-      "summary": "Simon Willison перевёл Datasette Lite с Web Workers на Service Workers в Pyodide/WebAssembly. Это позволяет запускать Python ASGI-приложения в браузере с полноценным исполнением JavaScript в <code>&lt;script&gt;</code> тегах — ранее это было невозможно.",
-      "content_html": "<h3>Что</h3><p>Datasette Lite — версия Datasette, работающая полностью в браузере через Pyodide (WebAssembly). Четыре года она использовала Web Workers для перехвата навигации и fetch-запросов, запуская Python-код для генерации HTML. Проблема: JavaScript внутри <code>&lt;script&gt;</code> тегов в ответах не исполнялся, что ломало функциональность Datasette и множество плагинов.</p><h3>Как</h3><p>Новое решение использует Service Worker вместо Web Worker. Service Worker перехватывает HTTP-запросы на уровне браузера (fetch API), проксируя их к Pyodide-рантайму, где запускается ASGI-приложение. Ключевое отличие: Service Worker работает как сетевой прокси между браузером и приложением, а не как изолированный поток. Это позволяет браузеру обрабатывать ответы как обычные HTTP-ответы, включая выполнение JS.</p><p>Реализация сделана Claude Opus 4.8 в Claude Code for web — Simon поставил задачу AI-агенту, и тот подготовил <a href=\"https://github.com/simonw/research/pull/112\">PR с рабочим прототипом</a>.</p><h3>Цифры</h3><ul><li>Datasette Lite существует с мая 2022 года (4 года на Web Workers)</li><li>Демо запускает Datasette 1.0a31 в браузере</li><li>Доступны два демо: <a href=\"https://simonw.github.io/research/pyodide-asgi-browser/\">базовый ASGI FastCGI</a> и <a href=\"https://simonw.github.io/research/pyodide-asgi-browser/datasette.html\">полный Datasette</a></li></ul><h3>Что перенять</h3><p>Паттерн «Service Worker как ASGI-прокси в браузере» — воспроизводимый подход для запуска любых Python ASGI-фреймворков (FastAPI, Starlette, Quart) в WebAssembly без сервера. Ключевая архитектурная идея: Service Worker перехватывает fetch на уровне браузера и маршрутизирует к Pyodide-рантайму, а не пытается рендерить HTML внутри изолированного потока.",
-      "date_published": "2026-06-03T06:54:31+03:00",
       "language": "en",
       "tags": [
         "Проекты"

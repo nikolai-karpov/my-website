@@ -10,8 +10,19 @@
     <language>ru</language>
     <copyright>© 2026 Карпов Николай</copyright>
     <atom:link href="https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 05 Nov 2026 02:13:15 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 09:43:56 +0300</lastBuildDate>
     <generator>hermes/news_renderer</generator>
+
+    <item>
+      <title>Hy4: агентная модель Tencent с контекстом 1 млн токенов и зрением</title>
+      <link>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-05-tencent-hy4-agentnaya-model-s-1m-konteksta/</link>
+      <description><![CDATA[Tencent выпустила флагманскую Hy4 для агентных сценариев: миллион токенов контекста, визуальное понимание, вызов инструментов и кэш промпта — с OpenAI-совместимым API, доступным из России.]]></description>
+      <content:encoded><![CDATA[<p>Tencent выпустила Hy4 — флагманскую модель линейки, рассчитанную на агентные сценарии. Официальный релиз заметно мощнее Preview-версии в долгих реальных задачах и впервые в линейке умеет работать с изображениями: на вход текст и картинки, на выход — текст.</p><p>Ключевые характеристики: контекст 1 048 576 токенов, ответ до 66K токенов, режим рассуждений, вызов инструментов, структурированный вывод по JSON-схеме и кэш промпта. Для оркестрации агентов это означает долгую сессию без постоянной повторной подгрузки контекста — кэш напрямую влияет на стоимость и скорость.</p><p>Доступ: модель с идентификатором tencent/hy4 подаётся через OpenAI-совместимый API, поддерживаются также Responses API и Anthropic Messages API. Эндпоинт доступен из России, что снимает вопрос обходных подключений при тестировании.</p><p>Что это даёт на практике: Hy4 стоит прогнать в A/B с текущей агентной моделью на длинных задачах — особенно там, где входы содержат изображения (скриншоты, сканы, макеты) и нужен жёсткий структурированный вывод.</p>]]></content:encoded>
+      <pubDate>Thu, 05 Nov 2026 00:00:00 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-05-tencent-hy4-agentnaya-model-s-1m-konteksta/</guid>
+      <category>Новые модели</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
 
     <item>
       <title>Conversation index для агентов: история сессий Codex в собственной SQLite-базе</title>
@@ -567,17 +578,6 @@
       <pubDate>Mon, 08 Jun 2026 06:28:15 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-07-tekhnodaidzhest-nedeli/</guid>
       <category>Новые модели</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title></title>
-      <link>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-08-extracting-repeating-entities-from-documents-tabular-extract/</link>
-      <description><![CDATA[]]></description>
-      <content:encoded><![CDATA[]]></content:encoded>
-      <pubDate>Mon, 08 Jun 2026 06:27:03 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-08-extracting-repeating-entities-from-documents-tabular-extract/</guid>
-      <category>Проекты</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
 
