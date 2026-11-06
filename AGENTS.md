@@ -26,6 +26,13 @@ For implementation and build details, also read:
 
 How to run, build, and serve is already written; follow those docs rather than a second command list. Commands and ports: `docs/AGENTS.md` (Key commands, Gotchas), `docs/QUICK_START.md`, `README.md` (Быстрый старт, Скрипты), `package.json` scripts. Deploy: `docs/README.md` (Деплой) — GitHub Pages from `main`. Pages: `README.md` (Структура проекта, Версии проекта) — entry `index.html`, linked HTML in `site-pages/`.
 
+## Resume and Portfolio Download
+
+- Before preparing a site publication, or after either career PDF changes, run `npm run bundle:sync` locally, then `npm run bundle:check` and `npm run bundle:verify`.
+- Follow `docs/resume-portfolio-bundle.md` for source paths, alternate source configuration, checks and recovery. SHA-256 of either PDF changing requires rebuilding the whole ZIP; do not edit generated links, manifest or ZIP manually.
+- The owner confirmed on 2026-11-06 that the current resume contains only publishable information; use the two designated public PDFs unchanged. This permission applies to this downloadable bundle, not unrelated articles or files. Never copy the entire IT directory, read recommendation letters, or silently rewrite the PDFs. A failed sync blocks release of a new bundle; report it rather than publishing missing or stale files.
+- CI verifies the prepared artifacts without access to the owner's Yandex Disk. `AGENTS.md` is an instruction, not a background file watcher. Do not claim that an online archive updates before the changed artifacts are explicitly published.
+
 ## Design References
 
 For mockup/design/prototype work on `Дашборд Маркетолога - Ai-CoPilot`, read this first:

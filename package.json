@@ -37,6 +37,11 @@
     "precommit": "lint-staged",
     "check:responsive": "node scripts/check-overflow.mjs",
     "check:navigator": "node scripts/check-public-navigator.mjs",
+    "bundle:sync": "python3 scripts/sync-career-bundle.py",
+    "bundle:check": "python3 scripts/sync-career-bundle.py --check",
+    "bundle:verify": "python3 scripts/sync-career-bundle.py --verify",
+    "test:bundle": "python3 -B scripts/test-career-bundle.py",
+    "check:bundle-ui": "node scripts/check-career-bundle.mjs",
     "test": "echo 'Tests are not configured for this project'"
   },
   "devDependencies": {

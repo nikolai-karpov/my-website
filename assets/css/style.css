@@ -599,6 +599,40 @@ img { max-width: 100%; height: auto; display: block; }
   height: 16px;
 }
 
+/* ---------- Career download ---------- */
+.career-bundle {
+  margin-block: 1.5rem;
+  padding-block: 1.25rem;
+  border-block: 1px solid var(--line-strong);
+}
+
+.career-bundle__title {
+  margin-block-end: 0.4rem;
+}
+
+.career-bundle__details {
+  max-inline-size: 65ch;
+  color: var(--text-muted);
+}
+
+.career-bundle__link {
+  max-inline-size: 100%;
+  min-block-size: 44px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.career-bundle__link:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .career-bundle__link {
+    transition: none;
+  }
+}
+
 /* ---------- Pillars ---------- */
 .pillars {
   display: grid;

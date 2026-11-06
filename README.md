@@ -144,6 +144,7 @@ npm run build
 - [`README.md`](docs/README.md) — полная документация проекта
 - [`AGENTS.md`](docs/AGENTS.md) — документация по агентам
 - [`career-profile.md`](docs/career-profile.md) — карьерное позиционирование, проверенные опорные кейсы и backlog усиления портфолио
+- [`resume-portfolio-bundle.md`](docs/resume-portfolio-bundle.md) — скачиваемый комплект резюме и портфолио; после обновления PDF выполнить `npm run bundle:sync`, затем `npm run bundle:check` и `npm run bundle:verify`
 - [`CURSOR_COMMANDS.md`](docs/CURSOR_COMMANDS.md) — команды Cursor
 - [`CURSOR_SETUP.md`](docs/CURSOR_SETUP.md) — настройка Cursor
 - [`GIT_CREDENTIAL_MANAGER.md`](docs/GIT_CREDENTIAL_MANAGER.md) — менеджер учетных данных Git

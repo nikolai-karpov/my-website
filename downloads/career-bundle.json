@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "archive": "nikolai-karpov-resume-portfolio.zip",
+  "bytes": 13063306,
+  "sha256": "ecee02bc0b23eaf707f38da7e281a19e03d268a1d780ce82efe819a9d8ff0016",
+  "files": [
+    {
+      "name": "Nikolai_Karpov_Resume.pdf",
+      "bytes": 69027,
+      "sha256": "a02ba71b48ef78e16d1576a58e4772602a340cf70c1cc2f09cc60a5c64de7009"
+    },
+    {
+      "name": "Nikolai_Karpov_Portfolio.pdf",
+      "bytes": 13692748,
+      "sha256": "88bcabd29385b7feea37ea13ba300de4382377738fec5a051242d2fe12fad1f3"
+    }
+  ]
+}
