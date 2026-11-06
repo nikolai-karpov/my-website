@@ -10,8 +10,19 @@
     <language>ru</language>
     <copyright>© 2026 Карпов Николай</copyright>
     <atom:link href="https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sat, 07 Nov 2026 02:43:26 +0300</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 02:43:30 +0300</lastBuildDate>
     <generator>hermes/news_renderer</generator>
+
+    <item>
+      <title>Агент-советник на живом созвоне: подсказки из контекста проекта</title>
+      <link>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-06-agent-na-sozvone-podskazki/</link>
+      <description><![CDATA[Расшифровку идущей встречи можно читать агентом в реальном времени и получать подсказки из рабочей сессии, которая знает код, логи и принятые решения. Это меняет плотность созвона: важные уточнения звучат сразу, а не вспоминаются после.]]></description>
+      <content:encoded><![CDATA[<p>Автор канала @nobilix заметил повторяющуюся картину: во время встреч он постоянно отвлекается, чтобы уточнить факт, вспомнить реализацию или проверить цифру в активной сессии агента по проекту. Сессия знает проект детальнее, чем человек помнит его в моменте, но печатать вопросы в разговоре — плохой сценарий.</p><p>Решение нашлось в ноутейкере Granola: через его MCP можно читать звонок, который идёт прямо сейчас. Достаточно одного промпта — подключиться к текущей встрече, поставить обновление раз в две минуты, читать новое и подсказывать в двух-трёх строках, если прозвучал вопрос по существу или что-то расходится с кодом и принятыми решениями. Если сказать нечего — молчать.</p><p>Главное отличие от встроенного чата в самом ноутейкере — источник контекста. Внутри ноутейкера есть только транскрипт этой встречи, а рабочая сессия агента знает репозиторий, решения, логи и контекст других встреч. Поэтому подсказка приходит с опорой на факты, а не на общие соображения.</p><p>Автор отмечает и организационную сторону: приём повышает плотность звонка и качество принятых на нём решений. Он предлагает воспринимать это как ассистента рядом — того, кто напомнит цифру и укажет на забытое, а не как способ обойти собеседника. Оговорить такое с командой разумно заранее.</p><p>Приём переносим: если используемый ноутейкер умеет отдавать текущий звонок по MCP (по документации это умеет, например, Fireflies), схему можно повторить. Обёртка в виде навыка или команды делает запуск одной фразой.</p>]]></content:encoded>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-06-agent-na-sozvone-podskazki/</guid>
+      <category>Вайбкодинг</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
 
     <item>
       <title>Agent Inbox: менеджмент агентов вместо переключения между чатами</title>
@@ -566,17 +577,6 @@
       <content:encoded><![CDATA[]]></content:encoded>
       <pubDate>Mon, 08 Jun 2026 06:30:56 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-07-kapibary-na-sluzhbe-ii-naima/</guid>
-      <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>TurboVec сжимает векторный индекс до 4 ГБ, ускоряя поиск по сравнению с FAISS</title>
-      <link>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-06-novyi-algoritm-google-szhal-31-gb-pamiati-do-4-gb/</link>
-      <description><![CDATA[TurboVec — новый open‑source инструмент для хранения векторных индексов, который уменьшает потребление памяти в 16 раз (с 31 ГБ до 4 ГБ) и обеспечивает более быстрый поиск, чем FAISS.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>TurboVec — библиотека для локального хранения и поиска векторных данных, полностью офлайн и с поддержкой Python. Она интегрируется с популярными фреймворками LangChain и LlamaIndex.</p><h3>Как</h3><p>База решения — Google TurboQuant, который устраняет традиционный этап подготовки (pre‑processing) векторных индексов, тем самым сокращая объем требуемой памяти и ускоряя построение индекса.</p><h3>Цифры</h3><ul><li>Память: 31 ГБ → 4 ГБ (сжатие ×16).</li><li>Скорость поиска: быстрее, чем у FAISS (точные метрики в репозитории).</li><li>Поддержка: macOS, обычные CPU‑серверы, без необходимости GPU.</li></ul><h3>Что перенять</h3><p>При построении собственных векторных сервисов можно заменить традиционный pipeline подготовки индекса на TurboQuant‑подобный подход, чтобы избавиться от дорогостоящего этапа pre‑processing и сократить требования к памяти.</p>]]></content:encoded>
-      <pubDate>Mon, 08 Jun 2026 06:29:59 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-06-novyi-algoritm-google-szhal-31-gb-pamiati-do-4-gb/</guid>
       <category>Проекты</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
