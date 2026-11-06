@@ -10,8 +10,19 @@
     <language>ru</language>
     <copyright>© 2026 Карпов Николай</copyright>
     <atom:link href="https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 06 Nov 2026 09:43:56 +0300</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 02:43:26 +0300</lastBuildDate>
     <generator>hermes/news_renderer</generator>
+
+    <item>
+      <title>Agent Inbox: менеджмент агентов вместо переключения между чатами</title>
+      <link>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-06-agent-inbox-upravlenie-agentami/</link>
+      <description><![CDATA[Когда параллельно работает несколько агентов, усталость даёт не объём задач, а постоянный переход между контекстами. Ответ — не улучшать отдельную сессию, а управлять общим инбоксом того, что требует вашего внимания.]]></description>
+      <content:encoded><![CDATA[<p>В канале @leadgr разобран тезис: проблема работы с несколькими агентами не столько в количестве задач, сколько в непрерывном переключении контекста. Пока сформулировал задачу одному агенту, второй уже ждёт ответа на вопрос, третий просит ревью, четвёртый упёрся в настройки доступа. К концу дня человек выжат не от объёма работы, а от прыжков между чатами.</p><p>Предложение — управлять агентами не на уровне отдельных сессий, а на уровне общего инбокса, куда стекаются все действия, требующие вашего участия. К такому инбоксу применимы уже известные приёмы работы с почтой: приоритизация, таймбоксинг, пакетная обработка однотипных решений.</p><p>В посте названы конкретные точки входа: открытый инструмент Plannotator Inbox, работающий поверх разных агентов, и навык problem-brief от Андрея Зайцева — он же работает как модификация для Claude Code и как отдельная страница. Автор отмечает, что в клубе подробно разбирался сетап под шесть параллельных агентов без потери концентрации.</p><p>Практический вывод прост: чем больше агентов, тем важнее единая точка приёма решений. Инбокс превращает поток прерываний в очередь, которой можно управлять, и снимает необходимость держать в голове состояние всех сессий сразу.</p>]]></content:encoded>
+      <pubDate>Fri, 06 Nov 2026 00:00:00 +0300</pubDate>
+      <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-11-06-agent-inbox-upravlenie-agentami/</guid>
+      <category>Вайбкодинг</category>
+      <dc:creator>Карпов Николай</dc:creator>
+    </item>
 
     <item>
       <title>Hy4: агентная модель Tencent с контекстом 1 млн токенов и зрением</title>
@@ -567,17 +578,6 @@
       <pubDate>Mon, 08 Jun 2026 06:29:59 +0300</pubDate>
       <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-06-novyi-algoritm-google-szhal-31-gb-pamiati-do-4-gb/</guid>
       <category>Проекты</category>
-      <dc:creator>Карпов Николай</dc:creator>
-    </item>
-
-    <item>
-      <title>Nvidia RTX Spark: 20‑ядерный ARM‑CPU, &gt;6000 GPU‑ядер, до 128 ГБ общей памяти</title>
-      <link>https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-07-tekhnodaidzhest-nedeli/</link>
-      <description><![CDATA[Nvidia анонсировала новый чип RTX Spark на базе ARM для Windows‑устройств. В нём 20‑ядерный процессор, более шести тысяч графических ядер и до 128 ГБ объединённой памяти, которую совместно используют CPU и GPU. Первым ноутбуком на этом чипе станет Surface Laptop Ultra.]]></description>
-      <content:encoded><![CDATA[<h3>Что</h3><p>RTX Spark — это систем‑на‑чипе (SoC) от Nvidia, рассчитанный на ноутбуки и мини‑ПК под управлением Windows. Чип объединяет 20‑ядерный ARM‑CPU, более 6000 GPU‑ядер и поддерживает до 128 ГБ общей (unified) памяти.</p><h3>Как</h3><p>Архитектура основана на ARM, что позволяет использовать энерго‑эффективный CPU‑ядра в сочетании с масштабируемой графической подсистемой Nvidia. Память распределяется между процессором и видеокартой без копирования данных, что снижает задержки при работе с графикой и ИИ‑загрузками.</p><h3>Цифры</h3><ul><li>CPU — 20 ядер (ARM‑based)</li><li>GPU — более 6000 ядер</li><li>Объединённая память — до 128 ГБ, совместно используемая CPU и GPU</li><li>Первый коммерческий продукт — Surface Laptop Ultra (анонсирован Microsoft)</li></ul><h3>Что перенять</h3><p>Для разработчиков системных решений стоит обратить внимание на модель unified memory, позволяющую CPU и GPU работать с единой областью данных без копирования. При проектировании ноутбуков или мини‑ПК можно использовать ARM‑CPU в сочетании с мощной графикой Nvidia для снижения энергопотребления без потери производительности.</p>]]></content:encoded>
-      <pubDate>Mon, 08 Jun 2026 06:28:15 +0300</pubDate>
-      <guid isPermaLink="true">https://nikolai-pir-s-ru.sourcecraft.site/portfolio/site-pages/news/2026-06-07-tekhnodaidzhest-nedeli/</guid>
-      <category>Новые модели</category>
       <dc:creator>Карпов Николай</dc:creator>
     </item>
 
