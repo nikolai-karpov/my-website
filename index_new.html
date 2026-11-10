@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 1. SEO & Meta -->
+    <title>Карпов Николай — Архитектор AI‑платформ для инженерных отраслей</title>
+    <meta
+      name="description"
+      content="От интеграции ERP‑систем до проектирования co‑pilot’ов для ГИПов. 25‑летний опыт цифровой трансформации, который теперь работает на внедрение ИИ."
+    />
+    <meta
+      name="keywords"
+      content="ИИ, AI‑платформы, RAG, Knowledge Graph, внедрение ИИ, цифровая трансформация, ERP, SaaS, строительство, ГИП, co‑pilot"
+    />
+    <meta name="author" content="Карпов Николай" />
+
+    <!-- Hreflang & Canonical -->
+    <link
+      rel="alternate"
+      hreflang="ru"
+      href="https://nikolai-karpov.github.io/"
+    />
+    <link rel="canonical" href="https://nikolai-karpov.github.io/" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Карпов Николай — Архитектор AI‑платформ для инженерных отраслей"
+    />
+    <meta
+      property="og:description"
+      content="Проектирую и внедряю гибридные AI‑системы (RAG + Knowledge Graph) для проверки документации и автоматизации инженерных процессов."
+    />
+    <meta property="og:image" content="assets/images/og-image.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nikolai-karpov.github.io/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Карпов Николай",
+        "jobTitle": "Архитектор AI‑платформ",
+        "image": "assets/images/profile-placeholder.jpg",
+        "url": "https://nikolai-karpov.github.io",
+        "knowsAbout": [
+          "Artificial Intelligence",
+          "RAG (Retrieval-Augmented Generation)",
+          "Knowledge Graph",
+          "ERP Systems",
+          "Business Process Automation"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "AI Consulting"
+        }
+      }
+    </script>
+
+    <!-- Шрифты и Иконки -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Анимации (Defer) -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      rel="stylesheet"
+    />
+    
+    <!-- GSAP для анимаций -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- Основной CSS -->
+    <link rel="stylesheet" href="assets/css/main.css?v=1772124300" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body class="loading">
+    <!-- Прелоадер -->
+    <div class="preloader">
+      <div class="preloader-content">
+        <div class="neural-network-animation">
+          <div class="neuron"></div>
+          <div class="neuron"></div>
+          <div class="neuron"></div>
+        </div>
+        <p>Инициализация систем...</p>
+      </div>
+    </div>
+
+    <!-- Хедер -->
+    <header
+      id="main-header"
+      class="main-header"
+      role="banner"
+      data-component="site-components/header.html"
+    >
+      <div class="container">
+        <nav aria-label="Основное меню">
+          <a href="./">Главная</a>
+          <button class="theme-toggle" id="theme-toggle" aria-label="Переключить тему">
+            <i class="fas fa-moon" id="theme-icon"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main role="main">
+      <!-- === HERO SECTION === -->
+      <section class="hero-section">
+        <div class="hero-background">
+          <canvas id="neuralCanvas">Ваш браузер не поддерживает canvas.</canvas>
+        </div>
+        <div class="container">
+          <div class="hero-container">
+            <div class="hero-content">
+              <div class="hero-badge">
+                <i class="fas fa-check-circle"></i> Логическая эволюция IT‑платформ
+              </div>
+              <h1 class="hero-title">
+                Архитектор AI‑платформ для
+                <span class="gradient-text">инженерных отраслей</span>
+              </h1>
+              <p class="hero-subtitle">
+                От интегратора ERP‑систем до управляющего цифровой трансформацией и внедренца ИИ.
+                Проектирую co‑pilot’ы для ГИПов, которые сокращают время проверки документации с 2 дней до 2 минут.
+              </p>
+
+              <div class="hero-actions">
+                <a href="#key-case" class="cta-button primary">
+                  <i class="fas fa-briefcase"></i>
+                  Смотреть главный кейс
+                </a>
+                <a href="site-pages/contacts.html" class="cta-button secondary">
+                  <i class="fas fa-rocket"></i>
+                  Обсудить задачу
+                </a>
+              </div>
+            </div>
+
+            <div class="hero-visual">
+              <!-- Плавающие карточки LLM моделей -->
+              <div class="floating-card card-1">
+                <i class="fas fa-robot text-green-500"></i><span>ChatGPT</span>
+              </div>
+              <div class="floating-card card-2">
+                <i class="fas fa-comment-dots text-orange-500"></i
+                ><span>Claude</span>
+              </div>
+              <div class="floating-card card-3">
+                <i class="fas fa-project-diagram text-blue-500"></i
+                ><span>DeepSeek</span>
+              </div>
+              <div class="floating-card card-4">
+                <i class="fas fa-brain text-purple-500"></i><span>Qwen</span>
+              </div>
+              <div class="floating-card card-5">
+                <i class="fas fa-search text-teal-500"></i
+                ><span>Perplexity</span>
+              </div>
+              <div class="floating-card card-6">
+                <i class="fas fa-code text-dark-color"></i><span>Kimi</span>
+              </div>
+              <div class="floating-card card-7">
+                <i class="fas fa-leaf text-red-500"></i><span>YandexGPT</span>
+              </div>
+
+              <div class="profile-image">
+                <img
+                  src="assets/images/profile-placeholder.jpg"
+                  alt="Карпов Николай"
+                  onerror="this.src='https://ui-avatars.com/api/?name=Nikolai+Karpov&background=4A90E2&color=fff&size=300'"
+                />
+                <div class="image-glow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- === ИЗМЕРИМЫЕ РЕЗУЛЬТАТЫ === -->
+      <section class="metrics-section" style="padding: 5rem 0; background: var(--section-bg-alt);">
+        <div class="container">
+          <div class="section-header text-center">
+            <h2>Результаты, которые считает бизнес</h2>
+            <p>Конкретные цифры из моих проектов внедрения ИИ и цифровизации</p>
+          </div>
+          <div class="metrics-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+            <div class="metric-card" data-aos="zoom-in">
+              <div class="metric-icon"><i class="fas fa-clock"></i></div>
+              <div class="metric-value">7 дней → 1 день</div>
+              <div class="metric-label">Сокращение времени формирования отчётности</div>
+            </div>
+            <div class="metric-card" data-aos="zoom-in" data-aos-delay="100">
+              <div class="metric-icon"><i class="fas fa-chart-line-down"></i></div>
+              <div class="metric-value">‑25%</div>
+              <div class="metric-label">Снижение операционных затрат в пилотных проектах</div>
+            </div>
+            <div class="metric-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="metric-icon"><i class="fas fa-bullseye"></i></div>
+              <div class="metric-value">≥80% F1‑score</div>
+              <div class="metric-label">Точность AI‑верификации документации</div>
+            </div>
+            <div class="metric-card" data-aos="zoom-in" data-aos-delay="300">
+              <div class="metric-icon"><i class="fas fa-users"></i></div>
+              <div class="metric-value">90% сотрудников</div>
+              <div class="metric-label">Адаптировались к новым технологиям</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- === КЛЮЧЕВЫЕ КОМПЕТЕНЦИИ (переработанные) === -->
+      <section class="competencies-section">
+        <div class="container">
+          <div class="section-header text-center">
+            <h2>Три ключевые компетенции</h2>
+            <p>
+              Сочетание интеграторского опыта, архитектуры AI‑платформ и экспертизы внедрения
+            </p>
+          </div>
+
+          <div class="competencies-grid">
+            <div class="card--competency" data-aos="fade-up">
+              <div class="card__icon"><i class="fas fa-network-wired"></i></div>
+              <h3>Интегратор и архитектор цифровых платформ</h3>
+              <p class="card__description">
+                18 лет руководил IT‑департаментами, внедрял ERP‑системы для холдингов 1500+ сотрудников.
+                Проектировал SaaS‑платформы с нуля, объединяющие данные, процессы и людей.
+              </p>
+              <div class="card__details">
+                <ul class="card__features">
+                  <li><i class="fas fa-check"></i> Внедрение ERP «с нуля» (финансы, склад, производство)</li>
+                  <li><i class="fas fa-check"></i> Архитектура микросервисных SaaS‑решений</li>
+                  <li><i class="fas fa-check"></i> Интеграции с 1С, CRM, BI‑системами</li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="card--competency"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              <div class="card__icon"><i class="fas fa-robot"></i></div>
+              <h3>Архитектор AI‑решений (RAG + Knowledge Graph)</h3>
+              <p class="card__description">
+                Проектирую гибридные AI‑системы для проверки документации и автоматизации инженерных процессов.
+                Сочетаю RAG, векторные БД (Qdrant) и графы знаний для точных и объяснимых результатов.
+              </p>
+              <div class="card__details">
+                <ul class="card__features">
+                  <li><i class="fas fa-check"></i> Гибридная архитектура RAG + Knowledge Graph</li>
+                  <li><i class="fas fa-check"></i> Векторные базы данных (Qdrant) и семантический поиск</li>
+                  <li><i class="fas fa-check"></i> Интеграция LLM (OpenAI, GigaChat, YandexGPT)</li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="card--competency"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="card__icon">
+                <i class="fas fa-user-check"></i>
+              </div>
+              <h3>Эксперт по внедрению и управлению изменениями</h3>
+              <p class="card__description">
+                Обеспечиваю adoption rate 95%+ через обучение, воркшопы и методологию ADDIE.
+                Преодолеваю сопротивление команды, переводя сложные технологии в понятные инструкции.
+              </p>
+              <div class="card__details">
+                <ul class="card__features">
+                  <li><i class="fas fa-check"></i> Разработка учебных программ (ADDIE, таксономия Блума)</li>
+                  <li><i class="fas fa-check"></i> Управление изменениями (Change Management)</li>
+                  <li><i class="fas fa-check"></i> Онбординг и микро‑обучение для команд</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- === ГЛАВНЫЙ КЕЙС (co‑pilot для ГИПа) === -->
+      <section id="key-case" class="cases-section">
+        <div class="container">
+          <div class="section-header">
+            <h2>Главный кейс: co‑pilot для главного инженера проекта (ГИП)</h2>
+            <p>
+              AI‑система верификации проектной документации, спроектированная и внедрённая в рамках платформы pir‑s.ru
+            </p>
+          </div>
+
+          <div class="case-hero-card" style="background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); color: white; border-radius: 20px; padding: 3rem; margin-top: 2rem;">
+            <div class="case-hero-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+              <div>
+                <h3 style="font-size: 2rem; margin-bottom: 1rem;">RAG + Knowledge Graph для проверки ГОСТов</h3>
+                <p style="margin-bottom: 1.5rem;">
+                  Система автоматически анализирует проектные документы, сверяет их с нормативной базой (ГОСТ, СП, СНиП)
+                  и выявляет несоответствия за 2 минуты вместо 2 дней ручной проверки.
+                </p>
+                <ul style="list-style: none; padding-left: 0;">
+                  <li style="margin-bottom: 0.5rem;"><i class="fas fa-check-circle" style="margin-right: 10px;"></i> F1‑score ≥80% при выявлении отклонений</li>
+                  <li style="margin-bottom: 0.5rem;"><i class="fas fa-check-circle" style="margin-right: 10px;"></i> Время обработки документа ≤120 сек</li>
+                  <li style="margin-bottom: 0.5rem;"><i class="fas fa-check-circle" style="margin-right: 10px;"></i> Граф связей между 200+ нормативами</li>
+                </ul>
+                <div style="margin-top: 2rem;">
+                  <a href="site-pages/case-studies/construction.html" class="cta-button primary" style="background: white; color: var(--primary-color);">
+                    <i class="fas fa-external-link-alt"></i>
+                    Подробный разбор кейса
+                  </a>
+                  <a href="site-pages/case-studies/index.html" class="cta-button secondary" style="background: transparent; border: 2px solid white; color: white; margin-left: 1rem;">
+                    <i class="fas fa-th"></i>
+                    Все кейсы
+                  </a>
+                </div>
+              </div>
+              <div style="text-align: center;">
+                <div style="font-size: 5rem; opacity: 0.9;">
+                  <i class="fas fa-brain"></i>
+                </div>
+                <p style="font-size: 1.2rem; margin-top: 1rem;">Архитектура: Python + FastAPI + Qdrant + GraphQL</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- === ТЕХНОЛОГИЧЕСКИЙ СТЕК (расширенный) === -->
+      <section class="tech-stack-section">
+        <div class="container">
+          <div class="section-header text-center">
+            <h2>Инструментарий и Технологии</h2>
+            <p>
+              Полный стек для реализации проектов любой сложности: от анализа данных до внедрения нейросетей
+            </p>
+          </div>
+
+          <div class="tech-grid-cards">
+            <!-- 1. Python -->
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="0">
+              <div class="tech-card__icon">
+                <i class="fab fa-python"></i>
+              </div>
+              <h4>Python</h4>
+              <p>Pandas, NumPy, FastAPI, Automation</p>
+              <span class="tech-category">Разработка</span>
+            </div>
+
+            <!-- 2. RAG -->
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
+              <div class="tech-card__icon">
+                <i class="fas fa-database"></i>
+              </div>
+              <h4>RAG & Vector DBs</h4>
+              <p>Qdrant, Chroma, семантический поиск</p>
+              <span class="tech-category">AI‑архитектура</span>
+            </div>
+
+            <!-- 3. Knowledge Graph -->
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="tech-card__icon">
+                <i class="fas fa-project-diagram"></i>
+              </div>
+              <h4>Knowledge Graph</h4>
+              <p>Графы связей, онтологии, нормативы</p>
+              <span class="tech-category">AI‑архитектура</span>
+            </div>
+
+            <!-- 4. LLM APIs -->
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="0">
+              <div class="tech-card__icon">
+                <i class="fas fa-robot"></i>
+              </div>
+              <h4>LLM APIs</h4>
+              <p>OpenAI, GigaChat, YandexGPT, Claude</p>
+              <span class="tech-category">Интеграции</span>
+            </div>
+
+            <!-- 5. BPMN -->
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
+              <div class="tech-card__icon">
+                <i class="fas fa-sitemap"></i>
+              </div>
+              <h4>BPMN 2.0</h4>
+              <p>Моделирование процессов</p>
+              <span class="tech-category">Процессы</span>
+            </div>
+
+            <!-- 6. Power BI -->
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="tech-card__icon">
+                <i class="fas fa-chart-bar"></i>
+              </div>
+              <h4>Power BI</h4>
+              <p>Дашборды и аналитика</p>
+              <span class="tech-category">Данные</span>
+            </div>
+
+            <!-- 7. n8n / Make -->
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="0">
+              <div class="tech-card__icon">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <h4>n8n / Make</h4>
+              <p>Low‑code автоматизация</p>
+              <span class="tech-category">Low‑code</span>
+            </div>
+
+            <!-- 8. Cursor / Replit -->
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="100">
+              <div class="tech-card__icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h4>Cursor / Replit</h4>
+              <p>AI‑ассистированная разработка</p>
+              <span class="tech-category">Инструменты</span>
+            </div>
+
+            <!-- 9. Docker & Cloud -->
+            <div class="tech-card" data-aos="zoom-in" data-aos-delay="200">
+              <div class="tech-card__icon">
+                <i class="fas fa-cloud"></i>
+              </div>
+              <h4>Docker & Yandex Cloud</h4>
+              <p>Контейнеризация, serverless</p>
+              <span class="tech-category">Инфраструктура</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- === ЭВОЛЮЦИЯ ЭКСПЕРТИЗЫ (timeline) === -->
+      <section class="timeline-section" style="padding: 5rem 0; background: var(--section-bg-alt);">
+        <div class="container">
+          <div class="section-header text-center">
+            <h2>Эволюция экспертизы</h2>
+            <p>От интегратора ERP‑систем до архитектора AI‑платформ — 25‑летний путь цифровой трансформации</p>
+          </div>
+          <div class="timeline" style="position: relative; max-width: 900px; margin: 3rem auto;">
+            <div class="timeline-item" data-aos="fade-right">
+              <div class="timeline-date">2001‑2019</div>
+              <div class="timeline-content">
+                <h4>Интегратор ERP‑систем</h4>
+                <p>Руководил IT‑департаментами в международных холдингах (Kazantip Cyprus LTD, KIMYUS VENTURES). Внедрял корпоративные ERP‑системы для 1500+ сотрудников, унифицировал данные и сократил время отчётности с 7 дней до 1 дня.</p>
+              </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+              <div class="timeline-date">2019‑2024</div>
+              <div class="timeline-content">
+                <h4>Управляющий цифровой трансформацией</h4>
+                <p>В ГК ПИРС / ПИР‑Система спроектировал SaaS‑платформу для строительной отрасли с нуля. Начал внедрять AI‑модули для автоматизации документооборота, что снизило операционные затраты на 25%.</p>
+              </div>
+            </div>
+            <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+              <div class="timeline-date">2025‑н.в.</div>
+              <div class="timeline-content">
+                <h4>Архитектор AI‑решений</h4>
+                <p>Проектирую гибридные AI‑системы (RAG + Knowledge Graph) для проверки документации и co‑pilot’ов для ГИПов. Провожу стратегические аудиты ИИ‑готовности и создаю дорожные карты внедрения с ROI‑обоснованием.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- === LEAD MAGNET / CTA (переработанный) === -->
+      <section class="lead-magnet-section">
+        <div class="container">
+          <div class="lead-magnet-card">
+            <div class="lead-content">
+              <div class="lead-badge">
+                <i class="fas fa-chess-king"></i> Стратегическая сессия
+              </div>
+              <h2>Аудит ИИ‑готовности вашей компании</h2>
+              <p class="lead-description">
+                Определим, насколько ваши процессы и данные готовы к внедрению ИИ.
+                Получите дорожную карту на 90 дней с расчётом ROI и приоритетными пилотами.
+              </p>
+
+              <ul class="benefits-list">
+                <li>
+                  <i class="fas fa-check"></i> Диагностика зрелости данных и инфраструктуры
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Портфель инициатив: 🟢 готово к пилоту, 🟡 требует дооснащения, 🔴 стратегические инвестиции
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Рекомендации по архитектуре AI‑решений под ваши задачи
+                </li>
+              </ul>
+
+              <div class="cta-group">
+                <a href="site-pages/contacts.html" class="cta-button primary">
+                  Заказать стратегическую сессию
+                </a>
+              </div>
+            </div>
+            <div class="lead-visual">
+              <i
+                class="fas fa-chart-line"
+                style="
+                  font-size: 8rem;
+                  color: var(--primary-color);
+                  opacity: 0.8;
+                "
+              ></i>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Футер -->
+    <footer
+      id="main-footer"
+      class="main-footer"
+      role="contentinfo"
+      data-component="site-components/footer.html"
+    ></footer>
+
+    <!-- Скрипты -->
+    <script src="assets/js/components-loader.js"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+    ></script>
+    <script defer src="assets/js/animations.js"></script>
+    <script defer src="assets/js/main.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof AOS !== "undefined") {
+          AOS.init({ duration: 800, once: true });
+        } else {
+          window.addEventListener("load", function () {
+            if (typeof AOS !== "undefined") {
+              AOS.init({ duration: 800, once: true });
+            }
+          });
+        }
+      });
+    </script>
+
+    <!-- Переключатель темы -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+
+        // Проверяем сохраненную тему или системные настройки
+        const savedTheme = localStorage.getItem('theme');
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+
+        // Применяем тему
+        function setTheme(theme) {
+          document.documentElement.setAttribute('data-theme', theme);
+          localStorage.setItem('theme', theme);
+          
+          // Обновляем иконку
+          const iconClass = theme === 'dark' ? 'fa-sun' : 'fa-moon';
+          themeIcon.className = `fas ${iconClass}`;
+        }
+
+        // Устанавливаем начальную тему
+        setTheme(currentTheme);
+
+        // Обработчик клика
+        themeToggle.addEventListener('click', function() {
+          const currentTheme = document.documentElement.getAttribute('data-theme');
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          setTheme(newTheme);
+        });
+
+        // Следим за системными настройками
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+          if (!localStorage.getItem('theme')) {
+            setTheme(e.matches ? 'dark' : 'light');
+          }
+        });
+      });
+    </script>
+  </body>
